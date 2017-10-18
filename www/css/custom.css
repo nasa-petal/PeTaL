@@ -1,0 +1,35 @@
+.function-box {
+    margin-bottom: 0;
+}
+
+.main-header {
+    text-align: center;
+}
+
+.Org-picture{
+    text-align: right;
+}
+
+.status-extinct {
+    color: #000;
+}
+
+.status-ce {
+    color: #ff0000;
+}
+
+.status-t {
+    color: #ff8800;
+}
+
+.status-v {
+    color: #dcc72c;
+}
+
+.status-lc {
+    color: #88ff00;
+}
+
+.status-extant {
+    color: #0c8a0f;
+}

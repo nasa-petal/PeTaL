@@ -1,0 +1,39 @@
+<!-- test1.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+    font-size: 17px;
+}
+ul.breadcrumb li {display: inline;}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+</style>
+<title>Title</title>
+</head>
+
+<body>
+  
+<ul class="breadcrumb">
+  <li><a href="#">Home</a></li>
+</ul>
+
+<p>This is where you can look up any function or stratigy:</p>
+</body>
+</html>

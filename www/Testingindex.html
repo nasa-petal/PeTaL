@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PeTaL</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+	<style>
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid">
+    <h1 style="font-size:200%;"class="main-header"> Functions of Nature</h1>
+	<ul class="breadcrumb">
+  <li><a href="IndexAnimals.html">Index</a></li>
+  <li><a href="Testingindex.html">Animal 1</a></li>
+	</ul>
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- basic descriptions -->
+            <div class="row">
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col">
+                            Scientific Name: __________
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Common Name: ____________
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">Status: </div>
+                        <span class="status-v col-sm-8""> *Lorem Ipsum* </span>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Specimen in PeTaL: *expandable list with y scroller*
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Locations: __________________
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /basic descriptions -->
+            <!-- map -->
+            <iframe width="600" height="200" frameborder="0" style="border:0; padding-top: 10px;" src="https://www.google.com/maps/embed/v1/place?q=ohio&key=AIzaSyAO3RKKZYh2Jkp2wlhTVg_QBh-1IpQXh94" allowfullscreen></iframe>
+
+            <!-- /map -->
+        </div>
+        <!-- picture and description using Bootstrap's card class -->
+        <div class="col-sm-6">
+            <div class="Org-picture">
+                <div class="card">
+                <!-- image -->
+                <div class="">
+                    <img id="myImg" class="card-img-top" src="Dragonfly.jpg" alt="Dragonfly" width="256" height="256">
+                </div>
+                <!-- /image -->
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
+                <!-- description on the bottom -->
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col">
+                            <p class="card-text">Deep time age range: ______ - _____</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="card-text">Discovered by: ____ in _____</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /description on the bottom -->
+            </div>
+            </div>
+        <!-- /picture and description -->
+        </div>
+    </div>
+    <!-- summary section -->
+    <div style="padding-bottom: 10px;">
+        <!-- header = Summary -->
+        <div class="row">
+            <div class="col" style="padding-bottom: 5px;">
+                <h2>Summary</h2>
+            </div>
+        </div>
+        <!-- /header = Summary -->
+        <!-- paragraph element of summary -->
+        <div class="row">
+            <div class="col">
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+        <!-- /paragraph element of summary -->
+    </div>
+    <!-- /summary section -->
+    <!-- environment section -->
+    <div>
+        <!-- header = Environment -->
+        <div class="row">
+            <div class="col" style="padding-bottom: 5px;">
+                <h3>Environment</h3>
+            </div>
+        </div>
+        <!-- /header = Environment -->
+        <!-- bulleted lists of items -->
+        <div class="row" style="padding-bottom: 10px;">
+            <div class="col-sm-3">
+                <ul>
+                    <li>Test 1</li>
+                    <li>Test 2</li>
+                    <li>Test 3</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul>
+                    <li>Second column</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul>
+                    <li>third</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul>
+                    <li>Fourth</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /bulleted lists of items -->
+    </div>
+    <!-- /environment section -->
+    <!-- expandable functions -->
+	<button class="accordion">Movability</button>
+<div class="panel"style="margin-bottom: 0px; border-bottom-width: 0px; border-top-width: 0px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+	<button class="accordion">Protection: abiotic and biotic</button>
+<div class="panel"style="margin-bottom: 0px; border-bottom-width: 0px; border-top-width: 0px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+	<button class="accordion">Gather, Manage and Process Resources and Energy</button>
+<div class="panel"style="margin-bottom: 0px; border-bottom-width: 0px; border-top-width: 0px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+	<button class="accordion">Gather, Manage and Process Resources and Energy</button>
+<div class="panel"style="margin-bottom: 0px; border-bottom-width: 0px; border-top-width: 0px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+	
+	<button class="accordion">Reproduce and Evolve</button>
+<div class="panel"style="margin-bottom: 0px; border-bottom-width: 0px; border-top-width: 0px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+    <button class="accordion">Self-sustain /Equilibrium/Homeostasis</button>
+<div class="panel"style="margin-bottom: 0px; border-bottom-width: 0px; border-top-width: 0px;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+    
+
+    <!-- /expandable functions -->
+
+</div>
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+</script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
