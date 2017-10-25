@@ -68,7 +68,10 @@ sidebar <- dashboardSidebar(
 body <- dashboardBody(tabItems(
   
   # Home tab content
-  tabItem(tabName = "Home",
+  tabItem(tabName = "Home",tags$style(HTML("
+        .tabbable > .nav > li[class=active]    > a {background-color: rgba(255, 255, 255, 0.46);color: #4CAF50;border: 1px solid #4CAF50;}
+        .nav-tabs-custom>.nav-tabs>li.active {border-top-color: #4CAF50;}
+        .nav-tabs-custom>.nav-tabs>li {border-top: 3px solid #3c8dbc;margin-bottom: -2px;margin-right: 0px;}")),
           fluidRow(width=7,background = "light-blue",column(3,align="left",tags$img(src='PeTaL_Icon.png',height='110',width='140')),column(2,align="center",h3(tags$b("Pe"),"riodic ",br(),tags$b("Ta"),"ble", br(),"of",br(),tags$b("L"),"ife")),
                    column(3,align="center",tags$a(img(src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg",
                                                       height="70", width="70"),href="https://www.nasa.gov/"))),
@@ -160,17 +163,14 @@ body <- dashboardBody(tabItems(
   
   # Specimen Explorer tab content
   tabItem(tabName = "SearchData",
-          fluidRow(tabBox(title="",width = 3,
+          fluidRow(tabBox(width = 3,
                           tabPanel("Order",
                                    selectInput("AOrder", "", c("All Orders"="", structure(Data$Order, names=Data$Order)), multiple=TRUE)),
-                          tabPanel("Family",
-                                   conditionalPanel("input.AOrder",
-                                                    selectInput("AFamily", "", c("All Families"="", structure(Data$Family, names=Data$Family)), multiple=TRUE)
-                                   )),
+                          tabPanel("Family",selectInput("AFamily", "", c("All Families"="", structure(Data$Family, names=Data$Family)), multiple=TRUE)
+                          ),
                           tabPanel("Species",
-                                   conditionalPanel("input.AFamily",
-                                                    selectInput("ASpecies", "", c("All Species"="", structure(Data$Species, names=Data$Species)), multiple=TRUE)
-                                   ))),
+                                   selectInput("ASpecies", "", c("All Species"="", structure(Data$Species, names=Data$Species)), multiple=TRUE)
+                          )),
                    box("Search by collection",width = 3,status = "primary",
                        selectInput("Collection", "", c("All Collections"="", structure(Data$Collection, names=Data$Collection)), multiple=TRUE)),
                    box("Search by Deep Time",width = 3,status = "primary",
@@ -179,17 +179,22 @@ body <- dashboardBody(tabItems(
                                                                                     "Permian","Late Pennsylvanian","Middle Pennsylvanian","Early Pennsylvanian","Late Mississippian","Middle Mississippian","Early Mississippian",
                                                                                     "Late Devonian","Middle Devonian","Early Devonian","late Silurian","middle Silurian","early Silurian","Silurian","Late Ordovician","Middle Ordovician","Early Ordovician",
                                                                                     "late Cambrian","middle Cambrian","early Cambrian","Cambrian"))), multiple=TRUE)),
-                   infoBoxOutput("progressBox",width = 3),
-                   box(title = " ", status = "primary", width = 12, DT::dataTableOutput('tbl_1'))),
+                   infoBoxOutput("progressBox",width = 3)),
+          fluidRow(box(title = " ", status = "primary", width = 12, DT::dataTableOutput('tbl_1'))),
           actionButton("go", "Analyze Data")),
   # Tree Table
   tabItem(tabName = "TreeTable",
-          fluidRow(box(width = 6,uiOutput("Hierarchy")),infoBoxOutput("progressBox2",width = 3)),
-          fluidRow(box("Tree",width = 4,d3treeOutput(outputId="d3")),box("table", DT::dataTableOutput('table')))),
+          fluidRow(box(width = 6,uiOutput("Hierarchy"), status = "primary"),infoBoxOutput("progressBox2",width = 3)),
+          fluidRow(box("",width = 4,d3treeOutput(outputId="d3"), status = "primary"),box("", status = "primary", DT::dataTableOutput('table')))),
   # Functions
   tabItem(tabName = "natureFunctions",
-          h2("Functional descriptive information, 2D/3D pictures, videos, etc."),
-          fluidRow(verbatimTextOutput("text"))),
+          fluidPage(style="padding-left: 0px;padding-right: 0px;",
+                    column(9,style="padding-left: 0px;padding-right: 0px;",box(width = 12,height = "60px", status = "primary"),tabBox(width = 12,height = "600px",
+                                                                                                                                      tabPanel("Description"),
+                                                                                                                                      tabPanel("Environment"))),
+                    column(3,style="padding-left: 0px;padding-right: 0px;",box(width = 12,height = "300px", status = "primary"),box(width = 12,height = "360px", status = "primary")),
+                    fluidRow(box(width = 4,height = "300px", status = "primary"),box(width = 4,height = "300px", status = "primary"),box(width = 4,height = "300px", status = "primary"))
+          )),
   # Analysis
   tabItem(tabName = "AnalysisTK",
           h2("Machine learning/statistical analysis tools."),
