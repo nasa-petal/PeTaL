@@ -4,6 +4,11 @@ library(DT)
 library(cluster)
 
 shinyServer(function(input, output, session) {
+  
+  SN<<-Data$Species[1]
+  CN<<-Data$`Common Name`[1]
+  output$Name<-renderText({c(SN,"(",CN,")")})
+  
   output$frameS <- renderUI({
     tags$iframe(src="Citizens_of_science_Carousel.html", height=465, width="100%")
   })

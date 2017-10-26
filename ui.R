@@ -189,9 +189,9 @@ body <- dashboardBody(tabItems(
   # Functions
   tabItem(tabName = "natureFunctions",
           fluidPage(style="padding-left: 0px;padding-right: 0px;",
-                    column(9,style="padding-left: 0px;padding-right: 0px;",box(width = 12,height = "60px", status = "primary"),tabBox(width = 12,height = "600px",
-                                                                                                                                      tabPanel("Description"),
-                                                                                                                                      tabPanel("Environment"))),
+                    column(9,style="padding-left: 0px;padding-right: 0px;",
+                           box(width = 12,height = "60px", status = "primary",h3(style="margin-top:5px;",textOutput("Name"))),
+                           tabBox(width = 12,height = "600px",tabPanel("Description"),tabPanel("Environment"))),
                     column(3,style="padding-left: 0px;padding-right: 0px;",box(width = 12,height = "300px", status = "primary"),box(width = 12,height = "360px", status = "primary")),
                     fluidRow(box(width = 4,height = "300px", status = "primary"),box(width = 4,height = "300px", status = "primary"),box(width = 4,height = "300px", status = "primary"))
           )),
