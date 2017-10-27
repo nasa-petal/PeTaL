@@ -8,6 +8,18 @@ shinyServer(function(input, output, session) {
   SN<<-Data$Species[1]
   CN<<-Data$`Common Name`[1]
   output$Name<-renderText({c(SN,"(",CN,")")})
+  Pic<<-paste0("www/",Data$`Map Icon`[1])
+  output$Picture <- renderImage({
+    list(src =Pic,
+         contentType = 'image/png',
+         width = 224,
+         height = 136,
+         alt = "Picture will not show")
+  }, deleteFile = FALSE)
+  Text1<<-Data$Notes[1]
+  Text2<<-Data$Environment[1]
+  output$Description<-renderText(Text1)
+  output$Envrironment<-renderText(Text2)
   
   output$frameS <- renderUI({
     tags$iframe(src="Citizens_of_science_Carousel.html", height=465, width="100%")

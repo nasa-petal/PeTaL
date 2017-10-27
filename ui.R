@@ -191,8 +191,10 @@ body <- dashboardBody(tabItems(
           fluidPage(style="padding-left: 0px;padding-right: 0px;",
                     column(9,style="padding-left: 0px;padding-right: 0px;",
                            box(width = 12,height = "60px", status = "primary",h3(style="margin-top:5px;",textOutput("Name"))),
-                           tabBox(width = 12,height = "600px",tabPanel("Description"),tabPanel("Environment"))),
-                    column(3,style="padding-left: 0px;padding-right: 0px;",box(width = 12,height = "300px", status = "primary"),box(width = 12,height = "360px", status = "primary")),
+                           tabBox(width = 12,height = "600px",tabPanel("Description",textOutput("Description")),tabPanel("Environment",textOutput("Envrironment")))),
+                    column(3,style="padding-left: 0px;padding-right: 0px;",
+                           box(width = 12,height = "300px", status = "primary",column(width = 12,align="center",(imageOutput(height="160px",width="224px","Picture"))),br(),h4("Author",br(),br(), "Age Range",br(),br(), "Status")),
+                           box(width = 12,height = "360px", status = "primary")),
                     fluidRow(box(width = 4,height = "300px", status = "primary"),box(width = 4,height = "300px", status = "primary"),box(width = 4,height = "300px", status = "primary"))
           )),
   # Analysis
