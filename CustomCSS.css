@@ -17,3 +17,34 @@ input[type="number"] {
   opacity: 1;
   transition-delay: 0;
 }
+.table {
+	width:200px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border:2px solid black;
+	background-color: white;
+	color:black;
+	display: block;
+	height: 250px;
+    overflow-y: scroll;
+}
+
+tr:hover{background-color:#dddddd}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+}
+
+.table>thead>tr>th {
+    border-bottom: 2px solid #000000;
+}
