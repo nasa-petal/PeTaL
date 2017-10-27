@@ -46,23 +46,29 @@ dropdown<- dropdownMenu(type = "notifications",
 )
 
 sidebar <- dashboardSidebar(  
-  sidebarMenu(
-    id = "tabs",
-    menuItem("PeTaL", tabName = "Home", icon = icon("leaf")),
-    menuItem("Design Problem", tabName = "DesignProblem", icon = icon("question-circle")),
-    menuItem("Interactive Map", tabName = "InteractiveMap", icon = icon("map-o")),
-    #convertMenuItem(
-    menuItem("Specimen Search", tabName = "SearchData", icon = icon("list")#,
-             # Input directly under menuItem
-             # selectInput("inputTest", "Nature Domains",
-             #choices = c("All", "Air", "Land", "Water", "Plant", "Micro", "Extreme", "Inanimate"), multiple=TRUE, selectize=TRUE,
-             #width = '98%')),'DataTest'
-    ),
-    menuItem("Data Explorer", tabName = "TreeTable", icon = icon("sitemap")),
-    menuItem("Functions of Nature", tabName = "natureFunctions", icon = icon("gears")),
-    menuItem("Analysis Toolkit", tabName = "AnalysisTK", icon = icon("area-chart")),
-    menuItem("Model Synthesis", tabName = "ModelSynth", icon = icon("pencil")),
-    menuItem("About Us", tabName = "About", icon = icon("book"))
+  sidebarMenu(tags$style(HTML("section.sidebar .shiny-bound-input.action-button, section.sidebar .shiny-bound-input.action-link {margin: 0px 0px 0px 0px}")),
+              id = "tabs",
+              menuItem("PeTaL", tabName = "Home", icon = icon("home")),
+              sidebarSearchForm(textId = "searchText", buttonId = "searchButton",
+                                label = "Search..."),
+              menuItem("Inspriation",tabName = 'Inspriation',icon = icon("lightbulb-o"),
+                       collapsible = 
+                         menuSubItem("Add Inspriation",tabName = 'Inspriation'),
+                       menuSubItem("Add by Name",tabName = "AddbyName",icon = icon("pencil")),
+                       menuSubItem("Design Problem", tabName = "DesignProblem", icon = icon("question-circle")),
+                       menuSubItem("Search DataBases",tabName = "search",icon = icon("cubes"))),
+              menuItem("PeTaL's database",tabName = 'PDB',icon = icon("leaf"),
+                       collapsible = 
+                         menuSubItem("Add Inspriation",tabName = 'Inspriation'),
+                       menuSubItem("Interactive Map", tabName = "InteractiveMap", icon = icon("map-o")),
+                       menuSubItem("Specimen Search", tabName = "SearchData", icon = icon("list")),
+                       menuSubItem("Data Explorer", tabName = "TreeTable", icon = icon("sitemap")),
+                       menuSubItem("Functions of Nature", tabName = "natureFunctions", icon = icon("gears"))),
+              menuItem("Analysis Toolkit", tabName = "AnalysisTK", icon = icon("area-chart")),
+              menuItem("Model Synthesis", tabName = "ModelSynth", icon = icon("pencil")),
+              menuItem("Results",tabName = "Results",icon = icon("file-o")),
+              tableOutput("Collection"), tags$head(tags$style("#dummy table {background-color: transparent; border-color:white;}", media="screen", type="text/css")),
+              menuItem("About Us", tabName = "About", icon = icon("book"))
   ))
 
 body <- dashboardBody(tabItems(
@@ -208,17 +214,76 @@ body <- dashboardBody(tabItems(
              and drafting 3D models. Extract features from images and export to autocad?")),
   
   # About PeTaL
-  tabItem(tabName = "About",
+  tabItem(tabName = "About",tags$style(HTML("
+        .tabbable > .nav > li[class=active]    > a {background-color: rgba(255, 255, 255, 0.46);color: #4CAF50;border: 1px solid #4CAF50;}
+                                            .nav-tabs-custom>.nav-tabs>li.active {border-top-color: #4CAF50;}
+                                            .nav-tabs-custom>.nav-tabs>li {border-top: 3px solid #3c8dbc;margin-bottom: -2px;margin-right: 0px;}")),
           tabsetPanel(
             tabPanel( "About Us", fluidRow(align="center",h4("PeTaL was created by NASA through", 
                                                              a(href="https://www.grc.nasa.gov/vibe/","VINE",icon("leaf", lib = "glyphicon")),(".")))),
             tabPanel("About Measuring"),
-            tabPanel("PeTaL's Network",
-                     htmlOutput("Net")),
+            tabPanel("PeTaL's Network",tabsetPanel(
+              tabPanel("A"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("B"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("C"#,htmlTemplate("NetworkC.html",name = "Network")
+              ),
+              tabPanel("D"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("E"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("F"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("G"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("H"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("I"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("J"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("K"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("L"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("M"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("N"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("O"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("P"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("Q"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("R"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("S"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("T"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("U"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("V"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("W"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("X"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("Y"#,htmlTemplate("Network2.html",name = "Network")
+              ),
+              tabPanel("Z"#,htmlTemplate("Network2.html",name = "Network")
+              )
+            )),
             #https://github.com/metrumresearchgroup/d3Tree  
-            tabPanel("Collection",box(width = 12,highchartOutput("TreeMap",height = "750px"))))
-  )
-))
+            tabPanel("Collection",box(width = 12,highchartOutput("TreeMap",height = "750px"))),
+            tabPanel("Contact Us" #, 
+                     #textInput("subject", "Subject:", value=""),
+                     #actionButton("send", "Send mail"),aceEditor("message", value="write message here")
+            )
+          ))
+  ))
 
 dashboardPage(title=tags$head(tags$link(rel = "icon", type = "image/png", href = "PeTaL_Icon.png"),
                               tags$title("PeTaL")),
