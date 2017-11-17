@@ -16,6 +16,8 @@ library(reshape2)
 library(stringr)
 library(DT)
 library(RColorBrewer)
+library(cluster)
+
 ##Dataset
 Data <<- read_excel("~/PeTaL Project/Going into Dash/measured data.xlsx") 
 M<-Data%>%count_(c("Status","Class","Order","Family","Species"))
@@ -28,7 +30,7 @@ Family<<-Data$Family
 Species<<-Data$Species
 Environment<<-Data$Environment
 DeepTime<<-Data$`Geological time`
-Collectiom<<-Data$Collection
+Collection<<-Data$Collection
 
 ##Data Fixes
 Data$`Link to functions` <- paste0("<a href='",Data$`Link to functions`,"'target='_blank'>","Learn more about this Specimen","</a>")

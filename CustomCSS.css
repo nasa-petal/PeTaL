@@ -37,9 +37,9 @@ table {
     border-collapse: collapse;
 }
 
-table, th, td {
+/*table, th, td {
     border: 1px solid black;
-}
+}*/
 
 th, td {
     border-bottom: 1px solid black;

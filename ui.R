@@ -2,22 +2,16 @@ header <- dashboardHeader(title = tags$a(href='http://PeTaL.nasa.gov',
                                          tags$img(src='PeTaL_Icon.png',height='30',width='37')),
                           dropdownMenu(type = "tasks",
                                        taskItem(value = 20, color = "aqua",
-                                                "Cargo Aircraft Pterosaur Wing Design"
-                                       ),
+                                                "Cargo Aircraft Pterosaur Wing Design"),
                                        taskItem(value = 40, color = "aqua",
-                                                "Bioreactor Fuel Cell"
-                                       ),
+                                                "Bioreactor Fuel Cell"),
                                        taskItem(value = 60, color = "aqua",
-                                                "Crustacean Chitin Submarine Hull"
-                                       )
-                          ),
+                                                "Crustacean Chitin Submarine Hull")),
                           dropdownMenu(type = "notifications",
                                        notificationItem(
                                          text = "Bioreactor Fuel Cell has new data",
                                          icon = icon("exclamation-triangle"),
-                                         status = "warning"
-                                       )
-                          ),
+                                         status = "warning")),
                           dropdownMenu(
                             type = "notifications", 
                             icon = icon("question-circle"),
@@ -28,6 +22,7 @@ header <- dashboardHeader(title = tags$a(href='http://PeTaL.nasa.gov',
                             notificationItem("Contact Us (Email Link)", icon = icon("file"),
                                              href = "http://www.google.com/")
                           ))
+
 dropdown<- dropdownMenu(type = "notifications",
                         notificationItem(
                           text = "5 new users today",
@@ -42,11 +37,10 @@ dropdown<- dropdownMenu(type = "notifications",
                           text = "Server load at 86%",
                           icon = icon("exclamation-triangle"),
                           status = "warning"
-                        )
-)
+                        ))
 
 sidebar <- dashboardSidebar(  
-  sidebarMenu(tags$style(HTML("section.sidebar .shiny-bound-input.action-button, section.sidebar .shiny-bound-input.action-link {margin: 0px 0px 0px 0px}")),
+            sidebarMenu(tags$style(HTML("section.sidebar .shiny-bound-input.action-button, section.sidebar .shiny-bound-input.action-link {margin: 0px 0px 0px 0px}")),
               id = "tabs",
               menuItem("PeTaL", tabName = "Home", icon = icon("home")),
               sidebarSearchForm(textId = "searchText", buttonId = "searchButton",
@@ -62,14 +56,14 @@ sidebar <- dashboardSidebar(
                          menuSubItem("Add Inspriation",tabName = 'Inspriation'),
                        menuSubItem("Interactive Map", tabName = "InteractiveMap", icon = icon("map-o")),
                        menuSubItem("Specimen Search", tabName = "SearchData", icon = icon("list")),
-                       menuSubItem("Data Explorer", tabName = "TreeTable", icon = icon("sitemap")),
+                       menuSubItem("Data Explorer", tabName = "DataExplorer", icon = icon("sitemap")),
                        menuSubItem("Functions of Nature", tabName = "natureFunctions", icon = icon("gears"))),
               menuItem("Analysis Toolkit", tabName = "AnalysisTK", icon = icon("area-chart")),
               menuItem("Model Synthesis", tabName = "ModelSynth", icon = icon("pencil")),
               menuItem("Results",tabName = "Results",icon = icon("file-o")),
-              tableOutput("Collection"), tags$head(tags$style("#dummy table {background-color: transparent; border-color:white;}", media="screen", type="text/css")),
+              tableOutput("YCollection"), tags$head(tags$style("#dummy table {background-color: transparent; border-color:white;}", media="screen", type="text/css")),
               menuItem("About Us", tabName = "About", icon = icon("book"))
-  ))
+            ))
 
 body <- dashboardBody(tabItems(
   
@@ -80,7 +74,7 @@ body <- dashboardBody(tabItems(
         .nav-tabs-custom>.nav-tabs>li {border-top: 3px solid #3c8dbc;margin-bottom: -2px;margin-right: 0px;}")),
           fluidRow(width=7,background = "light-blue",column(3,align="left",tags$img(src='PeTaL_Icon.png',height='110',width='140')),column(2,align="center",h3(tags$b("Pe"),"riodic ",br(),tags$b("Ta"),"ble", br(),"of",br(),tags$b("L"),"ife")),
                    column(3,align="center",tags$a(img(src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg",
-                                                      height="70", width="70"),href="https://www.nasa.gov/"))),
+                                                      height="110", width="140"),href="https://www.nasa.gov/"))),
           tabsetPanel(
             tabPanel(tags$b("What is PeTaL"),
                      h4("PeTaL was made to increase biomimicry use in design. PeTaL was created by NASA through the institute", 
@@ -96,8 +90,7 @@ body <- dashboardBody(tabItems(
                                                        br(),h3("See how the graphs change as you look around!",br(),tags$embed(src = "https://media.giphy.com/media/XHPR2fmsaStBC/giphy.gif",hieght="50%", width="50%"))))),
             tabPanel("PeTaL for Research",h4("PeTaL can utilize maps with built in graphing tools for environmental selection of relevant species, and includes statistical and machine learning tools in the Analysis Toolkit. 
                                                PeTaL also supports export of data and results for further investigation.")),
-            tabPanel(tabName="A","Citizen Science Effort",
-                     htmlOutput("frameS")))),
+            tabPanel(tabName="A","Citizen Science Effort"))),
   
     # Design Problem tab content
   tabItem(tabName = "DesignProblem",
@@ -164,8 +157,8 @@ body <- dashboardBody(tabItems(
                                                      selectInput("TY","Y axis",c(c(colnames(Data[,c(18:26,33:93)]))),selected = "Wing Span"),
                                                      selectInput("TZ","Z axis",c(c(colnames(Data[,c(18:26,33:93)]))),selected = "Fore Wing Area")
                                             )))
-              ))
-          )),
+                                      ))
+                             )),
   
   # Specimen Explorer tab content
   tabItem(tabName = "SearchData",
@@ -188,10 +181,13 @@ body <- dashboardBody(tabItems(
                    infoBoxOutput("progressBox",width = 3)),
           fluidRow(box(title = " ", status = "primary", width = 12, DT::dataTableOutput('tbl_1'))),
           actionButton("go", "Analyze Data")),
-  # Tree Table
-  tabItem(tabName = "TreeTable",
+  
+  # Data Explorer
+  tabItem(tabName = "DataExplorer",
           fluidRow(box(width = 6,uiOutput("Hierarchy"), status = "primary"),infoBoxOutput("progressBox2",width = 3)),
-          fluidRow(box("",width = 4,d3treeOutput(outputId="d3"), status = "primary"),box("", status = "primary", DT::dataTableOutput('table')))),
+          fluidRow(box("",width = 4,d3treeOutput(outputId="d3"), status = "primary"),box("", status = "primary", DT::dataTableOutput('table'))),
+          fluidRow(box(width = 6, sliderInput("count","Count of Specimens in average",0,15,value = c(1,15))))),
+  
   # Functions
   tabItem(tabName = "natureFunctions",
           fluidPage(style="padding-left: 0px;padding-right: 0px;",
@@ -223,68 +219,64 @@ body <- dashboardBody(tabItems(
                                                              a(href="https://www.grc.nasa.gov/vibe/","VINE",icon("leaf", lib = "glyphicon")),(".")))),
             tabPanel("About Measuring"),
             tabPanel("PeTaL's Network",tabsetPanel(
-              tabPanel("A"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("A"#,htmlTemplate("NetworkA.html",name = "Network")
               ),
-              tabPanel("B"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("B"#,htmlTemplate("NetworkB.html",name = "Network")
               ),
               tabPanel("C"#,htmlTemplate("NetworkC.html",name = "Network")
               ),
-              tabPanel("D"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("D"#,htmlTemplate("NetworkD.html",name = "Network")
               ),
-              tabPanel("E"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("E"#,htmlTemplate("NetworkE.html",name = "Network")
               ),
-              tabPanel("F"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("F"#,htmlTemplate("NetworkF.html",name = "Network")
               ),
-              tabPanel("G"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("G"#,htmlTemplate("NetworkG.html",name = "Network")
               ),
-              tabPanel("H"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("H"#,htmlTemplate("NetworkH.html",name = "Network")
               ),
-              tabPanel("I"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("I"#,htmlTemplate("NetworkI.html",name = "Network")
               ),
-              tabPanel("J"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("J"#,htmlTemplate("NetworkJ.html",name = "Network")
               ),
-              tabPanel("K"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("K"#,htmlTemplate("NetworkK.html",name = "Network")
               ),
-              tabPanel("L"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("L"#,htmlTemplate("NetworkL.html",name = "Network")
               ),
-              tabPanel("M"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("M"#,htmlTemplate("NetworkM.html",name = "Network")
               ),
-              tabPanel("N"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("N"#,htmlTemplate("NetworkN.html",name = "Network")
               ),
-              tabPanel("O"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("O"#,htmlTemplate("NetworkO.html",name = "Network")
               ),
-              tabPanel("P"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("P"#,htmlTemplate("NetworkP.html",name = "Network")
               ),
-              tabPanel("Q"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("Q"#,htmlTemplate("NetworkQ.html",name = "Network")
               ),
-              tabPanel("R"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("R"#,htmlTemplate("NetworkR.html",name = "Network")
               ),
-              tabPanel("S"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("S"#,htmlTemplate("NetworkS.html",name = "Network")
               ),
-              tabPanel("T"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("T"#,htmlTemplate("NetworkT.html",name = "Network")
               ),
-              tabPanel("U"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("U"#,htmlTemplate("NetworkU.html",name = "Network")
               ),
-              tabPanel("V"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("V"#,htmlTemplate("NetworkV.html",name = "Network")
               ),
-              tabPanel("W"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("W"#,htmlTemplate("NetworkW.html",name = "Network")
               ),
-              tabPanel("X"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("X"#,htmlTemplate("NetworkX.html",name = "Network")
               ),
-              tabPanel("Y"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("Y"#,htmlTemplate("NetworkY.html",name = "Network")
               ),
-              tabPanel("Z"#,htmlTemplate("Network2.html",name = "Network")
+              tabPanel("Z"#,htmlTemplate("NetworkZ.html",name = "Network")
               )
             )),
             #https://github.com/metrumresearchgroup/d3Tree  
             tabPanel("Collection",box(width = 12,highchartOutput("TreeMap",height = "750px"))),
-            tabPanel("Contact Us" #, 
-                     #textInput("subject", "Subject:", value=""),
-                     #actionButton("send", "Send mail"),aceEditor("message", value="write message here")
-            )
+            tabPanel("Contact Us")
           ))
   ))
 
 dashboardPage(title=tags$head(tags$link(rel = "icon", type = "image/png", href = "PeTaL_Icon.png"),
-                              tags$title("PeTaL")),
-              header, sidebar, body)
+                              tags$title("PeTaL")),header, sidebar, body)
