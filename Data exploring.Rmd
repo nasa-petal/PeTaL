@@ -1,0 +1,473 @@
+---
+title: "Data exploring"
+author: "Tim Peshek"
+date: "December 5, 2017"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(ggplot2)
+library(plotly)
+library(heatmaply)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r opening}
+setwd("C:/Users/acalvin1/Documents/PeTaL Project")
+
+Data=read_excel("C:/Users/acalvin1/Documents/PeTaL Project/Measured Data.xlsx") 
+
+Data<-Data[!Data$Species=="Unidentified",]
+
+```
+
+Note that these data are Tidy, that is every column is a variable of one of three types: data, metadata, provenance metadata.
+data are basically attributes of the set, such as 'body length' etc.
+metadata are data about data, including the classification.
+Provenance is where the data came from, so who collected it.
+
+This is great
+
+## Now let's subset the data in 1 line
+```{r subset1}
+Data.sub = Data[which(Data$Class == "Insecta"),]
+```
+
+we subset by grabbing all the Insect data
+
+## Including Plots
+
+You can also embed plots, for example:
+
+Here's a plot of the body length 2 vs body length 1 for all insects
+
+```{r plot1, echo=FALSE}
+p<-ggplot(Data.sub, aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`))+
+  geom_point(size = 3)
+p
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Now we will plot by grouping and the coloring the insect species
+
+```{r plot2, echo=T}
+p<-ggplot(Data.sub, aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`, color = Species))+
+  geom_point(size = 3)
+p
+
+```
+
+
+Maybe a bit too much information, so let's try and group instead by the order
+
+```{r plot3, echo=T}
+p<-ggplot(Data.sub, aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`, color = Order))+
+  geom_point(size = 3)
+p
+
+```
+
+
+## Lets Try a model at various scales
+
+First we will do a smoothing spline with confidence bounds
+
+```{r plot4, echo=T}
+p<-ggplot(Data.sub, aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`))+
+  geom_point(size = 3)+
+  geom_smooth()
+p
+
+```
+
+
+But I hate splines, so let's specify a linear model
+
+```{r plot5, echo=T}
+p<-ggplot(Data.sub, aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`))+
+  geom_point(size = 3)+
+geom_smooth(method='lm')
+p
+
+```
+
+And let's do the same thing but cross cutting by order
+
+```{r plot6, echo=T}
+p<-ggplot(Data.sub, aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`, color = Order))+
+  geom_point(size = 3)+
+geom_smooth(method='lm', aes(x=Data.sub$`Body Length 1 mm`, y=Data.sub$`Body Length 2 mm`, color = Order))
+ggplotly(p)
+
+```
+
+
+## Now let's start getting fancy
+
+First we want to "semantically annotate" the dataset, that is we will first label if a variable is metadata or data
+
+In order to do this let's first examine the data and I think the first 19 columns and the last 5 columns are metadata, and the ones in between are data.
+
+Let's do it:
+
+```{r semantics}
+## _MD_ will be the annotation for metadata
+## _D_ will be the annotation for data
+
+## let's generate our key
+
+key = c(rep("_MD_", 19), rep("_D_", 9), rep("_MD_", 4),  rep("_D_", 61), rep("_MD_", 5))
+
+#and now fix the column names - NO SPACES PLEASE!!!!
+
+MasterData = Data
+
+names(MasterData) = gsub(" ", "", names(MasterData))
+names(MasterData) = paste(names(MasterData), key, sep = "")
+
+## Now we have annotated variables, which will come in handy later
+
+```
+
+With this annotation in place it is straightforward to use regular expressions to subset the master data frame into a data frame and metadata frame
+
+```{r subset2}
+
+Data = subset(MasterData, select = grep(x = names(MasterData), pattern = "_D_"))
+MetaData = subset(MasterData, select = grep(x = names(MasterData), pattern = "_MD_"))
+
+```
+
+
+Now let's get crazy.  In genomics, a powerful tool to use is the heatmap. it is a false color representation of variable-varible interactions in a matrix form.
+
+We will use the simple linear correlation coefficient as our interaction of merit.
+We will also group and rank order the variables using hierarchical clustering - a machine learning algorithm
+
+here it is:
+
+```{r heats, warning=FALSE}
+
+## There's a problem with column 63, the footwidth, for some reason.
+## So i"m dropping it to demonstrate my point.
+Data = subset(Data, select = c(1:62, 64:70))
+
+heatmaply(cor(Data, method = "spearman"), 
+          k_col = 2, k_row = 2,
+          limits = c(-1,1)) %>% 
+  layout(margin = list(l = 90, b = 90))
+
+## always use the spearman method for a mixture of continuous and categorical variables
+
+```
+
+We use a plotly widget that depends on CSS and D3 to make interactive plots.  
+Go ahead and play with it.  
+
+But overall we see some structure here, and the clustering shows a lot of inference among the variables.  
+But we can cross-cut further.
+
+```{r heatsInsects, warning=FALSE}
+
+## There's a problem with column 63, the footwidth, for some reason.
+## So i"m dropping it to demonstrate my point.
+
+
+## Now we are mining the metadata table for the rows of insect data
+## so long as the two tables are aligned we can use that to subset the data
+
+
+Data.sub = Data[which(MetaData$Class_MD_ == "Insecta"),]
+
+## Let's try and extract the variables that are all -1
+
+
+Data.sub2 = subset(Data.sub, select = as.vector(which(colMeans(Data.sub) != -1)))
+
+
+heatmaply(cor(Data.sub2, method = "spearman"), 
+          k_col = 2, k_row = 2,
+          limits = c(-1,1)) %>% 
+  layout(margin = list(l = 120, b = 120))
+
+## always use the spearman method for a mixture of continuous and categorical variables
+
+```
+
+```{r corrs}
+
+which(cor(Data.sub2, method = "spearman") > 0.95 & cor(Data.sub2, method = "spearman") < 1 )
+
+p<-ggplot(Data.sub2, aes(x=Data.sub2$ForeWingArea_D_, y=Data.sub2$TotalBodyLength_D_))+
+  geom_point(size = 3)+
+geom_smooth(method='lm', aes(x=Data.sub2$ForeWingArea_D_, y=Data.sub2$TotalBodyLength_D_))
+p
+
+```
+
+This plot shows that over many scales and orders there is a nice relationship between Body length and fore wing area.
+
+```{r subset3}
+Order.sub <- subset(MetaData[which(MetaData$Class_MD_ == "Insecta"),], select = Order_MD_)
+#Data.sub3 = cbind(Data.sub2, Order.sub)
+
+#MyMat <- dist(as.matrix(t(Data.sub2)), method = "euclidean")
+MyMat <- as.dist(1-abs(cor(Data.sub2, method = "spearman")))
+hc <- hclust(MyMat)
+plot(hc) 
+
+cutOff = 0.1
+
+Data.sub3 <- subset(Data.sub2, select = grep("FALSE", duplicated(as.vector(cutree(hc, h = cutOff)))))
+
+
+```
+
+
+In an attempt to remove confounding covariates, I performed hierarchical clustering on the dataset and make a cut on the dendrogram at 0.1 to and then I couple any variables that are that close.  
+
+Basically this probably means that the two variables represent the same thing.  This would lead to a correlation coefficient > 0.9 or so.
+
+
+Now we regenerate the heatmap
+
+```{r heat3}
+ 
+ heatmaply(cor(Data.sub3, method = "spearman"), 
+          k_col = 2, k_row = 2,
+          limits = c(-1,1)) %>% 
+  layout(margin = list(l = 160, b = 160))
+
+```
+
+## Variable selection for modeling
+
+Seems to me we have two primary chunks in the insect dataset 
+- we have continuous data on the physical size and maekup of the creature
+- we have some data on the environment the thing lives in
+
+Ideally we would like to be able to predict everything about the creature from the environment, in order to seed a model that could offer input on what type of creature might live on an extraterrestrial world.
+
+However this idea doesn't seem possible with this dataset for a few reasons
+- The correlations are very weak among the enviro data and the physical data
+- This low correlation is most likely related to the span of the enviro dataset
+- There are minimal variables in the enviro set because of confounding covariates
+
+It may be possible to positively affect this dataset by obtaining more data about the location/environment
+
+For now we will just explore the data per my typical flow chart.
+
+```{r pairsSub3}
+
+panel.cor <- function(x, y, digits=2, prefix="", cex.cor)
+{
+  usr <- par("usr"); on.exit(par(usr))
+  par(usr = c(0, 1, 0, 1))
+  Xa = x[!(is.na(y)==TRUE)]
+  Ya = y[!(is.na(y)==TRUE)]
+  Xb = Xa[!(is.na(Xa)==TRUE)]
+  Yb = Ya[!(is.na(Xa)==TRUE)]
+  r = cor(Xb, Yb, method = "spearman")
+  txt <- format(c(r, 0.123456789), digits=digits)[1]
+  txt <- paste(prefix, txt, sep="")
+  if(missing(cex.cor)) cex <- 1/strwidth(txt)
+  text(0.5, 0.5, txt, cex = cex*abs(r)*0.8)
+}
+
+panel.hist <- function(x, ...)
+{
+  usr <- par("usr"); on.exit(par(usr))
+  par(usr = c(usr[1:2], 0, 1) )
+  h <- hist(x, plot = FALSE)
+  breaks <- h$breaks; nB <- length(breaks)
+  y <- h$counts; y <- y/max(y)/1.3
+  rect(breaks[-nB], 0, breaks[-1], y, col = "cyan", ...)
+
+}
+
+
+pairs(Data.sub3, 
+      gap = 0.05, #pch=20,
+      lower.panel = panel.smooth,
+      diag.panel = panel.hist, 
+      cex.labels = 1,
+      upper.panel=panel.cor, 
+      main = "Insecta Data Reduced")
+
+```
+
+### Here's a little exploration on the environmental data,
+
+because I see a lot of outliers and such.
+
+We could automate the process of removing outliers, by utilizing a standard technique known as Chauvenet's criterion, whereby the standard deviation of the data without the suspicious point is calculated and if the point is outside of 2 sigma (or whatever you want) it could be labeled as an outlier
+
+Of course we would also need to remove the rest of the data entry that are coincident because we really want completeness.
+
+We will start with the "deviant" numbers, even though there might be interesting info there - we can check it out later
+
+
+
+seems like BP > 1200 mbar is a special point, and possibly not real so let's eliminate it
+```{r yyy}
+
+Data.sub4 = subset(Data.sub2, select = c(1:9))
+Data.sub4 = Data.sub4[-which(Data.sub4$`BP(mb)High_D_`>1200),]
+pairs(Data.sub4, 
+      gap = 0.05, #pch=20,
+      lower.panel = panel.smooth,
+      diag.panel = panel.hist, 
+      cex.labels = 1,
+      upper.panel=panel.cor, 
+      main = "Insecta Enviro Data Reduced")
+
+```
+
+
+Windspeed >50 is spoiling the correlation
+
+```{r, yy2}
+Data.sub4 = Data.sub4[-which(Data.sub4$`WindLow(Km/hr)_D_`>50),]
+pairs(Data.sub4, 
+      gap = 0.05, #pch=20,
+      lower.panel = panel.smooth,
+      diag.panel = panel.hist, 
+      cex.labels = 1,
+      upper.panel=panel.cor, 
+      main = "Insecta Enviro Data Reduced")
+
+```
+
+
+Pare down on the TempLow to improve corr
+
+```{r yyy3}
+Data.sub4 = Data.sub4[-which(Data.sub4$TempCLow_D_>100),]
+
+Data.sub4 = Data.sub4[-which(Data.sub4$TempCLow_D_>50),]
+
+pairs(Data.sub4, 
+      gap = 0.05, #pch=20,
+      lower.panel = panel.smooth,
+      diag.panel = panel.hist, 
+      cex.labels = 1,
+      upper.panel=panel.cor, 
+      main = "Insecta Enviro Data Reduced")
+```
+
+
+Need to work on variable selection now, and since we want as a goal to be able to predict the presence of species where all we know is some geologic information, in all likelihood we will have to infer what is going on.
+
+Therefore I suggest we find relationships among the physical properties and then relate those relationships to the recorded weather data where it makes sense.
+
+```{r yyy2}
+
+Data.sub5 = subset(Data.sub3, select = c(6:19))
+Data.sub5 = subset(Data.sub5, select = c(1, 4, 9, 12,13))
+
+
+Data.sub5 = Data.sub5[which(Data.sub5$NumberofWings_D_!=-1),]
+
+Data.sub5.4wings = Data.sub5[which(Data.sub5$NumberofWings_D_== 4),]
+
+Data.sub5.4wings = Data.sub5.4wings[which(Data.sub5.4wings$BodyLength1mm_D_ !=-1),]
+Data.sub5.4wings = Data.sub5.4wings[which(Data.sub5.4wings$BodyWidth01mm_D_ !=-1),]
+Data.sub5.4wings = Data.sub5.4wings[which(Data.sub5.4wings$ForeWingArea_D_ !=-1),]
+Data.sub5.4wings = Data.sub5.4wings[which(Data.sub5.4wings$HindWingArea_D_ !=-1),]
+
+Data.sub5.4wings$NumberofWings_D_ = NULL
+
+pairs(Data.sub5.4wings, 
+      gap = 0.05, #pch=20,
+      lower.panel = panel.smooth,
+      diag.panel = panel.hist, 
+      cex.labels = 1,
+      upper.panel=panel.cor, 
+      main = "Insecta Data Reduced")
+```
+
+## Trying a model
+
+OK
+
+```{r NNEt1}
+library("neuralnet")
+
+myDat = data.frame(Data.sub3$TempCLow_D_, Data.sub3$HumidityHigh_D_, Data.sub3$`BP(mb)Low_D_`, Data.sub3$BodyLength1mm_D_, Data.sub3$ForeWingArea_D_, Data.sub$`WindHigh(Km/hr)_D_`, Data.sub3$BodyWidth01mm_D_)
+
+myDat = myDat[-which(myDat$Data.sub3.TempCLow_D_>50),]
+myDat = myDat[-which(myDat$Data.sub3..BP.mb.Low_D_. == 1500),]
+myDat = myDat[-which(myDat$Data.sub..WindHigh.Km.hr._D_. == 150),]
+
+myDat = data.frame(Data.sub3$BodyLength1mm_D_, Data.sub3$BodyLength2mm_D_, Data.sub3$BodyLength3mm_D_, Data.sub3$BodyWidth01mm_D_, Data.sub3$BodyWidth02mm_D_, Data.sub3$NumberofWings_D_)
+
+pairs(myDat, 
+      gap = 0.05, #pch=20,
+      lower.panel = panel.smooth,
+      diag.panel = panel.hist, 
+      cex.labels = 1,
+      upper.panel=panel.cor, 
+      main = "Wing Prediction")
+
+colnames(myDat) <- c("Input1", 
+                     "Input2", 
+                     "Input3",
+                     "Input4", 
+                     "Input5",
+                     "Output")
+
+maxs <- apply(myDat, 2, max)
+mins <- apply(myDat, 2, min)
+myDat.scaled <- as.data.frame(scale(myDat, center = mins, scale = maxs - mins))
+
+n<-round(length(myDat.scaled$Input1)*0.95)
+
+subs <- sample(nrow(myDat), n)
+myDat.train <- myDat.scaled[subs,]
+myDat.test <- myDat.scaled[-subs, ]
+
+f <- "Output ~ Input1 + Input2 + Input3 + Input4 + Input5"
+
+#lm.Dat<- lm(f, myDat.train)
+
+#Train the neural network
+net1 <- neuralnet(f,data = myDat.train, hidden=c(15, 4), threshold=0.01, 
+                  likelihood = TRUE 
+                  ,stepmax = 1e8 
+                  , act.fct = "tanh"
+                  #, linear.output = FALSE,
+                  #, algorithm = "rprop+"
+                  )
+
+#print(net1)
+
+#Plot the neural network
+
+
+
+```
+```{r net}
+plot(net1, information = TRUE, show.weights = TRUE)
+```
+
+
+
+```{r check}
+net.check <- myDat.test$Output
+myDat.test$Output = NULL
+net.ResultsCheck <- compute(net1, myDat.test) #Run them through the neural network
+net.ErrCheck <- abs(round(net.ResultsCheck$net.result) - net.check)/net.ResultsCheck$net.result*100
+Output.Check <- cbind(myDat.test, net.check, as.data.frame(net.ResultsCheck$net.result), net.ErrCheck)
+colnames(Output.Check) <- c("Input1", "Input2", "Input3", "Input4", "Input5", "Expected Output","Neural Net Output", "error")
+print(Output.Check)
+
+```
+
