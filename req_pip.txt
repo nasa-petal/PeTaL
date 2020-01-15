@@ -11,3 +11,4 @@ networkx
 keras
 nltk
 sklearn
+selenium
