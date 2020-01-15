@@ -1,0 +1,213 @@
+// CLUSTER PAGE STYLES
+.cluster {
+    .darkModeActive &{
+        color: #CDD5DB;
+
+        p {
+            color: #CDD5DB;
+        }
+    }
+    
+    input {
+        display: inline-block;
+    }
+
+    #lda_vis {
+        #lda_vis-top {
+            div {
+                background: none !important;
+                margin-top: 5px;
+
+                button {
+                    background: none;
+                    border: solid 1px #2699bc;
+                    border-radius: 2px;
+                    color: #2699bc;
+                    text-decoration: none;
+                    cursor: pointer;
+    
+                    &:hover {
+                        text-decoration: none;
+                        opacity: 1;
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+            input {
+                background: none;
+                text-align: right;
+                border: none;
+                color: $darkMode-light-txt;
+            }
+        }
+    }
+
+    path {
+        fill: none;
+        stroke: none;
+    }
+
+    .xaxis .tick.major {
+        fill: black;
+        stroke: black;
+        stroke-width: 0.1;
+        opacity: 0.7;
+    }
+
+    .slideraxis {
+        fill: black;
+        stroke: black;
+        stroke-width: 0.4;
+        opacity: 1;
+    }
+
+    text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+
+    svg {
+        border: none;
+        display: block;
+        margin: auto;
+
+        text {
+            .darkModeActive & {
+                fill: #CDD5DB;
+            }
+
+            fill: #444;
+        }
+    }
+
+    text.txt {
+        .darkModeActive & {
+            fill: #fff;
+            stroke: transparent;
+        }
+    }
+
+    a {
+        display: none; 
+    }  
+    
+    #init-cluster-params {
+        label {
+            display: inline-block;
+        }
+    }
+
+    .results-wrapper {
+        &.processing {
+            &:after {
+                content: "Processing\A\A\A\A\A\A\A\A\A\A\A\A\A\AThis may take several minutes";
+                white-space:pre;
+                color: #007fa9;
+                text-align: center;
+                position: absolute;
+                width: 256px;
+                height: 276px;
+                left: 50%;
+                top: 30%;
+                margin-left: -128px;
+                background: url(../img/processing.gif);
+                background-size: cover;
+
+                .darkModeActive & {
+                    opacity: .5;
+                }
+            }
+        }
+    } 
+
+    #recluster-group {
+        position: relative;
+        float: left;
+        background: $lighMode-light-bg;
+
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        
+
+        .darkModeActive &{
+            background: $darkMode-light-bg;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+        
+        input[type=checkbox] + label:before {
+            content: "\ea53";
+            font-family: "icomoon";
+            vertical-align: middle;
+        }
+        
+        input[type=checkbox]:checked + label:before {
+            content: "\ea52";
+            font-family: "icomoon";
+            vertical-align: middle;
+            color: $action-blue;
+        }
+    }
+
+    #cluster-titles {
+
+        .collapsible {
+            background: none;
+            border: solid 1px #2699bc;
+            padding: 10px;
+            border-radius: 5px;
+            color: #2699bc;
+            text-decoration: none;
+            cursor: pointer;
+            
+            display: block;
+            width: 100%;
+
+            span {
+                margin: 0 5px;
+            }
+        }
+          
+        #title-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    }
+
+    #checkbox-span {
+        display: inline-block;
+        padding-right: 5px;
+        margin-left: 20px;
+    }
+
+    .check-container{
+        width: 45px;
+        display: inline-block;
+        margin-right: 5px;
+        white-space: nowrap;
+
+        label {
+            padding-right: 20px;
+            font-weight: 400;
+        }
+    }
+
+    .larger-text {
+        font-size: 1.25em;
+        font-weight: 400;
+    }
+
+    .not-displayed {
+        display: none;
+    }
+
+    .vis-hidden {
+        visibility: hidden;
+    }
+    
+}

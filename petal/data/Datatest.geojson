@@ -1,0 +1,61 @@
+ 
+{ "type" : "Feature Collection",
+   "features" : [
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.1999, 41.6055]},
+       "properties" : { "id" : "Anax junius", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043231"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.32, 41.6]},
+       "properties" : { "id" : "Anax junius", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043224"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0194, 41.7333]},
+       "properties" : { "id" : "Anax junius", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043222"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.1999, 41.6055]},
+       "properties" : { "id" : "Anax junius", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043169"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.864, 44.709]},
+       "properties" : { "id" : "Aeshna canadensis", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043088"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.864, 44.709]},
+       "properties" : { "id" : "Aeshna canadensis", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043087"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.4078, 43.8417]},
+       "properties" : { "id" : "Aeshna canadensis", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043086"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.2611, 43.8458]},
+       "properties" : { "id" : "Aeshna canadensis", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043085"}
+       },
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.4078, 43.8417]},
+       "properties" : { "id" : "Aeshna canadensis", "unixTime" : "Cleveland Museum of Natural History", "msgtext" : "Dragonfly", "userID": "CMNHENT0043083"}
+       }
+       ]
+
+}
+   

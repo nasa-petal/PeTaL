@@ -1,0 +1,92 @@
+#img-selector {
+    margin-bottom: 20px;
+}
+
+a.button {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+#classify-button {
+    min-width: 200px;
+
+    // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006f91+0,1e5799+98
+    background: #006f91;
+    background: -moz-linear-gradient(-45deg, #006f91 0%, #1e5799 98%);
+    background: -webkit-linear-gradient(-45deg, #006f91 0%, #1e5799 98%);
+    background: linear-gradient(135deg, #006f91 0%, #1e5799 98%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006f91', endColorstr='#1e5799',GradientType=1 );
+    color: #fff;
+    border: none;
+    padding: 6px 20px;
+    text-transform: uppercase;
+}
+
+.startExploringBtn {
+    min-width: 200px;
+
+    // Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#659b00+0,0c3d0f+98
+    // background: #659b00;
+    // background: -moz-linear-gradient(-45deg, #659b00 0%, #0c3d0f 98%);
+    // background: -webkit-linear-gradient(-45deg, #659b00 0%, #0c3d0f 98%);
+    // background: linear-gradient(135deg, #659b00 0%, #0c3d0f 98%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#659b00', endColorstr='#0c3d0f',GradientType=1 );
+    // color: #fff;
+    // border: none;
+    // border-radius: 2px;
+    // padding: 6px 20px;
+    // margin: 20px 0 0 0;
+    // font-size: 20px;
+    // font-weight: 300;
+    // cursor: pointer;
+
+    color: #fff;
+    border: none;
+    background: none;
+    border: solid 1px #fff;
+    border-radius: 2px;
+    padding: 6px 20px;
+    margin: 30px 0 0 0;
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 180px;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.blue-gradient-bg {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006f91+0,1e5799+98 */
+    color: #fff;
+    background: #006f91;
+    background: -moz-linear-gradient(-45deg, #006f91 0%, #1e5799 98%);
+    background: -webkit-linear-gradient(-45deg, #006f91 0%, #1e5799 98%);
+    background: linear-gradient(135deg, #006f91 0%, #1e5799 98%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006f91', endColorstr='#1e5799',GradientType=1 );
+}
+
+.simpleButton {
+    background: none;
+    border: solid 1px #2699bc;
+    padding: 10px 20px;
+    border-radius: 2px;
+    color: #2699bc;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 26px 0;
+    display: block;
+    width: 120px;
+
+    &:hover {
+        text-decoration: none;
+        opacity: 1;
+        cursor: pointer;
+    }
+}

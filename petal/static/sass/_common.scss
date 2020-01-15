@@ -1,0 +1,178 @@
+//Font import
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:300,600");
+
+$action-blue: #2699bc;
+
+//LighMode color variables
+$lighMode-light-bg: #fff;
+$lighMode-light-border: #e2e2e2;
+
+//DarkMode colors variables
+$darkMode-bg: #1e2429;
+$darkMode-light-bg: #323d46;
+$darkMode-light-border: #475865;
+$darkMode-light-txt: #b3bbc1;
+
+@mixin transition($x...) {
+    -webkit-transition: $x;
+    -moz-transition: $x;
+    -ms-transition: $x;
+    -o-transition: $x;
+    transition: $x;
+}
+
+@mixin transform($x...) {
+    -webkit-transform: $x;
+    -ms-transform: $x;
+    transform: $x;
+}
+
+body {
+    &.darkModeActive {
+        background: $darkMode-bg;
+        color: #a7a7a7;
+    }
+}
+
+p {
+    font-size: 16px;
+    color: #5f5e5e;
+
+    .darkModeActive & {
+        color: #92989c;
+    }
+}
+
+#contentWrapper {
+    overflow: hidden;
+    margin-left: 240px;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+
+    @include transition(all 0.3s ease-in-out);
+
+    .sideBarHidden & {
+        margin-left: 0px;
+    }
+}
+
+.contentMain {
+    max-width: 1300px;
+
+    // min-height: 500px;
+    margin: 0 auto;
+    padding: 50px 0 80px 0;
+
+    @media screen and (max-width: 1620px) {
+        margin: 0 40px;
+
+        .sideBarHidden & {
+            margin: 0 auto;
+        }
+    }
+
+    @media screen and (max-width: 1380px) {
+        margin: 0 40px;
+
+        .sideBarHidden & {
+            margin: 0 40px;
+        }
+    }
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+h1 {
+    font-weight: 100;
+    color: $action-blue;
+    font-size: 40px;
+}
+
+.lightGrey {
+    color: #6d6d6d;
+}
+
+.darkGradientBg {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#20252b+0,000000+100 */
+    background: #20252b;
+    background: -moz-linear-gradient(-45deg, #20252b 0%, #000000 100%);
+    background: -webkit-linear-gradient(-45deg, #20252b 0%, #000000 100%);
+    background: linear-gradient(135deg, #20252b 0%, #000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20252b', endColorstr='#000000',GradientType=1 );
+    z-index: -1;
+}
+
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    -webkit-transform: translate3d(0, -50px, 0);
+    -ms-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+    -webkit-transition: -webkit-transform .5s ease-out;
+    -ms-transition: -webkit-transform .5s ease-out;
+    transition: transform .5s ease-out;
+}
+
+.pace.pace-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.pace .pace-progress {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 5px;
+    background: $action-blue;
+    pointer-events: none;
+}
+
+footer {
+    background: #101010;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .contentMain {
+        min-height: auto;
+        padding: 10px;
+
+        img {
+            max-width: 80px;
+            margin: 0 0 0 -20px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}

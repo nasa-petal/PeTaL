@@ -1,0 +1,61 @@
+{% for paper in papers %}
+    <div class="bird-abstract">
+        <h2><div> {{paper[2] | safe}} </div></h2>
+        <div id="bird-abstract-details">
+            <strong class="larger-font">{{paper[1]}}</strong>
+            <p>Relevancy Factor: {{paper[0]}}%</p>
+        </div>
+        <div class="panel expandable-text" data-collapse-limit="500">{{paper[3]}}</div>
+        <div id="bird-abstract-footer">
+            <p><a href= {{''.join([paper[4]])}} target='_blank'>External Article Link</a></p>
+            <p>DOI: <a href= {{"https://www.doi.org/" ~ paper[5]}} target='_blank'> {{paper[5]}}</a></p>            
+        </div>
+        <br>
+        <br>
+    </div>
+{% endfor %}
+
+<!-- See _bird.scss for styling -->
+
+<script>
+    $(document).ready(function() {
+        let expandText = "Read More";
+        let collapseText = "Read Less";
+        debugger;
+        
+        $('.expandable-text').each(function() {
+            let content = $(this).html();
+            let collapseLimit = $(this).data('collapse-limit');
+            
+            if (content.length > collapseLimit) {
+                let contentSubstring = content.substr(0, collapseLimit); //cut off opening <p>
+                let expandedContent = $("<p></p>").html(content);
+
+                if (contentSubstring.substring(0, 3) == "<p>")
+                    contentSubstring = contentSubstring.substr(3, contentSubstring.length);
+
+                contentSubstring += "...";
+                
+                let previewContent = $("<p></p>").html(contentSubstring);
+               
+                $(this).empty();
+                $(this).append($('<span />').addClass("collapsed-content").html(previewContent));
+                $(this).append($('<span />').addClass('expanded-content').html(expandedContent));
+                $(this).append($('<button />').addClass('trigger').html(expandText));
+
+            }
+        });
+
+        $(".expandable-text .trigger").click(function() {          
+            if ($('.expanded-content').is(":visible")) {
+                $(this).html(expandText);
+            } 
+            else {
+                $(this).html(collapseText);
+            }
+            
+            $(this).siblings('.collapsed-content').toggle();
+            $(this).siblings('.expanded-content').toggle();
+        });
+    });
+</script>
