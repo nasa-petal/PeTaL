@@ -4,3 +4,10 @@ pyLDAvis==2.1.2
 gunicorn==19.9.0
 rdflib==4.2.2
 spaCy==2.1.3
+
+flask
+flask_sqlalchemy
+networkx
+keras
+nltk
+sklearn
