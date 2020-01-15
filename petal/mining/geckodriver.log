@@ -44,3 +44,196 @@ JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/script
 JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 2: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
 JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 150: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
 JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 28: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+1579122487209	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileD9SNf7"
+1579122487887	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579122487887	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579122487887	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579122487887	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1579122490140	Marionette	INFO	Listening on port 42273
+1579122490180	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 230: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 257: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 59: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 31: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 76: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 124: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 19: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 537: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 255: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 32: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 303: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 240: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 162: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 93: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 41: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 152: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 171: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 36: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 81: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 158: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 75: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 43: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 52: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 34: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 705: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 258: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 135: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 179: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 173: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 2: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 150: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 28: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+1579122573969	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileId0FqW"
+1579122574708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579122574708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579122574708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579122574708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1579122577013	Marionette	INFO	Listening on port 45333
+1579122577057	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 230: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 257: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 59: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 31: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 76: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 124: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 19: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 537: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 255: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 32: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 303: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 240: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 162: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 93: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 41: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 152: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 171: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 36: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 81: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 158: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 75: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 43: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 52: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 34: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 705: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 258: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 135: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 179: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 173: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 2: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 150: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 28: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+1579122590982	Marionette	INFO	Stopped listening on port 45333
+Gdk-Message: 14:10:16.242: firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1579122756761	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileWmeKH6"
+1579122757454	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579122757455	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579122757455	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579122757455	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1579122759694	Marionette	INFO	Listening on port 46411
+1579122759735	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 230: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 257: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 59: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 31: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 76: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 124: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 19: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 537: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 255: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 32: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 303: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 240: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 162: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 93: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 41: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 152: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 171: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 36: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 81: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 158: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 75: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 43: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 52: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 34: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 705: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 258: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 135: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 179: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 173: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 2: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 150: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 28: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+[Parent 13763, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /var/tmp/portage/www-client/firefox-68.1.0/work/firefox-68.1.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 727
+1579122777294	Marionette	INFO	Stopped listening on port 46411
+1579122960739	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletiaceP"
+1579122961392	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1579122961392	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1579122961392	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1579122961392	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1579122963593	Marionette	INFO	Listening on port 34021
+1579122963604	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 230: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 257: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 59: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 31: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 76: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 124: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 19: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 537: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 255: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 32: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 303: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 240: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 162: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 93: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 41: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 152: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 22: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 171: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 36: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 87: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 81: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 158: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 75: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 43: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 52: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 34: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 705: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 66: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 258: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 135: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 179: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 173: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 2: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 150: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://www.catalogueoflife.org/annual-checklist/2019/scripts/library/dojo/dojo/dojo.js, line 28: Using //@ to indicate sourceURL pragmas is deprecated. Use //# instead
+1579122977189	Marionette	INFO	Stopped listening on port 34021
