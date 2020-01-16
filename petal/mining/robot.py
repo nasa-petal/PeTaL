@@ -24,14 +24,29 @@ def expand(node):
     parent = get_parent(node)
     return parent.find_elements_by_class_name('dijitTreeExpandoClosed')
 
+def parse_link(link):
+    # TODO
+    return 'parsed'
+
 def recursive_expand(node, depth=0):
+    parent = get_parent(node)
     name = get_name(node, depth)
     # Special cases for first two levels and for last level
     collected = []
     children = expand(node)
-    for child in children:
-        found = recursive_expand(child, depth=depth+1)
-        collected.extend([(name,) + f for f in found])
+    if depth == 5:
+        links = parent.find_elements_by_tag_name('a')
+        for i in range(len(links) // 2):
+            pair = links[i], links[i + 1]
+            # temporary
+            pair = links[i + 1]
+            collected.append(pair)
+    else:
+        for child in children:
+            found = recursive_expand(child, depth=depth+1)
+            collected.extend([(name,) + f for f in found])
+    if depth < 2:
+        node.click()
     return collected
 
 def get_name(node, depth=0, prefix='node-'):
@@ -51,21 +66,23 @@ def main():
         driver = webdriver.Firefox()
         driver.get(url)
 
-        kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
-        for kingdom in kingdoms:
-            k_name = get_name(kingdom, depth=0)
-            phylums = expand(kingdom)
-            for phylum in phylums:
-                p_name = get_name(phylum, depth=1)
-                classes = expand(phylum)
-                for c in classes:
-                    class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
-                    print(class_species_long_form)
-                phylum.click()
-            kingdom.click()
+        mined = recursive_expand(driver, depth=0)
+        #kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
+        #for kingdom in kingdoms:
+        #    k_name = get_name(kingdom, depth=0)
+        #    phylums = expand(kingdom)
+        #    for phylum in phylums:
+        #        p_name = get_name(phylum, depth=1)
+        #        classes = expand(phylum)
+        #        for c in classes:
+        #            class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
+        #            print(class_species_long_form)
+        #            1/0
+        #        phylum.click()
+        #    kingdom.click()
 
         return
-        html = driver.page_source
+        #html = driver.page_source
         # Cache HTML
         with open(cache_file, 'w') as outfile:
             outfile.write(html)
