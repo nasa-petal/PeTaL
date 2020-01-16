@@ -11,9 +11,9 @@ year = '2019'
 url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(year)
 cache_file = 'cached_catalogue_of_life.html'
 
-sleep_time = 1
+sleep_time = 0.2
 
-name_map = ['', 'phylum', 'class', 'order', 'family', 'genus']
+name_map = ['', 'phylum', 'class', 'order', 'family', 'genus', 'genus']
 
 def get_parent(node):
     return node.find_element_by_xpath('../..')
