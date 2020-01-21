@@ -5,15 +5,27 @@ from time import sleep
 
 from pprint import pprint
 
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import ElementNotInteractableException
+
 import sys, re, os
+
+import pickle
 
 year = '2019'
 url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(year)
 cache_file = 'cached_catalogue_of_life.html'
 
-sleep_time = 0.1
+sleep_time = 0.01
 
 name_map = ['', 'phylum', 'class', 'order', 'family', 'genus', 'genus']
+
+def load_click(node):
+    try:
+        node.click()
+    except ElementNotInteractableException:
+        sleep(sleep_time)
+        load_click(node)
 
 def get_parent(node):
     try:
@@ -23,8 +35,7 @@ def get_parent(node):
 
 def expand(node):
     try:
-        node.click()
-        sleep(sleep_time)
+        load_click(node)
     except AttributeError:
         pass
     parent = get_parent(node)
@@ -38,6 +49,10 @@ def recursive_expand(node, depth=0):
     collected = []
     parent = get_parent(node)
     name = get_name(node, depth)
+    if depth == 3:
+        print('    ' + name, flush=True)
+    elif depth == 4:
+        print('        ' + name, flush=True)
     children = expand(node)
     # Terminal case
     if depth >= 5:
@@ -51,14 +66,13 @@ def recursive_expand(node, depth=0):
             found = recursive_expand(child, depth=depth+1)
 
             collected.extend([(name,) + f for f in found])
-    # Collapse kingdom and phylum after use to save resources
-    if depth < 2 and depth > 0:
-        node.click()
+    # Collapse to save resources
+    node.click()
     return collected
 
 def get_name(node, depth=0, prefix='node-'):
     parent   = get_parent(node)
-    element  = parent.find_element_by_class_name(prefix + name_map[depth])
+    element  = parent.find_element_by_class_name('nodeLabel')#prefix + name_map[depth])
     return parse_tag(element)
 
 def main():
@@ -72,27 +86,29 @@ def main():
         driver = webdriver.Firefox()
         driver.get(url)
 
-        kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
-        for kingdom in kingdoms:
-            k_name = get_name(kingdom, depth=0)
-            phylums = expand(kingdom)
-            for phylum in phylums:
-                p_name = get_name(phylum, depth=1)
-                classes = expand(phylum)
-                for c in classes:
-                    class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
-                    #pprint(class_species_long_form)
-                    print(class_species_long_form[-1])
-                    1/0
-                phylum.click()
-            kingdom.click()
-
-        return
-        #html = driver.page_source
-        # Cache HTML
-        with open(cache_file, 'w') as outfile:
-            outfile.write(html)
-        driver.quit()
+        try:
+            kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
+            for kingdom in kingdoms:
+                k_name = get_name(kingdom, depth=0)
+                phylums = expand(kingdom)
+                for phylum in phylums:
+                    p_name = get_name(phylum, depth=1)
+                    classes = expand(phylum)
+                    for c in classes:
+                        c_name = get_name(c, depth=2)
+                        class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
+                        class_species_long_form = [(k_name, p_name) + t for t in class_species_long_form]
+                        filename = 'data/' + k_name + '_' + p_name + '_list.pkl'
+                        print('{} {} {}'.format(k_name, p_name, c_name), flush=True)
+                        with open(filename, 'wb') as outfile:
+                            pickle.dump(class_species_long_form, outfile)
+                    phylum.click()
+                kingdom.click()
+            driver.quit()
+        except KeyboardInterrupt:
+            stopping = k_name, p_name, c_name
+            with open('stopping_point.txt', 'w') as outfile:
+                outfile.write(stopping)
 
 if __name__ == '__main__':
     sys.exit(main())
