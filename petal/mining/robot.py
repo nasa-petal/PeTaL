@@ -17,12 +17,14 @@ url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(y
 cache_file = 'cached_catalogue_of_life.html'
 
 sleep_time = 0.01
+sleep_time = 0.5
 
 name_map = ['', 'phylum', 'class', 'order', 'family', 'genus', 'genus']
 
 def load_click(node):
     try:
         node.click()
+        sleep(sleep_time)
     except ElementNotInteractableException:
         sleep(sleep_time)
         load_click(node)
