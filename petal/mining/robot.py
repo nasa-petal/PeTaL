@@ -5,55 +5,75 @@ from time import sleep
 
 from pprint import pprint
 
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import ElementNotInteractableException
+
 import sys, re, os
+
+import pickle
 
 year = '2019'
 url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(year)
 cache_file = 'cached_catalogue_of_life.html'
 
-sleep_time = 1
+sleep_time = 0.01
 
-name_map = ['', 'phylum', 'class', 'order', 'family', 'genus']
+name_map = ['', 'phylum', 'class', 'order', 'family', 'genus', 'genus']
+
+def load_click(node):
+    try:
+        node.click()
+    except ElementNotInteractableException:
+        sleep(sleep_time)
+        load_click(node)
 
 def get_parent(node):
-    return node.find_element_by_xpath('../..')
+    try:
+        return node.find_element_by_xpath('../..')
+    except:
+        return node
 
 def expand(node):
-    node.click()
-    sleep(sleep_time)
+    try:
+        load_click(node)
+    except AttributeError:
+        pass
     parent = get_parent(node)
     return parent.find_elements_by_class_name('dijitTreeExpandoClosed')
 
-def parse_link(link):
-    # TODO
-    return 'parsed'
+def parse_tag(element):
+    tag = element.get_attribute('outerHTML')
+    return tag.split('>')[1].split('<')[0]
 
 def recursive_expand(node, depth=0):
+    collected = []
     parent = get_parent(node)
     name = get_name(node, depth)
-    # Special cases for first two levels and for last level
-    collected = []
+    if depth == 3:
+        print('    ' + name, flush=True)
+    elif depth == 4:
+        print('        ' + name, flush=True)
     children = expand(node)
-    if depth == 5:
+    # Terminal case
+    if depth >= 5:
         links = parent.find_elements_by_tag_name('a')
         for i in range(len(links) // 2):
-            pair = links[i], links[i + 1]
-            # temporary
-            pair = links[i + 1]
+            pair = (name, parse_tag(links[i + 1]))
             collected.append(pair)
+    # Normal case
     else:
         for child in children:
             found = recursive_expand(child, depth=depth+1)
+
             collected.extend([(name,) + f for f in found])
-    if depth < 2:
-        node.click()
+    # Collapse to save resources
+    node.click()
     return collected
 
 def get_name(node, depth=0, prefix='node-'):
     parent   = get_parent(node)
-    element  = parent.find_element_by_class_name(prefix + name_map[depth])
-    spanHTML = element.get_attribute('outerHTML')
-    return spanHTML.split('>')[1].split('<')[0]
+    element  = parent.find_element_by_class_name('nodeLabel')#prefix + name_map[depth])
+    return parse_tag(element)
 
 def main():
     # Load raw HTML of COL (ideally a one-off)
@@ -66,27 +86,29 @@ def main():
         driver = webdriver.Firefox()
         driver.get(url)
 
-        mined = recursive_expand(driver, depth=0)
-        #kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
-        #for kingdom in kingdoms:
-        #    k_name = get_name(kingdom, depth=0)
-        #    phylums = expand(kingdom)
-        #    for phylum in phylums:
-        #        p_name = get_name(phylum, depth=1)
-        #        classes = expand(phylum)
-        #        for c in classes:
-        #            class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
-        #            print(class_species_long_form)
-        #            1/0
-        #        phylum.click()
-        #    kingdom.click()
-
-        return
-        #html = driver.page_source
-        # Cache HTML
-        with open(cache_file, 'w') as outfile:
-            outfile.write(html)
-        driver.quit()
+        try:
+            kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
+            for kingdom in kingdoms:
+                k_name = get_name(kingdom, depth=0)
+                phylums = expand(kingdom)
+                for phylum in phylums:
+                    p_name = get_name(phylum, depth=1)
+                    classes = expand(phylum)
+                    for c in classes:
+                        c_name = get_name(c, depth=2)
+                        class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
+                        class_species_long_form = [(k_name, p_name) + t for t in class_species_long_form]
+                        filename = 'data/' + k_name + '_' + p_name + '_list.pkl'
+                        print('{} {} {}'.format(k_name, p_name, c_name), flush=True)
+                        with open(filename, 'wb') as outfile:
+                            pickle.dump(class_species_long_form, outfile)
+                    phylum.click()
+                kingdom.click()
+            driver.quit()
+        except KeyboardInterrupt:
+            stopping = k_name, p_name, c_name
+            with open('stopping_point.txt', 'w') as outfile:
+                outfile.write(stopping)
 
 if __name__ == '__main__':
     sys.exit(main())
