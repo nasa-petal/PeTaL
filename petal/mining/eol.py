@@ -23,6 +23,8 @@ def get_data_page(query):
 
 
 def read_data(page_url):
+    extracted = []
+
     data = get(page_url)
     processed = BeautifulSoup(data.text, 'html.parser')
     rows = processed.find_all(attrs={'class', 'js-data-row'})
@@ -35,17 +37,10 @@ def read_data(page_url):
         subdivs  = data_div.find_all('div')
         header = subdivs[0].find('div').text.strip()
         entry  = subdivs[1].text.strip()
-        processed =(nav, source_text, header, entry)
-        print(processed)
+        row_p = (nav, source_text, header, entry)
+        extracted.append(row_p)
+    return extracted
 
-def main():
-    # example = ('Animalia', 'Acanthocephala', 'Archiacanthocephala', 'Apororhynchida', 'Apororhynchidae', 'Apororhynchus', 'Apororhynchus aculeatus')
-    # print('Downloading data from EOL')
-    # species = example[-1]
-    species = 'Hapalochlaena lunulata'
-
-    page_url = get_data_page(species)
-    read_data(page_url)
-
-if __name__ == '__main__':
-    main()
+def search(query):
+    page_url = get_data_page(query)
+    return read_data(page_url)

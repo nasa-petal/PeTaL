@@ -11,6 +11,7 @@ from selenium.common.exceptions import ElementNotInteractableException
 import sys, re, os
 
 import pickle
+import json
 
 year = '2019'
 url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(year)
@@ -109,8 +110,8 @@ def main():
             driver.quit()
         except KeyboardInterrupt:
             stopping = k_name, p_name, c_name
-            with open('stopping_point.txt', 'w') as outfile:
-                outfile.write(stopping)
+            with open('metadata.json', 'w', encoding='utf-8') as outfile:
+                json.dump({'stopped' : stopping}, outfile, ensure_ascii=False, indent=4)
 
 if __name__ == '__main__':
     sys.exit(main())
