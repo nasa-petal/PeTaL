@@ -11,7 +11,7 @@ import petal.graph
 class ResNet():
     def __init__(self, model='ResNet50'):
         self.model = ResNet50()
-        self.graph = tf.get_default_graph()
+        self.graph = tf.compat.v1.get_default_graph()
     def classify(self,img, top=5):
         x = load_img(img, target_size=(224,224))
         x = img_to_array(x)
@@ -23,11 +23,11 @@ class ResNet():
         top *= -1
         top_indices = preds[0].argsort()[top:][::-1]
         return [{'label':pred[1], 'score':'{:.3f}%'.format(pred[2]*100)} for pred in decoded_preds[0]]
-    
+
 class GeoNet():
     def __init__(self, model='ResNet50'):
         self.model = load_model('petal/models/geonet.h5', custom_objects={'relu6': Activation('relu')})
-        self.graph = tf.get_default_graph()
+        self.graph = tf.compat.v1.get_default_graph()
         self.classes = ['branching', 'explosion', 'spiral', 'tile']
     def classify(self,img):
         x = load_img(img, target_size=(224,224), grayscale=True)

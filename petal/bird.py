@@ -25,7 +25,7 @@ def get_papers(tertiaryTerm):
             text = reader.read()
     except Exception as e:  # todo: figure out error handling
         print("Error opening file: " + str(e))
-        return None 
+        return None
 
     relevancy_denom = 0
     abstract_list = [y.strip() for y in text.split(sep=u'\n\n')]  # split abstracts apart
