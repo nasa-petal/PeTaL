@@ -18,7 +18,7 @@ def add_species_list(tx, species_list):
                 'name'    : name
                 }
         prop_field = '{' + ','.join('{key}: {{{key}}}'.format(key=k) for k in properties) + '}'
-        query = 'CREATE (Species ' + prop_field + ')'
+        query = 'CREATE (n:Species ' + prop_field + ')'
         tx.run(query, **properties)
                           
 def get_species_lists(root):
