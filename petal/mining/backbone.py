@@ -52,13 +52,9 @@ def recursive_expand(node, depth=0):
     collected = []
     parent = get_parent(node)
     name = get_name(node, depth)
-    if depth == 3:
-        print('    ' + name, flush=True)
-    elif depth == 4:
-        print('        ' + name, flush=True)
     children = expand(node)
     # Terminal case
-    if depth >= 5:
+    if len(children) == 0:
         links = parent.find_elements_by_tag_name('a')
         for i in range(len(links) // 2):
             pair = (name, parse_tag(links[i + 1]))
@@ -88,32 +84,7 @@ def main():
     else:
         driver = webdriver.Firefox()
         driver.get(url)
-
-        try:
-            kingdoms = driver.find_elements_by_class_name('dijitTreeExpandoClosed')
-            for kingdom in kingdoms:
-                k_name = get_name(kingdom, depth=0)
-                phylums = expand(kingdom)
-                for phylum in phylums:
-                    p_name = get_name(phylum, depth=1)
-                    classes = expand(phylum)
-                    for c in classes:
-                        c_name = get_name(c, depth=2)
-                        class_species_long_form = recursive_expand(c, depth=2) # Depth is a starting parameter
-                        class_species_long_form = [(k_name, p_name) + t for t in class_species_long_form]
-                        filename = 'data/' + k_name + '_' + p_name + '_list.pkl'
-                        print('{} {} {}'.format(k_name, p_name, c_name), flush=True)
-                        with open(filename, 'wb') as outfile:
-                            pickle.dump(class_species_long_form, outfile)
-                    phylum.click()
-                    break
-                kingdom.click()
-                break
-            driver.quit()
-        except KeyboardInterrupt:
-            stopping = k_name, p_name, c_name
-            with open('metadata.json', 'w', encoding='utf-8') as outfile:
-                json.dump({'stopped' : stopping}, outfile, ensure_ascii=False, indent=4)
+        recursive_expand(driver, depth=0)
 
 if __name__ == '__main__':
     sys.exit(main())
