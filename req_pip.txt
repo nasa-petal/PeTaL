@@ -12,3 +12,4 @@ keras
 nltk
 sklearn
 selenium
+tensorflow==2.0
