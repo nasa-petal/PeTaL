@@ -38,7 +38,8 @@ def get_parent(node):
 def expand(node):
     try:
         load_click(node)
-    except AttributeError:
+    except AttributeError as e:
+        print(e)
         pass
     parent = get_parent(node)
     return parent.find_elements_by_class_name('dijitTreeExpandoClosed')
@@ -105,7 +106,9 @@ def main():
                         with open(filename, 'wb') as outfile:
                             pickle.dump(class_species_long_form, outfile)
                     phylum.click()
+                    break
                 kingdom.click()
+                break
             driver.quit()
         except KeyboardInterrupt:
             stopping = k_name, p_name, c_name
