@@ -14,6 +14,8 @@ from neo4j import GraphDatabase
 uri = "bolt://localhost:7687"
 neoDriver = GraphDatabase.driver(uri, auth=("neo4j", "life"))
 
+from time import time
+
 import sys, re, os
 
 from pprint import pprint
@@ -23,6 +25,7 @@ url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(y
 cache_file = 'cached_catalogue_of_life.html'
 
 sleep_time = 0.01
+start_time = time()
 
 def add_species(tx, properties, pair):
     catalog_source, name = pair
@@ -37,11 +40,13 @@ def load_click(node):
         node.click()
         sleep(sleep_time)
     except ElementClickInterceptedException:
-        sleep(sleep_time)
-        load_click(node)
+        sleep(sleep_time * 10)
+        node.click()
+        # load_click(node)
     except ElementNotInteractableException:
-        sleep(sleep_time)
-        load_click(node)
+        sleep(sleep_time * 10)
+        node.click()
+        # load_click(node)
 
 def get_parent(node):
     try:
@@ -61,19 +66,47 @@ def parse_tag(element):
     try:
         tag = element.get_attribute('outerHTML')
         return tag.split('>')[1].split('<')[0]
-    except AtrtibuteError as e:
+    except AttributeError as e:
         print(e)
         pass
 
-def recursive_expand(node, depth=0, properties=None, session=None):
+def restart_to(node=None, properties=None):
+    if node is None:
+        driver = webdriver.Firefox()
+        node = driver
+        node.get(url)
+    else:
+        driver = None
+    children = expand(node)
+    if len(properties) == 0:
+        node.click()
+        return driver, node
+    for child in children:
+        name_tup = get_name_tuple(child)
+        if name_tup in properties.items():
+            properties.pop(name_tup[0])
+            return driver, restart_to(node=child, properties=properties)[1]
+    print('Properties not found', properties)
+    return driver, node
+
+def get_kps(node, depth=0):
+    if depth == 0:
+        children = expand(node)
+        return [item for phylum in [get_kps(child, depth=depth+1) for child in children] for item in phylum]
+    else:
+        rank, name = get_name_tuple(node)
+        if depth == 2:
+            return name
+        if depth == 1:
+            children = expand(node)
+            return [(name, get_kps(child, depth=depth+1)) for child in children]
+
+def recursive_expand(node, depth=0, properties=None, total=0):
     if properties is None:
         properties = dict()
     if depth != 0:
         parent = get_parent(node)
-        rank, name = get_name_tuple(node, depth)
-        rank = rank.strip()
-        if rank == '':
-            rank = 'Kingdom'
+        rank, name = get_name_tuple(node)
         properties[rank] = name
     children = expand(node)
     # Terminal case
@@ -82,29 +115,33 @@ def recursive_expand(node, depth=0, properties=None, session=None):
             links = parent.find_elements_by_tag_name('a')
             for i in range(len(links) // 2):
                 j = i * 2
-                try:
-                    pair = (parse_tag(links[j]), parse_tag(links[j + 1]))
-                    session.read_transaction(add_species, properties, pair)
-                except Exception as e: # Why? Because this program must run for four hours and cannot stop on each edge case bug.
-                    print(e)
+                pair = (parse_tag(links[j]), parse_tag(links[j + 1]))
+                session.read_transaction(add_species, properties, pair)
+                total += 1
+        duration = time() - start_time
+        rate = round(total/duration, 2)
+        print('    ETA: {} hours'.format(1800000 / rate / 3600))
+        print('    Processed {} species at {} species per second for {} total seconds'.format(total, rate, round(duration, 2)), flush=True)
     # Normal case
     else:
         for child in children:
-            try:
-                recursive_expand(child, depth=depth + 1, properties=properties, session=session)
-            except Exception as e: # Why? Because this program must run for four hours and cannot stop on each edge case bug.
-                print(e)
+            total = recursive_expand(child, depth=depth + 1, properties=properties, total=total)
     # Collapse to save resources
     if depth > 0:
         properties.pop(rank) 
         node.click()
+    return total
 
-def get_name_tuple(node, depth=0, prefix='node-'):
+def get_name_tuple(node, prefix='node-'):
     try:
         parent = get_parent(node)
         name   = parent.find_element_by_class_name('nodeLabel')
         rank   = parent.find_element_by_class_name('rank')
-        return parse_tag(rank), parse_tag(name)
+        rank = parse_tag(rank).strip()
+        name = parse_tag(name).strip()
+        if rank == '':
+            rank = 'Kingdom'
+        return rank, name
     except NoSuchElementException:
         link = parent.find_element_by_tag_name('a')
         return 'SuperSpecies', parse_tag(link)
@@ -112,7 +149,15 @@ def get_name_tuple(node, depth=0, prefix='node-'):
 def main():
     driver = webdriver.Firefox()
     driver.get(url)
-    recursive_expand(driver, depth=0)
+    kps = get_kps(driver)
+    driver.close()
+
+    total = 0
+    for kingdom, phylum in kps:
+        properties = {'Kingdom' : kingdom, 'Phylum' : phylum}
+        driver, init = restart_to(properties=properties)
+        total = recursive_expand(init, depth=2, total=total)
+        driver.close()
 
 if __name__ == '__main__':
     sys.exit(main())
