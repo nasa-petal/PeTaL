@@ -20,6 +20,8 @@ import sys, re, os
 
 from pprint import pprint
 
+from multiprocessing import Value, Process
+
 year = '2019'
 url = 'https://www.catalogueoflife.org/annual-checklist/{}/browse/tree'.format(year)
 cache_file = 'cached_catalogue_of_life.html'
@@ -86,7 +88,7 @@ def restart_to(node=None, properties=None):
         if name_tup in properties.items():
             properties.pop(name_tup[0])
             return driver, restart_to(node=child, properties=properties)[1]
-    print('Properties not found', properties)
+    # print('Properties not found', properties)
     return driver, node
 
 def get_kps(node, depth=0):
@@ -101,7 +103,7 @@ def get_kps(node, depth=0):
             children = expand(node)
             return [(name, get_kps(child, depth=depth+1)) for child in children]
 
-def recursive_expand(node, depth=0, properties=None, total=0):
+def recursive_expand(node, depth=0, properties=None, total=None):
     if properties is None:
         properties = dict()
     if depth != 0:
@@ -111,17 +113,14 @@ def recursive_expand(node, depth=0, properties=None, total=0):
     children = expand(node)
     # Terminal case
     if len(children) == 0:
-        with neoDriver.session() as session:
-            links = parent.find_elements_by_tag_name('a')
-            for i in range(len(links) // 2):
-                j = i * 2
-                pair = (parse_tag(links[j]), parse_tag(links[j + 1]))
-                session.read_transaction(add_species, properties, pair)
-                total += 1
-        duration = time() - start_time
-        rate = round(total/duration, 2)
-        print('    ETA: {} hours'.format(1800000 / rate / 3600))
-        print('    Processed {} species at {} species per second for {} total seconds'.format(total, rate, round(duration, 2)), flush=True)
+        with total.get_lock():
+            with neoDriver.session() as session:
+                links = parent.find_elements_by_tag_name('a')
+                for i in range(len(links) // 2):
+                    j = i * 2
+                    pair = (parse_tag(links[j]), parse_tag(links[j + 1]))
+                    session.read_transaction(add_species, properties, pair)
+                    total.value += 1
     # Normal case
     else:
         for child in children:
@@ -146,18 +145,48 @@ def get_name_tuple(node, prefix='node-'):
         link = parent.find_element_by_tag_name('a')
         return 'SuperSpecies', parse_tag(link)
 
+
+def run_kp(kp, total=None):
+    kingdom, phylum = kp
+    properties = {'Kingdom' : kingdom, 'Phylum' : phylum}
+    driver, init = restart_to(properties=properties)
+    total = recursive_expand(init, depth=2, total=total)
+    driver.close()
+
 def main():
     driver = webdriver.Firefox()
     driver.get(url)
     kps = get_kps(driver)
     driver.close()
 
-    total = 0
-    for kingdom, phylum in kps:
-        properties = {'Kingdom' : kingdom, 'Phylum' : phylum}
-        driver, init = restart_to(properties=properties)
-        total = recursive_expand(init, depth=2, total=total)
-        driver.close()
+    total = Value('i', 0)
+    total.value = 0
+
+    unstarted = []
+    for kp in kps:
+        unstarted.append(Process(target=run_kp, args=(kp,), kwargs={'total' : total}))
+
+    max_running = 6
+    running = []
+    finished = []
+    done = False
+    while not done:
+        sleep(.1)
+        with total.get_lock():
+            if total.value > 0:
+                duration = time() - start_time
+                rate = round(total.value/duration, 2)
+                print('    ETA: {} hours'.format(1800000 / rate / 3600))
+                print('    Processed {} species at {} species per second for {} total seconds'.format(total, rate, round(duration, 2)), flush=True)
+        for item in running:
+            if not item.is_alive():
+                finished.append(item)
+        running = [item for item in running if item.is_alive()]
+        if len(running) < max_running:
+            next_to_run = unstarted.pop()
+            next_to_run.start()
+            running.append(next_to_run)
+        done = len(running) == 0 and len(unstarted) == 0
 
 if __name__ == '__main__':
     sys.exit(main())
