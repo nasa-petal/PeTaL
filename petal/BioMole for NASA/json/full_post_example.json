@@ -1,0 +1,81 @@
+{
+  "post_id": 83411,
+  "post_type": "strategy",
+  "post_type_label": "Biological Strategies",
+  "post_title": "Microstructures create color : Mason Bees, Carpenter Bees",
+  "post_excerpt": "<p>Tiny microstructures create color through light scattering, instead of with traditional pigments.</p>\n",
+  "post_date": 1554075018,
+  "post_date_formatted": "March 31, 2019",
+  "post_modified": 1555343673,
+  "comment_count": 0,
+  "menu_order": 0,
+  "post_author": {
+    "user_id": 51292,
+    "display_name": "Holly Kerstiens",
+    "user_url": "",
+    "user_login": "hollykerstiens",
+    "profile_url": "https://asknature.org/author/hollykerstiens/",
+    "avatar": "<img src=\"https://asknature.org/wp-content/bp-avatars/avatars/51292/5c993a50ecbcb-bpthumb.png\" class=\"avatar user-51292-avatar avatar-25 photo\" width=\"25\" height=\"25\" alt=\"Profile Photo\" />"
+  },
+  "images": {
+    "thumbnail": {
+      "url": "https://asknature.org/wp-content/uploads/2019/03/Xylocopa-Wing-150x150.jpg",
+      "width": 150,
+      "height": 150
+    }
+  },
+  "permalink": "https://asknature.org/strategy/microstructures-create-color/",
+  "post_mime_type": "",
+  "taxonomies": {
+    "life-form": [
+      "Mason Bees : Osmia",
+      "Carpenter Bees : Xylocopa"
+    ],
+    "function": [
+      "Modify light/color"
+    ],
+    "following_users": [
+      "hollykerstiens"
+    ],
+    "author": [
+      "hollykerstiens"
+    ]
+  },
+  "taxonomies_hierarchical": {
+    "function": {
+      "lvl0": [
+        "Modify"
+      ],
+      "lvl1": [
+        "Modify > Modify physical state"
+      ],
+      "lvl2": [
+        "Modify > Modify physical state > Modify light/color"
+      ]
+    }
+  },
+  "is_sticky": 0,
+  "thumbnail_url": "https://asknature.org/wp-content/uploads/2019/03/Xylocopa-Wing-300x200.jpg",
+  "sub_title": "Mason Bees : Osmia, Carpenter Bees : Xylocopa",
+  "singular_post_type_label": "Strategy",
+  "sources": {
+    "source_title": [
+      "Correlating Nanostructures with Function: Structural Colors on the Wings of a Malaysian Bee",
+      " Iridescence impairs object recognition in bumblebees",
+      " Structural Coloration in Nature"
+    ],
+    "source_link": [
+      "https://www.researchgate.net/publication/241532752_Correlating_Nanostructures_with_Function_Structural_Colors_on_the_Wings_of_a_Malaysian_Bee",
+      "https://www.nature.com/articles/s41598-018-26571-6",
+      "https://www.researchgate.net/publication/255772388_Structural_coloration_in_nature"
+    ],
+    "source_excerpt": [
+      "<p><span style=\"font-weight: 400\">“Further investigation concerning the colour-generating structures in  the carpenter bee wing will have to deal with the multi-functionality of the structures seen. The nanostructures in the bee wing serve various functions (such  as for example self-repair, colour generation, water resistivity, self-cleaning). Extracting the deep principles concerning the colour generation will assist future  man-made production of such colours. Since structural colours do not bleach, and no dies are involved in the production process, various technological applications, e.g., in clothing production (such  as batik) and smart colours for sensing applications, security labelling (such as spotting fake bank notes, [25]) or the manufacture of dynamic and vivid paints and coatings can be envisaged [32].” Matin et al., 2010:13</span></p>\n",
+      "<p><span style=\"font-weight: 400\">“In a similar way, iridescence creates changing colour and intensity boundaries, thereby disrupting the stable edge features normally used in object recognition: the brightness of iridescence may make (varying) parts of objects more conspicuous, but the changing colour patterns and boundaries could also deceive and confuse potential predators. This effect might be particularly acute in animals that lack the extensive upstream processing characteristic of the primate visual cortex.” Kjernsmo et al. 2018</span></p>\n",
+      "<p><span style=\"font-weight: 400\">“Nature’s color has three main sources: pigments, structural colors and bioluminescence. Structural color is aspecial one, which is the color produced by micro- or nano-structures, and is bright and dazzling. The mostcommon mechanisms of structural colors are film interference, diffraction grating, scattering and photoniccrystals. Biological colors are mainly derived from film interference, which includes thin-film and multi-filminterference.” Sun et al., 2013:14862</span></p>\n"
+    ]
+  },
+  "content": "There are two main ways an animal can get its colouration. An animal can produce its colour directly using pigments, or it can use tiny microstructures or nanostructures to scatter light into different wavelengths and produce structural colour. Pigment colour will always look the same, but structural colour often manifests as an iridescent colour that changes hue as you look at it from different angles. Adding compounds that disrupt the structures, like water or alcohol, will cause the animal's colour to lose its sheen, but the effect is reversed when the compound is removed. This concept is well explained in a video from National Geographic. \nMany bees from the Osmia genus have a brilliant iridescent blue shine. The wings of Malaysian carpenter bees have a brilliant purple and green colour, while sweat bees can also exhibit a blue sheen. All of these colours are caused not by pigments in the body, but by structures that cause light scattering. The wings of the Malaysian carpenter bee have three distinct layers, each with unique structures patterning them. Parts of the wing that shine purple and blue have distinctly different structures, but the functions of these structures are still unknown.\nBright colours could be used as a mating signal and are often in species with strong sexual dimorphism. Studies also suggest that bright, flashy signals with iridescent colours may confuse predators. Colour interferes with the ability to recognize shapes, which may impair a predators ability to distinguish its prey as food.\nThis information is also available from the University of Calgary Invertebrate collection, where it was curated as part of a study on design inspired by bees. ",
+  "record_index": 0,
+  "objectID": "83411-0"
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="mysvg" width="1900" height="950" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="gooeyCodeFilter">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" color-interpolation-filters="sRGB"
+                            result="blur"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                           result="gooey"></feColorMatrix>
+            <feBlend in="SourceGraphic" in2="gooey"></feBlend>
+        </filter>
+        <pattern id="diagonalHatch" width="20" height="20" patternTransform="rotate(45 0 0)"
+                 patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="20" style="stroke: rgb(170, 170, 170); stroke-width: 3;"></line>
+        </pattern>
+    </defs>
+    <g transform="translate(8.25,241)" style="filter: url('#gooeyCodeFilter');">
+        <g>
+            <rect class="paintedRect" x="0" y="38.83751651254954" width="146.25" height="72.32496697490092" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="146.25" y="48.05151915455746" width="146.25" height="53.89696169088508" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="292.5" y="0" width="146.25" height="150" rx="5" ry="5"
+                  style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="438.75" y="37.45046235138706" width="146.25" height="75.09907529722588" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="585" y="56.17569352708058" width="146.25" height="37.64861294583884" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="731.25" y="49.43857331571995" width="146.25" height="51.1228533685601" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="877.5" y="63.01188903566711" width="146.25" height="23.976221928665787" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+        <g>
+            <rect class="paintedRect" x="1023.75" y="66.6776750330251" width="146.25" height="16.6446499339498" rx="5"
+                  ry="5" style="pointer-events: all; fill: rgb(183, 55, 121);"></rect>
+        </g>
+    </g>
+
+    <g transform="translate(73,600)" style="filter: url('#gooeyCodeFilter');">
+        <g transform="translate(0,36)">
+            <circle class="paintedRect" cx="0" cy="38.83751651254954" r="84.8528137423857"></circle>
+        </g>
+        <g transform="translate(0,27)">
+            <circle class="paintedRect" cx="146.25" cy="48.05151915455746" r="73.48469228349534"></circle>
+        </g>
+        <g transform="translate(0,75)">
+            <circle class="paintedRect" cx="292.5" cy="0" r="122.4744871391589" ></circle>
+        </g>
+        <g transform="translate(0,38)">
+            <circle class="paintedRect" cx="438.75" cy="37.45046235138706" r="86.60254037844386"></circle>
+        </g>
+        <g transform="translate(0,19)">
+            <circle class="paintedRect" cx="585" cy="56.17569352708058" r="61.64414002968976"></circle>
+        </g>
+        <g transform="translate(0,26)">
+            <circle class="paintedRect" cx="731.25" cy="49.43857331571995" r="71.4142842854285"></circle>
+        </g>
+        <g transform="translate(0,12)">
+            <circle class="paintedRect" cx="877.5" cy="63.01188903566711" r="48.98979485566356"></circle>
+        </g>
+        <g transform="translate(0,8)">
+            <circle class="paintedRect" cx="1023.75" cy="66.6776750330251" r="41.23105625617661"></circle>
+        </g>
+    </g>
+</svg>
