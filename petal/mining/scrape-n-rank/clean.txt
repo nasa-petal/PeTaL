@@ -1,0 +1,1750 @@
+Acacia
+Acacia longifolia
+Acari
+Accipitriformes
+Acer
+Acer pseudoplatanus
+Acinonyx
+Acinonyx jubatus
+Acrocomia
+Acrocomia aculeata
+Acropora
+Actinidia
+Aedes
+Aedes aegypti
+Aesculus
+Aesculus hippocastanum
+Aethionema
+Agave
+Agave tequilana
+Agropyron
+Aiptasia
+Aiptasia pallida
+Akkermansia
+Akkermansia muciniphila
+Alligator
+Alligator mississippiensis
+Allium
+Allium sativum
+Allomyces
+Alternaria
+Alternaria alternata
+Amaranthaceae
+Amaranthus
+Amaranthus tuberculatus
+Ambystoma
+Ambystoma mexicanum
+American Bullfrog
+American chestnut
+American cockroach
+Ammonia
+Amphibians
+Amphiuma
+Amphiuma tridactylum
+Anabaena
+Anabas
+Anabas testudineus
+Andromeda
+Anemia
+Anguilla
+Anguilla anguilla
+Animal
+Anisakis
+Anisoptera
+Anna
+Annelida
+Anolis
+Anolis equestris
+Anopheles
+Anopheles gambiae
+Anthoceros
+Anthoceros punctatus
+Antirrhinum
+Antirrhinum majus
+Aphelenchoides
+Aphelenchoididae
+Apiaceae
+Apis
+Apis mellifera
+Apocyclops
+Apteronotus
+Apteronotus leptorhynchus
+Arabidopsis
+Arabidopsis thaliana
+Arabis
+Arabis alpina
+Arachis
+Arachis hypogaea
+Arachnida
+Araneae
+Araneidae
+Archaea
+Archaeoglobus
+Archaeoglobus fulgidus
+Arecales
+Argiope
+Argiope aurantia
+Armoracia
+Armoracia rusticana
+Artemia
+Artemia franciscana
+Ascomycota
+Asellidae
+Astatotilapia
+Astatotilapia burtoni
+Asteraceae
+Astyanax
+Astyanax fasciatus
+Atelopus
+Athyrium
+Athyrium filix-femina
+Atlantic salmon
+Atria
+Atta
+Atta sexdens
+Aulacoseira
+Aulacoseira islandica
+Austrofundulus
+Austrofundulus limnaeus
+Avicennia
+Avicennia germinans
+Azolla
+Azolla filiculoides
+Bacillus
+Bacillus amyloliquefaciens
+Bacillus subtilis
+Bacillus thuringiensis
+Bacteria
+Bacteroidales
+Bacteroides
+Bacteroides acidifaciens
+Bacteroides fragilis
+Bacteroidetes
+Balaenoptera
+Balaenoptera physalus
+Balistidae
+Bergia
+Beringia
+Beta
+Beta vulgaris
+Betula
+Betula alleghaniensis
+Betula pendula
+Betula platyphylla
+Betula pubescens
+Bias
+Bifidobacterium
+Bifidobacterium longum
+Birds
+Blattella
+Blattella germanica
+Bluegill
+Bombus
+Bombus impatiens
+Bombus terrestris
+Bombycoidea
+Bombyx
+Bombyx mori
+Boraginaceae
+Borrelia
+Borrelia burgdorferi
+Botryococcus
+Botryococcus braunii
+Botrytis
+Brachyhypopomus
+Brachypodium
+Brachypodium distachyon
+Braconidae
+Bradyrhizobium
+Bradyrhizobium japonicum
+Branchiostoma
+Branchiostoma floridae
+Brassica
+Brassica napus
+Brassica nigra
+Brassica oleracea
+Brassica rapa
+Brassicaceae
+Brassicales
+Brevundimonas
+Bromeliaceae
+Brucella
+Brucella melitensis
+Bryopsis
+Burkholderia
+Burkholderia pseudomallei
+Caenorhabditis
+Caenorhabditis elegans
+Cajanus
+Cajanus cajan
+Caladium
+Caladium bicolor
+California sea lions
+Caligus
+Caligus elongatus
+Calliphora
+Calliphora vicina
+Callosobruchus
+Calonectris
+Calonectris diomedea
+Calypso
+Camelina
+Camelina sativa
+Campanulaceae
+Camponotus
+Camponotus blandus
+Campylobacter
+Campylobacter jejuni
+Canaries
+Canary Island date palm
+Candida
+Candida albicans
+Cannabis
+Cannabis sativa
+Capicua
+Capitella
+Caprimulgiformes
+Capsicum
+Capsicum annuum
+Carabidae
+Carassius
+Carassius auratus
+Carassius carassius
+Cardamine
+Cardamine hirsuta
+Caretta
+Caretta caretta
+Carollia
+Carollia perspicillata
+Caryophyllaceae
+Cascadia
+Castanea
+Castanea dentata
+Castanopsis
+Cataglyphis
+Catharanthus
+Caulobacter
+Celleporella
+Ceratina
+Ceratina calcarata
+Ceratopteris
+Ceratopteris richardii
+Cerberus
+Channa
+Channa argus
+Chaos
+Cheetah
+Chelydra
+Chelydra serpentina
+Chenopodium
+Chenopodium quinoa
+Chiloscyllium
+Chiloscyllium plagiosum
+Chiloscyllium punctatum
+Chlamydomonas
+Chlamydomonas reinhardtii
+Chlorella
+Chlorella vulgaris
+Chlorophyceae
+Cicer
+Cicer arietinum
+Cichlidae
+Cimex
+Cimex lectularius
+Ciona
+Ciona intestinalis
+Citrullus
+Citrullus lanatus
+Citrus
+Citrus maxima
+Citrus medica
+Citrus reticulata
+Cladosiphon
+Clematis
+Clematis vitalba
+Clostridia
+Clostridiales
+Clostridium
+Clostridium botulinum
+Clostridium difficile
+Cnidaria
+Cocos
+Cocos nucifera
+Coleoptera
+Collinsella
+Collinsella aerofaciens
+Columba
+Columba livia
+Commelinales
+Copernicia
+Copernicia prunifera
+Corymbia
+Corynebacterium
+Corynebacterium diphtheriae
+Coryphaena
+Coryphaena hippurus
+Coturnix
+Coturnix chinensis
+Cotyledon
+Crassostrea
+Crassostrea gigas
+Crenicichla
+Cricetulus
+Cricetulus barabensis
+Crocus
+Crocus sativus
+Cryptosporidium
+Cryptosporidium parvum
+Ctenopharyngodon
+Ctenopharyngodon idella
+Cucumis
+Cucumis melo
+Cucumis sativus
+Culicidae
+Cunninghamia
+Cunninghamia lanceolata
+Cuphea
+Cyanobacteria
+Cycas
+Cycas revoluta
+Cyclopterus
+Cyclopterus lumpus
+Cymatogaster
+Cymatogaster aggregata
+Cynopterus
+Cynopterus sphinx
+Cyphoderris
+Cyphoderris monstrosa
+Cyprinus
+Cyprinus carpio
+Danio
+Danio rerio
+Daphne
+Daphnia
+Daphnia pulex
+Dascyllus
+Dascyllus marginatus
+Daucus
+Daucus carota
+Delphinapterus
+Delphinapterus leucas
+Dendroides
+Dendroides canadensis
+Dermestes
+Dermestes maculatus
+Desulfurella
+Desulfurella acetivorans
+Diadema
+Dicentrarchus
+Dicentrarchus labrax
+Dickeya
+Dickeya dadantii
+Dictyota
+Dictyota dichotoma
+Diospyros
+Diospyros kaki
+Diptera
+Dosidicus
+Dosidicus gigas
+Drosophila
+Drosophila ananassae
+Drosophila immigrans
+Drosophila melanogaster
+Dryas
+Drymarchon
+Drymarchon couperi
+Dumetella
+Dumetella carolinensis
+Dunaliella
+Dunaliella bardawil
+Durio
+Durio zibethinus
+Ectocarpus
+Ectocarpus siliculosus
+Edwardsiella
+Edwardsiella tarda
+Eggerthella
+Eggerthella lenta
+Egregia
+Egregia menziesii
+Elaeis
+Elaeis guineensis
+Elysia
+Elysia viridis
+Emilia
+Emydura
+Emydura subglobosa
+Engraulis
+Engraulis mordax
+Enhydra
+Enhydra lutris
+Ensifera
+Enterobacteriaceae
+Enterococcus
+Enterococcus faecalis
+Enterococcus faecium
+Enterococcus gallinarum
+Eptesicus
+Eptesicus fuscus
+Eriocheir
+Eriocheir sinensis
+Escherichia
+Escherichia coli
+Eucalyptus
+Eucalyptus camaldulensis
+Eucalyptus cladocalyx
+Eucalyptus globulus
+Eucalyptus viminalis
+Eumetopias
+Eumetopias jubatus
+Euperipatoides
+Euperipatoides rowelli
+Eurosta
+Eurosta solidaginis
+Eurythoe
+Eurythoe complanata
+Eutrema
+Eutrema salsugineum
+Fabaceae
+Fagaceae
+Fagus
+Fagus sylvatica
+Ficus
+Ficus carica
+Ficus microcarpa
+Firmicutes
+Fisher
+Flaveria
+Folsomia
+Folsomia candida
+Formicidae
+Forsterygion
+Forsterygion lapillum
+Fragaria
+Fragaria vesca
+Fraxinus
+Fraxinus excelsior
+Fraxinus ornus
+Fucus
+Fucus vesiculosus
+Fundulus
+Fundulus heteroclitus
+Fusobacterium
+Fusobacterium nucleatum
+Gadus
+Gadus morhua
+Galaxea
+Galaxea fascicularis
+Galliformes
+Gambusia
+Gambusia affinis
+Gammaproteobacteria
+Gardnerella
+Gardnerella vaginalis
+German cockroach
+Geukensia
+Geukensia demissa
+Gila
+Girardia
+Girardia tigrina
+Glycine
+Glycine max
+Gnaphosidae
+Gnathonemus
+Gnathonemus petersii
+Gobiidae
+Gonium
+Gossypium
+Gossypium hirsutum
+Gracilaria
+Grampus
+Grampus griseus
+Gryllus
+Gryllus texensis
+Gymnotus
+Gynandropsis
+Gynandropsis gynandra
+Haberlea
+Haberlea rhodopensis
+Hakea
+Haliangium
+Haliangium ochraceum
+Haliotis
+Haliotis midae
+Halocynthia
+Harmonia
+Harmonia axyridis
+Harpegnathos
+Harpegnathos saltator
+Helianthus
+Helianthus annuus
+Helicobacter
+Helicobacter pylori
+Heliconius
+Heliconius erato
+Helicoverpa
+Heliobacterium
+Heliobacterium modesticaldum
+Heloderma
+Heloderma suspectum
+Hemiptera
+Hesperis
+Heterocephalus
+Heterocephalus glaber
+Hieracium
+Hippoboscidae
+Hippocampus
+Hippocampus erectus
+Holotrichia
+Hordeum
+Hordeum vulgare
+Humulus
+Humulus lupulus
+Hydra
+Hyla
+Hyla versicolor
+Hyles
+Hyles lineata
+Hymenoptera
+Ictalurus
+Ictalurus punctatus
+Ictidomys
+Ictidomys tridecemlineatus
+Iduna
+Inga
+Inia
+Inia geoffrensis
+Isurus
+Isurus oxyrinchus
+Ixodidae
+Japanese chess
+Jatropha
+Jatropha curcas
+Junonia
+Junonia coenia
+Kassina
+Kassina maculata
+Klebsiella
+Klebsormidium
+Klebsormidium flaccidum
+Kurixalus
+Kurixalus odontotarsus
+Lactobacillus
+Lactobacillus plantarum
+Lactobacillus reuteri
+Laguncularia
+Laguncularia racemosa
+Lamiaceae
+Lamprologus
+Lamprologus callipterus
+Lampropeltis
+Lasiopodomys
+Lasiopodomys brandtii
+Lasius
+Lasius niger
+Laurus
+Laurus nobilis
+Legionella
+Lens
+Lepeophtheirus
+Lepeophtheirus salmonis
+Lepidium
+Lepidoptera
+Leptinotarsa
+Leptinotarsa decemlineata
+Leucoraja
+Leucoraja erinacea
+Libellulidae
+Limax
+Limax valentianus
+Linepithema
+Linepithema humile
+Lippia
+Lippia alba
+Listeria
+Listeria monocytogenes
+Lithobates
+Lithobates catesbeianus
+Lithodes
+Lithodes maja
+Lo
+Loliginidae
+Lolium
+Lolliguncula
+Lolliguncula brevis
+Lottia
+Lottia digitalis
+Lotus
+Loxia
+Loxia curvirostra
+Lumbricus
+Lumbricus terrestris
+Lycopodium
+Lycopodium clavatum
+Lycosa
+Lycosa tarantula
+Lycosidae
+Lymnaea
+Lymnaea stagnalis
+Lyssomanes
+Lyssomanes viridis
+Macaca
+Macaca fascicularis
+Macrobrachium
+Macrostomum
+Macrostomum pusillum
+Madagascar periwinkle
+Malus
+Manacus
+Manacus vitellinus
+Manduca
+Manduca sexta
+Mantis
+Marchantia
+Marchantia polymorpha
+Marsupenaeus
+Marsupenaeus japonicus
+Matricaria
+Matta
+Medicago
+Medicago truncatula
+Megachile
+Megachile rotundata
+Megaptera
+Megaptera novaeangliae
+Meloidogyne
+Mentha
+Mercenaria
+Mercenaria mercenaria
+Merganetta
+Merganetta armata
+merlin
+Mesembryanthemum
+Mesembryanthemum crystallinum
+Mesorhizobium
+Mesorhizobium huakuii
+Mesorhizobium loti
+Messor
+Messor barbarus
+Methanosarcina
+Methanosarcina acetivorans
+Methanothermobacter
+Methanothermobacter wolfeii
+Methermicoccus
+Metriaclima
+Metriaclima benetos
+Mimulus
+Mimulus guttatus
+Miridae
+Mirounga
+Mirounga angustirostris
+Mirounga leonina
+Miscanthus
+Mnemiopsis
+Mnemiopsis leidyi
+Moloch
+Moloch horridus
+Monopterus
+Monopterus albus
+Mordacia
+Mordacia mordax
+Mordacia praecox
+Morpho
+Morus
+Morus serrator
+Mus
+Mus minutoides
+Mya
+Mya arenaria
+Mycobacterium
+Mycobacterium abscessus
+Mycobacterium leprae
+Mycobacterium marinum
+Mycobacterium smegmatis
+Mycobacterium tuberculosis
+Mycoplasma
+Mycoplasma gallisepticum
+Mylopharyngodon
+Mylopharyngodon piceus
+Myoxocephalus
+Myoxocephalus scorpius
+Myrmecia
+Myrmecia midas
+Myrmoteras
+Mysis
+Mysis relicta
+Mythimna
+Mytilus
+Mytilus californianus
+Mytilus edulis
+Mytilus galloprovincialis
+Mytilus trossulus
+Nasturtium
+Nasturtium officinale
+Neisseria
+Nematoda
+Nematostella
+Nematostella vectensis
+Nephelopsis
+Nephelopsis obscura
+Nephila
+Nephila pilipes
+Nephrolepis
+Nephrolepis exaltata
+Nephrops
+Nephrops norvegicus
+Nevada
+Nicotiana
+Nicotiana attenuata
+Nicotiana glauca
+Nicotiana langsdorffii
+Nicotiana suaveolens
+Nicotiana sylvestris
+Nicotiana tabacum
+Nile tilapia
+Nodularia
+Nodularia douglasiae
+Nomia
+Nomia melanderi
+Norway lobster
+Norway spruce
+Nostoc
+Nothofagus
+Nyctophilus
+Nyctophilus gouldi
+Ochotona
+Ochotona curzoniae
+Octopus
+Octopus vulgaris
+Olea
+Olea europaea
+Oleaceae
+Ommastrephidae
+Oncopeltus
+Oncopeltus fasciatus
+Oncorhynchus
+Oncorhynchus mykiss
+Ononis
+Ononis spinosa
+Onychomys
+Ophryotrocha
+Ophryotrocha labronica
+Opsanus
+Opsanus tau
+Oreochromis
+Oreochromis niloticus
+Oryza
+Oryza rufipogon
+Oryza sativa
+Oryzias
+Oryzias latipes
+Ostrinia
+Pachycladon
+Pacific hagfish
+Pacific oyster
+Pagurus
+Pagurus bernhardus
+Pan
+Panagrolaimus
+Panchlora
+Panicum
+Panicum virgatum
+Pantherophis
+Pantoea
+Pantoea stewartii
+Papaver
+Papaver rhoeas
+Papaver somniferum
+Papaveraceae
+Papilio
+Papilio xuthus
+Paracentrotus
+Paracentrotus lividus
+Paramecium
+Paraphrynus
+Paraphrynus laevifrons
+Paroedura
+Paroedura picta
+Parus
+Parus major
+Passer
+Passer domesticus
+Passeriformes
+Patella
+Patella vulgata
+Patiria
+Patiria miniata
+Pelodiscus
+Pelodiscus sinensis
+Penium
+Penium margaritaceum
+Perca
+Perca fluviatilis
+Perciformes
+Periophthalmus
+Periophthalmus barbarus
+Periplaneta
+Peromyscus
+Peromyscus californicus
+Peronospora
+Petromyzon
+Petromyzon marinus
+Petunia
+Petunia axillaris
+Petunia hybrida
+Phaeodactylum
+Phaeodactylum tricornutum
+Phaeophyta
+Phalacrocorax
+Phalacrocorax carbo
+Phaseolus
+Phaseolus vulgaris
+Phoca
+Phoca vitulina
+Phoenix
+Phoenix canariensis
+Phreatichthys
+Phreatichthys andruzzii
+Physalis
+Physarum
+Physarum polycephalum
+Physcomitrella
+Physcomitrella patens
+Phytophthora
+Phytophthora infestans
+Picea
+Picea abies
+Picea engelmannii
+Picea glauca
+Pichia
+Pieris
+Pieris rapae
+Pigeons
+Pinus
+Pinus contorta
+Pinus mugo
+Pinus palustris
+Pinus pinaster
+Pinus radiata
+Pinus sylvestris
+Pinus uncinata
+Pisaster
+Pisaster ochraceus
+Pisum
+Pisum sativum
+Pituophis
+Pituophis melanoleucus
+Pleodorina
+Plumeria
+Plumeria rubra
+Poaceae
+Poales
+Pocillopora
+Pocillopora damicornis
+Pocillopora verrucosa
+Poecilia
+Poecilia mexicana
+Poeciliidae
+Polistes
+Polyodon
+Polyodon spathula
+Polyorchis
+Polyorchis penicillatus
+Polypterus
+Polypterus senegalus
+Polystichum
+Polytoma
+Polytoma uvella
+Polytomella
+Pomacentridae
+Pomatoschistus
+Pomatoschistus pictus
+Poncirus
+Poncirus trifoliata
+Populus
+Populus alba
+Populus deltoides
+Populus nigra
+Populus tremula
+Populus tremuloides
+Populus trichocarpa
+Prevotella
+Pristionchus
+Proasellus
+Prophalangopsidae
+Propionibacterium
+Propionibacterium acnes
+Protozoa
+Prunus
+Prunus dulcis
+Puccinia
+Puccinia graminis
+Pycnonotus
+Pycnonotus sinensis
+Pyrochroidae
+Pyrus
+Pyrus pyrifolia
+Python
+Quercus
+Quercus petraea
+Quercus robur
+Quercus rubra
+Rana
+Ranunculaceae
+Raphanus
+Raphanus sativus
+Rhinecanthus
+Rhinecanthus aculeatus
+Rhinella
+Rhinella schneideri
+Rhizobiales
+Rhizobium
+Rhizobium leguminosarum
+Rhizobium tropici
+Rhizophora
+Rhizophora mangle
+Rhodnius
+Rhodnius prolixus
+Rhodobacter
+Rhodobacter sphaeroides
+Rhododendron
+Rhododendron ferrugineum
+Rhodothermus
+Rhodothermus marinus
+Ricinus
+Ricinus communis
+Rodentia
+Rosaceae
+Rosmarinus
+Rosmarinus officinalis
+Saccharomyces
+Saccharomyces cerevisiae
+Saccharum
+Saccharum officinarum
+Salicornia
+Salmo
+Salmo salar
+Salmo trutta
+Salmonella
+Salmonella bongori
+Salmonella enterica
+Salvelinus
+Salvelinus alpinus
+Salvelinus fontinalis
+Salvinia
+Santalum
+Santalum album
+Sarcocornia
+Sarcocornia fruticosa
+Saturniidae
+Saxicola
+Sceloporus
+Sceloporus undulatus
+Schiedea
+Schistocephalus
+Schistocephalus solidus
+Schistosoma
+Schistosoma mansoni
+Schmidtea
+Schmidtea mediterranea
+Scopus
+Scots pine
+Secale
+Secale cereale
+Sedum
+Selaginella
+Selenomonas
+Sepia
+Sepia officinalis
+Serratia
+Setaria
+Setaria italica
+Setaria viridis
+Setifer
+Setifer setosus
+Shewanella
+Shigella
+Shigella flexneri
+Silene
+Sinorhizobium
+Sistrurus
+Sistrurus miliarius
+Snakes
+Solanaceae
+Solanum
+Solanum glaucophyllum
+Solanum lycopersicum
+Solanum melongena
+Solanum pennellii
+Solanum pimpinellifolium
+Solanum tuberosum
+Solea
+Solea senegalensis
+Sorex
+Sorex araneus
+Sorghum
+Sorghum bicolor
+Sparus
+Sparus aurata
+Sphyrna
+Sphyrna lewini
+Sphyrna tiburo
+Spinibarbus
+Spodoptera
+Spodoptera frugiperda
+Squalus
+Squalus suckleyi
+Stagonospora
+Staphylococcus
+Staphylococcus aureus
+Stegastes
+Stegastes nigricans
+Stenella
+Stenella longirostris
+Stenella longirostris longirostris
+Strepsiptera
+Streptococcus
+Streptococcus gordonii
+Streptococcus pyogenes
+Streptococcus thermophilus
+Streptomyces
+Streptomyces albus
+Striga
+Striga hermonthica
+Styela
+Styela rustica
+Stylophora
+Stylophora pistillata
+Swietenia
+Swietenia macrophylla
+Symbiodinium
+Sympetrum
+Symphytum
+Symphytum officinale
+Synechococcus
+Synechococcus elongatus
+Synechocystis
+Tanacetum
+Tanytarsus
+Terminalia
+Tetragastris
+Tetrahymena
+Tetraodon
+Tettigoniidae
+Thalassiosira
+Thalassiosira pseudonana
+Thermosulfidibacter
+Thermosulfidibacter takaii
+Thermovibrio
+Thermovibrio ammonificans
+Thermus
+Thermus thermophilus
+Thoracophelia
+Thoracophelia mucronata
+Thrombus
+Thuja
+Thuja plicata
+Tityus
+Torenia
+Torenia fournieri
+Trialeurodes
+Trialeurodes vaporariorum
+Tribolium
+Tribolium castaneum
+Triticum
+Triticum aestivum
+Triticum turgidum
+Triticum urartu
+Tulipa
+Tulipa gesneriana
+Tursiops
+Tursiops truncatus
+Turtles
+Uca
+Uca pugilator
+Ulva
+Ulva rigida
+Uromastyx
+Uromastyx geyri
+Ursus
+Ursus americanus
+Ursus arctos
+Ursus arctos horribilis
+Valgus
+Varanus
+Varanus exanthematicus
+Varus
+Venus
+Vespa
+Vibrio
+Vibrio cholerae
+Vibrio parahaemolyticus
+Vibrio vulnificus
+Vicia
+Vicia hirsuta
+Victoria
+Vigna
+Vigna umbellata
+Villosa
+Villosa lienosa
+Villosa nebulosa
+Vipera
+Vipera aspis
+Vitis
+Vitis riparia
+Vitis vinifera
+Volvox
+Wolbachia
+Wolf
+Xanthomonas
+Xanthomonas campestris
+Xanthomonas oryzae
+Xenidae
+Xenopus
+Xenopus laevis
+Xenos
+Xenos peckii
+Xylocopinae
+Yersinia
+Yersinia pseudotuberculosis
+Zalophus
+Zalophus californianus
+Zea
+Zea mays
+Zebra
+Zingiberales
+Zonotrichia
+Zonotrichia leucophrys
+Zygaenidae
+Zygaenoidea
+abalone
+agave
+alfalfa
+alfalfa leafcutting bee
+anemone
+animals
+ants
+apple
+armyworm
+aroma
+arthropods
+ash
+badger
+bamboo
+barley
+bats
+bears
+bed bug
+bed bugs
+beech
+beet
+beetles
+birch
+black cottonwood
+black goby
+black mustard
+black poplar
+blue-eyes
+bottlebrush
+bottlenose dolphins
+branchiopods
+brown trout
+bumblebees
+butterflies
+butterfly
+cabbage
+camphor
+cane
+cassava
+castor
+caterpillars
+cats
+century plant
+chars
+chestnut
+chimaeras
+cichlids
+citron
+citrus
+clams
+cleaner fish
+clematis
+climbing perch
+clubmoss
+comfrey
+common snapping turtles
+conifers
+copepods
+corn
+cotton
+cottonwood
+crickets
+crocus
+crucian carp
+crustaceans
+cycad
+cycads
+daisy
+damselfish
+damselfishes
+date palm
+dock
+dogfish sharks
+domestic dog
+durian
+durum wheat
+elephant seals
+emmer
+eucalyptus
+fig
+fig wasps
+flat bugs
+flatworms
+fleas
+foxtail
+foxtail millet
+fruit flies
+fruit fly
+fungi
+ginseng
+glaucophytes
+gobies
+golden orb
+goldenrod
+goldfish
+grape
+grapes
+grasses
+gray poplar
+greater short-nosed fruit bat
+green algae
+green plants
+grunts
+gum
+harlequin
+hedgehogs
+hitch
+honey bee
+hornwort
+hornworts
+horse chestnut
+horseradish
+humpback whales
+indigo
+insects
+iris
+jellyfish
+killifishes
+kiwi
+kuruma shrimp
+lampreys
+land plants
+largemouth bass
+leafcutting bee
+leafcutting bees
+lemon
+lily
+lined ground squirrels
+liverworts
+locust
+locusts
+lumpfish
+macaques
+mahogany
+maize
+mako
+mammals
+man
+mangrove
+mangroves
+mantis shrimps
+marigold
+marijuana
+maritime pine
+marsh
+melon
+milkweed
+millipedes
+mint
+mollusks
+monocotyledons
+mosquito
+mosquitoes
+moths
+mountain pine
+mudskipper
+mustard
+myriapods
+nightshade
+northern anchovy
+oak
+oil palm
+olive
+opium poppy
+otters
+oyster toadfish
+paddlefish
+papaya
+parsley
+pea
+peach
+peanut
+pear
+pearl millet
+pepper
+peppermint
+peppers
+periwinkle
+petunia
+pigeons
+pigs
+pika
+pilot whales
+pine
+pines
+plants
+pond turtles
+poplar
+poppy
+porpoises
+pyrethrum
+queen
+quinine
+quinoa
+racehorses
+radiolarians
+radish
+rainbow trout
+rainbowfish
+rape
+red algae
+red flour beetle
+reindeer
+reptiles
+resurrection plant
+rhododendron
+rice
+rice bean
+river dolphins
+rocket
+rodents
+round gobies
+round goby
+runners
+rye
+saffron crocus
+sandalwood
+sandfish
+scalloped hammerhead
+scavengers
+sea bream
+sea lamprey
+sea lions
+sea otters
+sea urchins
+seagrass
+seahorse
+seahorses
+sensitive plant
+sharks
+shiner perch
+shortfin mako
+shorthorn sculpin
+shrimp
+smallmouth bass
+snails
+snakehead
+snapdragon
+sorghum
+sour orange
+soybean
+spiders
+spinach
+sponges
+spruce
+squirrels
+stag beetle
+stag beetles
+stingless bees
+stock
+strawberry
+sugarcane
+sunflower
+swamp eel
+sweet almond
+sweet orange
+switchgrass
+teosinte
+threefold
+threespine stickleback
+ticks
+toadfish
+tobacco
+toothed whales
+trips
+tulip
+turnip
+upland cotton
+urchins
+vascular plants
+vertebrates
+vetch
+violet
+voles
+walnuts
+wasps
+water striders
+watercress
+watermelon
+waterwort
+whales
+wheat
+whiptail
+white oak
+white spruce
+wild soybean
+wild tobacco
+wrasses
+yellow birch
+zebrafish
+fungus
+fish
+grape
+human
+bird
+zebra finch
+Acipenser
+Acipenser fulvescens
+Actinia
+Actinia equina
+Acutuncus
+Acutuncus antarcticus
+Akera
+Ameerega
+Ameerega trivittata
+American Crow
+Amphinomidae
+Anas
+Anas platyrhynchos
+Anura
+Aphis
+Apostichopus
+Apostichopus japonicus
+Apus
+Apus apus
+Ara
+Argentina
+Argentine ant
+Armadillidium
+Armadillidium vulgare
+Asterias
+Asterias rubens
+Astrangia
+Astrangia poculata
+Astronotus
+Astronotus ocellatus
+Astropecten
+Atacama
+Babina
+Babina daunchina
+Balanus
+Blue Jays
+Boa
+Boa constrictor
+Bovidae
+Bugula
+Bugula neritina
+California sea lion
+Callorhinchus
+Callorhinchus milii
+Calypte
+Calypte anna
+Camelidae
+Cancer borealis
+Carcharhiniformes
+Carnivora
+Castor
+Catostylus
+Catostylus mosaicus
+Ceratitis
+Ceratitis cosyra
+Chaenocephalus
+Chaenocephalus aceratus
+Chaetopteridae
+Charon
+Chiton
+Chiton tuberculatus
+Chrysomela
+Chymomyza
+Condylurini
+Conus
+Cottonmouth
+Craterostigmomorpha
+Crotalinae
+Crotalus
+Crotalus durissus
+Culex
+Culex quinquefasciatus
+Dasyuridae
+Dasyuromorphia
+Diabrotica
+Diabrotica balteata
+Diabrotica virgifera
+Diabrotica virgifera virgifera
+Distocyclus
+Distocyclus conirostris
+Drongos
+Dungeness crab
+Dytiscidae
+Emydidae
+Emys
+Emys orbicularis
+Encyrtidae
+English sole
+Eptatretus
+Eptatretus stoutii
+Errantia
+Eulophidae
+Frankliniella
+Frankliniella occidentalis
+Gadiformes
+Gasterosteus
+Gasterosteus aculeatus
+Genyochromis
+Genyochromis mento
+Geospiza
+Geospiza fortis
+Haemorhous
+Haemorhous mexicanus
+Heterandria
+Heterandria formosa
+Heterodera
+Heterodera schachtii
+Hipposideros
+Hipposideros armiger
+Hofstenia
+Hofstenia miamia
+Homarus
+Homarus americanus
+Hominidae
+Homo sapiens
+House Finch
+Labridae
+Lamina
+Lamniformes
+Latrodectus
+Leiocephalus
+Leiocephalus carinatus
+Lepomis
+Lepomis macrochirus
+Lepus
+Lepus americanus
+Leuciscus
+Leuciscus waleckii
+Libellula
+Libellula pulchella
+Limacina
+Limacina retroversa
+Limulus
+Limulus polyphemus
+Litopenaeus
+Litopenaeus vannamei
+Littorina
+Littorina obtusata
+Macropus
+Macropus fuliginosus
+Magelonidae
+Malaclemys
+Malaclemys terrapin
+Mastomys
+Micropterus
+Micropterus dolomieu
+Miniopterus
+Mochokidae
+Monodon
+Monodon monoceros
+Mourning Dove
+Myrmecobiidae
+Myrmecobius
+Myrmecobius fasciatus
+Myrmeleontidae
+Myxine
+Myxine glutinosa
+Myzostomida
+Myzus
+Myzus persicae
+Nesophontes
+Nesophontidae
+Nilaparvata
+Nilaparvata lugens
+Northern Cardinal
+Nosema
+Notoryctemorphia
+Notothenia
+Notothenia coriiceps
+Onychophora
+Ophiocoma
+Ophiocoma wendtii
+Orcinus
+Orcinus orca
+Orthoptera
+Osmia
+Oweniidae
+Pacific salmon
+Papio anubis
+Parasteatoda
+Parophrys
+Parophrys vetulus
+Pecten maximus
+Peramelemorphia
+Philaenus
+Philaenus spumarius
+Phodopus
+Phodopus sungorus
+Photinus
+Photinus pyralis
+Pinctada
+Pinctada margaritifera
+Plecotus
+Plecotus auritus
+Podarcis
+Podarcis muralis
+Polar Bear
+Porites
+Porites lobata
+Portunus
+Primates
+Protopterus
+Protopterus annectens
+Pseudo-nitzschia
+Pseudo-nitzschia multiseries
+Pseudomonas
+Pseudomonas aeruginosa
+Pseudomonas chlororaphis
+Pseudomonas syringae
+Pseudomugil
+Pseudomugil signifer
+Pterois
+Pterois volitans
+Pygopus
+Quasipaa
+Quasipaa spinosa
+Rhagovelia
+Rhinolophus
+Rhinolophus sinicus
+Rhizophagus
+Rhizostomeae
+Rhopalosiphum
+Rhopalosiphum maidis
+Rhoptropus
+Rhoptropus afer
+Salticidae
+Scalopini
+Scaptonyx
+Scincidae
+Sciurus
+Sciurus vulgaris
+Scombridae
+Scotinomys
+Scotinomys teguina
+Setophaga
+Setophaga petechia
+Siluriformes
+Sipuncula
+Sogatella
+Sogatella furcifera
+Solenodontidae
+Spalax
+Spalax carmeli
+Squamata
+Steatoda
+Steinernema
+Synodontis
+Taeniopygia
+Taeniopygia guttata
+Takifugu
+Takifugu obscurus
+Talpidae
+Talpini
+Tanzania
+Tenrec
+Tenrec ecaudatus
+Testudines
+Theridiidae
+Tibetan Macaque
+Timema
+Timema cristinae
+Trachemys
+Trachemys scripta
+Trachemys scripta elegans
+Tragelaphus
+Trichoplax
+Trichoplax adhaerens
+Trichoplusia
+Trichoplusia ni
+Triturus
+Uria
+Uria aalge
+Vespertilionidae
+Waterfowl
+annelids
+antlions
+bat flies
+bighorn sheep
+black widow
+bluehead
+bushbuck
+carnivores
+chimpanzees
+damselflies
+dingo
+doublet
+dragonflies
+eels
+fallow deer
+fliers
+garden eels
+giraffes
+goats
+gorilla
+harvesters
+hoppers
+lake sturgeon
+marsupials
+meadow spittlebug
+mink
+moles
+monk seals
+moose
+narwhals
+noctule
+orangutan
+orca
+planthoppers
+polar cod
+primates
+rose
+rosemary
+roses
+rufous horseshoe bat
+sculpins
+sea cucumbers
+sea otter
+sheep
+shrews
+silver carp
+siphonophores
+spiny lobsters
+sticklebacks
+stony corals
+swifts
+swimming crabs
+termites
+terrapins
+thrips
+torpedo
+treehoppers
+tunas
+vervet monkeys
+weevils
+wolves

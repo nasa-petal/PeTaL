@@ -1,0 +1,27 @@
+Highwire Current is a repository containing new publication information from a wide variety of journals accessed through secure file transfer. 
+Apply for a username and password by emailing  highwirecurrent@highwire.org 
+WinSCP is the easiest user interface to work with for windows secure file transfer in my opintion.
+The information is stored in xml format. Those xml files are contained in zip files, which have an abreviation followed by publication info. 
+The program takes in a list of these abreviations and only processes the zip files that match these abreviations. 
+
+
+to make the secure file transfer downloading faster: 
+
+1. 	select all the files on the right hand side under /incoming/ 
+2.	right click and select the ‘download’ menu and then select ‘download in background’
+3.	select ‘transfer settings’
+4.	select ‘configure’
+5.	select ‘background’ from the left hand menu 
+6.	under ‘maximal number of transfers at the same time’ bump it up a few notches. 9 worked for me but you can play around with it!
+
+
+USAGE GUIDELINES FOR DOWNLOADING HIGHWIRE DATA
+
+Those considering downloading data for redistribution should obtain an opinion from legal counsel for any use planned for the author-generated abstracts 
+in the HighWire Press® metadata repository to ensure compliance with intellectual property laws. HighWire Press cannot provide advice about copyright issues.
+
+Most material in the HighWire metadata repository is from copyrighted publications of the respective copyright claimants. 
+Users of the HighWire metadata repository are solely responsible for compliance with any copyright restrictions and are referred 
+to the publication data appearing in the bibliographic citations, as well as to the copyright notices appearing in the original publications, 
+all of which are hereby incorporated by reference. Those who search HighWire databases may download for personal use and may provide others 
+with a single copy of downloaded data. 
