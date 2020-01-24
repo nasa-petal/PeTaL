@@ -10,7 +10,7 @@ neo_client = GraphDatabase.driver(neo_uri, auth=("neo4j", "life"))
 import json
 
 def iter_species(tx, mapper):
-    species_result = tx.run('MATCH (n:Species) RETURN n')
+    species_result = tx.run('MATCH (n:Species) RETURN n LIMIT 10')
     species = species_result.records()
     for s in species:
         mapper(s['n'])
@@ -24,8 +24,13 @@ def count_species(tx):
 def mapper(species):
     name = species['Name']
     print('Mapper on species: ', name)
-    scholar_results = google_scholar_search(name + ' source:"journal of experimental biology"')
-    print(next(scholar_results))
+    scholar_results = google_scholar_search(name)
+    limit = 10
+    for i, article in enumerate(scholar_results):
+        print(i, flush=True)
+        if i == limit:
+            break
+        #print(article)
     return
     # results = eol_search(name)
 
