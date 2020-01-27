@@ -9,10 +9,13 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementNotInteractableException
 from selenium.common.exceptions import ElementClickInterceptedException
 
-from neo4j import GraphDatabase
+from neo4j import GraphDatabase, basic_auth
 
-uri = "bolt://localhost:7687"
-neoDriver = GraphDatabase.driver(uri, auth=("neo4j", "life"))
+# uri = "bolt://localhost:7687"
+# neoDriver = GraphDatabase.driver(uri, auth=("neo4j", "life"))
+
+neoDriver = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
+
 
 from time import time
 
@@ -29,13 +32,20 @@ cache_file = 'cached_catalogue_of_life.html'
 sleep_time = 0.01
 start_time = time()
 
+from neo import neo_add_json
+
 def add_species(tx, properties, pair):
-    catalog_source, name = pair
-    species_info = 'Name: {name},CatalogSource: {catalog_source}'
-    taxa_info = ','.join('{key}:{{{key}}}'.format(key=k) for k in properties)
-    prop_field = '{' + taxa_info + ', ' +  species_info + '}'
-    query = 'CREATE (n:Species ' + prop_field + ')'
-    tx.run(query, name=name, catalog_source=catalog_source, **properties)
+    ext_properties = {k : v for k, v in properties.items()}
+    ext_properties['Name'] = pair[1]
+    ext_properties['CatalogSource'] = pair[0]
+    neo_add_json(tx, label='Species', properties=ext_properties)
+    # catalog_source, name = pair
+    # species_info = 'Name: {name},CatalogSource: {catalog_source}'
+    # taxa_info = ','.join('{key}:{{{key}}}'.format(key=k) for k in properties)
+    # prop_field = '{' + taxa_info + ', ' +  species_info + '}'
+    # query = 'CREATE (n:Species ' + prop_field + ')'
+    # print(query)
+    # tx.run(query, name=name, catalog_source=catalog_source, **properties)
 
 def load_click(node):
     try:
@@ -166,7 +176,7 @@ def main():
     for kp in kps:
         unstarted.append(Process(target=run_kp, args=(kp,), kwargs={'total' : total}))
 
-    max_running = 6
+    max_running = 1
     running = []
     finished = []
     done = False
@@ -183,9 +193,12 @@ def main():
                 finished.append(item)
         running = [item for item in running if item.is_alive()]
         if len(running) < max_running:
-            next_to_run = unstarted.pop()
-            next_to_run.start()
-            running.append(next_to_run)
+            try:
+                next_to_run = unstarted.pop()
+                next_to_run.start()
+                running.append(next_to_run)
+            except IndexError:
+                pass
         done = len(running) == 0 and len(unstarted) == 0
 
 if __name__ == '__main__':
