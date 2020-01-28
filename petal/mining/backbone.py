@@ -176,7 +176,7 @@ def main():
     for kp in kps:
         unstarted.append(Process(target=run_kp, args=(kp,), kwargs={'total' : total}))
 
-    max_running = 1
+    max_running = 5
     running = []
     finished = []
     done = False
