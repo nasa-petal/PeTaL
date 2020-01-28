@@ -11,9 +11,16 @@ class EOL_API:
 
         self.format = 'cypher'
 
-    def search(self, query):
+    def search(self, query, filter_data=True):
+        result = self.get(self.url)
+        if filter_data:
+            return [x[0]['data'] for x in result['data']]
+        else:
+            return result
+
+    def get(self, url):
         data = {"query": query, "format": self.format}
-        r = requests.get(self.url,
+        r = requests.get(url,
                          stream=(format=="csv"),
                          headers=self.headers,
                          params=data)
@@ -36,8 +43,11 @@ class EOL_API:
         if r.status_code != 200:
             sys.exit(1)
 
+
 if __name__ == '__main__':
-    server = EOL_API()
-    query = 'MATCH (n:Trait) RETURN n LIMIT 1'
-    result = server.search(query)
+    api = EOL_API()
+    # query = 'MATCH (n:Trait) WITH COUNT (n) AS count RETURN count LIMIT 200'
+    # query = 'MATCH (n:Trait) RETURN n LIMIT 2'
+    query = 'MATCH (p:Page) WHERE p.rank = \'species\' WITH COUNT (p) AS count RETURN count LIMIT 100'
+    result = api.search(query, filter_data=False)
     pprint(result)
