@@ -9,12 +9,23 @@ from neo import neo_add_json
 # neo_client = GraphDatabase.driver(neo_uri, auth=("neo4j", "life"))
 neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
 
-GOOGLE_SCHOLAR_ARTICLE_LIMIT = 10
+GOOGLE_SCHOLAR_ARTICLE_LIMIT = 5
+SPECIES_PROCESSING_LIMIT     = 1000
 
 import json
+from random import random, randint
+from time import sleep
+
+def confuse():
+    total = 1.0
+    for i in range(randint(1, 5)):
+        total *= random()
+    total *= randint(1, 10)
+    print('Sleeping for {} seconds to confuse Google'.format(total))
+    sleep(total)
 
 def iter_species(tx, mapper):
-    species_result = tx.run('MATCH (n:Species) RETURN n LIMIT 10')
+    species_result = tx.run('MATCH (n:Species) WHERE n.Phylum = \'Chordata\' RETURN n LIMIT {}'.format(SPECIES_PROCESSING_LIMIT))
     species = species_result.records()
     for s in species:
         mapper(s['n'], tx)
@@ -36,12 +47,15 @@ def add_species_article(tx, article, species):
 
 def mapper(species, tx):
     name = species['Name']
-    print('Mapper on species: ', name)
+    print('Mapper on species: ', name, flush=True)
     scholar_results = google_scholar_search(name)
+    i = 0
     for i, article in enumerate(scholar_results):
+        print('Article: {}\r'.format(i), flush=True, end='')
         add_species_article(tx, article, species)
         if i == GOOGLE_SCHOLAR_ARTICLE_LIMIT:
             break
+    print('Finished {} articles'.format(i))
     return
     # results = eol_search(name)
 
