@@ -38,7 +38,7 @@ class EOL_API:
         if r.status_code != 200:
             sys.exit(1)
 
-    def page(self, finder, query, page_size=2000, rate_limit=.25):
+    def page(self, finder, query, page_size=100, rate_limit=.25):
         count_query = finder + ' WITH COUNT (n) AS count RETURN count LIMIT 1'
         count       = self.search(count_query)
         count       = count['data'][0][0]
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     species = 1.9e6
     total = 0
     start = time()
-    for item in api.page('MATCH (n:Page) WHERE n.rank = \'species\'', 'MATCH (n:Page) RETURN n'):
+    for item in api.page('MATCH (n:Page) WHERE n.rank = \'species\'', 'MATCH (species:Page) WHERE species.rank = \'species\' RETURN species.canonical'):
         total += (len(item['data']))
         duration = time() - start
         species_per_sec = total / duration
@@ -64,5 +64,7 @@ if __name__ == '__main__':
         eta_seconds = total_seconds - duration
         eta = eta_seconds / 3600
         percent = duration / total_seconds
+        pprint(item)
+        1/0 
         print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}\r'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
     print(total)
