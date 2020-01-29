@@ -1,5 +1,6 @@
 import requests, argparse, json, sys
 from pprint import pprint
+from time import sleep, time
 
 class EOL_API:
     def __init__(self):
@@ -12,13 +13,7 @@ class EOL_API:
         self.format = 'cypher'
 
     def search(self, query, filter_data=True):
-        result = self.get(self.url)
-        if filter_data:
-            return [x[0]['data'] for x in result['data']]
-        else:
-            return result
-
-    def get(self, url):
+        url = self.url
         data = {"query": query, "format": self.format}
         r = requests.get(url,
                          stream=(format=="csv"),
@@ -43,11 +38,31 @@ class EOL_API:
         if r.status_code != 200:
             sys.exit(1)
 
+    def page(self, finder, query, page_size=2000, rate_limit=.25):
+        count_query = finder + ' WITH COUNT (n) AS count RETURN count LIMIT 1'
+        count       = self.search(count_query)
+        count       = count['data'][0][0]
+        print('Paging over {} items with page size {} and {} extra seconds between pages'.format(count, page_size, rate_limit))
+
+        for i in range(count // page_size):
+            skip = i * page_size
+            page_query = query + ' SKIP {skip} LIMIT {limit}'.format(skip=skip, limit=page_size)
+            yield self.search(page_query)
+            sleep(rate_limit)
+
 
 if __name__ == '__main__':
     api = EOL_API()
-    # query = 'MATCH (n:Trait) WITH COUNT (n) AS count RETURN count LIMIT 200'
-    # query = 'MATCH (n:Trait) RETURN n LIMIT 2'
-    query = 'MATCH (p:Page) WHERE p.rank = \'species\' WITH COUNT (p) AS count RETURN count LIMIT 100'
-    result = api.search(query, filter_data=False)
-    pprint(result)
+    species = 1.9e6
+    total = 0
+    start = time()
+    for item in api.page('MATCH (n:Page) WHERE n.rank = \'species\'', 'MATCH (n:Page) RETURN n'):
+        total += (len(item['data']))
+        duration = time() - start
+        species_per_sec = total / duration
+        total_seconds  = species / species_per_sec
+        eta_seconds = total_seconds - duration
+        eta = eta_seconds / 3600
+        percent = duration / total_seconds
+        print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}\r'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
+    print(total)
