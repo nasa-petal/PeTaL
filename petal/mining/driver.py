@@ -3,7 +3,7 @@ from wiki import search as wiki_search
 from scholarly import search_pubs_query as google_scholar_search
 
 from neo4j import GraphDatabase, basic_auth
-from neo import neo_add_json
+from neo import add_json, page
 
 # neo_uri = "bolt://localhost:7687"
 # neo_client = GraphDatabase.driver(neo_uri, auth=("neo4j", "life"))
@@ -30,7 +30,7 @@ def add_connection(tx, species, article):
 
 def add_species_article(tx, article, species):
     base = article.bib
-    neo_add_json(tx, 'Article', base)
+    add_json(tx, 'Article', base)
     add_connection(tx, species, article)
 
 
@@ -45,10 +45,15 @@ def mapper(species, tx):
     return
     # results = eol_search(name)
 
+def tester(tx):
+    for item in page(tx, 'MATCH (n:Species)', 'MATCH (n:Article) RETURN n'):
+        print(item)
+
 def main():
     with neo_client.session() as session:
-        session.read_transaction(count_species)
-        session.read_transaction(iter_species, mapper)
+        session.read_transaction(tester)
+        # session.read_transaction(count_species)
+        # session.read_transaction(iter_species, mapper)
 
 if __name__ == '__main__':
     main()
