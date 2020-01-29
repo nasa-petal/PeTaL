@@ -7,6 +7,8 @@ import sys
 import codecs
 import random
 
+from topic_modeler import TopicModeler
+
 def set_unicode_io():
     sys.stdout = codecs.getwriter('utf8')(sys.stdout)
     sys.stderr = codecs.getwriter('utf8')(sys.stderr)
@@ -22,7 +24,20 @@ def check_damping():
     return random.random() < PAGE_DAMPING
 
 def main():
-    relate(a='Aerodynamics', b='Bird flight')
+    topic_finder = TopicModeler()
+    pages = []
+    for i, link in enumerate(wikipedia.page('Biology').links):
+        try:
+            pages.append(wikipedia.page(link).summary)
+            print(link, flush=True)
+        except wikipedia.exceptions.DisambiguationError:
+            pass
+        if i == 100:
+            break
+    topic_finder.update(pages)
+    topic_finder.print_topics()
+
+    # relate(a='Aerodynamics', b='Bird flight')
     # relate(a='Engineering', b='Biology')
 
 def expand(nodes, meta=None):

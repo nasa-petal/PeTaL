@@ -14,7 +14,7 @@ from contractions import fix_word as expand_contractions
 
 from pprint import pprint
 
-class TopicModeller:
+class TopicModeler:
     def __init__(self, **kwargs):
         '''
         kwargs::
@@ -43,12 +43,14 @@ class TopicModeller:
             self.lda_model = models.ldamodel.LdaModel(corpus, id2word=self.dictionary, **self.lda_kwargs)
         else:
             self.lda_model.update(corpus, id2word=self.dictionary)
-        # print(self.lda_model.print_topics(num_topics=3, num_words=3))
 
     def classify(self, doc):
         bow = self.dictionary.doc2bow(list(self.clean(doc)))
         topic = max(self.lda_model.get_document_topics(bow), key=lambda x : x[1])[0]
         return self.lda_model.show_topic(topic)
+
+    def print_topics(self):
+        print(self.lda_model.print_topics(num_topics=10, num_words=3))
 
 def main():
     doc_a = "Brocolli is good to eat. My brother likes to eat good brocolli, but not my mother."
@@ -57,8 +59,8 @@ def main():
     doc_d = "I often feel pressure to perform well at school, but my mother never seems to drive my brother to do better."
     doc_e = "Health professionals say that brocolli is good for your health."
     docs = [doc_a, doc_b, doc_c, doc_d]
-    modeller = TopicModeller(num_topics=3, passes=20, alpha='auto', minimum_probability=0.01, decay=0.5)
-    modeller.update(docs)
+    modeler = TopicModeler(num_topics=3, passes=20, alpha='auto', minimum_probability=0.01, decay=0.5)
+    modeler.update(docs)
     print(modeller.classify(doc_e))
 
 if __name__ == '__main__':
