@@ -2,6 +2,11 @@ import requests, argparse, json, sys
 from pprint import pprint
 from time import sleep, time
 
+from neo import add_json
+
+from neo4j import GraphDatabase, basic_auth
+neoDriver = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
+
 class EOL_API:
     def __init__(self):
         self.url = 'https://eol.org/service/cypher'
@@ -38,7 +43,7 @@ class EOL_API:
         if r.status_code != 200:
             sys.exit(1)
 
-    def page(self, finder, query, page_size=100, rate_limit=.25):
+    def page(self, finder, query, page_size=3000, rate_limit=.25):
         count_query = finder + ' WITH COUNT (n) AS count RETURN count LIMIT 1'
         count       = self.search(count_query)
         count       = count['data'][0][0]
@@ -64,7 +69,10 @@ if __name__ == '__main__':
         eta_seconds = total_seconds - duration
         eta = eta_seconds / 3600
         percent = duration / total_seconds
-        pprint(item)
-        1/0 
+        with neoDriver.session() as session:
+            for name in item['data']:
+                name = name[0]
+                properties = {'name' : name}
+                session.read_transaction(add_json, label='Species', properties=properties) 
         print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}\r'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
     print(total)
