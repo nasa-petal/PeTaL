@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m cProfile -o backbone_profile.out backbone.py
+python -m cProfile -o profile.out $1
