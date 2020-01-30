@@ -1,10 +1,7 @@
 from nltk.corpus import wordnet as wn
-from pprint      import pprint
 from collections import defaultdict
 
 import wikipedia
-import pickle, os
-
 from cleaner import Cleaner
 
 def build_corpus_synset(text, cleaner):
@@ -31,8 +28,7 @@ class WikipediaTopicTree():
         return self.name_mapping[name]
 
     def query(self, term, which='both'):
-        terms = self.cleaner.clean(term)
-        return [self.root.query(term, which=which) for term in terms]
+        return self.root.query(term, which=which)
 
 class WikipediaTopicNode():
     def __init__(self, synnode, cleaner, parent=None):
@@ -81,7 +77,6 @@ class WikipediaTreeScraper():
         root         = wn.synset(topic)
         name         = (root.name().split('.')[0])
         hyponym_tree = root.tree(self.hypo)
-        pprint(hyponym_tree)
         return WikipediaTopicTree(self.create_tree(hyponym_tree), self.cleaner)
 
     def create_tree(self, hyponym_tree, parent=None):

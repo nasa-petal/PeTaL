@@ -1,70 +1,51 @@
-import wikipedia
-
+from wiki_topic_tree import WikipediaTreeScraper, WikipediaTopicTree, WikipediaTopicNode
 from pprint import pprint
-from collections import namedtuple
 
-import sys
-import codecs
-import random
+import pickle, os
 
-from topic_modeler import TopicModeler
+def save(data, filename):
+    with open(filename, 'wb') as outfile:
+        pickle.dump(data, outfile)
 
-def set_unicode_io():
-    sys.stdout = codecs.getwriter('utf8')(sys.stdout)
-    sys.stderr = codecs.getwriter('utf8')(sys.stderr)
+def load(filename):
+    with open(filename, 'rb') as infile:
+        return pickle.load(infile)
 
-Node = namedtuple('Node', ['name', 'path', 'dist'])
-Node.__hash__ = lambda self: hash(self.name)
-Node.__new__.__defaults__ = (None,) * 5
+class TopicTranslator():
+    def __init__(self, *topics):
+        self.topic_trees = dict()
+        self.scraper = WikipediaTreeScraper()
+        for topic in topics:
+            topic_name = topic.split('.')[0]
+            self.topic_trees[topic_name] = self.cache_corpus_tree(topic, 'topic_tree_cache/{}.pkl'.format(topic))
 
-PAGE_DAMPING = 0.85
-PAGE_DAMPING = 1.0
+    def cache_corpus_tree(self, name, filename):
+        if not os.path.isfile(filename):
+            tree = self.scraper.corpus_tree(name)
+            save(tree, filename)
+        else:
+            tree = load(filename)
+        return tree
 
-def check_damping():
-    return random.random() < PAGE_DAMPING
+    def translate(self, term, source, target):
+        source_tree = self.topic_trees[source]
+        target_tree = self.topic_trees[target]
 
-def main():
-    topic_finder = TopicModeler()
-    pages = []
-    for i, link in enumerate(wikipedia.page('Biology').links):
-        try:
-            pages.append(wikipedia.page(link).summary)
-            print(link, flush=True)
-        except wikipedia.exceptions.DisambiguationError:
-            pass
-        if i == 100:
-            break
-    topic_finder.update(pages)
-    topic_finder.print_topics()
+        source_results = source_tree.query(term)
+        target_results = target_tree.query(term)
+        # pprint(source_results)
+        # pprint(target_results)
 
-    # relate(a='Aerodynamics', b='Bird flight')
-    # relate(a='Engineering', b='Biology')
+        joint_terms = set.union(*(s for s in source_results.values()), *(s for s in target_results.values()))
+        pprint(joint_terms)
 
-def expand(nodes, meta=None):
-    if meta is None:
-        meta = dict()
-    next_set = set()
-    for node in nodes:
-        if check_damping():
-            page = wikipedia.page(node.name)
-            for link in page.links:
-                next_set.add(Node(name=link, path=node.path + (link,), dist=node.dist + 1))
-                meta['count'] += 1
-                print('{}\r'.format(meta['count']), flush=True, end='')
-    print(meta['count'])
-    return next_set
+        # combined_eng = set.union(*(s for s in results[0].values()))
+        # results = bio_tree.query('separate')
+        # combined_bio = set.union(*(s for s in results[0].values()))
+        # pprint(set.intersection(combined_bio, combined_eng))
+        
 
-def relate(a='Biology', b='Engineering'):
-    bio = {Node(name=a,     dist=0, path=(a,))}
-    eng = {Node(name=b, dist=0, path=(b,))}
-    meta = dict(count=2)
-
-    for i in range(3):
-        bio = expand(bio, meta=meta)
-        eng = expand(eng, meta=meta)
-        overlap = set.intersection(bio, eng)
-        print(overlap)
-
-# set_unicode_io()
 if __name__ == '__main__':
-    main()
+    translator = TopicTranslator('biology.n.01', 'engineering.n.02')
+    translator.translate('branch', 'biology', 'engineering')
+
