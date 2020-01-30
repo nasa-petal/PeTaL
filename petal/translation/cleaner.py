@@ -12,9 +12,24 @@ class Cleaner:
         self.stop_words = set(stopwords.words('english'))
         self.stemmer    = PorterStemmer()
 
-    def clean(self, doc):
-        for word in word_tokenize(doc):
-            words = expand_contractions(word)
-            for word in words:
-                if word not in self.stop_words and word not in punctuation:
-                    yield self.stemmer.stem(word)
+    def tokenize(self, text):
+        return word_tokenize(text)
+
+    def clean(self, doc, doc_as_words=False):
+        if doc_as_words:
+            words = doc
+        else:
+            words = word_tokenize(doc)
+        for word in words:
+            for word in self.clean_word(word):
+                yield word
+
+    def clean_word(self, word):
+        words = expand_contractions(word)
+        for word in words:
+            if word not in self.stop_words and word not in punctuation:
+                yield self.stemmer.stem(word)
+
+    def stem(self, word):
+        return self.stemmer.stem(word)
+
