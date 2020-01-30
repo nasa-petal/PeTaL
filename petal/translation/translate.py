@@ -33,19 +33,16 @@ class TopicTranslator():
 
         source_results = source_tree.query(term)
         target_results = target_tree.query(term)
-        # pprint(source_results)
-        # pprint(target_results)
 
-        joint_terms = set.union(*(s for s in source_results.values()), *(s for s in target_results.values()))
+        if len(source_results) == 0 and len(target_results) == 0:
+            joint_terms = set()
+        else:
+            joint_terms = set.union(*(s for s in source_results.values()), *(s for s in target_results.values()))
         pprint(joint_terms)
 
-        # combined_eng = set.union(*(s for s in results[0].values()))
-        # results = bio_tree.query('separate')
-        # combined_bio = set.union(*(s for s in results[0].values()))
-        # pprint(set.intersection(combined_bio, combined_eng))
-        
 
 if __name__ == '__main__':
     translator = TopicTranslator('biology.n.01', 'engineering.n.02')
     translator.translate('branch', 'biology', 'engineering')
+    translator.translate('connect', 'biology', 'engineering')
 
