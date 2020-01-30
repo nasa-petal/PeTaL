@@ -1,59 +1,26 @@
-from wiki import search as wiki_search
-from scholarly import search_pubs_query as google_scholar_search
-
 from neo4j import GraphDatabase, basic_auth
-from neo import add_json, page
-
-# neo_uri = "bolt://localhost:7687"
-# neo_client = GraphDatabase.driver(neo_uri, auth=("neo4j", "life"))
-neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
-
-GOOGLE_SCHOLAR_ARTICLE_LIMIT = 10
+from neo import page
 
 import json
 
-def iter_species(tx, mapper):
-    species_result = tx.run('MATCH (n:Species) RETURN n LIMIT 10')
-    species = species_result.records()
-    for s in species:
-        mapper(s['n'], tx)
+from wiki_module import WikipediaModule
 
-def count_species(tx):
-    result = tx.run('MATCH (n) WITH COUNT (n) AS count RETURN count')
-    saved = result.single()
-    print('neo4j currently holds ', saved['count'], ' species')
-    
-def add_connection(tx, species, article):
-    title = article.bib['title']
-    tx.run('MATCH (n:Article) WHERE n.title={title} MATCH (m:Species) WHERE m.Name={name} MERGE (n)-[:MENTIONS_SPECIES]->(m) MERGE (m)-[:MENTIONED_IN_ARTICLE]->(n)', title=title, name=species['Name'])
+class Driver():
+    def __init__(self, page_size, rate_limit):
+        self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
+        self.page_size  = page_size
+        self.rate_limit = rate_limit
 
-def add_species_article(tx, article, species):
-    base = article.bib
-    add_json(tx, 'Article', base)
-    add_connection(tx, species, article)
+    def paging(self, tx, module):
+        for page_results in page(tx, module.finder, module.query, page_size=self.page_size, rate_limit=self.rate_limit):
+            with self.neo_client.session() as session:
+                session.write_transaction(module.process, page_results)
 
-
-def mapper(species, tx):
-    name = species['Name']
-    print('Mapper on species: ', name)
-    2/0
-    scholar_results = google_scholar_search(name)
-    for i, article in enumerate(scholar_results):
-        add_species_article(tx, article, species)
-        if i == GOOGLE_SCHOLAR_ARTICLE_LIMIT:
-            break
-    return
-    # results = eol_search(name)
-
-def tester(tx):
-    for item in page(tx, 'MATCH (n:Species)', 'MATCH (n:Article) RETURN n'):
-        print(item)
-
-def main():
-    with neo_client.session() as session:
-        session.read_transaction(tester)
-        # session.read_transaction(count_species)
-        # session.read_transaction(iter_species, mapper)
+    def run(self, module):
+        with self.neo_client.session() as session:
+            session.read_transaction(self.paging, module)
 
 if __name__ == '__main__':
-    main()
+    driver = Driver(1000, 0.25)
+    wiki_scraper = WikipediaModule()
+    driver.run(wiki_scraper)

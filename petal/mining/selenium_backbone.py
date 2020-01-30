@@ -32,13 +32,13 @@ cache_file = 'cached_catalogue_of_life.html'
 sleep_time = 0.01
 start_time = time()
 
-from neo import add_json
+from neo import add_json_node
 
 def add_species(tx, properties, pair):
     ext_properties = {k : v for k, v in properties.items()}
     ext_properties['Name'] = pair[1]
     ext_properties['CatalogSource'] = pair[0]
-    add_json(tx, label='Species', properties=ext_properties)
+    add_json_node(tx, label='Species', properties=ext_properties)
     # catalog_source, name = pair
     # species_info = 'Name: {name},CatalogSource: {catalog_source}'
     # taxa_info = ','.join('{key}:{{{key}}}'.format(key=k) for k in properties)
