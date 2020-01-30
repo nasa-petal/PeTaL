@@ -14,6 +14,8 @@ from contractions import fix_word as expand_contractions
 
 from pprint import pprint
 
+from cleaner import Cleaner
+
 class TopicModeler:
     def __init__(self, **kwargs):
         '''
@@ -21,21 +23,13 @@ class TopicModeler:
 
         class gensim.models.ldamodel.LdaModel(corpus=None, num_topics=100, id2word=None, distributed=False, chunksize=2000, passes=1, update_every=1, alpha='symmetric', eta=None, decay=0.5, offset=1.0, eval_every=10, iterations=50, gamma_threshold=0.001, minimum_probability=0.01, random_state=None, ns_conf=None, minimum_phi_value=0.01, per_word_topics=False, callbacks=None, dtype=<class 'numpy.float32'>)¶
         '''
-        self.stop_words = set(stopwords.words('english'))
-        self.stemmer    = PorterStemmer()
+        self.cleaner    = Cleaner()
         self.lda_model  = None
         self.lda_kwargs = kwargs
         self.dictionary = None
 
-    def clean(self, doc):
-        for word in word_tokenize(doc):
-            words = expand_contractions(word)
-            for word in words:
-                if word not in self.stop_words and word not in punctuation:
-                    yield self.stemmer.stem(word)
-
     def update(self, docs):
-        cleaned    = [list(self.clean(doc)) for doc in docs]
+        cleaned    = [list(self.cleaner.clean(doc)) for doc in docs]
         self.dictionary = corpora.Dictionary(cleaned)
         corpus     = [self.dictionary.doc2bow(text) for text in cleaned]
 
@@ -45,7 +39,7 @@ class TopicModeler:
             self.lda_model.update(corpus, id2word=self.dictionary)
 
     def classify(self, doc):
-        bow = self.dictionary.doc2bow(list(self.clean(doc)))
+        bow = self.dictionary.doc2bow(list(self.cleaner.clean(doc)))
         topic = max(self.lda_model.get_document_topics(bow), key=lambda x : x[1])[0]
         return self.lda_model.show_topic(topic)
 
@@ -61,7 +55,7 @@ def main():
     docs = [doc_a, doc_b, doc_c, doc_d]
     modeler = TopicModeler(num_topics=3, passes=20, alpha='auto', minimum_probability=0.01, decay=0.5)
     modeler.update(docs)
-    print(modeller.classify(doc_e))
+    print(modeler.classify(doc_e))
 
 if __name__ == '__main__':
     main()
