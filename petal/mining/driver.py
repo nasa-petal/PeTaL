@@ -1,4 +1,3 @@
-from eol  import search as eol_search
 from wiki import search as wiki_search
 from scholarly import search_pubs_query as google_scholar_search
 
@@ -37,6 +36,7 @@ def add_species_article(tx, article, species):
 def mapper(species, tx):
     name = species['Name']
     print('Mapper on species: ', name)
+    2/0
     scholar_results = google_scholar_search(name)
     for i, article in enumerate(scholar_results):
         add_species_article(tx, article, species)

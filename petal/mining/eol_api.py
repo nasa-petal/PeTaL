@@ -2,7 +2,7 @@ import requests, argparse, json, sys
 from pprint import pprint
 from time import sleep, time
 
-from neo import add_json
+from neo import add_json, get_page_queries
 
 from neo4j import GraphDatabase, basic_auth
 neoDriver = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
@@ -48,13 +48,8 @@ class EOL_API:
         count       = self.search(count_query)
         count       = count['data'][0][0]
         print('Paging over {} items with page size {} and {} extra seconds between pages'.format(count, page_size, rate_limit))
-
-        for i in range(count // page_size):
-            skip = i * page_size
-            page_query = query + ' SKIP {skip} LIMIT {limit}'.format(skip=skip, limit=page_size)
-            yield self.search(page_query)
-            sleep(rate_limit)
-
+        for query in get_page_queries(query, count, page_size=page_size, rate_limit=rate_limit):
+            yield self.search(query)
 
 if __name__ == '__main__':
     api = EOL_API()
