@@ -2,7 +2,7 @@ from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
 
-from modules import WikipediaModule # Automatically import?
+from modules import WikipediaModule, BackboneModule # Automatically import?
 from utils.neo import page, add_json_node
 
 class Driver():
@@ -31,10 +31,17 @@ class Driver():
         print('.', end='', flush=True)
 
     def run(self, module):
-        with self.neo_client.session() as session:
-            session.read_transaction(self.paging, module)
+        if module.in_label is None:
+            for node_json in module.process():
+                with self.neo_client.session() as session:
+                    session.write_transaction(add_json_node, module.out_label, node_json)
+        else:
+            with self.neo_client.session() as session:
+                session.read_transaction(self.paging, module)
 
 if __name__ == '__main__':
     driver = Driver(page_size=10, rate_limit=0.25)
     wiki_scraper = WikipediaModule()
+    backbone = BackboneModule()
+    driver.run(backbone)
     driver.run(wiki_scraper)
