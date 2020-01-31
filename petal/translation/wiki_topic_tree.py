@@ -1,5 +1,6 @@
 from nltk.corpus import wordnet as wn
 from collections import defaultdict
+from pprint import pprint
 
 import wikipedia
 from cleaner import Cleaner
@@ -18,6 +19,9 @@ class WikipediaTopicTree():
         self.root = root
         self.name_mapping = dict()
         self.cleaner = cleaner
+
+    def __contains__(self, key):
+        return key in self.root
 
     def build_name_mapping(self, node):
         self.name_mapping[node.name] = node
@@ -47,6 +51,16 @@ class WikipediaTopicNode():
                 print(e)
             self.summary_map = dict()
             self.content_map = dict()
+
+    def __contains__(self, key):
+        if key in self.summary_map or key in self.content_map:
+            return True
+        else:
+            for c in self.children:
+                if key in c:
+                    return True
+        return False
+
 
     def query(self, term, which='both'):
         if which == 'summary':

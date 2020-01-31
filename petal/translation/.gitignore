@@ -1,3 +1,2 @@
 __pycache__
-biotree.pkl
-engtree.pkl
+topic_tree_cache/*.pkl
