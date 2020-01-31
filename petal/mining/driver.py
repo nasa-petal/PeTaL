@@ -3,7 +3,7 @@ from neo import page
 
 import json
 
-from wiki_module import WikipediaModule
+from modules import WikipediaModule
 
 class Driver():
     def __init__(self, page_size, rate_limit):
