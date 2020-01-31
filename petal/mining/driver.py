@@ -4,8 +4,10 @@ import json
 
 from modules import WikipediaModule, BackboneModule # Automatically import?
 from utils.neo import page, add_json_node
+from uuid import uuid4
 
 # TODO add scheduling etc
+
 
 class Driver():
     def __init__(self, page_size=100, rate_limit=0.25):
@@ -22,9 +24,9 @@ class Driver():
                 with self.neo_client.session() as session:
                     node = record['n']
                     result = module.process(node)
-                    self.write(node, result, module)
+                    session.write_transaction(self.write, node, result, module)
 
-    def write(self, node, process_result, module):
+    def write(self, tx, node, process_result, module):
         if len(process_result) > 0:
             pprint(process_result) # TODO add to db here
             if module.connect_label is None:
@@ -32,16 +34,23 @@ class Driver():
             else:
                 print('Connect nodes here') # TODO add to db here
         print('.', end='', flush=True)
-        self.add(process_result, module.out_label)
-        if module.connect_label is not None:
-            self.link(node, process_result, link_label)
+        id1 = node['uuid']
+        id2 = self.add(process_result, module.out_label)
+        if module.connect_labels is not None:
+            self.link(tx, id1, id2, module)
 
-    def link(self, node, data, link_label):
-        pass
+    def link(self, tx, id1, id2, module):
+        from_label, to_label = module.connect_labels
+        print('MATCH (n:{in_label}) WHERE n.uuid={id1} MATCH (m:{out_label}) WHERE m.uuid={id2} MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=module.in_label, out_label=module.out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
+        1/0
+        # tx.run('MATCH (n: {in_label}) WHERE n.uuid={id1} MATCH (m:out_label) WHERE m.uuid={id2} MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)', in_label=module.in_label, out_label=module.out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label)
 
     def add(self, data, label):
+        unique_id = uuid4()
+        data['uuid'] = str(unique_id)
         with self.neo_client.session() as session:
             session.write_transaction(add_json_node, label, data)
+        return unique_id
 
     def run(self, module):
         if module.in_label is None:
