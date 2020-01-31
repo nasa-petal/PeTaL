@@ -48,8 +48,8 @@ class EOL_API:
         count       = self.search(count_query)
         count       = count['data'][0][0]
         print('Paging over {} items with page size {} and {} extra seconds between pages'.format(count, page_size, rate_limit))
-        for query in get_page_queries(query, count, page_size=page_size, rate_limit=rate_limit):
-            yield self.search(query)
+        for query, q_props in get_page_queries(query, count, page_size=page_size, rate_limit=rate_limit):
+            yield self.search(query.format(**q_props))
 
 if __name__ == '__main__':
     api = EOL_API()

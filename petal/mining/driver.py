@@ -21,6 +21,6 @@ class Driver():
             session.read_transaction(self.paging, module)
 
 if __name__ == '__main__':
-    driver = Driver(1000, 0.25)
+    driver = Driver(10, 0.25)
     wiki_scraper = WikipediaModule()
     driver.run(wiki_scraper)
