@@ -5,6 +5,8 @@ import json
 from modules import WikipediaModule, BackboneModule # Automatically import?
 from utils.neo import page, add_json_node
 
+# TODO add scheduling etc
+
 class Driver():
     def __init__(self, page_size=100, rate_limit=0.25):
         self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
@@ -18,10 +20,11 @@ class Driver():
         for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
             for record in page_results.records():
                 with self.neo_client.session() as session:
-                    result = module.process(record['n'])
-                    self.write(result, module)
+                    node = record['n']
+                    result = module.process(node)
+                    self.write(node, result, module)
 
-    def write(self, process_result, module):
+    def write(self, node, process_result, module):
         if len(process_result) > 0:
             pprint(process_result) # TODO add to db here
             if module.connect_label is None:
@@ -29,12 +32,21 @@ class Driver():
             else:
                 print('Connect nodes here') # TODO add to db here
         print('.', end='', flush=True)
+        self.add(process_result, module.out_label)
+        if module.connect_label is not None:
+            self.link(node, process_result, link_label)
+
+    def link(self, node, data, link_label):
+        pass
+
+    def add(self, data, label):
+        with self.neo_client.session() as session:
+            session.write_transaction(add_json_node, label, data)
 
     def run(self, module):
         if module.in_label is None:
             for node_json in module.process():
-                with self.neo_client.session() as session:
-                    session.write_transaction(add_json_node, module.out_label, node_json)
+                self.add(node_json, module.out_label)
         else:
             with self.neo_client.session() as session:
                 session.read_transaction(self.paging, module)
@@ -42,6 +54,6 @@ class Driver():
 if __name__ == '__main__':
     driver = Driver(page_size=10, rate_limit=0.25)
     wiki_scraper = WikipediaModule()
-    backbone = BackboneModule()
-    driver.run(backbone)
+    # backbone = BackboneModule()
+    # driver.run(backbone)
     driver.run(wiki_scraper)

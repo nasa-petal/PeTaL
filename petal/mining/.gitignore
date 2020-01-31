@@ -3,6 +3,5 @@ backbone_profile.out
 metadata.json
 __pycache__
 api.token
-col
 col.zip
-col_data
+.col_data
