@@ -2,7 +2,7 @@ from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
 
-from modules import WikipediaModule, BackboneModule # Automatically import?
+from modules import WikipediaModule, BackboneModule, EOLModule
 from utils.neo import page, add_json_node
 from uuid import uuid4
 
@@ -19,11 +19,8 @@ class Driver():
 
     def paging(self, tx, module):
         finder = 'MATCH (n:{}) '.format(module.in_label)
-        print(finder)
         query  = finder + 'RETURN n'
-        print(query)
         for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
-            print(page_results)
             for record in page_results.records():
                 with self.neo_client.session() as session:
                     node = record['n']
@@ -68,6 +65,8 @@ class Driver():
 if __name__ == '__main__':
     driver = Driver(page_size=1, rate_limit=0.25)
     wiki_scraper = WikipediaModule()
+    eol_scraper = EOLModule()
     # backbone = BackboneModule()
     # driver.run(backbone)
-    driver.run(wiki_scraper)
+    # driver.run(wiki_scraper)
+    driver.run(eol_scraper)
