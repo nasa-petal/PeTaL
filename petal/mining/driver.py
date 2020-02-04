@@ -2,7 +2,7 @@ from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
 
-from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule
+from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule, HighwireModule
 from utils.neo import page, add_json_node
 from uuid import uuid4
 
@@ -63,7 +63,9 @@ if __name__ == '__main__':
     eol_scraper = EOLModule()
     scholar_scraper = GoogleScholarModule()
     backbone = BackboneModule()
+    highwire = HighwireModule()
     # driver.run(backbone)
     # driver.run(wiki_scraper)
-    driver.run(eol_scraper)
+    # driver.run(eol_scraper)
     # driver.run(scholar_scraper)
+    # driver.run(highwire)
