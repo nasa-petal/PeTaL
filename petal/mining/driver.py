@@ -2,7 +2,7 @@ from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
 
-from modules import WikipediaModule, BackboneModule, EOLModule
+from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule
 from utils.neo import page, add_json_node
 from uuid import uuid4
 
@@ -28,24 +28,19 @@ class Driver():
                     session.write_transaction(self.write, node, result, module)
 
     def write(self, tx, node, process_result, module):
-        if len(process_result) > 0:
-            pprint(process_result) # TODO add to db here
-            if module.connect_labels is None:
-                pass
-            else:
-                print('Connect nodes here') # TODO add to db here
-        print('.', end='', flush=True)
-        id1 = node['uuid']
-        id2 = self.add(process_result, module.out_label)
-        if module.connect_labels is not None:
-            self.link(tx, id1, id2, module)
+        if not isinstance(process_result, list):
+            process_result = [process_result]
+        for result in process_result:
+            # print('.', end='', flush=True)
+            id1 = node['uuid']
+            id2 = self.add(result, module.out_label)
+            if module.connect_labels is not None:
+                self.link(tx, id1, id2, module)
 
     def link(self, tx, id1, id2, module):
         from_label, to_label = module.connect_labels
         query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=module.in_label, out_label=module.out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
-        print(query)
         tx.run(query)
-        # tx.run('MATCH (n:{in_label}) WHERE n.uuid={id1} MATCH (m:{out_label}) WHERE m.uuid={id2} MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=module.in_label, out_label=module.out_label), id1=id1, id2=id2, from_label=from_label, to_label=to_label)
 
     def add(self, data, label):
         unique_id = uuid4()
@@ -66,7 +61,9 @@ if __name__ == '__main__':
     driver = Driver(page_size=1, rate_limit=0.25)
     wiki_scraper = WikipediaModule()
     eol_scraper = EOLModule()
-    # backbone = BackboneModule()
+    scholar_scraper = GoogleScholarModule()
+    backbone = BackboneModule()
     # driver.run(backbone)
     # driver.run(wiki_scraper)
     driver.run(eol_scraper)
+    # driver.run(scholar_scraper)
