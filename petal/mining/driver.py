@@ -1,54 +1,71 @@
-from eol  import search as eol_search
-from wiki import search as wiki_search
-from scholarly import search_pubs_query as google_scholar_search
-
 from neo4j import GraphDatabase, basic_auth
-from neo import neo_add_json
-
-# neo_uri = "bolt://localhost:7687"
-# neo_client = GraphDatabase.driver(neo_uri, auth=("neo4j", "life"))
-neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
-
-GOOGLE_SCHOLAR_ARTICLE_LIMIT = 10
-
+from pprint import pprint
 import json
 
-def iter_species(tx, mapper):
-    species_result = tx.run('MATCH (n:Species) RETURN n LIMIT 10')
-    species = species_result.records()
-    for s in species:
-        mapper(s['n'], tx)
+from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule, HighwireModule
+from utils.neo import page, add_json_node
+from uuid import uuid4
 
-def count_species(tx):
-    result = tx.run('MATCH (n) WITH COUNT (n) AS count RETURN count')
-    saved = result.single()
-    print('neo4j currently holds ', saved['count'], ' species')
-    
-def add_connection(tx, species, article):
-    title = article.bib['title']
-    tx.run('MATCH (n:Article) WHERE n.title={title} MATCH (m:Species) WHERE m.Name={name} MERGE (n)-[:MENTIONS_SPECIES]->(m) MERGE (m)-[:MENTIONED_IN_ARTICLE]->(n)', title=title, name=species['Name'])
-
-def add_species_article(tx, article, species):
-    base = article.bib
-    neo_add_json(tx, 'Article', base)
-    add_connection(tx, species, article)
+# TODO add scheduling etc
 
 
-def mapper(species, tx):
-    name = species['Name']
-    print('Mapper on species: ', name)
-    scholar_results = google_scholar_search(name)
-    for i, article in enumerate(scholar_results):
-        add_species_article(tx, article, species)
-        if i == GOOGLE_SCHOLAR_ARTICLE_LIMIT:
-            break
-    return
-    # results = eol_search(name)
+class Driver():
+    def __init__(self, page_size=100, rate_limit=0.25):
+        # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
+        self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
+        self.page_size  = page_size
+        self.rate_limit = rate_limit
+        self.processes  = dict()
 
-def main():
-    with neo_client.session() as session:
-        session.read_transaction(count_species)
-        session.read_transaction(iter_species, mapper)
+    def paging(self, tx, module):
+        finder = 'MATCH (n:{}) '.format(module.in_label)
+        query  = finder + 'RETURN n'
+        for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
+            for record in page_results.records():
+                with self.neo_client.session() as session:
+                    node = record['n']
+                    result = module.process(node)
+                    session.write_transaction(self.write, node, result, module)
+
+    def write(self, tx, node, process_result, module):
+        if not isinstance(process_result, list):
+            process_result = [process_result]
+        for result in process_result:
+            # print('.', end='', flush=True)
+            id1 = node['uuid']
+            id2 = self.add(result, module.out_label)
+            if module.connect_labels is not None:
+                self.link(tx, id1, id2, module)
+
+    def link(self, tx, id1, id2, module):
+        from_label, to_label = module.connect_labels
+        query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=module.in_label, out_label=module.out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
+        tx.run(query)
+
+    def add(self, data, label):
+        unique_id = uuid4()
+        data['uuid'] = str(unique_id)
+        with self.neo_client.session() as session:
+            session.write_transaction(add_json_node, label, data)
+        return data['uuid']
+
+    def run(self, module):
+        if module.in_label is None:
+            for node_json in module.process():
+                self.add(node_json, module.out_label)
+        else:
+            with self.neo_client.session() as session:
+                session.read_transaction(self.paging, module)
 
 if __name__ == '__main__':
-    main()
+    driver = Driver(page_size=1, rate_limit=0.25)
+    wiki_scraper = WikipediaModule()
+    eol_scraper = EOLModule()
+    scholar_scraper = GoogleScholarModule()
+    backbone = BackboneModule()
+    highwire = HighwireModule()
+    # driver.run(backbone)
+    # driver.run(wiki_scraper)
+    # driver.run(eol_scraper)
+    # driver.run(scholar_scraper)
+    # driver.run(highwire)
