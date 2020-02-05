@@ -58,12 +58,15 @@ class EOLModule(Module):
     def process(self, node):
         print(node)
         name = node['name']
-        # pprint(self.api.search('MATCH (p:Page)-[:trait]->(t:Trait)-[:metadata]->(m) WHERE p.canonical=\'{name}\' RETURN m LIMIT 100'.format(name=name)))
-        query = 'MATCH (t:Trait)<-[:trait]-(p:Page),(t)-[:supplier]->(r:Resource),(t)-[:predicate]->(pred:Term) WHERE p.canonical=\'{name}\' OPTIONAL MATCH (t)-[:object_term]->(obj:Term) OPTIONAL MATCH (t)-[:normal_units_term]->(units:Term) OPTIONAL MATCH (lit:Term) WHERE lit.uri = t.literal RETURN r.resource_id, t.eol_pk, t.resource_ok, t.source, p.page_id, t.scientific_name, pred.uri, pred.name, t.object_page_id, obj.uri, obj.name, t.normal_measurement, units.uri, units.name, t.normal_units, t.literal, lit.name LIMIT 5'.format(name=name)
+        query = ' '.join(['MATCH (p:Page)-[:trait|:inferred_trait]->(t:Trait), (t)-[:predicate]->(pred:Term)',
+                          'WHERE p.canonical = \'{name}\''.format(name=name),
+                          'OPTIONAL MATCH (t)-[:object_term]->(obj:Term)',
+                          'OPTIONAL MATCH (t)-[:units_term]->(units:Term)',
+                          'OPTIONAL MATCH (p2:Page {page_id:t.object_page_id})'
+                          'RETURN p.canonical, pred.name, pred.type, obj.name, units.name, t.measurement, p2.canonical',
+                          'LIMIT 1000'])
+        print(query)
         pprint(self.api.search(query))
-        # pprint(self.api.search('MATCH (p:Page)-[x:trait]->(t:Trait)-[:metadata]->(m) WHERE p.canonical=\'{name}\' RETURN x LIMIT 100'.format(name=name)))
-        # pprint(self.api.search('MATCH (p:Page) WHERE p.canonical=\'{name}\' RETURN p.trait LIMIT 100'.format(name=name)))
-        # pprint(search(name))
         1/0
         return dict()
 

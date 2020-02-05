@@ -7,8 +7,6 @@ from utils.neo import page, add_json_node
 from uuid import uuid4
 
 # TODO add scheduling etc
-
-
 class Driver():
     def __init__(self, page_size=100, rate_limit=0.25):
         # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
@@ -66,6 +64,6 @@ if __name__ == '__main__':
     highwire = HighwireModule()
     # driver.run(backbone)
     # driver.run(wiki_scraper)
-    # driver.run(eol_scraper)
+    driver.run(eol_scraper)
     # driver.run(scholar_scraper)
     # driver.run(highwire)
