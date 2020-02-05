@@ -5,10 +5,10 @@
    <head>
       {% block head %}
          <title>PeTaL</title>
-         <link rel="shortcut icon" href="{% static 'polls/images/favicon.ico' %}" />
+         <link rel="shortcut icon" href="{% static 'petal_main/images/favicon.ico' %}" />
          <meta charset="utf-8">
          <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="{% static 'polls/styles.css' %}" />
+         <link rel="stylesheet" href="{% static 'petal_main/styles.css' %}" />
          <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       {% endblock %}
    </head>
@@ -23,14 +23,14 @@
       <nav>
          <div class="wrapper">
             <a class="logo" href="/">
-		    <img src="{% static 'polls/images/petal-icon.png' %}">
+		    <img src="{% static 'petal_main/images/petal-icon.png' %}">
                <p>PeTaL<br><span>Periodic Table of Life</span></p>
             </a>
             <ul>
                <li class="subnavToggle">
                      <a href="#">BIRD<span class="icon-circle-down"></span></a>
                      <ul>
-                        <li><a href="/bird_e2b">Engineering to Biology</a></li>
+                        <li><a href="/bird-demo">Engineering to Biology</a></li>
                         <li><a href="/bird_searchable">NASA Thesaurus</a></li>
                      </ul>
                   </li>
@@ -80,7 +80,7 @@
             </div>
          </footer>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="{% static 'polls/scripts.js' %}"></script>
+      <script src="{% static 'petal_main/scripts.js' %}"></script>
       </div>
    </body>
 </html>
