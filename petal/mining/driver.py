@@ -20,11 +20,11 @@ class Driver():
         query  = finder + 'RETURN n'
         for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
             for record in page_results.records():
+                print(record)
                 with self.neo_client.session() as session:
                     node = record['n']
                     result = module.process(node)
                     session.write_transaction(self.write, node, result, module)
-                    1/0
 
     def write(self, tx, node, process_result, module):
         if not isinstance(process_result, list):
@@ -70,6 +70,6 @@ if __name__ == '__main__':
     highwire = HighwireModule()
     # driver.run(backbone)
     # driver.run(wiki_scraper)
-    driver.run(eol_scraper)
+    # driver.run(eol_scraper)
     # driver.run(scholar_scraper)
     # driver.run(highwire)

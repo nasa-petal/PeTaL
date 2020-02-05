@@ -68,6 +68,8 @@ class EOLModule(Module):
         add_list = []
         for link, datatype, objname, unitname, measurement, target_name in result['data']:
             link = link.replace(' ', '_')
+            link = link.replace('\\', '_')
+            link = link.replace('/', '_')
             if datatype == 'measurement':
                 if objname is None:
                     add_list.append(('Species', 'EOLMeasurement:EOLData', (link, link), {'value': measurement}))
