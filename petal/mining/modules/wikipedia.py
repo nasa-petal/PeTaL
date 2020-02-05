@@ -11,16 +11,18 @@ class WikipediaModule(Module):
     def process(self, node):
         name = node['Name'] if 'Name' in node else node['name']
         results = wikipedia.search(name)
-        properties = dict()
-        if len(results) > 0:
+        properties = list()
+        for result in results:
+            result_properties = dict()
             try:
-                page = wikipedia.page(results[0], auto_suggest=True, redirect=True, preload=True)
+                page = wikipedia.page(result, auto_suggest=True, redirect=True, preload=True)
                 for field in SCRAPE_FIELDS:
                     try:
-                        properties[field] = getattr(page, field)
+                        result_properties[field] = getattr(page, field)
                     except KeyError:
                         pass
             except wikipedia.exceptions.WikipediaException as e:
                 print(e)
+            properties.append(result_properties)
         return properties
 
