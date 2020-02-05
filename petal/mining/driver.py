@@ -30,15 +30,20 @@ class Driver():
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
-            # print('.', end='', flush=True)
+            if not isinstance(result, tuple):
+                in_label  = module.in_label
+                out_label = module.out_label
+                connect_labels = module.connect_labels
+                result = result
+            else:
+                in_label, out_label, connect_labels, result = result
             id1 = node['uuid']
-            id2 = self.add(result, module.out_label)
-            if module.connect_labels is not None:
-                self.link(tx, id1, id2, module)
+            id2 = self.add(result, out_label)
+            if connect_labels is not None:
+                self.link(tx, id1, id2, in_label, out_label, *connect_labels)
 
-    def link(self, tx, id1, id2, module):
-        from_label, to_label = module.connect_labels
-        query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=module.in_label, out_label=module.out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
+    def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):
+        query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=in_label, out_label=out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
         tx.run(query)
 
     def add(self, data, label):
@@ -64,7 +69,7 @@ if __name__ == '__main__':
     backbone = BackboneModule()
     highwire = HighwireModule()
     # driver.run(backbone)
-    driver.run(wiki_scraper)
-    # driver.run(eol_scraper)
+    # driver.run(wiki_scraper)
+    driver.run(eol_scraper)
     # driver.run(scholar_scraper)
     # driver.run(highwire)

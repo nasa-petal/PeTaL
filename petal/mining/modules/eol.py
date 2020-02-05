@@ -65,5 +65,6 @@ class EOLModule(Module):
                           'RETURN p.canonical, pred.name, pred.type, obj.name, units.name, t.measurement, p2.canonical',
                           'LIMIT 1000'])
         result = self.api.search(query)
-        result = dict()
+        pprint(result)
+        1/0
         return result
