@@ -24,6 +24,7 @@ class Driver():
                     node = record['n']
                     result = module.process(node)
                     session.write_transaction(self.write, node, result, module)
+                    1/0
 
     def write(self, tx, node, process_result, module):
         if not isinstance(process_result, list):

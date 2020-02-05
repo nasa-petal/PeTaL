@@ -56,7 +56,6 @@ class EOLModule(Module):
         self.api = EOL_API()
 
     def process(self, node):
-        print(node)
         name = node['name']
         query = ' '.join(['MATCH (p:Page)-[:trait|:inferred_trait]->(t:Trait), (t)-[:predicate]->(pred:Term)',
                           'WHERE p.canonical = \'{name}\''.format(name=name),
@@ -65,8 +64,6 @@ class EOLModule(Module):
                           'OPTIONAL MATCH (p2:Page {page_id:t.object_page_id})'
                           'RETURN p.canonical, pred.name, pred.type, obj.name, units.name, t.measurement, p2.canonical',
                           'LIMIT 1000'])
-        print(query)
-        pprint(self.api.search(query))
-        1/0
-        return dict()
-
+        result = self.api.search(query)
+        result = dict()
+        return result
