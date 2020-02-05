@@ -62,9 +62,17 @@ class EOLModule(Module):
                           'OPTIONAL MATCH (t)-[:object_term]->(obj:Term)',
                           'OPTIONAL MATCH (t)-[:units_term]->(units:Term)',
                           'OPTIONAL MATCH (p2:Page {page_id:t.object_page_id})'
-                          'RETURN p.canonical, pred.name, pred.type, obj.name, units.name, t.measurement, p2.canonical',
+                          'RETURN pred.name, pred.type, obj.name, units.name, t.measurement, p2.canonical',
                           'LIMIT 1000'])
         result = self.api.search(query)
-        pprint(result)
-        1/0
-        return result
+        add_list = []
+        for link, datatype, objname, unitname, measurement, target_name in result['data']:
+            link = link.replace(' ', '_')
+            if datatype == 'measurement':
+                if objname is None:
+                    add_list.append(('Species', 'EOLMeasurement:EOLData', (link, link), {'value': measurement}))
+                else:
+                    add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
+            else:
+                add_list.append(('Species', 'EOLSpecies:EOLData', (link, link), {'value': target_name}))
+        return add_list
