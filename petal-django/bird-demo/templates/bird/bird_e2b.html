@@ -1,4 +1,4 @@
-{% extends "bird/navbar.html" %}
+{% extends "navbar.html" %}
 {% load static %}
 {% block head %}
   {{ block.super }}
@@ -14,7 +14,7 @@
   <input name="q" type="text" placeholder="Search...">
   <button id="search-btn" class="btn blue-gradient-bg" type="submit">Search</button>
   </form>
-  <p id="bio-terms" class="vis-hidden"></p>
+  <p id="bio-terms">{{ query }}</p>
   <div id="bird-intro">
     <h4>This tool is designed to assist engineers in finding biological papers pertaining to a specific engineering issue. </h4>
     <p>
