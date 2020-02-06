@@ -27,20 +27,26 @@ class Driver():
                     session.write_transaction(self.write, node, result, module)
 
     def write(self, tx, node, process_result, module):
+        # TODO: Simplify this interface? Currently allows [dict], [str], [tuple], dict, str, tuple from module.process()
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
-            if not isinstance(result, tuple):
-                in_label  = module.in_label
-                out_label = module.out_label
-                connect_labels = module.connect_labels
-                result = result
+            if isinstance(result, str): # Result is a query
+                tx.run(result)
             else:
-                in_label, out_label, connect_labels, result = result
-            id1 = node['uuid']
-            id2 = self.add(result, out_label)
-            if connect_labels is not None:
-                self.link(tx, id1, id2, in_label, out_label, *connect_labels)
+                if isinstance(result, dict):
+                    in_label  = module.in_label
+                    out_label = module.out_label
+                    connect_labels = module.connect_labels
+                    result = result
+                elif isinstance(result, tuple):
+                    in_label, out_label, connect_labels, result = result
+                else:
+                    raise ValueError('Invalid scraping module process(node) result: {}'.format(result))
+                id1 = node['uuid']
+                id2 = self.add(result, out_label)
+                if connect_labels is not None:
+                    self.link(tx, id1, id2, in_label, out_label, *connect_labels)
 
     def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):
         query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=in_label, out_label=out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))

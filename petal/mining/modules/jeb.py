@@ -31,6 +31,7 @@ class JEBModule(Module):
             category     = article_page.find(attrs={'class' : 'highwire-cite-category'}).get_text()
             if category == 'Research Article':
                 properties = dict()
+                properties['url']  = article_link
                 properties['title']    = article_page.find(attrs={'class' : 'highwire-cite-title'}).get_text()
                 properties['authors']  = article_page.find(attrs={'class' : 'highwire-cite-authors'}).get_text()
                 article_page = article_page.find(attrs={'class' : 'fulltext-view'})
