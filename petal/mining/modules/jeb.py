@@ -35,11 +35,14 @@ class JEBModule(Module):
                 properties['title']    = article_page.find(attrs={'class' : 'highwire-cite-title'}).get_text()
                 properties['authors']  = article_page.find(attrs={'class' : 'highwire-cite-authors'}).get_text()
                 article_page = article_page.find(attrs={'class' : 'fulltext-view'})
-                sections = [process_section(section) for section in article_page.find_all(attrs={'class' : 'section'})]
-                properties['abstract'] = sections[0]
-                properties['intro']    = sections[1]
-                properties['methods']  = sections[2]
-                properties['results']  = sections[3]
-                articles.append(properties)
-                i += 1
+                try:
+                    sections = [process_section(section) for section in article_page.find_all(attrs={'class' : 'section'})]
+                    properties['abstract'] = sections[0]
+                    properties['intro']    = sections[1]
+                    properties['methods']  = sections[2]
+                    properties['results']  = sections[3]
+                    articles.append(properties)
+                    i += 1
+                except AttributeError:
+                    pass
         return articles
