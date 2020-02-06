@@ -74,7 +74,9 @@ class EOLModule(Module):
                 if objname is None:
                     add_list.append(('Species', 'EOLMeasurement:EOLData', (link, link), {'value': measurement}))
                 else:
-                    add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
+                    pass
+                    # add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
             else:
-                add_list.append(('Species', 'EOLSpecies:EOLData', (link, link), {'value': target_name}))
+                pass
+                # add_list.append(('Species', 'EOLSpecies:EOLData', (link, link), {'value': target_name}))
         return add_list
