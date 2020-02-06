@@ -6,6 +6,10 @@ from .module import Module
 
 JEB_LIMIT = 10
 
+def process_section(section):
+    paragraphs = section.find_all('p')
+    return '\n'.join(p.get_text() for p in paragraphs)
+
 class JEBModule(Module):
     def __init__(self, in_label='Species', out_label='JEBArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES')):
         Module.__init__(self, in_label, out_label, connect_labels)
@@ -28,12 +32,13 @@ class JEBModule(Module):
             if category == 'Research Article':
                 properties = dict()
                 properties['title']    = article_page.find(attrs={'class' : 'highwire-cite-title'}).get_text()
-                sections = [section.get_text() for section in article_page.find_all(attrs={'class' : 'section'})]
+                properties['authors']  = article_page.find(attrs={'class' : 'highwire-cite-authors'}).get_text()
+                article_page = article_page.find(attrs={'class' : 'fulltext-view'})
+                sections = [process_section(section) for section in article_page.find_all(attrs={'class' : 'section'})]
                 properties['abstract'] = sections[0]
                 properties['intro']    = sections[1]
                 properties['methods']  = sections[2]
                 properties['results']  = sections[3]
-                properties['authors']  = article_page.find(attrs={'class' : 'highwire-cite-authors'}).get_text()
                 articles.append(properties)
                 i += 1
         return articles
