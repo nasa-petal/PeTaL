@@ -7,6 +7,5 @@ def index(request):
 
 def results(request):
     query = request.GET.get('q')
-    # GET RESULTS(query)
     context = dict(query=query)
     return render(request, 'bird/bird_e2b.html', context)

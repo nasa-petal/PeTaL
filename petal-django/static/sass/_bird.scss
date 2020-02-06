@@ -1,0 +1,84 @@
+.bird {
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    #cluster-btn {
+        float: right;
+    }
+
+    #bio-terms {
+        font-size: .9em;
+        margin-top: 3px;
+        height: 2em;
+    }
+
+    #abstracts {
+        h2 {
+            color: $action-blue;
+        }
+
+        #bird-abstract-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #bird-abstract-footer {
+            display: flex;
+            justify-content: space-between;
+            vertical-align: bottom;
+        }
+    }
+
+    .not-displayed {
+        display: none;
+    }
+
+    .vis-hidden {
+        visibility: hidden;
+    }
+
+    .larger-font {
+        font-size: 1.5em;
+    }
+
+    .accent-color {
+        color: $action-blue;
+    }
+}
+
+.bird-abstract {
+    .expandable-text {
+        p {
+            margin: 0;
+        }
+        
+        .trigger {
+            color: #337ab7;
+            outline: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    
+        .expanded-content {
+            display: none;
+        }
+    }
+      
+    .panel {
+        background-color: transparent;
+        margin: 0;
+    }
+
+    button {
+        width: 100%;
+        
+    }
+}

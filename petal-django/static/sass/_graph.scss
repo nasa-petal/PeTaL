@@ -1,0 +1,248 @@
+.contentMain.graph {
+    @media screen and (max-width: 1360px) {
+        margin: 0 40px;
+
+        &.fullActive {
+            margin: 0 auto;
+        }
+    }
+
+    .svg-wrapper {
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 70px;
+            height: 70px;
+            right: 14px;
+            bottom: 14px;
+            background: url("../img/nasa-white-logo.png") no-repeat center;
+            background-size: 100%;
+            opacity: .8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .fullScreenToggler {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background: #0000001c;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1;
+            min-height: 40px;
+
+            span {
+                font-size: 20px;
+                color: #444;
+            }
+
+            .darkModeActive & {
+                background: #f7f7f73d;
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+
+        .infoTrigger {
+            position: absolute;
+            top: 0px;
+            right: 37px;
+            background: #0000001c;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1;
+
+            span {
+                font-size: 20px;
+                color: #444;
+            }
+
+            .darkModeActive & {
+                background: #f7f7f73d;
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+
+        .darkModeActive & {
+            fill: #2699bc;
+            background: #1f1f1f;
+
+            svg .links line {
+                stroke: #6d97bb;
+            }
+        }
+
+        .info-overlay {
+            position: absolute;
+            background: #f7f7f7;
+            right: -320px;
+            top: 0;
+            height: 100%;
+            width: 320px;
+            padding: 80px 30px 30px;
+
+            @include transition(all 0.3s ease-in-out);
+
+            .darkModeActive & {
+                background: $darkMode-light-bg;
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &.infoActive {
+        .info-overlay {
+            right: 0;
+            border-left: solid 1px #0000000f;
+        }
+    }
+
+    .icon-shrink2 {
+        display: none;
+    }
+
+    &.fullActive {
+        max-width: 100%;
+        padding: 20px;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #000000d6;
+        z-index: 9999;
+
+        .svg-wrapper {
+            overflow: hidden;
+        }
+
+        h1 {
+            display: none;
+        }
+
+        .icon-shrink2 {
+            display: block;
+        }
+
+        .icon-enlarge2 {
+            display: none;
+        }
+    }
+}
+
+svg {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    .links line {
+        stroke: #999;
+        stroke-opacity: 0.6;
+    }
+
+    .nodes circle {
+        stroke: #fff;
+        stroke-width: 1.5px;
+    }
+}
+
+.sideInfo {
+    width: 400px;
+    height: 100vh;
+    color: #92989c;
+    background: #0f1215;
+    position: absolute;
+    right: -400px;
+    top: 0px;
+    padding: 80px 30px 40px 30px;
+
+    @include transition(all 0.3s ease-in-out);
+
+    p {
+        color: #92989c;
+    }
+
+    &.active {
+        right: 0;
+    }
+
+    .closeIcon {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        top: 50px;
+        right: 30px;
+        cursor: pointer;
+        display: block;
+        z-index: 99999;
+
+        @include transition(all 0.3s ease-in-out);
+
+        span {
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            display: block;
+
+            @include transform(rotate(45deg));
+
+            &:first-of-type {
+                margin-top: 14px;
+
+                @include transform(rotate(-45deg));
+            }
+        }
+
+        &:hover {
+            @include transform(rotate(180deg));
+        }
+    }
+
+    .nodeLabel {
+        text-transform: capitalize;
+    }
+}
+
+h1.graphHeader {
+    position: absolute;
+    top: 50px;
+    left: 8%;
+    z-index: 9999;
+}
+
+#hmGraph {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        // background: url(../img/mississippi_sm.jpg) no-repeat center;
+        // background-size: cover;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#20252b+0,000000+100 */
+        background: #20252b;
+        background: -moz-linear-gradient(-45deg, #20252b 0%, #000000 100%);
+        background: -webkit-linear-gradient(-45deg, #20252b 0%, #000000 100%);
+        background: linear-gradient(135deg, #20252b 0%, #000000 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20252b', endColorstr='#000000',GradientType=1 );
+        z-index: -1;
+    }
+}
