@@ -57,6 +57,7 @@ class EOLModule(Module):
 
     def process(self, node):
         name = node['name']
+        uuid = node['uuid']
         query = ' '.join(['MATCH (p:Page)-[:trait|:inferred_trait]->(t:Trait), (t)-[:predicate]->(pred:Term)',
                           'WHERE p.canonical = \'{name}\''.format(name=name),
                           'OPTIONAL MATCH (t)-[:object_term]->(obj:Term)',
@@ -72,11 +73,12 @@ class EOLModule(Module):
             link = link.replace('/', '_')
             if datatype == 'measurement':
                 if objname is None:
-                    add_list.append(('Species', 'EOLMeasurement:EOLData', (link, link), {'value': measurement}))
+                    add_list.append(('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}))
                 else:
-                    pass
-                    # add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
+                    add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
             else:
-                pass
-                # add_list.append(('Species', 'EOLSpecies:EOLData', (link, link), {'value': target_name}))
+                if '\'' not in target_name:
+                    add_list.append('MATCH (n:Species) WHERE n.uuid = \'{}\' MATCH (m:Species) WHERE m.name = \'{}\' MERGE (n)-[:{}]->(m)'.format(uuid, target_name, link))
+                else:
+                    pass # ?
         return add_list

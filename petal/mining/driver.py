@@ -31,6 +31,7 @@ class Driver():
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
+            # print(result, flush=True)
             if isinstance(result, str): # Result is a query
                 tx.run(result)
             else:
@@ -53,11 +54,17 @@ class Driver():
         tx.run(query)
 
     def add(self, data, label):
-        unique_id = uuid4()
-        data['uuid'] = str(unique_id)
         with self.neo_client.session() as session:
-            session.write_transaction(add_json_node, label, data)
-        return data['uuid']
+            node = session.write_transaction(add_json_node, label, data)
+            records = node.records()
+            node = (next(records)['n'])
+            id_n = node.id
+            if 'uuid' not in node:
+                unique_id = uuid4()
+                session.run('MATCH (s) WHERE ID(s) = {} SET s.uuid = \'{}\' RETURN s'.format(id_n, str(unique_id)))
+                return unique_id
+            else:
+                return node['uuid']
 
     def run(self, module):
         if module.in_label is None:
@@ -77,7 +84,7 @@ if __name__ == '__main__':
     jeb      = JEBModule()
     # driver.run(backbone)
     # driver.run(wiki_scraper)
-    # driver.run(eol_scraper)
+    driver.run(eol_scraper)
     # driver.run(scholar_scraper)
     # driver.run(highwire)
-    driver.run(jeb)
+    # driver.run(jeb)
