@@ -12,6 +12,7 @@ def results(request):
     neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
     with neo_client.session() as session:
         result = session.run('MATCH (a:Article) WHERE a.abstract CONTAINS \'{test}\' RETURN a'.format(test=query))
-    result = str(list(result.records())[0]['a']['abstract'])
-    context = dict(query=result)
-    return render(request, 'bird/bird_e2b.html', context)
+    articles = [article['a'] for article in result.records()]
+    # context = dict(query=result, papers=[dict(url='URL', relevancy=0.0, title='An example', abstract='Lorem ipsum imet ')])
+    context = dict(papers=articles)
+    return render(request, 'bird/bird_results.html', context)

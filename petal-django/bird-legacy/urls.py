@@ -3,6 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('bird-results/', views.results, name='bird-results'),
-    path('', views.index, name='index'),
+    path('bird-legacy-results/', views.results, name='bird-legacy-results'),
+    path('', views.index, name='bird-legacy'),
 ]
