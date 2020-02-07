@@ -1,5 +1,4 @@
 from django.apps import AppConfig
 
-
-class PetalConfig(AppConfig):
-    name = 'petal-main'
+class BiomoleConfig(AppConfig):
+    name = 'biomole'

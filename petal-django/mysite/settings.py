@@ -33,6 +33,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'petal-main.apps.PetalConfig',
     'bird-demo.apps.BirdConfig',
+    'bird-legacy.apps.BirdConfig',
+    'biomole.apps.BiomoleConfig',
+    'map-beta.apps.MapConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

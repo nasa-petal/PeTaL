@@ -18,10 +18,10 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('', include('petal-main.urls')),
-    path('admin/', admin.site.urls),
-    path('bird-demo/', include('bird-demo.urls')),
+    path('',             include('petal-main.urls')),
+    path('admin/',       admin.site.urls),
+    path('bird-demo/',   include('bird-demo.urls')),
     path('bird-legacy/', include('bird-legacy.urls')),
-    path('map/', include('map-beta.urls')),
-    path('biomole/', include('biomole.urls')),
+    path('biomole/',     include('biomole.urls')),
+    path('map/',         include('map-beta.urls')),
 ]
