@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bird-demo/', include('bird-demo.urls')),
     path('', include('petal-main.urls')),
+    path('map/', include('map-beta.urls')),
 ]

@@ -1,0 +1,1717 @@
+ 
+{ "type" : "Feature Collection",
+   "features" : [
+       { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.1999, 41.6055]},
+       "properties" : { "Species" : "Anax junius", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Common Green Darner", "Specimen" : "CMNHENT0043231", "Author": "Drury", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Big Creek tributary, within east Chardon township, near Chardon, Chardon township", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.32, 41.6]},
+       "properties" : { "Species" : "Anax junius", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Common Green Darner", "Specimen" : "CMNHENT0043224", "Author": "Drury", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, 41.61055°N 81.31592°W, Lake Co., OH", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0194, 41.7333]},
+       "properties" : { "Species" : "Anax junius", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Common Green Darner", "Specimen" : "CMNHENT0043222", "Author": "Drury", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Camp Stigwandish, Lake Co., OH", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.1999, 41.6055]},
+       "properties" : { "Species" : "Anax junius", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Common Green Darner", "Specimen" : "CMNHENT0043169", "Author": "Drury", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Big Creek tributary, within east Chardon township, near Chardon, Chardon township", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.864, 44.709]},
+       "properties" : { "Species" : "Aeshna canadensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Canada Darner", "Specimen" : "CMNHENT0043088", "Author": "Walker", "Year": "1908", "Collection": "Cleveland Museum of Natural History", "Location": "CAN, Ontario, Drag Lake, Wye Marsh", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.864, 44.709]},
+       "properties" : { "Species" : "Aeshna canadensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Canada Darner", "Specimen" : "CMNHENT0043087", "Author": "Walker", "Year": "1908", "Collection": "Cleveland Museum of Natural History", "Location": "CAN, Ontario, Drag Lake, Wye Marsh", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.4078, 43.8417]},
+       "properties" : { "Species" : "Aeshna canadensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Canada Darner", "Specimen" : "CMNHENT0043086", "Author": "Walker", "Year": "1908", "Collection": "Cleveland Museum of Natural History", "Location": "NY. Adirondacks, Durant Lake", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.2611, 43.8458]},
+       "properties" : { "Species" : "Aeshna canadensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Canada Darner", "Specimen" : "CMNHENT0043085", "Author": "Walker", "Year": "1908", "Collection": "Cleveland Museum of Natural History", "Location": "Rock River, Hamilton Co., NY", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.4078, 43.8417]},
+       "properties" : { "Species" : "Aeshna canadensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Canada Darner", "Specimen" : "CMNHENT0043083", "Author": "Walker", "Year": "1908", "Collection": "Cleveland Museum of Natural History", "Location": "NY. Adirondacks, Durant Lake", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0706, 41.6347]},
+       "properties" : { "Species" : "Gomphus lineatifrons", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Splendid Clubtail", "Specimen" : "CMNHENT0042792", "Author": "Calvert", "Year": "1921", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Ashtabula Co. Harpersfield Grand R.", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0491, 41.7419]},
+       "properties" : { "Species" : "Gomphus lineatifrons", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Splendid Clubtail", "Specimen" : "CMNHENT0042794", "Author": "Calvert", "Year": "1921", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co. Madison Twp., Lake Metroparks - Hidden Valley", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.1328, 41.7324]},
+       "properties" : { "Species" : "Gomphus lineatifrons", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Splendid Clubtail", "Specimen" : "CMNHENT0042798", "Author": "Calvert", "Year": "1921", "Collection": "Cleveland Museum of Natural History", "Location": "S. of Perry, along Grand River, Lake Co., Ohio", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0706, 41.6347]},
+       "properties" : { "Species" : "Gomphus lineatifrons", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Splendid Clubtail", "Specimen" : "CMNHENT0042882", "Author": "Calvert", "Year": "1921", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Ashtabula Co. Harpersfield Grand R.", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0491, 41.7419]},
+       "properties" : { "Species" : "Gomphus lineatifrons", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Splendid Clubtail", "Specimen" : "CMNHENT0042883", "Author": "Calvert", "Year": "1921", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co. Madison Twp., Lake Metroparks - Hidden Valley", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.6126, 40.7252]},
+       "properties" : { "Species" : "Lanthus albistylus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0043007", "Author": "Hagen in Selys", "Year": "1878", "Collection": "Cleveland Museum of Natural History", "Location": "Beaver Creek state park, Columbiana, Ohio, USA", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.055, 41.742]},
+       "properties" : { "Species" : "Lanthus albistylus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0043008", "Author": "Hagen in Selys", "Year": "1878", "Collection": "Cleveland Museum of Natural History", "Location": "Lake Co., Madison Twp., Hidden Valley Park-Lake Metroparks Grand River", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0354, 41.4389]},
+       "properties" : { "Species" : "Lanthus albistylus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0043009", "Author": "Hagen in Selys", "Year": "1878", "Collection": "Cleveland Museum of Natural History", "Location": "Swine Creek Reservation, Geauga Co., OH", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.2611, 43.8458]},
+       "properties" : { "Species" : "Lanthus albistylus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0043020", "Author": "Hagen in Selys", "Year": "1878", "Collection": "Cleveland Museum of Natural History", "Location": "Rock River, Hamilton Co., NY", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.5387, 41.9565]},
+       "properties" : { "Species" : "Lanthus albistylus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0043026", "Author": "Hagen in Selys", "Year": "1878", "Collection": "Cleveland Museum of Natural History", "Location": "Conneaut Creek", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3105, 41.6001]},
+       "properties" : { "Species" : "Sympetrum vicinum", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042581", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "Kirtland-Chardon Road, near Holden Arboretum, Kirtland, Lake Co., OH", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3105, 41.6001]},
+       "properties" : { "Species" : "Sympetrum vicinum", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042584", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "Kirtland-Chardon Road, near Holden Arboretum, Kirtland, Lake Co., OH", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.1999, 41.6055]},
+       "properties" : { "Species" : "Sympetrum vicinum", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042586", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "Big Creek tributary, within east Chardon township, near Chardon, Chardon township", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.045, 41.7708]},
+       "properties" : { "Species" : "Sympetrum vicinum", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042588", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "Memorial Middle School, Mentor, Lake Co., OH", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3483, 41.5958]},
+       "properties" : { "Species" : "Sympetrum vicinum", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042590", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co., Kirtland City, Lake Metroparks-Chapin Forest Reservation (State Rte 306), Schupp's Pond", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.315, 41.6281]},
+       "properties" : { "Species" : "Cordulegaster maculatus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042685", "Author": "Selys", "Year": "1854", "Collection": "Cleveland Museum of Natural History", "Location": "Pierson Creek, Holden Arboretum, Kirtland, Lake Co., OH", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.2111, 41.6156]},
+       "properties" : { "Species" : "Cordulegaster maculatus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042687", "Author": "Selys", "Year": "1854", "Collection": "Cleveland Museum of Natural History", "Location": "Big Creek Park, Geauga Co,. OH", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.2111, 41.6156]},
+       "properties" : { "Species" : "Cordulegaster maculatus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042688", "Author": "Selys", "Year": "1854", "Collection": "Cleveland Museum of Natural History", "Location": "Big Creek Park, Geauga Co,. OH", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.2111, 41.6156]},
+       "properties" : { "Species" : "Cordulegaster maculatus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042689", "Author": "Selys", "Year": "1854", "Collection": "Cleveland Museum of Natural History", "Location": "Big Creek Park, Geauga Co,. OH", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-73.3378, 42.475]},
+       "properties" : { "Species" : "Cordulegaster maculatus", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042690", "Author": "Selys", "Year": "1854", "Collection": "Cleveland Museum of Natural History", "Location": "Pittsfield State Forest, Berkshire Co., MA", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.4413, 40.8676]},
+       "properties" : { "Species" : "libellula luctuosa", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Widow Skimmer", "Specimen" : "CMNHENT0042307", "Author": "Burmeister", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Kent State University, Stark Campus, North Canton, Stark Co., OH", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.7503, 40.7503]},
+       "properties" : { "Species" : "libellula luctuosa", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Widow Skimmer", "Specimen" : "CMNHENT0042308", "Author": "Burmeister", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Columbiana Co., OH", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.15, 41.3333]},
+       "properties" : { "Species" : "libellula luctuosa", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Widow Skimmer", "Specimen" : "CMNHENT0042309", "Author": "Burmeister", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Lorain Co., OH", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.66, 41.54]},
+       "properties" : { "Species" : "libellula luctuosa", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Widow Skimmer", "Specimen" : "CMNHENT0042319", "Author": "Burmeister", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "North Chagrin Reservation, Squires Castle Area, Cuyahoga Co., Ohio", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.32, 41.61]},
+       "properties" : { "Species" : "libellula luctuosa", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Widow Skimmer", "Specimen" : "CMNHENT0042321", "Author": "Burmeister", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, 41.61055°N 81.31592°W, Lake Co., OH", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.8314, 41.4175]},
+       "properties" : { "Species" : "Macromia taeniolata", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042644", "Author": "Rambur", "Year": "1842", "Collection": "Cleveland Museum of Natural History", "Location": "Resthaven Wildlife Area, Erie Co., OH", "color" : "#b8adaf"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.3697, 41.2692]},
+       "properties" : { "Species" : "Macromia taeniolata", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042645", "Author": "Rambur", "Year": "1842", "Collection": "Cleveland Museum of Natural History", "Location": "Defiance Township, Defiance Co., OH", "color" : "#b8adaf"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.3697, 41.2692]},
+       "properties" : { "Species" : "Macromia taeniolata", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042647", "Author": "Rambur", "Year": "1842", "Collection": "Cleveland Museum of Natural History", "Location": "Defiance Township, Defiance Co., OH", "color" : "#b8adaf"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.3697, 41.2692]},
+       "properties" : { "Species" : "Macromia taeniolata", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042648", "Author": "Rambur", "Year": "1842", "Collection": "Cleveland Museum of Natural History", "Location": "Defiance Township, Defiance Co., OH", "color" : "#b8adaf"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.7667, 41.7]},
+       "properties" : { "Species" : "Macromia illinoiensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042651", "Author": "Walsh", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Ashtabula Co., OH", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.7667, 41.7]},
+       "properties" : { "Species" : "Macromia illinoiensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042653", "Author": "Walsh", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Ashtabula Co., OH", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.3697, 41.2692]},
+       "properties" : { "Species" : "Macromia illinoiensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042655", "Author": "Walsh", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Defiance Township, Defiance Co., OH", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.3083, 41.3833]},
+       "properties" : { "Species" : "Macromia illinoiensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042657", "Author": "Walsh", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Lake Erie, Vermillion River, Lorain County Metro Park", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.185, 41.7294]},
+       "properties" : { "Species" : "Macromia illinoiensis", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Dragonfly", "Specimen" : "CMNHENT0042658", "Author": "Walsh", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co., Perry Twp. Lake Metroparks, Mason's Landing", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.57, 39.43]},
+       "properties" : { "Species" : "Tachopteryx thoreyi", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Gray Petaltail", "Specimen" : "CMNHENT0042662", "Author": "Hagen in Sélys", "Year": "1858", "Collection": "Cleveland Museum of Natural History", "Location": "Deep Woods farm, Township of Benton, Hocking Co., OH, U.S.A.", "color" : "#311e2a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.165, 41.7197]},
+       "properties" : { "Species" : "Tachopteryx thoreyi", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Gray Petaltail", "Specimen" : "CMNHENT0042663", "Author": "Hagen in Sélys", "Year": "1858", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co. Leroy Twp., Indian Point Park - Grand River", "color" : "#311e2a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0589, 41.7429]},
+       "properties" : { "Species" : "Tachopteryx thoreyi", "Class": "Insecta", "Order": "Anisoptera", "Common_Name" : "Gray Petaltail", "Specimen" : "CMNHENT0042664", "Author": "Hagen in Sélys", "Year": "1858", "Collection": "Cleveland Museum of Natural History", "Location": "4836 Palisade Dr., Madison Twp., Lake Co., OH", "color" : "#311e2a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.7667, 41.7]},
+       "properties" : { "Species" : "Enallagma exulans", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043565", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "Ashtabula Co., OH", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0491, 41.7419]},
+       "properties" : { "Species" : "Enallagma exulans", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043568", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co. Madison Twp., Lake Metroparks - Hidden Valley", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.66, 41.54]},
+       "properties" : { "Species" : "Enallagma exulans", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043569", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "North Chagrin Reservation, Squires Castle Area, Cuyahoga Co., Ohio", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.76, 41.32]},
+       "properties" : { "Species" : "Enallagma exulans", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043570", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "Grand River Wildlife Area, Trumbull Co., Ohio, USA", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.165, 41.7197]},
+       "properties" : { "Species" : "Enallagma exulans", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043571", "Author": "Hagen", "Year": "1861", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Lake Co. Leroy Twp., Indian Point Park - Grand River", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.24, 41.82]},
+       "properties" : { "Species" : "Enallagma vesperum", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043623", "Author": "Calvert", "Year": "1919", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, Kirtland Twp., Lake Co., OH", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.24, 41.82]},
+       "properties" : { "Species" : "Enallagma vesperum", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043624", "Author": "Calvert", "Year": "1919", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, Kirtland Twp., Lake Co., OH", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.24, 41.82]},
+       "properties" : { "Species" : "Enallagma vesperum", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043625", "Author": "Calvert", "Year": "1919", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, Kirtland Twp., Lake Co., OH", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.9713, 41.5279]},
+       "properties" : { "Species" : "Enallagma vesperum", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043626", "Author": "Calvert", "Year": "1919", "Collection": "Cleveland Museum of Natural History", "Location": "Camp Whitewood, Windsor, Ashtabula Co., OH", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.24, 41.82]},
+       "properties" : { "Species" : "Enallagma vesperum", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043627", "Author": "Calvert", "Year": "1919", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, Kirtland Twp., Lake Co., OH", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.16, 41.4228]},
+       "properties" : { "Species" : "Calopteryx aequabilis", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "River Jewelwing", "Specimen" : "CMNHENT0043899", "Author": "Say", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Geauga Co., Burton Twp., Russell Park", "color" : "#694311"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.17, 41.5]},
+       "properties" : { "Species" : "Calopteryx aequabilis", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "River Jewelwing", "Specimen" : "CMNHENT0044005", "Author": "Say", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Lake Erie, Cuyahoga River", "color" : "#694311"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.16, 41.4228]},
+       "properties" : { "Species" : "Calopteryx aequabilis", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "River Jewelwing", "Specimen" : "CMNHENT0044007", "Author": "Say", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Geauga Co., Burton Twp., Russell Park", "color" : "#694311"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3105, 41.6001]},
+       "properties" : { "Species" : "Lestes vigilax", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043836", "Author": "Hagen in Selys", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Kirtland-Chardon Road, near Holden Arboretum, Kirtland, Lake Co., OH", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3105, 41.6001]},
+       "properties" : { "Species" : "Lestes vigilax", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043837", "Author": "Hagen in Selys", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Kirtland-Chardon Road, near Holden Arboretum, Kirtland, Lake Co., OH", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.0194, 41.7333]},
+       "properties" : { "Species" : "Lestes vigilax", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043845", "Author": "Hagen in Selys", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Camp Stigwandish, Lake Co., OH", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3009, 41.6122]},
+       "properties" : { "Species" : "Lestes rectangularis", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043848", "Author": "Say", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum Stibbins Gulch", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.0002, 40.2503]},
+       "properties" : { "Species" : "Lestes rectangularis", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043852", "Author": "Say", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Grand River", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.24, 41.82]},
+       "properties" : { "Species" : "Lestes rectangularis", "Class": "Insecta", "Order": "Zygoptera", "Common_Name" : "Damselfly", "Specimen" : "CMNHENT0043854", "Author": "Say", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "Holden Arboretum, Kirtland Twp., Lake Co., OH", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.7167, 44.8044]},
+       "properties" : { "Species" : "Bombus terricola", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Yellow-banded Bumblebee", "Specimen" : "CMNHENT0044327", "Author": "Kirby", "Year": "1837", "Collection": "Cleveland Museum of Natural History", "Location": "Port Severn, ON, Canada", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.0002, 40.2503]},
+       "properties" : { "Species" : "Bombus terricola", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Yellow-banded Bumblebee", "Specimen" : "CMNHENT0044333", "Author": "Kirby", "Year": "1837", "Collection": "Cleveland Museum of Natural History", "Location": "Euclid, OH", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.0002, 40.2503]},
+       "properties" : { "Species" : "Bombus terricola", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Yellow-banded Bumblebee", "Specimen" : "CMNHENT0044339", "Author": "Kirby", "Year": "1837", "Collection": "Cleveland Museum of Natural History", "Location": "Euclid, OH", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.4669, 40.3675]},
+       "properties" : { "Species" : "Bombus griseocollis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Brown-belted Bumblebee", "Specimen" : "CMNHENT0044445", "Author": "DeGeer", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Hanlin, PA.", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Bombus griseocollis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Brown-belted Bumblebee", "Specimen" : "CMNHENT0044576", "Author": "DeGeer", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.6833, 41.4833]},
+       "properties" : { "Species" : "Bombus griseocollis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Brown-belted Bumblebee", "Specimen" : "CMNHENT0044580", "Author": "DeGeer", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland, Ohio", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3453, 41.3175]},
+       "properties" : { "Species" : "Bombus griseocollis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Brown-belted Bumblebee", "Specimen" : "CMNHENT0044586", "Author": "DeGeer", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Aurora, Ohio", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Bombus griseocollis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Brown-belted Bumblebee", "Specimen" : "CMNHENT0044588", "Author": "DeGeer", "Year": "1773", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.6906, 41.9058]},
+       "properties" : { "Species" : "Megachile sculpturalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0049006", "Author": "Smith", "Year": "1853", "Collection": "Cleveland Museum of Natural History", "Location": "North Kingsville Sand Barrens, Ashtabula Co., OH", "color" : "#55979a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.6906, 41.9058]},
+       "properties" : { "Species" : "Megachile sculpturalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0049007", "Author": "Smith", "Year": "1853", "Collection": "Cleveland Museum of Natural History", "Location": "North Kingsville Sand Barrens, Ashtabula Co., OH", "color" : "#55979a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.6906, 41.9058]},
+       "properties" : { "Species" : "Megachile sculpturalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0049009", "Author": "Smith", "Year": "1853", "Collection": "Cleveland Museum of Natural History", "Location": "North Kingsville Sand Barrens, Ashtabula Co., OH", "color" : "#55979a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Xylocopa virginica", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0047185", "Author": "Linnaeus", "Year": "1771", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#45942e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Xylocopa virginica", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0047191", "Author": "Linnaeus", "Year": "1771", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#45942e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Xylocopa virginica", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0047195", "Author": "Linnaeus", "Year": "1771", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#45942e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Xylocopa virginica", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0047200", "Author": "Linnaeus", "Year": "1771", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#45942e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.6013, 41.1771]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0049888", "Author": "Latreille", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Ohio, Huron Co. Bronson Twp., Dublin Rd", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.7075, 34.4561]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0049903", "Author": "Latreille", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "SC. Newberry Co. Sumter N.F. Brickhouse Camp", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.7155, 41.6058]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0049906", "Author": "Latreille", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Ohio, Erie Co. Kelleys Island Coleman tract", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-118.7272, 44.4598]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0050065", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Prairie City, Oregon", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.847, 40.619]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0050067", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Round Valley Reservoir, New Jersey", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-120.471, 34.448]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Bee", "Specimen" : "CMNHENT0050068", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Ca, Santa Barbara Co. Point Conception area", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.4072, 39.54]},
+       "properties" : { "Species" : "Polites annularis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020541", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Logan, Hocking Co., OH", "color" : "#364133"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.4072, 39.54]},
+       "properties" : { "Species" : "Polites annularis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020542", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Logan, Hocking Co., OH", "color" : "#364133"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-86.2272, 33.5922]},
+       "properties" : { "Species" : "Polites annularis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020546", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Seddon, St. Clair Co., Ala.", "color" : "#364133"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.66, 41.54]},
+       "properties" : { "Species" : "Polites annularis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020547", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Rocky River, Cuyahoga Co., OH", "color" : "#364133"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.6956, 41.4994]},
+       "properties" : { "Species" : "Polites annularis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020550", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland, Cuyahoga Co., OH", "color" : "#364133"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Polites fuscatus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020600", "Author": "Fabricius", "Year": "1793", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Polites fuscatus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020632", "Author": "Fabricius", "Year": "1793", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Polites fuscatus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020635", "Author": "Fabricius", "Year": "1793", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Polites fuscatus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020644", "Author": "Fabricius", "Year": "1793", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.66, 41.54]},
+       "properties" : { "Species" : "Polites fuscatus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020650", "Author": "Fabricius", "Year": "1793", "Collection": "Cleveland Museum of Natural History", "Location": "Rocky River, Cuyahoga Co., OH", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Evagetes ingenuus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020023", "Author": "Cresson", "Year": "1867", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.6919, 40.4917]},
+       "properties" : { "Species" : "Evagetes ingenuus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020026", "Author": "Cresson", "Year": "1867", "Collection": "Cleveland Museum of Natural History", "Location": "Sardis, Westmoreland Co., PA", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.6919, 40.4917]},
+       "properties" : { "Species" : "Evagetes ingenuus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020033", "Author": "Cresson", "Year": "1867", "Collection": "Cleveland Museum of Natural History", "Location": "Sardis, Westmoreland Co., PA", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.2975, 39.8775]},
+       "properties" : { "Species" : "Evagetes ingenuus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020034", "Author": "Cresson", "Year": "1867", "Collection": "Cleveland Museum of Natural History", "Location": "Center, PA.", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-119.6972, 34.4208]},
+       "properties" : { "Species" : "Pepsis formosa", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020091", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "Santa Barbara, Santa Barbara Co., CA", "color" : "#266d10"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-118.9503, 36.8006]},
+       "properties" : { "Species" : "Pepsis formosa", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020092", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "Kings Canyon National Park, 6200ft, Grant Pass, Madera Co., CA", "color" : "#266d10"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-106.0009, 34.5003]},
+       "properties" : { "Species" : "Pepsis formosa", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020100", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "World", "color" : "#266d10"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-106.0009, 34.5003]},
+       "properties" : { "Species" : "Pepsis formosa", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020101", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "North America", "color" : "#266d10"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-106.0009, 34.5003]},
+       "properties" : { "Species" : "Pepsis formosa", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0020102", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "Ft. Wingate, New Mexico, USA", "color" : "#266d10"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-86.2272, 33.5922]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021571", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Seddon, St. Clair Co., Ala.", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-86.2272, 33.5922]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021576", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Seddon, St. Clair Co., Ala.", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-86.2272, 33.5922]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021577", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Seddon, St. Clair Co., Ala.", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-86.2272, 33.5922]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021579", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Seddon, St. Clair Co., Ala.", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-86.2272, 33.5922]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021580", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Seddon, St. Clair Co., Ala.", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Dolichovespula arenaria", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021029", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.7167, 44.8044]},
+       "properties" : { "Species" : "Dolichovespula arenaria", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021036", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Port Severn, ON, Canada", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.7167, 44.8044]},
+       "properties" : { "Species" : "Dolichovespula arenaria", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021038", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Port Severn, ON, Canada", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.6956, 41.4994]},
+       "properties" : { "Species" : "Dolichovespula arenaria", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021087", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland, Cuyahoga Co., OH", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.6956, 41.4994]},
+       "properties" : { "Species" : "Dolichovespula arenaria", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021089", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland, Cuyahoga Co., OH", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.6956, 41.4994]},
+       "properties" : { "Species" : "Dolichovespula maculata", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021110", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland, Cuyahoga Co., OH", "color" : "#7b841a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Dolichovespula maculata", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021122", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#7b841a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Dolichovespula maculata", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021130", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#7b841a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.5003, 40.3753]},
+       "properties" : { "Species" : "Dolichovespula maculata", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021133", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Washington Co., PA", "color" : "#7b841a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.66, 41.54]},
+       "properties" : { "Species" : "Dolichovespula maculata", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Wasp", "Specimen" : "CMNHENT0021527", "Author": "Linnaeus", "Year": "1763", "Collection": "Cleveland Museum of Natural History", "Location": "Rocky River, Cuyahoga Co., OH", "color" : "#7b841a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-104.8672, 41.1328]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Sawfly", "Specimen" : "CMNHENT0018464", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Francis E. Warren Air Force Base, Laramie Co., WY (Ft. D. A. Russel)", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.613, 41.5115]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Sawfly", "Specimen" : "CMNHENT0018476", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland Museum of Natural History", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Sawfly", "Specimen" : "CMNHENT0018514", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Sawfly", "Specimen" : "CMNHENT0018515", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Sawfly", "Specimen" : "CMNHENT0018568", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8103, 40.3908]},
+       "properties" : { "Species" : "Temnostoma excentricum", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Hoverfly", "Specimen" : "CMNHENT0062370", "Author": "Harris", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding, Allegheny Co., PA", "color" : "#51a299"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Temnostoma excentricum", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Hoverfly", "Specimen" : "CMNHENT0062389", "Author": "Harris", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#51a299"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8103, 40.3908]},
+       "properties" : { "Species" : "Temnostoma excentricum", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Hoverfly", "Specimen" : "CMNHENT0062391", "Author": "Harris", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding, Allegheny Co., PA", "color" : "#51a299"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Syrphus vittafrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Hoverfly", "Specimen" : "CMNHENT0062471", "Author": "Shannon", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Syrphus vittafrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Hoverfly", "Specimen" : "CMNHENT0062478", "Author": "Shannon", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.4017, 41.4892]},
+       "properties" : { "Species" : "Syrphus vittafrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Hoverfly", "Specimen" : "CMNHENT0062483", "Author": "Shannon", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "Hunting Valley, Ohio", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.4017, 41.4892]},
+       "properties" : { "Species" : "Tabanus atratus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0055604", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "West 97th Street, Cleveland, Cuyahoga Co., OH", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8103, 40.3908]},
+       "properties" : { "Species" : "Tabanus atratus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0055605", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding, Allegheny Co., PA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.386, 41.517]},
+       "properties" : { "Species" : "Tabanus atratus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0055606", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Geauga Co., Chester Twp. Westchester trail", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8103, 40.3908]},
+       "properties" : { "Species" : "Tabanus atratus", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0055608", "Author": "Fabricius", "Year": "1775", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding, Allegheny Co., PA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.5267, 41.5931]},
+       "properties" : { "Species" : "Tabanus sulcifrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0056000", "Author": "Macquart", "Year": "1885", "Collection": "Cleveland Museum of Natural History", "Location": "Euclid, Cuyahoga Co., OH", "color" : "#f8b0d8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.6956, 41.4994]},
+       "properties" : { "Species" : "Tabanus sulcifrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0056002", "Author": "Macquart", "Year": "1885", "Collection": "Cleveland Museum of Natural History", "Location": "Cleveland, Cuyahoga Co., OH", "color" : "#f8b0d8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.634, 39.161]},
+       "properties" : { "Species" : "Tabanus sulcifrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0056993", "Author": "Macquart", "Year": "1885", "Collection": "Cleveland Museum of Natural History", "Location": "OHIO: Vinton Co. Vinton Twp., Vinton Furnace Exp. Forest Watch Rock A", "color" : "#f8b0d8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.223, 39.1144]},
+       "properties" : { "Species" : "Tabanus sulcifrons", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Horse-fly", "Specimen" : "CMNHENT0056997", "Author": "Macquart", "Year": "1885", "Collection": "Cleveland Museum of Natural History", "Location": "OH, Vinton Co. Arch Rock", "color" : "#f8b0d8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Tipula (Nippotipula) abdominalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063614", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#b3887e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Tipula (Nippotipula) abdominalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063616", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#b3887e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Tipula (Nippotipula) abdominalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063617", "Author": "Say", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#b3887e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Tanyptera dorsalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063676", "Author": "Walker", "Year": "1848", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#e12762"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.8533, 41.4731]},
+       "properties" : { "Species" : "Tanyptera dorsalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063702", "Author": "Walker", "Year": "1848", "Collection": "Cleveland Museum of Natural History", "Location": "Rocky River, Rocky River Twp., Cuyahoga Co., OH", "color" : "#e12762"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Tanyptera dorsalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063713", "Author": "Walker", "Year": "1848", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#e12762"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Tanyptera dorsalis", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "Crane fly", "Specimen" : "CMNHENT0063763", "Author": "Walker", "Year": "1848", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#e12762"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-105.7958, 39.0217]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNH 3877", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-105.7958, 39.0217]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNH 3876", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Tarsophlebia eximia", "Class": "Insecta", "Order": "Odonata", "Common_Name" : "Dragonfly", "Specimen" : "CMNH OC 1577", "Author": "Hagen", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3d4e45"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Tarsophlebia eximia", "Class": "Insecta", "Order": "Odonata", "Common_Name" : "Dragonfly", "Specimen" : "CMNH 15669", "Author": "Hagen", "Year": "1862", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3d4e45"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-105.7958, 39.0217]},
+       "properties" : { "Species" : "Procydnus pronus", "Class": "Insecta", "Order": "Hemiptera", "Common_Name" : "shield bugs", "Specimen" : "CMNH 3872", "Author": "Scudder", "Year": "1890", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#e2a219"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-105.7958, 39.0217]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Hymenoptera", "Common_Name" : "wasp", "Specimen" : "CMNH 3871", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-123.306, 46.9785]},
+       "properties" : { "Species" : "Unidentified", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMNH 15173", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-123.306, 46.9785]},
+       "properties" : { "Species" : "Unidentified", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMNH 15175", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-123.306, 46.9785]},
+       "properties" : { "Species" : "Pulalius vulgaris", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMNH 15177", "Author": "Rathbun ", "Year": "1926", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-97.4975, 25.9017]},
+       "properties" : { "Species" : "Unidentified", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMNH 2967", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-121.8947, 36.6002]},
+       "properties" : { "Species" : "Pinnixa galliheri", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMNH 9435", "Author": "Rathbun", "Year": "1932", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-121.8947, 36.6002]},
+       "properties" : { "Species" : "Pinnixa galliheri", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMNH 9434", "Author": "Rathbun", "Year": "1932", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Eryon artiformis", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crustation", "Specimen" : "CMNH 3507", "Author": "Schlotheim ", "Year": "1820", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Aeger tipularius", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Aeger", "Specimen" : "CMNH 3509", "Author": "Schlotheim ", "Year": "1822", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Unidentified", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crustation", "Specimen" : "CMNH 3508", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Unidentified", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Prawn", "Specimen" : "CMNH 3903", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Eryma elongata", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crawfish", "Specimen" : "CMNH 3777", "Author": "Munster", "Year": "1839", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.4515, 51.1657]},
+       "properties" : { "Species" : "Mesolimulus walchi", "Class": "Xiphosura", "Order": "Xiphosurida", "Common_Name" : "Horseshoe crab", "Specimen" : "CMNH 16118", "Author": "Desmarest ", "Year": "1822", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Mesolimulus walchi", "Class": "Xiphosura", "Order": "Xiphosurida", "Common_Name" : "Horseshoe crab", "Specimen" : "CMNH 3904", "Author": "Desmarest ", "Year": "1822", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-75.1932, 42.8853]},
+       "properties" : { "Species" : "Eurypterus remipes", "Class": "Merostomata", "Order": "Eurypterida", "Common_Name" : "Sea scorpions", "Specimen" : "CMNH 3848", "Author": "De Kay", "Year": "1825", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#55979a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-88.2123, 41.265]},
+       "properties" : { "Species" : "Unidentified", "Class": "Malacostraca", "Order": "Eumalacostraca", "Common_Name" : "Crustation", "Specimen" : "CMNH 6905", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-78.8784, 42.8864]},
+       "properties" : { "Species" : "Eurypterus remipes", "Class": "Merostomata", "Order": "Eurypterida", "Common_Name" : "Sea scorpions", "Specimen" : "CMNH 11814", "Author": "De Kay", "Year": "1825", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#55979a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Unidentified", "Common_Name" : "Trilobite", "Specimen" : "CMNH 16602", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-112.5772, 39.3522]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 9153", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-112.5772, 39.3522]},
+       "properties" : { "Species" : "Asaphiscus wheeleri", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 9143", "Author": "Meek", "Year": "1873", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#e2a219"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-76.3055, 40.0379]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Redlichiida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2917", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-116.4364, 51.3989]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Unidentified", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2719", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-116.49, 51.395]},
+       "properties" : { "Species" : "Bathyuriscus rotundatus", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 3616", "Author": "Rominger", "Year": "1887", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#364133"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-112.9669, 38.7156]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Agnostida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 6387", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-127.6476, 53.7267]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 14280", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-127.6476, 53.7267]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 14284", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-127.6476, 53.7267]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 14279", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [13.9787, 49.7862]},
+       "properties" : { "Species" : "Ellipsocephalus hoffi", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 8690", "Author": "Schlotheim", "Year": "1823", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-89.7948, 43.1767]},
+       "properties" : { "Species" : "Dikelocephalus minnesotensis", "Class": "Trilobita", "Order": "Asaphida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 8682", "Author": "Owen", "Year": "1852", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#311e2a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-2.0811, 52.5123]},
+       "properties" : { "Species" : "Dalmanites caudatus", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2519", "Author": "Bruennich", "Year": "1781", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#b8adaf"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-78.6903, 43.1706]},
+       "properties" : { "Species" : "Dalmanites limulurus", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2733", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#55979a"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-111.3311, 45.8578]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Unidentified", "Common_Name" : "Trilobite", "Specimen" : "CMNH 12012", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-77.1485, 42.6431]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2752", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-77.8967, 42.772]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 11818", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [7.5, 50]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 016042", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-90.3748, 39.0705]},
+       "properties" : { "Species" : "Calymene niagarensis", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2920", "Author": "Hall", "Year": "1843", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.0893, 39.4068]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2743", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-76.3055, 40.0379]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Asaphida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2916", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-90.4315, 38.97]},
+       "properties" : { "Species" : "Calymene celebra", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2703", "Author": "Raymond", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-87.6298, 41.8781]},
+       "properties" : { "Species" : "Calymene niagarensis", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2707", "Author": "Hall", "Year": "1843", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.512, 39.1031]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 8819", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.7452, 39.507]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5180", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-89.3985, 40.6331]},
+       "properties" : { "Species" : "Calymene niagarensis", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 14651", "Author": "Hall", "Year": "1843", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.512, 39.1031]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 8800", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.512, 39.1031]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 12344", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.512, 39.1031]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 6018", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.7452, 39.507]},
+       "properties" : { "Species" : "Flexicalymene meeki", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5180", "Author": "Foerste", "Year": "1910", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#d06d8c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-90.3748, 39.0705]},
+       "properties" : { "Species" : "Calymene niagarensis", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 3610", "Author": "Hall", "Year": "1843", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#8d84c4"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.734, 39.9937]},
+       "properties" : { "Species" : "Ameura sangamonensis", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5549", "Author": "Meek & Worthen", "Year": "1865", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#f8b0d8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-74.0059, 40.7128]},
+       "properties" : { "Species" : "Bumastus ioxus", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2735", "Author": "Hall", "Year": "1852", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#b3887e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.512, 39.1031]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Asaphida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 8826", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-97.2022, 34.1134]},
+       "properties" : { "Species" : "Homotelus bromidensis", "Class": "Trilobita", "Order": "Asaphida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 3906", "Author": "Esker", "Year": "1964", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#694311"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.316408, 39.38]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 15677", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-112.6988, 39.8863]},
+       "properties" : { "Species" : "Elrathia kingii", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2753", "Author": "Meek", "Year": "1870", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [13.7645, 49.9649]},
+       "properties" : { "Species" : "Agraulos ceticephalus", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2765", "Author": "Barrande", "Year": "1846", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.316408, 39.38]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 3702", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.8357, 41.3145]},
+       "properties" : { "Species" : "Brachymetopus lodiensis", "Class": "Trilobita", "Order": "Proetida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2430", "Author": "Meek", "Year": "1875", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.9351, 40.8051]},
+       "properties" : { "Species" : "Phillipsia eurybathrea", "Class": "Trilobita", "Order": "Proetida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 4409", "Author": "Hessler", "Year": "1963", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#e12762"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.0121, 41.0334]},
+       "properties" : { "Species" : "Breviphillipsia sampsoni", "Class": "Trilobita", "Order": "Proetida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5841", "Author": "Vogdes", "Year": "1888", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3d4e45"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.0121, 41.0334]},
+       "properties" : { "Species" : "Breviphillipsia sampsoni", "Class": "Trilobita", "Order": "Proetida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5964", "Author": "Vogdes", "Year": "1888", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3d4e45"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana milleri", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 13472", "Author": "Stewart", "Year": "1927", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana milleri", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2514", "Author": "Stewart", "Year": "1927", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana milleri", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 14650", "Author": "Stewart", "Year": "1927", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana milleri", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 14656", "Author": "Stewart", "Year": "1927", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana crassituberculata", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 13488", "Author": "Stumm", "Year": "1953", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#51a299"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.7422, 41.6814]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2010", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5301", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana crassituberculata", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2502", "Author": "Stumm", "Year": "1953", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#51a299"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 5127", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.7422, 41.6814]},
+       "properties" : { "Species" : "Phacops rana milleri", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 2883", "Author": "Stewart", "Year": "1927", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#bc3e19"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.6824, 42.0853]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 6810", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.713, 41.7189]},
+       "properties" : { "Species" : "Phacops rana", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 15295", "Author": "Green", "Year": "1832", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#c3c7b9"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-116.4364, 51.3989]},
+       "properties" : { "Species" : "Ogygopsis klotzi", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH BWC 3137", "Author": "Rominger", "Year": "1887", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-84.512, 39.1031]},
+       "properties" : { "Species" : "Isotelus maximus", "Class": "Trilobita", "Order": "Asaphida", "Common_Name" : "Trilobite", "Specimen" : "Education Invertebrate 790", "Author": "Locke", "Year": "1838", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-7.0926, 31.7917]},
+       "properties" : { "Species" : "Calymene tristani", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "Education Invertebrate 844", "Author": "Brongniart in Desmarest", "Year": "1817", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-5.1667, 31.1164]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Proetida", "Common_Name" : "Trilobite", "Specimen" : "Education Invertebrate 822", "Author": "", "Year": "", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-108.3604, 39.95691]},
+       "properties" : { "Species" : "Unidentified", "Class": "Insecta", "Order": "Unidentified", "Common_Name" : "Insect", "Specimen" : "CMC IP59824", "Author": "", "Year": "", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-105.7821, 39.5501]},
+       "properties" : { "Species" : "Plecia pealei", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Insect", "Specimen" : "CMC IP59820", "Author": "Scudder", "Year": "1890", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.1918, 39.0612]},
+       "properties" : { "Species" : "Agnostus montis", "Class": "Trilobita", "Order": "Agnostida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP56111", "Author": "Matthew", "Year": "1899", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-76.3288, 40.0884]},
+       "properties" : { "Species" : "Oleneius getzi", "Class": "Trilobita", "Order": "Redlichiida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP24728", "Author": "Dunbar", "Year": "1925", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#266d10"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [15.5, 49.75]},
+       "properties" : { "Species" : "Ellipsocephalus hoffi", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP17759", "Author": "Schlotheim", "Year": "1823", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [15, 50]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP24431", "Author": "", "Year": "", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [15, 50]},
+       "properties" : { "Species" : "Ellipsocephalus hoffi", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP16760", "Author": "Schlotheim", "Year": "1823", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#b904bc"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.1918, 39.0612]},
+       "properties" : { "Species" : "Elrathia kingii", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP56020", "Author": "Meek", "Year": "1870", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.1918, 39.0612]},
+       "properties" : { "Species" : "Elrathia kingii", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP56024", "Author": "Meek", "Year": "1870", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.1918, 39.0612]},
+       "properties" : { "Species" : "Elrathia kingii", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP52228", "Author": "Meek", "Year": "1870", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.1918, 39.0612]},
+       "properties" : { "Species" : "Elrathia kingii", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP52247", "Author": "Meek", "Year": "1870", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-113.1918, 39.0612]},
+       "properties" : { "Species" : "Elrathia kingii", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP52208", "Author": "Meek", "Year": "1870", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [15, 50]},
+       "properties" : { "Species" : "Conocoryphe sulzeri", "Class": "Trilobita", "Order": "Ptychopariida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP17706", "Author": "Schlotheim", "Year": "1823", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#3f2f70"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-91.6307, 42.9575]},
+       "properties" : { "Species" : "Isotelus iowensis", "Class": "Trilobita", "Order": "Asaphida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP65575", "Author": "Owen", "Year": "1852", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [14.1579, 49.9949]},
+       "properties" : { "Species" : "Aulacopleura konincki", "Class": "Trilobita", "Order": "Proetida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP52486", "Author": "Barrande", "Year": "1846", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-87.9065, 43.0389]},
+       "properties" : { "Species" : "Unidentified", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP52968", "Author": "", "Year": "", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-7.973328, 31.66]},
+       "properties" : { "Species" : "Calymene tristani", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP52980", "Author": "Brongniart in Desmarest", "Year": "1817", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#7554f2"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-106.3468, 56.1304]},
+       "properties" : { "Species" : "Greenops boothi", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP54174", "Author": "Green", "Year": "1837", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-106.3468, 56.1304]},
+       "properties" : { "Species" : "Greenops boothi", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMC IP54176", "Author": "Green", "Year": "1837", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-124.0087, 44.6021]},
+       "properties" : { "Species" : "Zanthopsis vulgaris", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crab", "Specimen" : "CMC IP59618", "Author": "Rathbun", "Year": "1926", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#b8adaf"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [35.747, 34.1318]},
+       "properties" : { "Species" : "Carpopenaeus callirostris", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Prawn", "Specimen" : "CMC IP68558", "Author": "Glaessner ", "Year": "1946", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [11.19, 48.8913]},
+       "properties" : { "Species" : "Pterodactylus kochi", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterodactyls", "Specimen" : "CMC VP6293", "Author": "Wagner ", "Year": "1837", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [11.4979, 48.7904]},
+       "properties" : { "Species" : "Unidentified", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterodactyls", "Specimen" : "CMC VP6789", "Author": "", "Year": "", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [11.19, 48.8913]},
+       "properties" : { "Species" : "Archaeopteryx lithographica", "Class": "Reptilia", "Order": "Saurischia", "Common_Name" : "Dinosaur", "Specimen" : "CMC VP1410", "Author": "Meyer", "Year": "1861", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#ba6693"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [122.529, 41.9437]},
+       "properties" : { "Species" : "Confuciusornis sanctus", "Class": "Reptilia", "Order": "Confuciusornithiformes", "Common_Name" : "Bird- Dinosaur", "Specimen" : "CMC VP9131", "Author": "Hou et al", "Year": "1995", "Collection": "Cincinnati Museum Center", "Location": "NA", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.097, 35.359]},
+       "properties" : { "Species" : "Cambarus (Depressicambarous) reduncus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Sickle Crayfish", "Specimen" : "CMNH RFT 0435", "Author": "Hobbs", "Year": "1956", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#997061"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-80.5661, 40.5124]},
+       "properties" : { "Species" : "Cambarus (Jugicambarus) monongalensis", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Blue Crayfish", "Specimen" : "CMNH RFT 0495", "Author": "Ortmann ", "Year": "1905", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-88.4016, 35.9917]},
+       "properties" : { "Species" : "Cambarus (Depressicambarus) graysoni", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Twospot Crayfish", "Specimen" : "CMNH RFT 0504", "Author": "Faxon ", "Year": "1914", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-85.6435, 37.0032]},
+       "properties" : { "Species" : "Cambarus (Tubericambarus) thomai", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Little Brown Mudbug", "Specimen" : "CMNH RFT 0493", "Author": "Jezerinac", "Year": "1993", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#e2a219"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-89.4742, 35.1257]},
+       "properties" : { "Species" : "Cambarus (Lacunicambarus) ludovicianus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Painted Devil Crayfish", "Specimen" : "CMNH RFT 0514", "Author": "Faxon ", "Year": "1884", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-89.0179, 35.1229]},
+       "properties" : { "Species" : "Cambarus (Lacunicambarus) ludovicianus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Painted Devil Crayfish", "Specimen" : "CMNH RFT 0509", "Author": "Faxon ", "Year": "1884", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#4a4a1c"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-88.2461, 36.337]},
+       "properties" : { "Species" : "Cambarus (Lacunicambarus) diogenes", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Devil Crawfish", "Specimen" : "CMNH RFT 0478", "Author": "Girard", "Year": "1852", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#694311"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-88.4016, 35.9917]},
+       "properties" : { "Species" : "Cambarus (Tubericambarus) polychromatus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Paintedhand Mudbug", "Specimen" : "CMNH RFT 0491", "Author": "Thoma, Jezerinac and Simon", "Year": "2005", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.6774, 41.3478]},
+       "properties" : { "Species" : "Cambarus (Tubericambarus) polychromatus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Paintedhand Mudbug", "Specimen" : "CMNH RFT 0645", "Author": "Thoma, Jezerinac and Simon", "Year": "2005", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#0635f8"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.6483, 41.1267]},
+       "properties" : { "Species" : "Cambarus (Puncticambarus) robustus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Big Water Crayfish", "Specimen" : "CMNH RFT 660", "Author": "Girard ", "Year": "1852", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-82.7102, 41.597]},
+       "properties" : { "Species" : "Cambarus (Puncticambarus) robustus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Big Water Crayfish", "Specimen" : "CMNH RFT 0443", "Author": "Girard ", "Year": "1852", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#94133f"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.3789, 38.508]},
+       "properties" : { "Species" : "Cambarus (Jugicambarus) adustus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crayfish", "Specimen" : "CMNH RFT 0255", "Author": "Thoma et al.", "Year": "2016", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.3789, 38.508]},
+       "properties" : { "Species" : "Cambarus (Jugicambarus) adustus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crayfish", "Specimen" : "CMNH OSUMC 8460", "Author": "Thoma et al.", "Year": "2016", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#922789"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.6774, 41.3478]},
+       "properties" : { "Species" : "Procambarus (Ortmannicus) acutus", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "White River Crayfish", "Specimen" : "CMNH RFT 0561", "Author": "Girard ", "Year": "1852", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#ea3398"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-83.6774, 41.3478]},
+       "properties" : { "Species" : "Orconectes (Trisellescens) immunis", "Class": "Malacostraca", "Order": "Decapoda", "Common_Name" : "Crayfish", "Specimen" : "CMNH RFT 0647", "Author": "Hagen", "Year": "1870", "Collection": "Cleveland Museum of Natural History", "Location": "NA", "color" : "#752995"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Aurorazhdarcho micronyx", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11425", "Author": "von Meyer", "Year": "1856", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Aurorazhdarcho micronyx", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11426", "Author": "von Meyer", "Year": "1857", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#224b63"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Rhamphorhynchus muensteri", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11427", "Author": "Münster", "Year": "1839", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Rhamphorhynchus muensteri", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11428", "Author": "Münster", "Year": "1839", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Rhamphorhynchus muensteri", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11429", "Author": "Münster", "Year": "1839", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Unidentified", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11430", "Author": "", "Year": "", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#ff9485"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Rhamphorhynchus muensteri", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11432", "Author": "Münster", "Year": "1839", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Rhamphorhynchus muensteri", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11433", "Author": "Münster", "Year": "1839", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [10.997, 48.8972]},
+       "properties" : { "Species" : "Rhamphorhynchus muensteri", "Class": "Reptilia", "Order": "Pterosauria", "Common_Name" : "Pterosaur", "Specimen" : "CM 11434", "Author": "Münster", "Year": "1839", "Collection": "Carnegie Museum of Natural History", "Location": "bavaria solnhofen", "color" : "#3e5187"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Pyrogota undata", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNHENT0055209", "Author": "Wiedemann", "Year": "1830", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#37caa3"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Pyrogota undata", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNHENT0055211", "Author": "Wiedemann", "Year": "1830", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#37caa3"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.8094, 40.3942]},
+       "properties" : { "Species" : "Pyrogota undata", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNHENT0055214", "Author": "Wiedemann", "Year": "1830", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA.", "color" : "#37caa3"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-79.81, 40.3942]},
+       "properties" : { "Species" : "Pyrogota undata", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNHENT0055215", "Author": "Wiedemann", "Year": "1830", "Collection": "Cleveland Museum of Natural History", "Location": "Wilmerding PA", "color" : "#37caa3"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-81.3504, 41.5069]},
+       "properties" : { "Species" : "Pyrogota undata", "Class": "Insecta", "Order": "Diptera", "Common_Name" : "Fly", "Specimen" : "CMNHENT0055219", "Author": "Wiedemann", "Year": "1830", "Collection": "Cleveland Museum of Natural History", "Location": "Cedar Acres Drive, Chesterland, Geauga Co., OH", "color" : "#37caa3"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-116.4364, 51.3989]},
+       "properties" : { "Species" : "Ogygopsis klotzi", "Class": "Trilobita", "Order": "Corynexochida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 15631", "Author": "Rominger", "Year": "1887", "Collection": "Cleveland Museum of Natural History", "Location": "Mt. Stephen, BC, Canada", "color" : "#15ad9e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-85.4736, 38.7142]},
+       "properties" : { "Species" : "Calymene celebra", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 15428", "Author": "Raymond", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "Hanover, Jefferson Co., Ind.", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-87.6298, 41.8781]},
+       "properties" : { "Species" : "Calymene celebra", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 15445", "Author": "Raymond", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "Chicago Ill", "color" : "#b1762e"}
+       }
+   ,    { "type" : "Feature",
+       "geometry" : {
+           "type" : "Point",
+           "coordinates" : [-87.6298, 41.8781]},
+       "properties" : { "Species" : "Calymene celebra", "Class": "Trilobita", "Order": "Phacopida", "Common_Name" : "Trilobite", "Specimen" : "CMNH 15445", "Author": "Raymond", "Year": "1916", "Collection": "Cleveland Museum of Natural History", "Location": "Chicago Ill", "color" : "#b1762e"}
+       }
+       ]
+
+}
+   
