@@ -1,0 +1,42 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block head %}
+  {{ block.super }}
+    <script src="{% static 'bird/js/bird.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="contentMain bird wow fadeInUpMin" data-wow-duration="2s">
+  <h1>BIRD</h1>
+  <h3>Bio-Inspired Research and Design</h3>
+  <form action="{% url 'bird-results' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+  <button id="search-btn" class="btn blue-gradient-bg" type="submit">Search</button>
+  </form>
+  <p id="bio-terms">{{ query }}</p>
+  <div id="bird-intro">
+    <h4>This tool is designed to assist engineers in finding biological papers pertaining to a specific engineering issue. </h4>
+    <p>
+      <h3>Biomimicry:</h3> 
+      The design and production of materials, structures, and systems that are modeled on biological entities and processes. BIRD is a biomimicry software tool to help scientists and professionals incorporate biological literature in their design for engineering projects. Some notable uses of biomimicry in the past include Velcro based on burrs, Japanese bullet trains based on bird beaks, and the thermoregulating building based on termite mounds.
+      Biomimicry works best when you define your problem in terms of function. Rather than asking “what do I want to design?” ask “what do I want my design to do?” and “why do I want my design to do that?” Once you have your issue, ask “what in nature does that?” 
+      <br />
+      <br />
+      This is where BIRD comes in: behind the scenes each engineering function is translated into the relevant biological functions, and the best biological journals are searched for articles.
+      Once you have a list of biological literature, narrow down the scope based on examples in a similar environment to your design (humidity, temperature, underwater, etc.) Choose the most relevant and brainstorm based on those principles! 
+      <br />
+      <br />
+      <span class="accent-color">It is important to note that this tool does not reveal pre-set engineering solutions, but provides the novel biological information to aid in the research process. </span>
+      <br />
+      <br />
+      The dropdowns at the top of the page are designed to help you narrow the problem you are trying to solve down to one specific engineering concept. <br />
+      <br />
+      <h2>Happy Exploring!</h2>
+    </p>
+
+  </div>
+  <div id="abstracts" class="not-displayed"></div>
+</div>
+
+{% endblock content %}
