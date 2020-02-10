@@ -51,8 +51,8 @@ def search(query):
     return read_data(page_url)
 
 class EOLModule(Module):
-    def __init__(self, in_label='Species', out_label='EOLData', connect_labels=('MENTIONED_IN_DATA', 'MENTIONS_SPECIES')):
-        Module.__init__(self, in_label, out_label, connect_labels)
+    def __init__(self, in_label='Species', out_label='EOLData', connect_labels=('MENTIONED_IN_DATA', 'MENTIONS_SPECIES'), name='EOL'):
+        Module.__init__(self, in_label, out_label, connect_labels, name)
         self.api = EOL_API()
 
     def process(self, node):

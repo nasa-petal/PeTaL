@@ -6,8 +6,8 @@ from random import random, randint
 from pprint import pprint
 
 class GoogleScholarModule(Module):
-    def __init__(self, in_label='Species', out_label='GoogleArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES')):
-        Module.__init__(self, in_label, out_label, connect_labels)
+    def __init__(self, in_label='Species', out_label='GoogleArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='GoogleScholar'):
+        Module.__init__(self, in_label, out_label, connect_labels, name)
 
 
     def process(self, node):

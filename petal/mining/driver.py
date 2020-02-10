@@ -24,7 +24,9 @@ class Driver():
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
-            if isinstance(result, str): # Result is a query
+            if result is None:
+                pass
+            elif isinstance(result, str): # Result is a query
                 tx.run(result)
             else:
                 if isinstance(result, dict):
@@ -62,11 +64,12 @@ class Driver():
 
     def page_runner(self, tx, module, ids):
         for node_id in ids:
+            node_id = str(node_id)
             node = tx.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
             for record in node.records():
                 with self.neo_client.session() as session:
                     node = record['n']
-                    print(node, flush=True)
+                    # print(node, flush=True)
                     result = module.process(node)
                     session.write_transaction(self.write, node, result, module)
 

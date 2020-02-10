@@ -33,7 +33,7 @@ class LabelTracker():
         self.tracker[label].clear()
 
 class Scheduler:
-    def __init__(self, accumulate_limit=10):
+    def __init__(self, accumulate_limit=3):
         self.accumulate_limit = accumulate_limit
 
         BaseManager.register('LabelTracker', LabelTracker)
@@ -43,6 +43,7 @@ class Scheduler:
 
         self.dependents = defaultdict(list)
         self.queue      = []
+        self.finished   = set()
 
     def schedule(self, module):
         independent = module.in_label is None
@@ -57,22 +58,31 @@ class Scheduler:
 
     def check_added(self):
         for label, id_set in self.label_tracker.get().items():
-            print(label, id_set, flush=True)
-            if len(id_set) > self.accumulate_limit:
-                module = self.dependents[label]
+            schedule_dependent = len(id_set) > self.accumulate_limit or label in self.finished
+            if label in self.finished:
+                self.finished.remove(label)
+            if schedule_dependent:
+                dep_modules = self.dependents[label]
                 ids = list(id_set)
-                print('Scheduled dependent module ', module, ' on ', label, ' for {} nodes'.format(len(ids)), flush=True)
-                self.queue.append((Process(target=driver_runner, args=(module, self.label_tracker, ids)), module))
-                self.queue[-1].start()
+                for module in dep_modules:
+                    print('Scheduled dependent module ', module, ' on ', label, ' for {} nodes'.format(len(ids)), flush=True)
+                    self.queue.append((Process(target=driver_runner, args=(module, self.label_tracker, ids)), module))
+                    self.queue[-1][0].start()
                 self.label_tracker.clear(label)
 
     def display(self):
+        if len(self.queue) == 0:
+            print('Done')
+            return True
         for process, module in self.queue:
             if process.is_alive():
-                print('Currently running: ', module)
-            else:
+                # print('Currently running: ', module)
                 pass
-                # print('Finished: ', module)
+            else:
+                print('Finished: ', module)
+                self.finished.add(module.out_label)
+        self.queue = [(p, m) for p, m in self.queue if p.is_alive()]
+        return False
 
     def stop(self):
         for process, _ in self.queue:
@@ -89,10 +99,11 @@ if __name__ == '__main__':
         # scheduler.schedule(JEBModule())
 
         scheduler.start()
-        while True:
+        done = False
+        while not done:
             scheduler.check_added()
             sleep(.01)
-            scheduler.display()
+            done = scheduler.display()
     finally:
         scheduler.stop()
 

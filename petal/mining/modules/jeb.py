@@ -11,8 +11,8 @@ def process_section(section):
     return '\n'.join(p.get_text() for p in paragraphs)
 
 class JEBModule(Module):
-    def __init__(self, in_label='Species', out_label='JEBArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES')):
-        Module.__init__(self, in_label, out_label, connect_labels)
+    def __init__(self, in_label='Species', out_label='JEBArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='JEB'):
+        Module.__init__(self, in_label, out_label, connect_labels, name)
 
     def process(self, node):
         name   = node['name']

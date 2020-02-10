@@ -23,8 +23,8 @@ def create_dir():
             shutil.rmtree('.col_data')
 
 class BackboneModule(Module):
-    def __init__(self, in_label=None, out_label='Species', connect_label=None):
-        Module.__init__(self, in_label, out_label, connect_label)
+    def __init__(self, in_label=None, out_label='Species', connect_label=None, name='COL'):
+        Module.__init__(self, in_label, out_label, connect_label, name)
 
     def process(self):
         create_dir()
@@ -45,6 +45,7 @@ class BackboneModule(Module):
                     except KeyError:
                         pass
                     if json['taxonRank'] == 'species':
+                        json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
                         yield json
                     json = dict()
                 try:
@@ -58,6 +59,6 @@ class BackboneModule(Module):
                     print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}\r'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
                 except ZeroDivisionError:
                     pass
-                if i == 10:
-                    break
+                # if i == 10:
+                #     break
                 i += 1

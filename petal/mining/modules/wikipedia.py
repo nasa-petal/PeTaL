@@ -5,8 +5,8 @@ from .module import Module
 SCRAPE_FIELDS = {'content', 'summary', 'coordinates', 'links', 'references', 'images', 'title'}
 
 class WikipediaModule(Module):
-    def __init__(self, in_label='Species', out_label='WikipediaArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES')):
-        Module.__init__(self, in_label, out_label, connect_labels)
+    def __init__(self, in_label='Species', out_label='WikipediaArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='Wikipedia'):
+        Module.__init__(self, in_label, out_label, connect_labels, name)
 
     def process(self, node):
         name = node['name']
