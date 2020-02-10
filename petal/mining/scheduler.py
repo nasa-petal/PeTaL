@@ -1,61 +1,41 @@
-
 from multiprocessing import Process, Manager
 from multiprocessing.managers import BaseManager
 
-from collections import defaultdict
+from collections import defaultdict, namedtuple
 from uuid import uuid4
 from time import sleep
 
 from driver import Driver
+from label_tracker import LabelTracker
+from module_info import ModuleInfo
+
+class ModuleProcess():
+    def __init__(self, process, module, info):
+        self.process = process
+        self.module = module
+        self.info = info
 
 driver = Driver()
 
-def driver_runner(module, tracker, ids):
-    driver.run_page(module, tracker, ids)
+def driver_runner(module, tracker, info, ids):
+    for i, node_id in enumerate(ids):
+        node_id = str(node_id)
+        info.set_current(i)
+        driver.run_id(module, tracker, node_id)
 
-def driver_independent_runner(module, tracker):
-    driver.run(module, tracker)
-
-class LabelTracker():
-    def __init__(self):
-        self.tracker = dict()
-        self.throttle_count_dict = dict()
-
-    def count(self, label):
-        if label not in self.tracker:
-            return 0
-        else:
-            return len(self.tracker[label])
-
-    def throttle_count(self, label):
-        if label not in self.throttle_count_dict:
-            return 100
-        else:
-            return self.throttle_count_dict[label]
-
-    def set_throttle_count(self, label, n):
-        self.throttle_count_dict[label] = n
-
-    def add(self, label, uuid):
-        if label in self.tracker:
-            self.tracker[label].add(uuid)
-        else:
-            self.tracker[label] = {uuid}
-
-    def get(self):
-        return self.tracker
-
-    def clear(self, label):
-        self.tracker[label].clear()
+def driver_independent_runner(module, tracker, info):
+    driver.run(module, tracker, info)
 
 class Scheduler:
     def __init__(self, accumulate_limit=5, max_running=20):
         self.accumulate_limit = accumulate_limit
 
         BaseManager.register('LabelTracker', LabelTracker)
+        BaseManager.register('ModuleInfo', ModuleInfo)
         self.manager = BaseManager()
         self.manager.start()
         self.label_tracker = self.manager.LabelTracker()
+        self.label_counts = dict()
 
         self.dependents = defaultdict(list)
         self.queue      = []
@@ -64,16 +44,24 @@ class Scheduler:
 
         self.max_running = max_running
 
+    def init(self, f, module, args=None, count=None):
+        if args is None:
+            args = ()
+        if count is None:
+            count = module.count
+        info = ModuleInfo(count)
+        self.queue.append(ModuleProcess(Process(target=f, args=(module, self.label_tracker, info) + args), module, info))
+
     def schedule(self, module):
         independent = module.in_label is None
         if independent:
-            self.queue.append((Process(target=driver_independent_runner, args=(module, self.label_tracker)), module))
+            self.init(driver_independent_runner, module)
         else:
             self.dependents[module.in_label].append(module)
 
     def start(self):
-        for process, module in self.queue:
-            process.start()
+        for p in self.queue:
+            p.process.start()
         self.running = self.queue
         self.queue = []
 
@@ -86,10 +74,16 @@ class Scheduler:
                 dep_modules = self.dependents[label]
                 ids = list(id_set)
                 for module in dep_modules:
-                    print('Scheduled dependent module ', module, ' on ', label, ' for {} nodes'.format(len(ids)), flush=True)
-                    self.queue.append((Process(target=driver_runner, args=(module, self.label_tracker, ids)), module))
+                    print('Scheduled ', module, ' for {} nodes'.format(len(ids)), flush=True)
+                    self.init(driver_runner, module, args=(ids,), count=len(ids))
                     self.label_tracker.set_throttle_count(label, self.accumulate_limit)
+                    if label in self.label_counts:
+                        self.label_counts[label] += len(ids)
+                    else:
+                        self.label_counts[label] = len(ids)
                 self.label_tracker.clear(label)
+                for k, v in self.label_counts.items():
+                    print('{:>10} : {:<10}'.format(k, v), flush=True)
 
     def display(self):
         to_start = min(self.max_running - len(self.running), len(self.queue))
@@ -97,21 +91,23 @@ class Scheduler:
             print(len(self.running), ' processes are running', flush=True)
             print('Starting ', to_start, ' processes', flush=True)
         for i in range(to_start):
-            p, m = self.queue[i]
-            p.start()
-            self.running.append((p, m))
+            p = self.queue[i]
+            p.process.start()
+            self.running.append(p)
         self.queue = self.queue[to_start:]
 
-        for process, module in self.running:
-            if process.is_alive():
-                # print('Currently running: ', module)
-                pass
+
+        for p in self.running:
+            if not p.process.is_alive():
+                print('Finished: ', p.module)
+                self.finished.add(p.module.out_label)
             else:
-                print('Finished: ', module)
-                self.finished.add(module.out_label)
-        self.running = [(p, m) for p, m in self.running if p.is_alive()]
+                if p.info.get_current() > 0:
+                    print(p.module, flush=True)
+                    print(p.info, flush=True)
+        self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):
-        for process, _ in self.running:
-            process.terminate()
+        for p in self.running:
+            p.process.terminate()
 

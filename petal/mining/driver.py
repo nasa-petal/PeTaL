@@ -18,7 +18,8 @@ class Driver():
         self.tracker = None
 
     def write(self, tx, node, process_result, module):
-        # TODO: Simplify this interface? Currently allows [dict], [str], [tuple], dict, str, tuple or None from module.process()
+        # Future: Simplify this interface? Currently allows [dict], [str], [tuple], dict, str, tuple or None from module.process()
+        # TBH the flexibility of this interface makes things more modular
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
@@ -63,22 +64,23 @@ class Driver():
                 self.tracker.add(label, unique_id)
             return unique_id
 
-    def page_runner(self, tx, module, ids):
-        for node_id in ids:
-            node_id = str(node_id)
-            node = tx.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
-            for record in node.records():
-                with self.neo_client.session() as session:
-                    node = record['n']
-                    result = module.process(node)
-                    session.write_transaction(self.write, node, result, module)
+    def page_runner(self, tx, module, node_id):
+        node = tx.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
+        for record in node.records():
+            with self.neo_client.session() as session:
+                node = record['n']
+                result = module.process(node)
+                session.write_transaction(self.write, node, result, module)
 
-    def run_page(self, module, tracker, ids):
+    def run_id(self, module, tracker, node_id):
         self.tracker = tracker
         with self.neo_client.session() as session:
-            session.read_transaction(self.page_runner, module, ids)
+            session.read_transaction(self.page_runner, module, node_id)
 
-    def run(self, module, tracker):
+    def run(self, module, tracker, info):
         self.tracker = tracker
+        i = 0
         for node_json in module.process():
+            info.set_current(i)
             self.add(node_json, module.out_label)
+            i += 1
