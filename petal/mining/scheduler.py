@@ -33,7 +33,7 @@ class LabelTracker():
         self.tracker[label].clear()
 
 class Scheduler:
-    def __init__(self, accumulate_limit=1000, max_running=30):
+    def __init__(self, accumulate_limit=200, max_running=40):
         self.accumulate_limit = accumulate_limit
 
         BaseManager.register('LabelTracker', LabelTracker)

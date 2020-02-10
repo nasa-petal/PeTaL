@@ -17,8 +17,8 @@ class JEBModule(Module):
     def process(self, node):
         name   = node['name']
         url    = 'https://jeb.biologists.org/search/' + name.replace(' ', '%252B')
-        print(url)
-        print(name)
+        # print(url)
+        # print(name)
         result = get(url)
         soup   = BeautifulSoup(result.content, features='html5lib')
         articles = []
