@@ -4,31 +4,26 @@ import json
 
 from utils.neo import page, add_json_node
 from uuid import uuid4
+from collections import defaultdict
+
+from multiprocessing import Lock
+
+from copy import deepcopy
 
 # TODO add scheduling etc
 class Driver():
-    def __init__(self, page_size=100, rate_limit=0.25):
+    def __init__(self, page_size=1, rate_limit=0.25):
         # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
         self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
         self.page_size  = page_size
         self.rate_limit = rate_limit
-
-    def paging(self, tx, module):
-        finder = 'MATCH (n:{}) '.format(module.in_label)
-        query  = finder + 'RETURN n'
-        for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
-            for record in page_results.records():
-                with self.neo_client.session() as session:
-                    node = record['n']
-                    result = module.process(node)
-                    session.write_transaction(self.write, node, result, module)
+        self.tracker = None
 
     def write(self, tx, node, process_result, module):
         # TODO: Simplify this interface? Currently allows [dict], [str], [tuple], dict, str, tuple from module.process()
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
-            # print(result, flush=True)
             if isinstance(result, str): # Result is a query
                 tx.run(result)
             else:
@@ -59,14 +54,28 @@ class Driver():
             if 'uuid' not in node:
                 unique_id = uuid4()
                 session.run('MATCH (s) WHERE ID(s) = {} SET s.uuid = \'{}\' RETURN s'.format(id_n, str(unique_id)))
-                return unique_id
             else:
-                return node['uuid']
+                unique_id = node['uuid']
+            if self.tracker is not None:
+                self.tracker.add(label, unique_id)
+            return unique_id
 
-    def run(self, module):
-        if module.in_label is None:
-            for node_json in module.process():
-                self.add(node_json, module.out_label)
-        else:
-            with self.neo_client.session() as session:
-                session.read_transaction(self.paging, module)
+    def page_runner(self, tx, module, ids):
+        for node_id in ids:
+            node = tx.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
+            for record in node.records():
+                with self.neo_client.session() as session:
+                    node = record['n']
+                    print(node, flush=True)
+                    result = module.process(node)
+                    session.write_transaction(self.write, node, result, module)
+
+    def run_page(self, module, tracker, ids):
+        self.tracker = tracker
+        with self.neo_client.session() as session:
+            session.read_transaction(self.page_runner, module, ids)
+
+    def run(self, module, tracker):
+        self.tracker = tracker
+        for node_json in module.process():
+            self.add(node_json, module.out_label)

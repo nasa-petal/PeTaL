@@ -58,5 +58,6 @@ class BackboneModule(Module):
                     print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}\r'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
                 except ZeroDivisionError:
                     pass
-
+                if i == 10:
+                    break
                 i += 1

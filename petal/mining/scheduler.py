@@ -1,31 +1,81 @@
 from uuid import uuid4
 from time import sleep
 
-from multiprocessing import Process
+from multiprocessing import Process, Manager
+from multiprocessing.managers import BaseManager
+
+from collections import defaultdict
 
 from driver import Driver
 
-driver = Driver(page_size=10, rate_limit=0.2)
+driver = Driver(page_size=1, rate_limit=0.2)
 
-def driver_runner(module):
-    driver.run(module)
+def driver_runner(module, tracker, ids):
+    driver.run_page(module, tracker, ids)
+
+def driver_independent_runner(module, tracker):
+    driver.run(module, tracker)
+
+class LabelTracker():
+    def __init__(self):
+        self.tracker = dict()
+
+    def add(self, label, uuid):
+        if label in self.tracker:
+            self.tracker[label].add(uuid)
+        else:
+            self.tracker[label] = {uuid}
+
+    def get(self):
+        return self.tracker
+
+    def clear(self, label):
+        self.tracker[label].clear()
 
 class Scheduler:
-    def __init__(self, accumulate_limit=100, page_size=1, rate_limit=0.25):
-        # self.driver   = Driver(page_size=page_size, rate_limit=rate_limit)
-        self.queue    = []
-        self.running  = []
-        self.affected = dict() # label, module-to-schedule
+    def __init__(self, accumulate_limit=10):
+        self.accumulate_limit = accumulate_limit
+
+        BaseManager.register('LabelTracker', LabelTracker)
+        self.manager = BaseManager()
+        self.manager.start()
+        self.label_tracker = self.manager.LabelTracker()
+
+        self.dependents = defaultdict(list)
+        self.queue      = []
 
     def schedule(self, module):
-        self.queue.append(Process(target=driver_runner, args=(module,)))
+        independent = module.in_label is None
+        if independent:
+            self.queue.append((Process(target=driver_independent_runner, args=(module, self.label_tracker)), module))
+        else:
+            self.dependents[module.in_label].append(module)
 
     def start(self):
-        for process in self.queue:
+        for process, _ in self.queue:
             process.start()
 
+    def check_added(self):
+        for label, id_set in self.label_tracker.get().items():
+            print(label, id_set, flush=True)
+            if len(id_set) > self.accumulate_limit:
+                module = self.dependents[label]
+                ids = list(id_set)
+                print('Scheduled dependent module ', module, ' on ', label, ' for {} nodes'.format(len(ids)), flush=True)
+                self.queue.append((Process(target=driver_runner, args=(module, self.label_tracker, ids)), module))
+                self.queue[-1].start()
+                self.label_tracker.clear(label)
+
+    def display(self):
+        for process, module in self.queue:
+            if process.is_alive():
+                print('Currently running: ', module)
+            else:
+                pass
+                # print('Finished: ', module)
+
     def stop(self):
-        for process in self.queue:
+        for process, _ in self.queue:
             process.terminate()
 
 from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule, HighwireModule, JEBModule
@@ -33,16 +83,19 @@ from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarMod
 if __name__ == '__main__':
     scheduler = Scheduler()
     try:
+        scheduler.schedule(BackboneModule())
         scheduler.schedule(WikipediaModule())
-        scheduler.schedule(EOLModule())
-        scheduler.schedule(JEBModule())
+        # scheduler.schedule(EOLModule())
+        # scheduler.schedule(JEBModule())
 
         scheduler.start()
-        sleep(100)
+        while True:
+            scheduler.check_added()
+            sleep(.01)
+            scheduler.display()
     finally:
         scheduler.stop()
 
-    # backbone        = BackboneModule()
     # highwire        = HighwireModule()
     # scholar_scraper = GoogleScholarModule()
 

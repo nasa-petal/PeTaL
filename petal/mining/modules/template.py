@@ -1,7 +1,7 @@
 from .module import Module
 
 class TemplateModule(Module):
-    def __init__(self, in_label='neo4j Label', out_label='neo4j Label', connect_labels=('neo4j Link Label', 'neo4j Link Label')):
+    def __init__(self, in_label='neo4j Label', out_label='neo4j Label', connect_labels=('neo4j Link Label in', 'neo4j Link Label out')):
         Module.__init__(self, in_label, out_label, connect_labels)
 
     def process(self, node):
