@@ -77,7 +77,9 @@ class EOLModule(Module):
                 else:
                     add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
             else:
-                if '\'' not in target_name:
+                if target_name is None:
+                    pass
+                elif '\'' not in target_name:
                     add_list.append('MATCH (n:Species) WHERE n.uuid = \'{}\' MATCH (m:Species) WHERE m.name = \'{}\' MERGE (n)-[:{}]->(m)'.format(uuid, target_name, link))
                 else:
                     pass # ?

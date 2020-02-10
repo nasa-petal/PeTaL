@@ -10,17 +10,14 @@ from multiprocessing import Lock
 
 from copy import deepcopy
 
-# TODO add scheduling etc
 class Driver():
-    def __init__(self, page_size=1, rate_limit=0.25):
+    def __init__(self):
         # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
         self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
-        self.page_size  = page_size
-        self.rate_limit = rate_limit
         self.tracker = None
 
     def write(self, tx, node, process_result, module):
-        # TODO: Simplify this interface? Currently allows [dict], [str], [tuple], dict, str, tuple from module.process()
+        # TODO: Simplify this interface? Currently allows [dict], [str], [tuple], dict, str, tuple or None from module.process()
         if not isinstance(process_result, list):
             process_result = [process_result]
         for result in process_result:
@@ -69,7 +66,6 @@ class Driver():
             for record in node.records():
                 with self.neo_client.session() as session:
                     node = record['n']
-                    # print(node, flush=True)
                     result = module.process(node)
                     session.write_transaction(self.write, node, result, module)
 

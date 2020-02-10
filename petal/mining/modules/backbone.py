@@ -55,7 +55,7 @@ class BackboneModule(Module):
                     total_seconds  = 1.9e6 / species_per_sec
                     eta_seconds = total_seconds - duration
                     eta = eta_seconds / 3600
-                    percent = duration / total_seconds
+                    percent = duration / total_seconds * 100.0
                     print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}\r'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
                 except ZeroDivisionError:
                     pass
