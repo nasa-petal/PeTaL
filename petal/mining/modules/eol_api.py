@@ -2,11 +2,6 @@ import requests, argparse, json, sys
 from pprint import pprint
 from time import sleep, time
 
-# from neo import add_json_node, get_page_queries
-
-from neo4j import GraphDatabase, basic_auth
-neoDriver = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
-
 class EOL_API:
     def __init__(self):
         self.url = 'https://eol.org/service/cypher'

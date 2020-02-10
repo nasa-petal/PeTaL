@@ -2,7 +2,6 @@ from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
 
-from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule, HighwireModule, JEBModule
 from utils.neo import page, add_json_node
 from uuid import uuid4
 
@@ -13,14 +12,12 @@ class Driver():
         self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
         self.page_size  = page_size
         self.rate_limit = rate_limit
-        self.processes  = dict()
 
     def paging(self, tx, module):
         finder = 'MATCH (n:{}) '.format(module.in_label)
         query  = finder + 'RETURN n'
         for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
             for record in page_results.records():
-                print(record)
                 with self.neo_client.session() as session:
                     node = record['n']
                     result = module.process(node)
@@ -73,18 +70,3 @@ class Driver():
         else:
             with self.neo_client.session() as session:
                 session.read_transaction(self.paging, module)
-
-if __name__ == '__main__':
-    driver = Driver(page_size=1, rate_limit=0.25)
-    wiki_scraper = WikipediaModule()
-    eol_scraper = EOLModule()
-    scholar_scraper = GoogleScholarModule()
-    backbone = BackboneModule()
-    highwire = HighwireModule()
-    jeb      = JEBModule()
-    # driver.run(backbone)
-    # driver.run(wiki_scraper)
-    # driver.run(jeb)
-    # driver.run(eol_scraper)
-    # driver.run(scholar_scraper)
-    # driver.run(highwire)
