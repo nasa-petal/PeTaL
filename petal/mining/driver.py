@@ -5,6 +5,7 @@ import json
 from utils.neo import page, add_json_node
 from uuid import uuid4
 from collections import defaultdict
+from time import sleep
 
 from multiprocessing import Lock
 
@@ -46,6 +47,9 @@ class Driver():
 
     def add(self, data, label):
         with self.neo_client.session() as session:
+            while self.tracker.count(label) > self.tracker.throttle_count(label):
+                sleep(0.2)
+                # print('Sleeping until products are consumed', flush=True)
             node = session.write_transaction(add_json_node, label, data)
             records = node.records()
             node = (next(records)['n'])

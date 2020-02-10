@@ -1,0 +1,5 @@
+{"scheduler:accumulate_limit" : 100, 
+ "scheduler:max_running" : 30,
+ "pipeline:sleep_time" : 0.2,
+ "pipeline:reload_time" : 60,
+ "pipeline:blacklist" : ["GoogleScholarModule", "HighwireModule"]}

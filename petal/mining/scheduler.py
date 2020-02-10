@@ -1,10 +1,10 @@
-from uuid import uuid4
-from time import sleep
 
 from multiprocessing import Process, Manager
 from multiprocessing.managers import BaseManager
 
 from collections import defaultdict
+from uuid import uuid4
+from time import sleep
 
 from driver import Driver
 
@@ -19,6 +19,22 @@ def driver_independent_runner(module, tracker):
 class LabelTracker():
     def __init__(self):
         self.tracker = dict()
+        self.throttle_count_dict = dict()
+
+    def count(self, label):
+        if label not in self.tracker:
+            return 0
+        else:
+            return len(self.tracker[label])
+
+    def throttle_count(self, label):
+        if label not in self.throttle_count_dict:
+            return 100
+        else:
+            return self.throttle_count_dict[label]
+
+    def set_throttle_count(self, label, n):
+        self.throttle_count_dict[label] = n
 
     def add(self, label, uuid):
         if label in self.tracker:
@@ -33,7 +49,7 @@ class LabelTracker():
         self.tracker[label].clear()
 
 class Scheduler:
-    def __init__(self, accumulate_limit=200, max_running=40):
+    def __init__(self, accumulate_limit=5, max_running=20):
         self.accumulate_limit = accumulate_limit
 
         BaseManager.register('LabelTracker', LabelTracker)
@@ -63,7 +79,7 @@ class Scheduler:
 
     def check_added(self):
         for label, id_set in self.label_tracker.get().items():
-            schedule_dependent = len(id_set) > self.accumulate_limit or label in self.finished
+            schedule_dependent = (len(id_set) > self.accumulate_limit or label in self.finished) and self.max_running - len(self.running) > 0
             if label in self.finished:
                 self.finished.remove(label)
             if schedule_dependent:
@@ -72,6 +88,7 @@ class Scheduler:
                 for module in dep_modules:
                     print('Scheduled dependent module ', module, ' on ', label, ' for {} nodes'.format(len(ids)), flush=True)
                     self.queue.append((Process(target=driver_runner, args=(module, self.label_tracker, ids)), module))
+                    self.label_tracker.set_throttle_count(label, self.accumulate_limit)
                 self.label_tracker.clear(label)
 
     def display(self):
@@ -97,26 +114,4 @@ class Scheduler:
     def stop(self):
         for process, _ in self.running:
             process.terminate()
-
-from modules import WikipediaModule, BackboneModule, EOLModule, GoogleScholarModule, HighwireModule, JEBModule
-
-if __name__ == '__main__':
-    scheduler = Scheduler()
-    try:
-        scheduler.schedule(BackboneModule())
-        scheduler.schedule(WikipediaModule())
-        scheduler.schedule(EOLModule())
-        scheduler.schedule(JEBModule())
-
-        scheduler.start()
-        done = False
-        while True:
-            scheduler.check_added()
-            sleep(.1)
-            done = scheduler.display()
-    finally:
-        scheduler.stop()
-
-    # highwire        = HighwireModule()
-    # scholar_scraper = GoogleScholarModule()
 
