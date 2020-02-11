@@ -73,14 +73,10 @@ class EOLModule(Module):
             link = link.replace('/', '_')
             if datatype == 'measurement':
                 if objname is None:
-                    add_list.append(('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}))
+                    add_list.append(self.custom_transaction('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}))
                 else:
-                    add_list.append(('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
+                    add_list.append(self.custom_transaction('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
             else:
-                if target_name is None:
-                    pass
-                elif '\'' not in target_name:
-                    add_list.append('MATCH (n:Species) WHERE n.uuid = \'{}\' MATCH (m:Species) WHERE m.name = \'{}\' MERGE (n)-[:{}]->(m)'.format(uuid, target_name, link))
-                else:
-                    pass # ?
+                if '\'' not in target_name:
+                    add_list.append(self.query_transaction(query='MATCH (n:Species) WHERE n.uuid = \'{}\' MATCH (m:Species) WHERE m.name = \'{}\' MERGE (n)-[:{}]->(m)'.format(uuid, target_name, link)))
         return add_list

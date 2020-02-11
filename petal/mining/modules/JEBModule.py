@@ -41,7 +41,7 @@ class JEBModule(Module):
                     properties['intro']    = sections[1]
                     properties['methods']  = sections[2]
                     properties['results']  = sections[3]
-                    articles.append(properties)
+                    articles.append(self.default_transaction(properties))
                     i += 1
                 except AttributeError:
                     pass

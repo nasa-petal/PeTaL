@@ -11,11 +11,10 @@ class GoogleScholarModule(Module):
 
 
     def process(self, node):
-        return None # TODO RE_ENABLE
-        name = node['Name'] if 'Name' in node else node['name']
+        name = node['name']
         scholar_result_gen = google_scholar_search(name)
         limit = randint(5, 20)
         results = []
         for i in range(limit):
-            results.append(next(scholar_result_gen).bib)
+            results.append(self.default_transaction(next(scholar_result_gen).bib))
         return results
