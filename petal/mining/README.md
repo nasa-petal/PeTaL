@@ -4,8 +4,10 @@
 
 This module defines data mining functionality for PeTaL.
 Essentially, this functionality is set up by creating modules in the `Module` folder.
-A module is defined by a type signature (type in) -> (type out, label from, label to) and a process(node : type in) function which creates Transaction() objects from (type in) nodes.
+A module is defined by a type signature (type in) -> (type out, label from, label to) and a process(node : type in) function which creates a list of Transaction() objects from (type in) nodes.
 Here, "types" are neo4j labels. See `modules/WikipediaModule.py` for a concrete and well documented example, and also see `modules/module.py` for the base class to derive from.
+
+Within a Module's process() function, self.default\_transaction(data) is used to create a Transaction() object from JSON for node properties. For more advanced data miners, see self.custom\_transaction() and self.query\_transaction() as they are all defined in `modules/module.py`.
 
 ## Scheduler, Driver, and Pipeline classes
 
