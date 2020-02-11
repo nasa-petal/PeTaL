@@ -2,6 +2,9 @@ from time import time
 import psutil, os
 
 class ModuleInfo:
+    '''
+    Used for self-benchmarking individual modules
+    '''
     def __init__(self, total):
         self.start = time()
         self.current = 0

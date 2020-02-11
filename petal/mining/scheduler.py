@@ -27,6 +27,9 @@ def driver_independent_runner(module, tracker, info):
     driver.run(module, tracker, info)
 
 class Scheduler:
+    '''
+    This class dynamically schedules modules in batches, and provides a solution to the producer-consumer problem within the data pipeline
+    '''
     def __init__(self, accumulate_limit=5, max_running=20):
         self.accumulate_limit = accumulate_limit
 

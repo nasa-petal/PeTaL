@@ -9,7 +9,11 @@ from importlib import reload
 import scheduler
 import modules
 
+
 class PipelineInterface:
+    '''
+    This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.
+    '''
     def __init__(self):
         self.scheduler = scheduler.Scheduler()
         self.times = dict()
@@ -60,7 +64,7 @@ class PipelineInterface:
 
 
 if __name__ == '__main__':
-    interface = PipelineInterface()
+    interface = PipelineInterface() # The entry point for mining server
     interface.start_server()
 
 

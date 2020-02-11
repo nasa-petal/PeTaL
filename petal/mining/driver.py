@@ -12,6 +12,9 @@ from multiprocessing import Lock
 from copy import deepcopy
 
 class Driver():
+    '''
+    An API providing a lightweight connection to neo4j
+    '''
     def __init__(self):
         self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7667", auth=basic_auth("neo4j", "testing"))
         # self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))

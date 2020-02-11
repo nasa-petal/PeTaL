@@ -1,4 +1,7 @@
 class LabelTracker():
+    '''
+    Used for scheduling dependent modules withing scheduler
+    '''
     def __init__(self):
         self.tracker = dict()
         self.throttle_count_dict = dict()
