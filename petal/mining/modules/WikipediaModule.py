@@ -14,7 +14,6 @@ class WikipediaModule(Module):
             results = wikipedia.search(name)
             properties = list()
             for result in results:
-                # print(result, flush=True)
                 result_properties = dict()
                 try:
                     page = wikipedia.page(result, auto_suggest=True, redirect=True, preload=True)
@@ -24,12 +23,9 @@ class WikipediaModule(Module):
                         except KeyError:
                             pass
                 except wikipedia.exceptions.WikipediaException as e:
-                    # print(e)
                     pass
-                properties.append(result_properties)
-                break
+                properties.append(self.default_transaction(result_properties))
             return properties
         except Exception as e:
-            # print(e)
             return None
 

@@ -46,7 +46,7 @@ class BackboneModule(Module):
                         pass
                     if json['taxonRank'] == 'species':
                         json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
-                        yield json
+                        yield self.default_transaction(json)
                     json = dict()
                 try:
                     total = i

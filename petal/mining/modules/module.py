@@ -1,4 +1,4 @@
-from transaction import Transaction
+from .transaction import Transaction
 
 class Module:
     def __init__(self, in_label=None, out_label=None, connect_labels=None, name='Default', count=1):

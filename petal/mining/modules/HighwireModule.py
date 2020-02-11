@@ -30,7 +30,6 @@ class HighwireModule(Module):
                         if x.attrib['pub-id-type'] == "doi":
                             doi = x.text
                     properties['doi'] = doi
-                    yield properties
-                    break
+                    yield self.default_transaction(properties)
             except Exception as e:
                 print(e)
