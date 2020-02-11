@@ -49,7 +49,7 @@ class Scheduler:
             args = ()
         if count is None:
             count = module.count
-        info = ModuleInfo(count)
+        info = self.manager.ModuleInfo(count)
         self.queue.append(ModuleProcess(Process(target=f, args=(module, self.label_tracker, info) + args), module, info))
 
     def schedule(self, module):
@@ -102,9 +102,9 @@ class Scheduler:
                 print('Finished: ', p.module)
                 self.finished.add(p.module.out_label)
             else:
-                if p.info.get_current() > 0:
-                    print(p.module, flush=True)
-                    print(p.info, flush=True)
+                # if p.info.get_current() > 0:
+                print(p.module, flush=True)
+                print(str(p.info), flush=True)
         self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):
