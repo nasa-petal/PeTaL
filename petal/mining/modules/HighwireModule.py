@@ -4,8 +4,8 @@ import xml.etree.ElementTree as ET
 from .module import Module
 
 class HighwireModule(Module):
-    def __init__(self, in_label=None, out_label='HighwireArticle', connect_label=None):
-        Module.__init__(self, in_label, out_label, connect_label)
+    def __init__(self, in_label=None, out_label='HighwireArticle', connect_label=None, name='Highwire'):
+        Module.__init__(self, in_label, out_label, connect_label, name)
 
     def process(self):
         for file in glob.glob('highwire/*.xml'):
