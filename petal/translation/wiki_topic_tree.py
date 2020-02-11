@@ -63,6 +63,8 @@ class WikipediaTopicNode():
 
 
     def query(self, term, which='both'):
+        pprint(self.summary_map)
+        pprint(self.content_map)
         if which == 'summary':
             syn_map = self.summary_map
         elif which == 'content':
