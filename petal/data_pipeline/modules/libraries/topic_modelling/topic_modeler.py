@@ -12,8 +12,8 @@ from gensim import corpora, models
 from string import punctuation
 from pprint import pprint
 
-from contractions import fix_word as expand_contractions
-from cleaner import Cleaner
+from .contractions import fix_word as expand_contractions
+from .cleaner import Cleaner
 
 class TopicModeler:
     def __init__(self, **kwargs):

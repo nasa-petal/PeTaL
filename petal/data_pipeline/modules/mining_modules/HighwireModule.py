@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 from pprint import pprint
 
-from ..utils.module import Module
+from ..module_utils.module import Module
 
 class HighwireModule(Module):
     def __init__(self, in_label=None, out_label='HighwireArticle:Article', connect_label=None, name='Highwire'):

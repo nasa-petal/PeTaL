@@ -1,4 +1,5 @@
-from ..utils.module import Module
+from ..module_utils.module import Module
+from ..libraries.topic_modelling import TopicModeler
 
 class TopicLDAModule(Module):
     '''
