@@ -3,6 +3,8 @@ import datetime
 
 wikipedia.set_rate_limiting(True, min_wait=datetime.timedelta(0, 0, 10000)) # 10 millisecond wait
 
+import requests
+
 from ..module_utils.module import Module
 
 SCRAPE_FIELDS = {'content', 'summary', 'coordinates', 'links', 'references', 'images', 'title'}
@@ -21,19 +23,22 @@ class WikipediaModule(Module):
         # Lookup the species based on its name. Make sure that all Species objects have this attribute!!
         name = node['name']
         properties = list()
-        results = wikipedia.search(name)
-        for result in results: # Create a transaction for each result
-            result_properties = dict() # Properties for the neo4j node, populated below
-            try:
-                page = wikipedia.page(result, auto_suggest=True, redirect=True, preload=True) # Use wikiAPI to load the actual page
-                for field in SCRAPE_FIELDS: # Store only the desired properties (above) in the node properties
-                    try:
-                        result_properties[field] = getattr(page, field)
-                    except KeyError:
-                        pass
-            except wikipedia.exceptions.WikipediaException as e:
-                pass
-            properties.append(self.default_transaction(result_properties)) # Only create default transaction objects
-        # In the future, use self.custom_transaction() and self.query_transaction() for more complicated Data Mining Modules
+        try:
+            results = wikipedia.search(name)
+            for result in results: # Create a transaction for each result
+                result_properties = dict() # Properties for the neo4j node, populated below
+                try:
+                    page = wikipedia.page(result, auto_suggest=True, redirect=True, preload=True) # Use wikiAPI to load the actual page
+                    for field in SCRAPE_FIELDS: # Store only the desired properties (above) in the node properties
+                        try:
+                            result_properties[field] = getattr(page, field)
+                        except KeyError:
+                            pass
+                except wikipedia.exceptions.WikipediaException as e:
+                    pass
+                properties.append(self.default_transaction(result_properties)) # Only create default transaction objects
+            # In the future, use self.custom_transaction() and self.query_transaction() for more complicated Data Mining Modules
+        except requests.exceptions.ConnectionError:
+            pass
         return properties
 

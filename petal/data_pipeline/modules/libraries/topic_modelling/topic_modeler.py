@@ -4,10 +4,11 @@
 # I also recommend reading the relevant documentation for nltk functions (tokenizing, stemming, and filtering stop words)
 
 from nltk.tokenize import word_tokenize
-from nltk.corpus   import stopwords
+from nltk.corpus   import stopwords, words
 from nltk.stem     import PorterStemmer
 
 from gensim import corpora, models
+from gensim.test.utils import common_texts
 
 from string import punctuation
 from pprint import pprint
@@ -22,6 +23,8 @@ class TopicModeler:
 
         class gensim.models.ldamodel.LdaModel(corpus=None, num_topics=100, id2word=None, distributed=False, chunksize=2000, passes=1, update_every=1, alpha='symmetric', eta=None, decay=0.5, offset=1.0, eval_every=10, iterations=50, gamma_threshold=0.001, minimum_probability=0.01, random_state=None, ns_conf=None, minimum_phi_value=0.01, per_word_topics=False, callbacks=None, dtype=<class 'numpy.float32'>)¶
         '''
+        if len(kwargs) == 0:
+            kwargs = dict(num_topics=100, passes=20, alpha='auto', minimum_probability=0.01, decay=0.5)
         self.cleaner    = Cleaner()
         self.lda_model  = None
         self.lda_kwargs = kwargs
@@ -29,13 +32,13 @@ class TopicModeler:
 
     def update(self, docs):
         cleaned    = [list(self.cleaner.clean(doc)) for doc in docs]
-        self.dictionary = corpora.Dictionary(cleaned)
+        self.dictionary = corpora.Dictionary([words.words()])
         corpus     = [self.dictionary.doc2bow(text) for text in cleaned]
 
         if self.lda_model is None:
             self.lda_model = models.ldamodel.LdaModel(corpus, id2word=self.dictionary, **self.lda_kwargs)
         else:
-            self.lda_model.update(corpus, id2word=self.dictionary)
+            self.lda_model.update(corpus)
 
     def classify(self, doc):
         bow = self.dictionary.doc2bow(list(self.cleaner.clean(doc)))
@@ -55,6 +58,7 @@ def main():
     modeler = TopicModeler(num_topics=3, passes=20, alpha='auto', minimum_probability=0.01, decay=0.5)
     modeler.update(docs)
     print(modeler.classify(doc_e))
+    modeler.update([doc_e])
 
 if __name__ == '__main__':
     main()

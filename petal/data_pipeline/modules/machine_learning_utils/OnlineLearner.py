@@ -19,12 +19,12 @@ class OnlineLearner(Module):
         self.model = None
     
     def save(self, model, filename):
-        print('Saving to pickle')
+        # print('Saving to pickle')
         with open(filename, 'wb') as outfile:
             pickle.dump(model, outfile)
     
     def load(self, filename):
-        print('Loading from pickle')
+        # print('Loading from pickle')
         if os.path.isfile(filename):
             with open(filename, 'rb') as infile:
                 return pickle.load(infile)
@@ -37,9 +37,9 @@ class OnlineLearner(Module):
         pass
 
     def process(self, node):
-        print('Online learning')
-        return
+        # print('Online learning')
         self.model = self.load(self.filename)
-        self.learn(model, node)
-        self.save(model, filename)
+        self.learn(self.model, node)
+        self.save(self.model, self.filename)
+        return []
 

@@ -76,7 +76,7 @@ class EOLModule(Module):
                     add_list.append(self.custom_transaction('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}))
                 else:
                     add_list.append(self.custom_transaction('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
-            else:
+            elif target_name is not None:
                 if '\'' not in target_name:
                     add_list.append(self.query_transaction(query='MATCH (n:Species) WHERE n.uuid = \'{}\' MATCH (m:Species) WHERE m.name = \'{}\' MERGE (n)-[:{}]->(m)'.format(uuid, target_name, link)))
         return add_list

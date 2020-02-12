@@ -55,9 +55,7 @@ class PipelineInterface:
         self.scheduler.start()
         try:
             while True:
-                print('Pipeline loop', flush=True)
                 self.scheduler.check_added()
-                print('Sleeping', flush=True)
                 sleep(self.sleep_time)
                 self.scheduler.display()
                 duration = time() - start

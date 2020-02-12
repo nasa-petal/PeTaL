@@ -14,5 +14,6 @@ class TopicLDAModule(OnlineLearner):
         self.model = TopicModeler()
     
     def learn(self, model, batch):
-        print(batch)
-        self.model.update([batch['abstract']])
+        pass
+        # print(batch)
+        # self.model.update([batch['abstract']])
