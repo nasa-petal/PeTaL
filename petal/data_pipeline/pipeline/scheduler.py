@@ -5,9 +5,9 @@ from collections import defaultdict, namedtuple
 from uuid import uuid4
 from time import sleep
 
-from driver import Driver
-from label_tracker import LabelTracker
-from module_info import ModuleInfo
+from .driver import Driver
+from .label_tracker import LabelTracker
+from .module_info import ModuleInfo
 
 UPPER_BOUND = 90000000000 # Allow up to 90 billion nodes to accumulate if they have no dependent consumers
 

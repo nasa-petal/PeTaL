@@ -5,7 +5,7 @@ from time import sleep, time
 class EOL_API:
     def __init__(self):
         self.url = 'https://eol.org/service/cypher'
-        with open('api.token', 'r') as infile:
+        with open('data/api.token', 'r') as infile:
             api_token = infile.read().strip()
         self.headers = {"accept": "application/json",
                         "authorization": "JWT " + api_token}

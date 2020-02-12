@@ -10,4 +10,3 @@ class TopicLDAModule(Module):
 
     def process(self, node):
         print(node)
-        1/0

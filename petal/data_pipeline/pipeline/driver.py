@@ -2,7 +2,7 @@ from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
 
-from utils.neo import page, add_json_node
+from .utils.neo import page, add_json_node
 from uuid import uuid4
 from collections import defaultdict
 from time import sleep

@@ -10,7 +10,7 @@ class HighwireModule(Module):
         Module.__init__(self, in_label, out_label, connect_label, name)
 
     def process(self):
-        for file in glob.glob('highwire/*.xml'):
+        for file in glob.glob('data/highwire/*.xml'):
             try:
                 with open(file, "rb") as data:
                     tree = ET.parse(data)

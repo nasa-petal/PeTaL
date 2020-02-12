@@ -14,17 +14,17 @@ This is the backbone mining module for population neo4j with the initial species
 col_date = '2019-05-01' # Make sure this is a valid COL release
 
 def create_dir():
-    if not os.path.isfile('.col_data/taxa.txt'):
+    if not os.path.isfile('data/.col_data/taxa.txt'):
         try:
             data = requests.get('http://www.catalogueoflife.org/DCA_Export/zip-fixed/{}-archive-complete.zip'.format(col_date))
             with open('col.zip', 'wb') as outfile:
                 outfile.write(data.content)
             with zipfile.ZipFile('col.zip', 'r') as zip_handle:
-                zip_handle.extractall('.col_data')
+                zip_handle.extractall('data/.col_data')
         except:
             if os.path.isfile('col.zip'):
                 os.remove('col.zip')
-            shutil.rmtree('.col_data')
+            shutil.rmtree('data/.col_data')
 
 class BackboneModule(Module):
     '''
@@ -42,7 +42,7 @@ class BackboneModule(Module):
         create_dir() # Call the code above to download COL data if it isn't already present
         start = time()
         i = 0
-        with open('.col_data/taxa.txt', 'r', encoding='utf-8') as infile:
+        with open('data/.col_data/taxa.txt', 'r', encoding='utf-8') as infile:
             headers = None
             json    = dict()
             # Parse lines of the downloaded file, and add it as a default_transaction() (see yield statement)

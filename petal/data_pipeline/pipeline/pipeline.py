@@ -5,25 +5,22 @@ import inspect
 import os
 
 from importlib import reload
-
-import scheduler
-import modules
-
+from . import scheduler
 
 class PipelineInterface:
     '''
     This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.
     '''
-    def __init__(self):
+    def __init__(self, modules):
         self.scheduler = scheduler.Scheduler()
         self.times = dict()
+        self.modules = modules
         self.load_settings()
         self.reload_modules()
 
     def reload_modules(self):
-        global modules # Required to reload the module at the global level
-        modules = reload(modules)
-        for name, item in inspect.getmembers(modules):
+        self.modules = reload(self.modules)
+        for name, item in inspect.getmembers(self.modules):
             if inspect.isclass(item):
                 filename = 'modules/mining_modules/{}.py'.format(name)
                 if not os.path.isfile(filename):
