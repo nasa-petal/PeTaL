@@ -11,10 +11,23 @@ class Driver():
     '''
     An API providing a lightweight connection to neo4j
     '''
-    def __init__(self):
+    def __init__(self, page_size, rate_limit):
         # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7667", auth=basic_auth("neo4j", "testing"))
         self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
         self.tracker = None
+        self.page_size = page_size
+        self.rate_limit = rate_limit
+
+    def paging(self, tx, module, info):
+        finder = 'MATCH (n:{}) '.format(module.in_label)
+        query  = finder + 'RETURN n'
+        for page_results in page(tx, finder, query, page_size=self.page_size, rate_limit=self.rate_limit):
+            for i, record in enumerate(page_results.records()):
+                info.set_current(i)
+                with self.neo_client.session() as session:
+                    node = record['n']
+                    transactions = module.process(node)
+                    session.write_transaction(self.write, node, transactions, module)
 
     def write(self, tx, node, transactions, module):
         for transaction in transactions:
@@ -50,7 +63,7 @@ class Driver():
                 self.tracker.add(label, unique_id)
             return unique_id
 
-    def page_runner(self, tx, module, node_id):
+    def single_runner(self, tx, module, node_id):
         node = tx.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
         for record in node.records():
             with self.neo_client.session() as session:
@@ -61,7 +74,12 @@ class Driver():
     def run_id(self, module, tracker, node_id):
         self.tracker = tracker
         with self.neo_client.session() as session:
-            session.read_transaction(self.page_runner, module, node_id)
+            session.read_transaction(self.single_runner, module, node_id)
+
+    def run_page(self, module, tracker, info):
+        self.tracker = tracker
+        with self.neo_client.session() as session:
+            session.read_transaction(self.paging, module, info)
 
     def run(self, module, tracker, info):
         self.tracker = tracker

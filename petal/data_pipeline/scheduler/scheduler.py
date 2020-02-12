@@ -17,7 +17,7 @@ class ModuleProcess():
         self.module = module
         self.info = info
 
-driver = Driver()
+driver = Driver(1000, 0.25)
 
 def driver_runner(module, tracker, info, ids):
     for i, node_id in enumerate(ids):
@@ -27,6 +27,9 @@ def driver_runner(module, tracker, info, ids):
 
 def driver_independent_runner(module, tracker, info):
     driver.run(module, tracker, info)
+
+def driver_page_runner(module, tracker, info):
+    driver.run_page(module, tracker, info)
 
 class Scheduler:
     '''
@@ -63,6 +66,8 @@ class Scheduler:
             self.init(driver_independent_runner, module)
         else:
             self.dependents[module.in_label].append(module)
+            self.init(driver_page_runner, module)
+            print('Added paged runner', flush=True)
 
     def start(self):
         for p in self.queue:
@@ -88,14 +93,11 @@ class Scheduler:
                         else:
                             self.label_counts[label] = len(ids)
                     self.label_tracker.clear(label)
-                    for k, v in self.label_counts.items():
-                        print('{:>10} : {:<10}'.format(k, v), flush=True)
             else:
                 self.label_tracker.set_throttle_count(label, UPPER_BOUND)
 
 
     def display(self):
-        print('Calling scheduler display()', flush=True)
         to_start = min(self.max_running - len(self.running), len(self.queue))
         if to_start > 0:
             print(len(self.running), ' processes are running', flush=True)
@@ -105,6 +107,9 @@ class Scheduler:
             p.process.start()
             self.running.append(p)
         self.queue = self.queue[to_start:]
+
+        for k, v in self.label_counts.items():
+            print('{:>10} : {:<10}'.format(k, v), flush=True)
 
 
         for p in self.running:
@@ -117,7 +122,6 @@ class Scheduler:
                 # print(str(p.info), flush=True)
                 pass
         self.running = [p for p in self.running if p.process.is_alive()]
-        print('Finished scheduler display', flush=True)
 
     def stop(self):
         for p in self.running:
