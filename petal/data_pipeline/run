@@ -1,8 +1,0 @@
-#!/usr/bin/env python
-
-from pipeline.pipeline import PipelineInterface
-import modules
-
-if __name__ == '__main__':
-    interface = PipelineInterface(modules)
-    interface.start_server()

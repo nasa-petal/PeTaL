@@ -5,22 +5,25 @@ import inspect
 import os
 
 from importlib import reload
-from . import scheduler
+from scheduler.scheduler import Scheduler
+
+import modules
 
 class PipelineInterface:
     '''
     This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.
     '''
-    def __init__(self, modules):
-        self.scheduler = scheduler.Scheduler()
+    def __init__(self):
+        self.scheduler = Scheduler()
         self.times = dict()
-        self.modules = modules
         self.load_settings()
         self.reload_modules()
 
     def reload_modules(self):
-        self.modules = reload(self.modules)
-        for name, item in inspect.getmembers(self.modules):
+        print('Reloading modules', flush=True)
+        global modules
+        modules = reload(modules)
+        for name, item in inspect.getmembers(modules):
             if inspect.isclass(item):
                 filename = 'modules/mining_modules/{}.py'.format(name)
                 if not os.path.isfile(filename):
@@ -45,26 +48,27 @@ class PipelineInterface:
                 setattr(self, k, v)
 
     def start_server(self):
+        print('Starting pipeline server', flush=True)
         start = time()
-        self.reload_modules()
+        self.reload_modules() 
+        print('Starting scheduler', flush=True)
         self.scheduler.start()
         try:
             while True:
+                print('Pipeline loop', flush=True)
                 self.scheduler.check_added()
+                print('Sleeping', flush=True)
                 sleep(self.sleep_time)
                 self.scheduler.display()
                 duration = time() - start
                 if duration > self.reload_time:
-                    print('Reloading settings', flush=True)
                     start = time()
                     self.load_settings()
                     self.reload_modules()
         finally:
+            print('Caught outer level exception, STOPPING server!')
             self.scheduler.stop()
 
-
 if __name__ == '__main__':
-    interface = PipelineInterface() # The entry point for mining server
+    interface = PipelineInterface()
     interface.start_server()
-
-

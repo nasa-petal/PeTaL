@@ -66,7 +66,7 @@ class Scheduler:
 
     def start(self):
         for p in self.queue:
-            p.process.start()
+             p.process.start()
         self.running = self.queue
         self.queue = []
 
@@ -95,6 +95,7 @@ class Scheduler:
 
 
     def display(self):
+        print('Calling scheduler display()', flush=True)
         to_start = min(self.max_running - len(self.running), len(self.queue))
         if to_start > 0:
             print(len(self.running), ' processes are running', flush=True)
@@ -116,6 +117,7 @@ class Scheduler:
                 # print(str(p.info), flush=True)
                 pass
         self.running = [p for p in self.running if p.process.is_alive()]
+        print('Finished scheduler display', flush=True)
 
     def stop(self):
         for p in self.running:
