@@ -12,8 +12,8 @@ class Driver():
     An API providing a lightweight connection to neo4j
     '''
     def __init__(self):
-        self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7667", auth=basic_auth("neo4j", "testing"))
-        # self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
+        # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7667", auth=basic_auth("neo4j", "testing"))
+        self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
         self.tracker = None
 
     def write(self, tx, node, transactions, module):
@@ -25,7 +25,7 @@ class Driver():
             else:
                 id1 = node['uuid']
                 id2 = self.add(transaction.data, transaction.out_label)
-                if connect_labels is not None:
+                if transaction.connect_labels is not None:
                     self.link(tx, id1, id2, transaction.in_label, transaction.out_label, *transaction.connect_labels)
 
     def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):

@@ -25,7 +25,10 @@ class PipelineInterface:
         modules = reload(modules)
         for name, item in inspect.getmembers(modules):
             if inspect.isclass(item):
-                filetime = os.stat('modules/{}.py'.format(name)).st_mtime
+                filename = 'modules/mining_modules/{}.py'.format(name)
+                if not os.path.isfile(filename):
+                    filename = 'modules/machine_learning_modules/{}.py'.format(name)
+                filetime = os.stat(filename).st_mtime
                 if name not in self.times or self.times[name] != filetime:
                     self.times[name] = filetime
                     if name not in self.blacklist:

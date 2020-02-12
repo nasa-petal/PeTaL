@@ -1,5 +1,5 @@
-from .eol_api import EOL_API
-from .module import Module
+from ..utils.eol_api import EOL_API
+from ..utils.module import Module
 
 from pprint import pprint
 

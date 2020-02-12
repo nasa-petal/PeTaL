@@ -9,6 +9,8 @@ from driver import Driver
 from label_tracker import LabelTracker
 from module_info import ModuleInfo
 
+UPPER_BOUND = 90000000000 # Allow up to 90 billion nodes to accumulate if they have no dependent consumers
+
 class ModuleProcess():
     def __init__(self, process, module, info):
         self.process = process
@@ -70,23 +72,27 @@ class Scheduler:
 
     def check_added(self):
         for label, id_set in self.label_tracker.get().items():
-            schedule_dependent = (len(id_set) > self.accumulate_limit or label in self.finished) and self.max_running - len(self.running) > 0
-            if label in self.finished:
-                self.finished.remove(label)
-            if schedule_dependent:
-                dep_modules = self.dependents[label]
-                ids = list(id_set)
-                for module in dep_modules:
-                    print('Scheduled ', module, ' for {} nodes'.format(len(ids)), flush=True)
-                    self.init(driver_runner, module, args=(ids,), count=len(ids))
-                    self.label_tracker.set_throttle_count(label, self.accumulate_limit)
-                    if label in self.label_counts:
-                        self.label_counts[label] += len(ids)
-                    else:
-                        self.label_counts[label] = len(ids)
-                self.label_tracker.clear(label)
-                for k, v in self.label_counts.items():
-                    print('{:>10} : {:<10}'.format(k, v), flush=True)
+            if label in self.dependents:
+                schedule_dependent = (len(id_set) > self.accumulate_limit or label in self.finished) and self.max_running - len(self.running) > 0
+                if label in self.finished:
+                    self.finished.remove(label)
+                if schedule_dependent:
+                    dep_modules = self.dependents[label]
+                    ids = list(id_set)
+                    for module in dep_modules:
+                        print('Scheduled ', module, ' for {} nodes'.format(len(ids)), flush=True)
+                        self.init(driver_runner, module, args=(ids,), count=len(ids))
+                        self.label_tracker.set_throttle_count(label, self.accumulate_limit)
+                        if label in self.label_counts:
+                            self.label_counts[label] += len(ids)
+                        else:
+                            self.label_counts[label] = len(ids)
+                    self.label_tracker.clear(label)
+                    for k, v in self.label_counts.items():
+                        print('{:>10} : {:<10}'.format(k, v), flush=True)
+            else:
+                self.label_tracker.set_throttle_count(label, UPPER_BOUND)
+
 
     def display(self):
         to_start = min(self.max_running - len(self.running), len(self.queue))
@@ -106,8 +112,9 @@ class Scheduler:
                 self.finished.add(p.module.out_label)
             else:
                 # if p.info.get_current() > 0:
-                print(p.module, flush=True)
-                print(str(p.info), flush=True)
+                # print(p.module, flush=True)
+                # print(str(p.info), flush=True)
+                pass
         self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):
