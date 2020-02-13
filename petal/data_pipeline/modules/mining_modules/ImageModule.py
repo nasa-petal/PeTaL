@@ -31,6 +31,8 @@ class ImageModule(Module):
                     pass
                 except TimeoutError:
                     pass
+                except urllib.error.HTTPError:
+                    pass
                 except requests.exceptions.ConnectionError:
                     pass
                 image_nodes.append(self.default_transaction(data=dict(filename=filename, url=image, parent=title)))

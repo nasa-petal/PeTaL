@@ -79,6 +79,7 @@ class Scheduler:
         for label, id_set in self.label_tracker.get().items():
             if label in self.dependents:
                 schedule_dependent = (len(id_set) > self.accumulate_limit or label in self.finished) and self.max_running - len(self.running) > 0
+                schedule_dependent = schedule_dependent and label not in {mp.module.in_label for mp in self.running}
                 if label in self.finished:
                     self.finished.remove(label)
                 if schedule_dependent:
