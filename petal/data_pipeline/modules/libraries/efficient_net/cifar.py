@@ -49,6 +49,8 @@ for epoch in range(2):
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         inputs, labels = data
+        print(inputs.shape)
+        print(labels.shape)
 
         optimizer.zero_grad()
 

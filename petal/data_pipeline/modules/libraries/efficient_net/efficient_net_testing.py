@@ -42,7 +42,7 @@ if __name__ == '__main__':
         try:
             print(image, flush=True)
             model.run(image='../../../data/images/' + image)
-            sleep(1)
+            sleep(0.5)
         except RuntimeError:
             pass
     # model.run(image='test2.jpg')
