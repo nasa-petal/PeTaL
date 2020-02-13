@@ -4,7 +4,8 @@
 
 from efficientnet_pytorch import EfficientNet as EfficientNetBase
 
-import json
+import json, os, os.path
+from time import sleep
 
 from PIL import Image
 import torch
@@ -37,8 +38,13 @@ class EfficientNetModel:
 
 if __name__ == '__main__':
     model = EfficientNetModel(i=0)
-    # model.run()
-    # model.run(image='test.jpg')
-    model.run(image='test2.jpg')
-    model.run(image='birds.jpg')
-    model.run(image='birdie.jpg')
+    for image in os.listdir('../../../data/images/'):
+        try:
+            print(image, flush=True)
+            model.run(image='../../../data/images/' + image)
+            sleep(1)
+        except RuntimeError:
+            pass
+    # model.run(image='test2.jpg')
+    # model.run(image='birds.jpg')
+    # model.run(image='birdie.jpg')
