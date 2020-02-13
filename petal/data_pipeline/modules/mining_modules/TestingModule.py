@@ -69,6 +69,31 @@ Encephalartos villosus
 Encephalartos whitelockii 
 Encephalartos woodii'''
 
+aloe_trees = '''
+Aloe africana 
+Aloe alooides 
+Aloe angelica 
+Aloe arborescens 
+Aloe cameronii 
+Aloe castanea 
+Aloe comosa 
+Aloe dolomitica 
+Aloe excelsa 
+Aloe ferox 
+Aloe khamiensis 
+Aloe littoralis 
+Aloe marlothii 
+Aloe munchii 
+Aloe pearsonii 
+Aloe pluridens 
+Aloe pretoriensis 
+Aloe rupestris 
+Aloe sessiliflora 
+Aloe speciosa 
+Aloe spectabilis 
+Aloe thraskii 
+'''
+
 class TestingModule(Module):
     '''
     This module populates neo4j with Species nodes, allowing WikipediaModule and others to process them.
@@ -78,5 +103,7 @@ class TestingModule(Module):
         Module.__init__(self, in_label, out_label, connect_label, name, count)
 
     def process(self):
-        for bread_tree_species in bread_trees.split('\n'):
-            yield self.default_transaction({'name' : bread_tree_species.strip()})
+        for species in aloe_trees.split('\n'):
+            yield self.default_transaction({'name' : species.strip()})
+        # for species in bread_trees.split('\n'):
+        #     yield self.default_transaction({'name' : species.strip()})
