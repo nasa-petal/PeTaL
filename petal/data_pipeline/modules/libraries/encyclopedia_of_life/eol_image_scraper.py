@@ -32,7 +32,6 @@ def get_gallery(url, index):
 
 def get_media_page(i, display=False):
     url = media_url.format(i)
-    print(url, flush=True)
     try:
         html = get(url).text
         processed = BeautifulSoup(html, 'html.parser')
@@ -47,6 +46,7 @@ def get_media_page(i, display=False):
 def get_images(query, display=False):
     for page_id in get_page_ids(query):
         yield get_media_page(page_id, display=display)
+        break
 
 if __name__ == '___main__':
     for page in get_images('Encephalartos'):

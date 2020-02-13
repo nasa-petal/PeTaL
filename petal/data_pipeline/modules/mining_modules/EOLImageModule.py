@@ -12,5 +12,5 @@ class EOLImageModule(ImageModule):
         for page in pages:
             print(page, flush=True)
             for image_set in page:
-                for transaction in ImageModule.process(self, image_set):
+                for transaction in ImageModule.process(self, image_set, uuid=node['uuid'], title=name):
                     yield transaction

@@ -1,5 +1,74 @@
 from ..module_utils.module import Module
 
+bread_trees = '''Encephalartos aemulans
+Encephalartos altensteinii
+Encephalartos aplanatus
+Encephalartos arenarius
+Encephalartos barteri
+Encephalartos brevifoliolatus 
+Encephalartos bubalinus 
+Encephalartos caffer 
+Encephalartos cerinus 
+Encephalartos chimanimaniensis 
+Encephalartos concinnus 
+Encephalartos cupidus 
+Encephalartos cycadifolius 
+Encephalartos delucanus 
+Encephalartos dolomiticus 
+Encephalartos dyerianus 
+Encephalartos equatorialis 
+Encephalartos eugene
+Encephalartos ferox 
+Encephalartos friderici
+Encephalartos ghellinckii 
+Encephalartos gratus 
+Encephalartos heenanii 
+Encephalartos hildebrandtii 
+Encephalartos hirsutus 
+Encephalartos horridus 
+Encephalartos humilis 
+Encephalartos inopinus 
+Encephalartos ituriensis 
+Encephalartos kisambo 
+Encephalartos laevifolius 
+Encephalartos lanatus 
+Encephalartos latifrons 
+Encephalartos laurentianus 
+Encephalartos lebomboensis 
+Encephalartos lehmannii 
+Encephalartos longifolius 
+Encephalartos mackenziei 
+Encephalartos macrostrobilus 
+Encephalartos manikensis 
+Encephalartos marunguensis 
+Encephalartos middelburgensis 
+Encephalartos msinganus 
+Encephalartos munchii 
+Encephalartos natalensis 
+Encephalartos ngoyanus 
+Encephalartos nubimontanus 
+Encephalartos paucidentatus 
+Encephalartos poggei 
+Encephalartos princeps 
+Encephalartos pruniferus 
+Encephalartos pterogonus 
+Encephalartos pungens 
+Encephalartos relictus 
+Encephalartos repandus 
+Encephalartos schaijesii 
+Encephalartos schmitzii 
+Encephalartos sclavoi 
+Encephalartos senticosus Vorster
+Encephalartos septentrionalis 
+Encephalartos tegulaneus 
+Encephalartos transvenosus 
+Encephalartos trispinosus 
+Encephalartos turneri 
+Encephalartos umbeluziensis 
+Encephalartos villosus 
+Encephalartos whitelockii 
+Encephalartos woodii'''
+
 class TestingModule(Module):
     '''
     This module populates neo4j with Species nodes, allowing WikipediaModule and others to process them.
@@ -9,5 +78,5 @@ class TestingModule(Module):
         Module.__init__(self, in_label, out_label, connect_label, name, count)
 
     def process(self):
-        # Load a SINGLE species into the database, and process it.
-        yield self.default_transaction({'name' : 'Encephalartos horridus'})
+        for bread_tree_species in bread_trees.split('\n'):
+            yield self.default_transaction({'name' : bread_tree_species.strip()})
