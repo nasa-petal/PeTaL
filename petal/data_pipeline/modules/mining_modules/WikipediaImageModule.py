@@ -6,6 +6,8 @@ import urllib.request
 import urllib3
 import requests
 
+EXCLUDED_EXTENSIONS = {'svg'}
+
 class WikipediaImageModule(Module):
     '''
     Download images from WikipediaArticle nodes in the neo4j database
@@ -21,14 +23,15 @@ class WikipediaImageModule(Module):
         images = node['images']
         for i, image in enumerate(images):
             ext = image.split('.')[-1]
-            filename = 'data/images/{uuid}_{i}.'.format(uuid=str(node['uuid']), i=str(i)) + ext
-            try:
-                urllib.request.urlretrieve(image, filename)
-            except urllib3.exceptions.NewConnectionError:
-                pass
-            except TimeoutError:
-                pass
-            except requests.exceptions.ConnectionError:
-                pass
-            image_nodes.append(self.default_transaction(data=dict(filename=filename, url=image, parent=title)))
+            if ext not in EXCLUDED_EXTENSIONS:
+                filename = 'data/images/{uuid}_{i}.'.format(uuid=str(node['uuid']), i=str(i)) + ext
+                try:
+                    urllib.request.urlretrieve(image, filename)
+                except urllib3.exceptions.NewConnectionError:
+                    pass
+                except TimeoutError:
+                    pass
+                except requests.exceptions.ConnectionError:
+                    pass
+                image_nodes.append(self.default_transaction(data=dict(filename=filename, url=image, parent=title)))
         return image_nodes
