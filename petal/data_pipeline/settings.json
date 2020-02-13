@@ -2,4 +2,4 @@
  "scheduler:max_running" : 60,
  "pipeline:sleep_time" : 0.5,
  "pipeline:reload_time" : 40,
- "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule"]}
+ "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule"]}

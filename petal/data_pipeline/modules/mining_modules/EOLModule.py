@@ -1,4 +1,4 @@
-from ..module_utils.eol_api import EOL_API
+from ..libraries.encyclopedia_of_life.eol_api import EOL_API
 from ..module_utils.module import Module
 
 from pprint import pprint

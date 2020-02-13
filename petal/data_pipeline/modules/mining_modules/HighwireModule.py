@@ -1,5 +1,6 @@
 import glob 
 import xml.etree.ElementTree as ET
+import xml
 
 from pprint import pprint
 
