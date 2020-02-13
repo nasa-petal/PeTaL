@@ -27,6 +27,7 @@ class WikipediaModule(Module):
             results = wikipedia.search(name)
             for result in results: # Create a transaction for each result
                 result_properties = dict() # Properties for the neo4j node, populated below
+                # A lot of weird things can happen when crawling Wikipedia, so exception handling galore
                 try:
                     page = wikipedia.page(result, auto_suggest=True, redirect=True, preload=True) # Use wikiAPI to load the actual page
                     for field in SCRAPE_FIELDS: # Store only the desired properties (above) in the node properties
@@ -34,6 +35,8 @@ class WikipediaModule(Module):
                             result_properties[field] = getattr(page, field)
                         except KeyError:
                             pass
+                except KeyError:
+                    pass
                 except wikipedia.exceptions.WikipediaException as e:
                     pass
                 properties.append(self.default_transaction(result_properties)) # Only create default transaction objects

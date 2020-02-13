@@ -15,11 +15,13 @@ class ImageModule(Module):
     def __init__(self, in_label=None, out_label=None, connect_labels=None, name='AbstractImageModule'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
 
-    def process(self, urls):
+    def process(self, urls, uuid=None):
+        if uuid is None:
+            uuid = uuid4()
         for i, image in enumerate(urls):
             ext = image.split('.')[-1]
             if ext not in EXCLUDED_EXTENSIONS:
-                filename = 'data/images/{uuid}_{i}.'.format(uuid=str(node['uuid']), i=str(i)) + ext
+                filename = 'data/images/{uuid}_{i}.'.format(uuid=str(uuid), i=str(i)) + ext
                 try:
                     urllib.request.urlretrieve(image, filename)
                 except urllib3.exceptions.NewConnectionError:
