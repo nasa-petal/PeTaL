@@ -13,4 +13,4 @@ class WikipediaImageModule(ImageModule):
         
         title  = node['title']
         images = node['images']
-        return ImageModule.process(self, images, uuid=node['uuid'])
+        return ImageModule.process(self, images, uuid=node['uuid'], title=title)

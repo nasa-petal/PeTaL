@@ -15,9 +15,12 @@ class ImageModule(Module):
     def __init__(self, in_label=None, out_label=None, connect_labels=None, name='AbstractImageModule'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
 
-    def process(self, urls, uuid=None):
+    def process(self, urls, uuid=None, title=None):
         if uuid is None:
             uuid = uuid4()
+        if title is None:
+            title = 'independent'
+        image_nodes = []
         for i, image in enumerate(urls):
             ext = image.split('.')[-1]
             if ext not in EXCLUDED_EXTENSIONS:
