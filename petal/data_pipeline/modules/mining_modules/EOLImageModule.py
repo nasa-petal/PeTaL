@@ -8,8 +8,9 @@ class EOLImageModule(ImageModule):
     def process(self, node):
         name = node['name']
         pages = get_images(name)
-        transactions = []
+        print('EOL Module for ', name, flush=True)
         for page in pages:
+            print(page, flush=True)
             for image_set in page:
-                transactions.extend(ImageModule.process(self, image_set))
-        return transactions
+                for transaction in ImageModule.process(self, image_set):
+                    yield transaction

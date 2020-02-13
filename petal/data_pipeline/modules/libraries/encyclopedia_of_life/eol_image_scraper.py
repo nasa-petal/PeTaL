@@ -27,12 +27,12 @@ def get_gallery(url, index):
     html = get(url).text
     processed = BeautifulSoup(html, 'html.parser')
     gallery   = processed.find(attrs={'id': 'gallery'})
-    images    = [image.get('src') for image in gallery.find_all('img')]
-    return images
+    for image in gallery.find_all('img'):
+        yield image.get('src')
 
 def get_media_page(i, display=False):
-    galleries = []
     url = media_url.format(i)
+    print(url, flush=True)
     try:
         html = get(url).text
         processed = BeautifulSoup(html, 'html.parser')
@@ -40,10 +40,9 @@ def get_media_page(i, display=False):
         for x in range(n_pages):
             if display:
                 print(x + 1, '/', n_pages, ' pages ', flush=True)
-            galleries.append(get_gallery(url, x))
+            yield get_gallery(url, x)
     except AttributeError: # Extend
         pass
-    return galleries
 
 def get_images(query, display=False):
     for page_id in get_page_ids(query):

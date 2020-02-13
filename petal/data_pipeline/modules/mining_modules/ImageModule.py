@@ -20,7 +20,6 @@ class ImageModule(Module):
             uuid = uuid4()
         if title is None:
             title = 'independent'
-        image_nodes = []
         for i, image in enumerate(urls):
             ext = image.split('.')[-1]
             if ext not in EXCLUDED_EXTENSIONS:
@@ -35,5 +34,4 @@ class ImageModule(Module):
                     pass
                 except requests.exceptions.ConnectionError:
                     pass
-                image_nodes.append(self.default_transaction(data=dict(filename=filename, url=image, parent=title)))
-        return image_nodes
+                yield self.default_transaction(data=dict(filename=filename, url=image, parent=title))

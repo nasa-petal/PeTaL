@@ -79,7 +79,6 @@ class Scheduler:
         for label, id_set in self.label_tracker.get().items():
             if label in self.dependents:
                 schedule_dependent = (len(id_set) > self.accumulate_limit or label in self.finished) and self.max_running - len(self.running) > 0
-                schedule_dependent = schedule_dependent and label not in {mp.module.in_label for mp in self.running}
                 if label in self.finished:
                     self.finished.remove(label)
                 if schedule_dependent:
@@ -109,8 +108,8 @@ class Scheduler:
             self.running.append(p)
         self.queue = self.queue[to_start:]
 
-        for k, v in self.label_counts.items():
-            print('{:>10} : {:<10}'.format(k, v), flush=True)
+        # for k, v in self.label_counts.items():
+        #     print('{:>10} : {:<10}'.format(k, v), flush=True)
 
 
         for p in self.running:
@@ -119,9 +118,8 @@ class Scheduler:
                 self.finished.add(p.module.out_label)
             else:
                 # if p.info.get_current() > 0:
-                # print(p.module, flush=True)
-                # print(str(p.info), flush=True)
-                pass
+                print(p.module, flush=True)
+                print(str(p.info), flush=True)
         self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):
