@@ -17,10 +17,10 @@ class EfficientNetModel:
         # Top-1 Accuracy ranges from 76.3% to 84.4%, in intervals of roughly 1-2% between indexes
         self.model = EfficientNetBase.from_pretrained('efficientnet-b{}'.format(i)) # Can go up to b7, with b0 having the least parameters, and b7 having the most (but more accuracy)
 
-    def run(self):
+    def run(self, image='img.jpg'):
         tfms = transforms.Compose([transforms.Resize(224), transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),])
-        img = tfms(Image.open('img.jpg')).unsqueeze(0)
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
+        img = tfms(Image.open(image)).unsqueeze(0)
         print(img.shape)
 
         labels_map = json.load(open('labels_map.txt'))
@@ -37,4 +37,8 @@ class EfficientNetModel:
 
 if __name__ == '__main__':
     model = EfficientNetModel(i=0)
-    model.run()
+    # model.run()
+    # model.run(image='test.jpg')
+    model.run(image='test2.jpg')
+    model.run(image='birds.jpg')
+    model.run(image='birdie.jpg')
