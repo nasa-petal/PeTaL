@@ -98,9 +98,9 @@ class Scheduler:
 
 
     def display(self):
+        print(len(self.running), ' processes are running', flush=True)
         to_start = min(self.max_running - len(self.running), len(self.queue))
         if to_start > 0:
-            print(len(self.running), ' processes are running', flush=True)
             print('Starting ', to_start, ' processes', flush=True)
         for i in range(to_start):
             p = self.queue[i]
@@ -108,18 +108,20 @@ class Scheduler:
             self.running.append(p)
         self.queue = self.queue[to_start:]
 
-        # for k, v in self.label_counts.items():
-        #     print('{:>10} : {:<10}'.format(k, v), flush=True)
-
-
+        info_collection = dict()
         for p in self.running:
             if not p.process.is_alive():
                 print('Finished: ', p.module)
                 self.finished.add(p.module.out_label)
             else:
-                # if p.info.get_current() > 0:
-                print(p.module, flush=True)
-                print(str(p.info), flush=True)
+                name = p.module.name
+                if name not in info_collection:
+                    info_collection[name] = (p.info, 1)
+                else:
+                    prev, pi = info_collection[name]
+                    info_collection[name] = (p.info + prev, pi + 1)
+        for k, v in info_collection.items():
+            print(k, v[0], ' with ', v[1], ' process total')
         self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):

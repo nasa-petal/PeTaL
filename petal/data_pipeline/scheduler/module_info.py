@@ -11,6 +11,10 @@ class ModuleInfo:
         self.total   = total
         self.process = psutil.Process(os.getpid())
 
+    def __add__(self, b):
+        self.start   = min(self.start, b.start)
+        self.current = self.current + b.current
+
     def set_current(self, c):
         self.current = c
 
