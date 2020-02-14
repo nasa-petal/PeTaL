@@ -98,7 +98,7 @@ def main():
     trainset, testset = build_dataset()
 
     do_training = True
-    do_training = False
+    # do_training = False
     PATH = 'species_net.pth'
 
     net = SpeciesModel()

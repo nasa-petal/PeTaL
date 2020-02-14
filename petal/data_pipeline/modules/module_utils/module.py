@@ -27,4 +27,3 @@ class Module:
             return '{}: ({}) -> ({})'.format(self.name, self.in_label, self.out_label)
         # if self.connect_labels is not None:
         #     return '{}: {} <-[{}, {}]-> {}'.format(self.name, self.in_label, *self.connect_labels, self.out_label)
-

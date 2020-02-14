@@ -6,8 +6,10 @@ import os
 
 from importlib import reload
 from scheduler.scheduler import Scheduler
+from scheduler.module_info import ModuleInfo
 
 import modules
+
 
 class PipelineInterface:
     '''

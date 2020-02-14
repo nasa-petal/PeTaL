@@ -4,12 +4,29 @@ from multiprocessing.managers import BaseManager
 from collections import defaultdict, namedtuple
 from uuid import uuid4
 from time import sleep
+import psutil, os
 
 from .driver import Driver
 from .label_tracker import LabelTracker
 from .module_info import ModuleInfo
 
 UPPER_BOUND = 90000000000 # Allow up to 90 billion nodes to accumulate if they have no dependent consumers
+
+# HACKY HACK BE CAREFUL THIS IS A HACK
+# ********************************************************************************
+import multiprocessing # HACK CONTINUED
+# Backup original AutoProxy function
+backup_autoproxy = multiprocessing.managers.AutoProxy # HACK CONTINUED
+# Defining a new AutoProxy that handles unwanted key argument 'manager_owned' # HACK CONTINUED
+def redefined_autoproxy(token, serializer, manager=None, authkey=None, # HACK CONTINUED
+          exposed=None, incref=True, manager_owned=True): # HACK CONTINUED
+    # Calling original AutoProxy without the unwanted key argument # HACK CONTINUED
+    return backup_autoproxy(token, serializer, manager, authkey, # HACK CONTINUED
+                     exposed, incref) # HACK CONTINUED
+# Updating AutoProxy definition in multiprocessing.managers package # HACK CONTINUED
+multiprocessing.managers.AutoProxy = redefined_autoproxy # HACK CONTINUED
+# ********************************************************************************
+# HACKY CODE STOPS HERE
 
 class ModuleProcess():
     def __init__(self, process, module, info):
@@ -20,15 +37,21 @@ class ModuleProcess():
 driver = Driver(1000, 0.25)
 
 def driver_runner(module, tracker, info, ids):
+    proc = psutil.Process(os.getpid())
+    info.set_usage(proc.memory_percent(), proc.cpu_percent())
     for i, node_id in enumerate(ids):
         node_id = str(node_id)
         info.set_current(i)
         driver.run_id(module, tracker, node_id)
 
 def driver_independent_runner(module, tracker, info):
+    proc = psutil.Process(os.getpid())
+    info.set_usage(proc.memory_percent(), proc.cpu_percent())
     driver.run(module, tracker, info)
 
 def driver_page_runner(module, tracker, info):
+    proc = psutil.Process(os.getpid())
+    info.set_usage(proc.memory_percent(), proc.cpu_percent())
     driver.run_page(module, tracker, info)
 
 class Scheduler:
@@ -67,7 +90,7 @@ class Scheduler:
         else:
             self.dependents[module.in_label].append(module)
             self.init(driver_page_runner, module)
-            print('Added paged runner', flush=True)
+            # print('Added paged runner', flush=True)
 
     def start(self):
         for p in self.queue:
@@ -85,7 +108,7 @@ class Scheduler:
                     dep_modules = self.dependents[label]
                     ids = list(id_set)
                     for module in dep_modules:
-                        print('Scheduled ', module, ' for {} nodes'.format(len(ids)), flush=True)
+                        # print('Scheduled ', module, ' for {} nodes'.format(len(ids)), flush=True)
                         self.init(driver_runner, module, args=(ids,), count=len(ids))
                         self.label_tracker.set_throttle_count(label, self.accumulate_limit)
                         if label in self.label_counts:
@@ -98,10 +121,11 @@ class Scheduler:
 
 
     def display(self):
-        print(len(self.running), ' processes are running', flush=True)
+        # print(len(self.running), ' processes are running', flush=True)
         to_start = min(self.max_running - len(self.running), len(self.queue))
         if to_start > 0:
-            print('Starting ', to_start, ' processes', flush=True)
+            pass
+            # print('Starting ', to_start, ' processes', flush=True)
         for i in range(to_start):
             p = self.queue[i]
             p.process.start()
@@ -111,7 +135,7 @@ class Scheduler:
         info_collection = dict()
         for p in self.running:
             if not p.process.is_alive():
-                print('Finished: ', p.module)
+                # print('Finished: ', p.module)
                 self.finished.add(p.module.out_label)
             else:
                 name = p.module.name
@@ -119,9 +143,9 @@ class Scheduler:
                     info_collection[name] = (p.info, 1)
                 else:
                     prev, pi = info_collection[name]
-                    info_collection[name] = (p.info + prev, pi + 1)
+                    info_collection[name] = (prev.add(p.info), pi + 1)
         for k, v in info_collection.items():
-            print(k, v[0], ' with ', v[1], ' process total')
+            print('{:>20} {}, procs: {}'.format(k, v[0], v[1]), flush=True)
         self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):
