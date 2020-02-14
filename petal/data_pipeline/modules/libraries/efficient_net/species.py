@@ -10,11 +10,16 @@ import torch.optim as optim
 import torch.nn.functional as F
 from torch.utils import data
 from torchvision import transforms
+from random import shuffle
+from pprint import pprint
 
 class Dataset(data.Dataset):
     def __init__(self, ids, labels):
         self.labels = labels
         self.list_IDs = ids
+
+    def get_label(self, index):
+        return self.list_IDs[index].split('_')[0].split('/')[-1]
 
     def __len__(self):
         return len(self.list_IDs)
@@ -26,11 +31,9 @@ class Dataset(data.Dataset):
         tfms = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
         img = tfms(Image.open(filename))
-        print(img.shape)
         img = img.unsqueeze(0)
-        print(img.shape)
         x = img
-        y = self.labels[ID.split('_')[0]]
+        y = self.labels[ID.split('_')[0].split('/')[-1]]
         return x, y
 
 def train(net, dataset, n_epochs=2):
@@ -40,14 +43,12 @@ def train(net, dataset, n_epochs=2):
 
     try:
         for epoch in range(n_epochs):
+            print('Epoch: ', epoch, flush=True)
             running_loss = 0.0
             for i, data in enumerate(trainloader, 0):
-                print(i)
+                print('    datapoint: ', i, flush=True)
                 inputs, labels = data
                 inputs = inputs.squeeze(dim=1)
-                # labels = labels.squeeze()
-                print(inputs.shape)
-                print(labels.shape)
 
                 optimizer.zero_grad()
                 outputs = net(inputs)
@@ -64,33 +65,64 @@ def train(net, dataset, n_epochs=2):
         pass
     return net
 
-# def run(model, image='img.jpg'):
-#     tfms = transforms.Compose([transforms.Resize(224), transforms.ToTensor(),
-# transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
-#     img = tfms(Image.open(image)).unsqueeze(0)
-#     print(img.shape)
-# 
-#     model.eval()
-#     with torch.no_grad():
-#         outputs = model(img)
-# 
-#     for idx in torch.topk(outputs, k=10).indices.squeeze(0).tolist():
-#         prob = torch.softmax(outputs, dim=1)[0, idx].item()
-#         print('{label:<75} ({p:.2f}%'.format(label=idx, p=prob*100))
+def run(model, image=None):
+    model.eval()
+    with torch.no_grad():
+        outputs = model(image)
+
+    print('-' * 80)
+    print('')
+    predictions = torch.topk(outputs, k=10).indices.squeeze(0).tolist()
+    for idx in predictions:
+        prob = torch.softmax(outputs, dim=1)[0, idx].item()
+        print('{label:<75} ({p:.2f}%'.format(label=idx, p=prob*100))
+    print('')
+    return predictions[0]
+
+def build_dataset():
+    image_dir = '../../../data/images/'
+    counter = 0
+    files   = []
+    ids     = dict()
+    for filename in os.listdir(image_dir):
+        uuid     = filename.split('_')[0]
+        filepath = image_dir + filename
+        if uuid not in ids:
+            ids[uuid] = counter
+            counter += 1
+        files.append(filepath)
+    shuffle(files)
+    return Dataset(files[:400], ids), Dataset(files[400:], ids)
 
 def main():
-    dataset = Dataset(['../../../data/images/35bfa85e-16d3-4942-b57b-da48107e69ba_8.jpg'] * 2, {'../../../data/images/35bfa85e-16d3-4942-b57b-da48107e69ba' : 0})#torch.zeros(68)})
+    trainset, testset = build_dataset()
 
     do_training = True
+    do_training = False
     PATH = 'species_net.pth'
 
     net = SpeciesModel()
     if do_training:
-        train(net, dataset)
+        train(net, trainset)
         torch.save(net.state_dict(), PATH)
     else:
         net.load_state_dict(torch.load(PATH))
-    run(net, image='../../../data/images/35bfa85e-16d3-4942-b57b-da48107e69ba_8.jpg')
+
+    print(net)
+    analysis = dict()
+    for image, label in testset:
+        index = run(net, image=image)
+        predicted = testset.get_label(index)
+        actual    = testset.get_label(label)
+        if actual not in analysis:
+            analysis[actual] = []
+        print('Actual label:')
+        print(label)
+        # print('Predicted:')
+        # print(index)
+        analysis[actual].append(label == index)
+    analysis = {k : round(sum(1 if t else 0 for t in v) / len(v), 2) for k, v in analysis.items()}
+    pprint(analysis)
 
 if __name__ == '__main__':
     main()

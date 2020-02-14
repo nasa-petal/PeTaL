@@ -27,10 +27,8 @@ class SpeciesModel(nn.Module):
 
     def forward(self, x):
         x = self.feature_extractor.extract_features(x)
-        print(x.shape)
         x = x.view(1280 * 7 * 7)
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
-        print(x.shape)
         x = x.unsqueeze(dim=0)
         return x
