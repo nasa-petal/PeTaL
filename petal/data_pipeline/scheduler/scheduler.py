@@ -4,7 +4,8 @@ from multiprocessing.managers import BaseManager
 from collections import defaultdict, namedtuple
 from uuid import uuid4
 from time import sleep
-import psutil, os
+# import psutil
+import os
 
 from .driver import Driver
 from .label_tracker import LabelTracker
@@ -37,21 +38,21 @@ class ModuleProcess():
 driver = Driver(1000, 0.25)
 
 def driver_runner(module, tracker, info, ids):
-    proc = psutil.Process(os.getpid())
-    info.set_usage(proc.memory_percent(), proc.cpu_percent())
+    # proc = psutil.Process(os.getpid())
+    # info.set_usage(proc.memory_percent(), proc.cpu_percent())
     for i, node_id in enumerate(ids):
         node_id = str(node_id)
         info.set_current(i)
         driver.run_id(module, tracker, node_id)
 
 def driver_independent_runner(module, tracker, info):
-    proc = psutil.Process(os.getpid())
-    info.set_usage(proc.memory_percent(), proc.cpu_percent())
+    # proc = psutil.Process(os.getpid())
+    # info.set_usage(proc.memory_percent(), proc.cpu_percent())
     driver.run(module, tracker, info)
 
 def driver_page_runner(module, tracker, info):
-    proc = psutil.Process(os.getpid())
-    info.set_usage(proc.memory_percent(), proc.cpu_percent())
+    # proc = psutil.Process(os.getpid())
+    # info.set_usage(proc.memory_percent(), proc.cpu_percent())
     driver.run_page(module, tracker, info)
 
 class Scheduler:

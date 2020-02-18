@@ -110,6 +110,8 @@ def main():
     PATH = 'species_net.pth'
 
     net = SpeciesModel()
+    net.cuda()
+    1/0
     if do_training:
         train(net, trainset, n_epochs=20)
         torch.save(net.state_dict(), PATH)
