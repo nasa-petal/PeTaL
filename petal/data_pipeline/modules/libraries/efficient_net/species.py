@@ -1,7 +1,7 @@
 from species_model import SpeciesModel
 
 import json, os, os.path
-from time import sleep
+from time import sleep, time
 
 from PIL import Image
 import torch
@@ -112,7 +112,10 @@ def main():
         train(net, trainset)
         torch.save(net.state_dict(), PATH)
     else:
-        net.load_state_dict(torch.load(PATH))
+        start = time()
+        net.load_state_dict(torch.load(PATH)) # Takes roughly .15s
+        duration = time() - start
+        print('Loading took: ', duration, 's')
 
     print(net)
     analysis = dict()

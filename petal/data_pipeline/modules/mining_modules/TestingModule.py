@@ -105,5 +105,5 @@ class TestingModule(Module):
     def process(self):
         for species in aloe_trees.split('\n'):
             yield self.default_transaction({'name' : species.strip()})
-        # for species in bread_trees.split('\n'):
-        #     yield self.default_transaction({'name' : species.strip()})
+        for species in bread_trees.split('\n'):
+            yield self.default_transaction({'name' : species.strip()})
