@@ -106,12 +106,16 @@ def main():
     trainset, testset = build_dataset()
 
     do_training = True
-    # do_training = False
+    do_training = False
     PATH = 'species_net.pth'
 
     net = SpeciesModel()
-    net.cuda()
-    1/0
+    try:
+        net.cuda()
+    except AssertionError:
+        print('*' * 80)
+        print('Training on CPU!!!')
+        print('*' * 80)
     if do_training:
         train(net, trainset, n_epochs=20)
         torch.save(net.state_dict(), PATH)
@@ -121,7 +125,6 @@ def main():
         duration = time() - start
         print('Loading took: ', duration, 's')
 
-    print(net)
     analysis = dict()
     for image, label in testset:
         index = run(net, image=image)
