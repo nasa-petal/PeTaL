@@ -98,18 +98,20 @@ def build_dataset():
             print(e)
             pass
     shuffle(files)
-    return Dataset(files[:400], ids), Dataset(files[400:], ids)
+    cutoff = int(0.8 * len(files))
+    print(len(files), cutoff)
+    return Dataset(files[:cutoff], ids), Dataset(files[cutoff:], ids)
 
 def main():
     trainset, testset = build_dataset()
 
     do_training = True
-    do_training = False
+    # do_training = False
     PATH = 'species_net.pth'
 
     net = SpeciesModel()
     if do_training:
-        train(net, trainset)
+        train(net, trainset, n_epochs=20)
         torch.save(net.state_dict(), PATH)
     else:
         start = time()
