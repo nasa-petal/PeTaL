@@ -146,6 +146,7 @@ class Scheduler:
                     info_collection[name] = (prev.add(p.info), pi + 1)
         for k, v in info_collection.items():
             print('{:>20} {}, procs: {}'.format(k, v[0], v[1]), flush=True)
+        print('-' * 100)
         self.running = [p for p in self.running if p.process.is_alive()]
 
     def stop(self):

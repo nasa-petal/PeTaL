@@ -30,6 +30,7 @@ class Dataset(data.Dataset):
         filename = ID
         tfms = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
+        print(filename)
         img = tfms(Image.open(filename))
         img = img.unsqueeze(0)
         x = img
@@ -87,10 +88,15 @@ def build_dataset():
     for filename in os.listdir(image_dir):
         uuid     = filename.split('_')[0]
         filepath = image_dir + filename
-        if uuid not in ids:
-            ids[uuid] = counter
-            counter += 1
-        files.append(filepath)
+        try:
+            Image.open(filepath)
+            if uuid not in ids:
+                ids[uuid] = counter
+                counter += 1
+            files.append(filepath)
+        except OSError as e:
+            print(e)
+            pass
     shuffle(files)
     return Dataset(files[:400], ids), Dataset(files[400:], ids)
 
@@ -98,7 +104,7 @@ def main():
     trainset, testset = build_dataset()
 
     do_training = True
-    # do_training = False
+    do_training = False
     PATH = 'species_net.pth'
 
     net = SpeciesModel()

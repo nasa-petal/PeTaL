@@ -12,14 +12,20 @@ class ModuleInfo:
         self.cpu_percent = 0.0
         self.mem_percent = 0.0
 
+    def set(self, b):
+        b_start, b_current, b_cpu_percent, b_mem_percent = b.get()
+        self.start       = min(self.start, b_start)
+        self.current     = self.current + b_current
+        self.cpu_percent = self.cpu_percent + b_cpu_percent
+        self.mem_percent = self.mem_percent + b_mem_percent
+
+    def get(self):
+        return self.start, self.current, self.cpu_percent, self.mem_percent
+
     def add(self, b):
-        return self
-        # x = ModuleInfo(self.total)
-        # x.start       = min(self.start, b.start)
-        # x.current     = self.current + b.current
-        # x.cpu_percent = self.cpu_percent + b.cpu_percent
-        # x.mem_percent = self.mem_percent + b.mem_percent
-        # return x
+        x = ModuleInfo(self.total)
+        x.set(b)
+        return x
     
     def set_usage(self, mem, cpu):
         self.mem_percent = mem
@@ -43,8 +49,8 @@ class ModuleInfo:
 
     def __str__(self):
         info = self.check_info()
-        return '{percent:10.5f}% done, rate: {rate:7.4f}'.format(percent=info['percent'], rate=info['rate'])
-        # return '{percent:10.5f}% done, rate: {rate:7.4f}, mem: {memory:7.4f}, cpu: {cpu:7.4f},'.format(percent=info['percent'], rate=info['rate'], memory=info['mem_percent'], cpu=info['cpu_percent'])
+        # return '{percent:10.5f}% done, rate: {rate:7.4f}'.format(percent=info['percent'], rate=info['rate'])
+        return '{percent:10.5f}% done, rate: {rate:7.4f}, mem: {memory:7.4f}, cpu: {cpu:7.4f}'.format(percent=info['percent'], rate=info['rate'], memory=info['mem_percent'], cpu=info['cpu_percent'])
 
     def __repr__(self):
         return str(self)

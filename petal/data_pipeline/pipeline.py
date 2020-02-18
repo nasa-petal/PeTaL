@@ -40,7 +40,7 @@ class PipelineInterface:
     def load_settings(self, filename='settings.json'):
         with open('settings.json', 'r') as infile:
             settings = json.load(infile)
-        pprint(settings)
+        # pprint(settings)
         for k, v in settings.items():
             if k.startswith('scheduler:'):
                 k = k.replace('scheduler:', '')

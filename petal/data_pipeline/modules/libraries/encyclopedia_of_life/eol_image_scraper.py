@@ -17,10 +17,13 @@ def get_page_ids(query):
     html = get(url).text
     processed = BeautifulSoup(html, 'html.parser')
     top = processed.find(attrs={'class' : 'search-result'})
-    links = top.find_all('a')
-    for link in links:
-        nav = link.get('href')
-        yield int(nav.split('/')[-1])
+    try:
+        links = top.find_all('a')
+        for link in links:
+            nav = link.get('href')
+            yield int(nav.split('/')[-1])
+    except AttributeError:
+        pass
 
 def get_gallery(url, index):
     url = url + '?page={}'.format(index)
