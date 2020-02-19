@@ -16,21 +16,23 @@ from .module_info import ModuleInfo
 
 UPPER_BOUND = 90000000000 # Allow up to 90 billion nodes to accumulate if they have no dependent consumers
 
+# ********************************************************************************************
 # HACKY HACK BE CAREFUL THIS IS A HACK
-# ********************************************************************************
-import multiprocessing # HACK CONTINUED
-# Backup original AutoProxy function
-backup_autoproxy = multiprocessing.managers.AutoProxy # HACK CONTINUED
+# ********************************************************************************************
+import multiprocessing                                                        # HACK CONTINUED
+# Backup original AutoProxy function                                          # HACK CONTINUED
+backup_autoproxy = multiprocessing.managers.AutoProxy                         # HACK CONTINUED
 # Defining a new AutoProxy that handles unwanted key argument 'manager_owned' # HACK CONTINUED
-def redefined_autoproxy(token, serializer, manager=None, authkey=None, # HACK CONTINUED
-          exposed=None, incref=True, manager_owned=True): # HACK CONTINUED
-    # Calling original AutoProxy without the unwanted key argument # HACK CONTINUED
-    return backup_autoproxy(token, serializer, manager, authkey, # HACK CONTINUED
-                     exposed, incref) # HACK CONTINUED
-# Updating AutoProxy definition in multiprocessing.managers package # HACK CONTINUED
-multiprocessing.managers.AutoProxy = redefined_autoproxy # HACK CONTINUED
-# ********************************************************************************
+def redefined_autoproxy(token, serializer, manager=None, authkey=None,        # HACK CONTINUED
+          exposed=None, incref=True, manager_owned=True):                     # HACK CONTINUED
+    # Calling original AutoProxy without the unwanted key argument            # HACK CONTINUED
+    return backup_autoproxy(token, serializer, manager, authkey,              # HACK CONTINUED
+                     exposed, incref)                                         # HACK CONTINUED
+# Updating AutoProxy definition in multiprocessing.managers package           # HACK CONTINUED
+multiprocessing.managers.AutoProxy = redefined_autoproxy                      # HACK CONTINUED
+# ********************************************************************************************
 # HACKY CODE STOPS HERE
+# ********************************************************************************************
 
 class ModuleProcess():
     def __init__(self, process, module, info):
