@@ -98,7 +98,7 @@ class Scheduler:
             self.init(driver_independent_runner, module)
         else:
             self.dependents[module.in_label].append(module)
-            # self.init(driver_page_runner, module)
+            self.init(driver_page_runner, module)
 
     def start(self):
         for p in self.queue:

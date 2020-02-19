@@ -1,5 +1,5 @@
-{"scheduler:accumulate_limit" : 50, 
+{"scheduler:accumulate_limit" : 1, 
  "scheduler:max_running" : 100,
- "pipeline:sleep_time" : 0.5,
+ "pipeline:sleep_time" : 0.001,
  "pipeline:reload_time" : 30,
- "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule"]}
+ "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule", "HighwireModule", "WikipediaImageModule", "JEBModule", "EOLModule", "BackboneModule", "WikipediaModule"]}
