@@ -6,7 +6,7 @@ import urllib.request
 import urllib3
 import requests
 
-EXCLUDED_EXTENSIONS = {'svg'}
+EXCLUDED_EXTENSIONS = {'svg', 'ogg'}
 
 class ImageModule(Module):
     '''

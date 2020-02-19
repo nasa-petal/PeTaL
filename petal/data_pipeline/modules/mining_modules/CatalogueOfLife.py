@@ -61,13 +61,4 @@ class CatalogueOfLife(Module):
                         json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
                         yield self.default_transaction(json) # HERE is where the transaction is created!!
                     json = dict()
-                # Display efficiency data!
-                # total = i
-                # duration = max(time() - start, 0.000001)
-                # species_per_sec = total / duration
-                # total_seconds  = 1.9e6 / max(species_per_sec, 0.000001)
-                # eta_seconds = total_seconds - duration
-                # eta = eta_seconds / 3600
-                # percent = duration / max(total_seconds * 100.0, 0.000001)
-                # print('Species: {}, Rate: {} species per second, ETA: {}h, Percent: {}'.format(total, round(species_per_sec, 1), round(eta, 1), round(percent, 5)), flush=True, end='')
                 i += 1

@@ -1,5 +1,5 @@
 {"scheduler:accumulate_limit" : 50, 
- "scheduler:max_running" : 100,
+ "scheduler:max_running" : 50,
  "pipeline:sleep_time" : 0.5,
  "pipeline:reload_time" : 30,
  "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule"]}

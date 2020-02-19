@@ -46,22 +46,30 @@ def train(net, dataset, n_epochs=2):
         for epoch in range(n_epochs):
             print('Epoch: ', epoch, flush=True)
             running_loss = 0.0
-            for i, data in enumerate(trainloader, 0):
-                print('    datapoint: ', i, flush=True)
-                inputs, labels = data
-                inputs = inputs.squeeze(dim=1)
+            iterator = iter(trainloader)
+            i = 0
+            while True:
+                try:
+                    inputs, labels = next(iterator)
+                    print('    datapoint: ', i, flush=True)
+                    inputs = inputs.squeeze(dim=1)
 
-                optimizer.zero_grad()
-                outputs = net(inputs)
-                loss = criterion(outputs, labels)
-                loss.backward()
-                optimizer.step()
+                    optimizer.zero_grad()
+                    outputs = net(inputs)
+                    loss = criterion(outputs, labels)
+                    loss.backward()
+                    optimizer.step()
 
-                running_loss += loss.item()
+                    running_loss += loss.item()
 
-                if i % 2000 == 1999:
-                    print(' [%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 2000))
-                    running_loss = 0.0
+                    if i % 2000 == 1999:
+                        print(' [%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 2000))
+                        running_loss = 0.0
+                    i += 1
+                except StopIteration:
+                    break
+                except RuntimeError as e:
+                    print(e)
     except KeyboardInterrupt:
         pass
     return net
@@ -106,7 +114,7 @@ def main():
     trainset, testset = build_dataset()
 
     do_training = True
-    do_training = False
+    # do_training = False
     PATH = 'species_net.pth'
 
     net = SpeciesModel()
