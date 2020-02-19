@@ -70,6 +70,8 @@ def train(net, dataset, n_epochs=2):
                     break
                 except RuntimeError as e:
                     print(e)
+                except OSError as e:
+                    print(e)
     except KeyboardInterrupt:
         pass
     return net
