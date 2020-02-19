@@ -8,4 +8,4 @@ from .mining_modules.JEBModule import JEBModule
 from .mining_modules.EOLModule import EOLModule
 from .mining_modules.TestingModule import TestingModule
 
-from .machine_learning_modules.TopicLDAModule import TopicLDAModule
+# from .machine_learning_modules.TopicLDAModule import TopicLDAModule

@@ -4,7 +4,10 @@ from multiprocessing.managers import BaseManager
 from collections import defaultdict, namedtuple
 from uuid import uuid4
 from time import sleep
-# import psutil
+try:
+    import psutil
+except ImportError:
+    psutil = None
 import os
 
 from .driver import Driver
@@ -35,24 +38,27 @@ class ModuleProcess():
         self.module = module
         self.info = info
 
-driver = Driver(1000, 0.25)
+driver = Driver(100, 0.25)
 
 def driver_runner(module, tracker, info, ids):
-    # proc = psutil.Process(os.getpid())
-    # info.set_usage(proc.memory_percent(), proc.cpu_percent())
+    if psutil is not None:
+        proc = psutil.Process(os.getpid())
+        info.set_usage(proc.memory_percent(), proc.cpu_percent())
     for i, node_id in enumerate(ids):
         node_id = str(node_id)
         info.set_current(i)
         driver.run_id(module, tracker, node_id)
 
 def driver_independent_runner(module, tracker, info):
-    # proc = psutil.Process(os.getpid())
-    # info.set_usage(proc.memory_percent(), proc.cpu_percent())
+    if psutil is not None:
+        proc = psutil.Process(os.getpid())
+        info.set_usage(proc.memory_percent(), proc.cpu_percent())
     driver.run(module, tracker, info)
 
 def driver_page_runner(module, tracker, info):
-    # proc = psutil.Process(os.getpid())
-    # info.set_usage(proc.memory_percent(), proc.cpu_percent())
+    if psutil is not None:
+        proc = psutil.Process(os.getpid())
+        info.set_usage(proc.memory_percent(), proc.cpu_percent())
     driver.run_page(module, tracker, info)
 
 class Scheduler:
@@ -90,8 +96,7 @@ class Scheduler:
             self.init(driver_independent_runner, module)
         else:
             self.dependents[module.in_label].append(module)
-            self.init(driver_page_runner, module)
-            # print('Added paged runner', flush=True)
+            # self.init(driver_page_runner, module)
 
     def start(self):
         for p in self.queue:
@@ -136,7 +141,7 @@ class Scheduler:
         info_collection = dict()
         for p in self.running:
             if not p.process.is_alive():
-                # print('Finished: ', p.module)
+                print('Finished: ', p.module)
                 self.finished.add(p.module.out_label)
             else:
                 name = p.module.name
@@ -147,6 +152,10 @@ class Scheduler:
                     info_collection[name] = (prev.add(p.info), pi + 1)
         for k, v in info_collection.items():
             print('{:>20} {}, procs: {}'.format(k, v[0], v[1]), flush=True)
+        for k, v in self.label_tracker.get().items():
+            print('{} : {}, '.format(k, len(v)), end='')
+        print('')
+        print('Queued: ', len(self.queue), ' Running: ', len(self.running))
         print('-' * 100)
         self.running = [p for p in self.running if p.process.is_alive()]
 

@@ -10,7 +10,6 @@ from scheduler.module_info import ModuleInfo
 
 import modules
 
-
 class PipelineInterface:
     '''
     This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.

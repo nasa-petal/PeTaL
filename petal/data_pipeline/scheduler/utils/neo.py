@@ -20,7 +20,7 @@ def get_page_queries(query, count, page_size=1000, rate_limit=0.25):
     for i in range(count // page_size):
         properties['skip']  = i * page_size
         properties['limit'] = page_size
-        page_query = query + ' SKIP {skip} LIMIT {limit}'
+        page_query = query + ' SKIP $skip LIMIT $limit'
         yield page_query, properties
         sleep(rate_limit)
 
