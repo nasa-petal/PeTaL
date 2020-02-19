@@ -50,8 +50,7 @@ class ModuleInfo:
 
     def __str__(self):
         info = self.check_info()
-        # return '{percent:10.5f}% done, rate: {rate:7.4f}'.format(percent=info['percent'], rate=info['rate'])
-        return '{percent:10.5f}% done, rate: {rate:7.4f}, mem: {memory:7.4f}, cpu: {cpu:7.4f}'.format(percent=info['percent'], rate=info['rate'], memory=info['mem_percent'], cpu=info['cpu_percent'])
+        return 'rate: {rate:7.4f}, total: {total:10}'.format(rate=info['rate'], total=info['current'])
 
     def __repr__(self):
         return str(self)

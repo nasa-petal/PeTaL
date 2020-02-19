@@ -98,6 +98,7 @@ class Scheduler:
             self.init(driver_independent_runner, module)
         else:
             self.dependents[module.in_label].append(module)
+            print('Initialized page runner: ', module, flush=True)
             self.init(driver_page_runner, module)
 
     def start(self):
