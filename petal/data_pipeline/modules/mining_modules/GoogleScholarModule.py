@@ -1,6 +1,6 @@
 from scholarly import search_pubs_query as google_scholar_search
 
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 from random import random, randint
 from pprint import pprint

@@ -5,7 +5,7 @@ import datetime
 
 import requests
 
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 SCRAPE_FIELDS = {'content', 'summary', 'coordinates', 'links', 'references', 'images', 'title'}
 

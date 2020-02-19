@@ -4,7 +4,7 @@ from time import time
 
 import requests, zipfile, os
 
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 '''
 This is the backbone mining module for population neo4j with the initial species list

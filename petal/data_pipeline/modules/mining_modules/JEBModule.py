@@ -2,7 +2,7 @@ from bs4      import BeautifulSoup
 from requests import get
 from pprint import pprint
 
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 JEB_LIMIT = 10
 

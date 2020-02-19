@@ -1,4 +1,4 @@
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 from uuid import uuid4
 
