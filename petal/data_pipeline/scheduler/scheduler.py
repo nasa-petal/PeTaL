@@ -154,10 +154,10 @@ class Scheduler:
                     info_collection[name] = (prev.add(p.info), pi + 1)
         for k, v in info_collection.items():
             print('{:>20} {}, procs: {}'.format(k, v[0], v[1]), flush=True)
-        for k, v in self.label_tracker.get().items():
-            print('{} : {}, '.format(k, len(v)), end='')
+        reference = self.label_tracker.get()
+        for k in set.union(set(self.label_counts.keys()), set(reference.keys())):
+            print('{} : {}, '.format(k, self.label_counts.get(k, 0) + len(reference.get(k, 0))), end='')
         print('')
-        print('Queued: ', len(self.queue), ' Running: ', len(self.running))
         print('-' * 100)
         self.running = [p for p in self.running if p.process.is_alive()]
 
