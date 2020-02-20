@@ -119,7 +119,7 @@ def main():
     # do_training = False
     PATH = 'species_net.pth'
 
-    net = SpeciesModel()
+    net = SpeciesModel(i=7) # Set thrusters to max
     try:
         net.cuda()
     except AssertionError:

@@ -88,3 +88,9 @@ class Driver():
             info.set_current(i)
             self.add(transaction.data, transaction.out_label)
             i += 1
+
+    def count(self, label):
+        with self.neo_client.session() as session:
+            records = session.run('MATCH (x:{label}) WITH COUNT (x) AS count RETURN count'.format(label=label)).records()
+        return list(records)[0]['count']
+
