@@ -3,6 +3,7 @@ from pprint import pprint
 import json
 import inspect
 import os
+import sys
 
 from importlib import reload
 from scheduler.scheduler import Scheduler
@@ -14,9 +15,10 @@ class PipelineInterface:
     '''
     This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.
     '''
-    def __init__(self):
+    def __init__(self, filename):
         self.scheduler = Scheduler()
         self.times = dict()
+        self.filename = filename
         self.load_settings()
         self.reload_modules()
 
@@ -36,8 +38,8 @@ class PipelineInterface:
                         print('Reloading module: ', name)
                         self.scheduler.schedule(item())
 
-    def load_settings(self, filename='settings.json'):
-        with open('settings.json', 'r') as infile:
+    def load_settings(self):
+        with open(self.filename, 'r') as infile:
             settings = json.load(infile)
         # pprint(settings)
         for k, v in settings.items():
@@ -69,5 +71,10 @@ class PipelineInterface:
             self.scheduler.stop()
 
 if __name__ == '__main__':
-    interface = PipelineInterface()
+    args = sys.argv[1:]
+    if len(args) == 0:
+        settings_file = 'settings.json'
+    else:
+        settings_file = args[0]
+    interface = PipelineInterface(settings_file)
     interface.start_server()
