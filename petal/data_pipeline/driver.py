@@ -3,9 +3,10 @@ from pprint import pprint
 import json
 
 from utils.neo import page, add_json_node
-from uuid import uuid4
 from collections import defaultdict
 from time import sleep
+
+from batch import Batch
 
 class Driver():
     '''
@@ -39,12 +40,7 @@ class Driver():
             records = node.records()
             node = (next(records)['n'])
             id_n = node.id
-            if 'uuid' not in node:
-                unique_id = uuid4()
-                session.run('MATCH (s) WHERE ID(s) = {} SET s.uuid = \'{}\' RETURN s'.format(id_n, str(unique_id)))
-            else:
-                unique_id = node['uuid']
-            return unique_id
+            return node['uuid']
 
     def get(self, uuid):
         with self.neo_client.session() as session:
@@ -59,15 +55,16 @@ class Driver():
             records = session.run('MATCH (x:{label}) WITH COUNT (x) AS count RETURN count'.format(label=label)).records()
         return list(records)[0]['count']
 
-def driver_listener(transaction_queue, batch_queue):
+def driver_listener(transaction_queue):
     driver = Driver()
     i = 0
     while True:
-        transaction = transaction_queue.get()
-        uuid        = driver.run(transaction)
-        if i % 500 == 0:
-            print('neo4j processed: ', i, flush=True) 
-        # print(uuid, flush=True)
-        # node        = driver.get(uuid)
-        i += 1
+        batch_file = transaction_queue.get()
+        batch = Batch()
+        batch.load(batch_file)
+        for transaction in batch.items:
+            driver.run(transaction)
+            if i % 200 == 0:
+                print('neo4j processed: ', i, flush=True) 
+            i += 1
 

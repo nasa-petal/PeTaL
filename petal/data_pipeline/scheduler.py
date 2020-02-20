@@ -10,28 +10,31 @@ from batch import Batch
 
 from uuid import uuid4
 
-def batch_serializer(serialize_queue, batch_queue, sizes):
+def batch_serializer(serialize_queue, transaction_queue, sizes, batch_index):
     batches = dict()
     i = 0
     while True:
-        label, uuid = serialize_queue.get()
+        transaction = serialize_queue.get()
+        label = transaction.out_label
         if label not in batches:
             batches[label] = Batch()
         batch = batches[label]
-        batch.add(uuid)
+        batch.add(transaction)
         max_length = sizes.get(label, sizes['__default__'])
         if len(batch) >= max_length:
             filename = 'data/batches/{}'.format(uuid4())
             batch.save(filename)
             batch.clear()
-            print('saved batch', flush=True)
-            batch_queue.put(filename)
-        if i % 100 == 0:
+            if label not in batch_index:
+                batch_index[label] = list()
+            batch_index[label].append(filename)
+            transaction_queue.put(filename)
+        if i % 1000 == 0:
             print('batcher: ', i, flush=True)
         i += 1
     print('done', flush=True)
 
-def module_runner(module_name, transaction_queue, serialize_queue):
+def module_runner(module_name, serialize_queue):
     module = import_module('modules.mining_modules.{}'.format(module_name))
     module = getattr(module, module_name)()
     
@@ -39,22 +42,21 @@ def module_runner(module_name, transaction_queue, serialize_queue):
     for transaction in module.process():
         if i % 100000 == 0:
             print('cataloger: ', i, flush=True)
-        serialize_queue.put((transaction.out_label, transaction.uuid))
-        transaction_queue.put(transaction)
+        serialize_queue.put(transaction)
         i += 1
 
 class Scheduler:
     def __init__(self):
         self.transaction_queue = Queue()
-        self.batch_queue       = Queue()
-        self.serialize_queue   = Queue()
-        self.driver_process    = Process(target=driver_listener,  args=(self.transaction_queue, self.serialize_queue))
-        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.batch_queue, {'__default__': 100}))
+        self.serialize_queue   = Queue(10000)
+        self.batch_index       = dict()
+        self.driver_process    = Process(target=driver_listener,  args=(self.transaction_queue,))
+        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, {'__default__': 100}, self.batch_index))
         self.workers = []
 
     def schedule(self, module_name):
         print('scheduled ', module_name, flush=True)
-        self.workers.append(Process(target=module_runner, args=(module_name, self.transaction_queue, self.serialize_queue)))
+        self.workers.append(Process(target=module_runner, args=(module_name, self.serialize_queue)))
 
     def start(self):
         print('starting', flush=True)
