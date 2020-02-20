@@ -82,13 +82,14 @@ def run(model, image=None):
     with torch.no_grad():
         outputs = model(image)
 
-    print('-' * 80)
-    print('')
-    predictions = torch.topk(outputs, k=10).indices.squeeze(0).tolist()
+    # print('-' * 80)
+    # print('')
+    predictions = torch.topk(outputs, k=2).indices.squeeze(0).tolist()
     for idx in predictions:
         prob = torch.softmax(outputs, dim=1)[0, idx].item()
-        print('{label:<75} ({p:.2f}%'.format(label=idx, p=prob*100))
-    print('')
+        # print('{label:<75} ({p:.2f}%'.format(label=idx, p=prob*100))
+    # print('')
+    print('.', end='')
     return predictions[0]
 
 def build_dataset():
@@ -120,8 +121,8 @@ def build_dataset():
 def main():
     trainset, testset = build_dataset()
 
-    do_training = True
-    # do_training = False
+    # do_training = True
+    do_training = False
     PATH = 'species_net.pth'
 
     net = GenusModel(i=0)
@@ -140,20 +141,16 @@ def main():
         duration = time() - start
         print('Loading took: ', duration, 's')
 
-    analysis = dict()
+    total   = len(testset)
+    correct = 0
     for image, label in testset:
         index = run(net, image=image)
         predicted = testset.get_label(index)
         actual    = testset.get_label(label)
-        if actual not in analysis:
-            analysis[actual] = []
-        print('Actual label:')
-        print(label)
-        # print('Predicted:')
-        # print(index)
-        analysis[actual].append(label == index)
-    analysis = {k : round(sum(1 if t else 0 for t in v) / len(v), 2) for k, v in analysis.items()}
-    pprint(analysis)
+        if actual == predicted:
+            correct += 1
+    print('OVERALL ACCURACY')
+    print(correct / total)
 
 if __name__ == '__main__':
     main()
