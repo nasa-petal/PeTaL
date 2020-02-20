@@ -1,13 +1,10 @@
 from time import time, sleep
 from pprint import pprint
 import json
-# import inspect
 import os
 import sys
 
-# from importlib import reload
 from scheduler import Scheduler
-# from scheduler.module_info import ModuleInfo
 
 # import modules
 
@@ -22,7 +19,6 @@ class PipelineInterface:
         self.sleep_time = 1
         self.reload_time = 30
         # self.load_settings()
-        # self.reload_modules()
 
     # def reload_modules(self):
     #     print('Reloading modules', flush=True)
