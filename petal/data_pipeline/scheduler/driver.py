@@ -27,18 +27,21 @@ class Driver():
                 with self.neo_client.session() as session:
                     node = record['n']
                     transactions = module.process(node)
-                    session.write_transaction(self.write, node, transactions, module)
+                    for transaction in transactions:
+                        transaction.uuid = node['uuid']
+                    session.write_transaction(self.write, transactions, module)
 
-    def write(self, tx, node, transactions, module):
+    def write(self, tx, transactions, module):
         for transaction in transactions:
             if transaction is None:
                 pass
             if transaction.query is not None:
                 tx.run(transaction.query)
             else:
-                id1 = node['uuid']
+                id1 = transaction.uuid
                 id2 = self.add(transaction.data, transaction.out_label)
-                if transaction.connect_labels is not None:
+                if id1 is not None and transaction.connect_labels is not None:
+                    id1 = str(id1)
                     self.link(tx, id1, id2, transaction.in_label, transaction.out_label, *transaction.connect_labels)
 
     def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):
@@ -86,7 +89,8 @@ class Driver():
         i = 0
         for transaction in module.process():
             info.set_current(i)
-            self.add(transaction.data, transaction.out_label)
+            with self.neo_client.session() as session:
+                session.write_transaction(self.write, [transaction], module)
             i += 1
 
     def count(self, label):

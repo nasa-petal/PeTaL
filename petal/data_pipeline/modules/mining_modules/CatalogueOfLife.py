@@ -3,6 +3,7 @@ from subprocess import call
 from time import time
 
 import requests, zipfile, os
+from uuid import uuid4
 
 from ..utils.module import Module
 
@@ -31,7 +32,7 @@ class CatalogueOfLife(Module):
     This module populates neo4j with Species nodes, allowing WikipediaModule and others to process them.
     Notice how BackboneModule's in_label is None, which specifies that it is independent of other neo4j nodes
     '''
-    def __init__(self, in_label=None, out_label='Species', connect_label=None, name='COL', count=2700000):
+    def __init__(self, in_label=None, out_label='Species:Taxon', connect_label=None, name='COL', count=2700000):
         Module.__init__(self, in_label, out_label, connect_label, name, count)
 
     def process(self):
@@ -59,6 +60,18 @@ class CatalogueOfLife(Module):
                         pass
                     if json['taxonRank'] == 'species':
                         json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
+                        json['uuid'] = str(uuid4())
                         yield self.default_transaction(json) # HERE is where the transaction is created!!
+                        last_label = self.out_label
+                        uuid       = json['uuid']
+                        for taxon in ['subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
+                            label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
+                            name = json[taxon]
+                            if name == '':
+                                continue
+                            data = dict(name=name, uuid=name)
+                            yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('taxon_rank', 'taxon_rank'), uuid=uuid)
+                            last_label = label_name
+                            uuid = name
                     json = dict()
                 i += 1
