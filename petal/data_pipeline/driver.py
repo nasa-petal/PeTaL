@@ -17,14 +17,16 @@ class Driver():
 
     def run(self, transaction):
         if transaction.query is not None:
-            tx.run(transaction.query)
+            with self.neo_client.session() as session:
+                session.run(transaction.query)
             return None
         else:
             id1 = transaction.uuid
             id2 = self.add(transaction.data, transaction.out_label)
             if id1 is not None and transaction.connect_labels is not None:
                 id1 = str(id1)
-                self.link(tx, id1, id2, transaction.in_label, transaction.out_label, *transaction.connect_labels)
+                with self.neo_client.session() as session:
+                    session.write_transaction(self.link, id1, id2, transaction.in_label, transaction.out_label, *transaction.connect_labels)
             return id2
 
     def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):
@@ -59,11 +61,13 @@ class Driver():
 
 def driver_listener(transaction_queue, batch_queue):
     driver = Driver()
+    i = 0
     while True:
-        sleep(0.2)
         transaction = transaction_queue.get()
-        print(transaction, flush=True)
-        uuid = driver.run(transaction)
-        node = driver.get(uuid)
-        batch_queue.put(node)
+        uuid        = driver.run(transaction)
+        if i % 500 == 0:
+            print('neo4j processed: ', i, flush=True) 
+        # print(uuid, flush=True)
+        # node        = driver.get(uuid)
+        i += 1
 
