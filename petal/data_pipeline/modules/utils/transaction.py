@@ -12,4 +12,4 @@ class Transaction:
         self.uuid           = uuid
         self.from_uuid      = from_uuid
         if self.data is not None:
-            self.data['uuid'] = self.uuid
+            self.data['uuid'] = str(self.uuid)

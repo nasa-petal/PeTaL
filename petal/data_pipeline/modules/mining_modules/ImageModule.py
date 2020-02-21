@@ -34,4 +34,4 @@ class ImageModule(Module):
                     pass
                 except requests.exceptions.ConnectionError:
                     pass
-                yield self.default_transaction(data=dict(filename=filename, url=image, parent=title))
+                yield self.default_transaction(data=dict(filename=filename, url=image, parent=title), uuid=uuid)
