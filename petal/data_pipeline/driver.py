@@ -62,7 +62,6 @@ def driver_listener(transaction_queue):
         batch.load(batch_file)
         for transaction in batch.items:
             driver.run(transaction)
-            if i % 1000 == 0:
-                print('Processed ', i, ' transactions of ', len(batch.items) * transaction_queue.qsize(), flush=True)
+            # print('Processed ', i, ' transactions of ', len(batch.items) * transaction_queue.qsize(), flush=True)
             i += 1
 
