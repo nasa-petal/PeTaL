@@ -61,10 +61,10 @@ def module_runner(module_name, serialize_queue, batch_file):
         i += 1
 
 class Scheduler:
-    def __init__(self, max_workers=10, n_drivers=1):
-        self.transaction_queue = Queue()
-        self.serialize_queue   = Queue()
-        self.schedule_queue    = Queue()
+    def __init__(self, max_workers=30, n_drivers=1):
+        self.transaction_queue = Queue(10000)
+        self.serialize_queue   = Queue(10000)
+        self.schedule_queue    = Queue(1000)
         self.driver_processes  = [Process(target=driver_listener,  args=(self.transaction_queue,)) for i in range(n_drivers)]
         self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 10}))
         self.dependents        = defaultdict(list)

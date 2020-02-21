@@ -11,10 +11,10 @@ from ..utils.module import Module
 This is the backbone mining module for population neo4j with the initial species list
 '''
 
-# TODO: setup auto downloads from here by scraping most recent date?
-col_date = '2019-05-01' # Make sure this is a valid COL release
 
 def create_dir():
+    # TODO: setup auto downloads from here by scraping most recent date?
+    col_date = '2019-05-01' # Make sure this is a valid COL release
     if not os.path.isfile('data/.col_data/taxa.txt'):
         try:
             data = requests.get('http://www.catalogueoflife.org/DCA_Export/zip-fixed/{}-archive-complete.zip'.format(col_date))
