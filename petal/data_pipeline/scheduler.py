@@ -57,7 +57,6 @@ def module_runner(module_name, serialize_queue, batch_file):
     i = 0
     for transaction in gen:
         serialize_queue.put(transaction)
-        print(i, flush=True)
         i += 1
 
 class Scheduler:

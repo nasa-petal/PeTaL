@@ -6,4 +6,4 @@
  "pipeline:sleep_time" : 0.1,
  "pipeline:reload_time" : 30,
  "pipeline:blacklist" : [],
- "pipeline:whitelist" : ["TestingModule", "EOLImageModule"]}
+ "pipeline:whitelist" : ["TestingModule"]}

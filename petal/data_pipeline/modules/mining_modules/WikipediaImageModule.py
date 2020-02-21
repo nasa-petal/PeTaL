@@ -13,4 +13,4 @@ class WikipediaImageModule(ImageModule):
         
         title  = previous.data['title']
         images = previous.data['images']
-        return ImageModule.process(self, images, uuid=previous.uuid, title=title)
+        return ImageModule.process(self, images, uuid=previous.uuid + '-image', title=title)

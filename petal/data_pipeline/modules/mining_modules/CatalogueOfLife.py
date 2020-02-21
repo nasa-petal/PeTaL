@@ -3,7 +3,6 @@ from subprocess import call
 from time import time
 
 import requests, zipfile, os
-from uuid import uuid4
 
 from ..utils.module import Module
 
@@ -60,17 +59,16 @@ class CatalogueOfLife(Module):
                         pass
                     if json['taxonRank'] == 'species':
                         json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
-                        json['uuid'] = str(uuid4())
                         yield self.default_transaction(json) # HERE is where the transaction is created!!
                         last_label = self.out_label
-                        uuid       = json['uuid']
+                        uuid       = json['name']
                         for taxon in ['subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
                             label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
                             name = json[taxon]
                             if name == '':
                                 continue
                             data = dict(name=name, uuid=name)
-                            yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('taxon_rank', 'taxon_rank'), uuid=uuid)
+                            yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('taxon_rank', 'taxon_rank'), uuid=uuid, from_uuid=name)
                             last_label = label_name
                             uuid = name
                     json = dict()

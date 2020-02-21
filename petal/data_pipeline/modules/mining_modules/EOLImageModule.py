@@ -10,6 +10,6 @@ class EOLImageModule(ImageModule):
         pages = get_images(name)
         for page in pages:
             for image_set in page:
-                for transaction in ImageModule.process(self, image_set, title=name):
+                for transaction in ImageModule.process(self, image_set, title=name, uuid=previous.uuid + '-image'):
                     transaction.from_uuid = previous.uuid
                     yield transaction
