@@ -28,15 +28,14 @@ def batch_serializer(serialize_queue, transaction_queue, schedule_queue, sizes):
                 transaction_queue.put(filename)
                 schedule_queue.put((label, filename))
         except Empty:
-            sleep(0.1)
-        duration = time() - start
-        if duration > 1:
             for label, batch in batches.items():
-                filename = 'data/batches/{}'.format(uuid4())
-                batch.save(filename)
-                batch.clear()
-                transaction_queue.put(filename)
-                schedule_queue.put((label, filename))
+                if len(batch) > 0:
+                    filename = 'data/batches/{}'.format(uuid4())
+                    batch.save(filename)
+                    batch.clear()
+                    transaction_queue.put(filename)
+                    schedule_queue.put((label, filename))
+        duration = time() - start
         i += 1
 
 def fetch(module_name):
@@ -54,19 +53,20 @@ def module_runner(module_name, serialize_queue, batch_file):
     else:
         batch = Batch()
         batch.load(batch_file)
-        gen = (transaction for item in batch.items for transaction in module.process(item.data))
+        gen = (transaction for item in batch.items for transaction in module.process(item))
     i = 0
     for transaction in gen:
         serialize_queue.put(transaction)
+        print(i, flush=True)
         i += 1
 
 class Scheduler:
     def __init__(self, max_workers=10, n_drivers=1):
-        self.transaction_queue = Queue(10000)
-        self.serialize_queue   = Queue(100000)
+        self.transaction_queue = Queue()
+        self.serialize_queue   = Queue()
         self.schedule_queue    = Queue()
         self.driver_processes  = [Process(target=driver_listener,  args=(self.transaction_queue,)) for i in range(n_drivers)]
-        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 100}))
+        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 10}))
         self.dependents        = defaultdict(list)
         self.workers           = []
         self.max_workers       = max_workers
@@ -88,7 +88,7 @@ class Scheduler:
         print(module_name, in_label, out_label, flush=True)
         if in_label is None:
             print('Starting ', module_name, flush=True)
-            self.workers.append(Process(target=module_runner, args=(module_name, self.serialize_queue, None)))
+            self.workers.append((module_name, Process(target=module_runner, args=(module_name, self.serialize_queue, None))))
         else:
             self.dependents[in_label].append(module_name)
 
@@ -96,23 +96,35 @@ class Scheduler:
         for process in self.driver_processes:
             process.start()
         self.batch_process.start()
-        for process in self.workers:
+        for name, process in self.workers:
             process.start()
 
     def stop(self):
         for process in self.driver_processes:
             process.terminate()
         self.batch_process.terminate()
-        for process in self.workers:
+        for name, process in self.workers:
             process.terminate()
 
     def check(self):
-        self.workers = [worker for worker in self.workers if worker.is_alive()]
+        print('checking.. ', flush=True)
+        self.workers = [(name, worker) for name, worker in self.workers if worker.is_alive()]
         while not self.schedule_queue.empty():
             if len(self.workers) < self.max_workers:
-                label, batch_file = self.schedule_queue.get()
-                for sublabel in label.split(':'):
-                    for dependent in self.dependents[sublabel]:
-                        print('Starting dependent', dependent, flush=True)
-                        self.workers.append(Process(target=module_runner, args=(dependent, self.serialize_queue, batch_file)))
-                        self.workers[-1].start()
+                try:
+                    label, batch_file = self.schedule_queue.get(block=False)
+                    for sublabel in label.split(':'):
+                        for dependent in self.dependents[sublabel]:
+                            print('Starting dependent', dependent, flush=True)
+                            self.workers.append((dependent, Process(target=module_runner, args=(dependent, self.serialize_queue, batch_file))))
+                            self.workers[-1][1].start()
+                except Empty:
+                    sleep(0.1)
+            else:
+                break
+        print([t[0] for t in self.workers])
+        print(len(self.workers) == 0, self.schedule_queue.empty(), self.serialize_queue.empty(), self.transaction_queue.empty(), flush=True)
+        print(len(self.workers),      self.schedule_queue.qsize(), self.serialize_queue.qsize(), self.transaction_queue.qsize(), flush=True)
+        if len(self.workers) == 0 and self.serialize_queue.empty() and self.transaction_queue.empty():
+            return True
+        return False

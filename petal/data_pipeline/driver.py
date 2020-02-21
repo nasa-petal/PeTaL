@@ -20,9 +20,8 @@ class Driver():
         if transaction.query is not None:
             with self.neo_client.session() as session:
                 session.run(transaction.query)
-            return None
         else:
-            id1 = transaction.uuid
+            id1 = transaction.from_uuid
             id2 = self.add(transaction.data, transaction.out_label)
             if id1 is not None and transaction.connect_labels is not None:
                 id1 = str(id1)

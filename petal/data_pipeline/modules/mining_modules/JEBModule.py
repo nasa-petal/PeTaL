@@ -14,8 +14,8 @@ class JEBModule(Module):
     def __init__(self, in_label='Species', out_label='JEBArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='JEB'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
 
-    def process(self, node):
-        name   = node['name']
+    def process(self, previous):
+        name   = previous.data['name']
         url    = 'https://jeb.biologists.org/search/' + name.replace(' ', '%252B')
         # print(url)
         # print(name)
@@ -41,7 +41,7 @@ class JEBModule(Module):
                     properties['intro']    = sections[1]
                     properties['methods']  = sections[2]
                     properties['results']  = sections[3]
-                    articles.append(self.default_transaction(properties))
+                    articles.append(self.default_transaction(properties, from_uuid=previous.uuid))
                     i += 1
                 except AttributeError:
                     pass

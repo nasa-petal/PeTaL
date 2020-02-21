@@ -18,9 +18,9 @@ class WikipediaModule(Module):
     def __init__(self, in_label='Species', out_label='WikipediaArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='Wikipedia'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
 
-    def process(self, node):
+    def process(self, previous):
         # Lookup the species based on its name. Make sure that all Species objects have this attribute!!
-        name = node['name']
+        name = previous.data['name']
         properties = list()
         try:
             results = wikipedia.search(name)
@@ -38,7 +38,7 @@ class WikipediaModule(Module):
                     pass
                 except wikipedia.exceptions.WikipediaException as e:
                     pass
-                properties.append(self.default_transaction(result_properties)) # Only create default transaction objects
+                properties.append(self.default_transaction(result_properties, from_uuid=previous.uuid)) # Only create default transaction objects
             # In the future, use self.custom_transaction() and self.query_transaction() for more complicated Data Mining Modules
         except requests.exceptions.ConnectionError:
             pass
