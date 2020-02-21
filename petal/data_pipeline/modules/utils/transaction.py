@@ -10,3 +10,5 @@ class Transaction:
         self.data           = data
         self.query          = query
         self.uuid           = uuid
+        if self.data is not None:
+            self.data['uuid'] = self.uuid

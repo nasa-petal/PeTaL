@@ -6,8 +6,6 @@ import sys
 
 from scheduler import Scheduler
 
-# import modules
-
 class PipelineInterface:
     '''
     This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.
@@ -27,7 +25,7 @@ class PipelineInterface:
         ml_modules     = os.listdir('modules/machine_learning_modules/')
         modules = mining_modules + ml_modules
         for filename in modules:
-            if filename.endswith('.py'):
+            if filename.endswith('.py') and filename != '__init__.py':
                 name = os.path.basename(filename).split('.')[0]
                 if len(self.whitelist) > 0:
                     if name in self.whitelist:

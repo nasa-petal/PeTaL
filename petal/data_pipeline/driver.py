@@ -39,7 +39,6 @@ class Driver():
             node = session.write_transaction(add_json_node, label, data)
             records = node.records()
             node = (next(records)['n'])
-            id_n = node.id
             return node['uuid']
 
     def get(self, uuid):
@@ -64,5 +63,7 @@ def driver_listener(transaction_queue):
         batch.load(batch_file)
         for transaction in batch.items:
             driver.run(transaction)
+            if i % 1000 == 0:
+                print('Processed ', i, ' transactions of ', len(batch.items) * transaction_queue.qsize(), flush=True)
             i += 1
 

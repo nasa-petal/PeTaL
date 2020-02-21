@@ -4,7 +4,6 @@ import datetime
 # wikipedia.set_rate_limiting(True, min_wait=datetime.timedelta(0, 0, 10000)) # 10 millisecond wait
 
 import requests
-
 from ..utils.module import Module
 
 SCRAPE_FIELDS = {'content', 'summary', 'coordinates', 'links', 'references', 'images', 'title'}
