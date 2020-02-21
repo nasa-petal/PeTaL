@@ -27,11 +27,18 @@ def batch_serializer(serialize_queue, transaction_queue, schedule_queue, sizes):
         i += 1
 
 def module_runner(module_name, serialize_queue, batch_file):
-    module = import_module('modules.mining_modules.{}'.format(module_name))
+    try:
+        module = import_module('modules.mining_modules.{}'.format(module_name))
+    except:
+        module = import_module('modules.machine_learning_modules.{}'.format(module_name))
     module = getattr(module, module_name)()
     
+    if batch_file is None:
+        gen = module.process()
+    else:
+        gen = [] # TODO module.process({})
     i = 0
-    for transaction in module.process():
+    for transaction in gen:
         serialize_queue.put(transaction)
         i += 1
 
@@ -47,27 +54,23 @@ class Scheduler:
         self.max_workers       = max_workers
 
     def schedule(self, module_name, batch_file=None):
+        # TODO calculate dependenciessss
         print('scheduled ', module_name, flush=True)
         self.workers.append(Process(target=module_runner, args=(module_name, self.serialize_queue, batch_file)))
-        # TODO add to self.dependents
 
     def start(self):
-        print('starting', flush=True)
         self.driver_process.start()
         self.batch_process.start()
         for process in self.workers:
             process.start()
-        print('started', flush=True)
 
     def stop(self):
-        print('stopped', flush=True)
         self.driver_process.terminate()
         self.batch_process.terminate()
         for process in self.workers:
             process.terminate()
 
     def check(self):
-        print('checking..', flush=True)
         self.workers = [worker for worker in self.workers if worker.is_alive()]
         if len(self.workers) < self.max_workers:
             while not self.schedule_queue.empty():

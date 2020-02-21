@@ -18,42 +18,40 @@ class PipelineInterface:
         self.filename = filename
         self.sleep_time = 1
         self.reload_time = 30
-        # self.load_settings()
+        self.whitelist = []
+        self.blacklist = []
+        self.load_settings()
 
-    # def reload_modules(self):
-    #     print('Reloading modules', flush=True)
-    #     global modules
-    #     modules = reload(modules)
-    #     for name, item in inspect.getmembers(modules):
-    #         if inspect.isclass(item):
-    #             filename = 'modules/mining_modules/{}.py'.format(name)
-    #             if not os.path.isfile(filename):
-    #                 filename = 'modules/machine_learning_modules/{}.py'.format(name)
-    #             filetime = os.stat(filename).st_mtime
-    #             if name not in self.times or self.times[name] != filetime:
-    #                 self.times[name] = filetime
-    #                 if name not in self.blacklist:
-    #                     print('Reloading module: ', name)
-    #                     self.scheduler.schedule(item())
+    def reload_modules(self):
+        mining_modules = os.listdir('modules/mining_modules/')
+        ml_modules     = os.listdir('modules/machine_learning_modules/')
+        modules = mining_modules + ml_modules
+        for filename in modules:
+            if filename.endswith('.py'):
+                name = os.path.basename(filename).split('.')[0]
+                if len(self.whitelist) > 0:
+                    if name in self.whitelist:
+                        self.scheduler.schedule(name)
+                elif name not in self.blacklist:
+                    self.scheduler.schedule(name)
 
-    # def load_settings(self):
-    #     with open(self.filename, 'r') as infile:
-    #         settings = json.load(infile)
-    #     # pprint(settings)
-    #     for k, v in settings.items():
-    #         if k.startswith('scheduler:'):
-    #             k = k.replace('scheduler:', '')
-    #             setattr(self.scheduler, k, v)
-    #         elif k.startswith('pipeline:'):
-    #             k = k.replace('pipeline:', '')
-    #             setattr(self, k, v)
+    def load_settings(self):
+        with open(self.filename, 'r') as infile:
+            settings = json.load(infile)
+        # pprint(settings)
+        for k, v in settings.items():
+            if k.startswith('scheduler:'):
+                k = k.replace('scheduler:', '')
+                setattr(self.scheduler, k, v)
+            elif k.startswith('pipeline:'):
+                k = k.replace('pipeline:', '')
+                setattr(self, k, v)
 
     def start_server(self):
         print('Starting pipeline server', flush=True)
         start = time()
-        # self.reload_modules() 
+        self.reload_modules() 
         print('Starting scheduler', flush=True)
-        self.scheduler.schedule('CatalogueOfLife')
         self.scheduler.start()
         try:
             while True:
@@ -62,8 +60,8 @@ class PipelineInterface:
                 duration = time() - start
                 if duration > self.reload_time:
                     start = time()
-                    # self.load_settings()
-                    # self.reload_modules()
+                    self.load_settings()
+                    self.reload_modules()
         finally:
             print('Caught outer level exception, STOPPING server!')
             self.scheduler.stop()

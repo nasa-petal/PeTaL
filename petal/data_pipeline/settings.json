@@ -2,4 +2,5 @@
  "scheduler:max_running" : 20,
  "pipeline:sleep_time" : 0.1,
  "pipeline:reload_time" : 30,
- "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule", "HighwireModule", "WikipediaImageModule", "JEBModule", "EOLModule", "WikipediaModule", "SpeciesClassifier", "EOLImageModule", "TestingModule"]}
+ "pipeline:blacklist" : [],
+ "pipeline:whitelist" : ["CatalogueOfLife"]}

@@ -64,7 +64,5 @@ def driver_listener(transaction_queue):
         batch.load(batch_file)
         for transaction in batch.items:
             driver.run(transaction)
-            if i % 200 == 0:
-                print('neo4j processed: ', i, flush=True) 
             i += 1
 
