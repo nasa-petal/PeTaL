@@ -60,8 +60,9 @@ class PipelineInterface:
                     start = time()
                     self.load_settings()
                     self.reload_modules()
+                    print('Actively reloading settings', flush=True)
         finally:
-            print('Caught outer level exception, STOPPING server!')
+            print('Caught outer level exception, STOPPING server!', flush=True)
             self.scheduler.stop()
 
 if __name__ == '__main__':

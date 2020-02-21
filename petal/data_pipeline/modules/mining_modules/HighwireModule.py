@@ -44,3 +44,5 @@ class HighwireModule(Module):
                         yield self.default_transaction(properties)
                 except xml.etree.ElementTree.ParseError:
                     pass
+                except AttributeError:
+                    pass
