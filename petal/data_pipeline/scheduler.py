@@ -1,4 +1,4 @@
-from multiprocessing import Process, Queue, Pool
+from multiprocessing import Process, Queue, Pool, Manager
 from queue import Empty
 from collections import defaultdict
 from importlib import import_module
@@ -60,12 +60,14 @@ def module_runner(module_name, serialize_queue, batch_file):
         i += 1
 
 class Scheduler:
-    def __init__(self, max_workers=30, n_drivers=1):
-        self.transaction_queue = Queue(10000)
-        self.serialize_queue   = Queue(10000)
-        self.schedule_queue    = Queue(1000)
-        self.driver_processes  = [Process(target=driver_listener,  args=(self.transaction_queue,)) for i in range(n_drivers)]
-        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 10}))
+    def __init__(self, max_workers=10):
+        self.manager = Manager()
+
+        self.transaction_queue = Queue(100000)
+        self.serialize_queue   = Queue(100000)
+        self.schedule_queue    = Queue(10000)
+        self.driver_process    = Process(target=driver_listener,  args=(self.transaction_queue,))
+        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 100}))
         self.dependents        = defaultdict(list)
         self.workers           = []
         self.waiting           = []
@@ -93,15 +95,13 @@ class Scheduler:
             self.dependents[in_label].append(module_name)
 
     def start(self):
-        for process in self.driver_processes:
-            process.start()
+        self.driver_process.start()
         self.batch_process.start()
         for name, process in self.workers:
             process.start()
 
     def stop(self):
-        for process in self.driver_processes:
-            process.terminate()
+        self.driver_process.terminate()
         self.batch_process.terminate()
         for name, process in self.workers:
             process.terminate()
