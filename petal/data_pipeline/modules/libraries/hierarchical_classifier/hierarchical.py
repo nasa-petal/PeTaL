@@ -19,8 +19,8 @@ class Dataset(data.Dataset):
         self.labels = labels
         self.list_IDs = ids
 
-    def get_label(self, index):
-        return self.list_IDs[index].split('_')[0].split('/')[-1]
+    # def get_label(self, index):
+    # return self.list_IDs[index].split('_')[0].split('/')[-1]
 
     def __len__(self):
         return len(self.list_IDs)
@@ -55,11 +55,11 @@ def train(net, dataset, n_epochs=2):
                     print('    datapoint: ', i, flush=True)
                     inputs = inputs.squeeze(dim=1)
 
+                    print(labels)
                     optimizer.zero_grad()
                     outputs = net(inputs)
-                    print(outputs) 
-                    1/0
-                    loss = criterion(outputs, labels)
+                    print(outputs)
+                    loss = sum(criterion(suboutput, sublabel) for suboutput, sublabel in zip(outputs, labels))
                     loss.backward()
                     optimizer.step()
 
@@ -86,19 +86,28 @@ def run(model, image=None):
 
     # print('-' * 80)
     # print('')
-    predictions = torch.topk(outputs, k=2).indices.squeeze(0).tolist()
-    for idx in predictions:
-        prob = torch.softmax(outputs, dim=1)[0, idx].item()
+    all_preds = []
+    for suboutput in outputs:
+        predictions = torch.topk(suboutput, k=2).indices.squeeze(0).tolist()
+        for idx in predictions:
+            prob = torch.softmax(suboutput, dim=1)[0, idx].item()
+        all_preds.append(predictions[0])
         # print('{label:<75} ({p:.2f}%'.format(label=idx, p=prob*100))
     # print('')
     print('.', end='')
-    return predictions[0]
+    return all_preds
 
 def build_dataset():
     neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"), encrypted=False)
     image_dir = '../../../data/images/'
     files   = []
+    # Yes this code is messy please clean it soon thx
+    enc_id = 0
+    alo_id = 0
+    enc_ids = dict()
+    alo_ids = dict()
     ids     = dict()
+    index = 0
     for filename in os.listdir(image_dir):
         uuid     = filename.split('_')[0]
         with neo_client.session() as session:
@@ -106,21 +115,26 @@ def build_dataset():
             if len(records) == 0:
                 # print(uuid)
                 continue
-            name = records[0]['s.parent']
-            if name is None:
-                print(uuid)
-                continue
-            if 'Encephalartos' in name:
-                ids[uuid] = 0
+            genus, sub = records[0]['s.parent'].strip().split(' ')
+            if genus == 'Encephalartos':
+                if sub in enc_ids:
+                    y = enc_ids[sub]
+                else:
+                    y = enc_id
+                    enc_ids[sub] = y
+                    enc_id += 1
+                ids[uuid] = (0, y)
             else:
-                ids[uuid] = 1
+                if sub in alo_ids:
+                    y = alo_ids[sub]
+                else:
+                    y = alo_id
+                    alo_ids[sub] = y
+                    alo_id += 1
+                ids[uuid] = (1, y)
         filepath = image_dir + filename
-        try:
-            Image.open(filepath)
-            files.append(filepath)
-        except OSError as e:
-            print(e)
-            pass
+        files.append(filepath)
+        index += 1
     shuffle(files)
     cutoff = int(0.8 * len(files))
     print(len(files), cutoff)
@@ -130,7 +144,7 @@ def main():
     trainset, testset = build_dataset()
 
     do_training = True
-    # do_training = False
+    do_training = False
     PATH = 'species_net.pth'
 
     net = HierarchicalModel(i=0)
@@ -151,14 +165,25 @@ def main():
 
     total   = len(testset)
     correct = 0
+    genus = 0
+    species = 0
     for image, label in testset:
         index = run(net, image=image)
-        predicted = testset.get_label(index)
-        actual    = testset.get_label(label)
-        if actual == predicted:
+        print(index, label)
+        # predicted = testset.get_label(tuple(index))
+        # actual    = testset.get_label(tuple(label))
+        if tuple(index) == tuple(label):
             correct += 1
+        if index[0] == label[0]:
+            genus += 1
+        if index[1] == label[1]:
+            species += 1
     print('OVERALL ACCURACY')
     print(correct / total)
+    print('Genus level:')
+    print(genus / total)
+    print('Species level:')
+    print(species / total)
 
 if __name__ == '__main__':
     main()
