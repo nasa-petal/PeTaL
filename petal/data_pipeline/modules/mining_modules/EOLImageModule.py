@@ -13,3 +13,4 @@ class EOLImageModule(ImageModule):
                 for transaction in ImageModule.process(self, image_set, title=name, uuid=previous.uuid + '-image'):
                     transaction.from_uuid = previous.uuid
                     yield transaction
+                    print('Yielded!', flush=True)

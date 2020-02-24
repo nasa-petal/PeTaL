@@ -59,7 +59,7 @@ class CatalogueOfLife(Module):
                         pass
                     if json['taxonRank'] == 'species':
                         json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
-                        yield self.default_transaction(json) # HERE is where the transaction is created!!
+                        yield self.default_transaction(json, uuid=json['name']) # HERE is where the transaction is created!!
                         last_label = self.out_label
                         uuid       = json['name']
                         for taxon in ['subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
