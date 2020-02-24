@@ -1,4 +1,4 @@
-{"scheduler:max_running" : 15,
+{"scheduler:max_running" : 10,
  "scheduler:dependencies" : {"WikipediaModule" : {"in" : "Taxon", "out" : "WikipediaArticle:Article"},
 		             "TestingModule" : {"in" : "None", "out" : "Species"},
 		             "EOLImageModule" : {"in" : "Species", "out" : "Image"},
@@ -6,4 +6,4 @@
  "pipeline:sleep_time" : 0.1,
  "pipeline:reload_time" : 30,
  "pipeline:blacklist" : [],
- "pipeline:whitelist" : ["TestingModule"]}
+ "pipeline:whitelist" : ["CatalogueOfLife", "EOLImageModule"]}

@@ -6,7 +6,7 @@ class Transaction:
         if uuid is None:
             if data is not None:
                 print('Had to generate new UUID', flush=True)
-                uuid = str(hashlib.md5(','.join(map(str, sorted(data.items())))).encode('utf-8').hexdigest())
+                uuid = str(hashlib.md5(','.join(map(str, sorted(data.items()))).encode('utf-8')).hexdigest())
         self.in_label       = in_label
         self.out_label      = out_label
         self.connect_labels = connect_labels

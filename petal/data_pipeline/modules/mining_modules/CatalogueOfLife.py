@@ -68,7 +68,7 @@ class CatalogueOfLife(Module):
                             if name == '':
                                 continue
                             data = dict(name=name, uuid=name)
-                            yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('taxon_rank', 'taxon_rank'), uuid=uuid, from_uuid=name)
+                            yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('supertaxon', 'subtaxon'), uuid=name, from_uuid=uuid)
                             last_label = label_name
                             uuid = name
                     json = dict()

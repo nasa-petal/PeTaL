@@ -68,6 +68,7 @@ class Scheduler:
         self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 10}))
         self.dependents        = defaultdict(list)
         self.workers           = []
+        self.waiting           = []
         self.max_workers       = max_workers
         self.dependencies      = dict()
 
@@ -105,20 +106,30 @@ class Scheduler:
         for name, process in self.workers:
             process.terminate()
 
+    def add_proc(self, dep_proc):
+        dependent, process = dep_proc
+        print('Starting dependent', dependent, flush=True)
+        self.workers.append((dependent, process))
+        self.workers[-1][1].start()
+
     def check(self):
         print('checking.. ', flush=True)
         self.workers = [(name, worker) for name, worker in self.workers if worker.is_alive()]
+        while len(self.waiting) > 0:
+            if len(self.workers) < self.max_workers:
+                self.add_proc(self.waiting.pop())
+            else:
+                break
         while not self.schedule_queue.empty():
             if len(self.workers) < self.max_workers:
-                try:
-                    label, batch_file = self.schedule_queue.get(block=False)
-                    for sublabel in label.split(':'):
-                        for dependent in self.dependents[sublabel]:
-                            print('Starting dependent', dependent, flush=True)
-                            self.workers.append((dependent, Process(target=module_runner, args=(dependent, self.serialize_queue, batch_file))))
-                            self.workers[-1][1].start()
-                except Empty:
-                    sleep(0.1)
+                label, batch_file = self.schedule_queue.get(block=False)
+                for sublabel in label.split(':'):
+                    for dependent in self.dependents[sublabel]:
+                        dep_proc = (dependent, Process(target=module_runner, args=(dependent, self.serialize_queue, batch_file)))
+                        if len(self.workers) < self.max_workers:
+                            self.add_proc(dep_proc)
+                        else:
+                            self.waiting.append(dep_proc)
             else:
                 break
         print([t[0] for t in self.workers])
