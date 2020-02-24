@@ -1,7 +1,7 @@
 from hierarchical_model import HierarchicalModel
 from neo4j import GraphDatabase, basic_auth
 
-import json, os, os.path
+import json, os, os.path, pickle
 from time import sleep, time
 
 from PIL import Image
@@ -14,13 +14,14 @@ from torchvision import transforms
 from random import shuffle
 from pprint import pprint
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
 class Dataset(data.Dataset):
     def __init__(self, ids, labels):
         self.labels = labels
         self.list_IDs = ids
-
-    # def get_label(self, index):
-    # return self.list_IDs[index].split('_')[0].split('/')[-1]
 
     def __len__(self):
         return len(self.list_IDs)
@@ -84,16 +85,12 @@ def run(model, image=None):
     with torch.no_grad():
         outputs = model(image)
 
-    # print('-' * 80)
-    # print('')
     all_preds = []
     for suboutput in outputs:
         predictions = torch.topk(suboutput, k=2).indices.squeeze(0).tolist()
         for idx in predictions:
             prob = torch.softmax(suboutput, dim=1)[0, idx].item()
         all_preds.append(predictions[0])
-        # print('{label:<75} ({p:.2f}%'.format(label=idx, p=prob*100))
-    # print('')
     print('.', end='')
     return all_preds
 
@@ -101,7 +98,7 @@ def build_dataset():
     neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"), encrypted=False)
     image_dir = '../../../data/images/'
     files   = []
-    # Yes this code is messy please clean it soon thx
+    # TODO Yes this code is messy please clean it soon thx
     enc_id = 0
     alo_id = 0
     enc_ids = dict()
@@ -135,14 +132,19 @@ def build_dataset():
         filepath = image_dir + filename
         files.append(filepath)
         index += 1
-    shuffle(files)
+    # shuffle(files)
     cutoff = int(0.8 * len(files))
     print(len(files), cutoff)
     return Dataset(files[:cutoff], ids), Dataset(files[cutoff:], ids)
 
 def main():
-    trainset, testset = build_dataset()
-
+    if not os.path.isfile('data.pkl'):
+        trainset, testset = build_dataset()
+        with open('data.pkl', 'wb') as outfile:
+            pickle.dump((trainset, testset), outfile)
+    else:
+        with open('data.pkl', 'rb') as infile:
+            trainset, testset = pickle.load(infile)
     do_training = True
     do_training = False
     PATH = 'species_net.pth'
@@ -163,12 +165,22 @@ def main():
         duration = time() - start
         print('Loading took: ', duration, 's')
 
+    counts = {('a', 'b') : 2, ('a', 'a') : 1, ('b', 'b') : 2, ('b', 'a'): 1}
+
+    counts = dict()
     total   = len(testset)
     correct = 0
     genus = 0
     species = 0
     for image, label in testset:
         index = run(net, image=image)
+        index = tuple(index)
+        label = tuple(label)
+        key = (index, label)
+        if key in counts:
+            counts[key] += 1
+        else:
+            counts[key] = 1
         print(index, label)
         # predicted = testset.get_label(tuple(index))
         # actual    = testset.get_label(tuple(label))
@@ -184,6 +196,14 @@ def main():
     print(genus / total)
     print('Species level:')
     print(species / total)
+    data = {'index' : [index for (index, label) in counts.keys()], 
+            'label' : [label for (index, label) in counts.keys()], 
+            'count' : [count for count in counts.values()]}
+    count_frame = pd.DataFrame(data)
+    count_frame = count_frame.pivot('index', 'label', 'count')
+
+    sns.heatmap(count_frame, annot=True, linewidths=0.5)
+    plt.show()
 
 if __name__ == '__main__':
     main()
