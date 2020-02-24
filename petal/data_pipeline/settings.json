@@ -7,4 +7,4 @@
  "pipeline:sleep_time" : 0.1,
  "pipeline:reload_time" : 30,
  "pipeline:blacklist" : [],
- "pipeline:whitelist" : ["CatalogueOfLife", "JEBModule"]}
+ "pipeline:whitelist" : ["CatalogueOfLife", "EOLImageModule"]}
