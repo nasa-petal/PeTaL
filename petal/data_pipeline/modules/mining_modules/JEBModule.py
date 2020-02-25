@@ -18,14 +18,14 @@ class JEBModule(Module):
         # print(url)
         # print(name)
         result = get(url)
-        soup   = BeautifulSoup(result.content)
+        soup   = BeautifulSoup(result.content, 'html.parser')
         articles = []
         article_links = ['https://jeb.biologists.org' + x.get('href') for x in soup.find_all('a', attrs={'class': 'highwire-cite-linked-title'})]
         i = 0
         for article_link in article_links:
             if i == self.JEB_LIMIT:
                 break
-            article_page = BeautifulSoup(get(article_link).content)
+            article_page = BeautifulSoup(get(article_link).content, 'html.parser')
             category     = article_page.find(attrs={'class' : 'highwire-cite-category'}).get_text()
             if category == 'Research Article':
                 properties = dict()

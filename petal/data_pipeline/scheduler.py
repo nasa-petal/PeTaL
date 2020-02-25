@@ -9,6 +9,13 @@ from pprint import pprint
 from driver import driver_listener
 from batch import Batch
 
+def save_batch(schedule_queue, transaction_queue, label, batch):
+    filename = 'data/batches/{}'.format(uuid4())
+    batch.save(filename)
+    batch.clear()
+    transaction_queue.put(filename)
+    schedule_queue.put((label, filename))
+
 def batch_serializer(serialize_queue, transaction_queue, schedule_queue, sizes):
     start = time()
     batches = dict()
@@ -23,19 +30,11 @@ def batch_serializer(serialize_queue, transaction_queue, schedule_queue, sizes):
             batch.add(transaction)
             max_length = sizes.get(label, sizes['__default__'])
             if len(batch) >= max_length:
-                filename = 'data/batches/{}'.format(uuid4())
-                batch.save(filename)
-                batch.clear()
-                transaction_queue.put(filename)
-                schedule_queue.put((label, filename))
+                save_batch(schedule_queue, transaction_queue, label, batch)
         except Empty:
             for label, batch in batches.items():
                 if len(batch) > 0:
-                    filename = 'data/batches/{}'.format(uuid4())
-                    batch.save(filename)
-                    batch.clear()
-                    transaction_queue.put(filename)
-                    schedule_queue.put((label, filename))
+                    save_batch(schedule_queue, transaction_queue, label, batch)
         duration = time() - start
         i += 1
 
@@ -54,28 +53,22 @@ def module_runner(module_name, serialize_queue, batch_file):
     else:
         batch = Batch()
         batch.load(batch_file)
-        print('Created dependent transaction generator w/ length ', len(batch.items), flush=True)
-        pprint(batch.items)
         gen = [transaction for item in batch.items for transaction in module.process(item)]
-        pprint(gen)
     i = 0
     for transaction in gen:
-        if batch_file is not None:
-            print('Added dependent transaction', flush=True)
         serialize_queue.put(transaction)
         i += 1
 
 class Scheduler:
-    def __init__(self, max_workers=10):
-        self.manager = Manager()
-
-        self.transaction_queue = Queue(1000000)
-        self.indep_serialize_queue = Queue(100000)
-        self.serialize_queue   = Queue(100000)
-        self.schedule_queue    = Queue(100000)
+    def __init__(self, max_workers=30):
+        self.transaction_queue = Queue()
+        self.indep_serialize_queue = Queue(1000)
+        self.serialize_queue   = Queue()
+        self.schedule_queue    = Queue()
         self.driver_process    = Process(target=driver_listener,  args=(self.transaction_queue,))
-        self.indep_batch_process     = Process(target=batch_serializer, args=(self.indep_serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 10}))
-        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, {'__default__': 10}))
+        sizes = {'__default__' : 1000}
+        self.indep_batch_process     = Process(target=batch_serializer, args=(self.indep_serialize_queue, self.transaction_queue, self.schedule_queue, sizes))
+        self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, sizes))
         self.dependents        = defaultdict(list)
         self.workers           = []
         self.waiting           = []
@@ -123,7 +116,6 @@ class Scheduler:
         self.workers.append((dependent, process))
 
     def check(self):
-        print('checking.. ', flush=True)
         self.workers = [(name, worker) for name, worker in self.workers if worker.is_alive()]
         while len(self.waiting) > 0:
             if len(self.workers) < self.max_workers:
@@ -143,9 +135,10 @@ class Scheduler:
                                 self.waiting.append(dep_proc)
             else:
                 break
-        print([(t[0], t[1].is_alive()) for t in self.workers])
-        print(len(self.workers) == 0, self.schedule_queue.empty(), self.indep_serialize_queue.empty(), self.serialize_queue.empty(), self.transaction_queue.empty(), flush=True)
-        print(len(self.workers),      self.schedule_queue.qsize(), self.indep_serialize_queue.qsize(), self.serialize_queue.qsize(), self.transaction_queue.qsize(), flush=True)
+        # print('Driver: ', self.driver_process.is_alive(), 'Serializers (indep, norm): ', self.indep_batch_process.is_alive(), self.batch_process.is_alive(), flush=True)
+        # print([(t[0], t[1].is_alive()) for t in self.workers])
+        # print(len(self.workers) == 0, self.schedule_queue.empty(), self.indep_serialize_queue.empty(), self.serialize_queue.empty(), self.transaction_queue.empty(), flush=True)
+        # print(len(self.workers),      self.schedule_queue.qsize(), self.indep_serialize_queue.qsize(), self.serialize_queue.qsize(), self.transaction_queue.qsize(), flush=True)
         if len(self.workers) == 0 and self.serialize_queue.empty() and self.indep_serialize_queue.empty() and self.transaction_queue.empty():
             return True
         return False

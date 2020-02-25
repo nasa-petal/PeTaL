@@ -3,6 +3,7 @@ from pprint import pprint
 import json
 import os
 import sys
+import shutil
 
 from scheduler import Scheduler
 
@@ -65,6 +66,8 @@ class PipelineInterface:
         finally:
             print('STOPPING server!', flush=True)
             self.scheduler.stop()
+            shutil.rmtree('data/batches')
+            os.mkdir('data/batches')
 
 if __name__ == '__main__':
     args = sys.argv[1:]

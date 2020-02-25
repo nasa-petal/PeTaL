@@ -73,6 +73,10 @@ class EOLModule(Module):
             link = link.replace('/', '_')
             if datatype == 'measurement':
                 if objname is None:
+                    if unitname is None:
+                        unitname = ''
+                    if measurement is None:
+                        measurement = ''
                     add_list.append(self.custom_transaction('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}, from_uuid=uuid))
                 else:
                     add_list.append(self.custom_transaction('Species', 'EOLObject:EOLData', (link, link), {'value': objname}, from_uuid=uuid))
