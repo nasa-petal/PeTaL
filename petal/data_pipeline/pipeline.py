@@ -66,8 +66,8 @@ class PipelineInterface:
         finally:
             print('STOPPING server!', flush=True)
             self.scheduler.stop()
-            # shutil.rmtree('data/batches')
-            # os.mkdir('data/batches')
+            shutil.rmtree('data/batches')
+            os.mkdir('data/batches')
 
 if __name__ == '__main__':
     args = sys.argv[1:]

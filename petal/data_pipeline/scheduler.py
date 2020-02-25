@@ -53,7 +53,7 @@ def module_runner(module_name, serialize_queue, batch_file):
     else:
         batch = Batch()
         batch.load(batch_file)
-        print(batch.items)
+        # print(batch.items)
         gen = [transaction for item in batch.items for transaction in module.process(item)]
     i = 0
     for transaction in gen:
@@ -63,11 +63,11 @@ def module_runner(module_name, serialize_queue, batch_file):
 class Scheduler:
     def __init__(self, max_workers=30):
         self.transaction_queue = Queue()
-        self.indep_serialize_queue = Queue(2)
+        self.indep_serialize_queue = Queue(1000)
         self.serialize_queue   = Queue()
         self.schedule_queue    = Queue()
         self.driver_process    = Process(target=driver_listener,  args=(self.transaction_queue,))
-        sizes = {'__default__' : 2}
+        sizes = {'__default__' : 1000}
         self.indep_batch_process     = Process(target=batch_serializer, args=(self.indep_serialize_queue, self.transaction_queue, self.schedule_queue, sizes))
         self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, sizes))
         self.dependents        = defaultdict(list)
@@ -136,10 +136,9 @@ class Scheduler:
                                 self.waiting.append(dep_proc)
             else:
                 break
-        # print('Driver: ', self.driver_process.is_alive(), 'Serializers (indep, norm): ', self.indep_batch_process.is_alive(), self.batch_process.is_alive(), flush=True)
-        # print([(t[0], t[1].is_alive()) for t in self.workers])
-        # print(len(self.workers) == 0, self.schedule_queue.empty(), self.indep_serialize_queue.empty(), self.serialize_queue.empty(), self.transaction_queue.empty(), flush=True)
-        # print(len(self.workers),      self.schedule_queue.qsize(), self.indep_serialize_queue.qsize(), self.serialize_queue.qsize(), self.transaction_queue.qsize(), flush=True)
+        if not self.driver_process.is_alive():
+            return True
+        print(len(self.workers),      self.schedule_queue.qsize(), self.indep_serialize_queue.qsize(), self.serialize_queue.qsize(), self.transaction_queue.qsize(), flush=True)
         if len(self.workers) == 0 and self.serialize_queue.empty() and self.indep_serialize_queue.empty() and self.transaction_queue.empty():
             return True
         return False

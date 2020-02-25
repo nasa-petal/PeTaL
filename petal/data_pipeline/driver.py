@@ -27,13 +27,18 @@ class Driver():
         else:
             id1 = transaction.from_uuid
             id2 = self.add(transaction.data, transaction.out_label)
+            if id2 in self.hset:
+                return False
             self.hset.add(id2)
             if id1 is not None and transaction.connect_labels is not None:
                 id1 = str(id1)
+                key = str(id1) + str(id2)
+                if key in self.lset:
+                    return False
                 with self.neo_client.session() as session:
-                    self.lset.add(str(id1) + str(id2))
+                    self.lset.add(key)
                     session.write_transaction(self.link, id1, id2, transaction.in_label, transaction.out_label, *transaction.connect_labels)
-            return id2
+        return True
 
     def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):
         query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=in_label, out_label=out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
@@ -69,11 +74,12 @@ def driver_listener(transaction_queue):
         batch.load(batch_file)
         for transaction in batch.items:
             try:
-                driver.run(transaction)
+                added = driver.run(transaction)
                 duration = time() - start
                 total = len(driver.hset) + len(driver.lset)
-                print('Driver rate: {} of {} ({}|{})\r'.format(round(total / duration, 3), total, len(driver.hset), len(driver.lset)), flush=True, end='')
-                i += 1
+                print('Driver rate: {} of {} ({}|{})'.format(round(total / duration, 3), total, len(driver.hset), len(driver.lset)), flush=True)
+                if added:
+                    i += 1
             except KeyboardInterrupt:
                 raise KeyboardInterrupt
             except neobolt.exceptions.CypherSyntaxError:

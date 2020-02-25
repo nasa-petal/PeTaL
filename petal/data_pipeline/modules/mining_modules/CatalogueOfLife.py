@@ -39,6 +39,7 @@ class CatalogueOfLife(Module):
         All that this function does is yield Transaction() objects which create Species() nodes in the neo4j database.
         This particular process() function is simply downloading a tab-separated file and parsing it.
         '''
+        seen = set()
         create_dir() # Call the code above to download COL data if it isn't already present
         start = time()
         i = 0
@@ -60,16 +61,20 @@ class CatalogueOfLife(Module):
                     if json['taxonRank'] == 'species':
                         json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
                         yield self.default_transaction(json, uuid=json['name']) # HERE is where the transaction is created!!
-                        last_label = self.out_label
-                        uuid       = json['name']
+                        last_uuid = json['name']
+                        last_label = 'Species:Taxon'
                         for taxon in ['subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
-                            label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
                             name = json[taxon]
-                            if name == '':
-                                continue
-                            data = dict(name=name, uuid=name)
-                            yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('supertaxon', 'subtaxon'), uuid=name, from_uuid=uuid)
-                            last_label = label_name
-                            uuid = name
+                            if (last_uuid, name) not in seen:
+                                label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
+                                if name.strip() == '':
+                                    continue
+                                data = dict(name=name, uuid=name)
+                                yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('supertaxon', 'subtaxon'), uuid=name, from_uuid=last_uuid)
+                                last_label = label_name
+                                last_uuid = name
+                                seen.add((last_uuid, name))
+                            else:
+                                break
                     json = dict()
                 i += 1
