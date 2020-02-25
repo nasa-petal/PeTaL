@@ -1,10 +1,12 @@
 from neo4j import GraphDatabase, basic_auth
 from pprint import pprint
 import json
+import neobolt
 
 from utils.neo import page, add_json_node
 from collections import defaultdict
 from time import sleep
+from queue import Empty
 
 from batch import Batch
 
@@ -61,7 +63,13 @@ def driver_listener(transaction_queue):
         batch = Batch()
         batch.load(batch_file)
         for transaction in batch.items:
-            driver.run(transaction)
-            # print('Processed ', i, ' transactions of ', len(batch.items) * transaction_queue.qsize(), flush=True)
+            try:
+                driver.run(transaction)
+            except KeyboardInterrupt:
+                raise KeyboardInterrupt
+            except neobolt.exceptions.CypherSyntaxError:
+                pass
+            except Exception as e:
+                print(e, flush=True)
             i += 1
 

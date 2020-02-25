@@ -1,5 +1,5 @@
-from ..libraries.encyclopedia_of_life.eol_image_scraper import get_images
 from .ImageModule import ImageModule
+from ..libraries.encyclopedia_of_life.eol_image_scraper import get_images
 
 class EOLImageModule(ImageModule):
     def __init__(self, in_label='Species', out_label='Image', connect_labels=('HAS_IMAGE', 'HAS_IMAGE'), name='EOL_Images'):
@@ -13,4 +13,3 @@ class EOLImageModule(ImageModule):
                 for transaction in ImageModule.process(self, image_set, title=name, uuid=previous.uuid + '-image'):
                     transaction.from_uuid = previous.uuid
                     yield transaction
-                    print('Yielded!', flush=True)

@@ -8,8 +8,8 @@ class Module:
         self.name = name
         self.count = count
 
-    def default_transaction(self, data, uuid=None):
-        return Transaction(in_label=self.in_label, out_label=self.out_label, connect_labels=self.connect_labels, data=data, uuid=uuid)
+    def default_transaction(self, data, uuid=None, from_uuid=None):
+        return Transaction(in_label=self.in_label, out_label=self.out_label, connect_labels=self.connect_labels, data=data, uuid=uuid, from_uuid=from_uuid)
     
     def query_transaction(self, query):
         return Transaction(query=query)
