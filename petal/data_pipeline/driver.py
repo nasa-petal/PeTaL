@@ -15,8 +15,9 @@ class Driver():
     An API providing a lightweight connection to neo4j
     '''
     def __init__(self,):
-        # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"), encrypted=False)
-        self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
+        self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"), encrypted=False)
+        # self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
+        # self.neo_client = GraphDatabase.driver("bolt://localhost:6969", auth=basic_auth("neo4j", "life"))
         self.hset = set()
         self.lset = set()
 
@@ -26,10 +27,13 @@ class Driver():
                 session.run(transaction.query)
         else:
             id1 = transaction.from_uuid
-            id2 = self.add(transaction.data, transaction.out_label)
-            if id2 in self.hset:
-                return False
-            self.hset.add(id2)
+            if transaction.data is None:
+                id2 = transaction.uuid
+            else:
+                id2 = self.add(transaction.data, transaction.out_label)
+                if id2 in self.hset:
+                    return False
+                self.hset.add(id2)
             if id1 is not None and transaction.connect_labels is not None:
                 id1 = str(id1)
                 key = str(id1) + str(id2)
@@ -77,7 +81,7 @@ def driver_listener(transaction_queue):
                 added = driver.run(transaction)
                 duration = time() - start
                 total = len(driver.hset) + len(driver.lset)
-                print('Driver rate: {} of {} ({}|{})'.format(round(total / duration, 3), total, len(driver.hset), len(driver.lset)), flush=True)
+                print('Driver rate: {} of {} ({}|{})\r'.format(round(total / duration, 3), total, len(driver.hset), len(driver.lset)), flush=True, end='')
                 if added:
                     i += 1
             except KeyboardInterrupt:
