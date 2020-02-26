@@ -67,7 +67,7 @@ class Scheduler:
         self.serialize_queue   = Queue()
         self.schedule_queue    = Queue()
         self.driver_process    = Process(target=driver_listener,  args=(self.transaction_queue,))
-        sizes = {'__default__' : 1000}
+        sizes = {'__default__' : 10}
         self.indep_batch_process     = Process(target=batch_serializer, args=(self.indep_serialize_queue, self.transaction_queue, self.schedule_queue, sizes))
         self.batch_process     = Process(target=batch_serializer, args=(self.serialize_queue, self.transaction_queue, self.schedule_queue, sizes))
         self.dependents        = defaultdict(list)
