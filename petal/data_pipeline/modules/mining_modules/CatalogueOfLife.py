@@ -65,16 +65,14 @@ class CatalogueOfLife(Module):
                         last_label = 'Species:Taxon'
                         for taxon in ['subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
                             name = json[taxon]
+                            if name.strip() == '':
+                                continue
                             if (last_uuid, name) not in seen:
-                                label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
-                                if name.strip() == '':
-                                    continue
                                 data = dict(name=name, uuid=name)
-                                yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('supertaxon', 'subtaxon'), uuid=name, from_uuid=last_uuid)
-                                last_label = label_name
-                                last_uuid = name
+                                label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
                                 seen.add((last_uuid, name))
-                            else:
-                                break
+                                yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('supertaxon', 'subtaxon'), uuid=name, from_uuid=last_uuid)
+                            last_label = label_name
+                            last_uuid = name
                     json = dict()
                 i += 1
