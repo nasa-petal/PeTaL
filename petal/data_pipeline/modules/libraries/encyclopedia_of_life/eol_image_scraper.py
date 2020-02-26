@@ -8,13 +8,16 @@ from pprint import pprint
 
 import sys, re, os
 
+russian_proxy = 'https://83.219.1.201:41380'
+proxies = {'https': russian_proxy}
+
 search_url = 'https://eol.org/search?utf8=%E2%9C%93&q={}'
 media_url = 'https://eol.org/pages/{}/media'
 
 def get_page_ids(query):
     expanded = '+'.join(query.split())
     url = search_url.format(expanded)
-    html = get(url).text
+    html = get(url, proxies=proxies).text
     processed = BeautifulSoup(html, 'html.parser')
     top = processed.find(attrs={'class' : 'search-result'})
     try:
@@ -27,7 +30,7 @@ def get_page_ids(query):
 
 def get_gallery(url, index):
     url = url + '?page={}'.format(index)
-    html = get(url).text
+    html = get(url, proxies=proxies).text
     processed = BeautifulSoup(html, 'html.parser')
     gallery   = processed.find(attrs={'id': 'gallery'})
     for image in gallery.find_all('img'):
@@ -36,7 +39,7 @@ def get_gallery(url, index):
 def get_media_page(i, display=False):
     url = media_url.format(i)
     try:
-        html = get(url).text
+        html = get(url, proxies=proxies).text
         processed = BeautifulSoup(html, 'html.parser')
         n_pages   = int(processed.find(attrs={'class' : 'last'}).find('a').get('href').split('=')[-1])
         for x in range(n_pages):
