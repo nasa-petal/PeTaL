@@ -1,7 +1,13 @@
 import torch.utils.data as data
 import torch
 
+from sklearn.preprocessing import MinMaxScaler
 from torchvision import transforms
+
+def change_type(o):
+    if isinstance(o, np.int64): 
+        return int(o)  
+    return o
 
 import numpy as np
 import pandas as pd
@@ -21,7 +27,19 @@ class AirfoilDataset(data.Dataset):
 
         df = pd.read_hdf(filename, 'data')
         self.df = df.drop(columns=['AirfoilName'])
-        self.df = (self.df - df.mean()) / df.std() # This is COLUMN-WISE, importantly!
+        self.df = self.normalize(df, self.inputs + self.outputs)
+
+    def normalize(self, df, columns):
+        min_max_scaler = MinMaxScaler()
+        min_max_feature = {}
+        for col in columns:
+            min_F = change_type(df[[col]].min()[0])
+            max_F = change_type(df[[col]].max()[0])
+            
+            min_max_feature[col] = [min_F,max_F]
+            feat_scaled = min_max_scaler.fit_transform(df[[col]].values.astype(float))
+            df[[col]] = feat_scaled
+        return df
 
     def __len__(self):
         return len(self.df.index)

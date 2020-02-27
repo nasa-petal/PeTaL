@@ -18,4 +18,4 @@ class AirfoilModel(nn.Module):
         for i in range(self.hidden):
             x = F.selu(self.fc2(x))
         x = self.fc3(x)
-        return x.unsqueeze(dim=0)
+        return x

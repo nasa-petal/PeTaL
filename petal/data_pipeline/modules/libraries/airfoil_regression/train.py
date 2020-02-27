@@ -26,7 +26,7 @@ def train(net, dataset, n_epochs=2, criterion=nn.MSELoss()):
 
                     if i % 100 == 0:
                         print(running_loss)
-                        print(' [%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 2000))
+                        print(' [%d, %5d] loss: %.5f' % (epoch + 1, i + 1, running_loss / 100))
                         running_loss = 0.0
                     i += 1
                 except StopIteration:
