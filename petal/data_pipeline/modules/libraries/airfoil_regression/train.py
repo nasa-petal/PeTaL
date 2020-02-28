@@ -16,7 +16,6 @@ def train(model, reverse_model, dataset, n_epochs=2, criterion=nn.MSELoss()):
             print('Epoch: ', epoch, flush=True)
             i = 0
             for inputs, labels in trainloader:
-                print('    datapoint: ', i, flush=True)
                 reverse_optimizer.zero_grad()
                 reverse_inputs = reverse_model(labels)
                 reverse_loss = criterion(reverse_inputs, inputs)
@@ -29,8 +28,8 @@ def train(model, reverse_model, dataset, n_epochs=2, criterion=nn.MSELoss()):
                 loss.backward()
                 optimizer.step()
 
-                print(' [%d, %6d] loss: %.5f reverse:' % (epoch + 1, i + 1, reverse_loss.item))
-                print(' [%d, %5d] loss: %.5f forward:' % (epoch + 1, i + 1, loss.item))
+                if i % 5 == 0:
+                    print(' [%d, %5d] loss: %.5f (reverse) | %.5f (forward)' % (epoch + 1, i + 1, reverse_loss.item(), loss.item()), flush=True)
                 i += 1
     except KeyboardInterrupt:
         print('Interrupted training, saving..')
