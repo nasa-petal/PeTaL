@@ -37,3 +37,21 @@ class EOL_API:
             sys.exit(1)
         if r.status_code != 200:
             sys.exit(1)
+
+def main():
+    api = EOL_API()
+    print('Created API handle', flush=True)
+    page_size = 100
+    skip  = 0
+    while True:
+        try:
+            results = api.search('MATCH (x:Page) RETURN x.canonical, x.page_id, x.rank skip {skip} limit {limit}'.format(skip=skip, limit=page_size))
+            page = (results['data'])
+            pprint(page)
+            1/0
+            skip += page_size
+        except requests.exceptions.SSLError:
+            pass
+
+if __name__ == '__main__':
+    main()
