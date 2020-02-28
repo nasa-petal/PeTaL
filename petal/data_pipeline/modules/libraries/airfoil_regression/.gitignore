@@ -1,2 +1,4 @@
 storage.h5
 model
+airfoil_dataset.pkl
+airfoil_model.pt

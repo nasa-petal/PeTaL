@@ -4,10 +4,6 @@ import torch
 from sklearn.preprocessing import MinMaxScaler
 from torchvision import transforms
 
-def change_type(o):
-    if isinstance(o, np.int64): 
-        return int(o)  
-    return o
 
 import numpy as np
 import pandas as pd
@@ -30,6 +26,10 @@ class AirfoilDataset(data.Dataset):
         self.df = self.normalize(df, self.inputs + self.outputs)
 
     def normalize(self, df, columns):
+        def change_type(o):
+            if isinstance(o, np.int64): 
+                return int(o)  
+            return o
         min_max_scaler = MinMaxScaler()
         min_max_feature = {}
         for col in columns:

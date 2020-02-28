@@ -3,34 +3,35 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 
-def train(net, dataset, n_epochs=2, criterion=nn.MSELoss()):
-    optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9) # TODO: Change me later!
-    trainloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=True, num_workers=0)
+def train(model, reverse_model, dataset, n_epochs=2, criterion=nn.MSELoss()):
+    lr = 0.001
+    momentum = 0.9
+    batch_size = 100
+
+    optimizer         = optim.SGD(model.parameters(), lr=lr, momentum=momentum) 
+    reverse_optimizer = optim.SGD(reverse_model.parameters(), lr=lr, momentum=momentum) 
+    trainloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=0)
     try:
         for epoch in range(n_epochs):
             print('Epoch: ', epoch, flush=True)
-            running_loss = 0.0
-            iterator = iter(trainloader)
             i = 0
-            while True:
-                try:
-                    inputs, labels = next(iterator)
-                    print('    datapoint: ', i, flush=True)
-                    optimizer.zero_grad()
-                    outputs = net(inputs)
-                    loss = criterion(outputs, labels)
-                    loss.backward()
-                    optimizer.step()
+            for inputs, labels in trainloader:
+                print('    datapoint: ', i, flush=True)
+                reverse_optimizer.zero_grad()
+                reverse_inputs = reverse_model(labels)
+                reverse_loss = criterion(reverse_inputs, inputs)
+                reverse_loss.backward()
+                reverse_optimizer.step()
 
-                    running_loss += loss.item()
+                optimizer.zero_grad()
+                outputs = model(inputs)
+                loss = criterion(outputs, labels)
+                loss.backward()
+                optimizer.step()
 
-                    if i % 100 == 0:
-                        print(running_loss)
-                        print(' [%d, %5d] loss: %.5f' % (epoch + 1, i + 1, running_loss / 100))
-                        running_loss = 0.0
-                    i += 1
-                except StopIteration:
-                    break
+                print(' [%d, %6d] loss: %.5f reverse:' % (epoch + 1, i + 1, reverse_loss.item))
+                print(' [%d, %5d] loss: %.5f forward:' % (epoch + 1, i + 1, loss.item))
+                i += 1
     except KeyboardInterrupt:
-        pass
-    return net
+        print('Interrupted training, saving..')
+    return model, reverse_model
