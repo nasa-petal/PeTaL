@@ -40,18 +40,8 @@ class EOL_API:
 
 def main():
     api = EOL_API()
-    print('Created API handle', flush=True)
-    page_size = 100
-    skip  = 0
-    while True:
-        try:
-            results = api.search('MATCH (x:Page) RETURN x.canonical, x.page_id, x.rank skip {skip} limit {limit}'.format(skip=skip, limit=page_size))
-            page = (results['data'])
-            pprint(page)
-            1/0
-            skip += page_size
-        except requests.exceptions.SSLError:
-            pass
+    results = api.search('MATCH (x:Page) with count (x) as count return count limit 1'.format())
+    pprint(results)
 
 if __name__ == '__main__':
     main()
