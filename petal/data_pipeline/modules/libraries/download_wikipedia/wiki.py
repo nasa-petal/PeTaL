@@ -65,7 +65,7 @@ def to_csv():
                     pagefile.write(properties['title'] + ',' + properties['redirect'] + '\n')
                     for link in properties['links']:
                         linkfile.write(title + ',' + link + '\n')
-                    with open('pages/{}.txt'.format(title.replace(' ', '_').replace('/', '_')), 'w', encoding='utf-8') as outfile:
+                    with open('pages/{}.txt'.format(title.replace(' ', '_').replace('/', '_').replace('"', '')), 'w', encoding='utf-8') as outfile:
                         outfile.write(properties['text'])
                 except KeyboardInterrupt:
                     raise KeyboardInterrupt
