@@ -1,6 +1,6 @@
 from pprint import pprint
 from subprocess import call
-from time import time
+from time import time, sleep
 
 import requests, zipfile, os
 
@@ -29,7 +29,6 @@ def to_json():
     All that this function does is yield Transaction() objects which create Species() nodes in the neo4j database.
     This particular process() function is simply downloading a tab-separated file and parsing it.
     '''
-    seen = set()
     create_dir() # Call the code above to download COL data if it isn't already present
     start = time()
     i = 0
@@ -43,43 +42,58 @@ def to_json():
                 headers = ('id',) + tuple(headers[1:])
             elif i % 10000 == 0:
                 print(i, flush=True)
-            elif i == 100000:
-                break
+                # break
             else:
                 for k, v in zip(headers, line.split('\t')):
-                    json[k] = v
+                    json[k] = v.replace('"', '')
                 try:
                     json.pop('isExtinct\n')
                 except KeyError:
                     pass
-                if json['taxonRank'] == 'species':
+                rank = json['taxonRank']
+                if rank == 'species' or rank == 'infraspecies':
                     json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
-                    yield json
-                    # yield self.default_transaction(json, uuid=json['name']) # HERE is where the transaction is created!!
-                    # last_uuid = json['name']
-                    # last_label = 'Species:Taxon'
-                    # for taxon in ['subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
-                    #     name = json[taxon]
-                    #     if name.strip() == '':
-                    #         continue
-                    #     if (last_uuid, name) not in seen:
-                    #         data = dict(name=name, uuid=name)
-                    #         label_name = taxon[0].upper() + taxon[1:] + ':Taxon'
-                    #         seen.add((last_uuid, name))
-                    #         yield self.custom_transaction(data=data, in_label=last_label, out_label=label_name, connect_labels=('supertaxon', 'subtaxon'), uuid=name, from_uuid=last_uuid)
-                    #     last_label = label_name
-                    #     last_uuid = name
+                else:
+                    json['name'] = json[rank]
+                if json['name'] == 'Not assigned':
+                    continue
+                found = False
+                relations = []
+                for taxon in ['species', 'subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
+                    if found:
+                        if json[taxon].strip() != '':
+                            relations.append((json['name'], json[taxon]))
+                            break
+                    if rank == 'infraspecies':
+                        if taxon == 'species': # Necessary
+                            found = True
+                    elif taxon == rank:
+                        found = True
+                yield json, relations
+                # last_uuid = json['name']
+                #     json['taxonRank'] = taxon
+                #     name = json[taxon]
+                #     if name.strip() == '':
+                #         continue
+                #     json['name'] = name
+                #     yield json, [(last_uuid, name)]
+                #     last_uuid = name
+                #     json[taxon] = ''
                 json = dict()
             i += 1
 
 def to_csv():
     first = True
-    with open('catalog.csv', 'w', encoding='utf-8') as outfile:
-        for entry in to_json():
-            if first:
-                outfile.write(','.join(entry.keys()) + '\n')
-                first = False
-            outfile.write(','.join(entry.values()) + '\n')
+    with open('catalog.csv', 'w', encoding='utf-8') as catalog:
+        with open('relations.csv', 'w', encoding='utf-8') as relations:
+            for entry, rels in to_json():
+                if first:
+                    catalog.write(','.join(entry.keys()) + '\n')
+                    relations.write('from,to\n')
+                    first = False
+                catalog.write(','.join(entry.values()) + '\n')
+                if len(rels) > 0:
+                    relations.write('\n'.join(','.join(r) for r in rels) + '\n')
 
 from neo4j import GraphDatabase, basic_auth
 
@@ -90,7 +104,8 @@ CUSTOM_IMPORT_DIR = '../../../../../../../.Neo4jDesktop/neo4jDatabases/database-
 CUSTOM_IMPORT_DIR = '../../../../../../../.Neo4jDesktop/neo4jDatabases/database-96095927-f047-445d-8ce8-b4b05024bc48/installation-3.5.14/import/'
 
 def main():
-    to_csv()
+    if not os.path.isfile('catalog.csv') or not os.path.isfile('relations.csv'):
+        to_csv()
     for filename in os.listdir('.'):
         if filename.endswith('.csv'):
             shutil.copy(filename, CUSTOM_IMPORT_DIR + filename)
@@ -101,11 +116,10 @@ def main():
          headers = 'id,identifier,datasetID,datasetName,acceptedNameUsageID,parentNameUsageID,taxonomicStatus,taxonRank,verbatimTaxonRank,scientificName,kingdom,phylum,class,order,superfamily,family,genericName,genus,subgenus,specificEpithet,infraspecificEpithet,scientificNameAuthorship,source,namePublishedIn,nameAccordingTo,modified,description,taxonConceptID,scientificNameID,references,name'.split(',')
          session.run('CREATE INDEX ON :Taxon(name)')
          session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///catalog.csv" AS line CREATE (x:Taxon {' + ','.join(h + ': line.' + h for h in headers) + '})')
+         # session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///catalog.csv" AS line CREATE (x:toUpper(left(line.taxonRank, 1)) + substring(line.taxonRank, 1):Taxon {' + ','.join(h + ': line.' + h for h in headers) + '})')
+         session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS line MATCH (x:Taxon {name: line.from}),(y:Taxon {name: line.to}) CREATE (x)-[:supertaxon]->(y)') # (y)-[:subtaxon]->(x)')
 
-         # session.run('CREATE CONSTRAINT ON (person:Person) ASSERT person.id IS UNIQUE')
-         # session.run('CREATE CONSTRAINT ON (movie:Movie) ASSERT movie.id IS UNIQUE')
-         # session.run('LOAD CSV WITH HEADERS FROM "file:///movies.csv" AS csvLine MERGE (country:Country {name: csvLine.country}) CREATE (movie:Movie {id: toInteger(csvLine.id), title: csvLine.title, year:toInteger(csvLine.year)}) CREATE (movie)-[:MADE_IN]->(country)')
-         # session.run('USING PERIODIC COMMIT 500 LOAD CSV WITH HEADERS FROM "file:///roles.csv" AS csvLine MATCH (person:Person {id: toInteger(csvLine.personId)}),(movie:Movie {id: toInteger(csvLine.movieId)}) CREATE (person)-[:PLAYED {role: csvLine.role}]->(movie)')
+    print('Done!', flush=True)
 
 if __name__ == '__main__':
     main()
