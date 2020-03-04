@@ -4,6 +4,9 @@ import xml
 
 from pprint import pprint
 
+def clean(title):
+    return title.replace(' ', '_').replace('"', '').replace('?', '').replace('*', '(star)').replace("'", '').replace('/', '').replace(':', '_')
+
 def to_tag(tag):
     return '{http://www.mediawiki.org/xml/export-0.10/}' + tag
 
@@ -65,7 +68,7 @@ def to_csv():
                     pagefile.write(properties['title'] + ',' + properties['redirect'] + '\n')
                     for link in properties['links']:
                         linkfile.write(title + ',' + link + '\n')
-                    with open('pages/{}.txt'.format(title.replace(' ', '_').replace('/', '_').replace('"', '')), 'w', encoding='utf-8') as outfile:
+                    with open('pages/{}.txt'.format(clean(title)), 'w', encoding='utf-8') as outfile:
                         outfile.write(properties['text'])
                 except KeyboardInterrupt:
                     raise KeyboardInterrupt
