@@ -85,15 +85,20 @@ def to_json():
 def to_csv():
     first = True
     with open('catalog.csv', 'w', encoding='utf-8') as catalog:
-        with open('relations.csv', 'w', encoding='utf-8') as relations:
-            for entry, rels in to_json():
-                if first:
-                    catalog.write(','.join(entry.keys()) + '\n')
-                    relations.write('from,to\n')
-                    first = False
-                catalog.write(','.join(entry.values()) + '\n')
-                if len(rels) > 0:
-                    relations.write('\n'.join(','.join(r) for r in rels) + '\n')
+        with open('species.csv', 'w', encoding='utf-8') as species_csv:
+            with open('relations.csv', 'w', encoding='utf-8') as relations:
+                for entry, rels in to_json():
+                    if first:
+                        catalog.write(','.join(entry.keys()) + '\n')
+                        species_csv.write(','.join(entry.keys()) + '\n')
+                        relations.write('from,to\n')
+                        first = False
+                    if entry['taxonRank'] == 'species':
+                        species_csv.write(','.join(entry.values()) + '\n')
+                    else:
+                        catalog.write(','.join(entry.values()) + '\n')
+                    if len(rels) > 0:
+                        relations.write('\n'.join(','.join(r) for r in rels) + '\n')
 
 from neo4j import GraphDatabase, basic_auth
 
@@ -115,8 +120,8 @@ def main():
     with neo_client.session() as session:
          headers = 'id,identifier,datasetID,datasetName,acceptedNameUsageID,parentNameUsageID,taxonomicStatus,taxonRank,verbatimTaxonRank,scientificName,kingdom,phylum,class,order,superfamily,family,genericName,genus,subgenus,specificEpithet,infraspecificEpithet,scientificNameAuthorship,source,namePublishedIn,nameAccordingTo,modified,description,taxonConceptID,scientificNameID,references,name'.split(',')
          session.run('CREATE INDEX ON :Taxon(name)')
-         session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///catalog.csv" AS line CREATE (x:Taxon {' + ','.join(h + ': line.' + h for h in headers) + '})')
-         # session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///catalog.csv" AS line CREATE (x:toUpper(left(line.taxonRank, 1)) + substring(line.taxonRank, 1):Taxon {' + ','.join(h + ': line.' + h for h in headers) + '})')
+         # session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///catalog.csv" AS line CREATE (x:Taxon {' + ','.join(h + ': line.' + h for h in headers) + '})')
+         # session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///species.csv" AS line CREATE (x:Species:Taxon {' + ','.join(h + ': line.' + h for h in headers) + '})')
          session.run('USING PERIODIC COMMIT 1000 LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS line MATCH (x:Taxon {name: line.from}),(y:Taxon {name: line.to}) CREATE (x)-[:supertaxon]->(y)') # (y)-[:subtaxon]->(x)')
 
     print('Done!', flush=True)
