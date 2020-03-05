@@ -1,13 +1,13 @@
 {"scheduler:max_running" : 10,
  "scheduler:dependencies" : {"WikipediaModule" : {"in" : "Species", "out" : "WikipediaArticle:Article"},
-			     "EOLSpeciesModule" : {"in" : "None", "out" : "EOLSpecies:EOLTaxon"},
+			     "EOLSpeciesModule" : {"in" : "None", "out" : "EOLPage"},
+                             "EOLImageModule": {"in" : "EOLPage", "out" : "EOLImage:Image"},
+                             "EOLModule": {"in" : "Species", "out" : "EOLData"},
 	 		     "JEBModule" : {"in" : "Species", "out" : "JEBArticle:Article"},
 		             "TestingModule" : {"in" : "None", "out" : "Species"},
-		             "EOLImageModule" : {"in" : "EOLSpecies", "out" : "Image"},
-                             "EOLModule": {"in" : "Species", "out" : "EOLData"},
                              "IndependentTestModule"   : {"in" : "None", "out" : "TestOutput"}, 
                              "DependentTestModule" : {"in" : "TestOutput", "out" : "DependentTestOutput"}},
  "pipeline:sleep_time" : 0.1,
  "pipeline:reload_time" : 30,
  "pipeline:blacklist" : [],
- "pipeline:whitelist" : ["TestingModule", "WikipediaModule", "JEBModule", "EOLModule"]}
+ "pipeline:whitelist" : ["EOLSpeciesModule", "EOLImageModule"]}

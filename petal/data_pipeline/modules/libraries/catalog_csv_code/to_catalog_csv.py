@@ -52,7 +52,7 @@ def to_json():
                     pass
                 rank = json['taxonRank']
                 if rank == 'species' or rank == 'infraspecies':
-                    json['name'] = json['scientificName'].replace(json['scientificNameAuthorship'], '').strip()
+                    json['name'] = json['scientificName'].replace(json['source'], '').strip()
                 else:
                     json['name'] = json[rank]
                 if json['name'] == 'Not assigned':
@@ -70,15 +70,6 @@ def to_json():
                     elif taxon == rank:
                         found = True
                 yield json, relations
-                # last_uuid = json['name']
-                #     json['taxonRank'] = taxon
-                #     name = json[taxon]
-                #     if name.strip() == '':
-                #         continue
-                #     json['name'] = name
-                #     yield json, [(last_uuid, name)]
-                #     last_uuid = name
-                #     json[taxon] = ''
                 json = dict()
             i += 1
 
