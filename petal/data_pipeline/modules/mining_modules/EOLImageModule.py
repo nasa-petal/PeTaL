@@ -9,16 +9,7 @@ class EOLImageModule(ImageModule):
         if 'page_id' in previous.data:
             page_id = previous.data['page_id']
             for gallery in get_media_page(page_id):
-                print(gallery, flush=True)
-                for transaction in ImageModule.process(self, gallery, title=previous.data['canonical'], uuid=previous.uuid + '-image'):
+                for transaction in ImageModule.process(self, gallery, title=str(page_id), uuid=previous.uuid + '-image'):
+                    print(page_id, flush=True)
                     transaction.from_uuid = previous.uuid
                     yield transaction
-
-        # else:
-        #     name = previous.data['name']
-        #     pages = get_images(name)
-        #     for page in pages:
-        #         for image_set in page:
-        #             for transaction in ImageModule.process(self, image_set, title=name, uuid=previous.uuid + '-image'):
-        #                 transaction.from_uuid = previous.uuid
-        #                 yield transaction
