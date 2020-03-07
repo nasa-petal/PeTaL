@@ -37,3 +37,11 @@ class EOL_API:
             sys.exit(1)
         if r.status_code != 200:
             sys.exit(1)
+
+def main():
+    api = EOL_API()
+    results = api.search('MATCH (x:Page) with count (x) as count return count limit 1'.format())
+    pprint(results)
+
+if __name__ == '__main__':
+    main()

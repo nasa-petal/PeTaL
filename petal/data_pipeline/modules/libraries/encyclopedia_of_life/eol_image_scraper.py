@@ -8,6 +8,7 @@ from pprint import pprint
 
 import sys, re, os
 
+
 search_url = 'https://eol.org/search?utf8=%E2%9C%93&q={}'
 media_url = 'https://eol.org/pages/{}/media'
 
@@ -19,10 +20,13 @@ def get_page_ids(query):
     top = processed.find(attrs={'class' : 'search-result'})
     if top is None:
         return
-    links = top.find_all('a')
-    for link in links:
-        nav = link.get('href')
-        yield int(nav.split('/')[-1])
+    try:
+        links = top.find_all('a')
+        for link in links:
+            nav = link.get('href')
+            yield int(nav.split('/')[-1])
+    except AttributeError:
+        pass
 
 def get_gallery(url, index):
     url = url + '?page={}'.format(index)

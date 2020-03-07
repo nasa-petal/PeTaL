@@ -1,4 +1,4 @@
-from ..machine_learning_utils.OnlineLearner import OnlineLearner
+from ..utils.OnlineLearner import OnlineLearner
 from ..libraries.topic_modelling            import TopicModeler
 
 import pickle

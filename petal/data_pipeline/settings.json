@@ -1,6 +1,13 @@
-{"scheduler:accumulate_limit" : 10, 
- "scheduler:max_running" : 20,
+{"scheduler:max_running" : 10,
+ "scheduler:dependencies" : {"WikipediaModule" : {"in" : "Species", "out" : "WikipediaArticle:Article"},
+			     "EOLSpeciesModule" : {"in" : "None", "out" : "EOLPage"},
+                             "EOLImageModule": {"in" : "EOLPage", "out" : "EOLImage:Image"},
+                             "EOLModule": {"in" : "Species", "out" : "EOLData"},
+	 		     "JEBModule" : {"in" : "Species", "out" : "JEBArticle:Article"},
+		             "TestingModule" : {"in" : "None", "out" : "Species"},
+                             "IndependentTestModule"   : {"in" : "None", "out" : "TestOutput"}, 
+                             "DependentTestModule" : {"in" : "TestOutput", "out" : "DependentTestOutput"}},
  "pipeline:sleep_time" : 0.1,
- "pipeline:reload_time" : 60,
- "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule"]}
- 
+ "pipeline:reload_time" : 30,
+ "pipeline:blacklist" : [],
+ "pipeline:whitelist" : ["EOLSpeciesModule", "EOLImageModule"]}

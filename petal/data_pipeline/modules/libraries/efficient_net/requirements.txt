@@ -1,3 +1,0 @@
-pillow
-torch
-efficientnet_pytorch

@@ -1,0 +1,5 @@
+storage.h5
+model
+airfoil_dataset.pkl
+airfoil_model.pt
+reverse_airfoil_model.pt

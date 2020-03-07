@@ -1,7 +1,7 @@
 from species_model import SpeciesModel
 
 import json, os, os.path
-from time import sleep
+from time import sleep, time
 
 from PIL import Image
 import torch
@@ -30,6 +30,7 @@ class Dataset(data.Dataset):
         print(filename)
         tfms = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
+        print(filename)
         img = tfms(Image.open(filename))
         img = img.unsqueeze(0)
         x = img
@@ -45,22 +46,32 @@ def train(net, dataset, n_epochs=2):
         for epoch in range(n_epochs):
             print('Epoch: ', epoch, flush=True)
             running_loss = 0.0
-            for i, data in enumerate(trainloader, 0):
-                print('    datapoint: ', i, flush=True)
-                inputs, labels = data
-                inputs = inputs.squeeze(dim=1)
+            iterator = iter(trainloader)
+            i = 0
+            while True:
+                try:
+                    inputs, labels = next(iterator)
+                    print('    datapoint: ', i, flush=True)
+                    inputs = inputs.squeeze(dim=1)
 
-                optimizer.zero_grad()
-                outputs = net(inputs)
-                loss = criterion(outputs, labels)
-                loss.backward()
-                optimizer.step()
+                    optimizer.zero_grad()
+                    outputs = net(inputs)
+                    loss = criterion(outputs, labels)
+                    loss.backward()
+                    optimizer.step()
 
-                running_loss += loss.item()
+                    running_loss += loss.item()
 
-                if i % 2000 == 1999:
-                    print(' [%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 2000))
-                    running_loss = 0.0
+                    if i % 2000 == 1999:
+                        print(' [%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 2000))
+                        running_loss = 0.0
+                    i += 1
+                except StopIteration:
+                    break
+                except RuntimeError as e:
+                    print(e)
+                except OSError as e:
+                    print(e)
     except KeyboardInterrupt:
         pass
     return net
@@ -87,12 +98,19 @@ def build_dataset():
     for filename in os.listdir(image_dir):
         uuid     = filename.split('_')[0]
         filepath = image_dir + filename
-        if uuid not in ids:
-            ids[uuid] = counter
-            counter += 1
-        files.append(filepath)
+        try:
+            Image.open(filepath)
+            if uuid not in ids:
+                ids[uuid] = counter
+                counter += 1
+            files.append(filepath)
+        except OSError as e:
+            print(e)
+            pass
     shuffle(files)
-    return Dataset(files[:400], ids), Dataset(files[400:], ids)
+    cutoff = int(0.8 * len(files))
+    print(len(files), cutoff)
+    return Dataset(files[:cutoff], ids), Dataset(files[cutoff:], ids)
 
 def main():
     trainset, testset = build_dataset()
@@ -101,14 +119,22 @@ def main():
     # do_training = False
     PATH = 'species_net.pth'
 
-    net = SpeciesModel()
+    net = SpeciesModel(i=7) # Set thrusters to max
+    try:
+        net.cuda()
+    except AssertionError:
+        print('*' * 80)
+        print('Training on CPU!!!')
+        print('*' * 80)
     if do_training:
-        train(net, trainset)
+        train(net, trainset, n_epochs=20)
         torch.save(net.state_dict(), PATH)
     else:
-        net.load_state_dict(torch.load(PATH))
+        start = time()
+        net.load_state_dict(torch.load(PATH)) # Takes roughly .15s
+        duration = time() - start
+        print('Loading took: ', duration, 's')
 
-    print(net)
     analysis = dict()
     for image, label in testset:
         index = run(net, image=image)

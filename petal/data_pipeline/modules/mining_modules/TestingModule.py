@@ -1,4 +1,4 @@
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 bread_trees = '''Encephalartos aemulans
 Encephalartos altensteinii
@@ -103,7 +103,11 @@ class TestingModule(Module):
         Module.__init__(self, in_label, out_label, connect_label, name, count)
 
     def process(self):
-        for species in aloe_trees.split('\n'):
-            yield self.default_transaction({'name' : species.strip()})
+        yield self.default_transaction({'name' : 'Caenorhabditis elegans'})
+        yield self.default_transaction({'name' : 'Staphylococcus aureus'})
+        # for species in aloe_trees.split('\n'):
+        #     name = species.strip()
+        #     yield self.default_transaction({'name' : name}, uuid=name)
         # for species in bread_trees.split('\n'):
-        #     yield self.default_transaction({'name' : species.strip()})
+        #     name = species.strip()
+        #     yield self.default_transaction({'name' : name}, uuid=name)

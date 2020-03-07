@@ -1,13 +1,4 @@
-import wikipedia
-import datetime
-
-# wikipedia.set_rate_limiting(True, min_wait=datetime.timedelta(0, 0, 10000)) # 10 millisecond wait
-
-import requests
-
-from ..module_utils.module import Module
-
-SCRAPE_FIELDS = {'content', 'summary', 'coordinates', 'links', 'references', 'images', 'title'}
+from ..utils.module import Module
 
 class WikipediaModule(Module):
     '''
@@ -18,10 +9,14 @@ class WikipediaModule(Module):
     '''
     def __init__(self, in_label='Species', out_label='WikipediaArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='Wikipedia'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
+        self.SCRAPE_FIELDS = {'content', 'summary', 'coordinates', 'links', 'references', 'images', 'title'}
 
-    def process(self, node):
+    def process(self, previous):
+        import wikipedia
+        import datetime
+        import requests
         # Lookup the species based on its name. Make sure that all Species objects have this attribute!!
-        name = node['name']
+        name = previous.data['name']
         properties = list()
         try:
             results = wikipedia.search(name)
@@ -30,7 +25,7 @@ class WikipediaModule(Module):
                 # A lot of weird things can happen when crawling Wikipedia, so exception handling galore
                 try:
                     page = wikipedia.page(result, auto_suggest=True, redirect=True, preload=True) # Use wikiAPI to load the actual page
-                    for field in SCRAPE_FIELDS: # Store only the desired properties (above) in the node properties
+                    for field in self.SCRAPE_FIELDS: # Store only the desired properties (above) in the node properties
                         try:
                             result_properties[field] = getattr(page, field)
                         except KeyError:
@@ -39,7 +34,7 @@ class WikipediaModule(Module):
                     pass
                 except wikipedia.exceptions.WikipediaException as e:
                     pass
-                properties.append(self.default_transaction(result_properties)) # Only create default transaction objects
+                properties.append(self.default_transaction(result_properties, from_uuid=previous.uuid)) # Only create default transaction objects
             # In the future, use self.custom_transaction() and self.query_transaction() for more complicated Data Mining Modules
         except requests.exceptions.ConnectionError:
             pass

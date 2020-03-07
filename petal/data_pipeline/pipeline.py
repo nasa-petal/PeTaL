@@ -1,46 +1,43 @@
 from time import time, sleep
 from pprint import pprint
 import json
-import inspect
 import os
+import sys
+import shutil
 
-from importlib import reload
-from scheduler.scheduler import Scheduler
-from scheduler.module_info import ModuleInfo
-
-import modules
-
+from scheduler import Scheduler
 
 class PipelineInterface:
     '''
     This class defines an interface to a data mining server. It allows modules and settings to the scheduler to be updated dynamically without stopping processing.
     '''
-    def __init__(self):
+    def __init__(self, filename):
         self.scheduler = Scheduler()
         self.times = dict()
+        self.filename = filename
+        self.sleep_time = 1
+        self.reload_time = 30
+        self.whitelist = []
+        self.blacklist = []
         self.load_settings()
-        self.reload_modules()
 
     def reload_modules(self):
-        print('Reloading modules', flush=True)
-        global modules
-        modules = reload(modules)
-        for name, item in inspect.getmembers(modules):
-            if inspect.isclass(item):
-                filename = 'modules/mining_modules/{}.py'.format(name)
-                if not os.path.isfile(filename):
-                    filename = 'modules/machine_learning_modules/{}.py'.format(name)
-                filetime = os.stat(filename).st_mtime
-                if name not in self.times or self.times[name] != filetime:
-                    self.times[name] = filetime
-                    if name not in self.blacklist:
-                        print('Reloading module: ', name)
-                        self.scheduler.schedule(item())
+        mining_modules = os.listdir('modules/mining_modules/')
+        ml_modules     = os.listdir('modules/machine_learning_modules/')
+        modules = mining_modules + ml_modules
+        for filename in modules:
+            if filename.endswith('.py') and filename != '__init__.py':
+                name = os.path.basename(filename).split('.')[0]
+                if len(self.whitelist) > 0:
+                    if name in self.whitelist:
+                        self.scheduler.schedule(name)
+                elif name not in self.blacklist:
+                    self.scheduler.schedule(name)
 
-    def load_settings(self, filename='settings.json'):
-        with open('settings.json', 'r') as infile:
+    def load_settings(self):
+        with open(self.filename, 'r') as infile:
             settings = json.load(infile)
-        pprint(settings)
+        # pprint(settings)
         for k, v in settings.items():
             if k.startswith('scheduler:'):
                 k = k.replace('scheduler:', '')
@@ -55,20 +52,28 @@ class PipelineInterface:
         self.reload_modules() 
         print('Starting scheduler', flush=True)
         self.scheduler.start()
+        done = False
         try:
-            while True:
-                self.scheduler.check_added()
+            while not done:
+                done = self.scheduler.check()
                 sleep(self.sleep_time)
-                self.scheduler.display()
                 duration = time() - start
                 if duration > self.reload_time:
                     start = time()
                     self.load_settings()
                     self.reload_modules()
+                    print('Actively reloading settings', flush=True)
         finally:
-            print('Caught outer level exception, STOPPING server!')
+            print('STOPPING server!', flush=True)
             self.scheduler.stop()
+            # shutil.rmtree('data/batches')
+            # os.mkdir('data/batches')
 
 if __name__ == '__main__':
-    interface = PipelineInterface()
+    args = sys.argv[1:]
+    if len(args) == 0:
+        settings_file = 'settings.json'
+    else:
+        settings_file = args[0]
+    interface = PipelineInterface(settings_file)
     interface.start_server()

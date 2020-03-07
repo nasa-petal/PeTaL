@@ -1,5 +1,5 @@
 from ..libraries.encyclopedia_of_life.eol_api import EOL_API
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 from pprint import pprint
 
@@ -55,9 +55,9 @@ class EOLModule(Module):
         Module.__init__(self, in_label, out_label, connect_labels, name)
         self.api = EOL_API()
 
-    def process(self, node):
-        name = node['name']
-        uuid = node['uuid']
+    def process(self, previous):
+        name = previous.data['name']
+        uuid = previous.data['uuid']
         query = ' '.join(['MATCH (p:Page)-[:trait|:inferred_trait]->(t:Trait), (t)-[:predicate]->(pred:Term)',
                           'WHERE p.canonical = \'{name}\''.format(name=name),
                           'OPTIONAL MATCH (t)-[:object_term]->(obj:Term)',
@@ -73,9 +73,13 @@ class EOLModule(Module):
             link = link.replace('/', '_')
             if datatype == 'measurement':
                 if objname is None:
-                    add_list.append(self.custom_transaction('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}))
+                    if unitname is None:
+                        unitname = ''
+                    if measurement is None:
+                        measurement = ''
+                    add_list.append(self.custom_transaction('Species', 'EOLMeasurement:EOLData', (link, link), {'name': link, 'units': unitname, 'value': measurement}, from_uuid=uuid))
                 else:
-                    add_list.append(self.custom_transaction('Species', 'EOLObject:EOLData', (link, link), {'value': objname}))
+                    add_list.append(self.custom_transaction('Species', 'EOLObject:EOLData', (link, link), {'value': objname}, from_uuid=uuid))
             elif target_name is not None:
                 if '\'' not in target_name:
                     add_list.append(self.query_transaction(query='MATCH (n:Species) WHERE n.uuid = \'{}\' MATCH (m:Species) WHERE m.name = \'{}\' MERGE (n)-[:{}]->(m)'.format(uuid, target_name, link)))

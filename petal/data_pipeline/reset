@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+
+from neo4j import GraphDatabase, basic_auth
+# self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"), encrypted=False)
+neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
+with neo_client.session() as session:
+    session.run('MATCH (x)<-[r]->(y) delete r, x, y')
+    session.run('MATCH (x) delete x')

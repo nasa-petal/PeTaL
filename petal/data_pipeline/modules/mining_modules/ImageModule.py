@@ -1,4 +1,4 @@
-from ..module_utils.module import Module
+from ..utils.module import Module
 
 from uuid import uuid4
 
@@ -6,7 +6,7 @@ import urllib.request
 import urllib3
 import requests
 
-EXCLUDED_EXTENSIONS = {'svg'}
+EXCLUDED_EXTENSIONS = {'svg', 'ogg'}
 
 class ImageModule(Module):
     '''
@@ -34,4 +34,4 @@ class ImageModule(Module):
                     pass
                 except requests.exceptions.ConnectionError:
                     pass
-                yield self.default_transaction(data=dict(filename=filename, url=image, parent=title))
+                yield self.default_transaction(data=dict(filename=filename, url=image, parent=title), uuid=uuid)
