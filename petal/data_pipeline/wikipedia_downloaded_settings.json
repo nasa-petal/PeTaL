@@ -1,0 +1,6 @@
+{"scheduler:max_running" : 2,
+ "scheduler:dependencies" : {"DownloadedWikipediaModule" : {"in" : "None", "out" : "WikipediaPage"}},
+ "pipeline:sleep_time" : 0.1,
+ "pipeline:reload_time" : 30,
+ "pipeline:blacklist" : [],
+ "pipeline:whitelist" : ["DownloadedWikipediaModule"]}

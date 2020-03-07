@@ -1,0 +1,12 @@
+{"scheduler:max_running" : 10,
+ "scheduler:dependencies" : {"WikipediaModule" : {"in" : "Taxon", "out" : "WikipediaArticle:Article"},
+	 		     "JEBModule" : {"in" : "Species", "out" : "JEBArticle:Article"},
+		             "TestingModule" : {"in" : "None", "out" : "Species"},
+		             "EOLImageModule" : {"in" : "Species", "out" : "Image"},
+                             "EOLModule": {"in" : "Taxon", "out" : "EOLData"},
+                             "IndependentTestModule"   : {"in" : "None", "out" : "TestOutput"}, 
+                             "DependentTestModule" : {"in" : "TestOutput", "out" : "DependentTestOutput"}},
+ "pipeline:sleep_time" : 0.1,
+ "pipeline:reload_time" : 30,
+ "pipeline:blacklist" : [],
+ "pipeline:whitelist" : ["CatalogueOfLife", "HighwireModule", "WikipediaModule", "EOLModule", "EOLImageModule", "JEBModule"]}

@@ -1,0 +1,7 @@
+{"scheduler:max_running" : 15,
+ "scheduler:dependencies" : {"WikipediaModule" : {"in" : "Taxon", "out" : "WikipediaArticle:Article"},
+                             "EOLModule": {"in" : "Taxon", "out" : "EOLData"}},
+ "pipeline:sleep_time" : 0.1,
+ "pipeline:reload_time" : 30,
+ "pipeline:blacklist" : ["GoogleScholarModule", "TopicLDAModule", "ImageModule"],
+ "pipeline:whitelist" : []}
