@@ -26,8 +26,8 @@ class Dataset(data.Dataset):
 
     def __getitem__(self, index):
         ID = self.list_IDs[index]
-
         filename = ID
+        print(filename)
         tfms = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
         img = tfms(Image.open(filename))

@@ -13,7 +13,7 @@ class Driver():
     '''
     def __init__(self, page_size, rate_limit):
         # self.neo_client = GraphDatabase.driver("bolt://139.88.179.199:7667", auth=basic_auth("neo4j", "testing"))
-        self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"))
+        self.neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
         self.tracker = None
         self.page_size = page_size
         self.rate_limit = rate_limit
@@ -34,6 +34,7 @@ class Driver():
             if transaction is None:
                 pass
             if transaction.query is not None:
+                # print(transaction.query)
                 tx.run(transaction.query)
             else:
                 id1 = node['uuid']
@@ -43,6 +44,7 @@ class Driver():
 
     def link(self, tx, id1, id2, in_label, out_label, from_label, to_label):
         query = ('MATCH (n:{in_label}) WHERE n.uuid=\'{id1}\' MATCH (m:{out_label}) WHERE m.uuid=\'{id2}\' MERGE (n)-[:{from_label}]->(m) MERGE (m)-[:{to_label}]->(n)'.format(in_label=in_label, out_label=out_label, id1=id1, id2=id2, from_label=from_label, to_label=to_label))
+        # print(query)
         tx.run(query)
 
     def add(self, data, label):
@@ -63,18 +65,19 @@ class Driver():
                 self.tracker.add(label, unique_id)
             return unique_id
 
-    def single_runner(self, tx, module, node_id):
-        node = tx.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
-        for record in node.records():
-            with self.neo_client.session() as session:
-                node = record['n']
-                transactions = module.process(node)
-                session.write_transaction(self.write, node, transactions, module)
+    def single_runner(self, record, module):
+        with self.neo_client.session() as session:
+            node = record['n']
+            transactions = module.process(node)
+            session.write_transaction(self.write, node, transactions, module)
 
     def run_id(self, module, tracker, node_id):
         self.tracker = tracker
         with self.neo_client.session() as session:
-            session.read_transaction(self.single_runner, module, node_id)
+            # print('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
+            records = session.run('MATCH (n) WHERE n.uuid = \'' + node_id + '\' RETURN n')
+            for record in records:
+                self.single_runner(record, module)
 
     def run_page(self, module, tracker, info):
         self.tracker = tracker

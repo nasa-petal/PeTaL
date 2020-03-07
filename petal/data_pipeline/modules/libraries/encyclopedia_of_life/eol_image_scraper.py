@@ -17,6 +17,8 @@ def get_page_ids(query):
     html = get(url).text
     processed = BeautifulSoup(html, 'html.parser')
     top = processed.find(attrs={'class' : 'search-result'})
+    if top is None:
+        return
     links = top.find_all('a')
     for link in links:
         nav = link.get('href')
@@ -46,7 +48,6 @@ def get_media_page(i, display=False):
 def get_images(query, display=False):
     for page_id in get_page_ids(query):
         yield get_media_page(page_id, display=display)
-        break
 
 if __name__ == '___main__':
     for page in get_images('Encephalartos'):
