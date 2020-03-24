@@ -1,8 +1,8 @@
 #python read xml files
-import csv 
+import csv
 import nltk
 import glob, os
-import requests 
+import requests
 import xml.etree.ElementTree as ET
 from os import listdir
 from neo4j import GraphDatabase, basic_auth
@@ -12,7 +12,7 @@ from neomodel import (config, StructuredNode, StringProperty, IntegerProperty,
     UniqueIdProperty, RelationshipTo)
 
 driver = GraphDatabase.driver("bolt://localhost:11002", auth=basic_auth("default", "testing"))
- 
+
 print(os.getcwd())
 for file in glob.glob('C:/Users/dawillin/Documents/petal-master/petal2/petal/scrape-n-rank/highwire/*.xml'):
 #if you have to be more selective inside your directory
@@ -20,7 +20,7 @@ for file in glob.glob('C:/Users/dawillin/Documents/petal-master/petal2/petal/scr
     with open(file, "rb") as data:
         tree = ET.parse(data)
         root = tree.getroot()
- 
+
         article_type = root.get('article-type')
         journal_title = tree.find('front').find('journal-meta').find('journal-title').text
         article_title = tree.find('front').find('article-meta').find('title-group').find('article-title').text
@@ -34,7 +34,7 @@ except ex:
 
 url = tree.find('front').find('article-meta').find('self-uri').text
 abstract = tree.find('front').find('article-meta').find('abstract').find('p').text
- 
+
 possible_doi = tree.find('front').find('article-meta').findall('article-id')
 doi =""
 for x in possible_doi:
@@ -46,7 +46,7 @@ create_str ='CREATE (p:article {{articleTitle:\'{0}\', journalTitle:\'{1}\', art
 results = session.run(create_str)
 session.close()
 #import data to graph
- 
+
 #nodes =Node(name=article_title, articletype=article_type, )
 
 

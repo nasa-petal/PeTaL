@@ -74,15 +74,15 @@ def owl_to_dictionary(owl_path):
     for c in onto.all_classes:
         ont_class = ontospy_to_dict(c)
         classes[ont_class['uri']] = ont_class
-    
+
     return classes
 
 def graph_to_csv(G, outpath):
     """ Writes label, img, description attributes to a csv.
-    
+
     Args:
         G: NetworkX graph.
-        outpath: path to write csv to. 
+        outpath: path to write csv to.
     """
     df = pd.DataFrame(dict(G.node)).transpose()
     df.drop('keywords',1).to_csv(os.path.join(os.getcwd(),outpath))
@@ -101,8 +101,8 @@ def owl_to_graph(owl_path):
     G = nx.Graph()
     for c in onto:
         c_data = onto[c]
-        G.add_node(c, 
-                    label=c_data['label'], 
+        G.add_node(c,
+                    label=c_data['label'],
                     keywords=c_data['keywords'],
                     description="Missing description...",
                     img='{}.jpg'.format(c_data['label']))
@@ -125,10 +125,11 @@ def csv_to_graph(G, data_path):
     """
     # Just to be safe we don't modify graph in place.
     G_copy = G.copy()
+    #print(dir(G_copy))
     # Data from csv store - used for images and descriptions
     df = pd.read_csv(data_path, index_col=0)
     for c in G_copy:
-        G_copy.node[c].update(df.loc[c])
+        G_copy._node[c].update(df.loc[c])
     return G_copy
 
 def lit_to_graph(G, lit_path):
@@ -162,7 +163,7 @@ def lit_to_graph(G, lit_path):
         if type(current_row_environment) == list:
             for env_item in current_row_environment:
                 G_copy.add_edge(current_row_title, env_item.strip(), literature='literature')
-        
+
         if type(current_row_morphology) == list:
             for morph_item in current_row_morphology:
                 G_copy.add_edge(current_row_title, morph_item.strip(), literature='literature')
@@ -176,10 +177,10 @@ def build_graph(owl_path='ontology.owl', data_path='classes.csv', lit_path='lite
         owl_path: Relative path to OWL ontology file.
         data_path: Relative path to CSV data. If file does not exist,
             one will be written to this path.
-        lit_path: Relative path to literature CSV data. 
+        lit_path: Relative path to literature CSV data.
 
     Returns:
-        NetworkX graph of data. 
+        NetworkX graph of data.
     """
     # Consruct graph from owl file
     G = owl_to_graph(owl_path)
@@ -212,9 +213,9 @@ def get_lit(G, ont_class):
     return lit
 
 def create_profile(G, ont_class, debug=False, data_path=None, lit_path=None):
-    """ Packages node attributes and edges into dictionary 
+    """ Packages node attributes and edges into dictionary
 
-    Collects labels and relationships of neighbors to 
+    Collects labels and relationships of neighbors to
     encapsulate a single class profile.
     Args:
         G: NetworkX graph.
