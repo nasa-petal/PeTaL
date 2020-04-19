@@ -19,10 +19,10 @@
     <div class="bird-abstract">
         <h2><div> {{paper.title}} </div></h2>
         <div id="bird-abstract-details">
-            <strong class="larger-font">{{paper.authors}}</strong>
+		<!-- <strong class="larger-font">{{paper.authors}}</strong> -->
             <p>Relevancy Factor: {{paper.relevancy}}%</p>
         </div>
-        <div class="panel expandable-text" data-collapse-limit="100">{{paper.abstract}}</div>
+        <div class="panel expandable-text" data-collapse-limit="100">{{paper.summary}}</div>
         <div id="bird-abstract-footer">
             <p><a href= {{paper.url}} target='_blank'>Source</a></p>
         </div>
