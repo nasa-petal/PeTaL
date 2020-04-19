@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Development of a deep neural network for automated electromyographic pattern classification
-<p><bold>Summary:</bold> The quality of surface electromyography recordings can be automatically classified with an accuracy of 99.55% by a deep neural network (AlexNet).</p>
-http://jeb.biologists.org/cgi/content/abstract/222/5/jeb198101
-10.1242/jeb.198101
-None
-

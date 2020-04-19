@@ -1,8 +1,0 @@
-1
-Science
-Dust grains fall from Saturn’s D-ring into its equatorial upper atmosphere
-<p>The sizes of Saturn’s ring particles range from meters (boulders) to nanometers (dust). Determination of the rings’ ages depends on loss processes, including the transport of dust into Saturn’s atmosphere. During the Grand Finale orbits of the Cassini spacecraft, its instruments measured tiny dust grains that compose the innermost D-ring of Saturn. The nanometer-sized dust experiences collisions with <strong><span style="color:yellowgreen">exospher</span></strong>ic (<strong><span style="color:yellowgreen">upper atmospher</span></strong>e) hydrogen and molecular hydrogen, which forces it to fall from the ring into the ionosphere and lower atmosphere. We used the Magnetospheric Imaging Instrument to detect and characterize this dust transport and also found that diffusion dominates above and near the altitude of peak ionospheric density. This mechanism results in a mass deposition into the equatorial atmosphere of ~5 kilograms per second, constraining the age of the D-ring.</p>
-http://sciencemag.org/cgi/content/abstract/362/6410/eaat2236
-10.1126/science.aat2236
-None
-

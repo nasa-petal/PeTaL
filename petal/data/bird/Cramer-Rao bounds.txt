@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-Pinstatic Acid Promotes Auxin Transport by Inhibiting PIN Internalization
-<p>Polar auxin transport plays a pivotal role in plant growth and development. PIN-FORMED (PIN) auxin efflux carriers regulate directional auxin movement by establishing local auxin maxima, <strong><span style="color:yellowgreen">minima</span></strong>, and gradients that drive multiple developmental processes and responses to environmental signals. Auxin has been proposed to modulate its own transport by regulating subcellular PIN trafficking via processes such as clathrin-mediated PIN endocytosis and constitutive recycling. Here, we further investigated the mechanisms by which auxin affects PIN trafficking by screening auxin analogs and identified pinstatic acid (PISA) as a positive modulator of polar auxin transport in Arabidopsis (<i>Arabidopsis thaliana</i>). PISA had an auxin-like effect on hypocotyl elongation and adventitious root formation via positive regulation of auxin transport. PISA did not activate SCF<sup>TIR1/AFB</sup> signaling and yet induced PIN accumulation at the cell surface by inhibiting PIN internalization from the plasma membrane. This work demonstrates PISA to be a promising chemical tool to dissect the regulatory mechanisms behind subcellular PIN trafficking and auxin transport.</p>
-http://plantphysiol.org/cgi/content/abstract/180/2/1152
-10.1104/pp.19.00201
-['Arabidopsis', 'Arabidopsis thaliana']
-

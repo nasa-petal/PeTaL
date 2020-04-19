@@ -1,8 +1,0 @@
-3
-Science
-Active sites in heterogeneous ice nucleation—the example of K-rich feldspars
-<p>Ice formation on aerosol particles is a process of crucial importance to Earth’s climate and the environmental sciences, but it is not understood at the molecular level. This is partly because the nature of active sites, local surface features where ice growth commences, is still unclear. Here we report direct electron-microscopic observations of deposition growth of aligned ice crystals on <strong><span style="color:yellowgreen">feldspar</span></strong>, an atmospherically important component of mineral dust. Our molecular-scale computer simulations indicate that this alignment arises from the preferential nucleation of prismatic crystal planes of ice on high-energy (100) surface planes of <strong><span style="color:yellowgreen">feldspar</span></strong>. The microscopic patches of (100) surface, exposed at surface defects such as steps, cracks, and cavities, are thought to be responsible for the high ice nucleation efficacy of potassium (K)–<strong><span style="color:yellowgreen">feldspar</span></strong> particles.</p>
-http://sciencemag.org/cgi/content/abstract/355/6323/367
-10.1126/science.aai8034
-None
-

@@ -1,8 +1,0 @@
-1
-Science
-Double-trap measurement of the proton magnetic moment at 0.3 parts per billion precision
-<p>Precise knowledge of the fundamental properties of the proton is essential for our understanding of atomic structure as well as for precise tests of fundamental symmetries. We report on a direct high-precision measurement of the magnetic moment μ<sub>p</sub> of the proton in units of the nuclear magneton μ<sub>N</sub>. The result, μ<sub>p</sub> = 2.79284734462 (±0.00000000082) μ<sub>N</sub>, has a fractional precision of 0.3 parts per billion, improves the previous best measurement by a factor of 11, and is consistent with the currently accepted value. This was achieved with the use of an optimized double–Penning trap technique. Provided a similar measurement of the antiproton magnetic moment can be performed, this result will enable a test of the fundamental symmetry between matter and <strong><span style="color:yellowgreen">antimatt</span></strong>er in the baryonic sector at the 10<sup>−10</sup> level.</p>
-http://sciencemag.org/cgi/content/abstract/358/6366/1081
-10.1126/science.aan0207
-None
-

@@ -1,8 +1,0 @@
-1
-Science
-Impacts of historical warming on marine fisheries production
-<p>Climate change is altering habitats for marine fishes and invertebrates, but the net effect of these changes on potential food production is unknown. We used temperature-dependent population models to measure the influence of warming on the productivity of 235 populations of 124 species in 38 ecoregions. Some populations responded significantly positively (<i>n</i> = 9 populations) and others responded significantly negatively (<i>n</i> = 19 populations) to warming, with the direction and magnitude of the response explained by ecoregion, taxonomy, life history, and exploitation history. Hindcasts indicate that the maximum sustainable yield of the evaluated populations decreased by 4.1% from 1930 to 2010, with five ecoregions experiencing losses of 15 to 35%. Outcomes of fisheries management—including long-term food provisioning—will be improved by accounting for changing productivity in a warmer ocean.</p>
-http://sciencemag.org/cgi/content/abstract/363/6430/979
-10.1126/science.aau1758
-None
-

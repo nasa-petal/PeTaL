@@ -1,8 +1,0 @@
-2
-Science
-Extended gamma-ray sources around pulsars constrain the origin of the positron flux at Earth
-<p>The unexpectedly high flux of cosmic-ray positrons detected at Earth may originate from nearby astrophysical sources, <strong><span style="color:yellowgreen">dark matt</span></strong>er, or unknown processes of cosmic-ray secondary production. We report the detection, using the High-Altitude Water Cherenkov Observatory (HAWC), of extended tera–electron volt gamma-ray emission coincident with the locations of two nearby middle-aged pulsars (Geminga and PSR B0656+14). The HAWC observations demonstrate that these pulsars are indeed local sources of accelerated <strong><span style="color:yellowgreen">lepton</span></strong>s, but the measured tera–electron volt emission profile constrains the diffusion of particles away from these sources to be much slower than previously assumed. We demonstrate that the <strong><span style="color:yellowgreen">lepton</span></strong>s emitted by these objects are therefore unlikely to be the origin of the excess positrons, which may have a more exotic origin.</p>
-http://sciencemag.org/cgi/content/abstract/358/6365/911
-10.1126/science.aan4880
-None
-

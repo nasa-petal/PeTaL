@@ -1,8 +1,0 @@
-1
-Science
-Observation of coherent elastic neutrino-nucleus scattering
-<p>The coherent elastic scattering of neutrinos off nuclei has eluded detection for four decades, even though its predicted cross section is by far the largest of all low-energy neutrino couplings. This mode of interaction offers new opportunities to study neutrino properties and leads to a miniaturization of detector size, with potential technological applications. We observed this process at a 6.7σ confidence level, using a low-background, 14.6-kilogram CsI[Na] scintillator exposed to the neutrino emissions from the Spallation Neutron Source at Oak Ridge National Laboratory. Characteristic signatures in energy and time, predicted by the standard model for this process, were observed in high signal-to-background conditions. Improved constraints on nonstandard neutrino interactions with <strong><span style="color:yellowgreen">quark</span></strong>s are derived from this initial data set.</p>
-http://sciencemag.org/cgi/content/abstract/357/6356/1123
-10.1126/science.aao0990
-None
-

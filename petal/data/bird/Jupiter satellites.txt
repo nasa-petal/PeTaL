@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Resistance to DNA damage and enhanced DNA repair capacity in the hypoxia-tolerant blind mole rat <i>Spalax carmeli</i>
-<p><bold>Highlighted Article:</bold> The cells of the blind mole rat <i>Spalax <strong><span style="color:yellowgreen">carm</span></strong>eli</i> show enhanced DNA repair capacity and resistance to several genotoxic agents, which may contribute to its longevity and reduced cancer rates.</p>
-http://jeb.biologists.org/cgi/content/abstract/221/8/jeb174540
-10.1242/jeb.174540
-['Spalax', 'Spalax carmeli']
-

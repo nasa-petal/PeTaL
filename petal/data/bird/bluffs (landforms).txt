@@ -1,8 +1,0 @@
-1
-Science
-Peanut allergen–specific antibodies go public
-<p>Changes in the human environment and activities over the past few decades have caused an epidemic of food allergies (<i>1</i>). People suffering from allergies often feel that they live on a <strong><span style="color:yellowgreen">cliff</span></strong> edge, as the allergens to which they react are potentially fatal (<i>2</i>). For example, tiny amounts of peanut picked up on skin or contaminating other foods can be dangerous to peanut-sensitized individuals (<i>2</i>–<i>4</i>). Immunoglobulin E (IgE) antibodies mediate the allergic response. They bind to specific receptors on inflammatory immune cells: mast cells in mucosal tissues lining body surfaces and cavities, and basophils in the circulation. These cells mediate allergic responses triggered by specific antigens (allergens) that are recognized by IgE. B cells expressing IgG antibodies have long served as the paradigm for the development of B cells into antibody-secreting plasma cells in the immune response. Until recently, the far less abundant IgE-expressing B cells have proved to be elusive. On page 1306 of this issue, Croote <i>et al.</i> (<i>5</i>) have analyzed single B cells from six individuals with peanut allergy, which enabled the identification of the natural Ig heavy- and light-chain pairs from IgE-expressing B cells that are responsible for peanut allergy. With this information they produced recombinant antibodies, identified the peanut allergen–specific antibodies, and used site-directed mutagenesis to suppress their activity. The mutated antibodies could be used to treat peanut allergy.</p>
-http://sciencemag.org/cgi/content/summary/362/6420/1247
-10.1126/science.aav3709
-['peanut', 'human']
-

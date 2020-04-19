@@ -1,8 +1,0 @@
-1
-Science
-Ethane/ethylene separation in a metal-organic framework with iron-peroxo sites
-<p>The separation of ethane from its corresponding ethylene is an important, challenging, and energy-intensive process in the chemical industry. Here we report a microporous metal-organic framework, iron(III) peroxide 2,5-dioxido-1,4-benzenedicarboxylate [Fe<sub>2</sub>(O<sub>2</sub>)(dobdc) (dobdc<sup>4−</sup>: 2,5-dioxido-1,4-benzenedicarboxylate)], with iron (Fe)–peroxo sites for the preferential binding of ethane over ethylene and thus highly selective separation of C<sub>2</sub>H<sub>6</sub>/C<sub>2</sub>H<sub>4</sub>. Neutron powder diffraction studies and theoretical calculations demonstrate the key role of Fe-peroxo sites for the recognition of ethane. The high performance of Fe<sub>2</sub>(O<sub>2</sub>)(dobdc) for the ethane/ethylene separation has been validated by gas <strong><span style="color:yellowgreen">sorption</span></strong> isotherms, ideal adsorbed solution theory calculations, and simulated and experimental breakthrough curves. Through a fixed-bed column packed with this porous material, polymer-grade ethylene (99.99% pure) can be straightforwardly produced from ethane/ethylene mixtures during the first ad<strong><span style="color:yellowgreen">sorption</span></strong> cycle, demonstrating the potential of Fe<sub>2</sub>(O<sub>2</sub>)(dobdc) for this important industrial separation with a low energy cost under ambient conditions.</p>
-http://sciencemag.org/cgi/content/abstract/362/6413/443
-10.1126/science.aat0586
-None
-

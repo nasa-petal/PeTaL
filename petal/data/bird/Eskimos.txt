@@ -1,8 +1,0 @@
-1
-Science
-Quantitative analysis of population-scale family trees with millions of relatives
-<p>Family trees have vast applications in fields as diverse as genetics, <strong><span style="color:yellowgreen">anthropolog</span></strong>y, and economics. However, the collection of extended family trees is tedious and usually relies on resources with limited geographical scope and complex data usage restrictions. We collected 86 million profiles from publicly available online data shared by genealogy enthusiasts. After extensive cleaning and validation, we obtained population-scale family trees, including a single pedigree of 13 million individuals. We leveraged the data to partition the genetic architecture of human longevity and to provide insights into the geographical dispersion of families. We also report a simple digital procedure to overlay other data sets with our resource.</p>
-http://sciencemag.org/cgi/content/abstract/360/6385/171
-10.1126/science.aam9309
-['human']
-

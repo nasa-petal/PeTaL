@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Gut microbiota dictates the metabolic response of <i>Drosophila</i> to diet
-<p>Animal nutrition is profoundly influenced by the gut microbiota, but knowledge of the scope and core mechanisms of the underlying animal–microbiota interactions is fragmentary. To investigate the nutritional traits shaped by the gut microbiota of <i>Drosophila</i>, we determined the microbiota-dependent response of multiple metabolic and performance indices to systematically varied diet composition. Diet-dependent differences between <i>Drosophila</i> bearing its unmanipulated microbiota (conventional flies) and experimentally deprived of its microbiota (axenic flies) revealed evidence for: microbial sparing of dietary B vitamins, especially <strong><span style="color:yellowgreen">riboflavin</span></strong>, on low-yeast diets; microbial promotion of protein nutrition, particularly in females; and microbiota-mediated suppression of lipid/carbohydrate storage, especially on high sugar diets. The microbiota also sets the relationship between energy storage and body mass, indicative of microbial modulation of the host signaling networks that coordinate metabolism with body size. This analysis identifies the multiple impacts of the microbiota on the metabolism of <i>Drosophila</i>, and demonstrates that the significance of these different interactions varies with diet composition and host sex.</p>
-http://jeb.biologists.org/cgi/content/abstract/217/11/1894
-10.1242/jeb.101725
-['Animal', 'Drosophila']
-

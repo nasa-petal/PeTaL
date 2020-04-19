@@ -1,8 +1,0 @@
-1
-Science
-Fears of Ebola resurgence quickly dispelled in Liberia
-<p>On 23 April, an 11-year-old girl arrived at the F. J. Grant Memorial Hospital in Greenville, Liberia. She was suffering from headache, <strong><span style="color:yellowgreen">vomit</span></strong>ing, and diarrhea, and appeared mentally confused. An hour later she was dead. She was the first of dozens of patients who turned up at the hospital over the next days. All of them had attended a funeral and fears quickly spread that Ebola had returned to Liberia. But samples were rapidly tested and Ebola ruled out. In fact, the disease, which has sickened 30 people and killed 13, appears to be meningitis caused by <i>Neisseria meninigitidis</i>. The samples of four patients tested at the U.S. Centers for Disease Control and Prevention were positive for the bacterium.</p>
-http://sciencemag.org/cgi/content/summary/356/6338/575
-None
-['Neisseria']
-

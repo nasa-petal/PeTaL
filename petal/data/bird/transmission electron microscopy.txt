@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-Exocyst Subunit EXO70H4 Has a Specific Role in Callose Synthase Secretion and Silica Accumulation<xref><sup>1</sup></xref>
-<p>Biogenesis of the plant secondary cell wall involves many important aspects, such as phenolic compound deposition and often silica encrustation. Previously, we demonstrated the importance of the exocyst subunit EXO70H4 for biogenesis of the trichome secondary cell wall, namely for deposition of the autofluorescent and callose-rich cell wall layer. Here, we reveal that EXO70H4-driven cell wall biogenesis is constitutively active in the mature trichome, but also can be activated elsewhere upon pathogen attack, giving this study a broader significance with an overlap into phytopathology. To address the specificity of EXO70H4 among the EXO70 family, we complemented the <i>exo70H4-1</i> mutant by 18 different Arabidopsis (<i>Arabidopsis thaliana</i>) EXO70 paralogs subcloned under the EXO70H4 promoter. Only EXO70H4 had the capacity to rescue the <i>exo70H4</i>-<i>1</i> trichome phenotype. Callose deposition phenotype of <i>exo70H4-1</i> mutant is caused by impaired secretion of PMR4, a callose synthase responsible for the synthesis of callose in the trichome. PMR4 colocalizes with EXO70H4 on plasma membrane microdomains that do not develop in the <i>exo70H4-1</i> mutant. Using energy-dispersive x-ray <strong><span style="color:yellowgreen">microanalysi</span></strong>s, we show that both EXO70H4- and PMR4-dependent callose deposition in the trichome are essential for cell wall silicification.</p>
-http://plantphysiol.org/cgi/content/abstract/176/3/2040
-10.1104/pp.17.01693
-['Arabidopsis', 'Arabidopsis thaliana']
-

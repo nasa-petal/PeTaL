@@ -1,8 +1,0 @@
-4
-Science
-PIEZOs mediate neuronal sensing of blood pressure and the baroreceptor reflex
-<p>Activation of stretch-sensitive <strong><span style="color:yellowgreen">baroreceptor</span></strong> neurons exerts acute control over heart rate and blood pressure. Although this homeostatic baroreflex has been described for more than 80 years, the molecular identity of <strong><span style="color:yellowgreen">baroreceptor</span></strong> mechanosensitivity remains unknown. We discovered that mechanically activated ion channels PIEZO1 and PIEZO2 are together required for baroreception. Genetic ablation of both <i>Piezo1</i> and <i>Piezo2</i> in the nodose and petrosal sensory ganglia of mice abolished drug-induced baroreflex and aortic depressor nerve activity. Awake, behaving animals that lack <i>Piezos</i> had labile hypertension and increased blood pressure variability, consistent with phenotypes in <strong><span style="color:yellowgreen">baroreceptor</span></strong>-denervated animals and humans with baroreflex failure. Optogenetic activation of <i>Piezo2</i>-positive sensory afferents was sufficient to initiate baroreflex in mice. These findings suggest that PIEZO1 and PIEZO2 are the long-sought <strong><span style="color:yellowgreen">baroreceptor</span></strong> mechanosensors critical for acute blood pressure control.</p>
-http://sciencemag.org/cgi/content/abstract/362/6413/464
-10.1126/science.aau6324
-['animals']
-

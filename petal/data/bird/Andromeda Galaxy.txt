@@ -1,8 +1,0 @@
-1
-Science
-A whirling plane of satellite galaxies around Centaurus A challenges cold dark matter cosmology
-<p>The Milky Way and Andromeda galaxies are each surrounded by a thin plane of satellite dwarf galaxies that may be corotating. Cosmological simulations predict that most satellite galaxy systems are close to isotropic with random motions, so those two well-studied systems are often interpreted as rare statistical outliers. We test this assumption using the kinematics of satellite galaxies around the Centaurus A galaxy. Our statistical analysis reveals evidence for corotation in a narrow plane: Of the 16 Centaurus A satellites with kinematic data, 14 follow a coherent velocity pattern aligned with the long axis of their spatial distribution. In standard cosmological simulations, <0.5% of Centaurus A–like systems show such behavior. Corotating satellite systems may be common in the universe, challenging small-scale structure formation in the prevailing cosmological paradigm.</p>
-http://sciencemag.org/cgi/content/abstract/359/6375/534
-10.1126/science.aao1858
-['Andromeda']
-

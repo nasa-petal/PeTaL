@@ -1,8 +1,0 @@
-1
-Science
-Cuban panel claims stress caused mystery illnesses
-<p>After a 9-month probe hampered by lack of access to medical records, a panel of Cuban scientists this week declared that U.S. diplomats here likely suffered a "collective psychogenic disorder" earlier this year, not the deliberate "health attack" that the U.S. Department of State has claimed. Based on media reports about the mysterious symptoms, including hearing loss, <strong><span style="color:yellowgreen">nausea</span></strong>, vertigo, and memory lapses, some U.S. scientists had already reached similar conclusions. That a panel appointed by the Cuban government dismisses the U.S. claims may not be surprising, and the Federal Bureau of Investigation is still leading what State Department officials have described as a "vigorous" multiagency investigation. But the Cuban report summary, obtained by <i>Science</i>, reveals intriguing details. For instance, a high-frequency noise that some had identified as a possible "sonic weapon" may have been crickets chirping.</p>
-http://sciencemag.org/cgi/content/summary/358/6368/1236
-None
-['crickets']
-

@@ -1,8 +1,0 @@
-1
-DNA Research
-Draft genome sequence of an inbred line of <i>Chenopodium quinoa</i>, an allotetraploid crop with great environmental adaptability and outstanding nutritional properties
-<p><i>Chenopodium quinoa</i> Willd. (quinoa) originated from the Andean region of South America, and is a pseudocereal crop of the Amaranthaceae family. Quinoa is emerging as an important crop with the potential to contribute to food security worldwide and is considered to be an optimal food source for <strong><span style="color:yellowgreen">astronaut</span></strong>s, due to its outstanding nutritional profile and ability to tolerate stressful environments. Furthermore, plant pathologists use quinoa as a representative diagnostic host to identify virus species. However, molecular analysis of quinoa is limited by its genetic heterogeneity due to outcrossing and its genome complexity derived from allotetraploidy. To overcome these obstacles, we established the inbred and standard quinoa accession Kd that enables rigorous molecular analysis, and presented the draft genome sequence of Kd, using an optimized combination of high-throughput next generation sequencing on the Illumina Hiseq 2500 and PacBio RS II sequencers. The <i>de novo</i> genome assembly contained 25 k scaffolds consisting of 1 Gbp with N50 length of 86 kbp. Based on these data, we constructed the free-access Quinoa Genome DataBase (QGDB). Thus, these findings provide insights into the mechanisms underlying agronomically important traits of quinoa and the effect of allotetraploidy on genome evolution.</p>
-http://dnaresearch.oxfordjournals.org/cgi/content/abstract/23/6/535
-10.1093/dnares/dsw037
-['Amaranthaceae', 'Chenopodium', 'Chenopodium quinoa', 'quinoa']
-

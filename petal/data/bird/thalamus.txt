@@ -1,8 +1,0 @@
-1
-Development
-VEGF-A and neuropilin 1 (NRP1) shape axon projections in the developing CNS via dual roles in neurons and blood vessels
-<p><bold>Summary:</bold> NRP1 plays a dual role in retinal ganglion cells and in vascular endothelial cells to organise axons along the optic pathway between the mouse retina and <strong><span style="color:yellowgreen">diencephalon</span></strong>.</p>
-http://dev.biologists.org/cgi/content/abstract/144/13/2504
-10.1242/dev.151621
-None
-

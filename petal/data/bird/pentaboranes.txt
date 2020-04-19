@@ -1,8 +1,0 @@
-1
-Science
-A catalytic fluoride-rebound mechanism for C(sp<sup>3</sup>)-CF<sub>3</sub> bond formation
-<p>The biological properties of trifluoromethyl compounds have led to their ubiquity in pharmaceuticals, yet their chemical properties have made their preparation a substantial challenge, necessitating innovative chemical solutions. We report the serendipitous discovery of a <strong><span style="color:yellowgreen">boran</span></strong>e-catalyzed formal C(sp<sup>3</sup>)-CF<sub>3</sub> reductive elimination from Au(III) that accesses these compounds by a distinct mechanism proceeding via fluoride abstraction, migratory insertion, and C-F reductive elimination to achieve a net C-C bond construction. The parent bis(trifluoromethyl)Au(III) complexes tolerate a surprising breadth of synthetic protocols, enabling the synthesis of complex organic derivatives without cleavage of the Au-C bond. This feature, combined with the “fluoride-rebound” mechanism, was translated into a protocol for the synthesis of <sup>18</sup>F-radiolabeled aliphatic CF<sub>3</sub>-containing compounds, enabling the preparation of potential tracers for use in positron emission tomography.</p>
-http://sciencemag.org/cgi/content/abstract/356/6344/1272
-10.1126/science.aan1411
-None
-

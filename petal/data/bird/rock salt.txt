@@ -1,8 +1,0 @@
-1
-Science
-Two-billion-year-old evaporites capture Earth’s great oxidation
-<p>Major changes in atmospheric and ocean chemistry occurred in the Paleoproterozoic era (2.5 to 1.6 billion years ago). Increasing oxidation dramatically changed Earth’s surface, but few quantitative constraints exist on this important transition. This study describes the sedimentology, mineralogy, and geochemistry of a 2-billion-year-old, ~800-meter-thick evaporite succession from the Onega Basin in Russian Karelia. The deposit consists of a basal unit dominated by <strong><span style="color:yellowgreen">halit</span></strong>e (~100 meters) followed by units dominated by anhydrite-magnesite (~500 meters) and dolomite-magnesite (~200 meters). The evaporite minerals robustly constrain marine sulfate concentrations to at least 10 millimoles per kilogram of water, representing an oxidant reservoir equivalent to more than 20% of the modern ocean-atmosphere oxidizing capacity. These results show that substantial amounts of surface oxidant accumulated during this critical transition in Earth’s oxygenation.</p>
-http://sciencemag.org/cgi/content/abstract/360/6386/320
-10.1126/science.aar2687
-None
-

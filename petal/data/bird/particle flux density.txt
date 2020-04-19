@@ -1,8 +1,0 @@
-2
-Science
-Supersymmetric laser arrays
-<p>Scaling up the <strong><span style="color:yellowgreen">radianc</span></strong>e of coupled laser arrays has been a long-standing challenge in photonics. In this study, we demonstrate that notions from supersymmetry—a theoretical framework developed in high-energy physics—can be strategically used in optics to address this problem. In this regard, a supersymmetric laser array is realized that is capable of emitting exclusively in its fundamental transverse mode in a stable manner. Our results not only pave the way toward devising new schemes for scaling up <strong><span style="color:yellowgreen">radianc</span></strong>e in integrated lasers, but also, on a more fundamental level, could shed light on the intriguing synergy between non-Hermiticity and supersymmetry.</p>
-http://sciencemag.org/cgi/content/abstract/363/6427/623
-10.1126/science.aav5103
-None
-

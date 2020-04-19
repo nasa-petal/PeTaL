@@ -1,8 +1,0 @@
-2
-Science Signaling
-Structural basis for the preference of the <i>Arabidopsis thaliana</i> phosphatase RLPH2 for tyrosine-phosphorylated substrates
-<p>Despite belonging to the phosphoserine- and phosphothreonine-specific phosphoprotein phosphatase (PPP) family, <i>Arabidopsis thaliana Rhizobiales</i>-like phosphatase 2 (RLPH2) strongly prefers substrates bearing phosphorylated tyrosine residues. We solved the structures of RLPH2 crystallized in the presence or absence of sodium <strong><span style="color:yellowgreen">tungstat</span></strong>e. These structures revealed the presence of a central domain that forms a binding site for two divalent metal ions that closely resembles that of other PPP-family enzymes. Unique structural elements from two flanking domains suggest a mechanism for the selective dephosphorylation of phosphotyrosine residues. Cocrystallization with the phosphate mimetic <strong><span style="color:yellowgreen">tungstat</span></strong>e also suggests how positively charged residues that are highly conserved in the RLPH2 class form an additional pocket that is specific for a phosphothreonine residue located near the phosphotyrosine residue that is bound to the active site. Site-directed mutagenesis confirmed that this auxiliary recognition element facilitates the recruitment of dual-phosphorylated substrates containing a pTxpY motif.</p>
-http://classic.stke.sciencemag.org/cgi/content/summary/11/524/eaan8804
-10.1126/scisignal.aan8804
-['Arabidopsis', 'Arabidopsis thaliana', 'Rhizobiales']
-

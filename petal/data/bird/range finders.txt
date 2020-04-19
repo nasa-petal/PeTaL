@@ -1,8 +1,0 @@
-1
-Science
-Multiplatform evaluation of global trends in wind speed and wave height
-<p>In this study, global satellite data were analyzed to determine trends in oceanic wind speed and significant wave height over the 33-year period from 1985 to 2018. The analysis uses an extensive database obtained from 31 satellite missions comprising three types of instruments—<strong><span style="color:yellowgreen">altimet</span></strong>ers, radiometers, and scatterometers. The analysis shows small increases in mean wind speed and significant wave height over this period, with larger increases in extreme conditions (90th percentiles). The largest increases occur in the Southern Ocean. Confidence in the results is strengthened because the wind speed trends are confirmed by all three satellite systems. An extensive set of sensitivity analyses confirms that both the mean and 90th percentile trends are robust, with only small impacts caused by satellite calibration and sampling patterns.</p>
-http://sciencemag.org/cgi/content/abstract/364/6440/548
-10.1126/science.aav9527
-None
-

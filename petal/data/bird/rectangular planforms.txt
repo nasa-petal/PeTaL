@@ -1,8 +1,0 @@
-1
-Science
-Global extent of rivers and streams
-<p>The turbulent surfaces of rivers and streams are natural hotspots of biogeochemical exchange with the atmosphere. At the global scale, the total river-atmosphere flux of trace gasses such as carbon dioxide depends on the proportion of Earth’s surface that is covered by the fluvial network, yet the total surface area of rivers and streams is poorly constrained. We used a global database of <strong><span style="color:yellowgreen">planform</span></strong> river hydromorphology and a statistical approach to show that global river and stream surface area at mean annual discharge is 773,000 ± 79,000 square kilometers (0.58 ± 0.06%) of Earth’s nonglaciated land surface, an area 44 ± 15% larger than previous spatial estimates. We found that rivers and streams likely play a greater role in controlling land-atmosphere fluxes than is currently represented in global carbon budgets.</p>
-http://sciencemag.org/cgi/content/abstract/361/6402/585
-10.1126/science.aat0636
-None
-

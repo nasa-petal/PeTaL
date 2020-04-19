@@ -1,8 +1,0 @@
-1
-Science
-Subthreshold Schottky-barrier thin-film transistors with ultralow power and high intrinsic gain
-<p>The quest for low power becomes highly compelling in newly emerging application areas related to wearable devices in the Internet of Things. Here, we report on a Schottky-barrier indium-gallium-zinc-oxide thin-film transistor operating in the deep subthreshold regime (i.e., near the OFF state) at low supply voltages (<1 volt) and ultralow power (<1 nanowatt). By using a Schottky-barrier at the source and drain contacts, the current-voltage characteristics of the transistor were virtually channel-length independent with an infinite output resistance. It exhibited high intrinsic gain (>400) that was both bias and geometry independent. The transistor reported here is useful for sensor interface circuits in wearable devices where high current sensitivity and ultralow power are vital for battery-less operation.</p>
-http://sciencemag.org/cgi/content/abstract/354/6310/302
-10.1126/science.aah5035
-None
-

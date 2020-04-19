@@ -1,8 +1,0 @@
-1
-Biology Open
-Investigation of span-chordwise bending anisotropy of honeybee forewings
-<p><bold>Summary:</bold> The span-chordwise bending anisotropy is due to the distribution of resilin patches, the <strong><span style="color:yellowgreen">corrug</span></strong>ation along the span and the leading edge vein of the venation.</p>
-http://bio.biologists.org/cgi/content/abstract/6/5/619
-10.1242/bio.022541
-None
-

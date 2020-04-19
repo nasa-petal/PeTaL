@@ -1,8 +1,0 @@
-3
-Science
-Manipulation of Discrete Nanostructures by Selective Modulation of Noncovalent Forces
-<sec><title>Nanotube Engineering</title><p>In general, the reversible self-assembly of nanotubes through noncovalent bonding either gives fully assembled or fully disassembled products. <bold>Fukino <i>et al.</i></bold> (p. 499, published online 10 April; see the Perspective by <bold>Hudson and Manners</bold>) developed a system with an intermediate possibility. Hollow nanotube structures were assembled from <strong><span style="color:yellowgreen">ferrocen</span></strong>e-based tetratopic pyridyl ligands mixed with AgBF<sub>4</sub>. Through oxidation of the <strong><span style="color:yellowgreen">ferrocen</span></strong>e groups, the tubes could be cut into stable, large rings and then reversibly reassembled into nanotubes by reduction of the <strong><span style="color:yellowgreen">ferrocen</span></strong>e groups.</p></sec>
-http://sciencemag.org/cgi/content/abstract/344/6183/499
-10.1126/science.1252120
-None
-

@@ -1,8 +1,0 @@
-1
-Science
-Selective formation of γ-lactams via C–H amidation enabled by tailored iridium catalysts
-<p>Intramolecular insertion of metal nitrenes into carbon-hydrogen bonds to form γ-lactam rings has traditionally been hindered by competing <strong><span style="color:yellowgreen">isocyan</span></strong>ate formation. We report the application of theory and mechanism studies to optimize a class of pentamethylcyclopentadienyl iridium(III) catalysts for suppression of this competing pathway. Modulation of the stereoelectronic properties of the auxiliary bidentate ligands to be more electron-donating was suggested by density functional theory calculations to lower the C–H insertion barrier favoring the desired reaction. These catalysts transform a wide range of 1,4,2-dioxazol-5-ones, carbonylnitrene precursors easily accessible from carboxylic acids, into the corresponding γ-lactams via sp<sup>3</sup> and sp<sup>2</sup> C–H amidation with exceptional selectivity. The power of this method was further demonstrated by the successful late-stage functionalization of amino acid derivatives and other bioactive molecules.</p>
-http://sciencemag.org/cgi/content/abstract/359/6379/1016
-10.1126/science.aap7503
-None
-

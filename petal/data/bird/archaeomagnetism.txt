@@ -1,8 +1,0 @@
-1
-Science
-Lifetime of the solar nebula constrained by meteorite paleomagnetism
-<p>A key stage in planet formation is the evolution of a gaseous and magnetized solar nebula. However, the lifetime of the nebular magnetic field and nebula are poorly constrained. We present <strong><span style="color:yellowgreen">paleomagnet</span></strong>ic analyses of volcanic angrites demonstrating that they formed in a near-zero magnetic field (<0.6 microtesla) at 4563.5 ± 0.1 million years ago, ~3.8 million years after solar system formation. This indicates that the solar nebula field, and likely the nebular gas, had dispersed by this time. This sets the time scale for formation of the gas giants and planet migration. Furthermore, it supports formation of chondrules after 4563.5 million years ago by non-nebular processes like planetesimal collisions. The core dynamo on the angrite parent body did not initiate until about 4 to 11 million years after solar system formation.</p>
-http://sciencemag.org/cgi/content/abstract/355/6325/623
-10.1126/science.aaf5043
-None
-

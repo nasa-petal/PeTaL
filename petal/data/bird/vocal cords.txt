@@ -1,8 +1,0 @@
-1
-Science
-How tobacco smoke changes the (epi)genome
-<p>Worldwide, more than 1 billion people are tobacco smokers. Cigarette smoking drastically increases the risk of lung cancer. However, many other cancer types also occur more frequently in smokers than in nonsmokers, including cancers of the oral cavity, <strong><span style="color:yellowgreen">larynx</span></strong>, pharynx, esophagus, liver, cervix, pancreas, bladder, and kidney. Genome sequencing efforts are beginning to provide more sophisticated clues as to the processes at work that are shaping the mutational landscape of tumors. On page 618 of this issue, Alexandrov <i>et al.</i> (<i>1</i>) focused specifically on smoking-associated cancers and dissected genetic and epigenetic differences in tumors between smokers and lifetime nonsmokers.</p>
-http://sciencemag.org/cgi/content/summary/354/6312/549
-10.1126/science.aal2114
-['tobacco']
-

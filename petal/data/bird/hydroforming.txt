@@ -1,8 +1,0 @@
-1
-Science
-Selective oxidative dehydrogenation of propane to propene using boron nitride catalysts
-<p>The exothermic oxidative <strong><span style="color:yellowgreen">dehydrogen</span></strong>ation of propane reaction to generate propene has the potential to be a game-changing technology in the chemical industry. However, even after decades of research, selectivity to propene remains too low to be commercially attractive because of overoxidation of propene to thermodynamically favored CO<sub>2</sub>. Here, we report that hexagonal boron nitride and boron nitride nanotubes exhibit unique and hitherto unanticipated catalytic properties, resulting in great selectivity to olefins. As an example, at 14% propane conversion, we obtain selectivity of 79% propene and 12% ethene, another desired alkene. Based on catalytic experiments, spectroscopic insights, and ab initio modeling, we put forward a mechanistic hypothesis in which oxygen-terminated armchair boron nitride edges are proposed to be the catalytic active sites.</p>
-http://sciencemag.org/cgi/content/abstract/354/6319/1570
-10.1126/science.aaf7885
-None
-

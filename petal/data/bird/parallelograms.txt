@@ -1,8 +1,0 @@
-4
-Science
-Giant polarization in super-tetragonal thin films through interphase strain
-<p>Strain engineering has emerged as a powerful tool to enhance the performance of known functional materials. Here we demonstrate a general and practical method to obtain super-<strong><span style="color:yellowgreen">tetragon</span></strong>ality and giant polarization using interphase strain. We use this method to create an out-of-plane–to–in-plane lattice parameter ratio of 1.238 in epitaxial composite thin films of <strong><span style="color:yellowgreen">tetragon</span></strong>al lead titanate (PbTiO<sub>3</sub>), compared to 1.065 in bulk. These thin films with super-<strong><span style="color:yellowgreen">tetragon</span></strong>al structure possess a giant remanent polarization, 236.3 microcoulombs per square centimeter, which is almost twice the value of known ferroelectrics. The super-<strong><span style="color:yellowgreen">tetragon</span></strong>al phase is stable up to 725°C, compared to the bulk transition temperature of 490°C. The interphase-strain approach could enhance the physical properties of other functional materials.</p>
-http://sciencemag.org/cgi/content/abstract/361/6401/494
-10.1126/science.aan2433
-None
-

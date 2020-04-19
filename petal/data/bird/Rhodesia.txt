@@ -1,8 +1,0 @@
-1
-Science
-Sulfur isotopes in diamonds reveal differences in continent construction
-<p>Neoproterozoic West African diamonds contain sulfide inclusions with mass-independently fractionated (MIF) sulfur isotopes that trace Archean surficial signatures into the mantle. Two episodes of subduction are recorded in these West African sulfide inclusions: thickening of the continental lithosphere through horizontal processes around 3 billion years ago and reworking and diamond growth around 650 million years ago. We find that the sulfur isotope record in worldwide diamond inclusions is consistent with changes in tectonic processes that formed the continental lithosphere in the Archean. Slave craton diamonds that formed 3.5 billion years ago do not contain any MIF sulfur. Younger diamonds from the Kaapvaal, Zimbabwe, and West African cratons do contain MIF sulfur, which suggests craton construction by advective thickening of mantle lithosphere through conventional subduction-style horizontal tectonics.</p>
-http://sciencemag.org/cgi/content/abstract/364/6438/383
-10.1126/science.aaw9548
-None
-

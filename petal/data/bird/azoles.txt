@@ -1,8 +1,0 @@
-1
-Science
-Atomically dispersed Fe<sup>3+</sup> sites catalyze efficient CO<sub>2</sub> electroreduction to CO
-<p>Currently, the most active electrocatalysts for the conversion of CO<sub>2</sub> to CO are gold-based nanomaterials, whereas non–precious metal catalysts have shown low to modest activity. Here, we report a catalyst of dispersed single-atom iron sites that produces CO at an overpotential as low as 80 millivolts. Partial current density reaches 94 milliamperes per square centimeter at an overpotential of 340 millivolts. Operando x-ray absorption spectroscopy revealed the active sites to be discrete Fe<sup>3+</sup> ions, coordinated to <strong><span style="color:yellowgreen">pyrrol</span></strong>ic nitrogen (N) atoms of the N-doped carbon support, that maintain their +3 oxidation state during electrocatalysis, probably through electronic coupling to the conductive carbon support. Electrochemical data suggest that the Fe<sup>3+</sup> sites derive their superior activity from faster CO<sub>2</sub> adsorption and weaker CO absorption than that of conventional Fe<sup>2+</sup> sites.</p>
-http://sciencemag.org/cgi/content/abstract/364/6445/1091
-10.1126/science.aaw7515
-None
-

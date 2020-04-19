@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-A Major Latex-Like Protein Is a Key Factor in Crop Contamination by Persistent Organic Pollutants<xref><sup>1</sup></xref><xref><sup>[W]</sup></xref><xref><sup>[OA]</sup></xref>
-<p><i>A <strong><span style="color:yellowgreen">latex</span></strong>-like protein binds and transports polychlorinated biphenyls into the aerial part of plants.</i></p>
-http://plantphysiol.org/cgi/content/abstract/161/4/2128
-10.1104/pp.112.213645
-['plants']
-

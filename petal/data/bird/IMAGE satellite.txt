@@ -1,8 +1,0 @@
-2
-Science
-Structure, force balance, and topology of Earth’s magnetopause
-<p>The <strong><span style="color:yellowgreen">magnetopaus</span></strong>e deflects the solar wind plasma and confines Earth’s magnetic field. We combine measurements made by the four spacecraft of the Magnetospheric Multiscale mission to demonstrate how the plasma and magnetic forces at the boundary affect the interaction between the shocked solar wind and Earth’s magnetosphere. We compare these forces with the plasma pressure and examine the electron distribution function. We find that the <strong><span style="color:yellowgreen">magnetopaus</span></strong>e has sublayers with thickness comparable to the ion scale. Small pockets of low magnetic field strength, small radius of curvature, and high electric current mark the electron diffusion region. The flow of electrons, parallel and antiparallel to the magnetic field, reveals a complex topology with the creation of magnetic ropes at the boundary.</p>
-http://sciencemag.org/cgi/content/abstract/356/6341/960
-10.1126/science.aag3112
-None
-

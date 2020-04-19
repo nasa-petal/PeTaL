@@ -1,8 +1,0 @@
-1
-Science
-Ancient steroids establish the Ediacaran fossil <i>Dickinsonia</i> as one of the earliest animals
-<p>The enigmatic Ediacara biota (571 million to 541 million years ago) represents the first macroscopic complex organisms in the geological record and may hold the key to our understanding of the origin of animals. Ediacaran macrofossils are as “strange as life on another planet” and have evaded taxonomic classification, with interpretations ranging from marine animals or giant single-celled protists to terrestrial <strong><span style="color:yellowgreen">lichen</span></strong>s. Here, we show that lipid biomarkers extracted from organically preserved Ediacaran macrofossils unambiguously clarify their phylogeny. <i>Dickinsonia</i> and its relatives solely produced cholesteroids, a hallmark of animals. Our results make these iconic members of the Ediacara biota the oldest confirmed macroscopic animals in the rock record, indicating that the appearance of the Ediacara biota was indeed a prelude to the Cambrian explosion of animal life.</p>
-http://sciencemag.org/cgi/content/abstract/361/6408/1246
-10.1126/science.aat7228
-['animals']
-

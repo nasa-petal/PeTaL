@@ -1,8 +1,0 @@
-1
-Science
-Mars’ atmospheric history derived from upper-atmosphere measurements of <sup>38</sup>Ar/<sup>36</sup>Ar
-<p>The history of Mars’ atmosphere is important for understanding the geological evolution and potential habitability of the planet. We determine the amount of gas lost to space through time using measurements of the upper-atmospheric structure made by the Mars Atmosphere and Volatile Evolution (MAVEN) spacecraft. We derive the structure of <sup>38</sup>Ar/<sup>36</sup>Ar between the homopause and exobase altitudes. Fractionation of argon occurs as a result of loss of gas to space by pickup-ion <strong><span style="color:yellowgreen">sputter</span></strong>ing, which preferentially removes the lighter atom. The measurements require that 66% of the atmospheric argon has been lost to space. Thus, a large fraction of Mars’ atmospheric gas has been lost to space, contributing to the transition in climate from an early, warm, wet environment to today’s cold, dry atmosphere.</p>
-http://sciencemag.org/cgi/content/abstract/355/6332/1408
-10.1126/science.aai7721
-None
-

@@ -1,8 +1,0 @@
-2
-Science
-Early spectra of the gravitational wave source GW170817: Evolution of a neutron star merger
-<p>On 17 August 2017, Swope Supernova Survey 2017a (SSS17a) was discovered as the optical counterpart of the binary neutron star gravitational wave event GW170817. We report time-series spectroscopy of SSS17a from 11.75 hours until 8.5 days after the merger. Over the first hour of observations, the ejecta rapidly expanded and cooled. Applying blackbody fits to the spectra, we measured the <strong><span style="color:yellowgreen">photospher</span></strong>e cooling from [Formula] to [Formula] kelvin, and determined a <strong><span style="color:yellowgreen">photospher</span></strong>ic velocity of roughly 30% of the speed of light. The spectra of SSS17a began displaying broad features after 1.46 days and evolved qualitatively over each subsequent day, with distinct blue (early-time) and red (late-time) components. The late-time component is consistent with theoretical models of r-process–enriched neutron star ejecta, whereas the blue component requires high-velocity, lanthanide-free material.</p>
-http://sciencemag.org/cgi/content/abstract/358/6370/1574
-10.1126/science.aaq0186
-None
-

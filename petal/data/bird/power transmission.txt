@@ -1,8 +1,0 @@
-2
-Science
-Electrified methane reforming: A compact approach to greener industrial hydrogen production
-<p>Electrification of conventionally fired chemical reactors has the potential to reduce CO<sub>2</sub> emissions and provide flexible and compact heat generation. Here, we describe a disruptive approach to a fundamental process by integrating an electrically heated catalytic structure directly into a steam-methane–reforming (SMR) reactor for hydrogen production. Intimate contact between the electric heat source and the reaction site drives the reaction close to thermal equilibrium, increases catalyst utilization, and limits unwanted byproduct formation. The integrated design with small characteristic length scales allows compact reactor designs, potentially 100 times smaller than current reformer platforms. Electrification of SMR offers a strong platform for new reactor design, scale, and implementation opportunities. Implemented on a global scale, this could correspond to a reduction of nearly 1% of all CO<sub>2</sub> emissions.</p>
-http://sciencemag.org/cgi/content/abstract/364/6442/756
-10.1126/science.aaw8775
-None
-

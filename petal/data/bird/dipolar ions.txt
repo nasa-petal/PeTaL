@@ -1,8 +1,0 @@
-1
-Science
-Phosphoethanolamine cellulose: A naturally produced chemically modified cellulose
-<p>Cellulose is a major contributor to the chemical and mechanical properties of plants and assumes structural roles in bacterial communities termed biofilms. We find that <i>Escherichia coli</i> produces chemically modified cellulose that is required for extracellular matrix assembly and biofilm architecture. Solid-state nuclear magnetic resonance spectroscopy of the intact and insoluble material elucidates the <strong><span style="color:yellowgreen">zwitterion</span></strong>ic phosphoethanolamine modification that had evaded detection by conventional methods. Installation of the phosphoethanolamine group requires BcsG, a proposed phosphoethanolamine transferase, with biofilm-promoting cyclic diguanylate monophosphate input through a BcsE-BcsF-BcsG transmembrane signaling pathway. The <i>bcsEFG</i> operon is present in many bacteria, including <i>Salmonella</i> species, that also produce the modified cellulose. The discovery of phosphoethanolamine cellulose and the genetic and molecular basis for its production offers opportunities to modulate its production in bacteria and inspires efforts to biosynthetically engineer alternatively modified cellulosic materials.</p>
-http://sciencemag.org/cgi/content/abstract/359/6373/334
-10.1126/science.aao4096
-['Escherichia', 'Escherichia coli', 'Salmonella', 'plants']
-

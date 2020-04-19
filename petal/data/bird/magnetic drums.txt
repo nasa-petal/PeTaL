@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Woodpecker drumming behavior is linked to the elevated expression of genes that encode calcium handling proteins in the neck musculature
-<p><bold>Highlighted Article:</bold> Drumming behavior in woodpeckers is linked to the increased expression of genes that encode proteins related to calcium trafficking, specifically in the birds' neck musculature.</p>
-http://jeb.biologists.org/cgi/content/abstract/221/15/jeb180190
-10.1242/jeb.180190
-None
-

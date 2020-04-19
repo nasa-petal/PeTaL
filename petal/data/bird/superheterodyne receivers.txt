@@ -1,8 +1,0 @@
-1
-Science
-Measurement of a superconducting qubit with a microwave photon counter
-<p>Fast, high-fidelity measurement is a key ingredient for quantum error correction. Conventional approaches to the measurement of superconducting qubits, involving linear amplification of a microwave probe tone followed by <strong><span style="color:yellowgreen">heterodyn</span></strong>e detection at room temperature, do not scale well to large system sizes. We introduce an approach to measurement based on a microwave photon counter demonstrating raw single-shot measurement fidelity of 92%. Moreover, the intrinsic damping of the photon counter is used to extract the energy released by the measurement process, allowing repeated high-fidelity quantum nondemolition measurements. Our scheme provides access to the classical outcome of projective quantum measurement at the millikelvin stage and could form the basis for a scalable quantum-to-classical interface.</p>
-http://sciencemag.org/cgi/content/abstract/361/6408/1239
-10.1126/science.aat4625
-None
-

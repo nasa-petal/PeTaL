@@ -1,8 +1,0 @@
-2
-PLANT PHYSIOLOGY
-A Role for the F-Box Protein HAWAIIAN SKIRT in Plant microRNA Function
-<p>As regulators of gene expression in multicellular organisms, microRNAs (miRNAs) are crucial for growth and development. Although a plethora of factors involved in their biogenesis and action in Arabidopsis (<i>Arabidopsis thaliana</i>) has been described, these processes and their fine-tuning are not fully understood. Here, we used plants expressing an artificial miRNA target mimic (MIM) to screen for negative regulators of miR156. We identified a new mutant allele of the F-box gene <i>HAWAIIAN <strong><span style="color:yellowgreen">skirt</span></strong></i> (<i>HWS</i>; At3G61590), <i>hws</i>-<i>5</i>, as a suppressor of the <i>MIM156</i>-induced developmental and molecular phenotypes. In <i>hws</i> plants, levels of some endogenous miRNAs are increased and their mRNA targets decreased. Plants constitutively expressing full-length HWS—but not a truncated version lacking the F-box domain—display morphological and molecular phenotypes resembling those of mutants defective in miRNA biogenesis and activity. In combination with such mutants, <i>hws</i> loses its delayed floral organ abscission (“<strong><span style="color:yellowgreen">skirt</span></strong>”) phenotype, suggesting epistasis. Also, the <i>hws</i> transcriptome profile partially resembles those of well-known miRNA mutants <i>hyl1</i>-<i>2</i>, <i>se</i>-<i>3</i>, and <i>ago1</i>-<i>27</i>, pointing to a role in a common pathway. We thus propose HWS as a novel, F-box dependent factor involved in miRNA function.</p>
-http://plantphysiol.org/cgi/content/abstract/176/1/730
-10.1104/pp.17.01313
-['Arabidopsis', 'Arabidopsis thaliana', 'plants']
-

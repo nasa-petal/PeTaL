@@ -1,8 +1,0 @@
-5
-Science
-Lectins modulate the microbiota of social amoebae
-<p>The social <strong><span style="color:yellowgreen">amoeba</span></strong> <i>Dictyostelium discoideum</i> maintains a microbiome during multicellular development; bacteria are carried in migrating slugs and as endosymbionts within <strong><span style="color:yellowgreen">amoeba</span></strong>e and spores. Bacterial carriage and endosymbiosis are induced by the secreted lectin discoidin I that binds bacteria, protects them from extracellular killing, and alters their retention within <strong><span style="color:yellowgreen">amoeba</span></strong>e. This altered handling of bacteria also occurs with bacteria coated by plant lectins and leads to DNA transfer from bacteria to <strong><span style="color:yellowgreen">amoeba</span></strong>e. Thus, lectins alter the cellular response of <i>D. discoideum</i> to bacteria to establish the <strong><span style="color:yellowgreen">amoeba</span></strong>e’s microbiome. Mammalian cells can also maintain intracellular bacteria when presented with bacteria coated with lectins, so heterologous lectins may induce endosymbiosis in animals. Our results suggest that endogenous or environmental lectins may influence microbiome homeostasis across eukaryotic phylogeny.</p>
-http://sciencemag.org/cgi/content/abstract/361/6400/402
-10.1126/science.aat2058
-['animals']
-

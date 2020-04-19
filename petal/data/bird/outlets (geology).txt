@@ -1,8 +1,0 @@
-1
-Science
-The genomic landscape of rapid repeated evolutionary adaptation to toxic pollution in wild fish
-<p>Atlantic killifish populations have rapidly adapted to normally lethal levels of pollution in four urban <strong><span style="color:yellowgreen">estuari</span></strong>es. Through analysis of 384 whole killifish genome sequences and comparative transcriptomics in four pairs of sensitive and tolerant populations, we identify the aryl hydrocarbon receptor–based signaling pathway as a shared target of selection. This suggests evolutionary constraint on adaptive solutions to complex toxicant mixtures at each site. However, distinct molecular variants apparently contribute to adaptive pathway modification among tolerant populations. Selection also targets other toxicity-mediating genes and genes of connected signaling pathways; this indicates complex tolerance phenotypes and potentially compensatory adaptations. Molecular changes are consistent with selection on standing genetic variation. In killifish, high nucleotide diversity has likely been a crucial substrate for selective sweeps to propel rapid adaptation.</p>
-http://sciencemag.org/cgi/content/abstract/354/6317/1305
-10.1126/science.aah4993
-['fish']
-

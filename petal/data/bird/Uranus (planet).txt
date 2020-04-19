@@ -1,8 +1,0 @@
-1
-Science
-Fluorine-programmed nanozipping to tailored nanographenes on rutile TiO<sub>2</sub> surfaces
-<p>The rational synthesis of nanographenes and carbon nanoribbons directly on nonmetallic surfaces has been an elusive goal for a long time. We report that activation of the carbon (C)–fluorine (F) bond is a reliable and versatile tool enabling intramolecular aryl-aryl coupling directly on metal oxide surfaces. A challenging multistep transformation enabled by C–F bond activation led to a dominolike coupling that yielded tailored nanographenes directly on the rutile <strong><span style="color:yellowgreen">titania</span></strong> surface. Because of efficient regioselective zipping, we obtained the target nanographenes from flexible precursors. Fluorine positions in the precursor structure unambiguously dictated the running of the “zipping program,” resulting in the rolling up of oligophenylene chains. The high efficiency of the hydrogen fluoride zipping makes our approach attractive for the rational synthesis of nanographenes and nanoribbons directly on insulating and semiconducting surfaces.</p>
-http://sciencemag.org/cgi/content/abstract/363/6422/57
-10.1126/science.aav4954
-None
-

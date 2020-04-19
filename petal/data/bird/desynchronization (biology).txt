@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-The effects of extended crawling on the physiology and swim performance of loggerhead and green sea turtle hatchlings
-<p><bold>Summary:</bold> Crawling long distances as a result of <strong><span style="color:yellowgreen">disorient</span></strong>ation during the sea turtle hatchling frenzy has little impact on physiology but the turtles rest frequently, thus significantly extending their time on the beach.</p>
-http://jeb.biologists.org/cgi/content/abstract/221/1/jeb165225
-10.1242/jeb.165225
-None
-

@@ -1,8 +1,0 @@
-1
-Science
-Supersonic gas streams enhance the formation of massive black holes in the early universe
-<p>The origin of super-massive black holes in the early universe remains poorly understood. Gravitational collapse of a massive primordial gas cloud is a promising initial process, but theoretical studies have difficulty growing the black hole fast enough. We report numerical simulations of early black hole formation starting from realistic cosmological conditions. Supersonic gas motions left over from the Big Bang prevent early gas cloud formation until rapid gas condensation is triggered in a protogalactic halo. A <strong><span style="color:yellowgreen">protostar</span></strong> is formed in the dense, turbulent gas cloud, and it grows by sporadic mass accretion until it acquires 34,000 solar masses. The massive star ends its life with a catastrophic collapse to leave a black hole—a promising seed for the formation of a monstrous black hole.</p>
-http://sciencemag.org/cgi/content/abstract/357/6358/1375
-10.1126/science.aai9119
-None
-

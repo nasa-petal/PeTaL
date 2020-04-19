@@ -1,8 +1,0 @@
-1
-Biology Open
-Lateral line placodes of aquatic vertebrates are evolutionarily conserved in mammals
-<p><bold>Summary:</bold> Inhibition of apoptosis in mouse embryos reveals rudiments of the lateral line system, a sensory system common to fish and aquatic <strong><span style="color:yellowgreen">amphibia</span></strong>, but hypothesized to be completely lost in amniotes.</p>
-http://bio.biologists.org/cgi/content/abstract/7/6/bio031815
-10.1242/bio.031815
-['mammals', 'vertebrates', 'fish']
-

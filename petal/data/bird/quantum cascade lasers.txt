@@ -1,8 +1,0 @@
-2
-Science
-Double-heterojunction nanorod light-responsive LEDs for display applications
-<p>Dual-functioning displays, which can simultaneously transmit and receive information and energy through visible light, would enable enhanced user interfaces and device-to-device interactivity. We demonstrate that double <strong><span style="color:yellowgreen">heterojunct</span></strong>ions designed into colloidal semiconductor nanorods allow both efficient photocurrent generation through a photovoltaic response and electroluminescence within a single device. These dual-functioning, all-solution-processed double-<strong><span style="color:yellowgreen">heterojunct</span></strong>ion nanorod light-responsive light-emitting diodes open feasible routes to a variety of advanced applications, from touchless interactive screens to energy harvesting and scavenging displays and massively parallel display-to-display data communication.</p>
-http://sciencemag.org/cgi/content/abstract/355/6325/616
-10.1126/science.aal2038
-None
-

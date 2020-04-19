@@ -1,8 +1,0 @@
-1
-Science
-All-printed thin-film transistors from networks of liquid-exfoliated nanosheets
-<p>All-printed transistors consisting of interconnected networks of various types of two-dimensional nanosheets are an important goal in nanoscience. Using electrolytic gating, we demonstrate all-printed, vertically stacked transistors with graphene source, drain, and gate electrodes, a transition metal dichalcogenide channel, and a boron nitride (BN) separator, all formed from nanosheet networks. The BN network contains an ionic liquid within its porous interior that allows electrolytic gating in a solid-like structure. Nanosheet network channels display on:off ratios of up to 600, <strong><span style="color:yellowgreen">transconduct</span></strong>ances exceeding 5 millisiemens, and mobilities of >0.1 square centimeters per volt per second. Unusually, the on-currents scaled with network thickness and volumetric capacitance. In contrast to other devices with comparable mobility, large capacitances, while hindering switching speeds, allow these devices to carry higher currents at relatively low drive voltages.</p>
-http://sciencemag.org/cgi/content/abstract/356/6333/69
-10.1126/science.aal4062
-None
-

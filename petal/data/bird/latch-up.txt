@@ -1,8 +1,0 @@
-3
-Science
-Scaling carbon nanotube complementary transistors to 5-nm gate lengths
-<p>High-performance top-gated carbon nanotube field-effect transistors (CNT FETs) with a gate length of 5 nanometers can be fabricated that perform better than silicon complementary metal-oxide semiconductor (CMOS) FETs at the same scale. A scaling trend study revealed that the scaled CNT-based devices, which use graphene contacts, can operate much faster and at much lower supply voltage (0.4 versus 0.7 volts) and with much smaller subthreshold slope (typically 73 millivolts per decade). The 5-nanometer CNT FETs approached the quantum limit of FETs by using only one electron per switching operation. In addition, the contact length of the CNT CMOS devices was also scaled down to 25 nanometers, and a CMOS inverter with a total pitch size of 240 nanometers was also demonstrated.</p>
-http://sciencemag.org/cgi/content/abstract/355/6322/271
-10.1126/science.aaj1628
-None
-

@@ -1,8 +1,0 @@
-3
-Science
-Observations of Ejecta Clouds Produced by Impacts onto Saturn’s Rings
-<sec><title>Saturn's <strong><span style="color:yellowgreen">meteoroid</span></strong> Crash</title><p>During Saturn's equinox in 2009, when the Sun illuminated its rings edge-on, images taken by the Cassini spacecraft showed dust clouds appearing as bright streaks above the rings. Similar streaks were detected in 2005 and 2012 when Cassini observed the C ring at close range. <bold>Tiscareno <i>et al.</i></bold> (p. 460) suggest that the cause of each observed feature is likely to be the impact of a stream of recently disrupted material originating from a <strong><span style="color:yellowgreen">meteoroid</span></strong> impact onto the ring and derive the influx rate of <strong><span style="color:yellowgreen">meteoroid</span></strong>s at Saturn.</p></sec>
-http://sciencemag.org/cgi/content/abstract/340/6131/460
-10.1126/science.1233524
-None
-

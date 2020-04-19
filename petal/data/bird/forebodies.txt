@@ -1,8 +1,0 @@
-1
-Science
-Jupiter’s magnetosphere and aurorae observed by the Juno spacecraft during its first polar orbits
-<p>The Juno spacecraft acquired direct observations of the jovian magnetosphere and auroral emissions from a vantage point above the poles. Juno’s capture orbit spanned the jovian magnetosphere from <strong><span style="color:yellowgreen">bow</span></strong> shock to the planet, providing magnetic field, charged particle, and wave phenomena context for Juno’s passage over the poles and traverse of Jupiter’s hazardous inner radiation belts. Juno’s energetic particle and plasma detectors measured electrons precipitating in the polar regions, exciting intense aurorae, observed simultaneously by the ultraviolet and infrared imaging spectrographs. Juno transited beneath the most intense parts of the radiation belts, passed about 4000 kilometers above the cloud tops at closest approach, well inside the jovian rings, and recorded the electrical signatures of high-velocity impacts with small particles as it traversed the equator.</p>
-http://sciencemag.org/cgi/content/abstract/356/6340/826
-10.1126/science.aam5928
-None
-

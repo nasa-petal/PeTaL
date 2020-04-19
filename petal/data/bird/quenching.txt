@@ -1,8 +1,0 @@
-1
-Science
-Generation of human oogonia from induced pluripotent stem cells in vitro
-<p>Human in vitro gametogenesis may transform reproductive medicine. Human pluripotent stem cells (hPSCs) have been induced into primordial germ cell–like cells (hPGCLCs); however, further differentiation to a mature germ cell has not been achieved. Here, we show that hPGCLCs differentiate progressively into oogonia-like cells during a long-term in vitro culture (approximately 4 months) in xenogeneic reconstituted ovaries with mouse embryonic ovarian somatic cells. The hPGCLC-derived oogonia display hallmarks of epigenetic reprogramming—genome-wide DNA demethylation, imprint erasure, and <strong><span style="color:yellowgreen">extinguish</span></strong>ment of aberrant DNA methylation in hPSCs—and acquire an immediate precursory state for meiotic recombination. Furthermore, the inactive X chromosome shows a progressive demethylation and reactivation, albeit partially. These findings establish the germline competence of hPSCs and provide a critical step toward human in vitro gametogenesis.</p>
-http://sciencemag.org/cgi/content/abstract/362/6412/356
-10.1126/science.aat1674
-['human']
-

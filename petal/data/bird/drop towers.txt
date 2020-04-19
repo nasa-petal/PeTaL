@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Fluid shift versus body size: changes of hematological parameters and body fluid volume in hindlimb-unloaded mice, rats and rabbits
-<p><bold>Summary:</bold> Allometric investigation of hematological parameters and body fluid volume changes during simulated <strong><span style="color:yellowgreen">micrograv</span></strong>ity reveals that red blood cell count decrease is size independent, while extracellular fluid volume increase is proportional to body size.</p>
-http://jeb.biologists.org/cgi/content/abstract/221/17/jeb182832
-10.1242/jeb.182832
-None
-

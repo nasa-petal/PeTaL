@@ -1,8 +1,0 @@
-1
-Biology Open
-Do you see what I see? Optical morphology and visual capability of ‘disco’ clams (<i>Ctenoides ales</i>)
-<p><bold>Summary:</bold> ‘Disco’ clams are known for their vivid <strong><span style="color:yellowgreen">flash</span></strong>ing displays. Their vision was examined to see if their display is visible to other disco clams as a signal.</p>
-http://bio.biologists.org/cgi/content/abstract/6/5/648
-10.1242/bio.024570
-['clams']
-

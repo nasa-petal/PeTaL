@@ -1,8 +1,0 @@
-1
-The Bone & Joint Journal
-Assessment of the equivalence of a generic to a branded femoral stem
-<sec><title>Aims</title><p>The aim of this study was to compare the design of the generic   OptiStem XTR femoral stem with the established Exeter femoral stem.</p></sec><sec><title>Materials and Methods</title><p>We obtained five boxed, as manufactured, implants of both designs   at random (ten in total). Two examiners were blinded to the implant   design and independently measured the mass, volume, trunnion surface   topography, trunnion roughness, trunnion cone angle, Caput-Collum-Diaphyseal   (CCD) angle, femoral offset, stem length, neck length, and the width   and roughness of the polished stem shaft using peer-reviewed methods.   We then compared the stems using these parameters.</p></sec><sec><title>Results</title><p>We found that the OptiStems were lighter (p < 0.001), had   a rougher trunnion surface (p < 0.001) with a greater spacing   and depth of the machined threads (p < 0.001), had greater trunnion   cone angles (p = 0.007), and a smaller radius at the top of the   trunnion (p = 0.007). There was no difference in stem volume (p   = 0.643), CCD angle (p = 0.788), offset (p = 0.993), neck length   (p = 0.344), stem length (p = 0.808), shaft width (p = 0.058 to   0.720) or roughness of the polished surface (p = 0.536).</p></sec><sec><title>Conclusion</title><p>This preliminary investigation found that whilst there were similarities   between the two designs, the generic OptiStem is different to the   branded Exeter design.</p><p>Cite this article: <i>Bone Joint J</i> 2017;99-B:310–16.</p></sec>
-http://bjj.boneandjoint.org.uk/cgi/content/abstract/99-B/3/310
-10.1302/0301-620X.99B3.BJJ-2016-1208.R1
-None
-

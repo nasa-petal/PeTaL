@@ -1,8 +1,0 @@
-1
-Science
-Femtosecond electron-phonon lock-in by photoemission and x-ray free-electron laser
-<p>The interactions that lead to the emergence of superconductivity in iron-based materials remain a subject of debate. It has been suggested that electron-electron correlations enhance electron-phonon coupling in iron selenide (FeSe) and related <strong><span style="color:yellowgreen">pnictid</span></strong>es, but direct experimental verification has been lacking. Here we show that the electron-phonon coupling strength in FeSe can be quantified by combining two time-domain experiments into a “coherent lock-in” measurement in the terahertz regime. X-ray diffraction tracks the light-induced femtosecond coherent lattice motion at a single phonon frequency, and photoemission monitors the subsequent coherent changes in the electronic band structure. Comparison with theory reveals a strong enhancement of the coupling strength in FeSe owing to correlation effects. Given that the electron-phonon coupling affects superconductivity exponentially, this enhancement highlights the importance of the cooperative interplay between electron-electron and electron-phonon interactions.</p>
-http://sciencemag.org/cgi/content/abstract/357/6346/71
-10.1126/science.aak9946
-None
-

@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-Phosphorylation of SPOROCYTELESS/NOZZLE by the MPK3/6 Kinase Is Required for Anther Development
-<p>Germ cells are indispensable carriers of genetic information from one generation to the next. In contrast to the well-understood process in animals, information on the mechanism of germ cell initiation in plants is very limited. <i>SPOROCYTELESS</i>/<i>NOZZLE</i> was previously identified as an essential regulator of diploid germ cell (archesporial cell) differentiation in the stamens and ovules of Arabidopsis (<i>Arabidopsis thaliana</i>). Although <i>SPOROCYTELESS</i> (<i>SPL</i>) transcription is activated by the floral organ identity regulator AGAMOUS and epigenetically regulated by SET DOMAIN GROUP2, little is known about the regulation of the SPL protein. Here, we report that the protein kinases MPK3 and MPK6 can both interact with SPL in vitro and in vivo and can phosphorylate the SPL protein in vitro. In addition, phosphorylation of the SPL protein by MPK3/6 is required for SPL function in the Arabidopsis anther, as measured by its effect on archesporial cell differentiation. We further demonstrate that phosphorylation enhances SPL protein stability. This work not only uncovers the importance of SPL phosphorylation for its regulatory role in Arabidopsis anther development, but also supports the hypothesis that the regulation of precise spatiotemporal patterning of germ cell initiation and that differentiation is achieved progressively through multiple levels of regulation, including transcriptional and posttranslational modification.</p>
-http://plantphysiol.org/cgi/content/abstract/173/4/2265
-10.1104/pp.16.01765
-['Arabidopsis', 'Arabidopsis thaliana', 'animals', 'plants']
-

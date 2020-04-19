@@ -1,8 +1,0 @@
-1
-Science
-Synthesis of ultrasmall, homogeneously alloyed, bimetallic nanoparticles on silica supports
-<p>Supported nanoparticles containing more than one metal have a variety of applications in sensing, catalysis, and biomedicine. Common synthesis techniques for this type of material often result in large, unalloyed nanoparticles that lack the interactions between the two metals that give the particles their desired characteristics. We demonstrate a relatively simple, effective, generalizable method to produce highly dispersed, well-alloyed bimetallic nanoparticles. Ten <strong><span style="color:yellowgreen">permut</span></strong>ations of noble and base metals (platinum, palladium, copper, nickel, and cobalt) were synthesized with average particle sizes from 0.9 to 1.4 nanometers, with tight size distributions. High-resolution imaging and x-ray analysis confirmed the homogeneity of alloying in these ultrasmall nanoparticles.</p>
-http://sciencemag.org/cgi/content/abstract/358/6369/1427
-10.1126/science.aao6538
-None
-

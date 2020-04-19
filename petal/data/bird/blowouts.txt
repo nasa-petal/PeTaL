@@ -1,8 +1,0 @@
-1
-Science
-Digital nature: Are field trips a thing of the past?
-<p>I awoke in my cabin by the pond. Weighing my options for the day, I decided to do some bird watching, winding between white pines and blackberries along the east shore of the pond. By their songs, I was able to identify a Mourning Dove, Blue Jays, an American Crow, and perhaps a Northern Cardinal. A mink, alarmed by my approach, dove into the pond and swam off. Unable to resist on such a sunny day, I waded into the pond and watched the sunlight play around me in the shallows. My mood that morning was appropriately reflected by my status indicators: moderately inspired, <strong><span style="color:yellowgreen">tire</span></strong>d, and hungry. My hike took place in <i>Walden, a Game</i>, a video game recently launched on the 200th birthday of Henry David Thoreau (<i>1</i>). With a widening niche of such nature-themed video games and simulations and a rapidly growing audience of online/digital learners, the capacity to reach new audiences and carry environmental education beyond the confines of schools and universities may be a game changer, but one that perhaps comes with perils.</p>
-http://sciencemag.org/cgi/content/summary/358/6361/298
-10.1126/science.aao1919
-['pines', 'trips', 'bird', 'American Crow', 'Blue Jays', 'Mourning Dove', 'Northern Cardinal', 'mink']
-

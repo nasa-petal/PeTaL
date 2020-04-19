@@ -1,8 +1,0 @@
-1
-Science
-A continental system for forecasting bird migration
-<p>Billions of animals cross the globe each year during seasonal migrations, but efforts to monitor them are hampered by the unpredictability of their movements. We developed a bird migration forecast system at a continental scale by leveraging 23 years of spring observations to identify associations between atmospheric conditions and bird migration intensity. Our models explained up to 81% of variation in migration intensity across the United States at altitudes of 0 to 3000 meters, and performance remained high in forecasting events 1 to 7 days in advance (62 to 76% of variation was explained). Avian migratory movements across the United States likely exceed 500 million individuals per night during peak passage. Bird migration forecasts will reduce collisions with buildings, airplanes, and wind <strong><span style="color:yellowgreen">turbin</span></strong>es; inform a variety of monitoring efforts; and engage the public.</p>
-http://sciencemag.org/cgi/content/abstract/361/6407/1115
-10.1126/science.aat7526
-['animals', 'bird']
-

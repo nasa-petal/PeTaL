@@ -1,8 +1,0 @@
-1
-Science
-Quantum reference beacon–guided superresolution optical focusing in complex media
-<p>Optical scattering is generally considered to be a nuisance of microscopy that limits imaging depth and spatial resolution. Wavefront shaping techniques enable optical imaging at unprecedented depth, but attaining superresolution within complex media remains a challenge. We used a quantum reference <strong><span style="color:yellowgreen">beacon</span></strong> (QRB), consisting of solid-state quantum emitters with spin-dependent fluorescence, to provide subwavelength guidestar feedback for wavefront shaping to achieve a superresolution optical focus. We implemented the QRB-guided imaging with nitrogen-vacancy centers in diamond nanocrystals, which enable optical focusing with a subdiffraction resolution below 186 nanometers (less than half the wavelength). QRB-assisted wavefront-shaping should find use in a range of applications, including deep-tissue quantum enhanced sensing and individual optical excitation of magnetically coupled spin ensembles for applications in quantum information processing.</p>
-http://sciencemag.org/cgi/content/abstract/363/6426/528
-10.1126/science.aar8609
-None
-

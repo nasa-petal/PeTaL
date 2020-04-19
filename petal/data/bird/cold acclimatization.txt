@@ -1,8 +1,0 @@
-2
-Science
-Mechanisms of reef coral resistance to future climate change
-<p>Reef corals are highly sensitive to heat, yet populations resistant to climate change have recently been identified. To determine the mechanisms of temperature tolerance, we reciprocally transplanted corals between reef sites experiencing distinct temperature regimes and tested subsequent physiological and gene expression profiles. Local <strong><span style="color:yellowgreen">acclimat</span></strong>ization and fixed effects, such as adaptation, contributed about equally to heat tolerance and are reflected in patterns of gene expression. In less than 2 years, <strong><span style="color:yellowgreen">acclimat</span></strong>ization achieves the same heat tolerance that we would expect from strong natural selection over many generations for these long-lived organisms. Our results show both short-term <strong><span style="color:yellowgreen">acclimat</span></strong>ory and longer-term adaptive acquisition of climate resistance. Adding these adaptive abilities to ecosystem models is likely to slow predictions of demise for coral reef ecosystems.</p>
-http://sciencemag.org/cgi/content/abstract/344/6186/895
-10.1126/science.1251336
-None
-
