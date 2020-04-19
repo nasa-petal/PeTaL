@@ -1,0 +1,3 @@
+[submodule "pipeline"]
+	path = pipeline
+	url = https://github.com/LSaldyt/PeTaL-pipeline
