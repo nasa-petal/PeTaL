@@ -13,6 +13,9 @@
   <form action="{% url 'bird-results' %}" method="get">
   <input name="q" type="text" placeholder="Search...">
   <button id="search-btn" class="btn blue-gradient-bg" type="submit">Search</button>
+  <p>Search took : {{search_time}} seconds</p>
+  <p>Database load : {{load_time}} seconds</p>
+  <p>Fetch time : {{fetch_time}} seconds</p>
   </form>
 
 {% for paper in papers %}
@@ -20,7 +23,7 @@
         <h2><div> {{paper.title}} </div></h2>
         <div id="bird-abstract-details">
             <strong class="larger-font">{{paper.authors}}</strong>
-            <p>Relevancy Factor: {{paper.relevancy}}%</p>
+            <p>Relevancy Factor: {{paper.relevancy}}</p>
         </div>
         <div class="panel expandable-text" data-collapse-limit="100">{{paper.abstract}}</div>
         <div id="bird-abstract-footer">

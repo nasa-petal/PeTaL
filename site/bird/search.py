@@ -21,7 +21,7 @@ def search(query):
         results.append(term_results)
     done = time.time()
     print('Searching index took ', round(done - load, 6), 'seconds')
-    return results
+    return done - load, results
 
 def main():
     search('megaptera')
