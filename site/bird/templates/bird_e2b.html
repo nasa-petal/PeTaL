@@ -1,0 +1,23 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block head %}
+  {{ block.super }}
+    <script src="{% static 'bird/js/bird.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="contentMain bird wow fadeInUpMin" data-wow-duration="2s">
+  <h1>BIRD</h1>
+  <h3>Bio-Inspired Research and Design</h3>
+  <form action="{% url 'bird-results' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+  <button id="search-btn" class="btn blue-gradient-bg" type="submit">Search</button>
+  </form>
+  <p id="bio-terms" class="vis-hidden"></p>
+  <div id="bird-intro">
+  </div>
+  <div id="abstracts" class="not-displayed"></div>
+</div>
+
+{% endblock content %}
