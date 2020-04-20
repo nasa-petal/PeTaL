@@ -28,5 +28,5 @@ def results(request):
             article = next(article.records())['a']
             articles.append(dict(title=article['title'], abstract=article['summary'], authors='', relevancy=str(a) + ' ' + str(b)))
     fetch_end = time()
-    context = dict(search_time=round(duration, 6), fetch_time=round(fetch_end - fetch_start, 6), papers=articles)
+    context = dict(search_time=round(duration, 10), fetch_time=round(fetch_end - fetch_start, 6), papers=articles)
     return render(request, 'bird_results.html', context)
