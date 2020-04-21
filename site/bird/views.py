@@ -18,7 +18,7 @@ import plotly.offline as opy
 import plotly.graph_objs as go
 
 class Plot(TemplateView):
-    template_name = 'graph_results.html'
+    template_name = 'plot_results.html'
 
     def get_context_data(self, **kwargs):
         context = super(Plot, self).get_context_data(**kwargs)

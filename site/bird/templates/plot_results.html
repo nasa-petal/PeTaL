@@ -1,5 +1,6 @@
 {% extends "bar.html" %}
 {% block subcontent %}
+</div> <!-- End the indented div from superclass to make plot fill the right-hand space -->
 {% if graph %}
 <div style="width:600;height:500">
 {{ graph|safe }}
