@@ -13,12 +13,13 @@ def search(query):
     print('Loading index took ', round(load - start, 6), 'seconds')
     results = []
     for term in cleaner.clean(query):
-        term_results = index[term]
-        result = term_results[-1][-1]
-        print('Result for "' + term + '": document ', result, ' is the best match, with ', result[1], ' hits')
-        for subresult in term_results:
-            print('    {} w/ {},{} hits'.format(subresult[2], subresult[0], subresult[1]))
-        results.append(term_results)
+        if term in index:
+            term_results = index[term]
+            # result = term_results[-1][-1]
+            # print('Result for "' + term + '": document ', result, ' is the best match, with ', result[1], ' hits')
+            # for subresult in term_results:
+            #     print('    {} w/ {},{} hits'.format(subresult[2], subresult[0], subresult[1]))
+            results.append(term_results)
     done = time.time()
     print('Searching index took ', round(done - load, 6), 'seconds')
     return done - load, results

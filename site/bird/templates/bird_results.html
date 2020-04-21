@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<div class="contentMain bird wow fadeInUpMin" data-wow-duration="2s">
+<div class="contentMain bird wow fadeInUpMin" data-wow-duration="1s">
   <h1>BIRD RESULTS</h1>
   <h3>Bio-Inspired Research and Design</h3>
   <form action="{% url 'bird-results' %}" method="get">
@@ -35,47 +35,3 @@
 {% endblock %}
 
 </div>
-<!-- See _bird.scss for styling -->
-
-<script>
-    $(document).ready(function() {
-        let expandText = "Read More";
-        let collapseText = "Read Less";
-        debugger;
-        
-        $('.expandable-text').each(function() {
-            let content = $(this).html();
-            let collapseLimit = $(this).data('collapse-limit');
-            
-            if (content.length > collapseLimit) {
-                let contentSubstring = content.substr(0, collapseLimit); //cut off opening <p>
-                let expandedContent = $("<p></p>").html(content);
-
-                if (contentSubstring.substring(0, 3) == "<p>")
-                    contentSubstring = contentSubstring.substr(3, contentSubstring.length);
-
-                contentSubstring += "...";
-                
-                let previewContent = $("<p></p>").html(contentSubstring);
-               
-                $(this).empty();
-                $(this).append($('<span />').addClass("collapsed-content").html(previewContent));
-                $(this).append($('<span />').addClass('expanded-content').html(expandedContent));
-                $(this).append($('<button />').addClass('trigger').html(expandText));
-
-            }
-        });
-
-        $(".expandable-text .trigger").click(function() {          
-            if ($('.expanded-content').is(":visible")) {
-                $(this).html(expandText);
-            } 
-            else {
-                $(this).html(collapseText);
-            }
-            
-            $(this).siblings('.collapsed-content').toggle();
-            $(this).siblings('.expanded-content').toggle();
-        });
-    });
-</script>

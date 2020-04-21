@@ -7,7 +7,7 @@ from time import time
 
 from .search import search
 
-# TODO MOVE ME. This is just for optimization/testing - Lucas
+# TODO move the client elsewhere? This is just for optimization/testing - Lucas
 neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
 session = neo_client.session()
 
@@ -29,4 +29,7 @@ def results(request):
             articles.append(dict(title=article['title'], abstract=article['summary'], authors='', relevancy=str(a) + ' ' + str(b)))
     fetch_end = time()
     context = dict(search_time=round(duration, 10), fetch_time=round(fetch_end - fetch_start, 6), papers=articles)
-    return render(request, 'bird_results.html', context)
+    if len(articles) > 0:
+        return render(request, 'bird_results.html', context)
+    else:
+        return render(request, 'bird_no_results.html', context)
