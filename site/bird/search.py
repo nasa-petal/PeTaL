@@ -1,6 +1,7 @@
 from modules.libraries.natural_language.cleaner import Cleaner
 
 from neo4j import GraphDatabase, basic_auth
+from pandas import DataFrame
 
 from pprint import pprint
 import pickle
@@ -18,7 +19,6 @@ def fetch(query):
     for term in cleaner.clean(query):
         if term in index:
             term_results = index[term]
-            results.append(term_results)
             for a, b, uuid in term_results:
                 article = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=uuid))
                 article = next(article.records())['a']
@@ -41,10 +41,9 @@ def plot(query):
     search_context = search(query)
     articles = search_context['articles']
 
-    fig = px.histogram(df, x='x', nbins=10)
-    div = opy.plot(fig, auto_open=False, output_type='div')
-    context['graph'] = div
-    return context
+    mock_df = DataFrame(dict(x=['aquatic'] * 3 + ['terrestrial'] * 10 + ['airborne'] * 6))
+    fig = px.histogram(mock_df, x='x', nbins=3, template='plotly_dark')
+    return dict(graph=opy.plot(fig, auto_open=False, output_type='div'))
 
 def main():
     search('megaptera')
