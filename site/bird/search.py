@@ -17,9 +17,12 @@ def fetch(query):
     cleaner = Cleaner()
     articles = []
     for term in cleaner.clean(query):
+        print(term, flush=True)
         if term in index:
             term_results = index[term]
+            print(index[term], flush=True)
             for a, b, uuid in term_results:
+                print(uuid, flush=True)
                 article = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=uuid))
                 article = next(article.records())['a']
                 articles.append(article)
@@ -38,11 +41,19 @@ import plotly.offline as opy
 import plotly.graph_objs as go
 
 def plot(query):
-    search_context = search(query)
-    articles = search_context['articles']
+    articles = fetch(query)
 
-    mock_df = DataFrame(dict(x=['aquatic'] * 3 + ['terrestrial'] * 10 + ['airborne'] * 6))
-    fig = px.histogram(mock_df, x='x', nbins=3, template='plotly_dark')
+    habitats = []
+    for article in articles:
+        taxa = session.run('MATCH (t:Taxon)-->(a:Article) WHERE a.uuid = \'{uuid}\' RETURN t'.format(uuid=article['uuid']))
+        for taxon in (node['t'] for node in taxa.records()):
+            query_habitats = session.run('MATCH (t:Taxon)-[:habitat]->(h) WHERE t.name = \'{name}\' return h'.format(name=taxon['name']))
+            for node in query_habitats.records():
+                habitats.append(node['h']['value'])
+
+    pprint(habitats)
+    mock_df = DataFrame(dict(habitats=habitats))
+    fig = px.histogram(mock_df, x='habitats', nbins=len(set(habitats)), title='Habitats Related To Search Query', template='plotly_dark')
     return dict(graph=opy.plot(fig, auto_open=False, output_type='div'))
 
 def main():

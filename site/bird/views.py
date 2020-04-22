@@ -11,13 +11,12 @@ def index(request):
 def search_results(request):
     query = request.GET.get('q')
     action = request.GET.get('action')
-    if action == 'search':
+    if action == 'plot':
+        context = plot(query)
+        return render(request, 'plot_results.html', context)
+    else:
         context = search(query)
-        if len(articles) > 0:
+        if len(context['articles']) > 0:
             return render(request, 'results.html', context)
         else:
             return render(request, 'no_results.html', context)
-    else:
-        context = plot(query)
-        return render(request, 'plot_results.html', context)
-
