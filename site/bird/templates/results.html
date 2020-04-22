@@ -1,15 +1,10 @@
 {% extends "bar.html" %}
 
 {% block subcontent %}
+<h3> Seconds taken: {{search_time}} </h3>
 {% for article in articles %}
     <div class="bird-abstract">
         <h2><div> {{article.title}} </div></h2>
-	<!--
-        <div id="bird-abstract-details">
-            <strong class="larger-font">{{article.authors}}</strong>
-            <p>Relevancy Factor: {{article.relevancy}}</p>
-        </div>
-	-->
         <div class="panel expandable-text" data-collapse-limit="100">{{article.abstract}}</div>
         <div id="bird-abstract-footer">
             <p><a href= {{article.url}} target='_blank'>Source</a></p>
