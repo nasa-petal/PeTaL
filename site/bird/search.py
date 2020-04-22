@@ -7,6 +7,18 @@ from pprint import pprint
 import pickle
 from time import time
 
+def clean(item):
+    if item is None:
+        return None
+    item = str(item)
+    item = item.replace('-', '_')
+    item = item.replace('\\', '_')
+    item = item.replace('/', '_')
+    item = item.replace('\'', '')
+    item = item.replace('(', '')
+    item = item.replace(')', '')
+    return item
+
 # Load index and db connection at import
 neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
 session = neo_client.session()
@@ -17,15 +29,14 @@ def fetch(query):
     cleaner = Cleaner()
     articles = []
     for term in cleaner.clean(query):
-        print(term, flush=True)
         if term in index:
             term_results = index[term]
-            print(index[term], flush=True)
-            for a, b, uuid in term_results:
-                print(uuid, flush=True)
-                article = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=uuid))
-                article = next(article.records())['a']
-                articles.append(article)
+            pprint(term_results)
+            for *hits, uuid in term_results:
+                print(uuid)
+                result = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=clean(uuid)))
+                for article in (node['a'] for node in result.records()):
+                    articles.append(article)
     return articles
 
 def search(query):
