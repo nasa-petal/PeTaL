@@ -1,12 +1,28 @@
 {% extends "navbar.html" %}
+{% load static %}
 {% block head %}
   {{ block.super }}
+    <script src="{% static 'bird/js/bird.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<form action="/enter/" method="post">
-    <label for="your_name">Your name: </label>
-    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-    <input type="submit" value="OK">
+<div class="contentMain bird wow fadeInUpMin" data-wow-duration="2s">
+<h1>NASA Directory 2.0</h1>
+<form action="/directory/enter/" method="post">
+    {% csrf_token %}
+    <label for="name">Name: </label>
+    <input id="name" type="text" name="name" value="{{ name }}">
+    <br>
+    <label for="organization">Organization: </label>
+    <input id="organization" type="text" name="organization" value="{{ organization }}">
+    <br>
+    <label for="application">Application: </label>
+    <input id="application" type="text" name="application" value="{{ application }}">
+    <br>
+    <label for="tools">Tools: </label>
+    <input id="tools" type="text" name="tools" value="{{ tools }}">
+    <br>
+    <button id="search-btn" class="btn blue-gradient-bg" type="submit", name="action", value="search">Submit</button>
 </form>
+</div>
 {% endblock content %}
