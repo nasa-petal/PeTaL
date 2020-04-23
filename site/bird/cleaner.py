@@ -28,7 +28,8 @@ class Cleaner:
 
         for word in words:
             for word in self.clean_word(word):
-                yield self.stem(word)
+                yield word
+                # yield self.stem(word)
 
     def clean_word(self, word):
         words = expand_contractions(word)
