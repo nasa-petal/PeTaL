@@ -26,14 +26,9 @@ class Cleaner:
         else:
             words = word_tokenize(doc)
 
-        unique = set()
         for word in words:
             for word in self.clean_word(word):
-                synonyms = wn.synsets(word)
-                for syn in synonyms:
-                    for lemma in syn.lemmas():
-                        unique.add(self.stem(lemma.name()))
-        return unique
+                yield self.stem(word)
 
     def clean_word(self, word):
         words = expand_contractions(word)
