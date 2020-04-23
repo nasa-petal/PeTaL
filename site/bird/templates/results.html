@@ -1,7 +1,8 @@
 {% extends "bar.html" %}
 
 {% block subcontent %}
-<h3> Seconds taken: {{search_time}} </h3>
+<h3> Index search: {{search_time}}s </h3>
+<h3> Neo4j fetch: {{neo4j_time}}s </h3>
 {% for article in articles %}
     <div class="bird-abstract">
         <h2><div> {{article.title}} </div></h2>

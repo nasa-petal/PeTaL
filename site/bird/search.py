@@ -28,24 +28,26 @@ with open('../pipeline/data/index', 'rb') as infile:
 def fetch(query):
     cleaner = Cleaner()
     articles = set()
+
+    start = time()
+    result_lists = []
     for word in cleaner.clean(query):
         if word in index:
-            term_results = index[word]
-            pprint(term_results)
-            for *hits, uuid in term_results:
-                print(uuid)
-                result = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=clean(uuid)))
-                for article in (node['a'] for node in result.records()):
-                    article.__hash__ = lambda x : x['title']
-                    articles.add(article)
-    return articles
+            result_lists.append(index[word])
+    finish = time()
+    for results in result_lists:
+        for *hits, uuid in results:
+            result = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=clean(uuid)))
+            for article in (node['a'] for node in result.records()):
+                article.__hash__ = lambda x : x['title']
+                articles.add(article)
+    fetch_finish = time()
+    return finish - start, fetch_finish - finish, articles
 
 def search(query):
-    start = time()
-    articles = fetch(query)
-    articles = [(dict(title=a['title'], abstract=a['summary'], url=a['url'])) for a in articles] 
-    done = time()
-    context = dict(search_time=round(done - start, 10), articles=articles)
+    query_time, fetch_time, articles = fetch(query)
+    articles = [(dict(title=a['title'], abstract=a['abstract'], url=a['url'])) for a in articles] 
+    context = dict(search_time=round(query_time, 10), neo4j_time=round(fetch_time, 10), articles=articles)
     return context
 
 import plotly.express as px
@@ -53,7 +55,7 @@ import plotly.offline as opy
 import plotly.graph_objs as go
 
 def plot(query):
-    articles = fetch(query)
+    _, _, articles = fetch(query)
 
     habitats = []
     for article in articles:
