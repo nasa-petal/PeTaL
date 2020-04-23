@@ -1,7 +1,7 @@
-from modules.libraries.natural_language.cleaner import Cleaner
-
 from neo4j import GraphDatabase, basic_auth
 from pandas import DataFrame
+
+from .cleaner import Cleaner
 
 from pprint import pprint
 import pickle
@@ -27,16 +27,17 @@ with open('../pipeline/data/index', 'rb') as infile:
 
 def fetch(query):
     cleaner = Cleaner()
-    articles = []
-    for term in cleaner.clean(query):
-        if term in index:
-            term_results = index[term]
+    articles = set()
+    for word in cleaner.clean(query):
+        if word in index:
+            term_results = index[word]
             pprint(term_results)
             for *hits, uuid in term_results:
                 print(uuid)
                 result = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=clean(uuid)))
                 for article in (node['a'] for node in result.records()):
-                    articles.append(article)
+                    article.__hash__ = lambda x : x['title']
+                    articles.add(article)
     return articles
 
 def search(query):
