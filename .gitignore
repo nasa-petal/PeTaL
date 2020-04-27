@@ -1,3 +1,4 @@
 petal/__pycache__
 *.pyc*
-petal-django/db*
+data
+.dependencies.json
