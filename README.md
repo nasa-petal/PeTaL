@@ -10,58 +10,58 @@ These instructions will get you a copy of the project up and running on your loc
 
 The following section describes the directories of the PeTaL repository.
 
-#### site
+* #### site
 
-The Django code for running the actual PeTaL website, which uses the `neo4j` database created by the pipeline.
+  * The Django code for running the actual PeTaL website, which uses the `neo4j` database created by the pipeline.
 
-#### modules
+* #### modules
 
-Modules for PeTaL's data pipeline:
+  * Modules for PeTaL's data pipeline:
 
-###### mining
+  * ###### mining
 
-Holds taxon catalogers, article scrapers, and image downloaders.
+    * Holds taxon catalogers, article scrapers, and image downloaders.
 
-###### search
+  * ###### search
 
-Holds multiple indexer modules, which, unsurprisingly, create the search index used by the PeTaL website.
+    * Holds multiple indexer modules, which, unsurprisingly, create the search index used by the PeTaL website.
 
-###### taxon\_classifier
+  * ###### taxon\_classifier
 
-An image classifier at the taxon level
+    * An image classifier at the taxon level
 
-###### airfoils
+  * ###### airfoils
 
-Experimental machine learning models related to airfoils and wing design
+    * Experimental machine learning models related to airfoils and wing design
 
-###### directory\_2.0
+  * ###### directory\_2.0
 
-Parsing code for the "Directory 2.0" project, mostly outdated.
+    * Parsing code for the "Directory 2.0" project, mostly outdated.
 
-###### mock
+  * ###### mock
 
-Modules intended for use in integrated testing of the data pipeline.
+    * Modules intended for use in integrated testing of the data pipeline.
 
 
-#### data
+* #### data
 
-Various data for PeTaL's data pipeline. Notably includes the search index and lexicon, images, and all machine learning modules, et cetera.
+  * Various data for PeTaL's data pipeline. Notably includes the search index and lexicon, images, and all machine learning modules, et cetera.
 
-#### pipeline
+* #### pipeline
 
-Backend code for the data pipeline, but not PeTaL-specific. Separated into another github repository. Some code is overly complicated, so don't feel afraid of contacting Lucas Saldyt if it breaks.
+  * Backend code for the data pipeline, but not PeTaL-specific. Separated into another github repository. Some code is overly complicated, so don't feel afraid of contacting Lucas Saldyt if it breaks.
 
-#### config
+* #### config
 
-Configurations for the data pipeline. Specifies a number of modules that should be run and settings related to running them, such as the maximum number of processes.
+  * Configurations for the data pipeline. Specifies a number of modules that should be run and settings related to running them, such as the maximum number of processes.
 
-#### tests
+* #### tests
 
-PeTaL's tests. Don't worry. Things will break in production no matter how many of these you write.
+  * PeTaL's tests. Don't worry. Things will break in production no matter how many of these you write.
 
-#### docs
+* #### docs
 
-Documentation. If nothing gets added to this directory, you're doing it right.
+  * Documentation. If nothing gets added to this directory, you're doing it right.
 
 ## Authors
 
