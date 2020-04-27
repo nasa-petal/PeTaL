@@ -1,5 +1,3 @@
-wikipedia==1.4.0
-sklearn
 beautifulsoup4==4.8.2
 efficientnet-pytorch==0.6.3                
 gensim==3.8.1                
