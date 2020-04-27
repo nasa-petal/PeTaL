@@ -1,4 +1,4 @@
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 from ..libraries.natural_language.hitlist import HitList
 
 from pprint import pprint

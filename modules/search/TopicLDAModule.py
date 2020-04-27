@@ -1,4 +1,4 @@
-from petal.pipeline.module_utils.OnlineLearner import OnlineLearner
+from petal.pipeline.utils.OnlineLearner import OnlineLearner
 from ..libraries.natural_language.topic_modeler import TopicModeler
 
 import pickle

@@ -4,7 +4,7 @@ import xml
 
 from pprint import pprint
 
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 
 def to_tag(tag):
     return '{http://www.mediawiki.org/xml/export-0.10/}' + tag

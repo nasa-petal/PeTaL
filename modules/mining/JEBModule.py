@@ -1,4 +1,4 @@
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 
 def process_section(section):
     paragraphs = section.find_all('p')

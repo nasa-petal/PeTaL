@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageOps
 
 from random import randint, random
 
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 
 class AirfoilAugmentor(Module):
     def __init__(self, count=100):

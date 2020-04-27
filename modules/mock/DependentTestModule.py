@@ -1,4 +1,4 @@
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 
 class DependentTestModule(Module):
     def __init__(self, in_label='TestOutput', out_label='DependentTestOutput', connect_label=None, name='DependentTester', count=1):

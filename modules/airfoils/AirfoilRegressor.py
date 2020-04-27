@@ -1,4 +1,4 @@
-from petal.pipeline.module_utils.BatchTorchLearner import BatchTorchLearner
+from petal.pipeline.utils.BatchTorchLearner import BatchTorchLearner
 
 import pickle
 import os

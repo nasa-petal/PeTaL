@@ -4,7 +4,7 @@ import xml
 
 from pprint import pprint
 
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 
 class HighwireModule(Module):
     def __init__(self, in_label=None, out_label='HighwireArticle:Article', connect_label=None, name='Highwire'):

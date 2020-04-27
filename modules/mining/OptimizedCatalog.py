@@ -10,7 +10,7 @@ import shutil, os
 
 import neobolt
 
-from petal.pipeline.module_utils.module import Module
+from petal.pipeline.utils.module import Module
 
 from .NormalCatalog import create_dir, to_json
 
