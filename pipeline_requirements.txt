@@ -1,0 +1,17 @@
+beautifulsoup4==4.8.2
+efficientnet-pytorch==0.6.3                
+gensim==3.8.1                
+lxml==4.5.0                
+matplotlib==3.1.2                
+neo4j==1.7.6                
+nltk==3.4.5                
+numpy==1.17.4               
+pandas==0.25.3               
+Pillow==7.0.0                
+requests==2.23.0               
+scholarly==0.2.5                
+scipy==1.4.1                
+seaborn==0.10.0               
+torch==1.5.0.dev20200311+cpu
+torchvision==0.6.0.dev20200311+cpu
+urllib3==1.25.8               

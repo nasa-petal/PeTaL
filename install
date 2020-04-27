@@ -1,0 +1,3 @@
+#!/bin/bash
+python -m pip install -e .
+rm -rf PeTaL_pipeline.egg-info build dist
