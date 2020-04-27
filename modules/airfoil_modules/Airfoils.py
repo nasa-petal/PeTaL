@@ -47,7 +47,7 @@ def scrape_airfoil_coords(page, name):
     lednicerDAT = page.replace("details","lednicerdatfile")
     raw_html = get(lednicerDAT,True).content
     soup = BeautifulSoup(raw_html,'lxml')
-    coord_file = 'data/airfoil_data/' + name + '_coords.pkl'
+    coord_file = 'data/airfoils/' + name + '_coords.pkl'
     lines = soup.text.split('\n')[3:]
 
     in_first = True
@@ -126,7 +126,7 @@ class Airfoils(Module):
             coord_file = scrape_airfoil_coords(url, name)
             detail_files = []
             for detail_page in details:
-                detail_file = 'data/airfoil_data/{}_{}_{}.pkl'.format(name, detail_page['Re'], detail_page['Ncrit'])
+                detail_file = 'data/airfoils/{}_{}_{}.pkl'.format(name, detail_page['Re'], detail_page['Ncrit'])
                 with open(detail_file, 'wb') as outfile:
                     pickle.dump(detail_page.pop('data'), outfile)
                 detail_files.append(detail_file)
