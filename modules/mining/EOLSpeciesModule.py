@@ -3,11 +3,24 @@ from ..libraries.encyclopedia_of_life.eol_api import EOL_API
 
 import requests
 
+
 class EOLSpeciesModule(Module):
+    '''
+    Legally scrape EOL for Species that have pages. Requires an API token
+
+    Currently configured to run after COL scraper has run and return a "CatalogFinishedSignal"
+
+    Essentially this creates a taxonomic tree and then allows it to be populated with EOL data.
+    '''
     def __init__(self, in_label='CatalogFinishedSignal', out_label='EOLPage', connect_labels=('eol_page', 'eol_page'), name='EOLSpecies'):
         Module.__init__(self, in_label, out_label, connect_labels, name, False)
 
     def process(self, transaction):
+        '''
+        Add EOL pages to neo4j
+
+        :param transaction: Transaction parameter is a "done" signal, produced by a catalog scraper
+        '''
         api = EOL_API()
         page_size = 1000
         skip  = 0

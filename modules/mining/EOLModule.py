@@ -15,7 +15,34 @@ search_url = 'https://eol.org/search?utf8=%E2%9C%93&q={}'
 data_url = 'https://eol.org{}/data'
 eol_url = 'https://eol.org{}'
 
+'''
+WARNING: Some of the following code disobeys robots.txt of particular websites.
+  Thus, it is disabled by default and only left as reference.
+  Use at your own risk.
+
+       o     O
+     __|_____|___
+    |    --      |
+    |  ( o )   ( o )
+  { |        /   |
+    |     [wwww]  < *Exterminate all humans.txt* )
+    [____________|
+       |   |              /Vvvv/
+  _____|___|____          |___/
+ /______________\_________/   |
+ |              |             /
+ | ( / )  ( + ) |__|__|__|_|_/
+ |              |
+ | [ -vV--vV-]  |
+ |              |
+ |______________/
+'''
+
 def get_data_page(query):
+    '''
+    Use EOL /search/ to find a particular page. 
+    *DEFIES ROBOTS.txt* (/search/ directive disencouraged)
+    '''
     expanded = '+'.join(query.split()) + '+'
     url = search_url.format(expanded)
 
@@ -28,6 +55,10 @@ def get_data_page(query):
 
 
 def read_data(page_url):
+    '''
+    Read the data page of an EOL url.
+    *OBEYS ROBOTS.txt*
+    '''
     extracted = []
 
     data = get(page_url)
@@ -47,15 +78,34 @@ def read_data(page_url):
     return extracted
 
 def search(query):
+    '''
+    Search for a query on EOL.
+    
+    PREFERRED: Use EOL neo4j API instead.
+
+    *DEFIES ROBOTS.txt*
+    '''
     page_url = get_data_page(query)
     return read_data(page_url)
 
 class EOLModule(Module):
+    '''
+    Collect data from a particular Taxon's page
+
+    Usage of the /search/ directive is disabled by default. Only enable this if EOL allows it.
+
+    *OBEYS ROBOTS.txt*
+    '''
     def __init__(self, in_label='Taxon', out_label='EOLData', connect_labels=('MENTIONED_IN_DATA', 'MENTIONS_SPECIES'), name='EOL'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
         self.api = EOL_API()
 
     def process(self, previous):
+        '''
+        Download EOL data given a particular Taxon
+
+        :param previous: neo4j transaction for a taxon.
+        '''
         name = previous.data['name']
         uuid = previous.data['uuid']
         query = ' '.join(['MATCH (p:Page)-[:trait|:inferred_trait]->(t:Trait), (t)-[:predicate]->(pred:Term)',

@@ -7,10 +7,23 @@ import requests
 EXCLUDED_EXTENSIONS = {'svg', 'ogg'}
 
 class ImageModule(Module):
+    '''
+    Base class for image handling within the PeTaL pipeline
+
+    Creates an skeleton node with a filename reference to a *local* file.
+    If you're distributing PeTaL across multiple servers, keep this in mind and create a dedicated image server, ideally close by (or even integrated with) the machine learning modules or other image-dependent apps.
+    '''
     def __init__(self, in_label=None, out_label=None, connect_labels=None, name='AbstractImageModule'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
 
     def process(self, urls, uuid=None, title=None):
+        '''
+        Download a list of URLS and return skeleton neo4j nodes referencing the downloaded images.
+
+        :param urls: Image urls to download (list)
+        :param uuid: The uuid of what these images are of (i.e. "WikipediaArticle498_")
+        :param title: The parent of these images, if a linkage is desired.
+        '''
         if title is None:
             title = 'independent'
         for i, image in enumerate(urls):

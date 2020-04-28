@@ -18,9 +18,17 @@ IMPORT = '../../.Neo4jDesktop/neo4jDatabases/database-f009728a-c309-4d9d-937d-cb
 
 '''
 This is the backbone mining module for population neo4j with the initial species list
+
+It is fairly efficient, since it uses native neo4j bulk data importing.
+
+Be sure to update the above IMPORT directory, and even better, automate the discovery of this directory!
+This is kept this way to prevent security vulnerabilities when running on a server. (See neo4j LOAD CSV documentation)
 '''
 
 def to_long_json():
+    '''
+    Convert to long form (a list of nodes, and a list of relations between nodes)
+    '''
     for json in to_json():
         found = False
         relations = []
@@ -38,6 +46,10 @@ def to_long_json():
         yield json, relations
 
 def to_csv():
+    '''
+    Transform catalog data to three CSV files that neo4j natively understands.
+    species.csv is seperate from catalog.csv to create an individual Species label in the neo4j database
+    '''
     i = 0
     first = True
     with open('data/cache/catalog.csv', 'w', encoding='utf-8') as catalog:
@@ -69,6 +81,10 @@ class OptimizedCatalog(Module):
         self.import_dir = import_dir
 
     def process(self):
+        '''
+        Exploit LOAD CSV in neo4j to load a taxon catalog efficiently
+
+        '''
         self.driver = self.get_driver(driver=driver)
         if self.driver.get('__optimized_catalog_finished_signal__') is not None:
             return

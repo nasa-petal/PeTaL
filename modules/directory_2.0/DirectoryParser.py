@@ -10,6 +10,12 @@ import shutil, os
 
 from petal.pipeline.utils.module import Module
 
+'''
+THIS FILE IS OUTDATED.
+
+Kept possibly as reference material.
+'''
+
 NEO4J_IMPORT_DIR = '../../.Neo4jDesktop/neo4jDatabases/database-c60209c1-62b4-4cb3-90be-59a9b62b4141/installation-4.0.2/import/'
 
 

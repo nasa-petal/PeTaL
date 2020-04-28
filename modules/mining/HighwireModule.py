@@ -6,6 +6,14 @@ from pprint import pprint
 
 from petal.pipeline.utils.module import Module
 
+'''
+LEGACY: Scrape local highwire articles into neo4j.
+
+Honestly, if you're reading this, just take a calm hour to replace this with a more relevant article scraper, perhaps NTRS, SCOPUS, or engineering village. Anything you like.
+
+Perhaps the code is useful as reference, but it's just an XML parser.
+'''
+
 class HighwireModule(Module):
     def __init__(self, in_label=None, out_label='HighwireArticle:Article', connect_label=None, name='Highwire'):
         Module.__init__(self, in_label, out_label, connect_label, name)

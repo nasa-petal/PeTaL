@@ -1,15 +1,50 @@
 from petal.pipeline.utils.module import Module
 
+'''
+WARNING: Some of the following code disobeys robots.txt of particular websites.
+  Thus, it is disabled by default and only left as reference.
+  Use at your own risk.
+
+       o     O
+     __|_____|___
+    |    --      |
+    |  ( o )   ( o )
+  { |        /   |
+    |     [wwww]  < *Exterminate all humans.txt* )
+    [____________|
+       |   |              /Vvvv/
+  _____|___|____          |___/
+ /______________\_________/   |
+ |              |             /
+ | ( / )  ( + ) |__|__|__|_|_/
+ |              |
+ | [ -vV--vV-]  |
+ |              |
+ |______________/
+'''
+
 def process_section(section):
+    '''
+    A trivial helper function. Genuinely not sure why I thought this helped...
+    '''
     paragraphs = section.find_all('p')
     return '\n'.join(p.get_text() for p in paragraphs)
 
 class JEBModule(Module):
+    '''
+    Download Articles from the Journal of Experimental Biology
+    '''
     def __init__(self, in_label='Taxon', out_label='JEBArticle:Article', connect_labels=('MENTIONED_IN_ARTICLE', 'MENTIONS_SPECIES'), name='JEB'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
         self.JEB_LIMIT = 50
 
     def process(self, previous):
+        '''
+        Download JEB articles for a taxon.
+        Simple HTML parser..
+
+        :param previous: neo4j transaction representing a Taxon.
+        '''
         from bs4      import BeautifulSoup 
         from requests import get
         from pprint import pprint

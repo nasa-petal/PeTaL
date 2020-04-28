@@ -6,6 +6,13 @@ from pprint import pprint
 
 from petal.pipeline.utils.module import Module
 
+'''
+LEGACY: Inefficiently load wikipedia from local XML.
+Do not use this. Reference only for loading local XML.
+
+To do batch wikipedia imports, use LOAD CSV, see /modules/libraries/download_wikipedia
+'''
+
 def to_tag(tag):
     return '{http://www.mediawiki.org/xml/export-0.10/}' + tag
 
@@ -29,6 +36,9 @@ class NormalBatchWikipediaModule(Module):
         Module.__init__(self, in_label, out_label, connect_label, name)
 
     def parse_page(self, page):
+        '''
+        Simple XML Parsing of Wikipedia
+        '''
         properties = dict()
 
         properties['title'] = page.find(to_tag('title')).text

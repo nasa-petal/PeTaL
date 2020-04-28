@@ -8,9 +8,14 @@ from petal.pipeline.utils.module import Module
 
 '''
 This is the backbone mining module for population neo4j with the initial species list
+
+Inefficient compared to bulk LOAD CSV imports.
 '''
 
 def create_dir():
+    '''
+    Download the most recent taxon catalog
+    '''
     # TODO: setup auto downloads from here by scraping most recent date?
     col_date = '2019-05-01' # Make sure this is a valid COL release
     if not os.path.isfile('data/.col_data/taxa.txt'):
