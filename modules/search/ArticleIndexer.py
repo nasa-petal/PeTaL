@@ -4,7 +4,11 @@ from ..libraries.natural_language.hitlist import HitList
 
 class ArticleIndexer(Module):
     '''
-    This module is intended to index articles within PeTaL
+    This module is intended to index articles within PeTaL.
+
+    The bulk of this is handled by the HitList class.
+
+    Can parse any article with "title", "abstract" and "content" properties
     '''
     def __init__(self, in_label='Article', out_label='HitList', connect_labels=('hitlist', 'hitlist'), name='ArticleIndexer'):
         Module.__init__(self, in_label, out_label, connect_labels, name, page_batches=True)
@@ -12,6 +16,11 @@ class ArticleIndexer(Module):
         self.cleaner = Cleaner()
 
     def process(self, previous):
+        '''
+        Generate a hitlist for a particular article.
+
+        :param previous: Transaction object of a particular article
+        '''
         self.log.log('Running Indexer')
 
         hitlist = HitList(previous.uuid)

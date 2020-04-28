@@ -11,6 +11,11 @@ LEXICON_PATH = 'data/lexicon'
 INDEX_PATH   = 'data/index'
 
 def insort(items, item, key=lambda x : x):
+    '''
+    Inplace sorting for items.
+    Technically O(n), since it needs to compute keys.
+    Could be O(lg(n)) if this didn't happen.
+    '''
     keys  = [key(x) for x in items]
     k     = key(item)
     index = bisect_left(keys, k)
@@ -18,7 +23,9 @@ def insort(items, item, key=lambda x : x):
 
 class InvertedIndexCreator(Module):
     '''
-    Create an inverted index from hitlists
+    Create an inverted index from hitlists..
+
+    Used for text search.
     '''
     def __init__(self, in_label='HitList', out_label=None, connect_labels=None, name='InvertedIndexCreator'):
         Module.__init__(self, in_label, out_label, connect_labels, name, page_batches=True)
@@ -41,11 +48,20 @@ class InvertedIndexCreator(Module):
                 self.lexicon = pickle.load(infile)
 
     def rank(self, entry):
+        '''
+        This is the custom ranking function, replaceable by any ranking function..
+        '''
         *hits, uuid = entry
         print(hits, uuid, sum(hits), flush=True)
         return sum(hits) # TODO replace with custom ranking function with weights
 
     def process(self, previous):
+        '''
+        Process a single hitlist.
+        Simply sort the inverted index by keyword matches, using self.rank()
+
+        :param previous: neo4j transaction representing a hitlist of an article
+        '''
         data = previous.data
         hitlist = HitList(data['source_uuid'])
         try:
@@ -59,6 +75,11 @@ class InvertedIndexCreator(Module):
             print(e)
 
     def process_batch(self, batch):
+        '''
+        Process a batch of HitLists
+
+        :param batch: The batch of hitlists..
+        '''
         print('BATCH: ', batch.uuid, flush=True)
         self.load()
         for item in batch.items:
