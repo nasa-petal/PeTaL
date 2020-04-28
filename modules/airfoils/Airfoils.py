@@ -14,12 +14,23 @@ import numpy as np
 
 from petal.pipeline.utils.module import Module
 
-def calculate_camber_augmentation(coordinates, plot=False):
+def calculate_camber_augmentation(coordinates):
+    '''
+    Get the camber line of an airfoil, potentially to feed into machine learning systems
+
+    :param coordinates: Tuple (x1, x2, y1, y2) where 1 and 2 are two different lines for each side of the airfoil
+    '''
     fx, sx, fy, sy = coordinates
     camber = [(fyi + syi) / 2.0 for fyi, syi in zip(fy, sy)]
     return camber
 
-def interpolate_airfoil(coords, n=200, plot=False):
+def interpolate_airfoil(coords, n=200):
+    '''
+    Interpolate coordinates of an airfoil to cast them to a new size.
+    Helpful if input data is un-normalized and output data needs to be a fixed size.
+
+    :param coords: Airfoil coordinates, list of tuples
+    '''
     x, y = zip(*coords)
     s = interpolate.InterpolatedUnivariateSpline(x, y)
     xnew = np.linspace(min(x), max(x), n)
@@ -29,21 +40,13 @@ def interpolate_airfoil(coords, n=200, plot=False):
 TOOLS_URL  = "http://airfoiltools.com"
 SEARCH_URL = "http://airfoiltools.com/search/airfoils"
 
-def scrape_airfoil_list():
-    raw_html = get(SEARCH_URL).content
-    html = BeautifulSoup(raw_html, 'html.parser')
-    airfoilURLList = html.findAll("table", {"class": "listtable"})
-    tableRows = airfoilURLList[0].findAll("tr")
-    urls = []
-    names = []
-    for row in tableRows: # Search through all tables 
-        airfoil_link = row.find(lambda tag: tag.name=="a" and tag.has_attr('href'))
-        if (airfoil_link):
-            urls.append(TOOLS_URL + airfoil_link['href'])
-            names.append(airfoil_link.text.replace("\\", "_").replace("/","_"))
-    return zip(urls, names)
-
 def scrape_airfoil_coords(page, name):
+    '''
+    Scrape a coordinates page from HTML, and calculate camber after interpolating and normalizing data
+
+    :param page: URL of coordinates page
+    :param name: name of coordiantes to be scraped
+    '''
     lednicerDAT = page.replace("details","lednicerdatfile")
     raw_html = get(lednicerDAT,True).content
     soup = BeautifulSoup(raw_html,'lxml')
@@ -70,6 +73,11 @@ def scrape_airfoil_coords(page, name):
     return coord_file
 
 def parse_detail_lines(lines):
+    '''
+    Parse detail data from XFOIL output
+
+    :param lines: XFOIL output, list of strings.
+    '''
     details = dict()
 
     xtrf_cells = lines[0].split()
@@ -88,6 +96,12 @@ def parse_detail_lines(lines):
     return details
 
 def parse_details(details_page,name):
+    '''
+    Parse an entire details page by URL
+
+    :param details_page: URL of page
+    :param name: Name of airfoil
+    '''
     raw_html=get(details_page).content
     html = BeautifulSoup(raw_html, 'html.parser')
     details_table = html.findAll("table", {"class": "details"})
@@ -98,6 +112,12 @@ def parse_details(details_page,name):
     return parse_detail_lines(lines)
 
 def parse_airfoil(url, name):    
+    '''
+    Parse an airfoils coordinates and performance characteristics
+
+    :param url: URL of the airfoil
+    :param name: Name of the airfoil
+    '''
     details = []
     html = BeautifulSoup(get(url).content, 'html.parser')
     polar_list = html.findAll("table", {"class": "polar"})
@@ -115,10 +135,18 @@ def parse_airfoil(url, name):
     return details
 
 class Airfoils(Module):
+    '''
+    Download airfoils given URL and name
+    '''
     def __init__(self, in_label='AirfoilURL', out_label='Airfoil', connect_labels=None, name='Airfoils'):
         Module.__init__(self, in_label, out_label, connect_labels, name)
 
     def process(self, transaction):
+        '''
+        Download a single URL. Can be done in parallel for faster data acquisition
+
+        :param transaction: URL and name of airfoil in a neo4j entry
+        '''
         url  = transaction.data['url']
         name = transaction.data['name']
         try:

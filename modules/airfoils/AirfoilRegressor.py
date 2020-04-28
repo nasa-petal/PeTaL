@@ -14,8 +14,18 @@ import torch.optim as optim
 from torch.utils import data
 from torchvision import transforms
 
+
 class AirfoilModel(nn.Module):
+    '''
+    A very simple fully-connected feed-forward neural net for predicting performance characteristics of an airfoil.
+    '''
     def __init__(self, inputs, outputs, hidden=1, width=1000):
+        '''
+        :param inputs: Size of input vector
+        :param outputs: Size of output vector
+        :param hidden: Number of hidden layers
+        :param width: Width of hidden layers
+        '''
         nn.Module.__init__(self)
         self.hidden = hidden
         self.fc1 = nn.Linear(inputs, width)
@@ -46,6 +56,12 @@ class AirfoilRegressor(BatchTorchLearner):
         self.model = AirfoilModel(1000 + 3 + 3, 4, hidden=5)
 
     def read_node(self, node):
+        '''
+        Parse an airfoil node and return coordinates and performance characteristics.
+        Could make use of a data structure to store this data once parsed...
+
+        :param node: neo4j airfoil node
+        '''
         coord_file  = node.data['coord_file']
         detail_files = node.data['detail_files']
 
@@ -69,6 +85,11 @@ class AirfoilRegressor(BatchTorchLearner):
             yield coordinates, coefficient_tuples, coefficient_keys, alphas, limits, regime_vec
 
     def transform(self, node):
+        '''
+        Transform a node into input and output data
+
+        :param node: neo4j node data
+        '''
         for coordinates, coefficient_tuples, coefficient_keys, alphas, limits, regime_vec in self.read_node(node):
             coordinates = sum(map(list, coordinates), [])
             for alpha, coefficients, (top, bot) in zip(alphas, coefficient_tuples, limits):
@@ -77,6 +98,9 @@ class AirfoilRegressor(BatchTorchLearner):
                 yield inputs.unsqueeze(0), coefficients.unsqueeze(0)
 
     def test(self, batch):
+        '''
+        ...Disabled for now. Potentially replace with plotting code or live loss graph.
+        '''
         self.log.log('Testing AirfoilRegressor')
         # for node in batch.items:
         #     for coordinates, coefficient_tuples, coefficient_keys, alphas, limits, regime_vec in self.read_node(node):
