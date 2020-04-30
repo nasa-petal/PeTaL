@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Odour discrimination learning in the Indian greater short-nosed fruit bat (<i>Cynopterus sphinx</i>): differential expression of <i>Egr-1</i>, <i>C-fos</i> and PP-1 in the olfactory bulb, amygdala and hippocampus
-<p><bold>Summary:</bold> Differential expression of c-Fos in the hippocampus and amygdala through odour-mediated regulation of PP-1 may contribute to olfactory learning and memory in <i>Cynopterus <strong><span style="color:yellowgreen">sphinx</span></strong></i>.</p>
-http://jeb.biologists.org/cgi/content/abstract/221/12/jeb175364
-10.1242/jeb.175364
-['Cynopterus', 'Cynopterus sphinx', 'greater short-nosed fruit bat']
-

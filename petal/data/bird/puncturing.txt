@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-A Mucin-Like Protein of Planthopper Is Required for Feeding and Induces Immunity Response in Plants
-<p>The brown planthopper, <i>Nilaparvata lugens</i>, is a pest that threatens rice (<i>Oryza sativa</i>) production worldwide. While feeding on rice plants, planthoppers secrete saliva, which plays crucial roles in nutrient ingestion and modulating plant defense responses, although the specific functions of salivary proteins remain largely unknown. We identified an <i>N. lugens</i>-secreted mucin-like protein (NlMLP) by transcriptome and proteome analyses and characterized its function, both in brown planthopper and in plants. <i>NlMLP</i> is highly expressed in salivary glands and is secreted into rice during feeding. Inhibition of <i>NlMLP</i> expression in planthoppers disturbs the formation of salivary sheaths, thereby reducing their performance. In plants, NlMLP induces cell death, the expression of defense-related genes, and callose deposition. These defense responses are related to Ca<sup>2+</sup> mobilization and the MEK2 MAP kinase and jasmonic acid signaling pathways. The active region of NlMLP that elicits plant responses is located in its carboxyl terminus. Our work provides a detailed characterization of a salivary protein from a <strong><span style="color:yellowgreen">pierc</span></strong>ing-sucking insect other than aphids. Our finding that the protein functions in plant immune responses offers new insights into the mechanism underlying interactions between plants and herbivorous insects.</p>
-http://plantphysiol.org/cgi/content/abstract/176/1/552
-10.1104/pp.17.00755
-['Oryza', 'Oryza sativa', 'insects', 'plants', 'rice', 'Nilaparvata', 'Nilaparvata lugens', 'planthoppers']
-

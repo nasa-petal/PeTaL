@@ -1,8 +1,0 @@
-1
-Biology Open
-Impact of ambient temperature on energy cost and economical speed during level walking in healthy young males
-<p><bold>Summary:</bold> Energy cost of walking in a hot environment was greater than in a <strong><span style="color:yellowgreen">comfort</span></strong>able environment. Thus, to prevent heat related injury, walking speed should be reduced in a hot environment.</p>
-http://bio.biologists.org/cgi/content/abstract/7/7/bio035121
-10.1242/bio.035121
-None
-

@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Wings as impellers: honey bees co-opt flight system to induce nest ventilation and disperse pheromones
-<p><bold>Summary:</bold> Honey bees employ unique flapping kinematics to use their wings as <strong><span style="color:yellowgreen">impel</span></strong>lers for ventilatory fanning and dispersing pheromone signals.</p>
-http://jeb.biologists.org/cgi/content/abstract/220/12/2203
-10.1242/jeb.149476
-None
-

@@ -1,0 +1,528 @@
+.contentMain.map {
+    .mapLayout {
+        display: flex;
+
+        .filterBar {
+            padding: 8px 20px;
+            background: $darkMode-light-bg;
+            border-right: 1px solid $darkMode-light-border;
+            border-radius: 2px 0 0 0;
+            display: flex;
+            position: relative;
+
+            .darkModeActive & {
+                background: $darkMode-light-bg;
+                border-right: 1px solid $darkMode-light-border;
+            }
+
+            h3 {
+                margin: 0 30px 0 0;
+                color: #fff;
+            }
+
+            select {
+                min-width: 200px;
+            }
+
+            .mapInfoTrigger {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                color: #fff;
+                font-size: 20px;
+            }
+        }
+
+        .col-left {
+            width: 70%;
+            padding-right: 0;
+
+            .mapWrapper {
+                position: relative;
+                width: 100%;
+
+                #map {
+                    height: 60vh;
+                    width: 100%;
+                }
+
+                table {
+                    width: 240px;
+                    height: 60vh;
+                    overflow: scroll;
+                    overflow-x: hidden;
+                    position: absolute;
+                    display: block;
+                    right: -10px;
+                    top: 0;
+                    opacity: 0;
+                    z-index: -1;
+                    background: #29333a;
+                    padding: 0 10px;
+                    z-index: -1;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+
+                    &.show {
+                        right: 0;
+                        opacity: 1;
+                        z-index: 9999;
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                background-color: none;
+                                color: #9ca6ad;
+
+                                span {
+                                    height: 10px;
+                                    width: 10px;
+                                    border-radius: 50%;
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .tabulator {
+                background-color: $lighMode-light-bg;
+                border: solid 1px $lighMode-light-border;
+                border-top: none;
+
+                // height: auto !important;
+
+                .tabulator-footer .tabulator-page.active {
+                    color: #3299bc;
+                }
+
+                .darkModeActive & {
+                    background-color: $darkMode-light-bg;
+                    border: solid 1px $darkMode-light-border;
+                }
+            }
+        }
+
+        .col-right {
+            width: 30%;
+            padding: 15px 20px;
+            background: $lighMode-light-bg;
+            border: solid 1px $lighMode-light-border;
+
+            .darkModeActive & {
+                background: $darkMode-light-bg;
+                border: none;
+            }
+
+            .download {
+                margin: 30px 0 20px 0;
+                border-top: solid 1px $darkMode-light-border;
+
+                select {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                button {
+                    color: #fff;
+                    min-width: 190px;
+                }
+            }
+        }
+
+        .plots {
+            .darkModeActive & {
+                border: none;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            .svg-container {
+                width: 100% !important;
+                border-radius: 4px;
+                overflow: hidden;
+
+                svg {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.Aeshna_canadensis {
+    background-color: #ba6693;
+}
+
+.Anax_junius {
+    background-color: #997061;
+}
+
+.Bombus_griseocollis {
+    background-color: #224b63;
+}
+
+.Bombus_terricola {
+    background-color: #922789;
+}
+
+.Plecia_pealei {
+    background-color: #3e5187;
+}
+
+.Calopteryx_aequabilis {
+    background-color: #694311;
+}
+
+.Enallagma_exulans {
+    background-color: #4a4a1c;
+}
+
+.Enallagma_vesperum {
+    background-color: #94133f;
+}
+
+.Cordulegaster_maculatus {
+    background-color: #0635f8;
+}
+
+.Procydnus_pronus {
+    background-color: #e2a219;
+}
+
+.Gomphus_lineatifrons {
+    background-color: #752995;
+}
+
+.Lanthus_albistylus {
+    background-color: #ea3398;
+}
+
+.Lestes_rectangularis {
+    background-color: #b1762e;
+}
+
+.Lestes_vigilax {
+    background-color: #8d84c4;
+}
+
+.libellula_luctuosa {
+    background-color: #7554f2;
+}
+
+.Sympetrum_vicinum {
+    background-color: #d06d8c;
+}
+
+.Macromia_illinoiensis {
+    background-color: #3f2f70;
+}
+
+.Macromia_taeniolata {
+    background-color: #b8adaf;
+}
+
+.Megachile_sculpturalis {
+    background-color: #55979a;
+}
+
+.Tachopteryx_thoreyi {
+    background-color: #311e2a;
+}
+
+.Polites_annularis {
+    background-color: #364133;
+}
+
+.Polites_fuscatus {
+    background-color: #15ad9e;
+}
+
+.Evagetes_ingenuus {
+    background-color: #b904bc;
+}
+
+.Pepsis_formosa {
+    background-color: #266d10;
+}
+
+.Pyrogota_undata {
+    background-color: #37caa3;
+}
+
+.Syrphus_vittafrons {
+    background-color: #c3c7b9;
+}
+
+.Temnostoma_excentricum {
+    background-color: #51a299;
+}
+
+.Tabanus_atratus {
+    background-color: #bc3e19;
+}
+
+.Tabanus_sulcifrons {
+    background-color: #f8b0d8;
+}
+
+.Tarsophlebia_eximia {
+    background-color: #3d4e45;
+}
+
+.Tanyptera_dorsalis {
+    background-color: #e12762;
+}
+
+.Tipula_Nippotipula_abdominalis {
+    background-color: #b3887e;
+}
+
+.Dolichovespula_arenaria {
+    background-color: #ff9485;
+}
+
+.Dolichovespula_maculata {
+    background-color: #7b841a;
+}
+
+.Xylocopa_virginica {
+    background-color: #45942e;
+}
+
+.Aeger_tipularius {
+    background-color: #ba6693;
+}
+
+.Cambarus_Depressicambarous_reduncus {
+    background-color: #997061;
+}
+
+.Cambarus_Depressicambarus_graysoni {
+    background-color: #224b63;
+}
+
+.Cambarus_Jugicambarus_adustus {
+    background-color: #922789;
+}
+
+.Cambarus_Jugicambarus_monongalensis {
+    background-color: #3e5187;
+}
+
+.Cambarus_Lacunicambarus_diogenes {
+    background-color: #694311;
+}
+
+.Cambarus_Lacunicambarus_ludovicianus {
+    background-color: #4a4a1c;
+}
+
+.Cambarus_Puncticambarus_robustus {
+    background-color: #94133f;
+}
+
+.Cambarus_Tubericambarus_polychromatus {
+    background-color: #0635f8;
+}
+
+.Cambarus_Tubericambarus_thomai {
+    background-color: #e2a219;
+}
+
+.Orconectes_Trisellescens_immunis {
+    background-color: #752995;
+}
+
+.Procambarus_Ortmannicus_acutus {
+    background-color: #ea3398;
+}
+
+.Carpopenaeus_callirostris {
+    background-color: #b1762e;
+}
+
+.Eryon_artiformis {
+    background-color: #8d84c4;
+}
+
+.Pinnixa_galliheri {
+    background-color: #7554f2;
+}
+
+.Eryma_elongata {
+    background-color: #d06d8c;
+}
+
+.Pulalius_vulgaris {
+    background-color: #3f2f70;
+}
+
+.Zanthopsis_vulgaris {
+    background-color: #b8adaf;
+}
+
+.Eurypterus_remipes {
+    background-color: #55979a;
+}
+
+.Archaeopteryx_lithographica {
+    background-color: #ba6693;
+}
+
+.Confuciusornis_sanctus {
+    background-color: #997061;
+}
+
+.Aurorazhdarcho_micronyx {
+    background-color: #224b63;
+}
+
+.Pterodactylus_kochi {
+    background-color: #922789;
+}
+
+.Rhamphorhynchus_muensteri {
+    background-color: #3e5187;
+}
+
+.Greenops_boothi {
+    background-color: #ba6693;
+}
+
+.Agnostus_montis {
+    background-color: #997061;
+}
+
+.Basidechenella_rowi {
+    background-color: #224b63;
+}
+
+.Agraulos_ceticephalus {
+    background-color: #922789;
+}
+
+.Elrathia_kingii {
+    background-color: #3e5187;
+}
+
+.Homotelus_bromidensis {
+    background-color: #694311;
+}
+
+.Isotelua_maximus {
+    background-color: #4a4a1c;
+}
+
+.Isotelus_iowensis {
+    background-color: #94133f;
+}
+
+.Isotelus_maximus {
+    background-color: #0635f8;
+}
+
+.Asaphiscus_wheeleri {
+    background-color: #e2a219;
+}
+
+.Aulacopleura_konincki {
+    background-color: #752995;
+}
+
+.Brachymetopus_lodiensis {
+    background-color: #ea3398;
+}
+
+.Calymene_celebra {
+    background-color: #b1762e;
+}
+
+.Calymene_niagarensis {
+    background-color: #8d84c4;
+}
+
+.Calymene_tristani {
+    background-color: #7554f2;
+}
+
+.Flexicalymene_meeki {
+    background-color: #d06d8c;
+}
+
+.Conocoryphe_sulzeri {
+    background-color: #3f2f70;
+}
+
+.Dalmanites_caudatus {
+    background-color: #b8adaf;
+}
+
+.Dalmanites_limulurus {
+    background-color: #55979a;
+}
+
+.Dikelocephalus_minnesotensis {
+    background-color: #311e2a;
+}
+
+.Bathyuriscus_rotundatus {
+    background-color: #364133;
+}
+
+.Ogygopsis_klotzi {
+    background-color: #15ad9e;
+}
+
+.Ellipsocephalus_hoffi {
+    background-color: #b904bc;
+}
+
+.Oleneius_getzi {
+    background-color: #266d10;
+}
+
+.Triarthrus_beckii {
+    background-color: #37caa3;
+}
+
+.Phacops_rana {
+    background-color: #c3c7b9;
+}
+
+.Phacops_rana_crassituberculata {
+    background-color: #51a299;
+}
+
+.Phacops_rana_milleri {
+    background-color: #bc3e19;
+}
+
+.Ameura_sangamonensis {
+    background-color: #f8b0d8;
+}
+
+.Breviphillipsia_sampsoni {
+    background-color: #3d4e45;
+}
+
+.Phillipsia_eurybathrea {
+    background-color: #e12762;
+}
+
+.Bumastus_ioxus {
+    background-color: #b3887e;
+}
+
+.Unidentified {
+    background-color: #ff9485;
+}
+
+.Mesolimulus_walchi {
+    background-color: #ba6693;
+}

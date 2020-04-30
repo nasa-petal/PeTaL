@@ -1,8 +1,0 @@
-1
-Science
-Counter-propagating charge transport in the quantum Hall effect regime
-<p>The quantum Hall effect, observed in a two-dimensional (2D) electron gas subjected to a perpendicular magnetic field, imposes a 1D-like chiral, downstream, transport of charge carriers along the sample edges. Although this picture remains valid for electrons and Laughlin’s fractional quasiparticles, it no longer holds for quasiparticles in the so-called hole-conjugate states. These states are expected, when disorder and interactions are weak, to harbor upstream charge modes. However, so far, charge currents were observed to flow exclusively downstream in the quantum Hall regime. Studying the canonical spin-polarized and spin-unpolarized <i>v</i> = 2/3 hole-like states in GaAs-AlGaAs heterostructures, we observed a significant upstream charge current at short propagation distances in the spin unpolarized state.</p>
-http://sciencemag.org/cgi/content/abstract/363/6422/54
-10.1126/science.aar3766
-None
-

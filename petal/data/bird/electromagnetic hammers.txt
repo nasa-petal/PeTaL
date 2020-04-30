@@ -1,8 +1,0 @@
-1
-Science
-‘Ending AIDS’ movement falters worldwide
-<p>A campaign to end AIDS by 2030, led by the Joint United Nations Programme on HIV/AIDS (UNAIDS), is badly off track. This became abundantly clear at the International AIDS Conference held in Amsterdam last week. The campaign rests on a mathematical model that says that treatment levels are high enough, the epidemic will peter out because people who fully suppress their virus rarely infect others. Although 21.7 million of the 36.9 million HIV-infected people in the world now receive antiretrovirals, too few countries have met treatment targets. Indeed, nearly 2 million people became infected last year, and to meet UNAIDS benchmarks for ending AIDS, that number would have to drop to 500,000 by 2020, which now seems highly unlikely. But there was good news at the conference, too: The few countries that have met the targets, including Namibia and Botswana, have seen big drops in new infections, as the mathematical model predicted. And one study <strong><span style="color:yellowgreen">hammer</span></strong>ed in the point that effective treatment essentially eliminates the risk of an infected person transmitting the virus to others.</p>
-http://sciencemag.org/cgi/content/summary/361/6401/438
-None
-None
-

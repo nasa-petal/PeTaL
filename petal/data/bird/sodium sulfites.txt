@@ -1,8 +1,0 @@
-2
-Science
-A designed heme-[4Fe-4S] metalloenzyme catalyzes sulfite reduction like the native enzyme
-<p>Multielectron redox reactions often require multicofactor metalloenzymes to facilitate coupled electron and proton movement, but it is challenging to design artificial enzymes to catalyze these important reactions, owing to their structural and functional complexity. We report a designed heteronuclear heme-[4Fe-4S] cofactor in cytochrome <i>c</i> peroxidase as a structural and functional model of the enzyme <strong><span style="color:yellowgreen">sulfit</span></strong>e reductase. The initial model exhibits spectroscopic and ligand-binding properties of the native enzyme, and <strong><span style="color:yellowgreen">sulfit</span></strong>e reduction activity was improved—through rational tuning of the secondary sphere interactions around the [4Fe-4S] and the substrate-binding sites—to be close to that of the native enzyme. By offering insight into the requirements for a demanding six-electron, seven-proton reaction that has so far eluded synthetic catalysts, this study provides strategies for designing highly functional multicofactor artificial enzymes.</p>
-http://sciencemag.org/cgi/content/abstract/361/6407/1098
-10.1126/science.aat8474
-None
-

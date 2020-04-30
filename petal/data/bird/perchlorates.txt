@@ -1,8 +1,0 @@
-1
-Science
-A bioinspired iron catalyst for nitrate and perchlorate reduction
-<p>Nitrate and per<strong><span style="color:yellowgreen">chlorat</span></strong>e have considerable use in technology, synthetic materials, and agriculture; as a result, they have become pervasive water pollutants. Industrial strategies to chemically reduce these oxyanions often require the use of harsh conditions, but microorganisms can efficiently reduce them enzymatically. We developed an iron catalyst inspired by the active sites of nitrate reductase and (per)<strong><span style="color:yellowgreen">chlorat</span></strong>e reductase enzymes. The catalyst features a secondary coordination sphere that aids in oxyanion deoxygenation. Upon reduction of the oxyanions, an iron(III)-oxo is formed, which in the presence of protons and electrons regenerates the catalyst and releases water.</p>
-http://sciencemag.org/cgi/content/abstract/354/6313/741
-10.1126/science.aah6886
-None
-

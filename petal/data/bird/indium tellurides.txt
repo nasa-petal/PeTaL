@@ -1,8 +1,0 @@
-3
-Science
-Reducing the stochasticity of crystal nucleation to enable subnanosecond memory writing
-<p>Operation speed is a key challenge in phase-change random-access memory (PCRAM) technology, especially for achieving subnanosecond high-speed cache memory. Commercialized PCRAM products are limited by the tens of nanoseconds writing speed, originating from the stochastic crystal nucleation during the crystallization of amorphous germanium antimony <strong><span style="color:yellowgreen">tellurid</span></strong>e<i> </i>(Ge<sub>2</sub>Sb<sub>2</sub>Te<sub>5</sub>). Here, we demonstrate an alloying strategy to speed up the crystallization kinetics. The scandium antimony <strong><span style="color:yellowgreen">tellurid</span></strong>e (Sc<sub>0.2</sub>Sb<sub>2</sub>Te<sub>3</sub>) compound that we designed allows a writing speed of only 700 picoseconds without preprogramming in a large conventional PCRAM device. This ultrafast crystallization stems from the reduced stochasticity of nucleation through geometrically matched and robust scandium <strong><span style="color:yellowgreen">tellurid</span></strong>e (ScTe) chemical bonds that stabilize crystal precursors in the amorphous state. Controlling nucleation through alloy design paves the way for the development of cache-type PCRAM technology to boost the working efficiency of computing systems.</p>
-http://sciencemag.org/cgi/content/abstract/358/6369/1423
-10.1126/science.aao3212
-None
-

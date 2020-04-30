@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Flight mechanics and control of escape manoeuvres in hummingbirds. I. Flight kinematics
-<p><bold>Summary:</bold> A detailed examination of the body and wing kinematics of four hummingbird species in fast escape manoeuvres shows that they change wing trajectory significantly, and escape manoeuvres do not obey the ‘<strong><span style="color:yellowgreen">helicopt</span></strong>er model’.</p>
-http://jeb.biologists.org/cgi/content/abstract/219/22/3518
-10.1242/jeb.137539
-None
-

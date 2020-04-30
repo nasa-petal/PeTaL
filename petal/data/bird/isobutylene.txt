@@ -1,8 +1,0 @@
-1
-Science
-Controlling guest conformation for efficient purification of butadiene
-<p>Conventional adsorbents preferentially adsorb the small, high-polarity, and unsaturated 1,3-butadiene molecule over the other C<sub>4</sub> hydrocarbons from which it must be separated. We show from single-crystal x-ray diffraction and computational simulation that a hydrophilic metal-organic framework, [Zn<sub>2</sub>(btm)<sub>2</sub>], where H<sub>2</sub>btm is bis(5-methyl-1<i>H</i>-1,2,4-triazol-3-yl)methane, has quasi-discrete pores that can induce conformational changes in the flexible guest molecules, weakening 1,3-butadiene adsorption through a large bending energy penalty. In a breakthrough operation at ambient temperature and pressure, this guest conformation–controlling adsorbent eluted 1,3-butadiene first, then butane, <strong><span style="color:yellowgreen">buten</span></strong>e, and iso<strong><span style="color:yellowgreen">buten</span></strong>e. Thus, 1,3-butadiene can be efficiently purified (≥99.5%) while avoiding high-temperature conditions that can lead to its undesirable polymerization.</p>
-http://sciencemag.org/cgi/content/abstract/356/6343/1193
-10.1126/science.aam7232
-None
-

@@ -1,8 +1,0 @@
-1
-Science
-Precipitation strengthening of aluminum alloys by room-temperature cyclic plasticity
-<p>High-strength aluminum alloys are important for lightweighting vehicles and are extensively used in aircraft and, increasingly, in <strong><span style="color:yellowgreen">automobil</span></strong>es. The highest-strength aluminum alloys require a series of high-temperature “bakes” (120° to 200°C) to form a high number density of nanoparticles by solid-state precipitation. We found that a controlled, room-temperature cyclic deformation is sufficient to continuously inject vacancies into the material and to mediate the dynamic precipitation of a very fine (1- to 2-nanometer) distribution of solute clusters. This results in better material strength and elongation properties relative to traditional thermal treatments, despite a much shorter processing time. The microstructures formed are much more uniform than those characteristic of traditional thermal treatments and do not exhibit precipitate-free zones. These alloys are therefore likely to be more resistant to damage.</p>
-http://sciencemag.org/cgi/content/abstract/363/6430/972
-10.1126/science.aav7086
-None
-

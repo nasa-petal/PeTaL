@@ -1,8 +1,0 @@
-1
-Science
-An Anthropocene map of genetic diversity
-<p>The Anthropocene is witnessing a loss of biodiversity, with well-documented declines in the diversity of ecosystems and species. For intraspecific genetic diversity, however, we lack even basic knowledge on its global distribution. We georeferenced 92,801 mitochondrial sequences for >4500 species of terrestrial mammals and amphibians, and found that genetic diversity is 27% higher in the tropics than in nontropical regions. Overall, habitats that are more affected by humans hold less genetic diversity than <strong><span style="color:yellowgreen">wilder</span></strong> regions, although results for mammals are sensitive to choice of genetic locus. Our study associates geographic coordinates with publicly available genetic sequences at a massive scale, yielding an opportunity to investigate both the drivers of this component of biodiversity and the genetic consequences of the anthropogenic modification of nature.</p>
-http://sciencemag.org/cgi/content/abstract/353/6307/1532
-10.1126/science.aaf4381
-['mammals']
-

@@ -1,8 +1,0 @@
-1
-Science
-Transformation of bulk alloys to oxide nanowires
-<p>One dimensional (1D) nanostructures offer prospects for enhancing the electrical, thermal, and mechanical properties of a broad range of functional materials and composites, but their synthesis methods are typically elaborate and expensive. We demonstrate a direct transformation of bulk materials into nanowires under ambient conditions without the use of catalysts or any external stimuli. The nanowires form via minimization of strain energy at the boundary of a chemical reaction front. We show the transformation of multimicrometer-sized particles of aluminum or magnesium alloys into <strong><span style="color:yellowgreen">alkoxid</span></strong>e nanowires of tunable dimensions, which are converted into oxide nanowires upon heating in air. Fabricated separators based on aluminum oxide nanowires enhanced the safety and rate capabilities of lithium-ion batteries. The reported approach allows ultralow-cost scalable synthesis of 1D materials and membranes.</p>
-http://sciencemag.org/cgi/content/abstract/355/6322/267
-10.1126/science.aal2239
-None
-

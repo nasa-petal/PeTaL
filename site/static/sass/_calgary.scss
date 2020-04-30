@@ -1,0 +1,11 @@
+.calgaryWrapper {
+    padding: 0 0 0 20px;
+    background: #fff;
+    border-top: solid 40px $darkMode-bg;
+
+    iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+    }
+}

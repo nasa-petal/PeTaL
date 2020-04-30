@@ -1,8 +1,0 @@
-2
-Science
-U-Pb constraints on pulsed eruption of the Deccan Traps across the end-Cretaceous mass extinction
-<p>Temporal correlation between some continental flood basalt eruptions and mass extinctions has been proposed to indicate causality, with eruptive volatile release driving environmental degradation and extinction. We tested this model for the Deccan Traps flood basalt province, which, along with the Chicxulub <strong><span style="color:yellowgreen">bolid</span></strong>e impact, is implicated in the Cretaceous-Paleogene (K-Pg) extinction approximately 66 million years ago. We estimated Deccan eruption rates with uranium-lead (U-Pb) zircon geochronology and resolved four high-volume eruptive periods. According to this model, maximum eruption rates occurred before and after the K-Pg extinction, with one such pulse initiating tens of thousands of years prior to both the <strong><span style="color:yellowgreen">bolid</span></strong>e impact and extinction. These findings support extinction models that incorporate both catastrophic events as drivers of environmental deterioration associated with the K-Pg extinction and its aftermath.</p>
-http://sciencemag.org/cgi/content/abstract/363/6429/862
-10.1126/science.aau2422
-None
-

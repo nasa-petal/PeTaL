@@ -1,8 +1,0 @@
-1
-Science
-Direct measurements of two-way wave-particle energy transfer in a collisionless space plasma
-<p>Particle acceleration by plasma waves and spontaneous wave generation are fundamental energy and momentum exchange processes in collisionless plasmas. Such wave-particle interactions occur ubiquitously in space. We present ultrafast measurements in Earth’s magnetosphere by the Magnetospheric Multiscale spacecraft that enabled quantitative evaluation of energy transfer in interactions associated with electromagnetic ion cyclotron waves. The observed ion distributions are not symmetric around the magnetic field direction but are in phase with the plasma wave fields. The wave-ion phase relations demonstrate that a cyclotron resonance transferred energy from hot protons to waves, which in turn <strong><span style="color:yellowgreen">nonreson</span></strong>antly accelerated cold He<sup>+</sup> to energies up to ~2 kilo–electron volts. These observations provide direct quantitative evidence for collisionless energy transfer in plasmas between distinct particle populations via wave-particle interactions.</p>
-http://sciencemag.org/cgi/content/abstract/361/6406/1000
-10.1126/science.aap8730
-None
-

@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Coloration mechanisms and phylogeny of <i>Morpho</i> butterflies
-<p><bold>Highlighted Article:</bold> <i>Morpho</i> butterfly wing scales produce their <strong><span style="color:yellowgreen">iridesc</span></strong>ent blue color with more than multilayers. The comparative macro- and microscopical properties of scales fairly agrees with the phylogeny of the genus.</p>
-http://jeb.biologists.org/cgi/content/abstract/219/24/3936
-10.1242/jeb.148726
-['Morpho', 'butterflies', 'butterfly']
-

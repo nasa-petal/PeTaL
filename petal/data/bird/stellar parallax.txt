@@ -1,8 +1,0 @@
-1
-Science
-Mapping spiral structure on the far side of the Milky Way
-<p>Little is known about the portion of the Milky Way lying beyond the Galactic center at distances of more than 9 kiloparsec from the Sun. These regions are opaque at optical wavelengths because of absorption by interstellar dust, and distances are very large and hard to measure. We report a direct trigonometric <strong><span style="color:yellowgreen">parallax</span></strong> distance of <bold>[Formula]</bold> kiloparsec obtained with the Very Long Baseline Array to a water maser source in a region of active star formation. These measurements allow us to shed light on Galactic spiral structure by locating the Scutum-Centaurus spiral arm as it passes through the far side of the Milky Way and to validate a kinematic method for determining distances in this region on the basis of transverse motions.</p>
-http://sciencemag.org/cgi/content/abstract/358/6360/227
-10.1126/science.aan5452
-None
-

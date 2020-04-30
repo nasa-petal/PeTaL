@@ -1,8 +1,0 @@
-2
-Science
-Second Chern number of a quantum-simulated non-Abelian Yang monopole
-<p>Topological order is often quantified in terms of Chern numbers, each of which classifies a topological singularity. Here, inspired by concepts from high-energy physics, we use quantum simulation based on the spin degrees of freedom of atomic Bose-Einstein condensates to characterize a singularity present in five-dimensional non-Abelian gauge theories—a Yang <strong><span style="color:yellowgreen">monopol</span></strong>e. We quantify the <strong><span style="color:yellowgreen">monopol</span></strong>e in terms of Chern numbers measured on enclosing manifolds: Whereas the well-known first Chern number vanishes, the second Chern number does not. By displacing the manifold, we induce and observe a topological transition, where the topology of the manifold changes to a trivial state.</p>
-http://sciencemag.org/cgi/content/abstract/360/6396/1429
-10.1126/science.aam9031
-None
-

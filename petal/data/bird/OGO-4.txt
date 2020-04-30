@@ -1,8 +1,0 @@
-1
-Science
-Imaging the distribution of transient viscosity after the 2016 <i>M</i><sub>w</sub> 7.1 Kumamoto earthquake
-<p>The deformation of mantle and crustal rocks in response to stress plays a crucial role in the distribution of seismic and volcanic hazards, controlling tectonic processes ranging from continental drift to earthquake triggering. However, the spatial variation of these dynamic properties is poorly understood as they are difficult to measure. We exploited the large stress perturbation incurred by the 2016 earthquake sequence in Kumamoto, Japan, to directly image localized and distributed deformation. The earthquakes illuminated distinct regions of low effective viscosity in the lower crust, notably beneath the Mount Aso and Mount Kuju volcanoes, surrounded by larger-scale variations of viscosity across the back-arc. This study demonstrates a new potential for geodesy to directly probe rock rheology in situ across many spatial and temporal scales.</p>
-http://sciencemag.org/cgi/content/abstract/356/6334/163
-10.1126/science.aal3422
-None
-

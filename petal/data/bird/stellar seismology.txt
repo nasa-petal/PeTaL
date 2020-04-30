@@ -1,8 +1,0 @@
-2
-Science
-Asteroseismic detection of latitudinal differential rotation in 13 Sun-like stars
-<p>The differentially rotating outer layers of stars are thought to play a role in driving their magnetic activity, but the underlying mechanisms that generate and sustain differential rotation are poorly understood. We report the measurement using <strong><span style="color:yellowgreen">asteroseismolog</span></strong>y of latitudinal differential rotation in the convection zones of 40 Sun-like stars. For the most significant detections, the stars’ equators rotate approximately twice as fast as their midlatitudes. The latitudinal shear inferred from <strong><span style="color:yellowgreen">asteroseismolog</span></strong>y is much larger than predictions from numerical simulations.</p>
-http://sciencemag.org/cgi/content/abstract/361/6408/1231
-10.1126/science.aao6571
-None
-

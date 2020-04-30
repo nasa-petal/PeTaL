@@ -1,8 +1,0 @@
-1
-Science
-Measurement of the fine-structure constant as a test of the Standard Model
-<p>Measurements of the fine-structure constant α require methods from across subfields and are thus powerful tests of the consistency of theory and experiment in physics. Using the recoil frequency of cesium-133 atoms in a matter-wave interferometer, we recorded the most accurate measurement of the fine-structure constant to date: α = 1/137.035999046(27) at 2.0 × 10<sup>−10</sup> accuracy. Using multiphoton interactions (Bragg diffraction and Bloch oscillations), we demonstrate the largest phase (12 million radians) of any Ramsey-Bordé interferometer and control systematic effects at a level of 0.12 part per billion. Comparison with Penning trap measurements of the electron gyromagnetic anomaly <i>g<sub>e</sub></i> − 2 via the Standard Model of particle physics is now limited by the uncertainty in <i>g<sub>e</sub></i> − 2; a 2.5σ tension rejects dark photons as the reason for the unexplained part of the <strong><span style="color:yellowgreen">muon</span></strong>’s magnetic moment at a 99% confidence level. Implications for dark-sector candidates and electron substructure may be a sign of physics beyond the Standard Model that warrants further investigation.</p>
-http://sciencemag.org/cgi/content/abstract/360/6385/191
-10.1126/science.aap7706
-None
-

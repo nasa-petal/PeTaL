@@ -1,8 +1,0 @@
-1
-Development
-The RhoGAP HUM-7/Myo9 integrates signals to modulate RHO-1/RhoA during embryonic morphogenesis in <i>Caenorhabditis</i> <i>elegans</i>
-<p><bold>Summary:</bold> Here, we describe how the conserved RhoGAP HUM-7/MYO9 integrates signals from SAX-3/ROBO to regulate cell migrations by attenuating RHO-1 GTPase activity, identifying new roles for RHO-1 during epidermal cell migration.</p>
-http://dev.biologists.org/cgi/content/abstract/145/23/dev168724
-10.1242/dev.168724
-['Caenorhabditis']
-

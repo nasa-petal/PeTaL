@@ -1,0 +1,31 @@
+// To start using scss please follow this tutorial:
+// http://thesassway.com/beginner/getting-started-with-sass-and-compass
+
+// Here we import the .scss files with prefix "_" 
+// Note the order in which you import can matter
+
+// Vendor css
+@import "bootstrap";
+@import "slick";
+@import "slick-theme";
+@import "animate";
+@import "customScroll";
+
+// Common & reusable components css
+@import "common";
+@import "nav";
+@import "icons";
+@import "buttons";
+@import "controls";
+
+// Specific pages css
+@import "home";
+@import "graph";
+@import "vision";
+@import "scatter";
+@import "calgary";
+@import "map";
+@import "cluster";
+@import "profile";
+@import "tsne";
+@import "bird";

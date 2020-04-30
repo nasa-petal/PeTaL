@@ -1,8 +1,0 @@
-1
-Development
-Placental labyrinth formation in mice requires endothelial FLRT2/UNC5B signaling
-<p><bold>Highlighted article:</bold> Proper organization of the placental <strong><span style="color:yellowgreen">labyrinth</span></strong> in mice depends on coordinated inter-endothelial repulsion mediated by the binding of FLRT2 to the UNC5B receptor.</p>
-http://dev.biologists.org/cgi/content/abstract/144/13/2392
-10.1242/dev.149757
-None
-

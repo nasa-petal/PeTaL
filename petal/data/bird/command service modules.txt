@@ -1,8 +1,0 @@
-2
-Science
-A cyclic oligonucleotide signaling pathway in type III CRISPR-Cas systems
-<p>Type III CRISPR-Cas systems in prokaryotes provide immunity against invading nucleic acids through the coordinated degradation of transcriptionally active DNA and its transcripts by the Csm effector complex. The Cas10 subunit of the complex contains an HD nuclease domain that is responsible for DNA degradation and two Palm domains with elusive functions. In addition, Csm6, a ribonuclease that is not part of the complex, is also required to provide full immunity. We show here that target RNA binding by the Csm effector complex of <i>Streptococcus thermophilus</i> triggers Cas10 to synthesize cyclic oligoadenylates (cA<i><sub>n</sub></i>; <i>n</i> = 2 to 6) by means of the Palm domains. Acting as signaling molecules, cyclic oligoadenylates bind Csm6 to activate its nonspecific RNA degradation. This cyclic oligoadenylate–based signaling pathway coordinates different components of CRISPR-Cas to prevent phage infection and propagation.</p>
-http://sciencemag.org/cgi/content/abstract/357/6351/605
-10.1126/science.aao0100
-['Streptococcus', 'Streptococcus thermophilus']
-

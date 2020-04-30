@@ -1,8 +1,0 @@
-1
-Science
-Renewable acrylonitrile production
-<p>Acrylonitrile (ACN) is a petroleum-derived compound used in resins, polymers, acrylics, and carbon fiber. We present a process for renewable ACN production using 3-hydroxypropionic acid (3-HP), which can be produced microbially from sugars. The process achieves ACN molar yields exceeding 90% from ethyl 3-hydroxypropanoate (ethyl 3-HP) via dehydration and nitrilation with ammonia over an inexpensive titanium dioxide solid acid catalyst. We further describe an integrated process modeled at scale that is based on this chemistry and achieves near-quantitative ACN yields (98 ± 2%) from ethyl acrylate. This endothermic approach eliminates runaway reaction hazards and achieves higher yields than the standard propylene ammoxidation process. Avoidance of hydrogen cyanide as a by-product also improves process safety and mitigates product handling requirements.</p>
-http://sciencemag.org/cgi/content/abstract/358/6368/1307
-10.1126/science.aan1059
-None
-

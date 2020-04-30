@@ -1,0 +1,158 @@
+.contentMain.scatter {
+    position: relative;
+    min-height: 100vh;
+
+    &.loadingActive {
+        background: url(../img/processing.gif) center no-repeat;
+        background-position-y: 40vh;
+        background-size: 200px;
+        opacity: .1;
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    .scatterNav {
+        display: inline-block;
+        vertical-align: top;
+        width: 160px;
+        margin-top: 20px;
+        padding: 20px 0;
+
+        ul {
+            list-style-type: none;
+            margin-left: -40px;
+
+            li {
+                background: #03a9f40d;
+                margin-bottom: 2px;
+                border-bottom: solid 1px #2699bc6b;
+                width: 40px;
+                height: 40px;
+
+                @include transition(all 0.2s ease-in-out);
+
+                a {
+                    display: block;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    display: none;
+                    opacity: 0;
+                    color: $action-blue;
+                }
+
+                &.active,
+                &:hover {
+                    width: 100%;
+
+                    a {
+                        opacity: 1;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .infoTrigger {
+        position: absolute;
+        top: 150px;
+        right: 0;
+        background: #03a9f40d;
+        cursor: pointer;
+        padding: 8px 10px;
+        z-index: 1;
+
+        span {
+            font-size: 20px;
+            color: #444;
+        }
+
+        .darkModeActive & {
+            background: #03a9f40d;
+
+            span {
+                color: $action-blue;
+            }
+        }
+    }
+
+    #scatterGraph {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        opacity: 1;
+        width: calc(100% - 180px);
+
+        @include transition(all 0.8s ease-in-out);
+
+        &.graphLoadding {
+            opacity: 0;
+        }
+
+        > div:nth-child(2),
+        > div:nth-child(4) {
+            position: absolute;
+            bottom: 220px;
+            right: -70px;
+            float: none !important;
+
+            div {
+                svg {
+                    border: none;
+
+                    text {
+                        fill: $action-blue;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.scatterInfoOverlay {
+    width: calc(100% - 240px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 240px;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+
+    .overlayActive & {
+        display: block;
+    }
+
+    .sideBarHidden & {
+        width: 100%;
+        left: 0;
+    }
+
+    div {
+        padding: 40px 60px;
+        color: #fff;
+        background: $darkMode-light-bg;
+        width: 600px;
+        min-height: 30vh;
+        margin: 26vh auto;
+        position: relative;
+
+        span {
+            color: #fff;
+        }
+
+        &:after {
+            position: absolute;
+            content: "X";
+            font-weight: 100;
+            color: #fff;
+            top: 20px;
+            right: 30px;
+            font-size: 20px;
+        }
+    }
+}

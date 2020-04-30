@@ -1,8 +1,0 @@
-1
-Biology Open
-Hybridization between char species (<i>Salvelinus alpinus</i> and <i>Salvelinus fontinalis</i>): a fast track for novel allometric trajectories
-<p><bold>Summary:</bold> This research provides a comprehensive overview of the phenotypic modifications in growth trajectories of body size and internal organs following interspecific hybridization in <strong><span style="color:yellowgreen">char</span></strong>s.</p>
-http://bio.biologists.org/cgi/content/abstract/7/10/bio033332
-10.1242/bio.033332
-['Salvelinus', 'Salvelinus alpinus', 'Salvelinus fontinalis', 'chars']
-

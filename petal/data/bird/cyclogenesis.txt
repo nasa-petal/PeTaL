@@ -1,8 +1,0 @@
-4
-Science
-Dominant effect of relative tropical Atlantic warming on major hurricane occurrence
-<p>Here we explore factors potentially linked to the enhanced major <strong><span style="color:yellowgreen">hurrican</span></strong>e activity in the Atlantic Ocean during 2017. Using a suite of high-resolution model experiments, we show that the increase in 2017 major <strong><span style="color:yellowgreen">hurrican</span></strong>es was not primarily caused by La Niña conditions in the Pacific Ocean but rather triggered mainly by pronounced warm sea surface conditions in the tropical North Atlantic. Further, we superimpose a similar pattern of North Atlantic surface warming on data for long-term increasing sea surface temperature (a product of increases in greenhouse gas concentrations and decreases in aerosols) to show that this warming trend will likely lead to even higher numbers of major <strong><span style="color:yellowgreen">hurrican</span></strong>es in the future. The key factor controlling Atlantic major <strong><span style="color:yellowgreen">hurrican</span></strong>e activity appears to be the degree to which the tropical Atlantic warms relative to the rest of the global ocean.</p>
-http://sciencemag.org/cgi/content/abstract/362/6416/794
-10.1126/science.aat6711
-None
-

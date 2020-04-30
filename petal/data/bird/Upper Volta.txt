@@ -1,8 +1,0 @@
-1
-Science
-Transgenic <i>Metarhizium</i> rapidly kills mosquitoes in a malaria-endemic region of Burkina Faso
-<p>Malaria control efforts require implementation of new technologies that manage insecticide resistance. <i>Metarhizium pingshaense</i> provides an effective, mosquito-specific delivery system for potent insect-selective toxins. A semifield trial in a MosquitoSphere (a contained, near-natural environment) in Soumousso, a region of Burkina Faso where malaria is endemic, confirmed that the expression of an insect-specific toxin (Hybrid) increased fungal lethality and the likelihood that insecticide-resistant mosquitoes would be eliminated from a site. Also, as Hybrid-expressing <i>M. pingshaense</i> is effective at very low spore doses, its efficacy lasted longer than that of the unmodified <i>Metarhizium</i>. Deployment of transgenic <i>Metarhizium</i> against mosquitoes could (subject to appropriate registration) be rapid, with products that could synergistically integrate with existing chemical control strategies to avert insecticide resistance.</p>
-http://sciencemag.org/cgi/content/abstract/364/6443/894
-10.1126/science.aaw8737
-['mosquito', 'mosquitoes']
-

@@ -1,0 +1,80 @@
+.contentMain.t-sne {
+    position: relative;
+
+    .tsne-viewer {
+        width: 100%;
+        height: calc(100vh - 180px);
+        position: relative;
+        overflow: scroll;
+
+        img {
+            position: absolute;
+            max-width: 20px;
+            opacity: .4;
+
+            @include transition(all 0.2s ease-in-out);
+
+            &:hover {
+                background: #ff000040;
+                border: solid 1px #a944423d;
+                transform: scale(10);
+                opacity: 1;
+            }
+        }
+
+        .imgDataBox {
+            position: fixed;
+            bottom: 100px;
+            right: 40px;
+
+            h3 {
+                color: #3a7f9e;
+                font-size: 24px;
+                background: #3a7f9e1a;
+                display: block;
+                padding: 2px 6px;
+            }
+        }
+    }
+
+    .tsneNav {
+        position: absolute;
+        right: 0;
+        width: 160px;
+        margin-top: 20px;
+        padding: 20px 0;
+        z-index: 1;
+
+        ul {
+            list-style-type: none;
+            margin-left: -40px;
+
+            li {
+                margin-bottom: 2px;
+                border-bottom: solid 1px #2699bc6b;
+                height: 40px;
+
+                @include transition(all 0.2s ease-in-out);
+
+                a {
+                    display: block;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: $action-blue;
+                }
+
+                &.active,
+                &:hover {
+                    width: 100%;
+                    background: #03a9f40d;
+
+                    a {
+                        opacity: 1;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

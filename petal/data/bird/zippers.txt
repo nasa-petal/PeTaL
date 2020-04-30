@@ -1,8 +1,0 @@
-1
-Science
-Atomic structure of the human cytomegalovirus capsid with its securing tegument layer of pp150
-<p>Herpesviruses possess a genome-pressurized capsid. The 235-kilobase genome of human cytomegalovirus (HCMV) is by far the largest of any herpesvirus, yet it has been unclear how its capsid, which is similar in size to those of other herpesviruses, is stabilized. Here we report a HCMV atomic structure consisting of the herpesvirus-conserved capsid proteins MCP, Tri1, Tri2, and SCP and the HCMV-specific tegument protein pp150—totaling ~4000 molecules and 62 different conformers. MCPs manifest as a complex of insertions around a bacteriophage HK97 gp5–like domain, which gives rise to three classes of capsid floor–defining interactions; triplexes, composed of two “embracing” Tri2 conformers and a “third-wheeling” Tri1, <strong><span style="color:yellowgreen">fasten</span></strong> the capsid floor. HCMV-specific strategies include using hexon channels to accommodate the genome and pp150 helix bundles to secure the capsid via cysteine tetrad–to-SCP interactions. Our structure should inform rational design of countermeasures against HCMV, other herpesviruses, and even HIV/AIDS.</p>
-http://sciencemag.org/cgi/content/abstract/356/6345/eaam6892
-10.1126/science.aam6892
-['human']
-

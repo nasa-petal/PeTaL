@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      {% block head %}
+         <title>PeTaL</title>
+         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      {% endblock %}
+   </head>
+   <body class="darkModeActive">
+      <section id="topBar">
+         <div id="sideBarTrigger">
+            <span class="top"></span>
+            <span class="mid"></span>
+            <span class="btm"></span>
+         </div>
+      </section>
+      <nav>
+         <div class="wrapper">
+            <a class="logo" href="/">
+		    <img src="{% static 'images/petal-icon.png' %}">
+               <p>PeTaL<br><span>Periodic Table of Life</span></p>
+            </a>
+            <ul>
+	       <li><a href="/bird">BIRD</a></li>
+	       <li><a href="/directory">Directory 2.0</a></li>
+            </ul>
+            <div class="settings">
+               <span class="settingsToggler icon-cog"></span>
+               <div class="settingsDropdown">
+                  <ul>
+                     <li class="darkModeOption">
+                        <a href="#" class="noSelect"><span class="icon-brightness-contrast"></span>Toggle Dark Mode</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <div id="contentWrapper">
+         {% block content %}
+         {% endblock %}
+      <footer class="footer">
+         <div class="contentMain">
+                 <img src="{% static 'images/nasa-white-logo.png' %}" alt="nasa logo"/>
+            <h3>National Aeronautics and Space Administration</h3>
+         </div>
+      </footer>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="{% static 'scripts.js' %}"></script>
+      </div>
+   </body>
+</html>

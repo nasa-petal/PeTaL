@@ -1,8 +1,0 @@
-1
-Science
-Quantification of drought during the collapse of the classic Maya civilization
-<p>The demise of Lowland Classic Maya civilization during the Terminal Classic Period (~800 to 1000 CE) is a well-cited example of how past climate may have affected ancient societies. Attempts to estimate the magnitude of hydrologic change, however, have met with equivocal success because of the qualitative and indirect nature of available climate proxy data. We reconstructed the past isotopic composition (δ<sup>18</sup>O, δD, <sup>17</sup>O-excess, and d-excess) of water in Lake Chichancanab, Mexico, using a technique that involves isotopic analysis of the structurally bound water in sedimentary <strong><span style="color:yellowgreen">gypsum</span></strong>, which was deposited under drought conditions. The triple oxygen and hydrogen isotope data provide a direct measure of past changes in lake hydrology. We modeled the data and conclude that annual precipitation decreased between 41 and 54% (with intervals of up to 70% rainfall reduction during peak drought conditions) and that relative humidity declined by 2 to 7% compared to present-day conditions.</p>
-http://sciencemag.org/cgi/content/abstract/361/6401/498
-10.1126/science.aas9871
-None
-

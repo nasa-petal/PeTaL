@@ -1,8 +1,0 @@
-5
-Science
-Five-dimensional imaging of freezing emulsions with solute effects
-<p>The interaction of objects with a moving <strong><span style="color:yellowgreen">solidif</span></strong>ication front is a common feature of many industrial and natural processes such as metal processing, the growth of single crystals, the cryopreservation of cells, or the formation of sea ice. Interaction of <strong><span style="color:yellowgreen">solidif</span></strong>ication fronts with objects leads to different outcomes, from total rejection of the objects to their complete engulfment. We imaged the freezing of emulsions in five dimensions (space, time, and solute concentration) with confocal microscopy. We showed that the solute induces long-range interactions that determine the <strong><span style="color:yellowgreen">solidif</span></strong>ication microstructure. The local increase of solute concentration enhances premelting, which controls the engulfment of droplets by the front and the evolution of grain boundaries. Freezing emulsions may be a good analog of many <strong><span style="color:yellowgreen">solidif</span></strong>ication systems where objects interact with a <strong><span style="color:yellowgreen">solidif</span></strong>ication interface.</p>
-http://sciencemag.org/cgi/content/abstract/360/6386/303
-10.1126/science.aar4503
-None
-

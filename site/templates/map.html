@@ -1,0 +1,1004 @@
+{% extends "navbar.html" %}
+{% block head %}
+  {{ block.super }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+     crossorigin=""/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/css/tabulator.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+     integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+     crossorigin=""></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/js/tabulator.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="contentMain map wow fadeInUpMin" data-wow-duration="2s">
+   <h1>Organism Data Map</h1>
+   <div class="mapLayout">
+      <div class=col-left>
+         <div class="filterBar">
+            <h3>Filter: </h3>
+            <select class="data" id="FilterCN">
+               <option value="" disabled selected>Choose Data</option>
+               <option value="Insecta">Insecta</option>
+               <option value="Malacostraca">Malacostraca</option>
+               <option value="Xiphosura">Xiphosura</option>
+               <option value="Merostomata">Merostomata</option>
+               <option value="Trilobita">Trilobita</option>
+               <option value="Malacostraca">Malacostraca</option>
+               <option value="Reptilia">Reptilia</option>
+            </select>
+            <div class="mapInfoTrigger">
+               <span class="icon-info"></span>
+            </div>
+         </div>
+         <div class="mapWrapper">
+            <div id="map"></div>
+            <table>
+               <tbody>
+                  <tr>
+                     <td> </td>
+                     <td>Insecta</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Aeshna_canadensis"></span></td>
+                     <td>Aeshna canadensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Anax_junius"></span></td>
+                     <td>Anax junius</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Bombus_griseocollis"></span></td>
+                     <td>Bombus griseocollis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Bombus_terricola"></span></td>
+                     <td>Bombus terricola</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Plecia_pealei"></span></td>
+                     <td>Plecia pealei</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Calopteryx_aequabilis"></span></td>
+                     <td>Calopteryx aequabilis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Enallagma_exulans"></span></td>
+                     <td>Enallagma exulans</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Enallagma_vesperum"></span></td>
+                     <td>Enallagma vesperum</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cordulegaster_maculatus"></span></td>
+                     <td>Cordulegaster maculatus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Procydnus_pronus"></span></td>
+                     <td>Procydnus pronus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Gomphus_lineatifrons"></span></td>
+                     <td>Gomphus lineatifrons</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Lanthus_albistylus"></span></td>
+                     <td>Lanthus albistylus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Lestes_rectangularis"></span></td>
+                     <td>Lestes rectangularis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Lestes_vigilax"></span></td>
+                     <td>Lestes vigilax</td>
+                  </tr>
+                  <tr>
+                     <td><span class="libellula_luctuosa"></span></td>
+                     <td>libellula luctuosa</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Sympetrum_vicinum"></span></td>
+                     <td>Sympetrum vicinum</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Macromia_illinoiensis"></span></td>
+                     <td>Macromia illinoiensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Macromia_taeniolata"></span></td>
+                     <td>Macromia taeniolata</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Megachile_sculpturalis"></span></td>
+                     <td>Megachile sculpturalis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Tachopteryx_thoreyi"></span></td>
+                     <td>Tachopteryx thoreyi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Polites_annularis"></span></td>
+                     <td>Polites annularis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Polites_fuscatus"></span></td>
+                     <td>Polites fuscatus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Evagetes_ingenuus"></span></td>
+                     <td>Evagetes ingenuus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Pepsis_formosa"></span></td>
+                     <td>Pepsis formosa</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Pyrogota_undata"></span></td>
+                     <td>Pyrogota undata</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Syrphus_vittafrons"></span></td>
+                     <td>Syrphus vittafrons</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Temnostoma_excentricum"></span></td>
+                     <td>Temnostoma excentricum</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Tabanus_atratus"></span></td>
+                     <td>Tabanus atratus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Tabanus_sulcifrons"></span></td>
+                     <td>Tabanus sulcifrons</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Tarsophlebia_eximia"></span></td>
+                     <td>Tarsophlebia eximia</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Tanyptera_dorsalis"></span></td>
+                     <td>Tanyptera dorsalis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Tipula_Nippotipula_abdominalis"></span></td>
+                     <td>Tipula (Nippotipula) abdominalis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Dolichovespula_arenaria"></span></td>
+                     <td>Dolichovespula arenaria</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Dolichovespula_maculata"></span></td>
+                     <td>Dolichovespula maculata</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Xylocopa_virginica"></span></td>
+                     <td>Xylocopa virginica</td>
+                  </tr>
+                  <tr>
+                     <td> </td>
+                     <td>Malacostraca</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Aeger_tipularius"></span></td>
+                     <td>Aeger tipularius</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Depressicambarous_reduncus"></span></td>
+                     <td>Cambarus (Depressicambarous) reduncus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Depressicambarus_graysoni"></span></td>
+                     <td>Cambarus (Depressicambarus) graysoni</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Jugicambarus_adustus"></span></td>
+                     <td>Cambarus (Jugicambarus) adustus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Jugicambarus_monongalensis"></span></td>
+                     <td>Cambarus (Jugicambarus) monongalensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Lacunicambarus_diogenes"></span></td>
+                     <td>Cambarus (Lacunicambarus) diogenes</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Lacunicambarus_ludovicianus"></span></td>
+                     <td>Cambarus (Lacunicambarus) ludovicianus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Puncticambarus_robustus"></span></td>
+                     <td>Cambarus (Puncticambarus) robustus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Tubericambarus_polychromatus"></span></td>
+                     <td>Cambarus (Tubericambarus) polychromatus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Cambarus_Tubericambarus_thomai"></span></td>
+                     <td>Cambarus (Tubericambarus) thomai</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Orconectes_Trisellescens_immunis"></span></td>
+                     <td>Orconectes (Trisellescens) immunis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Procambarus_Ortmannicus_acutus"></span></td>
+                     <td>Procambarus (Ortmannicus) acutus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Carpopenaeus_callirostris"></span></td>
+                     <td>Carpopenaeus callirostris</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Eryon_artiformis"></span></td>
+                     <td>Eryon artiformis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Pinnixa_galliheri"></span></td>
+                     <td>Pinnixa_galliheri</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Eryma_elongata"></span></td>
+                     <td>Eryma elongata</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Pulalius_vulgaris"></span></td>
+                     <td>Pulalius vulgaris</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Zanthopsis_vulgaris"></span></td>
+                     <td>Zanthopsis vulgaris</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Eurypterus_remipes"></span></td>
+                     <td>Eurypterus remipes</td>
+                  </tr>
+                  <tr>
+                     <td> </td>
+                     <td>Reptilia</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Archaeopteryx_lithographica"></span></td>
+                     <td>Archaeopteryx lithographica</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Confuciusornis_sanctus"></span></td>
+                     <td>Confuciusornis sanctus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Aurorazhdarcho_micronyx"></span></td>
+                     <td>Aurorazhdarcho micronyx</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Pterodactylus_kochi"></span></td>
+                     <td>Pterodactylus kochi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Rhamphorhynchus_muensteri"></span></td>
+                     <td>Rhamphorhynchus muensteri</td>
+                  </tr>
+                  <tr>
+                     <td> </td>
+                     <td>Trilobita</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Greenops_boothi"></span></td>
+                     <td>Greenops boothi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Agnostus_montis"></span></td>
+                     <td>Agnostus montis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Basidechenella_rowi"></span></td>
+                     <td>Basidechenella rowi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Agraulos_ceticephalus"></span></td>
+                     <td>Agraulos ceticephalus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Elrathia_kingii"></span></td>
+                     <td>Elrathia kingii</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Homotelus_bromidensis"></span></td>
+                     <td>Homotelus bromidensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Isotelua_maximus"></span></td>
+                     <td>Isotelua maximus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Isotelus_iowensis"></span></td>
+                     <td>Isotelus iowensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Isotelus_maximus"></span></td>
+                     <td>Isotelus maximus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Asaphiscus_wheeleri"></span></td>
+                     <td>Asaphiscus wheeleri</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Aulacopleura_konincki"></span></td>
+                     <td>Aulacopleura konincki</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Brachymetopus_lodiensis"></span></td>
+                     <td>Brachymetopus lodiensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Calymene_celebra"></span></td>
+                     <td>Calymene celebra</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Calymene_niagarensis"></span></td>
+                     <td>Calymene niagarensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Calymene_tristani"></span></td>
+                     <td>Calymene tristani</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Flexicalymene_meeki"></span></td>
+                     <td>Flexicalymene_meeki</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Conocoryphe_sulzeri"></span></td>
+                     <td>Conocoryphe sulzeri</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Dalmanites_caudatus"></span></td>
+                     <td>Dalmanites caudatus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Dalmanites_limulurus"></span></td>
+                     <td>Dalmanites limulurus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Dikelocephalus_minnesotensis"></span></td>
+                     <td>Dikelocephalus minnesotensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Bathyuriscus_rotundatus"></span></td>
+                     <td>Bathyuriscus_rotundatus</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Ogygopsis_klotzi"></span></td>
+                     <td>Ogygopsis klotzi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Ellipsocephalus_hoffi"></span></td>
+                     <td>Ellipsocephalus hoffi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Oleneius_getzi"></span></td>
+                     <td>Oleneius_getzi</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Triarthrus_beckii"></span></td>
+                     <td>Triarthrus beckii</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Phacops_rana"></span></td>
+                     <td>Phacops rana</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Phacops_rana_crassituberculata"></span></td>
+                     <td>Phacops rana crassituberculata</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Phacops_rana_milleri"></span></td>
+                     <td>Phacops_rana_milleri</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Ameura_sangamonensis"></span></td>
+                     <td>Ameura sangamonensis</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Breviphillipsia_sampsoni"></span></td>
+                     <td>Breviphillipsia_sampsoni</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Phillipsia_eurybathrea"></span></td>
+                     <td>Phillipsia eurybathrea</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Bumastus_ioxus"></span></td>
+                     <td>Bumastus_ioxus</td>
+                  </tr>
+                  <tr>
+                     <td> </td>
+                     <td>Xiphosura</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Mesolimulus_walchi"></span></td>
+                     <td>Mesolimulus walchi</td>
+                  </tr>
+                  <tr>
+                     <td> </td>
+                     <td>Unidentified</td>
+                  </tr>
+                  <tr>
+                     <td><span class="Unidentified"></span></td>
+                     <td>Unidentified</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div id="table"></div>
+         </div>
+      </div>
+      <div class=col-right>
+         <div class="plots">
+            <h2>Plots</h2>
+            <select class="Plot" id="plotType" style="width:100%;">
+               <option value="scatter"selected="selected">Scatter Plot</option>
+               <option value="scatter3d">3D scatter plot</option>
+            </select>
+            <div id="tester"></div>
+            <p>X-axis:</p>
+            <select class="Xdata" id="Xsel" style="width:100%;">
+               <option value="Total Body Length" selected="selected">Total Body Length</option>
+               <option value="Fore Wing Area">Fore Wing Area</option>
+               <option value="Hind Wing Area">Hind Wing Area</option>
+               <option value="Antenna">Antenna</option>
+               <option value="Antennules">Antennules</option>
+               <option value="Body Length 1 mm">Body Length 1 mm</option>
+               <option value="Body Length 2 mm">Body Length 2 mm</option>
+               <option value="Body Length 3 mm">Body Length 3 mm</option>
+               <option value="Total Body Length">Total Body Length</option>
+               <option value="Fore Wing Area">Fore Wing Area</option>
+               <option value="Fore Wing Length01mm">Fore Wing Length01mm</option>
+               <option value="Fore Wing Length02mm">"Fore Wing Length02mm</option>
+               <option value="Fore Wing Width01mm">Fore Wing Width01mm</option>
+               <option value="Fore Wing Width02mm">Fore Wing Width02mm</option>
+               <option value="Fore Wing Width03mm">Fore Wing Width03mm</option>
+               <option value="Fore Wing Width04mm">Fore Wing Width04mm</option>
+               <option value="Fore Wing Width05mm">Fore Wing Width05mm</option>
+               <option value="Fore Wing Width06mm">Fore Wing Width06mm</option>
+               <option value="Fore Wing Width07mm">Fore Wing Width07mm</option>
+               <option value="Hind Wing Area">Hind Wing Area</option>
+               <option value="Hind Wing Length01mm">Hind Wing Length01mm</option>
+               <option value="Hind Wing Length02mm">Hind Wing Length02mm</option>
+               <option value="Hind Wing Width01mm">Hind Wing Width01mm</option>
+               <option value="Hind Wing Width02mm">Hind Wing Width02mm</option>
+               <option value="Hind Wing Width03mm">Hind Wing Width03mm</option>
+               <option value="Hind Wing Width04mm">Hind Wing Width04mm</option>
+               <option value="Hind Wing Width05mm">Hind Wing Width05mm</option>
+               <option value="Hind Wing Width06mm">Hind Wing Width06mm</option>
+               <option value="Hind Wing Width07mm">Hind Wing Width07mm</option>
+               <option value="Fore Wing perimeter">Fore Wing_perimeter</option>
+               <option value="Hind Wing perimeter">Hind Wing perimeter</option>
+               <option value="Wing Span">Wing Span</option>
+               <option value="Number of Wings">Number of Wings</option>
+               <option value="Body Width01mm">Body Width01mm</option>
+               <option value="Body Width02mm">Body Width02mm</option>
+               <option value="Body Width03mm">"Body Width03mm</option>
+               <option value="Telson L">Telson L</option>
+               <option value="Telson W">Telson W</option>
+               <option value="Orbital">Orbital</option>
+               <option value="W. B-t orbitals">W. B-t orbitals</option>
+               <option value="Chela L">Chela L</option>
+               <option value="Chela W">Chela W</option>
+               <option value="chela + immovable finger">chela + immovable finger</option>
+               <option value="movable finger">movable finger</option>
+               <option value="Librigena">Librigena</option>
+               <option value="Head thickness">Head thickness</option>
+               <option value="Body Thickness 1">Body Thickness 1</option>
+               <option value="Body Thickness 2">Body Thickness 2</option>
+               <option value="Skull Length">Skull Length</option>
+               <option value="Skull Hieght">Skull Hieght</option>
+               <option value="Skull Width">Skull Width</option>
+               <option value="Neck">Neck</option>
+               <option value="Rib cage Length">Rib cage Length</option>
+               <option value="Femur">Femur</option>
+               <option value="Tibia">Tibia</option>
+               <option value="Foot Length">Foot Length</option>
+               <option value="Foot Width">Foot Width</option>
+               <option value="Humerous">Humerous</option>
+               <option value="Lower arm">Lower arm</option>
+               <option value="Digits 1">Digits 1</option>
+               <option value="Digits 2">Digits 2</option>
+               <option value="Digits 3">Digits 3</option>
+               <option value="Digits 4">Digits 4</option>
+               <option value="Tail">Tail</option>
+            </select>
+            <p></br>Y-axis:</p>
+            <select class="Ydata" id="Ysel" style="width:100%;">
+               <option value="Total Body Length" >Total Body Length</option>
+               <option value="Fore Wing Area"selected="selected">Fore Wing Area</option>
+               <option value="Hind Wing Area">Hind Wing Area</option>
+               <option value="Antenna">Antenna</option>
+               <option value="Antennules">Antennules</option>
+               <option value="Body Length 1 mm">Body Length 1 mm</option>
+               <option value="Body Length 2 mm">Body Length 2 mm</option>
+               <option value="Body Length 3 mm">Body Length 3 mm</option>
+               <option value="Total Body Length">Total Body Length</option>
+               <option value="Fore Wing Area">Fore Wing Area</option>
+               <option value="Fore Wing Length01mm">Fore Wing Length01mm</option>
+               <option value="Fore Wing Length02mm">"Fore Wing Length02mm</option>
+               <option value="Fore Wing Width01mm">Fore Wing Width01mm</option>
+               <option value="Fore Wing Width02mm">Fore Wing Width02mm</option>
+               <option value="Fore Wing Width03mm">Fore Wing Width03mm</option>
+               <option value="Fore Wing Width04mm">Fore Wing Width04mm</option>
+               <option value="Fore Wing Width05mm">Fore Wing Width05mm</option>
+               <option value="Fore Wing Width06mm">Fore Wing Width06mm</option>
+               <option value="Fore Wing Width07mm">Fore Wing Width07mm</option>
+               <option value="Hind Wing Area">Hind Wing Area</option>
+               <option value="Hind Wing Length01mm">Hind Wing Length01mm</option>
+               <option value="Hind Wing Length02mm">Hind Wing Length02mm</option>
+               <option value="Hind Wing Width01mm">Hind Wing Width01mm</option>
+               <option value="Hind Wing Width02mm">Hind Wing Width02mm</option>
+               <option value="Hind Wing Width03mm">Hind Wing Width03mm</option>
+               <option value="Hind Wing Width04mm">Hind Wing Width04mm</option>
+               <option value="Hind Wing Width05mm">Hind Wing Width05mm</option>
+               <option value="Hind Wing Width06mm">Hind Wing Width06mm</option>
+               <option value="Hind Wing Width07mm">Hind Wing Width07mm</option>
+               <option value="Fore Wing perimeter">Fore Wing_perimeter</option>
+               <option value="Hind Wing perimeter">Hind Wing perimeter</option>
+               <option value="Wing Span">Wing Span</option>
+               <option value="Number of Wings">Number of Wings</option>
+               <option value="Body Width01mm">Body Width01mm</option>
+               <option value="Body Width02mm">Body Width02mm</option>
+               <option value="Body Width03mm">"Body Width03mm</option>
+               <option value="Telson L">Telson L</option>
+               <option value="Telson W">Telson W</option>
+               <option value="Orbital">Orbital</option>
+               <option value="W. B-t orbitals">W. B-t orbitals</option>
+               <option value="Chela L">Chela L</option>
+               <option value="Chela W">Chela W</option>
+               <option value="chela + immovable finger">chela + immovable finger</option>
+               <option value="movable finger">movable finger</option>
+               <option value="Librigena">Librigena</option>
+               <option value="Head thickness">Head thickness</option>
+               <option value="Body Thickness 1">Body Thickness 1</option>
+               <option value="Body Thickness 2">Body Thickness 2</option>
+               <option value="Skull Length">Skull Length</option>
+               <option value="Skull Hieght">Skull Hieght</option>
+               <option value="Skull Width">Skull Width</option>
+               <option value="Neck">Neck</option>
+               <option value="Rib cage Length">Rib cage Length</option>
+               <option value="Femur">Femur</option>
+               <option value="Tibia">Tibia</option>
+               <option value="Foot Length">Foot Length</option>
+               <option value="Foot Width">Foot Width</option>
+               <option value="Humerous">Humerous</option>
+               <option value="Lower arm">Lower arm</option>
+               <option value="Digits 1">Digits 1</option>
+               <option value="Digits 2">Digits 2</option>
+               <option value="Digits 3">Digits 3</option>
+               <option value="Digits 4">Digits 4</option>
+               <option value="Tail">Tail</option>
+            </select>
+            <p></br>Z-axis:</p>
+            <select class="Zdata" id="Zsel" style="width:100%;">
+               <option value="Total Body Length" >Total Body Length</option>
+               <option value="Fore Wing Area">Fore Wing Area</option>
+               <option value="Hind Wing Area"selected="selected">Hind Wing Area</option>
+               <option value="Antenna">Antenna</option>
+               <option value="Antennules">Antennules</option>
+               <option value="Body Length 1 mm">Body Length 1 mm</option>
+               <option value="Body Length 2 mm">Body Length 2 mm</option>
+               <option value="Body Length 3 mm">Body Length 3 mm</option>
+               <option value="Total Body Length">Total Body Length</option>
+               <option value="Fore Wing Area">Fore Wing Area</option>
+               <option value="Fore Wing Length01mm">Fore Wing Length01mm</option>
+               <option value="Fore Wing Length02mm">"Fore Wing Length02mm</option>
+               <option value="Fore Wing Width01mm">Fore Wing Width01mm</option>
+               <option value="Fore Wing Width02mm">Fore Wing Width02mm</option>
+               <option value="Fore Wing Width03mm">Fore Wing Width03mm</option>
+               <option value="Fore Wing Width04mm">Fore Wing Width04mm</option>
+               <option value="Fore Wing Width05mm">Fore Wing Width05mm</option>
+               <option value="Fore Wing Width06mm">Fore Wing Width06mm</option>
+               <option value="Fore Wing Width07mm">Fore Wing Width07mm</option>
+               <option value="Hind Wing Area">Hind Wing Area</option>
+               <option value="Hind Wing Length01mm">Hind Wing Length01mm</option>
+               <option value="Hind Wing Length02mm">Hind Wing Length02mm</option>
+               <option value="Hind Wing Width01mm">Hind Wing Width01mm</option>
+               <option value="Hind Wing Width02mm">Hind Wing Width02mm</option>
+               <option value="Hind Wing Width03mm">Hind Wing Width03mm</option>
+               <option value="Hind Wing Width04mm">Hind Wing Width04mm</option>
+               <option value="Hind Wing Width05mm">Hind Wing Width05mm</option>
+               <option value="Hind Wing Width06mm">Hind Wing Width06mm</option>
+               <option value="Hind Wing Width07mm">Hind Wing Width07mm</option>
+               <option value="Fore Wing perimeter">Fore Wing_perimeter</option>
+               <option value="Hind Wing perimeter">Hind Wing perimeter</option>
+               <option value="Wing Span">Wing Span</option>
+               <option value="Number of Wings">Number of Wings</option>
+               <option value="Body Width01mm">Body Width01mm</option>
+               <option value="Body Width02mm">Body Width02mm</option>
+               <option value="Body Width03mm">"Body Width03mm</option>
+               <option value="Telson L">Telson L</option>
+               <option value="Telson W">Telson W</option>
+               <option value="Orbital">Orbital</option>
+               <option value="W. B-t orbitals">W. B-t orbitals</option>
+               <option value="Chela L">Chela L</option>
+               <option value="Chela W">Chela W</option>
+               <option value="chela + immovable finger">chela + immovable finger</option>
+               <option value="movable finger">movable finger</option>
+               <option value="Librigena">Librigena</option>
+               <option value="Head thickness">Head thickness</option>
+               <option value="Body Thickness 1">Body Thickness 1</option>
+               <option value="Body Thickness 2">Body Thickness 2</option>
+               <option value="Skull Length">Skull Length</option>
+               <option value="Skull Hieght">Skull Hieght</option>
+               <option value="Skull Width">Skull Width</option>
+               <option value="Neck">Neck</option>
+               <option value="Rib cage Length">Rib cage Length</option>
+               <option value="Femur">Femur</option>
+               <option value="Tibia">Tibia</option>
+               <option value="Foot Length">Foot Length</option>
+               <option value="Foot Width">Foot Width</option>
+               <option value="Humerous">Humerous</option>
+               <option value="Lower arm">Lower arm</option>
+               <option value="Digits 1">Digits 1</option>
+               <option value="Digits 2">Digits 2</option>
+               <option value="Digits 3">Digits 3</option>
+               <option value="Digits 4">Digits 4</option>
+               <option value="Tail">Tail</option>
+            </select>
+         </div>
+         <div class="download">
+            <h2>Download</h2>
+            <p>Choose data type:</p>
+            <select class="downloadmenu" id="downloadsel"">
+               <option value="Table" selected>Table</option>
+               <option value="Plot">Plot</option>
+            </select>
+            <button class="btn blue-gradient-bg" id="downloadButton">Download</button>
+         </div>
+      </div>
+      <!-- col-right clossing tag -->
+   </div>
+</div>
+<!-- contentMain clossing tag -->
+
+
+<script>
+// global
+
+//empty array for reactive data to fill
+filData = [];
+
+//empty table to be destroyed and rebuilt with reactive data
+
+$("#table").tabulator({
+   data:filData,
+   height:"300px",
+   //makes pages
+   pagination:"local",
+   //change around rows and columns
+   movableRows: true,
+   movableColumns: true,
+});
+
+// Leaflet Map
+
+//set up map window
+
+var mymap = L.map('map',{worldCopyJump:true}).setView([40.505, -0.09], 2);
+
+//map tiles
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    maxZoom: 18,
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+	    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+	    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox.streets'
+}).addTo(mymap);
+
+//Set up data and filters and update map on move
+$.getJSON("../data/Datatest2.geojson", function(data) {
+    geojsonLayer = L.geoJson(data, {
+        //filters data based on the selector
+        filter: DataFilter,
+
+        //makes popup feature on data point
+        onEachFeature: function (feature, layer) {
+                var popupText = "<b>Specimen id:</b> " + feature.properties.Specimen +
+                    "<br><b>Species:</b> " + feature.properties.Species +
+                    "<br><b>Common Name:</b> " + feature.properties.Common_Name +
+                    "<br>" + feature.properties.Collection + "";
+                    layer.bindPopup(popupText, {
+                        closeButton: true,
+                        offset: L.point(0, 10)
+                      });
+                    layer.on('click', function() {
+                        layer.openPopup();
+                      });
+        },
+        //make points size 2 circles and purple
+        pointToLayer: function(feature, latlng) {
+          return L.circleMarker(latlng, {
+            color: feature.properties.color,
+            radius: 2,
+          });
+        },
+    });
+
+//When map moves update graph and table with filters
+    mymap.on('moveend', function(ev){
+       //gives the map bounds of the current view
+       var bounds = mymap.getBounds();
+       //makes lat and lon ranges to filter csv
+       var latrange = {min: bounds._southWest.lat, max: bounds._northEast.lat};
+       var lngrange = {min: bounds._southWest.lng, max: bounds._northEast.lng};
+       //filters class for fildata array
+       function ClassFilter(lngrange){
+          if (lngrange.Class === $("#FilterCN").val("")) return true};
+          $("#FilterCN").change(function() {lngrange.Class});
+          //return array with points in view of map
+          filData = arrData.filter(function(latlng){
+             return (latlng.lat >= latrange.min) &&
+                    (latlng.lat <= latrange.max) &&
+                    (latlng.lon >= lngrange.min) &&
+                    (latlng.lon <= lngrange.max) &&
+                    (latlng.Class === $("#FilterCN").val());
+          });
+//console.log(filData);
+    //plotly code
+        //set up empty arrays
+        var species = {};
+
+        for(dataPoint of filData){
+          if(!(dataPoint.Species in species)){
+            species[dataPoint.Species] = {id: [], spec: [], x:[], y:[], z:[], color: []};
+          }
+          species[dataPoint.Species].id.push(dataPoint.Specimen);
+          species[dataPoint.Species].spec.push(dataPoint.Species);
+          species[dataPoint.Species].x.push(dataPoint[Xsel.value]);
+          species[dataPoint.Species].y.push(dataPoint[Ysel.value]);
+          species[dataPoint.Species].z.push(dataPoint[Zsel.value]);
+          species[dataPoint.Species].color.push(dataPoint.color);
+        }
+    //}
+    console.log(species);
+
+        data = [];
+        //make plot
+        for(let specie in species){
+          var labels=species[specie].spec[0]
+          //console.log(labels);
+          var data1 = {
+              x: species[specie].x,
+              y: species[specie].y,
+              z: species[specie].z,
+              mode: 'markers',
+              marker:{
+                  color: species[specie].color,
+                  line: {
+                      color:  "#000",
+                      width: 1
+                  }
+              },
+              text:species[specie].id,
+              hoverinfo:"text+name",
+              name:labels,
+              showlegend: false,
+              type:plotType.value
+          }
+          data.push(data1);
+        }
+        //console.log(data);
+        var layout = {
+            hovermode:'closest',
+            title:'Data in bounds',
+            height: 300,
+            width: 350,
+            xaxis: {
+              range: [ 0, ]
+            },
+            yaxis: {
+              range: [ 0, ]
+            },
+            margin: {
+                l: 35,
+                r: 20,
+                b: 30,
+                t: 70,
+                pad: 1
+            },
+        };
+        //plot
+        Plotly.newPlot('tester', data, layout,{displaylogo: false});
+
+    //table
+        $("#table").tabulator("destroy");
+        $("#table").tabulator({
+            data:filData,
+            progressiveRender:true,
+            progressiveRenderSize:5,
+            progressiveRenderMargin:5,
+            columns:[
+                {title:"Specimen", field:"Specimen"},
+                {title:"Collection", field:"Collection"},
+                {title:"Kingdom", field:"Kingdom"},
+                {title:"Classifaction", field:"Classifaction"},
+                {title:"Class", field:"Class"},
+                {title:"Order", field:"Order"},
+                {title:"Common Name", field:"Common Name"},
+                {title:"Family", field:"Family"},
+                {title:"Species", field:"Species"},
+                {title:"Author", field:"Author"},
+                {title:"Year", field:"Year"},
+                {title:"Geological time", field:"Geological time"},{title:"Antenna",field:"Antenna"},
+                {title:"Antennules", field:"Antennules"},
+                {title:"Body Length 1 mm", field:"Body Length 1 mm"},
+                {title:"Body Length 2 mm", field:"Body Length 2 mm"},
+                {title:"Body Length 3 mm", field:"Body Length 3 mm"},
+                {title:"Total Body Length", field:"Total Body Length"},
+                {title:"Fore Wing Area", field:"Fore Wing Area"},
+                {title:"Fore Wing Length01mm", field:"Fore Wing Length01mm"},
+                {title:"Fore Wing Length02mm", field:"Fore Wing Length02mm"},
+                {title:"Fore Wing Width01mm", field:"Fore Wing Width01mm"},
+                {title:"Fore Wing Width02mm", field:"Fore Wing Width02mm"},
+                {title:"Fore Wing Width03mm", field:"Fore Wing Width03mm"},
+                {title:"Fore Wing Width04mm", field:"Fore Wing Width04mm"},
+                {title:"Fore Wing Width05mm", field:"Fore Wing Width05mm"},
+                {title:"Fore Wing Width06mm", field:"Fore Wing Width06mm"},
+                {title:"Fore Wing Width07mm", field:"Fore Wing Width07mm"},
+                {title:"Hind Wing Area", field:"Hind Wing Area"},
+                {title:"Hind Wing Length01mm", field:"Hind Wing Length01mm"},
+                {title:"Hind Wing Length02mm", field:"Hind Wing Length02mm"},
+                {title:"Hind Wing Width01mm", field:"Hind Wing Width01mm"},
+                {title:"Hind Wing Width02mm", field:"Hind Wing Width02mm"},
+                {title:"Hind Wing Width03mm", field:"Hind Wing Width03mm"},
+                {title:"Hind Wing Width04mm", field:"Hind Wing Width04mm"},
+                {title:"Hind Wing Width05mm", field:"Hind Wing Width05mm"},
+                {title:"Hind Wing Width06mm", field:"Hind Wing Width06mm"},
+                {title:"Hind Wing Width07mm", field:"Hind Wing Width07mm"},
+                {title:"Fore Wing perimeter", field:"Fore Wing_perimeter"},
+                {title:"Hind Wing perimeter", field:"Hind Wing perimeter"},
+                {title:"Wing Span", field:"Wing Span"},
+                {title:"Number of Wings", field:"Number of Wings"},
+                {title:"Body Width01mm", field:"Body Width01mm"},
+                {title:"Body Width02mm", field:"Body Width02mm"},
+                {title:"Body Width03mm", field:"Body Width03mm"},
+                {title:"Telson L", field:"Telson L"},
+                {title:"Telson W", field:"Telson W"},
+                {title:"Orbital", field:"Orbital"},
+                {title:"W. B-t orbitals", field:"W. B-t orbitals"},
+                {title:"Chela L", field:"Chela L"},
+                {title:"Chela W", field:"Chela W"},
+                {title:"chela + immovable finger", field:"chela + immovable finger"},
+                {title:"movable finger", field:"movable finger"},
+                {title:"Librigena", field:"Librigena"},
+                {title:"Head thickness", field:"Head thickness"},
+                {title:"Body Thickness 1", field:"Body Thickness 1"},
+                {title:"Body Thickness 2", field:"Body Thickness 2"},
+                {title:"Skull Length", field:"Skull Length"},
+                {title:"Skull Hieght", field:"Skull Hieght"},
+                {title:"Skull Width", field:"Skull Width"},
+                {title:"Neck", field:"Neck"},
+                {title:"Rib cage Length", field:"Rib cage Length"},
+                {title:"Femur", field:"Femur"},
+                {title:"Tibia", field:"Tibia"},
+                {title:"Foot Length", field:"Foot Length"},
+                {title:"Foot Width", field:"Foot Width"},
+                {title:"Humerous", field:"Humerous"},
+                {title:"Lower arm", field:"Lower arm"},
+                {title:"Digits 1", field:"Digits 1"},
+                {title:"Digits 2", field:"Digits 2"},
+                {title:"Digits 3", field:"Digits 3"},
+                {title:"Digits 4", field:"Digits 4"},
+                {title:"Tail", field:"Tail"},
+                {title:"Link to functions", field:"Link to functions"},
+                {title:"Collector", field:"Collector"},
+                {title:"Date", field:"Date"},
+                {title:"Data Collector", field:"Data Collector"},
+                {title:"Date Entered", field:"Date Entered"},
+            ],
+            height:"300px",
+            //makes pages
+            pagination:"local",
+            //change around rows and columns
+            movableRows: true,
+            movableColumns: true,
+        });
+    });
+    //add first layer
+    //not needed currently as no data is defaulted
+    //geojsonLayer.addTo(mymap);
+
+    //Download table when button is pushed
+    document.getElementById("downloadButton").addEventListener("click", Download);
+    //download the file as a csv
+    function Download() {
+        $("#table").tabulator("download", "csv", "data.csv");
+    }
+
+    //Filter by Class
+    function DataFilter(feature){
+        if (feature.properties.Class === $("#FilterCN").val()){
+            return true;
+        }
+    }
+    //filter the data when the selector has changed
+    $("#FilterCN").change(function() {
+        //remove the current layer
+        if(mymap.hasLayer(geojsonLayer)){
+            mymap.removeLayer(geojsonLayer);
+        }
+    //repeat map building steps to replace the current layer
+        $.getJSON("../data/Datatest2.geojson", function(data) {
+            geojsonLayer = L.geoJson(data, {
+                filter: DataFilter,
+                onEachFeature: function (feature, layer) {
+                    //console.log(feature);
+                    var popupText = "<b>Specimen id:</b> " + feature.properties.Specimen +
+                    "<br><b>Species:</b> " + feature.properties.Species +
+                    "<br><b>Common Name:</b> " + feature.properties.Common_Name +
+                    "<br>" + feature.properties.Collection + "";
+                    layer.bindPopup(popupText, {
+                        closeButton: true,
+                        offset: L.point(0, 10)
+                      });
+                    layer.on('click', function() {
+                        layer.openPopup();
+                      });
+                },style: function (feature) {
+                        return {color: feature.properties.color};
+                     },
+                pointToLayer: function(feature, latlng) {
+                  return L.circleMarker(latlng, {
+                    radius: 3,
+                    fillOpacity: 1,
+                  });
+                }
+            });
+            //add this layer to the map
+            geojsonLayer.addTo(mymap);
+        });
+    });
+});
+//End of filter
+//End map, table, graph
+
+//Plot.ly and table data
+//picks the csv
+selData = Plotly.d3.csv("../data/allData.csv", function(data){ processData(data) } )
+
+function makeplot() {
+    selData;
+};
+//parse data for plots and table
+function processData(allRows) {
+    arrData = allRows;
+    var x = [], y = [], standard_deviation = [];
+
+    for (var i=0; i<allRows.length; i++) {
+        row = allRows[i];
+        x.push( row['Total_Body_Length'] );
+        y.push( row['Fore_Wing_Area'] );
+    }
+}
+//End Plot.ly and table data
+
+//Slider filters
+//var slider = document.getElementById("myRange");
+//var output = document.getElementById("demo");
+//output.innerHTML = slider.value;
+
+//slider.oninput = function() {
+    //output.innerHTML = this.value;
+//}
+//End slider filters
+
+</script>
+
+{% endblock content %}

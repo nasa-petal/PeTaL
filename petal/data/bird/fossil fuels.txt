@@ -1,8 +1,0 @@
-5
-Science
-Methane production from coal by a single methanogen
-<p><strong><span style="color:yellowgreen">coal</span></strong>-bed methane is one of the largest unconventional <strong><span style="color:yellowgreen">natural ga</span></strong>s resources. Although microbial activity may greatly contribute to <strong><span style="color:yellowgreen">coal</span></strong>-bed methane formation, it is unclear whether the complex aromatic organic compounds present in <strong><span style="color:yellowgreen">coal</span></strong> can be used for methanogenesis. We show that deep subsurface–derived <i>Methermicoccus</i> methanogens can produce methane from more than 30 types of methoxylated aromatic compounds (MACs) as well as from <strong><span style="color:yellowgreen">coal</span></strong>s containing MACs. In contrast to known methanogenesis pathways involving one- and two-carbon compounds, this “methoxydotrophic” mode of methanogenesis couples <i>O</i>-demethylation, CO<sub>2</sub> reduction, and possibly acetyl–coenzyme A metabolism. Because MACs derived from lignin may occur widely in subsurface sediments, methoxydotrophic methanogenesis would play an important role in the formation of <strong><span style="color:yellowgreen">natural ga</span></strong>s not limited to <strong><span style="color:yellowgreen">coal</span></strong>-bed methane and in the global carbon cycle.</p>
-http://sciencemag.org/cgi/content/abstract/354/6309/222
-10.1126/science.aaf8821
-['Methermicoccus']
-

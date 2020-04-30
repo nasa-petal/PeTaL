@@ -1,8 +1,0 @@
-3
-Science
-Speleothems Reveal 500,000-Year History of Siberian Permafrost
-<sec><title><strong><span style="color:yellowgreen">permafrost</span></strong> Thaw Predictions</title><p><strong><span style="color:yellowgreen">permafrost</span></strong> contains twice as much carbon as the atmosphere which could have serious consequences if it were to be released by widespread thawing. <bold>Vaks <i>et al.</i></bold> (p. 183, published online 21 February) present a 450,000 year-long record of speleothem growth at selected locations in Siberia, which traces changes in the extent of <strong><span style="color:yellowgreen">permafrost</span></strong> over that time period. The authors conclude that conditions only slightly warmer than those of today would cause widespread thawing of continuous <strong><span style="color:yellowgreen">permafrost</span></strong> as far north as 60°N.</p></sec>
-http://sciencemag.org/cgi/content/abstract/340/6129/183
-10.1126/science.1228729
-None
-

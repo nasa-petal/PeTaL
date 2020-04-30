@@ -1,8 +1,0 @@
-1
-Science
-Rapid hybrid speciation in Darwin’s finches
-<p>Homoploid hybrid speciation in animals has been inferred frequently from patterns of variation, but few examples have withstood critical scrutiny. Here we report a directly documented example, from its origin to reproductive isolation. An immigrant Darwin’s finch to Daphne Major in the Galápagos <strong><span style="color:yellowgreen">archipelago</span></strong> initiated a new genetic lineage by breeding with a resident finch (<i>Geospiza fortis</i>). Genome sequencing of the immigrant identified it as a <i>G. conirostris</i> male that originated on Espaáñola >100 kilometers from Daphne Major. From the second generation onward, the lineage bred endogamously and, despite intense inbreeding, was ecologically successful and showed transgressive segregation of bill morphology. This example shows that reproductive isolation, which typically develops over hundreds of generations, can be established in only three.</p>
-http://sciencemag.org/cgi/content/abstract/359/6372/224
-10.1126/science.aao4593
-['Daphne', 'animals', 'Geospiza', 'Geospiza fortis']
-

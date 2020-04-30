@@ -1,8 +1,0 @@
-1
-Disease Models & Mechanisms
-Screening in larval zebrafish reveals tissue-specific distribution of fifteen fluorescent compounds
-<p><bold>Summary:</bold> Fifteen fluorescent compounds have tissue-specific distributions in zebrafish larvae: three <strong><span style="color:yellowgreen">anthraquinon</span></strong>es were identified as bone dyes in live vertebrates, and two chemotherapeutic drugs were shown to have distinct preferences for the liver.</p>
-http://dmm.biologists.org/cgi/content/abstract/10/9/1155
-10.1242/dmm.028811
-['vertebrates', 'zebrafish']
-

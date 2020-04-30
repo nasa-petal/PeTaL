@@ -1,8 +1,0 @@
-1
-Science
-Regional and global sea-surface temperatures during the last interglaciation
-<p>The last interglaciation (LIG, 129 to 116 thousand years ago) was the most recent time in Earth’s history when global mean sea level was substantially higher than it is at present. However, reconstructions of LIG global temperature remain uncertain, with estimates ranging from no significant difference to nearly 2°C warmer than present-day temperatures. Here we use a network of sea-surface temperature (SST) records to reconstruct spatiotemporal variability in regional and global SSTs during the LIG. Our results indicate that peak LIG global mean annual SSTs were 0.5 ± 0.3°C warmer than the <strong><span style="color:yellowgreen">climatolog</span></strong>ical mean from 1870 to 1889 and indistinguishable from the 1995 to 2014 mean. LIG warming in the extratropical latitudes occurred in response to boreal insolation and the bipolar seesaw, whereas tropical SSTs were slightly cooler than the 1870 to 1889 mean in response to reduced mean annual insolation.</p>
-http://sciencemag.org/cgi/content/abstract/355/6322/276
-10.1126/science.aai8464
-None
-

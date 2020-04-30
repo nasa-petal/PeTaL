@@ -1,154 +1,114 @@
 # PeTaL (Periodic Table of Life)
 
-The Periodic Table of Life (PeTaL, pronounced petal) is intended to be a design tool to enable a deeper understanding of natural systems and to enable the creation or improvement of nature-inspired systems. The tool includes an unstructured database, data analytics tools and a web-based user interface. Three levels of information are expected to be captured: morphology that would aid designers by providing context-specific physical design rules, function-morphology relationships to provide nature-inspired solution strategies, and system-level relationships that involve the interaction of several biological models including flow of resources and energy. In its current form, PeTaL is structured as a large NoSQL database that will be accessible to researchers and citizen scientists. It includes entomological and paleontological data from the Cleveland Museum of Natural History (CMNH) in Cleveland, OH, the Cincinnati Museum Center in Cincinnati, OH and the Smithsonian. PeTaL can display relationships between biological models, geography, and environment through maps and plots. These may be used to glean patterns or design rules. Data can also be downloaded for further analysis. A more systematic design process is under development that will allow multiple models to be used for the various stages of design.
-
-The current test case for PeTaL – the idea we need to build a working demo for – is a bio-inspired thermal management/distribution system.
+The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at allowing engineers to find inspiration in nature.
+PeTaL is build around a graph database, machine learning tools, and a website. 
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-First fork the project from gitlab and clone it into your local machine with command:
+Since PeTaL separates the data pipeline as a submodule, PeTal should be downloaded with: `git clone --recursive-submodules https://github.com/nasa/PeTaL`.
+If PeTaL was already downloaded, `git submodule update --init --recursive` updates each submodule.
+The pipeline repository currently lives [here](https://github.com/LSaldyt/PeTaL-pipeline).
+Modifying it hopefully isn't necessary for most tasks.
 
-```
-git clone git@gitlab.grc.nasa.gov:[Your user name]/petal.git
-```
+To run the PeTaL website, enter the `site` directory and run `pip install -r requirements.txt` and then `python manage.py runserver`.
+This is a standard configuration of a Django site.
 
-You will need to take care of SSH keys to be able to pull and push
-Follow instructions on gitlab for this
+To run the PeTaL pipeline, enter the `pipeline` directory and run `pip install -r requirements.txt`.
+Then, go back to the top-level PeTaL directory and call the `./run` script with a configuration file.
+For instance, use `./run config/default.json` to populate a `neo4j` database with species, articles, and images, or `./run config/airfoil_training.json` to train airfoil-related machine learning modules.
+Importantly, `./run config/mock_species_articles.json` followed by `./run config/search.json` creates an index file used by the PeTaL website.
+This should be updated as PeTaL matures.
 
+Note that running the PeTaL pipeline requires an actively running `neo4j` server, with defaults inserted into each config file.
+Also note that these passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.
 
-## Run manually (Recommended)
+*For specific instructions on extending PeTaL through pipeline modules, read [this documentation](PIPELINE.md)*
 
-### Prerequisites
+## Deployment
 
-Anaconda
-Python3
+Deploying PeTaL is as simple as setting up a `neo4j` server, running the pipeline backend to populate the database, and starting the website, potentially on a separate server.
 
-To install Anaconda:
+## Layout
 
-[install from anaconda.com](https://www.anaconda.com/download/)
+The following section describes the directories of the PeTaL repository.
 
-### Installing
+* #### site
 
-Create Anaconda enviroment:
-```
-conda create -n petal_env  
-```
+  * The Django code for running the actual PeTaL website, which uses the `neo4j` database created by the pipeline.
 
-Activating Anaconda enviroment:
-cd into petal directory and type
-Mac:
-```
-source activate petal_env 
-```
-Windows:
-```
-conda activate petal_env
-```
+* #### modules
 
-Get required dependencies
-Mac:
-```
-conda install --file req_conda.txt
-pip3 install -r requirements.txt
-python3 -m spacy download en
-```
-Windows:
-```
-conda install --file req_conda.txt
-pip install -r req_pip.txt
-python -m spacy download en
-```
-Alternate method used before Biocene
-```
-conda create -n petal_env python=3.7
-pip install pandas flask networkx keras numpy pillow sqlalchemy Flask-SQLAlchemy scikit-learn tensorflow
-pip install ontospy wikipedia pyLDAvis gunicorn rdflib spaCy
-pip install nltk
-python -m spacy download en
-```
+  * Modules for PeTaL's data pipeline:
 
-### Running
+  * ###### mining
 
-Run the application from command line in project root directory 
-Mac:
-```
-python3 run.py 
-```
-Windows:
-```
-python run.py
-```
-Alternatively you can specify data paths
-```
-python3 run.py [--ont=path/to/OWL/file --data=path/to/data/file --lit=path/to/literature/csv]
-```
+    * Holds taxon catalogers, article scrapers, and image downloaders.
 
-Data paths default to: 
+  * ###### search
 
-```
-ont=data/ontology.csv
-data=data/classes.csv
-lit=data/lit.csv
-```
+    * Holds multiple indexer modules, which, unsurprisingly, create the search index used by the PeTaL website.
 
-## Run with docker
+  * ###### taxon\_classifier
 
-Configure your docker settings first.
+    * An image classifier at the taxon level
 
-Check on: General -> Expose daemon on tcp://localhost:2375 without TLS 
+  * ###### airfoils
 
-Add: Daemon -> Insecure registrites: sciapps.grc.nasa.gov:5000
+    * Experimental machine learning models related to airfoils and wing design
 
-Once docker is running, enter this command on a command line from the project directory:
+  * ###### directory\_2.0
 
-```
-docker build . -t petal_img && docker run --name petal --rm -it -p 5000:5000 petal_img
-```
+    * Parsing code for the "Directory 2.0" project, mostly outdated.
 
-You can then access petal from localhost:5000 in your browser.
+  * ###### mock
+
+    * Modules intended for use in integrated testing of the data pipeline.
 
 
-## CSS
+* #### data
 
-Updates to style should be done in .scss files located in /petal/static/sass.
-These files are imported in main styles.scss file and all compiled into styles.css
-To get your environment ready first install compass following this tutorial:
-[compass install](http://thesassway.com/beginner/getting-started-with-sass-and-compass)
+  * Various data for PeTaL's data pipeline. Notably includes the search index and lexicon, images, and all machine learning modules, et cetera.
 
-After installation you should be able to simply navigate to root petal directory 
-from terminal or command line and type:
-```
-compass watch
-```
-Your changes to .scss files will then be automatically compiled into styles.css file everytime you save
-a .scss file.
+* #### pipeline
 
-## Built With
+  * Backend code for the data pipeline, but not PeTaL-specific. Separated into another github repository. Some code is overly complicated, so don't feel afraid of contacting Lucas Saldyt if it breaks.
 
-* [flask](http://flask.pocoo.org) - The web framework used
-* [pandas](https://pandas.pydata.org/) - Data Analysis library
-* [network x](https://github.com/networkx/networkx) - Graph building library
-* [Ontospy](https://github.com/lambdamusic/OntoSpy/wiki) - python library for interfacing with OWL file
-* [rdflib](https://github.com/RDFLib/rdflib) - Used to translate OWL files into N-Triples
-* [keras](https://keras.io/) - Machine Learning library used for image classification
-* [d3.js](https://d3js.org/) - JavaScript library for visualizations
+* #### config
+
+  * Configurations for the data pipeline. Specifies a number of modules that should be run and settings related to running them, such as the maximum number of processes.
+
+* #### tests
+
+  * PeTaL's tests. Don't worry. Things will break in production no matter how many of these you write.
+
+* #### docs
+
+  * Documentation. If nothing gets added to this directory, you're doing it right.
+
+## Legacy Code
+
+For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory.
+Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future interns to build upon.
 
 ## Authors
 
 * **Vik Shyam** - *Project Lead*
+* **Paht Juangphanich** - *Project Supervisor*
 
 * **Angeera Naser** - *Team Lead and frontend development*
 * **Allie Calvin** - *UI development and data collection* 
-* **Jonathan Dowdall** - *Backend development* 
 * **Bishoy Boktor** - *Backend development* 
 * **Brian Whiteaker** - *Text Classification* 
-* **Isaias Reyes** - *3D visualizations, interactions & full redesign*
-* **Kaylee Gabus** - *Front end development*
-* **Lauren Friend** - *Backend development*
 * **Connor Baumler** - *Backend development*
 * **Courtney Schiebout** - *Backend development*
-* **Manju Johny** - *Backend development*
+* **Isaias Reyes** - *3D visualizations, interactions & full redesign*
+* **Jonathan Dowdall** - *Backend development* 
+* **Kaylee Gabus** - *Front end development*
 * **Kei Kojima** - *Front end development*
+* **Lauren Friend** - *Backend development*
+* **Lucas Saldyt** - *Backend development, machine learning*
+* **Manju Johny** - *Backend development*
+* **Olakunle Akinpelu** - *Backend development*
 

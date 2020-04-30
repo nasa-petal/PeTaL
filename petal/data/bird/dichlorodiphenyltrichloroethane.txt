@@ -1,8 +1,0 @@
-1
-Science
-Mosquitoes on the move
-<p>The mosquito <i>Aedes aegypti</i> rose to global attention around 1900 when it was shown to be the vector of yellow fever, a viral disease that was ravaging the New World. After World War II, a partly successful program was mounted to eliminate this invader from the New World through the use of DDT. By the late 1960s, however, the urgency for eliminating <i>Ae. aegypti</i> receded after the widespread use of an effective yellow fever vaccine. Eradication efforts were suspended, and the mosquito reestablished itself in its previous, or even a greater, range. The mosquito continues to be a substantial public health threat that requires urgent attention, particularly given recent evidence for hybridization of previously distinct subtypes.</p>
-http://sciencemag.org/cgi/content/summary/354/6315/971
-10.1126/science.aal1717
-['Aedes', 'Aedes aegypti', 'mosquito', 'rose']
-

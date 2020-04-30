@@ -1,8 +1,0 @@
-1
-Science
-High dislocation density–induced large ductility in deformed and partitioned steels
-<p>A wide variety of industrial applications require materials with high strength and ductility. Unfortunately, the strategies for increasing material strength, such as processing to create line defects (dislocations), tend to decrease ductility. We developed a strategy to circumvent this in inexpensive, medium manganese steel. Cold rolling followed by low-temperature tempering developed steel with metastable <strong><span style="color:yellowgreen">austenit</span></strong>e grains embedded in a highly dislocated martensite matrix. This deformed and partitioned (D and P) process produced dislocation hardening but retained high ductility, both through the glide of intensive mobile dislocations and by allowing us to control martensitic transformation. The D and P strategy should apply to any other alloy with deformation-induced martensitic transformation and provides a pathway for the development of high-strength, high-ductility materials.</p>
-http://sciencemag.org/cgi/content/abstract/357/6355/1029
-10.1126/science.aan0177
-None
-

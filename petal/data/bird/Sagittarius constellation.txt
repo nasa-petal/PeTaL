@@ -1,8 +1,0 @@
-1
-Science
-Large gem diamonds from metallic liquid in Earth’s deep mantle
-<p>The redox state of Earth’s convecting mantle, masked by the lithospheric plates and basaltic magmatism of plate tectonics, is a key unknown in the evolutionary history of our planet. Here we report that large, exceptional gem diamonds like the Cullinan, Constellation, and Koh-i-Noor carry direct evidence of crystallization from a redox-sensitive metallic liquid phase in the deep mantle. These sublithospheric diamonds contain inclusions of solidified iron-nickel-carbon-sulfur melt, accompanied by a thin fluid layer of methane ± hydrogen, and sometimes majoritic garnet or former calcium silicate perovskite. The metal-dominated mineral assemblages and reduced volatiles in large gem diamonds indicate formation under metal-saturated conditions. We verify previous predictions that Earth has highly reducing deep mantle regions capable of precipitating a metallic iron phase that contains dissolved carbon and hydrogen.</p>
-http://sciencemag.org/cgi/content/abstract/354/6318/1403
-10.1126/science.aal1303
-None
-

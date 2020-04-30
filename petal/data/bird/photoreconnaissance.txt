@@ -1,8 +1,0 @@
-1
-Journal of Experimental Biology
-Avian surface reconstruction in free flight with application to flight stability analysis of a barn owl and peregrine falcon
-<p><bold>Summary:</bold> A novel photogrammetry method to reconstruct the surface geometry of flying birds is presented and used to analyse the gliding flight of a barn owl and peregrine falcon.</p>
-http://jeb.biologists.org/cgi/content/abstract/222/9/jeb185488
-10.1242/jeb.185488
-None
-

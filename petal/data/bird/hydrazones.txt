@@ -1,8 +1,0 @@
-1
-Science
-Coordination-induced weakening of ammonia, water, and hydrazine X–H bonds in a molybdenum complex
-<p>Although scores of transition metal complexes incorporating ammonia or water ligands have been characterized over the past century, little is known about how coordination influences the strength of the nitrogen-hydrogen and oxygen-hydrogen bonds. Here we report the synthesis of a molybdenum ammonia complex supported by terpyridine and phosphine ligands that lowers the nitrogen-hydrogen bond dissociation free energy from 99.5 (gas phase) to an experimentally measured value of 45.8 kilocalories per mole (agreeing closely with a value of 45.1 kilocalories per mole calculated by density functional theory). This bond weakening enables spontaneous dihydrogen evolution upon gentle heating, as well as the hydrogenation of styrene. Analogous molybdenum complexes promote dihydrogen evolution from coordinated water and <strong><span style="color:yellowgreen">hydrazin</span></strong>e. Electrochemical and theoretical studies elucidate the contributions of metal redox potential and ammonia acidity to this effect.</p>
-http://sciencemag.org/cgi/content/abstract/354/6313/730
-10.1126/science.aag0246
-None
-

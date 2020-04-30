@@ -1,8 +1,0 @@
-3
-Science
-Impact craters on Pluto and Charon indicate a deficit of small Kuiper belt objects
-<p>The flyby of Pluto and Charon by the New Horizons spacecraft provided high-resolution images of cratered surfaces embedded in the Kuiper belt, an extensive region of bodies orbiting beyond Neptune. Impact craters on Pluto and Charon were formed by collisions with other Kuiper belt objects (KBOs) with diameters from ~40 kilometers to ~300 meters, smaller than most KBOs observed directly by telescopes. We find a relative paucity of small craters ≲13 kilometers in diameter, which cannot be explained solely by geological resurfacing. This implies a deficit of small KBOs (≲1 to 2 kilometers in diameter). Some surfaces on Pluto and Charon are likely ≳4 billion years old, thus their crater records provide information on the size-frequency distribution of KBOs in the early Solar System.</p>
-http://sciencemag.org/cgi/content/abstract/363/6430/955
-10.1126/science.aap8628
-['Charon']
-

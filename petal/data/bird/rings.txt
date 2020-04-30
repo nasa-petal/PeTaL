@@ -1,8 +1,0 @@
-1
-Science
-Late Pleistocene archaic human crania from Xuchang, China
-<p>Two early Late Pleistocene (~105,000- to 125,000-year-old) crania from Lingjing, Xuchang, China, exhibit a morphological mosaic with differences from and similarities to their western contemporaries. They share pan–Old World trends in encephalization and in supraorbital, neurocranial vault, and nuchal gracilization. They reflect eastern Eurasian ancestry in having low, sagittally flat, and inferiorly broad neurocrania. They share occipital (suprainiac and nuchal <strong><span style="color:yellowgreen">torus</span></strong>) and temporal labyrinthine (semicircular canal) morphology with the Neandertals. This morphological combination reflects Pleistocene human evolutionary patterns in general biology, as well as both regional continuity and interregional population dynamics.</p>
-http://sciencemag.org/cgi/content/abstract/355/6328/969
-10.1126/science.aal2482
-['human']
-

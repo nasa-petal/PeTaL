@@ -1,8 +1,0 @@
-2
-Science
-Organic matter preserved in 3-billion-year-old mudstones at Gale crater, Mars
-<p>Establishing the presence and state of organic matter, including its possible biosignatures, in martian materials has been an elusive quest, despite limited reports of the existence of organic matter on Mars. We report the in situ detection of organic matter preserved in lacustrine mudstones at the base of the ~3.5-billion-year-old Murray formation at Pahrump Hills, Gale crater, by the Sample Analysis at Mars instrument suite onboard the Curiosity rover. Diverse pyrolysis products, including <strong><span style="color:yellowgreen">thiophen</span></strong>ic, aromatic, and aliphatic compounds released at high temperatures (500° to 820°C), were directly detected by evolved gas analysis. <strong><span style="color:yellowgreen">thiophen</span></strong>es were also observed by gas chromatography–mass spectrometry. Their presence suggests that sulfurization aided organic matter preservation. At least 50 nanomoles of organic carbon persists, probably as macromolecules containing 5% carbon as organic sulfur molecules.</p>
-http://sciencemag.org/cgi/content/abstract/360/6393/1096
-10.1126/science.aas9185
-None
-

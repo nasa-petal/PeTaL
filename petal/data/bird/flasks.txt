@@ -1,8 +1,0 @@
-1
-Development
-The RhoGEF protein Plekhg5 regulates apical constriction of bottle cells during gastrulation
-<p><bold>Highlighted Article:</bold> The RhoGEF <i>plekhg5</i> is identified as a blastopore lip-specific gene that, through the organization of actomyosin activity, induces apical constriction, which is required for <strong><span style="color:yellowgreen">bottl</span></strong>e cell formation during <i>Xenopus</i> gastrulation.</p>
-http://dev.biologists.org/cgi/content/abstract/145/24/dev168922
-10.1242/dev.168922
-['Xenopus']
-

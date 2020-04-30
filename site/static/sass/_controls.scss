@@ -1,0 +1,14 @@
+.styledSelect {
+    margin-right: 5px;
+    height: 30px;   //same height as the buttons
+    color: #000; 
+    background-color: #ECF1F7;
+    border-radius: 2px;
+    
+    &:disabled {
+        color: #545454;
+        background-color: #A1A1A1;
+        border: #A1A1A1;
+    }
+
+}

@@ -1,8 +1,0 @@
-1
-Science
-Quantized electric multipole insulators
-<p>The Berry phase provides a modern formulation of electric polarization in crystals. We extend this concept to higher electric <strong><span style="color:yellowgreen">multipol</span></strong>e moments and determine the necessary conditions and minimal models for which the quadrupole and octupole moments are topologically quantized electromagnetic observables. Such systems exhibit gapped boundaries that are themselves lower-dimensional topological phases. Furthermore, they host topologically protected corner states carrying fractional charge, exhibiting fractionalization at the boundary of the boundary. To characterize these insulating phases of matter, we introduce a paradigm in which “nested” Wilson loops give rise to topological invariants that have been overlooked. We propose three realistic experimental implementations of this topological behavior that can be immediately tested. Our work opens a venue for the expansion of the classification of topological phases of matter.</p>
-http://sciencemag.org/cgi/content/abstract/357/6346/61
-10.1126/science.aah6442
-None
-

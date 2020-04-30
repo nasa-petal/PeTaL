@@ -1,8 +1,0 @@
-1
-Science
-A bioinspired flexible organic artificial afferent nerve
-<p>The distributed network of receptors, neurons, and synapses in the somatosensory system efficiently processes complex tactile information. We used flexible organic electronics to mimic the functions of a sensory nerve. Our artificial afferent nerve collects pressure information (1 to 80 kilopascals) from clusters of pressure sensors, converts the pressure information into action potentials (0 to 100 hertz) by using ring oscillators, and integrates the action potentials from multiple ring oscillators with a synaptic transistor. Biomimetic hierarchical structures can detect movement of an object, combine simultaneous pressure inputs, and distinguish <strong><span style="color:yellowgreen">braill</span></strong>e characters. Furthermore, we connected our artificial afferent nerve to motor nerves to construct a hybrid bioelectronic reflex arc to actuate muscles. Our system has potential applications in neurorobotics and neuroprosthetics.</p>
-http://sciencemag.org/cgi/content/abstract/360/6392/998
-10.1126/science.aao0098
-None
-

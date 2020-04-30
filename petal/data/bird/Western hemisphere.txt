@@ -1,8 +1,0 @@
-1
-Science
-Replicating Meyerhoff for inclusive excellence in STEM
-<p>Ethnic minorities comprise rapidly growing portions of the populations of most developed countries (<i>1</i>) but are underrepresented in fields of science, technology, engineering, and mathematics (STEM) (<i>2</i>, <i>3</i>). Efforts to increase diversity in the STEM workforce, important for developing more effective approaches to group problem-solving (<i>4</i>–<i>6</i>), have been under way in the United States for decades, but widespread impact remains relatively low (<i>3</i>). The Meyerhoff Scholars Program (MYS) at the University of Maryland, Baltimore County (UMBC), provides a promising model for increasing retention and academic performance of underrepresented minority (URM) undergraduates in STEM and for preparing those undergraduates to pursue and succeed in graduate and professional programs (<i>7</i>, <i>8</i>). Although MYS is nearly 30 years old and outcomes for African-American STEM majors have been extensively documented [see (<i>7</i>, <i>8</i>) and references therein], no other majority university [not meeting the definition of being a minority-serving institution (MSI) (<i>9</i>)] has achieved similar outcomes (<i>10</i>). We describe here some promising early indicators that an interinstitutional partnership approach can help enable MYS-like outcomes at majority universities with different URM compositions, <strong><span style="color:yellowgreen">geographi</span></strong>es, and institutional sizes and cultures: The University of North Carolina at Chapel Hill (UNC) and Pennsylvania State University at University Park (PSU).</p>
-http://sciencemag.org/cgi/content/summary/364/6438/335
-10.1126/science.aar5540
-None
-

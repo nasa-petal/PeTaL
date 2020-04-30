@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-Regulation of Hormonal Control, Cell Reprogramming, and Patterning during De Novo Root Organogenesis
-<p>Body regeneration through formation of new organs is a major question in developmental biology. We investigated de novo root formation using whole leaves of Arabidopsis (<i>Arabidopsis thaliana</i>). Our results show that local cytokinin biosynthesis and auxin biosynthesis in the leaf blade followed by auxin long-distance transport to the petiole leads to proliferation of J0121-marked xylem-associated tissues and others through signaling of INDOLE-3-ACETIC ACID INDUCIBLE28 (IAA28), CRANE (IAA18), WOODEN LEG, and ARABIDOPSIS RESPONSE REGULATORS1 (ARR1), ARR10, and ARR12. Vasculature proliferation also involves the cell cycle regulator KIP-RELATED PROTEIN2 and ABERRANT LATERAL ROOT FORMATION4, resulting in a mass of cells with rooting competence that resembles callus formation. Endogenous callus formation precedes specification of postembryonic root founder cells, from which roots are initiated through the activity of SHORT-ROOT, PLETHORA1 (PLT1), and PLT2. Primordia initiation is blocked in <i>shr plt1 plt2</i> mutant. Stem cell regulators SCHIZORIZA, JACKDAW, BLUEJAY, and SCARECROW also participate in root initiation and are required to pattern the new organ, as mutants show disorganized and reduced number of layers and tissue initials resulting in reduced rooting. Our work provides an organ regeneration model through de novo root formation, stating key stages and the primary pathways involved.</p>
-http://plantphysiol.org/cgi/content/abstract/176/2/1709
-10.1104/pp.17.00980
-['Arabidopsis', 'Arabidopsis thaliana']
-

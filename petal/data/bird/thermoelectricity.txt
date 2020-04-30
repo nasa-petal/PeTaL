@@ -1,8 +1,0 @@
-1
-PLANT PHYSIOLOGY
-Monitoring of Freezing Dynamics in Trees: A Simple Phase Shift Causes Complexity
-<p>During winter, trees have to cope with harsh conditions, including extreme freeze-thaw stress. This study focused on ice nucleation and propagation, related water shifts and xylem cavitation, as well as cell damage and was based on in situ monitoring of xylem (<strong><span style="color:yellowgreen">thermocoupl</span></strong>es) and surface temperatures (infrared imaging), ultrasonic emissions, and dendrometer analysis. Field experiments during late winter on <i>Picea abies</i> growing at the alpine timberline revealed three distinct freezing patterns: (1) from the top of the tree toward the base, (2) from thin branches toward the main stem’s top and base, and (3) from the base toward the top. Infrared imaging showed freezing within branches from their base toward distal parts. Such complex freezing causes dynamic and heterogenous patterns in water potential and probably in cavitation. This study highlights the interaction between environmental conditions upon freezing and thawing and demonstrates the enormous complexity of freezing processes in trees. Diameter shrinkage, which indicated water fluxes within the stem, and acoustic emission analysis, which indicated cavitation events near the ice front upon freezing, were both related to minimum temperature and, upon thawing, related to vapor pressure deficit and soil temperature. These complex patterns, emphasizing the common mechanisms between frost and drought stress, shed new light on winter tree physiology.</p>
-http://plantphysiol.org/cgi/content/abstract/173/4/2196
-10.1104/pp.16.01815
-['Picea', 'Picea abies']
-

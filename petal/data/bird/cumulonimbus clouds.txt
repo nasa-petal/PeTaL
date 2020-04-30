@@ -1,8 +1,0 @@
-8
-Science
-More tornadoes in the most extreme U.S. tornado outbreaks
-<p><strong><span style="color:yellowgreen">tornado</span></strong>es and severe <strong><span style="color:yellowgreen">thunderstorm</span></strong>s kill people and damage property every year. Estimated U.S. insured losses due to severe <strong><span style="color:yellowgreen">thunderstorm</span></strong>s in the first half of 2016 were $8.5 billion (US). The largest U.S. effects of <strong><span style="color:yellowgreen">tornado</span></strong>es result from <strong><span style="color:yellowgreen">tornado</span></strong> outbreaks, which are sequences of <strong><span style="color:yellowgreen">tornado</span></strong>es that occur in close succession. Here, using extreme value analysis, we find that the frequency of U.S. outbreaks with many <strong><span style="color:yellowgreen">tornado</span></strong>es is increasing and that it is increasing faster for more extreme outbreaks. We model this behavior by extreme value distributions with parameters that are linear functions of time or of some indicators of multidecadal climatic variability. Extreme meteorological environments associated with severe <strong><span style="color:yellowgreen">thunderstorm</span></strong>s show consistent upward trends, but the trends do not resemble those currently expected to result from global warming.</p>
-http://sciencemag.org/cgi/content/abstract/354/6318/1419
-10.1126/science.aah7393
-None
-

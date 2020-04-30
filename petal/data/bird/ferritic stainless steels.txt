@@ -1,8 +1,0 @@
-2
-Science
-Direct observation of individual hydrogen atoms at trapping sites in a ferritic steel
-<p>The design of atomic-scale microstructural traps to limit the diffusion of hydrogen is one key strategy in the development of hydrogen-embrittlement–resistant materials. In the case of bearing steels, an effective trapping mechanism may be the incorporation of finely dispersed V-Mo-Nb carbides in a <strong><span style="color:yellowgreen">ferrit</span></strong>e matrix. First, we charged a <strong><span style="color:yellowgreen">ferrit</span></strong>ic steel with deuterium by means of electrolytic loading to achieve a high hydrogen concentration. We then immobilized it in the microstructure with a cryogenic transfer protocol before atom probe tomography (APT) analysis. Using APT, we show trapping of hydrogen within the core of these carbides with quantitative composition profiles. Furthermore, with this method the experiment can be feasibly replicated in any APT-equipped laboratory by using a simple cold chain.</p>
-http://sciencemag.org/cgi/content/abstract/355/6330/1196
-10.1126/science.aal2418
-None
-

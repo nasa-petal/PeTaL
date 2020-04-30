@@ -1,8 +1,0 @@
-1
-Science
-Origin of the bright photoluminescence of few-atom silver clusters confined in LTA zeolites
-<p>Silver (Ag) clusters confined in matrices possess remarkable luminescence properties, but little is known about their structural and electronic properties. We characterized the bright green luminescence of Ag clusters confined in partially exchanged Ag–Linde Type A (LTA) zeolites by means of a combination of x-ray excited optical luminescence-extended x-ray absorption fine structure, time-dependent–density functional theory calculations, and time-resolved spectroscopy. A mixture of tetrahedral Ag<sub>4</sub>(H<sub>2</sub>O)<i><sub>x</sub></i><sup>2+</sup> (<i>x</i> = 2 and <i>x</i> = 4) clusters occupies the center of a fraction of the <strong><span style="color:yellowgreen">sodalit</span></strong>e cages. Their optical properties originate from a confined two-electron superatom quantum system with hybridized Ag and water O orbitals delocalized over the cluster. Upon excitation, one electron of the s-type highest occupied molecular orbital is promoted to the p-type lowest unoccupied molecular orbitals and relaxes through enhanced intersystem crossing into long-lived triplet states.</p>
-http://sciencemag.org/cgi/content/abstract/361/6403/686
-10.1126/science.aaq1308
-None
-

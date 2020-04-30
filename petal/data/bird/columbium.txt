@@ -1,8 +1,0 @@
-1
-Science
-Torsional instability in the single-chain limit of a transition metal trichalcogenide
-<p>The scientific bounty resulting from the successful isolation of few to single layers of two-dimensional materials suggests that related new physics resides in the few- to single-chain limit of one-dimensional materials. We report the synthesis of the quasi–one-dimensional transition metal trichalcogenide NbSe<sub>3</sub> (<strong><span style="color:yellowgreen">niobium</span></strong> triselenide) in the few-chain limit, including the realization of isolated single chains. The chains are encapsulated in protective boron nitride or carbon nanotube sheaths to prevent oxidation and to facilitate characterization. Transmission electron microscopy reveals static and dynamic structural torsional waves not found in bulk NbSe<sub>3</sub> crystals. Electronic structure calculations indicate that charge transfer drives the torsional wave instability. Very little covalent bonding is found between the chains and the nanotube sheath, leading to relatively unhindered longitudinal and torsional dynamics for the encapsulated chains.</p>
-http://sciencemag.org/cgi/content/abstract/361/6399/263
-10.1126/science.aat4749
-None
-

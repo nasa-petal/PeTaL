@@ -1,0 +1,218 @@
+$primary-color: #15418c;
+$secondary-color: red;
+$accent-color: blue;
+
+#topBar {
+    height: 36px;
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.07);
+    z-index: 9999;
+
+    #sideBarTrigger {
+        width: 36px;
+        height: 36px;
+        padding: 10px 0 0 0;
+        margin-left: 260px;
+        cursor: pointer;
+        display: block;
+
+        @include transition(all 0.3s ease-in-out);
+
+        .sideBarHidden & {
+            margin-left: 40px;
+        }
+
+        span {
+            width: 100%;
+            background: #fff;
+            height: 1px;
+            margin-bottom: 6px;
+            display: block;
+            cursor: pointer;
+
+            .darkModeActive & {
+                background: #fff;
+            }
+        }
+    }
+}
+
+nav {
+    background: #000;
+    z-index: 9999;
+    position: fixed;
+    font-family: 'Rajdhani', sans-serif;
+    height: 100vh;
+    width: 240px;
+
+    @include transition(all 0.3s ease-in-out);
+
+    .sideBarHidden & {
+        transform: translate(-240px);
+    }
+
+    .wrapper {
+        a.logo {
+            display: inline-block;
+            vertical-align: top;
+            max-width: 320px;
+            padding: 4px 24px 4px 10px;
+            background: #101010;
+            width: 240px;
+
+            img {
+                width: 70px;
+                display: inline-block;
+                vertical-align: top;
+                margin: 10px 4px 0 0;
+            }
+
+            p {
+                font-size: 28px;
+                font-weight: 100;
+                text-decoration: none;
+                display: inline-block;
+                vertical-align: top;
+                line-height: .8;
+                margin-top: 16px;
+                color: #fff;
+
+                span {
+                    font-size: 14px;
+                }
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 40px 0 0 -40px;
+
+            li {
+                position: relative;
+
+                a {
+                    font-size: 18px;
+                    color: #bfbfbf;
+                    display: block;
+                    padding: 18px 20px;
+                    min-width: 100px;
+                    border-bottom: solid 1px #1f1f1f;
+                    text-decoration: none;
+
+                    @include transition(all 0.3s ease-in-out);
+
+                    &:hover {
+                        background: $primary-color;
+                    }
+
+                    &.active {
+                        border-left: solid 5px $primary-color;
+                    }
+                }
+
+                &.subnavToggle {
+                    span {
+                        position: absolute;
+                        right: 24px;
+                        top: 20px;
+
+                        @include transition(all 0.3s ease-in-out);
+                    }
+
+                    &.active {
+                        background: $primary-color;
+
+                        ul {
+                            display: block;
+                        }
+
+                        span {
+                            @include transform(rotate(180deg));
+                        }
+                    }
+                }
+
+                ul {
+                    background: #191919;
+                    z-index: 999;
+                    display: none;
+                    margin: 0 0 0 -39px;
+
+                    li {
+                        display: block;
+
+                        a {
+                            &:hover {
+                                background: #062252;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .settings {
+            width: 100%;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+
+            @include transition(all 0.1s ease-in-out);
+
+            position: absolute;
+            top: calc(100vh - 80px);
+
+            span.icon-cog {
+                @include transition(all 0.1s ease-in-out);
+
+                margin: 0 0 0 24px;
+            }
+
+            &:hover {
+                span.icon-cog {
+                    @include transform(rotate(90deg));
+                }
+            }
+
+            .settingsDropdown {
+                top: 50px;
+                width: 100%;
+                background: #333;
+                display: none;
+                border-radius: 0 0 3px 3px;
+
+                .settingsActive & {
+                    display: block;
+                }
+
+                ul {
+                    margin-left: -39px;
+                    margin-top: 10px;
+                    width: calc(100% + 39px);
+
+                    li {
+                        width: 100%;
+
+                        a {
+                            display: block;
+                            padding: 10px 20px;
+
+                            span {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,8 +1,0 @@
-1
-Science
-Redox-based reagents for chemoselective methionine bioconjugation
-<p>Cysteine can be specifically functionalized by a myriad of acid-base conjugation strategies for applications ranging from probing protein function to antibody-drug conjugates and proteomics. In contrast, selective ligation to the other sulfur-containing amino acid, methionine, has been precluded by its intrinsically weaker nucleophilicity. Here, we report a strategy for chemoselective methionine bioconjugation through redox reactivity, using oxaziridine-based reagents to achieve highly selective, rapid, and robust methionine labeling under a range of biocompatible reaction conditions. We highlight the broad utility of this conjugation method to enable precise addition of <strong><span style="color:yellowgreen">payload</span></strong>s to proteins, synthesis of antibody-drug conjugates, and identification of hyperreactive methionine residues in whole proteomes.</p>
-http://sciencemag.org/cgi/content/abstract/355/6325/597
-10.1126/science.aal3316
-None
-

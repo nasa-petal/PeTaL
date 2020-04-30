@@ -1,8 +1,0 @@
-1
-Science
-Direct frequency comb measurement of OD + CO → DOCO kinetics
-<p>The kinetics of the hydroxyl radical (OH) + carbon monoxide (CO) reaction, which is fundamental to both atmospheric and combustion chemistry, are complex because of the formation of the hydrocarboxyl radical (HOCO) intermediate. Despite extensive studies of this reaction, HOCO has not been observed under thermal reaction conditions. Exploiting the sensitive, broadband, and high-resolution capabilities of time-resolved cavity-enhanced direct frequency comb spectroscopy, we observed deuteroxyl radical (OD) + CO reaction kinetics and detected stabilized <i>trans</i>-DOCO, the deuterated analog of <i>trans</i>-HOCO. By simultaneously measuring the time-dependent concentrations of the <i>trans</i>-DOCO and OD species, we observed unambiguous low-pressure termolecular dependence of the reaction rate coefficients for N<sub>2</sub> and CO <strong><span style="color:yellowgreen">bath</span></strong> gases. These results confirm the HOCO formation mechanism and quantify its yield.</p>
-http://sciencemag.org/cgi/content/abstract/354/6311/444
-10.1126/science.aag1862
-None
-

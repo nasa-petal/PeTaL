@@ -1,8 +1,0 @@
-1
-Science
-Real-time imaging of DNA loop extrusion by condensin
-<p>It has been hypothesized that SMC protein complexes such as condensin and cohesin spatially organize chromosomes by extruding DNA into large loops. We directly visualized the formation and processive extension of DNA loops by yeast condensin in real time. Our findings constitute unambiguous evidence for loop extrusion. We observed that a single condensin complex is able to extrude tens of kilobase pairs of DNA at a force-dependent speed of up to 1500 base pairs per second, using the energy of adenosine triphosphate hydrolysis. Condensin-induced loop extrusion was strictly asymmetric, which demonstrates that condensin anchors onto DNA and <strong><span style="color:yellowgreen">reel</span></strong>s it in from only one side. Active DNA loop extrusion by SMC complexes may provide the universal unifying principle for genome organization.</p>
-http://sciencemag.org/cgi/content/abstract/360/6384/102
-10.1126/science.aar7831
-None
-

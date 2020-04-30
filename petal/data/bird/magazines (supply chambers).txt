@@ -1,8 +1,0 @@
-1
-Science
-A Histone Acetylation Switch Regulates H2A.Z Deposition by the SWR-C Remodeling Enzyme
-<sec><title>Variants and Regulation</title><p>Genomic DNA is packaged into nucleosomes by <strong><span style="color:yellowgreen">spool</span></strong>ing around histone proteins. Histone variants and the composition of nucleosomes can influence gene expression, as well as other chromatin-mediated processes. For example, the H2A.Z histone variant flanks RNA polII promoters, and such nucleosomes show rapid turnover, as well as enrichment for histone H3 acetylated at lysine 56 (H3-K56Ac). <bold>Watanabe <i>et al.</i></bold> (p. 195) show that H3-K56Ac alters the substrate specificity of the chromatin remodeling enzyme SWR-C, which normally evicts nucleosomal H2A.Z such that it now rapidly exchanges both canonical H2A and the variant H2A.Z, modulating nucleosome turnover and therefore influencing gene regulation. Pathways are dramatically simplified, promoting proper folding.</p></sec>
-http://sciencemag.org/cgi/content/abstract/340/6129/195
-10.1126/science.1229758
-None
-

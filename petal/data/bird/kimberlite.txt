@@ -1,8 +1,0 @@
-2
-Science
-Experimental constraints on the damp peridotite solidus and oceanic mantle potential temperature
-<p>Decompression of hot mantle rock upwelling beneath oceanic spreading centers causes it to exceed the melting point (solidus), producing magmas that ascend to form basaltic crust ~6 to 7 kilometers thick. The oceanic upper mantle contains ~50 to 200 micrograms per gram of water (H<sub>2</sub>O) dissolved in nominally anhydrous minerals, which—relative to its low concentration—has a disproportionate effect on the solidus that has not been quantified experimentally. Here, we present results from an experimental determination of the <strong><span style="color:yellowgreen">peridotit</span></strong>e solidus containing known amounts of dissolved hydrogen. Our data reveal that the H<sub>2</sub>O-undersaturated <strong><span style="color:yellowgreen">peridotit</span></strong>e solidus is hotter than previously thought. Reconciling geophysical observations of the melting regime beneath the East Pacific Rise with our experimental results requires that existing estimates for the oceanic upper mantle potential temperature be adjusted upward by about 60°C.</p>
-http://sciencemag.org/cgi/content/abstract/355/6328/942
-10.1126/science.aaj2165
-None
-

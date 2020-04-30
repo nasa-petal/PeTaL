@@ -1,8 +1,0 @@
-1
-Science
-Satellite-based entanglement distribution over 1200 kilometers
-<p>Long-distance entanglement distribution is essential for both foundational tests of quantum physics and scalable quantum networks. Owing to channel loss, however, the previously achieved distance was limited to ~100 kilometers. Here we demonstrate satellite-based distribution of entangled photon pairs to two locations separated by 1203 kilometers on Earth, through two satellite-to-ground <strong><span style="color:yellowgreen">downlink</span></strong>s with a summed length varying from 1600 to 2400 kilometers. We observed a survival of two-photon entanglement and a violation of Bell inequality by 2.37 ± 0.09 under strict Einstein locality conditions. The obtained effective link efficiency is orders of magnitude higher than that of the direct bidirectional transmission of the two photons through telecommunication fibers.</p>
-http://sciencemag.org/cgi/content/abstract/356/6343/1140
-10.1126/science.aan3211
-None
-

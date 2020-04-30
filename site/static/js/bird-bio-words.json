@@ -1,0 +1,217 @@
+{
+  "tertiary": [
+    {
+      "engineer": "Separate",
+      "biologist": ["Bleaching", "meiosis", "abscission", "mitosis", "segment", "electrophoresis", "dialysis",
+                    "denature", "free", "detach", "release", "divide", "differentiate", "disarticulate", "branch",
+                    "isolated" ]
+    },
+    {
+      "engineer": "Divide",
+      "biologist": ["Division", "prophase", "metaphase", "anaphase", "cleave", "cytokinesis", "differentiate", "branch"]
+    },
+    {
+      "engineer": "Remove",
+      "biologist": ["Deoxygenate", "filtrate", "liberate", "expulsion", "evacuate", "export", "expel", "excrete"]
+    },
+    {
+      "engineer": "Distribute",
+      "biologist": ["Circulate", "diffusion", "exchange", "disperse", "scatter", "spread",
+                    "spray", "diffuse", "propagate"]
+    },
+    {
+      "engineer": "Import",
+      "biologist": ["Absorb", "attract", "consume", "inhale", "intake", "import", "introduce"]
+    },
+    {
+      "engineer": "Export",
+      "biologist": ["Bind", "block", "breakdown", "excrete", "inactivate", "repel", "export",
+                    "extract", "expel", "remove"]
+    },
+    {
+      "engineer": "Transfer",
+      "biologist": ["Migrate", "transfer", "channel", "transport", "deliver"]
+    },
+    {
+      "engineer": "Transport",
+      "biologist": ["Circulate", "conduct", "diffuse", "pump", "shift", "displace", "fly", "swim", "jump", "bounce",
+        "transport", "symport", "channel", "migrate", ",transfer", "run", "walk", "locomote", "deliver"]
+    },
+    {
+      "engineer": "Transmit",
+      "biologist": ["Communicate", "transduce", "signal", "relay", "reproduce", "deliver"]
+    },
+    {
+      "engineer": "Guide",
+      "biologist": ["Orient", "position", "slide", "tunnel", "navigate", "maneuver", "migrate", "control",
+                    "steer", "incline", "conduct", "usher", "shepherd", "direct", "steer", "pilot", "escort",
+                    "accompany","attend", "take", "help", "assist"]
+    },
+    {
+      "engineer": "Translate",
+      "biologist": ["Synthesize", "transcribe", "communicate", "transmit", "vibrate"]
+    },
+    {
+      "engineer": "Rotate",
+      "biologist": ["Oscillate", "spin", "turn", "swivel", "roll", "pivot", "swing", "twist", "rotate"]
+    },
+    {
+      "engineer": "Allow DOF",
+      "biologist": ["Articulate", "link", "swivel", "pivot", "rotate"]
+    },
+    {
+      "engineer": "Couple",
+      "biologist": ["Recombination", "mate", "build", "phosphorylate", "bond", "synthesis", "latch", "lock",
+                    "extend", "link", "overlap", "couple", "join", "assemble", "attach", "unite"]
+    },
+    {
+      "engineer": "Join",
+      "biologist": ["Bind", "adhere", "bond", "fuse", "assemble", "attach", "unite", "join", "link", "attach", "connect"]
+    },
+    {
+      "engineer": "Link",
+      "biologist": ["Clamp", "activate", "bind", "project", "attach", "connect", "combine"]
+    },
+    {
+      "engineer": "Mix",
+      "biologist": ["Blend", "contract", "exchange", "fragment", "mix", "churn", "chew"]
+    },
+    {
+      "engineer": "Actuate",
+      "biologist": ["Activate", "induce", "trigger", "catalyze", "drive", "energize"]
+    },
+    {
+      "engineer": "Regulate",
+      "biologist": ["Electrophoresis", "gate", "organogenesis", "respire", "sustain", "preserve", "remain"]
+    },
+    {
+      "engineer": "Increase",
+      "biologist": ["Hyperpolarize", "pinocytosis", "grow", "expand", "multiply", "replicate", "propagate", "radiate"]
+    },
+    {
+      "engineer": "Decrease",
+      "biologist": ["Compress", "coil", "divide", "fold", "shorten", "wrap", "export", "remove", "reduce", "fall",
+                    "decline", "deplete", "shrink", "retract", "attenuate"]
+    },
+    {
+      "engineer": "Change",
+      "biologist": ["Pinocytosis", "degrade", "alter", "bind", "catalyze", "contract", "hydrolysis", "twist",
+                    "mutate", "radiate", "charge", "slip", "acclimatize", "alternate", "fluctuate", "alter",
+                    "shift", "modify", "transform", "adjust"]
+    },
+    {
+      "engineer": "Decrement",
+      "biologist": ["Decarboxylation", "constrict", "reduce", "shrink", "retract", "deplete", "decline", "decrement"]
+    },
+    {
+      "engineer": "Shape",
+      "biologist": ["Elongate", "stretch", "attach", "spread", "alter", "shift", "shape", "suspend", "conform"]
+    },
+    {
+      "engineer": "Condition",
+      "biologist": ["Osmosis", "constrict", "regulate", "modify", "evolve", "filter"]
+    },
+    {
+      "engineer": "Stop",
+      "biologist": ["Clog", "extinguish", "halt", "interphase", "seal", "suspend", "cease", "block", "terminate",
+                    "break", "close", "arrest", "stop"]
+    },
+    {
+      "engineer": "Prevent",
+      "biologist": ["Constrain", "obstruct", "prevent", "restrict"]
+    },
+    {
+      "engineer": "Inhibit",
+      "biologist": ["Cover", "destroy", "inhibit", "repress", "surround", "suppress", "prevent", "restrict",
+                    "obstruct", "paralyze"]
+    },
+    {
+      "engineer": "Convert",
+      "biologist": ["Polymerize", "synthesize", "burn", "gluconeogenesis", "metabolize", "grow", "transduction",
+                    "fermentation", "glycolysis", "hydrolyze", "hydrolysis", "respiration", "ionize", "decompose",
+                    "degrade", "develop", "mutate", "photosynthesize", "change", "modify", "convert", "alter"]
+    },
+    {
+      "engineer": "Store",
+      "biologist": ["Conserve", "hold", "convert", "deposit", "photosynthesize", "store", "house"]
+    },
+    {
+      "engineer": "Contain",
+      "biologist": ["Absorb", "contain", "maintain", "carry", "store"]
+    },
+    {
+      "engineer": "Collect",
+      "biologist": ["Absorb", "catch", "breakdown", "concentrate", "digest", "reduce", "photosynthesize"]
+    },
+    {
+      "engineer": "Supply",
+      "biologist": ["Feed", "lactate", "absorb", "supply", "provide"]
+    },
+    {
+      "engineer": "Detect",
+      "biologist": ["Detect", "locate", "see", "smell", "sense", "feel", "taste", "hear", "echolocate",
+                    "gustat", "pain", "olfactory", "visual"]
+    },
+    {
+      "engineer": "Measure",
+      "biologist": ["Observe", "monitor", "gauge", "watch", "process", "convert", "measure"]
+    },
+    {
+      "engineer": "Indicate",
+      "biologist": ["Fluoresce", "communicate", "react", "mark", "signal", "excrete", "respond"]
+    },
+    {
+      "engineer": "Process",
+      "biologist": ["Learn", "process", "implement", "accept", "reject", "synthesize"]
+    },
+    {
+      "engineer": "Support",
+      "biologist": ["Develop", "wrap", "build", "protect", "sustain", "reinforce", "defend", "rear"]
+    },
+    {
+      "engineer": "Stabilize",
+      "biologist": ["Homeostasis", "cling", "hold", "bind", "connect", "stabilize", "balance", "adjust"]
+    },
+    {
+      "engineer": "Secure",
+      "biologist": ["Surround", "envelope", "fix"]
+    },
+    {
+      "engineer": "Particulate",
+      "biologist": ["Cytokinin", "pyruvate", "nicotine", "opium", "glycerol", "carotenoid", "GTP", "ATP", "urea",
+                    "RNA", "tRNA", "mRNA", "DNA", "glucagon", "parathormone", "cryptochromes", "ligand", "promoter",
+                    "gene", "exon", "intron", "molecule", "enzyme", "lipid", "hormone"]
+    },
+    {
+      "engineer": "Composite",
+      "biologist": ["Enzyme", "virus", "ribosome", "prokaryote", "macromolecule", "polymerase", "nucleotide",
+                    "polypeptide", "organelle", "symplast", "mesophyll", "brood", "codon", "messenger", "DNA",
+                    "RNA", "cytoplasm", "organ", "tissue"]
+    },
+    {
+      "engineer": "Change",
+      "biologist": ["Change", "variation", "lateral", "swelling", "catalyzed", "translation", "exposed", "active",
+                    "morph", "transfigure", "separated", "cycle", "formation", "reaction", "redox", "deficient",
+                    "saturated", "diffusion","broken", "hybridization", "orientation", "resting", "cue", "magnetic",
+                    "volume", "under", "organized", "fruiting", "fatty", "anaphase", "metaphase", "prophase",
+                    "conjugation","osmolarity", "senescence", "signal", "allele"]
+    },
+    {
+      "engineer": "Control",
+      "biologist": ["Place", "inhibit", "release", "excrete", "development", "match", "induce", "digest", "integrate",
+                    "translation", "transduction", "equilibrium", "grown", "splice", "capture", "distribute","phosphorylation"]
+    },
+    {
+      "engineer": "Analog",
+      "biologist": ["Binding", "center", "synthesis", "photosynthesis"]
+    },
+    {
+      "engineer": "Discrete",
+      "biologist": ["Flower", "translocation"]
+    },
+    {
+      "engineer": "Articulate",
+      "biologist": ["Activate","induce","trigger"]
+    }
+  ]
+}
