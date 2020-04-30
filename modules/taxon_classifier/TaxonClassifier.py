@@ -16,10 +16,14 @@ import json, os, os.path
 
 from time import sleep
 
-
-
+'''
+This file defines a neural network classifier that works on individual species
+'''
 
 class HierarchicalModel(nn.Module):
+    '''
+    A pytorch model which exploits the hierarchical species taxonomy to compress the output vector of species classes
+    '''
     def __init__(self, i=0, outputs=None):
         if outputs is None:
             raise RuntimeError('Please supply outputs to HierarchicalModel. Form: [int] representing number of subclasses per class')
@@ -41,7 +45,7 @@ class HierarchicalModel(nn.Module):
         x = F.relu(self.fc2(x))
         return tuple(final_layer(x) for final_layer in self.outputs)
 
-TAXA    = {'kingdom', 'phylum', 'class', 'order', 'superfamily', 'family', 'genus', 'subgenus', 'species'}
+TAXA = {'kingdom', 'phylum', 'class', 'order', 'superfamily', 'family', 'genus', 'subgenus', 'species'}
 
 class TaxonClassifier(BatchTorchLearner):
     '''
@@ -53,6 +57,11 @@ class TaxonClassifier(BatchTorchLearner):
         self.label_counts = {taxa : 1 for taxa in TAXA}
 
     def load_image(self, node):
+        '''
+        Load an image and resize it to 224x224
+
+        :param node: neo4j Image node, with filename property
+        '''
         filename = node.data['filename']
         tfms = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),]) # Explanation of these magic numbers??
@@ -60,15 +69,12 @@ class TaxonClassifier(BatchTorchLearner):
         img = img.unsqueeze(0)
         return img
 
-    def init_model(self):
-        outputs = []
-        for taxa in TAXA:
-            count = self.driver.run_query('MATCH (t:Taxon) WHERE t.taxonRank = \'{}\' WITH COUNT (t) AS c RETURN c'.format(taxa))
-            print(count)
-            1/0
-        self.model = HierarchicalModel(outputs=[])
-
     def load_labels(self, node):
+        '''
+        Load labels for a taxon
+
+        :param node: neo4j Image node, with parent property pointing to a labelled EOLPage node
+        '''
         parent = self.driver.get(node.data['parent'])
         name = parent['canonical']
         taxon  = self.driver.get(name)
@@ -82,14 +88,31 @@ class TaxonClassifier(BatchTorchLearner):
             labels.append(torch.tensor([sub_label_map[taxa_name]], dtype=torch.long))
         return labels
 
+
+    def init_model(self):
+        '''
+        Initialize a hierarchical pytorch classifier by counting the number of taxa in the database.
+        Important: Requires that all taxa are loaded before model is trained,
+          since the number of taxa defines the dimensions of the network.
+          A future iteration might save the model size so that this constraint is lifted.
+        '''
+        outputs = []
+        for taxa in TAXA:
+            count = self.driver.run_query('MATCH (t:Taxon) WHERE t.taxonRank = \'{}\' WITH COUNT (t) AS c RETURN c'.format(taxa))
+            count = next(count.records())['c']
+            outputs.append(count)
+        self.model = HierarchicalModel(outputs=outputs)
+
     def transform(self, node):
         labels = self.load_labels(node)
         image  = self.load_image(node)
         yield image, labels
 
-    def step(self, inputs, labels):
+    def calc_losses(self, inputs, labels):
+        '''
+        Calculate loss for each section of the output vector, i.e.
+        '''
         losses = []
-        self.optimizer.zero_grad()
         outputs = self.model(inputs)
         loss = None
         for output, label in zip(outputs, labels):
@@ -100,13 +123,14 @@ class TaxonClassifier(BatchTorchLearner):
                 loss += self.criterion(output, label)
             losses.append(loss.item())
         loss.backward()
-        self.optimizer.step()
         return losses
 
     def learn(self, node):
+        self.optimizer.zero_grad()
         for inputs, labels in self.transform(node):
-            loss = self.step(inputs, labels)
+            loss = self.calc_losses(inputs, labels)
             print('{} loss: '.format(self.name), loss, flush=True)
+        self.optimizer.step()
 
     def process(self, node):
         if os.path.isfile(self.filename):

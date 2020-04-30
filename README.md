@@ -18,9 +18,13 @@ This is a standard configuration of a Django site.
 To run the PeTaL pipeline, enter the `pipeline` directory and run `pip install -r requirements.txt`.
 Then, go back to the top-level PeTaL directory and call the `./run` script with a configuration file.
 For instance, use `./run config/default.json` to populate a `neo4j` database with species, articles, and images, or `./run config/airfoil_training.json` to train airfoil-related machine learning modules.
+Importantly, `./run config/mock_species_articles.json` followed by `./run config/search.json` creates an index file used by the PeTaL website.
+This should be updated as PeTaL matures.
 
 Note that running the PeTaL pipeline requires an actively running `neo4j` server, with defaults inserted into each config file.
 Also note that these passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.
+
+*For specific instructions on extending PeTaL through pipeline modules, read [this documentation](PIPELINE.md)*
 
 ## Deployment
 
@@ -85,7 +89,8 @@ The following section describes the directories of the PeTaL repository.
 
 ## Legacy Code
 
-For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory
+For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory.
+Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future interns to build upon.
 
 ## Authors
 
