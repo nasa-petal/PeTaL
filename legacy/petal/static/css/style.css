@@ -1,0 +1,210 @@
+@import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
+
+body {
+    margin:0px;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-size: 12px;
+    padding: 6px;
+    font-family: sans-serif;
+    border-radius: 2px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.active {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+path.link {
+    stroke-width: 2px;
+    stroke: #777;
+    fill: none;
+}
+
+line.link {
+    stroke-width: 2px;
+    stroke: #777;
+}
+
+text.names {
+    pointer-events: none;
+    font-family: Helvetica;
+    text-decoration: none;
+}
+text.toplevel {
+    font-weight: bold;
+}
+text.plusminus {
+    pointer-events: none;
+    font-family: Helvetica;
+    text-decoration: none;
+    font-weight: bold;
+}
+text.highlighted {
+    text-decoration: underline;
+    font-size: 110%;
+}
+.rowBorder {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+
+}
+
+rect.hoverbox {
+    fill: none;
+    stroke: none;
+    stroke-width: 0;
+    opacity: 1;
+    pointer-events: visible;
+}
+rect.hoverbox.hovered {
+    stroke-width: 0px;
+    fill: #E8E8E8;
+    stroke: none;
+}
+
+.paintedRect {
+}
+
+.paintToolCircle {
+    stroke: #444;
+    stroke-width: 1px;
+}
+
+.paintToolText {
+    font-family: "Archivo Narrow";
+    font-size: 14px;
+}
+
+.numberLabel {
+    font-size: 16px;
+    font-family: "Archivo Narrow";
+    font-weight: bold;
+    fill: #888;
+}
+
+.guideTop {
+    position: fixed;
+    top: 2vh;
+    right: 1.5%;
+    width: 18vw;
+
+    color: #666;
+    font-size: 18px;
+    font-family: "Archivo Narrow";/*Helvetica;*/
+    /*padding: 20px;*/
+    height: 350px;
+    overflow: auto;
+
+}
+
+.guideTop ul {
+    margin-top: 0;
+    margin-left: 0;
+    list-style-type: square;
+    padding-left: 1em;
+    color: #666;
+}
+.guideTop li {
+    padding-left: 0.1em;
+}
+.guideTop li:before {
+
+}
+
+.guideTop a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.guideTop a:hover {
+    text-decoration: underline;
+}
+
+.guideList {
+    padding: 10px;
+    /*border-style: dotted;*/
+    background-color: #323d46;
+    border-radius: 15px 15px 15px 15px;
+
+}
+
+.lifeformTop {
+    /* position: fixed;
+    bottom: 10px;
+    width: 99%;
+    left: 0.5%;
+    right: 0.5%; */
+    /*position: relative;*/
+    /*float: left;*/
+    /*width: 20%;*/
+    position: fixed;
+    top: 340px;
+    right: 1.5%;
+    width: 18vw;
+    /*width: 580px;*/
+    /*top: 680px;*/
+    /*left: 30px;*/
+    /*bottom: 0px;*/
+}
+
+.lifeformHeader {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #323d46;
+    font-family: Helvetica;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 15px 15px 0 0;
+    /* border: 2px solid rgb(153,153,153);;
+    border-bottom: 0px; */
+    color: #666;
+}
+
+.lifeformList {
+    background-color: #323d46;
+    height: 200px;
+    min-height: 50vh;
+    max-height: 50vh;
+    z-index: -1;
+    overflow: auto;
+    font-family: "Archivo Narrow";
+    font-size: 18px;
+    padding: 10px;
+    /* border: 2px solid rgb(153,153,153); */
+    border-radius: 0 0 10px 10px;
+}
+
+.lifeformList ul {
+    margin-top: 0;
+    margin-left: 0;
+    list-style-type: square;
+    padding-left: 1em;
+    color: #666;
+}
+.lifeformList li {
+    padding-left: 0.1em;
+}
+.lifeformList li:before {
+
+}
+
+.lifeformList a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.lifeformList a:hover {
+    text-decoration: underline;
+}
+	

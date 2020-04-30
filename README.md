@@ -83,6 +83,10 @@ The following section describes the directories of the PeTaL repository.
 
   * Documentation. If nothing gets added to this directory, you're doing it right.
 
+## Legacy Code
+
+For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory
+
 ## Authors
 
 * **Vik Shyam** - *Project Lead*

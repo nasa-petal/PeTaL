@@ -1,0 +1,157 @@
+// VISION PAGE STYLES
+.classify-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+
+    img {
+        display: block;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+.tables-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    position: relative;
+
+    &.processing {
+        &:after {
+            content: "Processing...";
+            color: #007fa9;
+            text-align: center;
+            position: absolute;
+            width: 256px;
+            height: 256px;
+            left: 50%;
+            margin-left: -128px;
+            background: url(../img/processing.gif);
+            background-size: cover;
+
+            .darkModeActive & {
+                opacity: .4;
+            }
+        }
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #ontology_table,
+    #pattern_table {
+        background: #00000014;
+    }
+
+    th {
+        background: #468ea5;
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 18px;
+        color: #fff;
+        font-weight: 100;
+    }
+
+    #ontology_table {
+        margin-bottom: 20px;
+    }
+
+    #pattern_table {
+        th {
+            width: 100%;
+        }
+    }
+
+    tr {
+        width: 100%;
+        display: block;
+    }
+
+    td, th {
+        text-align: left;
+        padding: 6px 8px;
+        display: inline-block;
+        width: 50%;
+    }
+
+    tr:nth-child(even) {
+        background-color: #2a637d29;
+    }
+}
+
+#visionPieChart {
+    text-align: center;
+    margin: 20px 0;
+    background: #212e36;
+    padding-top: 20px;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    svg {
+        border: none;
+        margin: 10px 0 0 0;
+
+        text {
+            fill: #afacac;
+        }
+    }
+}
+
+.toolTip {
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 0 none;
+    border-radius: 2px;
+    color: black;
+    font: 12px sans-serif;
+    padding: 5px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.droparea {
+    width: 80%;
+    border: dashed 1px #2f6895;
+    background: #2f689512;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 100px 20%;
+    min-height: 300px;
+
+    p {
+        color: #2699bc;
+    }
+
+    #img-selector {
+        margin: 20px 0 0 30px;
+    }
+}
+
+#uploaded-img,
+#classify-button {
+    display: none;
+}
+
+.imageUploaded {
+    #uploaded-img,
+    #classify-button {
+        display: block;
+    }
+
+    .droparea {
+        display: none;
+    }
+}
