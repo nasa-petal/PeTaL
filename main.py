@@ -14,4 +14,4 @@ if __name__ == '__main__':
         settings_file = args[0]
     interface = BitflowInterface(settings_file, module_dir='modules')
     interface.log.log('Loaded settings from ', settings_file)
-    interface.start_server(clean=False)
+    interface.start_server(clean=True)

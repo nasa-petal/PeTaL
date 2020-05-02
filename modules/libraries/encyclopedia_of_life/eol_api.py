@@ -1,18 +1,26 @@
 import requests, argparse, json, sys
 from pprint import pprint
 from time import sleep, time
+import os
 
 class EOL_API:
     def __init__(self):
         self.url = 'https://eol.org/service/cypher'
-        with open('data/tokens/api.token', 'r') as infile:
-            api_token = infile.read().strip()
-        self.headers = {"accept": "application/json",
-                        "authorization": "JWT " + api_token}
+        if not os.path.isfile('data/tokens/api.token'):
+            print('** EOL API Token not found, disabling EOL requests', flush=True)
+            self.disabled = True
+        else:
+            with open('data/tokens/api.token', 'r') as infile:
+                api_token = infile.read().strip()
+            self.headers = {"accept": "application/json",
+                            "authorization": "JWT " + api_token}
 
-        self.format = 'cypher'
+            self.format = 'cypher'
+            self.disabled = False
 
     def search(self, query, filter_data=True):
+        if self.disabled:
+            return None
         url = self.url
         data = {"query": query, "format": self.format}
         r = requests.get(url,
