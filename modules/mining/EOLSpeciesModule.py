@@ -1,4 +1,4 @@
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 from ..libraries.encyclopedia_of_life.eol_api import EOL_API
 
 import requests

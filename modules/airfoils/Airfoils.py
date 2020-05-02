@@ -12,7 +12,7 @@ from scipy import interpolate
 import matplotlib.pyplot as plt
 import numpy as np
 
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 def calculate_camber_augmentation(coordinates):
     '''

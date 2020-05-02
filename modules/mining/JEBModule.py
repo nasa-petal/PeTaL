@@ -1,4 +1,4 @@
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 '''
 WARNING: Some of the following code disobeys robots.txt of particular websites.

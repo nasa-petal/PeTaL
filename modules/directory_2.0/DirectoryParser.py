@@ -8,7 +8,7 @@ from neo4j import GraphDatabase, basic_auth
 from time import sleep
 import shutil, os
 
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 '''
 THIS FILE IS OUTDATED.

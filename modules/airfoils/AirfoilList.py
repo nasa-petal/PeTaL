@@ -1,7 +1,7 @@
 from requests import get
 from bs4 import BeautifulSoup
 
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 '''
 A simple scraper that catalogs a list of airfoils to download.

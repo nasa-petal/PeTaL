@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from pipeline import PipelineInterface
+from bitflow import BitflowInterface
 import sys
 
 '''
@@ -12,6 +12,6 @@ if __name__ == '__main__':
         settings_file = 'config/default.json'
     else:
         settings_file = args[0]
-    interface = PipelineInterface(settings_file, module_dir='modules')
+    interface = BitflowInterface(settings_file, module_dir='modules')
     interface.log.log('Loaded settings from ', settings_file)
-    interface.start_server(clean=True)
+    interface.start_server(clean=False)

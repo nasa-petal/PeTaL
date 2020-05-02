@@ -1,4 +1,4 @@
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 class MockEOLSpeciesModule(Module):
     def __init__(self, in_label=None, out_label='EOLPage', connect_labels=None, name='EOLSpecies'):

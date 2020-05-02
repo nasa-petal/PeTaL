@@ -1,5 +1,5 @@
 from ..libraries.encyclopedia_of_life.eol_api import EOL_API
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 from pprint import pprint
 

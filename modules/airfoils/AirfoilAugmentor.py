@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageOps
 
 from random import randint, random
 
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 '''
 This module augments airfoils and plots the augmented images, for input into further machine learning modules

@@ -4,7 +4,7 @@ import xml
 
 from pprint import pprint
 
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 '''
 LEGACY: Scrape local highwire articles into neo4j.

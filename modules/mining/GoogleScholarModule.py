@@ -1,6 +1,6 @@
 from scholarly import search_pubs_query as google_scholar_search
 
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 from random import random, randint
 from pprint import pprint

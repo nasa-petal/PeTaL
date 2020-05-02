@@ -1,4 +1,4 @@
-from petal.pipeline.utils.module import Module
+from bitflow.utils.module import Module
 
 import urllib.request
 import urllib3
