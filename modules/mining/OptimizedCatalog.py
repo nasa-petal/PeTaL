@@ -14,7 +14,7 @@ from bitflow.utils.module import Module
 
 from .NormalCatalog import create_dir, to_json
 
-IMPORT = '../../.Neo4jDesktop/neo4jDatabases/database-f009728a-c309-4d9d-937d-cbfd4d57ee42/installation-4.0.2/import/'
+IMPORT = '../../.Neo4jDesktop/neo4jDatabases/database-328e805b-80fc-42bc-bf79-44a07e3e1447/installation-4.0.2/import/'
 
 '''
 This is the backbone mining module for population neo4j with the initial species list
