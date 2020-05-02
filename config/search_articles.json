@@ -7,7 +7,7 @@
  "scheduler:max_workers" : 1,
  "page_size" : 10,
  "pager_delay" : 1,
- "pipeline:sleep_time" : 0.1,
- "pipeline:reload_time" : 30,
- "pipeline:blacklist" : [],
- "pipeline:whitelist" : ["MockEOLSpeciesModule", "WikipediaModule", "EOLModule", "ArticleIndexer", "InvertedIndexCreator"]}
+ "bitflow:sleep_time" : 0.1,
+ "bitflow:reload_time" : 30,
+ "bitflow:blacklist" : [],
+ "bitflow:whitelist" : ["MockEOLSpeciesModule", "WikipediaModule", "EOLModule", "ArticleIndexer", "InvertedIndexCreator"]}

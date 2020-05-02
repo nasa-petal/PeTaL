@@ -85,7 +85,10 @@ class OptimizedCatalog(Module):
         Exploit LOAD CSV in neo4j to load a taxon catalog efficiently
 
         '''
-        self.driver = self.get_driver(driver=driver)
+
+        if not os.path.isdir(IMPORT):
+            raise RuntimeError('The directory ' + IMPORT + ' was not found. Please update the IMPORT variable in /modules/mining/OptimizedCatalog')
+
         if self.driver.get('__optimized_catalog_finished_signal__') is not None:
             return
         if not os.path.isfile('data/cache/catalog.csv') or not os.path.isfile('data/cache/relations.csv') or not os.path.isfile('data/cache/species.csv'):

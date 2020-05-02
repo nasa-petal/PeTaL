@@ -7,8 +7,8 @@
  "pager_delay" : 1,
  "page_size" : 10,
  "scheduler:max_workers" : 40, 
- "pipeline:sleep_time" : 0.1,
- "pipeline:reload_time" : 30,
- "pipeline:status_time" : 1,
- "pipeline:blacklist" : [],
- "pipeline:whitelist" : ["Airfoils", "AirfoilList", "AirfoilRegressor", "AirfoilAugmentor", "AirfoilEdgeRegressor", "AirfoilPlotter", "AirfoilCreator"]}
+ "bitflow:sleep_time" : 0.1,
+ "bitflow:reload_time" : 30,
+ "bitflow:status_time" : 1,
+ "bitflow:blacklist" : [],
+ "bitflow:whitelist" : ["Airfoils", "AirfoilList", "AirfoilRegressor", "AirfoilAugmentor", "AirfoilEdgeRegressor", "AirfoilPlotter", "AirfoilCreator"]}
