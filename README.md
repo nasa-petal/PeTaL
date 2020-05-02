@@ -7,24 +7,21 @@ PeTaL is build around a graph database, machine learning tools, and a website.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Since PeTaL separates the data pipeline as a submodule, PeTal should be downloaded with: `git clone --recursive-submodules https://github.com/nasa/PeTaL`.
-If PeTaL was already downloaded, `git submodule update --init --recursive` updates each submodule.
-The pipeline repository currently lives [here](https://github.com/LSaldyt/PeTaL-pipeline).
-Modifying it hopefully isn't necessary for most tasks.
+```
+git clone https://github.com/nasa/PeTaL
+cd PeTaL
+pip install -r requirements.txt
+```
 
-To run the PeTaL website, enter the `site` directory and run `pip install -r requirements.txt` and then `python manage.py runserver`.
-This is a standard configuration of a Django site.
+To run the PeTaL website, enter the `site` directory and run `python manage.py runserver`.
 
-To run the PeTaL pipeline, enter the `pipeline` directory and run `pip install -r requirements.txt`.
-Then, go back to the top-level PeTaL directory and call the `./run` script with a configuration file.
-For instance, use `./run config/default.json` to populate a `neo4j` database with species, articles, and images, or `./run config/airfoil_training.json` to train airfoil-related machine learning modules.
-Importantly, `./run config/mock_species_articles.json` followed by `./run config/search.json` creates an index file used by the PeTaL website.
-This should be updated as PeTaL matures.
+To run the PeTaL pipeline, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).
 
-Note that running the PeTaL pipeline requires an actively running `neo4j` server, with defaults inserted into each config file.
-Also note that these passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.
+Note that running the PeTaL pipeline requires an actively running `neo4j` server, with URL and login info entered into a config file.
+The default configuration expects a `neo4j` bolt server running on `7687`, with the username "neo4j" and password "life".
+*These passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.*
 
-*For specific instructions on extending PeTaL through pipeline modules, read [this documentation](PIPELINE.md)*
+*For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
 
 ## Deployment
 
