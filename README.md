@@ -13,9 +13,9 @@ cd PeTaL
 pip install -r requirements.txt
 ```
 
-To run the PeTaL website, enter the `site` directory and run `python manage.py runserver`.
+**To run the PeTaL website**, enter the `site` directory and run `python manage.py runserver`.
 
-To run the PeTaL pipeline, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).
+**To run the PeTaL pipeline**, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).
 
 Note that running the PeTaL pipeline requires an actively running `neo4j` server, with URL and login info entered into a config file.
 The default configuration expects a `neo4j` bolt server running on `7687`, with the username "neo4j" and password "life".
