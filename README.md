@@ -91,10 +91,18 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## Authors
 
-* **Vik Shyam** - *Project Lead*
-* **Paht Juangphanich** - *Project Supervisor*
+* **Vik Shyam** - *Principal Investigator*
+* **Paht Juangphanich** - *Technical Lead*
 
-* **Angeera Naser** - *Team Lead and frontend development*
+## PeTaL 1.0 - R
+
+* **Nicholas Bense** - *Backend development*
+* **Allie Calvin** - *UI development and data collection* 
+* **Victoria Kravets** - *Backend development* 
+
+## PeTaL 2.0
+
+* **Angeera Naser** - *Front end development and intern team lead Summer 2018*
 * **Allie Calvin** - *UI development and data collection* 
 * **Bishoy Boktor** - *Backend development* 
 * **Brian Whiteaker** - *Text Classification* 
@@ -105,7 +113,11 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 * **Kaylee Gabus** - *Front end development*
 * **Kei Kojima** - *Front end development*
 * **Lauren Friend** - *Backend development*
-* **Lucas Saldyt** - *Backend development, machine learning*
 * **Manju Johny** - *Backend development*
+
+## PeTaL 3.0
+
+* **Lucas Saldyt** - *Backend development, machine learning*
 * **Olakunle Akinpelu** - *Backend development*
+
 
