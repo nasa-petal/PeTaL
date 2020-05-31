@@ -87,7 +87,7 @@ The following section describes the directories of the PeTaL repository.
 ## Legacy Code
 
 For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory.
-Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future interns to build upon.
+Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future developers to build upon.
 
 ## Authors
 
