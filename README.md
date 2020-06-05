@@ -93,6 +93,8 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 * **Paht Juangphanich** - *Technical Lead*
 * **Colleen Unsworth** - *Workflow Lead*
+* **Herb Schilling** - *Data Science Lead*
+* **Calvin Robinson** - *Data Science/management Lead*
 * **Vik Shyam** - *Principal Investigator*
 
 ## PeTaL 1.0 - R
