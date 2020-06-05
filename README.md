@@ -91,8 +91,9 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## Authors
 
-* **Vik Shyam** - *Principal Investigator*
 * **Paht Juangphanich** - *Technical Lead*
+* **Colleen Unsworth** - *Workflow Lead*
+* **Vik Shyam** - *Principal Investigator*
 
 ## PeTaL 1.0 - R
 
