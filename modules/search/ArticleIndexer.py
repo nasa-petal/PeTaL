@@ -27,9 +27,12 @@ class ArticleIndexer(Module):
 
         data = previous.data
         for section in self.SECTIONS:
-            text = data[section]
-            for word in self.cleaner.clean(text):
-                hitlist.add(section, word)
+            try:
+                text = data[section]
+                for word in self.cleaner.clean(text):
+                    hitlist.add(section, word)
+            except KeyError:
+                print('Warning: article does not contain parsed content: "{}", cannot be indexed'.format(section))
 
         try:
             hitlist.save()
