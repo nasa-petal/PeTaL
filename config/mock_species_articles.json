@@ -10,4 +10,4 @@
  "bitflow:sleep_time" : 0.1,
  "bitflow:reload_time" : 30,
  "bitflow:blacklist" : [],
- "bitflow:whitelist" : ["MockEOLSpeciesModule", "WikipediaModule", "GoogleScholarModule", "JEBModule", "EOLModule"]}
+ "bitflow:whitelist" : ["MockEOLSpeciesModule", "WikipediaModule"]}

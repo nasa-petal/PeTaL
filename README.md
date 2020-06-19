@@ -13,9 +13,20 @@ cd PeTaL
 pip install -r requirements.txt
 ```
 
+**To run the PeTaL pipeline**, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).  
+After doing so, the `neo4j` browser can be used to verify that a pipeline has run.  
+Also, pipelines must be manually cancelled, as they are designed to run as a server that receives incoming data constantly.  
 **To run the PeTaL website**, enter the `site` directory and run `python manage.py runserver`.
 
-**To run the PeTaL pipeline**, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).
+For instance:
+```
+./run config/mock_species_articles.json
+# Ctrl-C once the database has enough articles for testing
+./run config/search.json
+# Wait until index has been generated in PeTaL/data directory
+cd site
+python manage.py runserver
+```
 
 Note that running the PeTaL pipeline requires an actively running `neo4j` server, with URL and login info entered into a config file.
 The default configuration expects a `neo4j` bolt server running on `7687`, with the username "neo4j" and password "life".
@@ -25,7 +36,8 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 
 ## Deployment
 
-Deploying PeTaL is as simple as setting up a `neo4j` server, running the pipeline backend to populate the database, and starting the website, potentially on a separate server.
+Deploying PeTaL is as simple as setting up a `neo4j` server, running the pipeline backend to populate the database, and starting the website, potentially on a separate server.  
+Automating this with docker would be desirable.
 
 ## Layout
 
