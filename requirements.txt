@@ -2,7 +2,7 @@ neo4j
 pandas
 nltk
 django
-bitflow==0.0.1
+bitflow==0.1.0
 beautifulsoup4
 efficientnet-pytorch                
 gensim                
