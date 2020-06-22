@@ -33,6 +33,8 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 *These passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.*
 
 *For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
+### Guides 
+[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)
 
 ## Deployment
 
