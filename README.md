@@ -103,11 +103,13 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## Authors
 
-* **Paht Juangphanich** - *Technical Lead*
-* **Colleen Unsworth** - *Workflow Lead*
+* **Vik Shyam** - *Principal Investigator*
 * **Herb Schilling** - *Data Science Lead*
 * **Calvin Robinson** - *Data Science/management Lead*
-* **Vik Shyam** - *Principal Investigator*
+* **Paht Juangphanich** - *Technical Support*
+* **Brandon Ruffridge** - *Technical Lead*
+* **Colleen Unsworth** - *Workflow Lead*
+
 
 ## PeTaL 1.0 - R
 
@@ -115,7 +117,7 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 * **Allie Calvin** - *UI development and data collection* 
 * **Victoria Kravets** - *Backend development* 
 
-## PeTaL 2.0
+## PeTaL 2.0 
 
 * **Angeera Naser** - *Front end development and intern team lead Summer 2018*
 * **Allie Calvin** - *UI development and data collection* 
@@ -132,7 +134,10 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## PeTaL 3.0
 
-* **Lucas Saldyt** - *Backend development, machine learning*
-* **Olakunle Akinpelu** - *Backend development*
+* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
+* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
+* **Kei Kojima** - *   *
+* **Elliot Hill** - *   *
+* **Benjamin Huynh** - *   *
 
 
