@@ -1,4 +1,4 @@
-from scholarly import search_pubs_query as google_scholar_search
+from scholarly import search_pubs as google_scholar_search
 
 from bitflow.utils.module import Module
 
@@ -50,3 +50,6 @@ class GoogleScholarModule(Module):
             data['content'] = ''
             results.append(self.default_transaction(data, uuid=data['title'] + '_GoogleArticle', from_uuid=previous.data['uuid']))
         return results
+if __name__=="main":
+    gm = GoogleScholarModule()
+    print('Hello')

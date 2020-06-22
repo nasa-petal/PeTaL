@@ -1,0 +1,4 @@
+INFO:scholarly:Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Steven%20A.%20Cholewiak
+INFO:scholarly:Found 1 authors
+INFO:scholarly:Getting https://scholar.google.com/scholar?hl=en&q=Steven%20A.%20Cholewiak&as_vis=0&as_sdt=0,33
+INFO:scholarly:Getting https://scholar.google.com/scholar?q=info:T_lFpGS-6oEJ:scholar.google.com/&output=cite&scirp=0&hl=en
