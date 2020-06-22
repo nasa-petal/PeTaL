@@ -2,3 +2,4 @@ petal/__pycache__
 *.pyc*
 data
 .dependencies.json
+.docker-data

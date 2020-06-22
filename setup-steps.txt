@@ -2,6 +2,16 @@ python
 django
 neo4j server
 
+neo4j:
+      image: neo4j:latest
+      volumes:
+        - ./.docker-data/neo4j:/data
+      environment:
+        - NEO4J_AUTH=neo4j/life
+      ports:
+        - "7474:7474"
+        - "7687:7687"
+
 docker run \
     --name petalneo4j \
     -p7474:7474 -p7687:7687 \
@@ -14,3 +24,27 @@ docker run \
     neo4j:latest
 
     docker build --tag petal:1.0 .
+
+
+sudo docker-compose run web ./code/run config/default.json
+docker-compose up
+
+http://localhost:8000
+
+
+
+
+FROM python:3
+
+WORKDIR $HOME/Documents/localwrk/git/petal
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN ./run config/default.json
+
+CMD [ "python", "manage.py runserver" ]
+
+
