@@ -12,13 +12,17 @@ def create_dependencies(directory='modules'):
     '''
     print('CREATING DEPENDENCIES', flush=True)
     dependencies = dict()
-    for name in get_module_names(directory=directory):
-        print('  Recognized module: ', name, flush=True)
-        module = fetch(name, directory=directory)
-        in_type  = module.in_label
-        out_type = module.out_label
-        page_batches = module.page_batches
-        dependencies[name] = (in_type, out_type, page_batches)
+    for name in get_module_names(directory=directory):  
+        try:
+            module = fetch(name, directory=directory)
+            print('  Recognized module: ', name, flush=True)
+            in_type  = module.in_label
+            out_type = module.out_label
+            page_batches = module.page_batches
+            dependencies[name] = (in_type, out_type, page_batches)
+        except:
+            print("Unrecognized module: " + name)
+        
     with open('.dependencies.json', 'w') as outfile:
         json.dump(dependencies, outfile, indent=4)
 

@@ -1,5 +1,6 @@
 from importlib import import_module
 import json, os
+from pathlib import Path
 
 '''
 Random code that has no better home. Most of this is meta relative to the bitflow
@@ -17,15 +18,16 @@ def fetch(module_name, directory='modules', settings_file=None):
                 name = directory + '.{}.{}'.format(subdir, module_name)
                 module = import_module(name)
                 return getattr(module, module_name)()
-    raise ModuleNotFoundError('Could not find module: ' + name)
+    raise ModuleNotFoundError('Could not find module: ' + module_name)
             
 def get_module_names(directory='modules'):
-    for subdir in get_module_subdirs(directory=directory):
-        modules = os.listdir(directory + '/' + subdir)
-        for filename in modules:
-            if filename.endswith('.py') and filename != '__init__.py':
-                name = os.path.basename(filename).split('.')[0]
-                yield filename.replace('.py', '')
+    files = []
+    for path in Path(directory).rglob('*.py'):
+        files.append(path.name)
+    files = [x for x in files if "__init__.py" not in x]  # remove all the __init__.py
+
+    for f in files:
+        yield f.replace('.py', '')
 
 def clean_uuid(item):
     '''
