@@ -33,6 +33,8 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 *These passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.*
 
 *For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
+### Guides 
+[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)
 
 ## Deployment
 
@@ -103,11 +105,13 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## Authors
 
-* **Paht Juangphanich** - *Technical Lead*
-* **Colleen Unsworth** - *Workflow Lead*
+* **Vik Shyam** - *Principal Investigator*
 * **Herb Schilling** - *Data Science Lead*
 * **Calvin Robinson** - *Data Science/management Lead*
-* **Vik Shyam** - *Principal Investigator*
+* **Paht Juangphanich** - *Technical Support*
+* **Brandon Ruffridge** - *Technical Lead*
+* **Colleen Unsworth** - *Workflow Lead*
+
 
 ## PeTaL 1.0 - R
 
@@ -115,7 +119,7 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 * **Allie Calvin** - *UI development and data collection* 
 * **Victoria Kravets** - *Backend development* 
 
-## PeTaL 2.0
+## PeTaL 2.0 
 
 * **Angeera Naser** - *Front end development and intern team lead Summer 2018*
 * **Allie Calvin** - *UI development and data collection* 
@@ -132,7 +136,10 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## PeTaL 3.0
 
-* **Lucas Saldyt** - *Backend development, machine learning*
-* **Olakunle Akinpelu** - *Backend development*
+* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
+* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
+* **Kei Kojima** - *   *
+* **Elliot Hill** - *   *
+* **Benjamin Huynh** - *   *
 
 
