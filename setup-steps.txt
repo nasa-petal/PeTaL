@@ -1,3 +1,12 @@
+install docker
+clone petal repo
+open terminal
+cd to cloned petal folder
+git checkout develop
+docker-compose up --build
+docker-compose up
+
+
 python
 django
 neo4j server
