@@ -20,7 +20,7 @@ def clean(item):
     return item
 
 # Load index and db connection at import
-neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
+neo_client = GraphDatabase.driver("bolt://neo4j:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
 session = neo_client.session()
 with open('../data/index', 'rb') as infile:
     index = pickle.load(infile)

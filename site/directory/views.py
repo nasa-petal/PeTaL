@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from neo4j import GraphDatabase, basic_auth
-neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
+neo_client = GraphDatabase.driver("bolt://neo4j:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
 session = neo_client.session()
 
 def form(request):

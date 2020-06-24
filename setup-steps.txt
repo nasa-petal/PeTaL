@@ -2,6 +2,13 @@ python
 django
 neo4j server
 
+// builds the web dockerfile. need to run this anytime the dockerfile or requirements.txt file changes.
+docker-compose up --build
+// use this to start up the services.
+docker-compose up
+
+pip3 install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
 neo4j:
       image: neo4j:latest
       volumes:
@@ -48,3 +55,5 @@ RUN ./run config/default.json
 CMD [ "python", "manage.py runserver" ]
 
 
+/code/wait-for-it.sh neo4j:7687 -- /code/run config/default.json
+          && 

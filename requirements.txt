@@ -7,7 +7,8 @@ beautifulsoup4
 efficientnet-pytorch                
 gensim                
 lxml                
-matplotlib                
+matplotlib   
+neobolt             
 nltk
 numpy               
 pandas               
@@ -16,7 +17,7 @@ requests
 scholarly                
 scipy                
 seaborn               
-urllib3               
+urllib3
 plotly
 selenium
 torch==1.5.0+cpu
