@@ -8,6 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.7"
 neo4j = "^4.0.0"
+neobolt = "^1.7.17"
 pandas = "^1.0.5"
 nltk = "^3.5"
 django = "^3.0.7"
@@ -19,7 +20,8 @@ Pillow = "^7.1.2"
 scholarly = "^0.3.3"
 seaborn = "^0.10.1"
 plotly = "^4.8.1"
-torch = "1.5.1+cpu" # May need to be installed manually, but an entry here is necessary, too!
+# torch = "1.5.1+cpu" # May need to be installed manually, but an entry here is necessary, too!
+# torchvision = "0.6.1+cpu"
 
 numpy = "^1.19.0"
 scipy = "1.4"
