@@ -9,7 +9,7 @@ Create an interface to the PeTaL data pipeline and tell it where to import modul
 if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) == 0:
-        settings_file = 'config/mock_species_articles.json'
+        settings_file = 'config/default.json'
     else:
         settings_file = args[0]
     interface = BitflowInterface(settings_file, module_dir='modules')
