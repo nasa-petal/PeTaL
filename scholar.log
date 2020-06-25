@@ -4,3 +4,7 @@ INFO:scholarly:Getting https://scholar.google.com/scholar?hl=en&q=Steven%20A.%20
 INFO:scholarly:Getting https://scholar.google.com/scholar?q=info:T_lFpGS-6oEJ:scholar.google.com/&output=cite&scirp=0&hl=en
 INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
 INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
