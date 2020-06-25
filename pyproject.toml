@@ -25,7 +25,7 @@ numpy = "^1.19.0"
 scipy = "1.4"
 efficientnet_pytorch = "^0.6.3"
 wikipedia = "^1.4.0"
-bitflow="^0.6.0"
+bitflow = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 
