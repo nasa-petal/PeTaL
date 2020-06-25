@@ -38,7 +38,7 @@ def fetch(query):
     for results in result_lists:
         for *hits, uuid in results:
             result = session.run('MATCH (a:Article) WHERE a.uuid = \'{uuid}\' RETURN a'.format(uuid=clean(uuid)))
-            for article in (node['a'] for node in result.records()):
+            for article in (node['a'] for node in result):
                 article.__hash__ = lambda x : x['title']
                 articles.add(article)
     fetch_finish = time()
@@ -60,9 +60,9 @@ def plot(query):
     habitats = []
     for article in articles:
         taxa = session.run('MATCH (t:Taxon)-->(a:Article) WHERE a.uuid = \'{uuid}\' RETURN t'.format(uuid=article['uuid']))
-        for taxon in (node['t'] for node in taxa.records()):
+        for taxon in (node['t'] for node in taxa):
             query_habitats = session.run('MATCH (t:Taxon)-[:habitat]->(h) WHERE t.name = \'{name}\' return h'.format(name=taxon['name']))
-            for node in query_habitats.records():
+            for node in query_habitats:
                 habitats.append(node['h']['value'])
 
     pprint(habitats)
