@@ -5,13 +5,19 @@ PeTaL is built around a graph database, machine learning tools, and a website.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.  
 
+Clone PeTaL:  
 ```
 git clone https://github.com/nasa/PeTaL
 cd PeTaL
-pip install -r requirements.txt
-```
+```  
+
+First, install [poetry](https://python-poetry.org/docs/):  
+`curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python`  
+Use `poetry` to  install dependencies.  
+`poetry install`  
+`pytorch` is non-standard in the way it is packaged, and may need to be installed separately: `poetry run pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html`, however an entry in `pyproject.toml` is still needed.  
 
 **To run the PeTaL pipeline**, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).  
 After doing so, the `neo4j` browser can be used to verify that a pipeline has run.  
