@@ -11,19 +11,21 @@ neo4j = "^4.0.0"
 pandas = "^1.0.5"
 nltk = "^3.5"
 django = "^3.0.7"
-bitflow = "0.0.1"
 beautifulsoup4 = "^4.9.1"
 gensim = "^3.8.3"
 lxml = "^4.5.1"
 matplotlib = "^3.2.2"
-numpy = "^1.19.0"
 Pillow = "^7.1.2"
-requests = "^2.24.0"
 scholarly = "^0.3.3"
-scipy = "^1.5.0"
 seaborn = "^0.10.1"
-urllib3 = "^1.25.9"
 plotly = "^4.8.1"
+torch = "1.5.1+cpu"
+
+numpy = "^1.19.0"
+scipy = "1.4"
+efficientnet_pytorch = "^0.6.3"
+wikipedia = "^1.4.0"
+bitflow = {path = "../bitflow"}
 
 [tool.poetry.dev-dependencies]
 
