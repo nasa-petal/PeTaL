@@ -49,26 +49,6 @@ pyparsing = ">=2.0.3"
 
 [[package]]
 category = "main"
-description = ""
-develop = true
-name = "bitflow"
-optional = false
-python-versions = "^3.7"
-version = "0.5.0"
-
-[package.dependencies]
-beautifulsoup4 = "^4.9.1"
-neo4j = "^4.0.0"
-requests = "*"
-urllib3 = "*"
-
-[package.source]
-reference = ""
-type = "directory"
-url = "../bitflow"
-
-[[package]]
-category = "main"
 description = "Amazon Web Services Library"
 name = "boto"
 optional = false
@@ -592,7 +572,7 @@ beautifulsoup4 = "*"
 requests = ">=2.0.0,<3.0.0"
 
 [metadata]
-content-hash = "de4075bfd027cd309a75f4db40a9cf55c053f5d8bd328e0c546643b80805498d"
+content-hash = "5f291899b74b1c9546006f6727a5ddd494aeaaafb951c8b3a5de6eb4c6f810c6"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -612,7 +592,6 @@ beautifulsoup4 = [
 bibtexparser = [
     {file = "bibtexparser-1.2.0.tar.gz", hash = "sha256:0f9ab94e3fc36ee2ee6a3713c5dd7320d4b6ee52bd66ecbab03c6b06675ae410"},
 ]
-bitflow = []
 boto = [
     {file = "boto-2.49.0-py2.py3-none-any.whl", hash = "sha256:147758d41ae7240dc989f0039f27da8ca0d53734be0eb869ef16e3adcfa462e8"},
     {file = "boto-2.49.0.tar.gz", hash = "sha256:ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"},

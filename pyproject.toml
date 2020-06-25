@@ -19,13 +19,13 @@ Pillow = "^7.1.2"
 scholarly = "^0.3.3"
 seaborn = "^0.10.1"
 plotly = "^4.8.1"
-torch = "1.5.1+cpu"
+torch = "1.5.1+cpu" # May need to be installed manually, but an entry here is necessary, too!
 
 numpy = "^1.19.0"
 scipy = "1.4"
 efficientnet_pytorch = "^0.6.3"
 wikipedia = "^1.4.0"
-bitflow = {path = "../bitflow"}
+bitflow="^0.6.0"
 
 [tool.poetry.dev-dependencies]
 
