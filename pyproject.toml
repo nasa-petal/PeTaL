@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "petal"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+neo4j = "^4.0.0"
+pandas = "^1.0.5"
+nltk = "^3.5"
+django = "^3.0.7"
+beautifulsoup4 = "^4.9.1"
+gensim = "^3.8.3"
+lxml = "^4.5.1"
+matplotlib = "^3.2.2"
+Pillow = "^7.1.2"
+scholarly = "^0.3.3"
+seaborn = "^0.10.1"
+plotly = "^4.8.1"
+torch = "1.5.1+cpu" # May need to be installed manually, but an entry here is necessary, too!
+
+numpy = "^1.19.0"
+scipy = "1.4"
+efficientnet_pytorch = "^0.6.3"
+wikipedia = "^1.4.0"
+bitflow = "^0.6.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
