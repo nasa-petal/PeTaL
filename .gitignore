@@ -4,6 +4,7 @@ data
 .dependencies.json
 desktop.ini
 scholar.log
+poetry.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
