@@ -5,24 +5,31 @@ PeTaL is built around a graph database, machine learning tools, and a website.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.  
 
+Clone PeTaL:  
 ```
 git clone https://github.com/nasa/PeTaL
 cd PeTaL
-pip install -r requirements.txt
-```
+```  
+
+First, install [poetry](https://python-poetry.org/docs/):  
+`curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python`  
+Use `poetry` to  install dependencies.  
+`poetry install`  
+`pytorch` is non-standard in the way it is packaged, and may need to be installed separately: `poetry run pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html`, however an entry in `pyproject.toml` is still needed.  
 
 **To run the PeTaL pipeline**, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).  
 After doing so, the `neo4j` browser can be used to verify that a pipeline has run.  
 Also, pipelines must be manually cancelled, as they are designed to run as a server that receives incoming data constantly.  
 **To run the PeTaL website**, enter the `site` directory and run `python manage.py runserver`.
 
-For instance:
+Steps to get started if you are running it from scratch:
 ```
-./run config/mock_species_articles.json
+./run config/mock_species_articles.json # Step 1
 # Ctrl-C once the database has enough articles for testing
-./run config/search.json
+# This creates the ../data/index.html https://github.com/nasa/PeTaL/issues/28#issuecomment-649080792 
+./run config/search.json # Step 2 
 # Wait until index has been generated in PeTaL/data directory
 cd site
 python manage.py runserver
@@ -33,6 +40,8 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 *These passwords and URLs are stored in a readable format, so it would be wise not to commit config files containing passwords to a production environment.*
 
 *For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
+### Guides 
+[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)
 
 ## Deployment
 
@@ -103,11 +112,13 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## Authors
 
-* **Paht Juangphanich** - *Technical Lead*
-* **Colleen Unsworth** - *Workflow Lead*
+* **Vik Shyam** - *Principal Investigator*
 * **Herb Schilling** - *Data Science Lead*
 * **Calvin Robinson** - *Data Science/management Lead*
-* **Vik Shyam** - *Principal Investigator*
+* **Paht Juangphanich** - *Technical Support*
+* **Brandon Ruffridge** - *Technical Lead*
+* **Colleen Unsworth** - *Workflow Lead*
+
 
 ## PeTaL 1.0 - R
 
@@ -115,7 +126,7 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 * **Allie Calvin** - *UI development and data collection* 
 * **Victoria Kravets** - *Backend development* 
 
-## PeTaL 2.0
+## PeTaL 2.0 
 
 * **Angeera Naser** - *Front end development and intern team lead Summer 2018*
 * **Allie Calvin** - *UI development and data collection* 
@@ -132,7 +143,10 @@ Since the HTML/CSS/Javascript is similar to what is currently used, and some cod
 
 ## PeTaL 3.0
 
-* **Lucas Saldyt** - *Backend development, machine learning*
-* **Olakunle Akinpelu** - *Backend development*
+* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
+* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
+* **Kei Kojima** - *   *
+* **Elliot Hill** - *   *
+* **Benjamin Huynh** - *   *
 
 

@@ -3,7 +3,7 @@ Click==7.0
 colorama==0.4.3
 cymem==2.0.3
 decorator==4.4.1
-Django==3.0.3
+Django==3.0.7
 dnspython==1.16.0
 docutils==0.15.2
 efficientnet-pytorch==0.6.1

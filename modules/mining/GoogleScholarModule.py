@@ -1,4 +1,4 @@
-from scholarly import search_pubs_query as google_scholar_search
+from scholarly import scholarly
 
 from bitflow.utils.module import Module
 
@@ -42,7 +42,7 @@ class GoogleScholarModule(Module):
         :param previous: Query to search for
         '''
         name = previous.data['name']
-        scholar_result_gen = google_scholar_search(name)
+        scholar_result_gen = scholarly.search_pubs(name)
         limit = randint(5, 20)
         results = []
         for i in range(limit):
@@ -50,3 +50,6 @@ class GoogleScholarModule(Module):
             data['content'] = ''
             results.append(self.default_transaction(data, uuid=data['title'] + '_GoogleArticle', from_uuid=previous.data['uuid']))
         return results
+if __name__=="main":
+    gm = GoogleScholarModule()
+    print('Hello')
