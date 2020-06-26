@@ -16,6 +16,12 @@ docker-compose up --build
 // use this to start up the services.
 docker-compose up
 
+docker exec -it petal_web_1 /bin/bash
+./run config/mock_species_articles.json # Step 1
+# Ctrl-C once the database has enough articles for testing
+# This creates the ../data/index.html https://github.com/nasa/PeTaL/issues/28#issuecomment-649080792 
+./run config/search.json # Step 2 
+
 pip3 install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 
 neo4j:
