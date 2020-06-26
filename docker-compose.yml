@@ -19,7 +19,7 @@
     web:
       build: .
       command: bash -c "
-          /code/wait-for-it.sh -t 30 neo4j:7687 -- python site/manage.py runserver 0.0.0.0:8000
+          /code/wait-for-it.sh -t 60 neo4j:7687 -- python site/manage.py runserver 0.0.0.0:8000
         "
       volumes:
         - .:/code
