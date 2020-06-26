@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 from time import time
 
-#from .search import search, plot
+from .search import search, plot
 
 def index(request):
     return render(request, 'bar.html', dict())
