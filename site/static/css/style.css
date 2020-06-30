@@ -1,16 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow);
 
+/*Colors */
+
 body {
-    margin:0px;
+    background-color: #0f383c;
+    background-color: #99cc00;
+    background-color: #4ebb5c;
+    background-color: #00aabb;
+    margin: 0px;
     overflow: -moz-scrollbars-vertical;
     overflow-y: scroll;
+    background-color: #0f383c;
 }
 
 .d3-tip {
     line-height: 1;
     font-size: 12px;
     padding: 6px;
-    font-family: sans-serif;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: 'Archivo Narrow', sans-serif;
     border-radius: 2px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -20,7 +29,7 @@ body {
     user-select: none;
 }
 .active {
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-size: 110%;
 }
 
@@ -37,27 +46,38 @@ line.link {
 
 text.names {
     pointer-events: none;
-    font-family: Helvetica;
+    font-family: 'Archivo Narrow', 'Helvetica';
     text-decoration: none;
 }
+
 text.toplevel {
-    font-weight: bold;
+    font-size: 19px;
 }
+
+text.middlelevel {
+    font-size: 17px;
+}
+
+text.bottomlevel {
+    font-size: 15px;
+}
+
 text.plusminus {
     pointer-events: none;
-    font-family: Helvetica;
+    font-family: 'Archivo Narrow', 'Helvetica';
     text-decoration: none;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
+
 text.highlighted {
     text-decoration: underline;
     font-size: 110%;
 }
+
 .rowBorder {
     fill: none;
     stroke: #999;
     stroke-width: 1px;
-
 }
 
 rect.hoverbox {
@@ -67,13 +87,15 @@ rect.hoverbox {
     opacity: 1;
     pointer-events: visible;
 }
+
 rect.hoverbox.hovered {
-    stroke-width: 0px;
-    fill: #E8E8E8;
-    stroke: none;
+    stroke-width: 2px;
+    fill: #0f383c;
+    stroke: #E8E8E8;
 }
 
-.paintedRect {
+circle.paintedRect {
+    pointer-events: all;
 }
 
 .paintToolCircle {
@@ -89,17 +111,17 @@ rect.hoverbox.hovered {
 .numberLabel {
     font-size: 16px;
     font-family: "Archivo Narrow";
-    font-weight: bold;
-    fill: #888;
+    /*font-weight: bold;*/
+    fill: #ddd;
 }
 
 .guideTop {
     position: fixed;
     top: 2vh;
     right: 1.5%;
-    width: 18vw;
+    width: 15vw;
 
-    color: #666;
+    color: #999;
     font-size: 18px;
     font-family: "Archivo Narrow";/*Helvetica;*/
     /*padding: 20px;*/
@@ -113,11 +135,13 @@ rect.hoverbox.hovered {
     margin-left: 0;
     list-style-type: square;
     padding-left: 1em;
-    color: #666;
+    color: #999;
 }
+
 .guideTop li {
     padding-left: 0.1em;
 }
+
 .guideTop li:before {
 
 }
@@ -134,9 +158,7 @@ rect.hoverbox.hovered {
 .guideList {
     padding: 10px;
     /*border-style: dotted;*/
-    background-color: #323d46;
-    border-radius: 15px 15px 15px 15px;
-
+    border-bottom: dotted #999 1px;
 }
 
 .lifeformTop {
@@ -149,9 +171,9 @@ rect.hoverbox.hovered {
     /*float: left;*/
     /*width: 20%;*/
     position: fixed;
-    top: 340px;
+    top: 350px;
     right: 1.5%;
-    width: 18vw;
+    width: 16vw;
     /*width: 580px;*/
     /*top: 680px;*/
     /*left: 30px;*/
@@ -159,20 +181,20 @@ rect.hoverbox.hovered {
 }
 
 .lifeformHeader {
-    font-weight: bold;
-    font-size: 16px;
-    background-color: #323d46;
-    font-family: Helvetica;
+    /*font-weight: bold;*/
+    font-size: 18px;
+    background-color: none;
+    font-family: 'Archivo Narrow', 'Helvetica';
     text-align: center;
     padding: 0.5em;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
     /* border: 2px solid rgb(153,153,153);;
     border-bottom: 0px; */
-    color: #666;
+    color: #999;
 }
 
 .lifeformList {
-    background-color: #323d46;
+    background-color: none;
     height: 200px;
     min-height: 50vh;
     max-height: 50vh;
@@ -182,7 +204,7 @@ rect.hoverbox.hovered {
     font-size: 18px;
     padding: 10px;
     /* border: 2px solid rgb(153,153,153); */
-    border-radius: 0 0 10px 10px;
+    /* border-radius: 0 0 10px 10px; */
 }
 
 .lifeformList ul {
@@ -190,13 +212,11 @@ rect.hoverbox.hovered {
     margin-left: 0;
     list-style-type: square;
     padding-left: 1em;
-    color: #666;
+    color: #999;
 }
+
 .lifeformList li {
     padding-left: 0.1em;
-}
-.lifeformList li:before {
-
 }
 
 .lifeformList a {
@@ -207,4 +227,8 @@ rect.hoverbox.hovered {
 .lifeformList a:hover {
     text-decoration: underline;
 }
-	
+
+path {
+    stroke: none;
+    fill: none;
+}

@@ -21,5 +21,6 @@ urlpatterns = [
     path('',             include('home.urls')),
     path('admin/',       admin.site.urls),
     path('bird/',   include('bird.urls')),
+    path('biomole/', include('biomole.urls')),
     path('directory/',   include('directory.urls')),
 ]

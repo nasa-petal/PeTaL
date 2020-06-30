@@ -1,3 +1,5 @@
+// Apache 2.0 licensed work. Published from https://github.com/VACLab/d3-tip
+
 // d3.tip
 // Copyright (c) 2013 Justin Palmer
 // ES6 / D3 v4 Adaption Copyright (c) 2016 Constantin Gavrilete

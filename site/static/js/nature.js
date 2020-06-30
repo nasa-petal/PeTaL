@@ -24,7 +24,8 @@ var matrixRowHeight = 150;
 
 var matrixViewOffset = [20, 0];
 
-var colorMapper = d3.scaleSequential(d3.interpolateMagma).domain([-3, 5]); // purple to orange scheme, the original
+// var colorMapper = d3.scaleSequential(d3.interpolateMagma).domain([-3, 5]); // purple to orange scheme, the original
+var colorMapper = d3.scaleSequential(d3.interpolateRgb("#00aabb", "#99cc00")).domain([1, 3]); // purple to orange scheme, the original
 //var globalColorArray = ['#b73779','#e75263','#fc8961','#DB7A16']
 // var colorMapper = function(v) {
 // return globalColorArray[v];
@@ -48,7 +49,7 @@ class Tool {
 
         let that = this;
 
-        d3.json("static/js/hierarchy.json", function (error, data) {
+        d3.json("../static/js/hierarchy.json", function (error, data) {
             if (error) {
                 console.log("error loading json:", error);
             }
@@ -73,7 +74,7 @@ class Tool {
             // console.log(lf);
 
             // parseData();
-
+            console.log("line 77")
             that.root = data;
             that.root.level = 0;
 
@@ -111,8 +112,8 @@ class Tool {
                     e.children.forEach(f => {
                         that.functions[f.name] = f;
                         that.functions[f.name].level = 3;
-                        lifeformsCounter.push(...f.children);
-                        f.children.forEach(g => {
+                        lifeformsCounter.push(...f.matches);
+                        f.matches.forEach(g => {
                             let lifeform = that.lifeforms.find(h => h.post_id === g);
                             if (lifeform) {
                                 lifeform.functions.push({
@@ -122,7 +123,7 @@ class Tool {
                                 });
                             } else {
                                 that.lifeforms.push({
-                                    'post_id': g, 
+                                    'post_id': g,
                                     'functions': [{
                                         level0: d.name,
                                         level1: e.name,
@@ -139,15 +140,18 @@ class Tool {
             lifeformsCounter = uniq(lifeformsCounter);
             // console.log(lifeformsCounter);
 
-            that.nOfLifeforms = lifeformsCounter.length;
+            // console.log("lifeforms", that.lifeforms);
 
+            that.nOfLifeforms = lifeformsCounter.length;
+            console.log("line 146")
             const visitChildrenDFS = function (node, func) {
                 if (typeof node !== "undefined" && node.children && node.level < 3) {
                     node.matches = node.children.reduce((accumulator, currentValue) => {
                         return accumulator.concat(visitChildrenDFS(currentValue, func));
                     }, []);
                 } else {
-                    node.matches = node.children;
+                    // node.matches = node.children;
+                    node.children = node.children || [];
                 }
                 node.matches = uniq(node.matches);
                 return node.matches;
@@ -171,7 +175,7 @@ class Tool {
 
             // console.log("allFunctionItems", that.allFunctionItems);
 
-            // full_post_example.json how many lifeforms are in each group
+            // test how many lifeforms are in each group
             // for(let key in that.groups) {
             // 	console.log(that.groups[key].name, that.groups[key].matches.length);
             // }
@@ -189,12 +193,12 @@ class Tool {
             // uidiv = d3.select('body').append('div');
             // .style('margin','1em')
 
-            baseSVG = d3.select('body').append('div')
-            // .style('float','left')
-                .style('width', '100%')
+            baseSVG = d3.select('#contentWrapper').append('div')
+                //.style('float','left')
+                //.style('width', '100%')
                 .append("svg")
                 .attr("id", "mysvg")
-                // .style('float', 'left')
+                //.style('float', 'left')
                 //.attr("width",900)
                 .attr('width', "100%")
                 .attr("height", that.svgHeight)
@@ -247,7 +251,7 @@ class Tool {
             baseSelectGroup = baseSVG.append('g').attr('id', 'selectGroup').style("filter", "url(#gooeyCodeFilter)");
             //basePaintGroup = baseSVG.append('g').attr('id', 'paintGroup').attr("transform","translate(660,0)");
             basePaintGroup = baseSVG.append('g').attr('id', 'paintGroup').attr("transform", "translate(" + matrixViewOffset.join(',') + ")");
-
+            console.log("254")
             tip = d3.tip()
                 .attr('class', 'd3-tip')
                 //.offset([-10, 0])
@@ -273,7 +277,7 @@ class Tool {
             createUI();
 
             //updateCircles();
-
+            console.log(280)
             that.view = new PaintView(that);
 
             that.view.updateHeaders(that.lifeforms, that.root, true);
@@ -290,26 +294,27 @@ class Tool {
                 .attr('x2', that.matrixSize[0])
                 .attr('y2', 0)
                 .classed('rowBorder', true);
-
+            console.log(297)
             var dim = 18, buf = 8; // same values that are in paintView.js Row constructor
             topline.append('image')
                 .attr('x', that.matrixSize[0] + buf * 2)
                 .attr('y', 0 - dim / 2)
                 .attr('width', dim)
                 .attr('height', dim)
-                .attr('xlink:href', 'static/img/plus.svg')
+                .attr('href', '../static/images/plus.svg')
                 .on('click', (e) => {
+                    console.log(that)
                     return that.addNewRow(that)
                 });
-
+            console.log(308)
             let row = new Row(that, that.view, [0, that.matrixSize[1] + 50], matrixRowHeight, null, "test");
             matrixRows.push(row);
             row.populateWithAll(that.nOfLifeforms);
-
+            console.log(312)
             that.addNewRow(matrixRows[matrixRows.length - 1]);
             that.addNewRow(matrixRows[matrixRows.length - 1]);
             that.addNewRow(matrixRows[matrixRows.length - 1]);
-
+            console.log(316)
             createGuide();
             createLifeformList();
 
@@ -320,12 +325,24 @@ class Tool {
             // r: 50
             // })
 
-            // logEvent("Opened tool page (index.html)");
+            console.log("Opened tool page (index.html)");
+            logEventGA("Initialization", "Loaded", "biomole.html");
+            console.log(329)
+            // window.addEventListener("focus", function(event) {
+            //     logEventGA("Tool action", "got focus", null, null);
+            // }, false);
 
-            d3.json("static/js/strategies.json", function (error, strategies) {
+            // Example of the blur event as opposed to focus
+            // window.addEventListener("blur", function(event) {
+            //     logEventGA("Tool action", "lost focus", null, null);
+            // }, false);
+
+            d3.json("../static/js/strategies.json", function (error, strategies) {
                 if (error) {
                     console.log("error loading json:", error);
                 }
+
+                console.log("Loaded " + strategies.length + " strategies");
 
                 strategies.forEach(d => {
                     let lifeform = that.lifeforms.find(e => e.post_id === d.post_id);
@@ -349,7 +366,7 @@ function createGuide() {
                 Find co-existing functions by dragging and brushing a circle from the first row across the next one
             </li>
             <li>
-                Click a circle and a list of suggestions with multiple functions appears below - each one takes you to an Ask Nature strategy page  
+                Click a circle and a list of suggestions with multiple functions appears below - each one takes you to an Ask Nature strategy page
             </li></ul>`;
     div.html(s);
 }
@@ -361,7 +378,7 @@ function createLifeformList() {
 
     listHeaderDiv = div.append('div')
         .classed('lifeformHeader', true)
-        .html(wrapColor('Group, Sub-group and Functional Co-occurrence', colorMapper(0)));
+        .html(wrapColor('Group, Sub-group and Functional Co-occurrence', "#999"));
 
     listDiv = div.append('div')
         .classed('lifeformList', true)
@@ -552,43 +569,45 @@ function populateLifeformsList(headerName, lifeformList) {
         .append('li')
         .each(function (d, i) {
             var link = d3.select(this).append('a');
-            console.log(t.lifeforms[d]);
+            // console.log(t.lifeforms[d]);
             link.attr('href', t.lifeforms[d].permalink)
                 .attr('target', '_blank')
                 .html(t.lifeforms[d].post_title)
-                // .on('mousedown', function () {
-                //     if (d3.event.which === 1 || d3.event.which === 2)
-                //         // logEvent('Clicked link to "' + t.lifeforms[d].post_title + '"');
-                // })
+                .on('mousedown', function () {
+                    if (d3.event.which === 1 || d3.event.which === 2)
+                        console.log(577)
+                        // logEvent('Clicked link to "' + t.lifeforms[d].post_title + '"');
+                        logEventGA("Interface action", "Clicked link in lifeforms list", t.lifeforms[d].post_id + ": " + t.lifeforms[d].post_title,  "Header name: " + headerName + ". Number in list: " + i + "/" + lifeformList.length);
+                })
         })
 };
 
 Tool.prototype.addNewRow = function (aboveRow) {
     // console.log(aboveRow);
     // console.log(this);
-
+    console.log(587)
     var index = -1;
     if (aboveRow)
         index = matrixRows.indexOf(aboveRow);
-    var r = new Row(this, this.view, [0, this.matrixSize[1] + 50 + (index + 1) * matrixRowHeight], matrixRowHeight, null, "test");
-    r.borderGroup.style('opacity', 0); // hide it and animate it appearing after other rows are done moving
+    var row = new Row(this, this.view, [0, this.matrixSize[1] + 50 + (index + 1) * matrixRowHeight], matrixRowHeight, null, "test");
+    row.borderGroup.style('opacity', 0); // hide it and animate it appearing after other rows are done moving
 
-    matrixRows.splice(index + 1, 0, r);
+    matrixRows.splice(index + 1, 0, row);
 
     // if the row we are adding is the only one in the whole vis, fill it
     if (matrixRows.length === 1)
-        r.populateWithAll(that.lifeforms.length);
+        row.populateWithAll(this.lifeforms.length);
 
     var delay = 0; // animate the new row appearing immediately, unless rows have to move
     // if it wasn't the last entry in matrix, we have to shift the others down
     if (index + 1 < matrixRows.length - 1) {
         for (var i = index + 2; i < matrixRows.length; i++)
-            matrixRows[i].moveRow([0, this.matrixSize[1] + 50 + i * matrixRowHeight], 700)
+            matrixRows[i].moveRow([0, this.matrixSize[1] + 50 + i * matrixRowHeight], 700);
         delay = 400;
     }
 
     d3.timeout(function () {
-        r.borderGroup.transition().duration(600).style('opacity', 1);
+        row.borderGroup.transition().duration(600).style('opacity', 1);
     }, delay);
 
     this.svgHeight = this.matrixSize[1] + 50 + matrixRows.length * matrixRowHeight + 50;
@@ -596,7 +615,10 @@ Tool.prototype.addNewRow = function (aboveRow) {
     // baseSVG.attr('width', this.svgWidth);
     baseSVG.attr('viewBox', '0 0 ' + this.svgWidth + ' ' + this.svgHeight);
 
+    let rowName = (row.paintTool === null ? "blank row" : ("row \"" + row.paintTool.name + '"'));
+
     // logEvent("Added new row");
+    logEventGA("Interface action", "Deleted row", rowName, index);
 };
 
 Tool.prototype.deleteRow = function (row) {
@@ -605,7 +627,10 @@ Tool.prototype.deleteRow = function (row) {
 
     var index = matrixRows.indexOf(row);
 
-    // logEvent("Deleted " + (row.paintTool === null ? "blank row" : ("row \"" + row.paintTool.name + '"')));
+    let rowName = (row.paintTool === null ? "blank row" : ("row \"" + row.paintTool.name + '"'));
+    //
+    // ("Deleted " + rowName);
+    logEventGA("Interface action", "Deleted row", rowName, index);
 
     // fade out the current row
     var fadetime = 600;
@@ -626,12 +651,14 @@ Tool.prototype.deleteRow = function (row) {
                 matrixRows[i].moveRow([0, that.matrixSize[1] + 50 + i * matrixRowHeight], 700, d3.easeBounce);
         }
 
-        // if we deleted our only row, make a new blank one
-        if (matrixRows.length === 0) {
-            addNewRow(null);
-        }
+
 
     }, fadetime);
+
+    // if we deleted our only row, make a new blank one
+    if (matrixRows.length == 1) {
+        that.addNewRow(null);
+    }
 
 };
 
@@ -640,5 +667,25 @@ Tool.prototype.deleteRow = function (row) {
 //     let url = '/logging/' + str;
 //     $.post(url, {}, function () {
 //     });
+//     window.dataLayer.push({
+//         event: "Logging event",
+//         eventCategory: "category",
+//         eventAction: "action",
+//         eventLabel: "label",
+//         eventValue: "value"
+//     });
 // }
 
+function logEventGA(category, action, label, value) {
+    let logEvent = {
+        event: "Logging event",
+        eventCategory: category,
+        eventAction: action,
+        eventLabel: label,
+        eventValue: value
+    };
+
+    console.log(logEvent);
+
+    // window.dataLayer.push(logEvent);
+}
