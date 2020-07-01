@@ -7,13 +7,13 @@ function updateCircles(root) {
     var dur = 1500;
 
     var nodes = d3.hierarchy(this.root, function (d) {
-        if (!d.expandedCircle || d.children.length === 0) {
+        if (!d.expandedCircle || d.matches.length === 0) {
             return null;
         }
         return d.children;
     })
         .sum(function (d) {
-            if (!d.expandedCircle || d.children.length === 0 ) {
+            if (!d.expandedCircle || d.matches.length === 0 ) {
                 return d.matches.length;
             }
             return 0;
@@ -60,7 +60,7 @@ function updateCircles(root) {
         .attr('cx',d => d.temppos[0])
         .attr('cy',d => d.temppos[1])
         .attr('r',d => d.r)
-        .attr('fill', d => colorMapper(Math.max(0,d.depth-1))) // start it at its parent's color for better blending
+        .attr('fill', d => colorMapper(Math.max(0,d.depth))) // start it at its parent's color for better blending
         // now, for both the existing and newly entering circles, assign their properties
         .merge(u)
         .on('mousedown', nodeMouseDown)

@@ -2,6 +2,8 @@
 //var matrixSize = [svgWidth-70,250];
 // let matrixSize = [svgWidth - 450, 250];
 
+var swaySyncTimestamp = null; // a timestamp that will help us keep all the sways in sync
+var swayDuration = 3*9000; // in milliseconds, how long each sway will last
 
 function PaintView(tool) {
     this.tool = tool;
@@ -22,7 +24,7 @@ function PaintView(tool) {
 PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
     this.lifeforms = lifeforms;
     this.root = root;
-    
+
     let appeardur = 500;
     let delayFactor = firstTime ? 0 : 2 / 3;
     let nameDelay = firstTime ? 0 : 200;
@@ -56,7 +58,7 @@ PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
 
     // create a linear list of a depth-first pre-traversal of the nodes
     // this is the list that will be displayed left to right as the headers
-    // we use (and add more variables to) the nodes created by d3.cluster rather than the base structure 
+    // we use (and add more variables to) the nodes created by d3.cluster rather than the base structure
     //   to make things more consistent across the different views
 
     function recursiveAdd(node) {
@@ -70,9 +72,9 @@ PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
     }
 
     recursiveAdd(nodes);
-    
+
     // console.log(descendants);
-    
+
     // override the d3.cluster x,y with our own x,y
     // these will put the headers in a single row, with a slight vertical adjustment for deeper nodes
 
@@ -90,7 +92,7 @@ PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
             delete d.linkLength;
         }
     });
-    
+
     // console.log(links);
 
     function getLinkPath(node) {
@@ -167,6 +169,8 @@ PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
         .merge(s)
         .classed('names', true)
         .classed('toplevel', d => d.depth === 1)
+        .classed('middlelevel', d => d.depth === 2)
+        .classed('bottomlevel', d => d.depth === 3)
         .attr('fill', d => colorMapper(d.depth))
         .attr('font-size', d => (100 - 15 * (d.depth - 1)) + "%")
         .text(d => d.data.name)
@@ -245,6 +249,8 @@ PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
         .text(d => getPrefix(d))
         .classed('plusminus', true)
         .classed('toplevel', d => d.depth === 1)
+        .classed('middlelevel', d => d.depth === 2)
+        .classed('bottomlevel', d => d.depth === 3)
         .attr('fill', d => colorMapper(d.depth))
         .attr('font-size', d => ((140 + (getPrefix(d) === '.' ? 20 : 0)) - 15 * (d.depth - 1)) + "%")
         .on('mousedown', this.headerClicked);
@@ -277,7 +283,7 @@ PaintView.prototype.updateHeaders = function(lifeforms, root, firstTime) {
     // ----------- Rectangles -----------
 
     let rectbufy = 10;
-    let rectbufx = [20, 10]; // front and end (more at front to cover plus/minus sign)
+    let rectbufx = [30, 20]; // front and end (more at front to cover plus/minus sign)
     s = basePaintGroup
         .selectAll('rect.hoverbox')
         .data(descendants, d => d.data.id);
@@ -344,6 +350,7 @@ PaintView.prototype.headerClicked = function(node) {
     if (node.depth === 3) return; // don't redraw everything for child nodes, just do nothing
     node.data.expandedMatrix = !node.data.expandedMatrix;
     // logEvent((node.data.expandedMatrix ? "Expanded" : "Collapsed") + " header \"" + node.data.name + "\"");
+    logEventGA("Interface action", "Clicked header", node.data.expandedMatrix ? "Expanded" : "Collapsed", "" + node.data.name);
     this.updateHeaders(this.lifeforms, this.root, false);
     if (node.data.expandedMatrix) {
         //matrixRows.forEach(d => d.setPaintedItems(node.data.children.map(c => c.name), true))
@@ -415,7 +422,7 @@ function Row(tool, view, topleft, height, lifeformList, name) {
         .attr('visibility', 'hidden')
         .attr('pointer-events', 'none');
 
-    // the controls for adding/removing rows	
+    // the controls for adding/removing rows
     let dim = 18, buf = 8;
     this.borderGroup.append('image')
         .datum(this)
@@ -423,7 +430,7 @@ function Row(tool, view, topleft, height, lifeformList, name) {
         .attr('y', this.height / 2 - dim / 2)
         .attr('width', dim)
         .attr('height', dim)
-        .attr('xlink:href', 'static/img/x.svg')
+        .attr('href', '../static/images/x.svg')
         .on('click', that.tool.deleteRow);
 
     this.borderGroup.append('image')
@@ -432,7 +439,7 @@ function Row(tool, view, topleft, height, lifeformList, name) {
         .attr('y', this.height - dim / 2)
         .attr('width', dim)
         .attr('height', dim)
-        .attr('xlink:href', 'static/img/plus.svg')
+        .attr('href', '../static/images/plus.svg')
         .on('click', (e) => {return that.tool.addNewRow(that)});
 
 
@@ -448,9 +455,9 @@ function Row(tool, view, topleft, height, lifeformList, name) {
 Row.prototype.populateWithAll = function (lifeformsLength) {
     let paintTool = new PaintTool(
         [this.topleft[0] + matrixViewOffset[0], this.topleft[1] + matrixViewOffset[1]],
-        ["ROOT"], 
-        d3.range(lifeformsLength), 
-        null, 
+        ["ROOT"],
+        d3.range(lifeformsLength),
+        null,
         colorMapper(0)
     );
     this.setPaintTool(paintTool, [0, 0]);
@@ -470,7 +477,7 @@ Row.prototype.setLifeformList = function (list) {
     this.matches = {};
 
     let that = this;
-    
+
     // each group, subgroup, function gets a list of its own matches
     // we can compute this now and then never touch it again for this row, making drawing easy
     [this.tool.groups, this.tool.subgroups, this.tool.functions].forEach((f, i) => {
@@ -484,7 +491,7 @@ Row.prototype.setLifeformList = function (list) {
     // console.log(this.view.lifeforms);
 
     // fill "this.matches" with each lifeform's functions
-    
+
     this.lifeforms.forEach(d => {
         let lifeform = that.tool.lifeforms.find((e, i) => {
             // console.log(d);
@@ -617,9 +624,9 @@ Row.prototype.setPaintTool = function (paintTool, globalMousePos) {
 
 Row.prototype.paintItemOnClick = function (itemName, clickPos) {
     let item = this.matches[itemName];
-    
+
     // console.log(item);
-    
+
     let that = this;
     //console.log('this match',item)
     //console.log('count',Object.values(this.matches).filter(d => d.painted).length);
@@ -628,6 +635,7 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
         item.header = t.view.currentHeaders.filter(d => d.data.name === itemName)[0];
 
         // logEvent('Painted cell "' + itemName + '" with tool "' + this.paintTool.name + '"');
+        logEventGA("Interface action", "Painted cell", itemName + "", this.paintTool.name + "");
 
         let items = [item];
 
@@ -636,7 +644,7 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
             if(e.children) {
                 items.push(that.matches[e.name]);
                 e.children.forEach(f => {
-                    if(f.children) {
+                    if (f.matches) {
                         items.push(that.matches[f.name])
                     }
                 });
@@ -647,7 +655,7 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
         // remove items that have already been painted, because they will be positioned under their header properly
         // items (+ the parent item) will now contain everything that needs to be either drawn for the first time, or repositioned
         items = items.filter(d => !d.painted || d === item);
-        
+
         // console.log('items', items);
 
         items.forEach(d => {
@@ -659,7 +667,7 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
                 // sway this circle only if it has no children
                 // that is, if there are moving circles around this cell, don't also sway the 'top' cell
                 d.boxBoundary = null;
-                if (that.tool.allFunctionItems[d.name].children.length === 0 || that.tool.allFunctionItems[d.name].expandedMatrix) {
+                if (that.tool.allFunctionItems[d.name].matches.length === 0 || that.tool.allFunctionItems[d.name].expandedMatrix) {
                     var myRad = getRadius(d, that.height);
                     var boxWidth = Math.max(t.view.currentHeaderDelta, myRad * 2);
                     var left = d.header.x - boxWidth / 2 + myRad;
@@ -707,10 +715,23 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
             .each(function (d) {
                 d3.select(this).selectAll('*').interrupt(); // kill old transitions
                 var c = d3.select(this).selectAll('circle');
-                c.attr('cx', d === item ? clickPos[0] : d.circCenter[0])
-                    .attr('cy', d === item ? clickPos[1] : d.circCenter[1])
+                c
+                    // .attr('cx', d === item ? clickPos[0] : d.circCenter[0])
+                    // .attr('cy', d === item ? clickPos[1] : d.circCenter[1])
+                    .attr("transform", function(e) {
+                        let x = d === item ? clickPos[0] : d.circCenter[0];
+                        let y = d === item ? clickPos[1] : d.circCenter[1];
+                        return "translate(" + x + "," + y + ")";
+                    })
                     .attr('r', 0)
-                    .style('opacity', d.primaryCircle ? 1 : that.view.opacityBGCircles)
+                    // .style('opacity', d.primaryCircle ? 1 : that.view.opacityBGCircles)
+                    // .style('paint-order', 'stroke')
+                    // .style('stroke', d3.rgb(255,255,255,0))
+                    // .style('stroke-width', d => Math.max(0, (30/2 - computeLifeformCircleRadius(that, d)))*2)
+                    .attr('opacity', d.primaryCircle ? 1 : that.view.opacityBGCircles)
+                    .attr('paint-order', 'stroke')
+                    .attr('stroke', 'none')
+                    .attr('stroke-width', d => Math.max(0, (30/2 - computeLifeformCircleRadius(that, d)))*2)
             });
 
         var circleFillDur = 800;
@@ -725,23 +746,28 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
             .transition()
             .duration(circleFillDur)
             .ease(d3.easeCubicOut)
-            .attr('r', d => Math.max(that.view.minCellHeight, Math.sqrt(d.lifeformPercentage) * that.height / 2))
+            .attr('r', d => computeLifeformCircleRadius(that, d))
             .transition()
             .duration(paintedCircleMoveDur)
-            .attr('cx', d => d.circCenter[0])
-            .attr('cy', d => d.circCenter[1])
+            // .attr('cx', d => d.circCenter[0])
+            // .attr('cy', d => d.circCenter[1])
+            .attr("transform", function(d) {
+                let x = d.circCenter[0];
+                let y = d.circCenter[1];
+                return "translate(" + x + "," + y + ")";
+            })
             .on('end', function (d) {
                 if (d.boxBoundary) swayCell(d, d3.select(this));
             });
 
         // console.log(that.view.minCellHeight);
-        
+
         otherCircles
             .selectAll('circle')
             .transition()
             .duration(circleAppearDur)
             .delay(circleFillDur)
-            .attr('r', d => Math.max(that.view.minCellHeight, Math.sqrt(d.lifeformPercentage) * that.height / 2))
+            .attr('r', d => computeLifeformCircleRadius(that, d))
             .on('end', function (d) {
                 if (d.boxBoundary) {
                     swayCell(d, d3.select(this));
@@ -757,8 +783,8 @@ Row.prototype.paintItemOnClick = function (itemName, clickPos) {
             .on('mouseup', cellMouseUp)
             .on('mouseover', cellMouseOver)
             .on('mouseout', cellMouseOut)
-            //.style('fill',d => d.lifeforms.length === 0 ? "url(#diagonalHatch)" : colorMapper(d.header.depth))
-            .style('fill', d => d.lifeforms.length === 0 ? "#e3e3e3" : colorMapper(d.depth));
+            // .style('fill', d => d.lifeforms.length === 0 ? "#e3e3e3" : colorMapper(d.depth));
+            .attr('fill', d => d.lifeforms.length === 0 ? "#e3e3e3" : colorMapper(d.depth));
 
         sortInDom(allGroups);
     }
@@ -788,9 +814,10 @@ function cellMouseUp(d) {
     if (toolBeingDragged == null) {
         // this is where a regular "click" event would go
         // populate the lifeforms list
-        // the name for this list would be the same as if we had generated a paint tool using this cell	
+        // the name for this list would be the same as if we had generated a paint tool using this cell
         populateLifeformsList(generateColoredPaintToolName([...d.row.paintTool.filterList, d.name]), d.lifeforms);
         // logEvent('Looked at lifeform list for "' + generatePaintToolName([...d.row.paintTool.filterList, d.name]) + '"')
+        logEventGA("Interface action", "Clicked circle", generatePaintToolName([...d.row.paintTool.filterList, d.name]));
     }
     itemClicked = null;
 }
@@ -813,9 +840,13 @@ function cellMouseOver(cell) {
         .text(cell.lifeforms.length);
     // get bounding box info for the text so we can center it
     var box = cell.row.label.node().getBBox();
+
+    let pos = circ.attr('transform').match(/(-?[0-9\.]+)/g);
+
     cell.row.label
-        .attr('x', parseInt(circ.attr('cx')) - box.width / 2)
-        .attr('y', circ.attr('cy') - circ.attr('r') - 5)
+    // TODO:
+        .attr('x', pos[0] - box.width / 2)
+        .attr('y', pos[1] - circ.attr('r') - 5)
 }
 
 function cellMouseOut(cell) {
@@ -851,7 +882,6 @@ Row.prototype.drawPaintedItems = function () {
     // console.log('matches', that.matches);
 
     let items = [];
-
     // get all painted groups and all their children
     Object.keys(that.tool.groups).filter(d => that.matches[d].painted).forEach(d => {
         items.push(that.matches[d]);
@@ -861,6 +891,7 @@ Row.prototype.drawPaintedItems = function () {
         })
     });
 
+    // console.log(items.length);
     // console.log(items[0].lifeforms);
     // console.log(uniq(items[0].lifeforms));
 
@@ -888,7 +919,7 @@ Row.prototype.drawPaintedItems = function () {
             // that is, if there are moving circles around this cell, don't also sway the 'top' cell
             d.boxBoundary = null;
             // if(!that.tool.allFunctionItems[d.name].children) that.tool.allFunctionItems[d.name].children = that.tool.allFunctionItems[d.name].species;
-            if (that.tool.allFunctionItems[d.name].children.length === 0 || that.tool.allFunctionItems[d.name].expandedMatrix) {
+            if (d.depth === 3 || that.tool.allFunctionItems[d.name].expandedMatrix) {
                 var myRad = getRadius(d, that.height);
                 var boxWidth = Math.max(t.view.currentHeaderDelta, myRad * 2);
                 var left = d.header.x - boxWidth / 2 + myRad;
@@ -910,7 +941,7 @@ Row.prototype.drawPaintedItems = function () {
                 var myRad = getRadius(d, that.height);
                 var left = match.header.x - boxWidth / 2 + myRad;
                 var right = match.header.x + boxWidth / 2 - myRad;
-    
+
                 //d.circCenter = [match.header.x, _this.height/2];
                 d.circCenter = [random(left, right), random(0 + myRad, that.height - myRad)];
                 d.boxBoundary = {left: left, right: right, top: myRad, bottom: that.height - myRad};
@@ -927,14 +958,26 @@ Row.prototype.drawPaintedItems = function () {
 
     enter
         .append('circle')
-        .attr('cx', d => d.circCenter[0])
-        .attr('cy', d => d.circCenter[1])
+        // .attr('cx', d => d.circCenter[0])
+        // .attr('cy', d => d.circCenter[1])
+        .attr("transform", function(d) {
+            let x = d.circCenter[0];
+            let y = d.circCenter[1];
+            return "translate(" + x + "," + y + ")";
+        })
         .attr('r', 0)
-        .style('opacity', d => d.primaryCircle ? 1 : that.view.opacityBGCircles)
+        // .style('opacity', d => d.primaryCircle ? 1 : that.view.opacityBGCircles)
+        // .style('paint-order', 'stroke')
+        // .style('stroke', d3.rgb(255,255,255,0))
+        // .style('stroke-width', d => Math.max(0, (30/2 - computeLifeformCircleRadius(that, d)))*2)
+        .attr('opacity', d => d.primaryCircle ? 1 : that.view.opacityBGCircles)
+        .attr('paint-order', 'stroke')
+        .attr('stroke', 'none')
+        .attr('stroke-width', d => Math.max(0, (30/2 - computeLifeformCircleRadius(that, d)))*2)
         .transition()
         .duration(800)
         .delay(that.view.headerdur * 2 / 3)
-        .attr('r', d => Math.max(that.view.minCellHeight, Math.sqrt(d.lifeformPercentage) * that.height / 2))
+        .attr('r', d => computeLifeformCircleRadius(that, d))
         .on('end', function (d) {
             if (d.boxBoundary) swayCell(d, d3.select(this));
         });
@@ -945,10 +988,16 @@ Row.prototype.drawPaintedItems = function () {
         .selectAll('circle')
         .transition()
         .duration(that.view.headerdur)
-        .attr('cx', d => d.circCenter[0])
-        .attr('cy', d => d.circCenter[1])
-        .attr('r', d => Math.max(that.view.minCellHeight, Math.sqrt(d.lifeformPercentage) * that.height / 2))
-        .style('opacity', d => d.primaryCircle ? 1 : that.view.opacityBGCircles)
+        // .attr('cx', d => d.circCenter[0])
+        // .attr('cy', d => d.circCenter[1])
+        .attr("transform", function(d) {
+            let x = d.circCenter[0];
+            let y = d.circCenter[1];
+            return "translate(" + x + "," + y + ")";
+        })
+        .attr('r', d => computeLifeformCircleRadius(that, d))
+        // .style('opacity', d => d.primaryCircle ? 1 : that.view.opacityBGCircles)
+        .attr('opacity', d => d.primaryCircle ? 1 : that.view.opacityBGCircles)
         .on('end', function (d) {
             if (d.boxBoundary) swayCell(d, d3.select(this));
         });
@@ -963,13 +1012,18 @@ Row.prototype.drawPaintedItems = function () {
         .on('mouseup', cellMouseUp)
         .on('mouseover', cellMouseOver)
         .on('mouseout', cellMouseOut)
-        .style('fill', d => d.lifeforms.length === 0 ? "#e3e3e3" : colorMapper(d.depth))
-    //.style('fill',d => d.lifeforms.length === 0 ? "url(#diagonalHatch)" : colorMapper(d.header.depth))
+        // .style('fill', d => d.lifeforms.length === 0 ? "#e3e3e3" : colorMapper(d.depth))
+        .attr('fill', d => d.lifeforms.length === 0 ? "#e3e3e3" : colorMapper(d.depth))
 
 
     // the items that are no longer there
     //s.exit().transition().duration(6000).remove(); //attr('opacity',0)//.remove();
-    s.exit().selectAll('circle').transition().duration(this.view.fadedur).style('opacity', 0)
+    s.exit()
+        .selectAll('circle')
+        .transition()
+        .duration(this.view.fadedur)
+        // .style('opacity', 0)
+        .attr('opacity', 0)
         .on('end', function () {
             s.exit().remove();
         });
@@ -992,6 +1046,10 @@ function sortInDom(selection) {
 
 }
 
+function computeLifeformCircleRadius(that, d) {
+    return Math.max(that.view.minCellHeight, Math.sqrt(d.lifeformPercentage) * that.height / 2) * 0.75; // scale radius to at most 75% of its row's height
+}
+
 // function swayTimer() {
     // circles.each(d => swayCell(circle, this(d)));
 
@@ -1005,11 +1063,11 @@ function sortInDom(selection) {
     //         circles.each((d, i, dontknow) => {
     //             // if(d.name === "Expel resources") {
     //             //     console.log(d);
-    //                
+    //
     //                 let node = dontknow[i];
     //                 // console.log(node);
     //                 // console.log(d3.select(node));
-    //                
+    //
     //                 if (d.boxBoundary) {
     //                     swayCell(d, d3.select(node));
     //                 }
@@ -1018,31 +1076,109 @@ function sortInDom(selection) {
     //     }, 1000);
 // }
 
-function swayCell(d, node) {
-    // console.log(d);
-    // console.log(node);
-        //if(d.boxBoundary.right <= d.boxBoundary.left) console.log('oh no');
-        var pos = [node.attr('cx'), node.attr('cy')];
-        var myRad = node.attr('r');
-        // if this cell can't animate because it fills the cell, then give up on it
-        if (d.boxBoundary.right <= d.boxBoundary.left && d.boxBoundary.bottom <= d.boxBoundary.top)
-            return;
-        var newCenter = [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)];
-        var distMoved = length(sub(pos, newCenter));
-        var speed = 3000 / 15; // take 3000 ms to move 15 screen units (e.g.)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
-        // transition the node from wherever it is to the new position, then loop back and repeat
-        node.transition().duration(speed * distMoved).ease(d3.easeLinear)//.ease(d3.easeQuadInOut)
-            .attr('cx', newCenter[0])
-            .attr('cy', newCenter[1])
-            .on('end', function (d) {
-                // if(!d.swaying) {
-                //     d.swaying = true;
-                    swayCell(d, node);
-                    // d.swaying = false;
-                // }
-            });
+// Returns an attrTween for translating along the specified path element.
+function translateAlong(path) {
+    var l = path.getTotalLength();
+    return function(d, i, a) {
+        return function(t) {
+            var p = path.getPointAtLength(t * l);
+            return "translate(" + p.x + "," + p.y + ")";
+            // return [ p.x, p.y ];
+        };
+    };
+}
+
+function swayCell(d, node) {
+    // the first cell that needs to animate sets the global timestamp which helps us align all future animations
+    // if(!swaySyncTimestamp)
+    //     swaySyncTimestamp = performance.now();
+
+    // let myDuration = swayDuration - (performance.now() - swaySyncTimestamp) % swayDuration;
+    let myDuration = swayDuration* Math.random();
+    // for cells that are asked to animate more than halfway to the next timestamp, make it go an extra cycle so it's not so jarring
+    if(myDuration < swayDuration / 2)
+        myDuration += swayDuration;
+
+    let pos = node.attr('transform').match(/(-?[0-9\.]+)/g);
+
+    // var myRad = node.attr('r');
+    // if this cell can't animate because it fills the cell, then give up on it
+    if (d.boxBoundary.right <= d.boxBoundary.left && d.boxBoundary.bottom <= d.boxBoundary.top)
+        return;
+
+    //var distMoved = length(sub(pos, newCenter));
+    //var speed = 3000 / 15; // take 3000 ms to move 15 screen units (e.g.)
+
+    // let minX = 0, maxX = 0;
+    // if(pos[0] - d.boxBoundary.left > d.boxBoundary.right - pos[0]) {
+    //     minX = pos[0];
+    //     maxX = d.boxBoundary.left;
+    // } else {
+    //     minX = pos[0];
+    //     maxX = d.boxBoundary.right;
     // }
+    //
+    // let minY = 0, maxY = 0;
+    // if(pos[1] - d.boxBoundary.top > d.boxBoundary.bottom - pos[1]) {
+    //     minY = pos[1];
+    //     maxY = d.boxBoundary.top;
+    // } else {
+    //     minY = pos[1];
+    //     maxY = d.boxBoundary.bottom;
+    // }
+    //
+    var points = [
+        [pos[0], pos[1]],
+        [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        // [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        // [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        // [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        // [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        // [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+        // [random(d.boxBoundary.left, d.boxBoundary.right), random(d.boxBoundary.top, d.boxBoundary.bottom)],
+    ];
+
+    //
+    // // shuffleArray(points);
+    // points.push(endPos);
+    // points.push(startPos);
+    // points.unshift(startPos);
+    //
+    // // var path = node.append("path")
+    // var path = node.select(function() { return this.parentNode; })
+    //     .selectAll("path")
+    //     .data([points])
+    //     .enter()
+    //     .append("path");
+
+    // var path = node.select(function() { return this.parentNode; })
+    //     .selectAll("path")
+    //     .data([points])
+    //     .attr("d", d3.line().curve(d3.curveBasis));
+
+    var bgPath = document.createElementNS("http://www.w3.org/2000/svg",'path');
+    bgPath.setAttributeNS(null,'d',d3.line().curve(d3.curveBasis)(points));
+
+    // transition the node from wherever it is to the new position, then loop back and repeat
+    node.transition()
+        .duration(myDuration)
+        .ease(d3.easeQuadInOut)
+        // .ease(d3.easeLinear)
+        // .attr('cx', newCenter[0])
+        // .attr('cy', newCenter[1])
+        .attrTween("transform", translateAlong(bgPath))//path.node()))
+        .on('end', function (d) {
+            swayCell(d, node);
+        });
 }
 
 function getRadius(match, rowHeight) {
@@ -1079,4 +1215,3 @@ Row.prototype.fadeOut = function (animateTime) {
         .duration(animateTime)
         .style('opacity', 0)
 };
-

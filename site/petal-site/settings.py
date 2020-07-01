@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'home.apps.PetalConfig',
     'bird.apps.BirdConfig',
+    'biomole.apps.BiomoleConfig',
     'directory.apps.DirectoryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
