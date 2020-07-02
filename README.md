@@ -24,11 +24,12 @@ After doing so, the `neo4j` browser can be used to verify that a pipeline has ru
 Also, pipelines must be manually cancelled, as they are designed to run as a server that receives incoming data constantly.  
 **To run the PeTaL website**, enter the `site` directory and run `python manage.py runserver`.
 
-For instance:
+Steps to get started if you are running it from scratch:
 ```
-./run config/mock_species_articles.json
+./run config/mock_species_articles.json # Step 1
 # Ctrl-C once the database has enough articles for testing
-./run config/search.json
+# This creates the ../data/index.html https://github.com/nasa/PeTaL/issues/28#issuecomment-649080792 
+./run config/search.json # Step 2 
 # Wait until index has been generated in PeTaL/data directory
 cd site
 python manage.py runserver

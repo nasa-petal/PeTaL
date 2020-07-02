@@ -1,6 +1,27 @@
-INFO:scholarly:Getting https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Steven%20A.%20Cholewiak
-INFO:scholarly:Found 1 authors
-INFO:scholarly:Getting https://scholar.google.com/scholar?hl=en&q=Steven%20A.%20Cholewiak&as_vis=0&as_sdt=0,33
-INFO:scholarly:Getting https://scholar.google.com/scholar?q=info:T_lFpGS-6oEJ:scholar.google.com/&output=cite&scirp=0&hl=en
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:matplotlib.font_manager:generated new fontManager
+WARNING:neo4j:Transaction failed and will be retried in 0.9119450026627854s (Database 'neo4j' is unavailable.)
+WARNING:neo4j:Transaction failed and will be retried in 2.208886798769994s (Database 'neo4j' is unavailable.)
+WARNING:neo4j:Transaction failed and will be retried in 3.6738422202407044s (Database 'neo4j' is unavailable.)
+WARNING:neo4j:Transaction failed and will be retried in 7.778119007232572s (Database 'neo4j' is unavailable.)
+WARNING:neo4j:Transaction failed and will be retried in 18.362899654413557s (Database 'neo4j' is unavailable.)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:matplotlib.font_manager:generated new fontManager
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
+INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
+INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)
 INFO:gensim.corpora.dictionary:adding document #0 to Dictionary(0 unique tokens: [])
 INFO:gensim.corpora.dictionary:built Dictionary(12 unique tokens: ['computer', 'human', 'interface', 'response', 'survey']...) from 9 documents (total 29 corpus positions)

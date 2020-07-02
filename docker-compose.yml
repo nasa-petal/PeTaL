@@ -1,0 +1,30 @@
+  version: '3'
+    
+  services:
+    neo4j:
+      image: neo4j:latest
+      volumes:
+        - ./.docker-data/neo4j:/data
+      environment:
+        - NEO4J_AUTH=neo4j/life
+      ports:
+        - "7474:7474"
+        - "7687:7687"
+    db:
+      image: postgres
+      environment:
+        - POSTGRES_DB=postgres
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+    web:
+      build: .
+      command: bash -c "
+          /code/wait-for-it.sh -t 60 neo4j:7687 -- python site/manage.py runserver 0.0.0.0:8000
+        "
+      volumes:
+        - .:/code
+      ports:
+        - "8000:8000"
+      depends_on:
+        - db
+        - neo4j
