@@ -20,10 +20,10 @@ def clean(item):
     return item
 
 # Load index and db connection at import
-neo_client = GraphDatabase.driver("bolt://neo4j:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
+neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
 session = neo_client.session()
 
-with open('data/index', 'rb') as infile:
+with open('../data/index', 'rb') as infile:
     index = pickle.load(infile)
 
 def fetch(query):
@@ -49,6 +49,12 @@ def search(query):
     query_time, fetch_time, articles = fetch(query)
     articles = [(dict(title=a['title'], abstract=a['abstract'], url=a['url'])) for a in articles] 
     context = dict(search_time=round(query_time, 10), neo4j_time=round(fetch_time, 10), articles=articles)
+    return context
+
+def biomole_search(query):
+    query_time, fetch_time, articles = fetch(query)
+    articles = [(dict(title=a['title'], url=a['url'])) for a in articles] 
+    context = dict(articles=articles)
     return context
 
 import plotly.express as px

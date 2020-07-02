@@ -3,12 +3,10 @@ petal/__pycache__
 data
 .dependencies.json
 desktop.ini
-scholar.log
-poetry.lock
+*scholar.log*
+*poetry.lock*
 .docker-data
 .vscode
-scholar.log
-poetry.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
