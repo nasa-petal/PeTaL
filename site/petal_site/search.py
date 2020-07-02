@@ -50,6 +50,12 @@ def search(query):
     context = dict(search_time=round(query_time, 10), neo4j_time=round(fetch_time, 10), articles=articles)
     return context
 
+def biomole_search(query):
+    query_time, fetch_time, articles = fetch(query)
+    articles = [(dict(title=a['title'], url=a['url'])) for a in articles] 
+    context = dict(articles=articles)
+    return context
+
 import plotly.express as px
 import plotly.offline as opy
 import plotly.graph_objs as go

@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'petal-site.urls'
+ROOT_URLCONF = 'petal_site.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'petal-site.wsgi.application'
+WSGI_APPLICATION = 'petal_site.wsgi.application'
 
 
 # Database
