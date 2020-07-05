@@ -110,11 +110,24 @@ The following section describes the directories of the PeTaL repository.
 For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory.
 Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future developers to build upon.
 
+One module in the legacy code, Biomole, makes use of code written by Soren Knudsen. The code is available at
+[https://github.com/sknudsen/biomole](https://github.com/sknudsen/biomole).
+
+The code makes use of data from AskNature that is not in the published source due to property rights. 
+Instead, you can get the data from the links below to see a working version:
+ 
+http://biomole.asknature.org/json/hierarchy.json
+
+http://biomole.asknature.org/json/strategies.json
+
+
+
+
 ## Authors
 
 * **Vik Shyam** - *Principal Investigator*
 * **Herb Schilling** - *Data Science Lead*
-* **Calvin Robinson** - *Data Science/management Lead*
+* **Calvin Robinson** - *Data Science/Management Lead*
 * **Paht Juangphanich** - *Technical Support*
 * **Brandon Ruffridge** - *Technical Lead*
 * **Colleen Unsworth** - *Workflow Lead*
