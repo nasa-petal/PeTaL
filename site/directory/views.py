@@ -1,8 +1,11 @@
+from petal_site import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 
 from neo4j import GraphDatabase, basic_auth
-neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
+
+neo4j_settings = settings.NEO4J_DATABASE
+neo_client = GraphDatabase.driver(neo4j_settings['url'], auth=basic_auth(neo4j_settings['username'], neo4j_settings['password']), encrypted=False)
 session = neo_client.session()
 
 def form(request):
