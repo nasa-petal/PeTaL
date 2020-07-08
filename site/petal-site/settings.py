@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'petal-site.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {}
-
+NEO4J_DATABASE = {'url': "bolt://localhost:7687", 'username':"neo4j", 'password':"life"}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

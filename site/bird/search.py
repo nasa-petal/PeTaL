@@ -1,3 +1,4 @@
+from petal_site import settings
 from neo4j import GraphDatabase, basic_auth
 from pandas import DataFrame
 
@@ -19,8 +20,10 @@ def clean(item):
     item = item.replace(')', '')
     return item
 
+neo4j_settings = settings.NEO4J_DATABASE
+
 # Load index and db connection at import
-neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
+neo_client = GraphDatabase.driver(neo4j_settings['url'], auth=basic_auth(neo4j_settings['username'], neo4j_settings['password']), encrypted=False)
 session = neo_client.session()
 with open('../data/index', 'rb') as infile:
     index = pickle.load(infile)
