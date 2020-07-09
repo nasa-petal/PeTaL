@@ -26,7 +26,7 @@ neo4j_settings = settings.NEO4J_DATABASE
 neo_client = GraphDatabase.driver(neo4j_settings['url'], auth=basic_auth(neo4j_settings['username'], neo4j_settings['password']), encrypted=False)
 session = neo_client.session()
 
-with open('../data/index', 'rb') as infile:
+with open('./data/index', 'rb') as infile:
     index = pickle.load(infile)
 
 def fetch(query):
