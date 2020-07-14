@@ -132,13 +132,13 @@ http://biomole.asknature.org/json/strategies.json
 * **Paht Juangphanich** - *Technical Support* - Helps team members overcome any technical challenges they face.
 * **Brandon Ruffridge** - *[Scrum Master](https://www.agilealliance.org/glossary/scrum-master/) and Technical Lead*
 
+## PeTaL 3.0
 
-
-## PeTaL 1.0 - R
-
-* **Nicholas Bense** - *Backend development*
-* **Allie Calvin** - *UI development and data collection* 
-* **Victoria Kravets** - *Backend development* 
+* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
+* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
+* **Kei Kojima** - *   *
+* **Elliot Hill** - *   *
+* **Benjamin Huynh** - *   *
 
 ## PeTaL 2.0 
 
@@ -155,12 +155,8 @@ http://biomole.asknature.org/json/strategies.json
 * **Lauren Friend** - *Backend development*
 * **Manju Johny** - *Backend development*
 
-## PeTaL 3.0
+## PeTaL 1.0 - R
 
-* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
-* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
-* **Kei Kojima** - *   *
-* **Elliot Hill** - *   *
-* **Benjamin Huynh** - *   *
-
-
+* **Nicholas Bense** - *Backend development*
+* **Allie Calvin** - *UI development and data collection* 
+* **Victoria Kravets** - *Backend development* 
