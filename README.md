@@ -42,7 +42,10 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 *For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
 ### Guides 
 [Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)    
-[Contributing to the code base (git workflow)](https://github.com/nasa/PeTaL/wiki/Contributing-to-the-code-base-(git-workflow))
+
+## Contributing
+
+We're using the [Git Feature Branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), to contribute code to the code base. To summarize, `master` should always contain only stable, tested code. To work on a change, first create a feature branch off of `master`, perform your changes, and when your code is ready, submit a pull request to merge your branch with `master`. 
 
 ## Deployment
 
