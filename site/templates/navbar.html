@@ -28,10 +28,16 @@
                <p>PeTaL<br><span>Periodic Table of Life</span></p>
             </a>
             <ul>
-	       <li><a href="/bird">BIRD</a></li>
-	       <li><a href="/vision">Vision</a></li>
-         <li><a href="/biomole">BioMole</a></li>
-         <li><a href="/directory">Directory 2.0</a></li>
+	            <li class="subnavToggle">
+                  <a href="#">BIRD<span class="icon-circle-down"></span></a>
+                  <ul>
+                     <li><a href="/bird/dropdowns">Dropdowns</a></li>
+                     <li><a href="/bird/bar">Search</a></li>
+                  </ul>
+               </li>
+	            <li><a href="/vision">Vision</a></li>
+               <li><a href="/biomole">BioMole</a></li>
+               <li><a href="/directory">Directory 2.0</a></li>
             </ul>
             <div class="settings">
                <span class="settingsToggler icon-cog"></span>
@@ -48,12 +54,12 @@
       <div id="contentWrapper">
          {% block content %}
          {% endblock %}
-      <footer class="footer">
-         <div class="contentMain">
-                 <img src="{% static 'images/nasa-white-logo.png' %}" alt="nasa logo"/>
-            <h3>National Aeronautics and Space Administration</h3>
-         </div>
-      </footer>
+         <footer class="footer">
+            <div class="contentMain">
+               <img src="{% static 'images/nasa-white-logo.png' %}" alt="nasa logo"/>
+               <h3>National Aeronautics and Space Administration</h3>
+            </div>
+         </footer>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script src="{% static 'scripts.js' %}"></script>
       </div>
