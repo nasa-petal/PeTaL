@@ -41,7 +41,8 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 
 *For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
 ### Guides 
-[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)
+[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)    
+[Contributing to the code base (git workflow)](https://github.com/nasa/PeTaL/wiki/Contributing-to-the-code-base-(git-workflow))
 
 ## Deployment
 
