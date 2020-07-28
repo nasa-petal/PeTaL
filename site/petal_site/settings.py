@@ -31,11 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # PeTaL
     'home.apps.PetalConfig',
     'bird.apps.BirdConfig',
     'biomole.apps.BiomoleConfig',
     'vision.apps.VisionConfig',
     'directory.apps.DirectoryConfig',
+
+    # Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

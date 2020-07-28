@@ -4,8 +4,12 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('search_results/', views.search_results, name='bird_search'),
+
     path('bar/', views.index, name='index'),
     path('dropdowns/', views.dropdowns, name='dropdowns'),
-    path('nlp/', views.nlp, name='index'),
+    path('nlp/', views.nlp, name='nlp'),
+    path('autocomplete/', views.autocomplete, name='autocomplete'),
+
+    path('search_results/', views.search_results, name='bird_search'),
+    path('api/', views.api, name='api')
     ]

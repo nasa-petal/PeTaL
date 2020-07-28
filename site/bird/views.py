@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import json
 
 from time import time
 
@@ -12,11 +13,23 @@ def index(request):
 def dropdowns(request):
     return render(request, 'dropdowns.html')
 
+def autocomplete(request):
+    return render(request, 'autocomplete.html')
+
 def nlp(request):
     return render(request, 'query.html')
 
+def api(request):
+    query = request.POST.get("user_input")
+    context = search(query)
+    return HttpResponse(
+        json.dumps(context),
+        content_type="application/json"
+    )
+
 def search_results(request):
     query = request.GET.get('q')
+    query = query.lower()
     action = request.GET.get('action')
 
     if action == 'plot':
@@ -27,6 +40,22 @@ def search_results(request):
         context = search(query)
         context["parent"] = "bar.html"
 
+        if len(context['articles']) > 0:
+            return render(request, 'results.html', context)
+        else:
+            return render(request, 'no_results.html', context)
+
+    elif action == "searchDropdown":
+        context = search(query)
+        context["parent"] = "dropdowns.html"
+        if len(context['articles']) > 0:
+            return render(request, 'results.html', context)
+        else:
+            return render(request, 'no_results.html', context)
+
+    elif action == "searchAutocomplete":
+        context = search(query)
+        context["parent"] = "autocomplete.html"
         if len(context['articles']) > 0:
             return render(request, 'results.html', context)
         else:
@@ -53,14 +82,6 @@ def search_results(request):
         context["articles"] = all_papers
         context["parent"] = "query.html"
 
-        if len(context['articles']) > 0:
-            return render(request, 'results.html', context)
-        else:
-            return render(request, 'no_results.html', context)
-
-    elif action == "searchDropdown":
-        context = search(query)
-        context["parent"] = "dropdowns.html"
         if len(context['articles']) > 0:
             return render(request, 'results.html', context)
         else:
