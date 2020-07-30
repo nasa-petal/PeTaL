@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home.apps.PetalConfig',
     'bird.apps.BirdConfig',
     'biomole.apps.BiomoleConfig',
+    'vision.apps.VisionConfig',
     'directory.apps.DirectoryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
