@@ -32,6 +32,7 @@ try:
         infile.close()
 except IOError:
     index = []
+    print('WARNING: ./data/index was not found. To create the search index for PeTaL, run ./run config/search.json to create the index and a hitlist file.')
 
 def fetch(query):
     cleaner = Cleaner()

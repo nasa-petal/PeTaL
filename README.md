@@ -41,7 +41,11 @@ The default configuration expects a `neo4j` bolt server running on `7687`, with 
 
 *For specific instructions on extending PeTaL through pipeline modules, read [this documentation](https://github.com/LSaldyt/bitflow/blob/master/README.md)*.
 ### Guides 
-[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)
+[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)    
+
+## Contributing
+
+We're using the [Git Feature Branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), to contribute code to the code base. To summarize, `master` should always contain only stable, tested code. To work on a change, first create a feature branch off of `master`, perform your changes, and when your code is ready, submit a pull request to merge your branch with `master`. 
 
 ## Deployment
 
@@ -123,23 +127,24 @@ http://biomole.asknature.org/json/strategies.json
 
 
 
-## Authors
+## Project Team
 
 * **Vik Shyam** - *Principal Investigator*
-* **Herb Schilling** - *Data Science Lead*
-* **Calvin Robinson** - *Data Science/Management Lead*
-* **Paht Juangphanich** - *Technical Support*
-* **Brandon Ruffridge** - *Technical Lead*
-* **Colleen Unsworth** - *Workflow Lead*
+* **Colleen Unsworth** - *[Product Owner](https://www.mountaingoatsoftware.com/agile/scrum/roles/product-owner)*
+* **Herb Schilling** - *Data Science Lead* - Consultant, facilitator, alternate mentor
+* **Calvin Robinson** - *Data Architect* - Data architects define how the data will be stored, consumed, integrated and managed by different data entities and IT systems, as well as any applications using or processing that data in some way.
+* **Paht Juangphanich** - *Technical Support* - Helps team members overcome any technical challenges they face.
+* **Brandon Ruffridge** - *[Scrum Master](https://www.agilealliance.org/glossary/scrum-master/) and Technical Lead*
 
+### PeTaL 3.0
 
-## PeTaL 1.0 - R
+* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
+* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
+* **Kei Kojima** - *   *
+* **Elliot Hill** - *   *
+* **Benjamin Huynh** - *   *
 
-* **Nicholas Bense** - *Backend development*
-* **Allie Calvin** - *UI development and data collection* 
-* **Victoria Kravets** - *Backend development* 
-
-## PeTaL 2.0 
+### PeTaL 2.0 
 
 * **Angeera Naser** - *Front end development and intern team lead Summer 2018*
 * **Allie Calvin** - *UI development and data collection* 
@@ -154,12 +159,8 @@ http://biomole.asknature.org/json/strategies.json
 * **Lauren Friend** - *Backend development*
 * **Manju Johny** - *Backend development*
 
-## PeTaL 3.0
+### PeTaL 1.0 - R
 
-* **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
-* **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
-* **Kei Kojima** - *   *
-* **Elliot Hill** - *   *
-* **Benjamin Huynh** - *   *
-
-
+* **Nicholas Bense** - *Backend development*
+* **Allie Calvin** - *UI development and data collection* 
+* **Victoria Kravets** - *Backend development* 
