@@ -3,6 +3,7 @@ from subprocess import call
 from time import time, sleep
 
 import requests, zipfile, os
+import csv
 from neo4j import GraphDatabase, basic_auth
 
 from time import sleep
@@ -52,25 +53,31 @@ def to_csv():
     '''
     i = 0
     first = True
-    with open('data/cache/catalog.csv', 'w', encoding='utf-8') as catalog:
-        with open('data/cache/species.csv', 'w', encoding='utf-8') as species_csv:
-            with open('data/cache/relations.csv', 'w', encoding='utf-8') as relations:
+    with open('data/cache/catalog.csv', 'w', encoding='utf-8', newline='') as catalog:
+        with open('data/cache/species.csv', 'w', encoding='utf-8', newline='') as species_csv:
+            with open('data/cache/relations.csv', 'w', encoding='utf-8', newline='') as relations:
                 for entry, rels in to_long_json():
                     if i % 1000 == 0:
                         print(i, flush=True)
                     i += 1
-                    if first:
-                        catalog.write(','.join(entry.keys()) + '\n')
-                        species_csv.write(','.join(entry.keys()) + '\n')
-                        relations.write('from,to\n')
+                    
+                    output_cat = csv.writer(catalog) #create a csv.write to catalog.csv
+                    output_spec = csv.writer(species_csv) #create a csv.write to species.csv
+                    output_rels = csv.writer(relations) #create a csv.write to relations.csv
+    
+                    if first: #Check whether header row has been written. If not, write it.
+                        output_cat.writerow(entry.keys())  # header row
+                        output_spec.writerow(entry.keys())  # header row
+                        output_rels.writerow(['from','to'])  # header row
                         first = False
+                        
                     if entry['taxonRank'] == 'species':
-                        species_csv.write(','.join(entry.values()) + '\n')
+                        output_spec.writerow(entry.values())  # enter rows of species
                     else:
-                        catalog.write(','.join(entry.values()) + '\n')
+                        output_cat.writerow(entry.values())  # enter rows of !species
+                        
                     if len(rels) > 0:
-                        relations.write('\n'.join(','.join(r) for r in rels) + '\n')
-
+                        output_rels.writerow(rels[0])  # enter rows of relations
 
 class OptimizedCatalog(Module):
     '''
