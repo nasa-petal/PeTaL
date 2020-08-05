@@ -15,9 +15,19 @@ cd PeTaL
 
 First, install [poetry](https://python-poetry.org/docs/):  
 `curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python`  
+
 Use `poetry` to  install dependencies.  
 `poetry install`  
+
 `pytorch` is non-standard in the way it is packaged, and may need to be installed separately: `poetry run pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html`, however an entry in `pyproject.toml` is still needed.  
+
+Use `poetry` to install dependencies that were not installed due to the pytorch error.  
+`poetry install`
+
+Activate the poetry environment just created.
+Use `poetry env info --path` to find the path to the poetry virtualenv.
+Then use `source " <path to virtual env> /Scripts/activate"` to activate the poetry virtualenv.
+Example (Windows): `source "C:/Users/ <your username> /AppData/Local/pypoetry/Cache/virtualenvs/ <the virtualenv's name> /Scripts/activate"`
 
 **To run the PeTaL pipeline**, use `./run config/default.json`, or choose one of the other config files, such as `airfoil_training.json`, or `mock_ml_config.json` (an integrated test).  
 After doing so, the `neo4j` browser can be used to verify that a pipeline has run.  
