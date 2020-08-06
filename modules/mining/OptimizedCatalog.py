@@ -43,7 +43,7 @@ def to_long_json():
             # if rank == 'infraspecies':
             #     if taxon == 'species': # Necessary
             #         found = True
-            elif taxon == rank:
+            if taxon == rank:
                 found = True
         yield json, relations
 
