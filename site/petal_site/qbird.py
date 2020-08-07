@@ -41,7 +41,7 @@ def load_nlp():
     try:
         return spacy.load('en_core_web_sm')
     except OSError:
-        print("Cannot find spacy model. Try 'python -m spacy download en'")
+        print("\n ERROR: Cannot find spacy model. Try 'python -m spacy download en' \n")
         raise
 
 

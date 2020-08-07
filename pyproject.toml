@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "petal"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Your Name <you@example.com>"]
 license = "MIT"
@@ -28,6 +28,7 @@ scipy = "1.4"
 efficientnet_pytorch = "^0.6.3"
 wikipedia = "^1.4.0"
 bitflow = "^0.6.0"
+spacy = "^2.3.2"
 
 [tool.poetry.dev-dependencies]
 
