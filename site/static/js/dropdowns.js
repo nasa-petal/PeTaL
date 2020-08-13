@@ -118,7 +118,7 @@ function secondarySelected(secondaryIndex) {
     for (var i = 0; i < tertiaryInfo.length; i++) {
       //var term = getTertiaryTerm(tertiaryInfo[i].name);
       tertiarydd.append($('<option>', {
-        value: tertiaryInfo[i].name,
+        value: tertiaryInfo[i].name.toLowerCase(),
         text: tertiaryInfo[i].name
       }));
     }
