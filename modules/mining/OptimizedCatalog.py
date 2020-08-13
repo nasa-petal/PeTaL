@@ -34,15 +34,21 @@ def to_long_json():
         found = False
         relations = []
         for taxon in ['species', 'subgenus', 'genus', 'family', 'superfamily', 'order', 'class', 'phylum', 'kingdom']:
+
+            # Add relationships from any taxon to its immediate parent taxon.
             if found:
-                if json[taxon].strip() != '':
+                if json[taxon].strip() != '':    # If parent taxon exists, add the relation. i.e. Not all species taxons have a parent subgenus taxon.
                     relations.append((json['name'], json[taxon]))
                     break
             rank = json['taxonRank']
-            # Needed if to_json() is set to yield infraspecies.
+
+            ## Needed if to_json() is set to yield infraspecies.
             # if rank == 'infraspecies':
             #     if taxon == 'species': # Necessary
             #         found = True
+
+            # A trigger set to allow the "if found:" code to run in the next for loop iteration.
+            # This makes sure relations are exclusively created for a taxon and its immediate parent taxon.
             if taxon == rank:
                 found = True
         yield json, relations
