@@ -52,7 +52,11 @@ class JEBModule(Module):
         articles = []
 
         try:
-            name = previous.data['name']
+            if previous.data['taxonRank'] == 'species':
+                name = previous.data['name']
+            else:
+                return None
+        except:
             return None
 
         url    = 'https://jeb.biologists.org/search/' + name.replace(' ', '%252B')
