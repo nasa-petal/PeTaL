@@ -3,6 +3,8 @@
 The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at allowing users to seemlesly move from ideas (from nature or other sources) to design.
 PeTaL is built around a graph database, machine learning tools, and a website. 
 
+Note: Petal data pipeline does not work on OSX 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.  
@@ -108,6 +110,9 @@ The following section describes the directories of the PeTaL repository.
 * #### docs
 
   * Documentation. If nothing gets added to this directory, you're doing it right.
+
+## Note
+
 
 ## Legacy Code
 
