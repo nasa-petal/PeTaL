@@ -1,15 +1,15 @@
 from django.urls import path
-
-from . import views
+from django.views.generic import RedirectView
+from .views import InputView, ResultView
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    # User input views
+    path('',            RedirectView.as_view(url='bar/')),
+    path('bar/',        InputView.as_view(template='bar.html'),       name='index'),
+    path('dropdowns/',  InputView.as_view(template='dropdowns.html'), name='dropdowns'),
+    path('nlp/',        InputView.as_view(template='query.html'),     name='nlp'),
+    path('autocomplete/',InputView.as_view(template='autocomplete.html'), name='autocomplete'),
 
-    path('bar/', views.index, name='index'),
-    path('dropdowns/', views.dropdowns, name='dropdowns'),
-    path('nlp/', views.nlp, name='nlp'),
-    path('autocomplete/', views.autocomplete, name='autocomplete'),
-
-    path('search_results/', views.search_results, name='bird_search'),
-    path('api/', views.api, name='api')
+    # Article result views
+    path('search_results/', ResultView.as_view(), name='bird_search'),
     ]

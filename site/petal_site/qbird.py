@@ -272,6 +272,11 @@ def test():
     nlp = load_nlp()
     print_results(queries, terms, nlp)
 
+def process_with_nlp(query): 
+    terms = load_dict("static/js/NTRS_data.js")
+    nlp = load_nlp()
+    exact_matches, exact_synonym_matches, partial_matches = get_eng_terms(query, terms, nlp)
+    return exact_matches, exact_synonym_matches, partial_matches
 
 if __name__ == "__main__":
     test()    

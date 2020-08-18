@@ -26,7 +26,7 @@ $.ajaxSetup({
 // Ajax for posting query
 function create_post(query) {
     return $.ajax({
-        url: "/bird/api/", // the endpoint
+        url: "/bird/search_results/", // the endpoint
         type: "POST", // http method
         data: { user_input: query }, // data sent with the post request
     })
