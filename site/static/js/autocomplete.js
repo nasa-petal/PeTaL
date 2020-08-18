@@ -50,9 +50,14 @@ function autocomplete(inp) {
 
             /*check search resulted in any results:*/
             if (search_result["articles"].length > 0) {
-                var arr = []
+                var arr = [];
+                var limit = 0;
                 for (i = 0; i < search_result["articles"].length; i++) {
+                    if(limit == 10) {
+                        break
+                    }
                     arr.push(search_result["articles"][i]["title"])
+                    limit += 1;
                 }
                 /*create a DIV element that will contain the items (values):*/
                 a = document.createElement("DIV");
