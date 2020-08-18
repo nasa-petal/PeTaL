@@ -138,10 +138,17 @@ function tertiarySelected(tertiaryIndex) {
   var tertiaryName = $("#tertiary-dropdown option:selected").prop("text");
   var bioTermsDiv = $("#bio-terms");
   var searchBtn = $('#search-btn');
-  
+  var query = $('#to-bioterms')
+
   var bioTerms = getBioTerms(tertiaryName);
   var newString = "Biology terms in this search: " + bioTerms;
   
+
+  query.append($('<input>', {
+    name: 'q',
+    value: bioTerms.toLowerCase(),
+    class: 'vis-hidden' 
+  }));
   bioTermsDiv.text(newString);
   bioTermsDiv.removeClass('vis-hidden');
   searchBtn.prop('disabled', false);

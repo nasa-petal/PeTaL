@@ -15,7 +15,7 @@
   </div>
   <br>
   <span id="bird-dropdowns" onload="loadPrimaryDropDown()">
-    <form action="{% url 'bird_search' %}" method="get">
+    <form id="to-bioterms" action="{% url 'bird_search' %}" method="get">
 
       <select id="primary-dropdown" class="styledSelect" onchange="primarySelected(this.value)">
         <option value="">Select a Class</option>
@@ -23,7 +23,7 @@
       <select id="secondary-dropdown" class="styledSelect" onchange="secondarySelected(this.value)" disabled>
         <option value="">Select a Secondary Term</option>
       </select>
-      <select id="tertiary-dropdown" class="styledSelect" onchange="tertiarySelected(this.value)" name="q" disabled>
+      <select id="tertiary-dropdown" class="styledSelect" onchange="tertiarySelected(this.value)" disabled>
         <option value="">Select a Tertiary Term</option>
       </select>
 
