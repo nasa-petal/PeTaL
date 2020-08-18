@@ -6,9 +6,7 @@
 {% for article in articles %}
     <div id="abstracts">
         <h2><div> {{article.title}} </div></h2>
-        <div class="bird-abstract-details">{{article.abstract}}</div>
-        <a style="text-align: center" >Read More<a>
-        
+        <div class="bird-abstract-details">{{article.abstract}}</div>        
         <div id="bird-abstract-footer">
             <p><a href= {{article.url}} target='_blank'>External Article Link</a></p>
         </div>
