@@ -146,8 +146,8 @@ function tertiarySelected(tertiaryIndex) {
 
   query.append($('<input>', {
     name: 'q',
+    type: 'hidden',
     value: bioTerms.toLowerCase(),
-    class: 'vis-hidden' 
   }));
   bioTermsDiv.text(newString);
   bioTermsDiv.removeClass('vis-hidden');
