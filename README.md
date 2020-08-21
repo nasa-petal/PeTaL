@@ -19,7 +19,7 @@ First, install [poetry](https://python-poetry.org/docs/):
 Use `poetry` to  install dependencies.  
 `poetry install`  
 
-`pytorch` is non-standard in the way it is packaged, and may need to be installed separately: `poetry run pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html`, however an entry in `pyproject.toml` is still needed.  
+`pytorch` is non-standard in the way it is packaged, and may need to be installed separately: `poetry run pip install torch===1.6.0+cpu torchvision===0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html`, however an entry in `pyproject.toml` is still needed.  
 
 Use `poetry` to install dependencies that were not installed due to the pytorch error.  
 `poetry install`
