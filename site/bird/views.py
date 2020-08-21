@@ -8,16 +8,6 @@ from time import time
 from petal_site.search import search, plot
 from petal_site import qbird
 
-'''
-# TODO
-Due to lack of time, 
-search_results -> elif action == "searchDropdown": and elif action == 'searchNLP':
-do NOT filter for duplicates. 
-
-# TODO
-All search() function call should eventually become an api call to seperate server.
-'''
-
 class InputView(View):
     template = "bar.html"
 
@@ -46,27 +36,13 @@ class ResultView(View):
             context['parent'] = 'autocomplete.html'
 
         elif action == 'searchDropdown':
-            bioterms = query.split(', ')
-            ### TODO The following code should eventually become one api call with multiple search params.
-            all_articles = []
-            for term in bioterms:
-                article = search(term)
-                all_articles.extend(article.get('articles'))
-            ### TODO END
-            context = {}
-            context['articles'] = all_articles
+            bioterms = query.replace(',', '')
+            context = search(bioterms)
             context['parent'] = 'dropdowns.html'
 
         elif action == 'searchNLP':
             exact_matches, exact_synonym_matches, partial_matches = qbird.process_with_nlp(query)            
-            ### TODO The following code should eventually become one api call with multiple search params.
-            all_papers = []
-            for a_match in exact_synonym_matches:
-                papers = search(a_match)
-                all_papers.extend(papers.get('articles'))
-            ### TODO END
-            context = {}
-            context['articles'] = all_papers
+            context = search(string.join(exact_matches))
             context['parent'] = 'query.html'
             
         if len(context['articles']) > 0:
