@@ -11420,7 +11420,8 @@ span.tags {
 /*the container must be positioned relative:*/
 .autocomplete {
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  width: 300px; }
   .autocomplete input {
     border: 1px solid transparent;
     background-color: #f1f1f1;
