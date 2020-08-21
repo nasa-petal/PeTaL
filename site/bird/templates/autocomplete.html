@@ -1,0 +1,27 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block head %}
+  {{ block.super }}
+{% endblock head %}
+
+{% block content %}
+
+<div class="contentMain bird wow fadeInUpMin" data-wow-duration="2s">
+  <h1>BIRD</h1>
+  <h3>Autocomplete</h3>
+  <p>Start typing:</p>
+
+  <!--Make sure the form has the autocomplete function switched off:-->
+  <form autocomplete="off" action="{% url 'bird_search' %}" method="get">
+    <div class="autocomplete">
+      <input id="myInput" type="text" name="q" placeholder="Enter questions...">
+    </div>
+    <button class="btn blue-gradient-bg" type="submit" name="action" value="searchAutocomplete">Search</button>
+  </form>
+<br>
+
+{% block subcontent %}
+{% endblock subcontent %}
+</div>
+<script src="{% static 'js/autocomplete.js' %}"></script>
+{% endblock %}
