@@ -9,6 +9,9 @@ from .contractions import fix_word as expand_contractions
 
 class Cleaner:
     def __init__(self):
+        # todo: these two lines needs peer review
+        import nltk
+        nltk.download('punkt')
         try:
             self.stop_words = set(stopwords.words('english'))
         except LookupError:

@@ -1,0 +1,43 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block head %}
+  {{ block.super }}
+    <script src="{% static 'js/bird.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="contentMain bird wow fadeInUpMin" data-wow-duration="2s">
+  <h1>BIRD</h1>
+  <h3>Bio-Inspired Research and Design</h3>
+  <div>
+    BIRD is a simple tool to assist in brainstorming engineering projects using biological systems as inspiration.
+  </div>
+  <br>
+  <span id="bird-dropdowns" onload="loadPrimaryDropDown()">
+    <form action="{% url 'bird_search' %}" method="get">
+
+      <select id="primary-dropdown" class="styledSelect" onchange="primarySelected(this.value)">
+        <option value="">Select a Class</option>
+      </select>
+      <select id="secondary-dropdown" class="styledSelect" onchange="secondarySelected(this.value)" disabled>
+        <option value="">Select a Secondary Term</option>
+      </select>
+      <select id="tertiary-dropdown" class="styledSelect" onchange="tertiarySelected(this.value)" name="q" disabled>
+        <option value="">Select a Tertiary Term</option>
+      </select>
+
+      <button id="search-btn" class="btn blue-gradient-bg" type="submit" name="action" value="searchDropdown" disabled>Search</button>
+      <p id="bio-terms" class="vis-hidden"></p>
+
+    </form>
+  </span>
+  <br>
+
+{% block subcontent %}
+{% endblock subcontent %}
+</div>
+
+<script src="{% static 'js/dropdowns.js' %}"></script>
+
+{% endblock content %}

@@ -195,9 +195,8 @@ circle.paintedRect {
 
 .lifeformList {
     background-color: none;
-    height: 200px;
-    min-height: 50vh;
-    max-height: 50vh;
+    min-height: 40vh;
+    max-height: 40vh;
     z-index: -1;
     overflow: auto;
     font-family: "Archivo Narrow";

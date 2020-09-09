@@ -4,7 +4,7 @@ from ..libraries.encyclopedia_of_life.eol_api import EOL_API
 import requests
 
 
-class EOLSpeciesModule(Module):
+class EOLSpeciesModuleFix(Module):
     '''
     Legally scrape EOL for Species that have pages. Requires an API token
 

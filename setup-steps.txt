@@ -1,0 +1,74 @@
+install docker
+clone petal repo
+open terminal
+cd to cloned petal folder
+git checkout develop
+docker-compose up --build
+docker-compose up
+
+
+python
+django
+neo4j server
+
+// builds the web dockerfile. need to run this anytime the dockerfile or requirements.txt file changes.
+docker-compose up --build
+// use this to start up the services.
+docker-compose up
+
+docker exec -it petal_web_1 /bin/bash
+./run config/mock_species_articles.json # Step 1
+# Ctrl-C once the database has enough articles for testing
+# This creates the ../data/index.html https://github.com/nasa/PeTaL/issues/28#issuecomment-649080792 
+./run config/search.json # Step 2 
+
+pip3 install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
+neo4j:
+      image: neo4j:latest
+      volumes:
+        - ./.docker-data/neo4j:/data
+      environment:
+        - NEO4J_AUTH=neo4j/life
+      ports:
+        - "7474:7474"
+        - "7687:7687"
+
+docker run \
+    --name petalneo4j \
+    -p7474:7474 -p7687:7687 \
+    -d \
+    -v $HOME/neo4j/data:/data \
+    -v $HOME/neo4j/logs:/logs \
+    -v $HOME/neo4j/import:/var/lib/neo4j/import \
+    -v $HOME/neo4j/plugins:/plugins \
+    --env NEO4J_AUTH=neo4j/life \
+    neo4j:latest
+
+    docker build --tag petal:1.0 .
+
+
+sudo docker-compose run web ./code/run config/default.json
+docker-compose up
+
+http://localhost:8000
+
+
+
+
+FROM python:3
+
+WORKDIR $HOME/Documents/localwrk/git/petal
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN ./run config/default.json
+
+CMD [ "python", "manage.py runserver" ]
+
+
+/code/wait-for-it.sh neo4j:7687 -- /code/run config/default.json
+          && 

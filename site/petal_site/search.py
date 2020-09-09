@@ -1,3 +1,4 @@
+from petal_site import settings
 from neo4j import GraphDatabase, basic_auth
 from pandas import DataFrame
 
@@ -19,11 +20,19 @@ def clean(item):
     item = item.replace(')', '')
     return item
 
+neo4j_settings = settings.NEO4J_DATABASE
+
 # Load index and db connection at import
-neo_client = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "life"), encrypted=False)
+neo_client = GraphDatabase.driver(neo4j_settings['url'], auth=basic_auth(neo4j_settings['username'], neo4j_settings['password']), encrypted=False)
 session = neo_client.session()
-with open('../data/index', 'rb') as infile:
-    index = pickle.load(infile)
+
+try:
+    with open('./data/index', 'rb') as infile:
+        index = pickle.load(infile)
+        infile.close()
+except IOError:
+    index = []
+    print('WARNING: ./data/index was not found. To create the search index for PeTaL, run ./run config/search.json to create the index and a hitlist file.')
 
 def fetch(query):
     cleaner = Cleaner()
@@ -48,6 +57,12 @@ def search(query):
     query_time, fetch_time, articles = fetch(query)
     articles = [(dict(title=a['title'], abstract=a['abstract'], url=a['url'])) for a in articles] 
     context = dict(search_time=round(query_time, 10), neo4j_time=round(fetch_time, 10), articles=articles)
+    return context
+
+def biomole_search(query):
+    query_time, fetch_time, articles = fetch(query)
+    articles = [(dict(title=a['title'], url=a['url'])) for a in articles] 
+    context = dict(articles=articles)
     return context
 
 import plotly.express as px
