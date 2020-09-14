@@ -49,7 +49,7 @@ class Tool {
 
         let that = this;
 
-        d3.json("../static/js/hierarchy.json", function (error, data) {
+        d3.json("../../static/js/hierarchy.json", function (error, data) {
             if (error) {
                 console.log("error loading json:", error);
             }
@@ -74,7 +74,7 @@ class Tool {
             // console.log(lf);
 
             // parseData();
-            console.log("line 77")
+            // that.root = neo4j_data;
             that.root = data;
             that.root.level = 0;
 
@@ -138,12 +138,12 @@ class Tool {
             });
             // that.lifeforms = uniq(that.lifeforms);
             lifeformsCounter = uniq(lifeformsCounter);
-            // console.log(lifeformsCounter);
+            console.log(that.lifeforms);
 
             // console.log("lifeforms", that.lifeforms);
 
             that.nOfLifeforms = lifeformsCounter.length;
-            console.log("line 146")
+
             const visitChildrenDFS = function (node, func) {
                 if (typeof node !== "undefined" && node.children && node.level < 3) {
                     node.matches = node.children.reduce((accumulator, currentValue) => {
@@ -251,7 +251,7 @@ class Tool {
             baseSelectGroup = baseSVG.append('g').attr('id', 'selectGroup').style("filter", "url(#gooeyCodeFilter)");
             //basePaintGroup = baseSVG.append('g').attr('id', 'paintGroup').attr("transform","translate(660,0)");
             basePaintGroup = baseSVG.append('g').attr('id', 'paintGroup').attr("transform", "translate(" + matrixViewOffset.join(',') + ")");
-            console.log("254")
+
             tip = d3.tip()
                 .attr('class', 'd3-tip')
                 //.offset([-10, 0])
@@ -277,7 +277,7 @@ class Tool {
             createUI();
 
             //updateCircles();
-            console.log(280)
+
             that.view = new PaintView(that);
 
             that.view.updateHeaders(that.lifeforms, that.root, true);
@@ -294,27 +294,27 @@ class Tool {
                 .attr('x2', that.matrixSize[0])
                 .attr('y2', 0)
                 .classed('rowBorder', true);
-            console.log(297)
+
             var dim = 18, buf = 8; // same values that are in paintView.js Row constructor
             topline.append('image')
                 .attr('x', that.matrixSize[0] + buf * 2)
                 .attr('y', 0 - dim / 2)
                 .attr('width', dim)
                 .attr('height', dim)
-                .attr('href', '../static/images/plus.svg')
+                .attr('href', '../../static/images/plus.svg')
                 .on('click', (e) => {
                     console.log(that)
                     return that.addNewRow(that)
                 });
-            console.log(308)
+
             let row = new Row(that, that.view, [0, that.matrixSize[1] + 50], matrixRowHeight, null, "test");
             matrixRows.push(row);
             row.populateWithAll(that.nOfLifeforms);
-            console.log(312)
+
             that.addNewRow(matrixRows[matrixRows.length - 1]);
             that.addNewRow(matrixRows[matrixRows.length - 1]);
             that.addNewRow(matrixRows[matrixRows.length - 1]);
-            console.log(316)
+
             createGuide();
             createLifeformList();
 
@@ -325,9 +325,9 @@ class Tool {
             // r: 50
             // })
 
-            console.log("Opened tool page (index.html)");
+            //console.log("Opened tool page (index.html)");
             logEventGA("Initialization", "Loaded", "biomole.html");
-            console.log(329)
+
             // window.addEventListener("focus", function(event) {
             //     logEventGA("Tool action", "got focus", null, null);
             // }, false);
@@ -337,7 +337,7 @@ class Tool {
             //     logEventGA("Tool action", "lost focus", null, null);
             // }, false);
 
-            d3.json("../static/js/strategies.json", function (error, strategies) {
+            d3.json("../../static/js/strategies.json", function (error, strategies) {
                 if (error) {
                     console.log("error loading json:", error);
                 }
@@ -575,7 +575,7 @@ function populateLifeformsList(headerName, lifeformList) {
                 .html(t.lifeforms[d].post_title)
                 .on('mousedown', function () {
                     if (d3.event.which === 1 || d3.event.which === 2)
-                        console.log(577)
+
                         // logEvent('Clicked link to "' + t.lifeforms[d].post_title + '"');
                         logEventGA("Interface action", "Clicked link in lifeforms list", t.lifeforms[d].post_id + ": " + t.lifeforms[d].post_title,  "Header name: " + headerName + ". Number in list: " + i + "/" + lifeformList.length);
                 })
@@ -585,7 +585,7 @@ function populateLifeformsList(headerName, lifeformList) {
 Tool.prototype.addNewRow = function (aboveRow) {
     // console.log(aboveRow);
     // console.log(this);
-    console.log(587)
+
     var index = -1;
     if (aboveRow)
         index = matrixRows.indexOf(aboveRow);
@@ -618,7 +618,7 @@ Tool.prototype.addNewRow = function (aboveRow) {
     let rowName = (row.paintTool === null ? "blank row" : ("row \"" + row.paintTool.name + '"'));
 
     // logEvent("Added new row");
-    logEventGA("Interface action", "Deleted row", rowName, index);
+    logEventGA("Interface action", "Added row", rowName, index);
 };
 
 Tool.prototype.deleteRow = function (row) {
@@ -655,10 +655,10 @@ Tool.prototype.deleteRow = function (row) {
 
     }, fadetime);
 
-    // if we deleted our only row, make a new blank one
-    if (matrixRows.length == 1) {
-        that.addNewRow(null);
-    }
+    // // if we deleted our only row, make a new blank one
+    // if (matrixRows.length == 1) {
+    //     that.addNewRow(null);
+    // }
 
 };
 

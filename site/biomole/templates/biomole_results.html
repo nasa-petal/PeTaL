@@ -1,0 +1,52 @@
+{% extends "biomole.html" %}
+{% load static %}
+{% block subhead %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Richard Pusch">
+<meta name="msvalidate.01" content="EE262A0F3FB70B7F2C6CA6EE38CB9AAD" />
+<meta name='robots' content='index,follow' />
+
+<title>Biomole</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+<link rel="manifest" href="../favicon/site.webmanifest">
+<link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#0f383c">
+<meta name="theme-color" content="#0f383c">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+<script src="{% static 'js/d3-tip.js' %}"></script>
+<script src="{% static 'js/nature.js' %}"></script>
+<script src="{% static 'js/paintview.js' %}"></script>
+<script src="{% static 'js/paintTool.js' %}"></script>
+<script src="{% static 'js/util.js' %}"></script>
+
+{% endblock subhead %}
+
+{% block subcontent %}
+
+{{ articles|json_script:"context" }} <!-- stores data submitted from get request -->
+<script>
+    const neo4j_data = JSON.parse(document.getElementById('context').textContent); 
+</script>
+
+<script type="text/javascript">
+  let t;
+  
+  $(document).ready(function () {
+    t = new Tool();
+  });
+  
+
+</script>
+
+{% endblock %}

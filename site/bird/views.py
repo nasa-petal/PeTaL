@@ -3,10 +3,13 @@ from django.http import HttpResponse
 
 from time import time
 
-from .search import search, plot
+from petal_site.search import search, plot
 
 def index(request):
-    return render(request, 'bar.html', dict())
+    return render(request, 'bar.html')
+
+def dropdowns(request):
+    return render(request, 'dropdowns.html')
 
 def search_results(request):
     query = request.GET.get('q')
@@ -14,9 +17,18 @@ def search_results(request):
     if action == 'plot':
         context = plot(query)
         return render(request, 'plot_results.html', context)
-    else:
+    elif action == 'search':
         context = search(query)
+        context["parent"] = "bar.html"
         if len(context['articles']) > 0:
             return render(request, 'results.html', context)
         else:
             return render(request, 'no_results.html', context)
+    elif action == "searchDropdown":
+        context = search(query)
+        context["parent"] = "dropdowns.html"
+        if len(context['articles']) > 0:
+            return render(request, 'results.html', context)
+        else:
+            return render(request, 'no_results.html', context)
+    

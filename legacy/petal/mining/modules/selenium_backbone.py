@@ -14,7 +14,7 @@ from neo4j import GraphDatabase, basic_auth
 # uri = "bolt://localhost:7687"
 # neoDriver = GraphDatabase.driver(uri, auth=("neo4j", "life"))
 
-neoDriver = GraphDatabase.driver("bolt://139.88.179.199:7687", auth=basic_auth("neo4j", "testing"))
+neoDriver = GraphDatabase.driver("bolt://neo4j:7687", auth=basic_auth("neo4j", "life"))
 
 
 from time import time

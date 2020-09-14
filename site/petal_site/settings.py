@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home.apps.PetalConfig',
     'bird.apps.BirdConfig',
     'biomole.apps.BiomoleConfig',
+    'vision.apps.VisionConfig',
     'directory.apps.DirectoryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'petal-site.urls'
+ROOT_URLCONF = 'petal_site.urls'
 
 TEMPLATES = [
     {
@@ -71,14 +72,14 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'petal-site.wsgi.application'
+WSGI_APPLICATION = 'petal_site.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {}
-
+NEO4J_DATABASE = {'url': "bolt://neo4j:7687", 'username':"neo4j", 'password':"life"}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

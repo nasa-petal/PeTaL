@@ -430,7 +430,7 @@ function Row(tool, view, topleft, height, lifeformList, name) {
         .attr('y', this.height / 2 - dim / 2)
         .attr('width', dim)
         .attr('height', dim)
-        .attr('href', '../static/images/x.svg')
+        .attr('href', '../../static/images/x.svg')
         .on('click', that.tool.deleteRow);
 
     this.borderGroup.append('image')
@@ -439,7 +439,7 @@ function Row(tool, view, topleft, height, lifeformList, name) {
         .attr('y', this.height - dim / 2)
         .attr('width', dim)
         .attr('height', dim)
-        .attr('href', '../static/images/plus.svg')
+        .attr('href', '../../static/images/plus.svg')
         .on('click', (e) => {return that.tool.addNewRow(that)});
 
 
