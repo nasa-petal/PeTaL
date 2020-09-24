@@ -4,10 +4,10 @@ The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at a
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.  
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project to a production system.  
 
 ### Guides 
-[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-a-development-environment)    
+[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-PeTaL-with-Docker)    
 
 ## Contributing
 
@@ -45,7 +45,10 @@ http://biomole.asknature.org/json/strategies.json
 * **Paht Juangphanich** - *Technical Support* - Helps team members overcome any technical challenges they face.
 * **Brandon Ruffridge** - *[Scrum Master](https://www.agilealliance.org/glossary/scrum-master/) and Technical Lead*
 
-### PeTaL 3.0
+### PeTaL 0.4
+
+
+### PeTaL 0.3
 
 * **Lucas Saldyt** - *Backend development, machine learning* 01-2020 - 04-2020
 * **Olakunle Akinpelu** - *Backend development* 01-2020 - 06-2020
@@ -53,7 +56,7 @@ http://biomole.asknature.org/json/strategies.json
 * **Elliot Hill** - *   *
 * **Benjamin Huynh** - *   *
 
-### PeTaL 2.0 
+### PeTaL 0.2 
 
 * **Angeera Naser** - *Front end development and intern team lead Summer 2018*
 * **Allie Calvin** - *UI development and data collection* 
@@ -68,7 +71,7 @@ http://biomole.asknature.org/json/strategies.json
 * **Lauren Friend** - *Backend development*
 * **Manju Johny** - *Backend development*
 
-### PeTaL 1.0 - R
+### PeTaL 0.1 - R
 
 * **Nicholas Bense** - *Backend development*
 * **Allie Calvin** - *UI development and data collection* 
