@@ -47,6 +47,7 @@ http://biomole.asknature.org/json/strategies.json
 
 ### PeTaL 0.4
 
+* **Shruti Janardhanan** - *   * 08-2020 -
 
 ### PeTaL 0.3
 
