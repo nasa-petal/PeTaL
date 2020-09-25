@@ -8,6 +8,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 Uses the [create-react-app material-ui example](https://github.com/mui-org/material-ui/tree/master/examples/create-react-app).
 
+After cloning this repo run:    
+`npm install`    
+`npm start`    
+
+or    
+`yarn install`    
+`yarn start`
+
 ## Contributing
 
 We're using the [Git Feature Branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow), to contribute code to the code base. To summarize, `master` should always contain only stable, tested code. To work on a change, first create a feature branch off of `master`, perform your changes, and when your code is ready, submit a pull request to merge your branch with `master`. 
