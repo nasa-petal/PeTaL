@@ -24,6 +24,7 @@ export default function App() {
   );
 }
 
+//todo: replace this static list with an API call to get the list of functions from the PeTaL API.
 const functionList = [
   { label: 'Reduce drag', id: 1 },
   { label: 'Absorb shock', id: 2 },

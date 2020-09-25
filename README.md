@@ -31,7 +31,7 @@ View site at https://nasa.github.io/PeTaL/
 
 ## Legacy Code
 
-For the Django version as it existed in 2020 see the master legacy-2020 branch.
+For the Django version as it existed in 2020 see the master-legacy-2020 branch.
 For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory in the master-legacy-2020 branch.
 
 Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future developers to build upon.
