@@ -14,6 +14,9 @@ We're using the [Git Feature Branch workflow](https://www.atlassian.com/git/tuto
 
 ## Deployment
 
+Let's see if we can deploy this using GitHub Pages:    
+https://create-react-app.dev/docs/deployment/#github-pages
+
 ## Layout
 
 ## Legacy Code
