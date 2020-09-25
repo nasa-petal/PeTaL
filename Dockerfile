@@ -16,5 +16,5 @@ COPY --from=react-build /app/build /usr/share/nginx/html
 # To provide a http authentication uncomment the next two lines
 #COPY conf/default.conf /etc/nginx/conf.d/default.conf
 #COPY conf/authnginx/htpasswd /etc/nginx/authnginx/htpasswd
-EXPOSE 80 2222
+EXPOSE 80 8000
 CMD ["nginx", "-g", "daemon off;"]
