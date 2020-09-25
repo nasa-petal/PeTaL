@@ -2,6 +2,7 @@
   "name": "petal-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nasa.github.io/petal",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
