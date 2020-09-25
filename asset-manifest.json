@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/petal/static/js/main.ef1190fa.chunk.js",
+    "main.js.map": "/petal/static/js/main.ef1190fa.chunk.js.map",
+    "runtime-main.js": "/petal/static/js/runtime-main.4f1576d9.js",
+    "runtime-main.js.map": "/petal/static/js/runtime-main.4f1576d9.js.map",
+    "static/js/2.e4b2cff2.chunk.js": "/petal/static/js/2.e4b2cff2.chunk.js",
+    "static/js/2.e4b2cff2.chunk.js.map": "/petal/static/js/2.e4b2cff2.chunk.js.map",
+    "index.html": "/petal/index.html",
+    "precache-manifest.686bb15f49e09c80602665b9b77bfd35.js": "/petal/precache-manifest.686bb15f49e09c80602665b9b77bfd35.js",
+    "service-worker.js": "/petal/service-worker.js",
+    "static/js/2.e4b2cff2.chunk.js.LICENSE.txt": "/petal/static/js/2.e4b2cff2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4f1576d9.js",
+    "static/js/2.e4b2cff2.chunk.js",
+    "static/js/main.ef1190fa.chunk.js"
+  ]
+}
