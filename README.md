@@ -22,8 +22,10 @@ We're using the [Git Feature Branch workflow](https://www.atlassian.com/git/tuto
 
 ## Deployment
 
-Let's see if we can deploy this using GitHub Pages:    
-https://create-react-app.dev/docs/deployment/#github-pages
+`npm run deploy`    
+https://create-react-app.dev/docs/deployment/#github-pages    
+
+View site at https://nasa.github.io/PeTaL/
 
 ## Layout
 
