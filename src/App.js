@@ -1,39 +1,33 @@
-import React, { Component } from 'react';
-import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles'
-import './App.css';
-import Routes from './routes'
-import { blue, indigo } from '@material-ui/core/colors'
+import React from 'react';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import ProTip from './ProTip';
 
-const theme = createMuiTheme({
-  palette: {
-    secondary: {
-      main: blue[900]
-    },
-    primary: {
-      main: indigo[700]
-    }
-  },
-  typography: {
-    // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      '"Lato"',
-      'sans-serif'
-    ].join(',')
-  }
-});
-
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <ThemeProvider theme={theme}>
-          <Routes />
-        </ThemeProvider>
-      </div>
-    );
-  }
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Container maxWidth="sm">
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Create React App v4-beta example
+        </Typography>
+        <ProTip />
+        <Copyright />
+      </Box>
+    </Container>
+  );
+}

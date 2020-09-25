@@ -6,8 +6,7 @@ The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project to a production system.  
 
-### Guides 
-[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-PeTaL-with-Docker)    
+Uses the [create-react-app material-ui example](https://github.com/mui-org/material-ui/tree/master/examples/create-react-app).
 
 ## Contributing
 
