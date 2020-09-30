@@ -37,7 +37,7 @@ class App extends Component {
 
     componentDidMount() {
         // connect to locally running petal-api to fetch functions list.
-        fetch('http://localhost:8080')
+        fetch('http://localhost:8080/v1/functions')
             .then(res => res.json())
             .then((data) => {
                 this.setState({ functions: data })
