@@ -3,18 +3,34 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 // A custom theme for this app
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      '"Helvetica Neue"',
+      'Helvetica',
+      'Roboto',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#9bdaf1',
     },
     secondary: {
-      main: '#19857b',
+      main: '#dd361c',
     },
     error: {
-      main: red.A400,
+      main: '#dd361c',
     },
+    type: 'dark',
     background: {
-      default: '#fff',
+      //default: '#fff',
     },
   },
 });
