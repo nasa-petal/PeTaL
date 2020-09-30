@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/PeTaL/static/js/main.e9be87d0.chunk.js",
-    "main.js.map": "/PeTaL/static/js/main.e9be87d0.chunk.js.map",
+    "main.js": "/PeTaL/static/js/main.588854fd.chunk.js",
+    "main.js.map": "/PeTaL/static/js/main.588854fd.chunk.js.map",
     "runtime-main.js": "/PeTaL/static/js/runtime-main.2dfacccf.js",
     "runtime-main.js.map": "/PeTaL/static/js/runtime-main.2dfacccf.js.map",
-    "static/js/2.a267ebcd.chunk.js": "/PeTaL/static/js/2.a267ebcd.chunk.js",
-    "static/js/2.a267ebcd.chunk.js.map": "/PeTaL/static/js/2.a267ebcd.chunk.js.map",
+    "static/js/2.ae4d3637.chunk.js": "/PeTaL/static/js/2.ae4d3637.chunk.js",
+    "static/js/2.ae4d3637.chunk.js.map": "/PeTaL/static/js/2.ae4d3637.chunk.js.map",
     "index.html": "/PeTaL/index.html",
-    "precache-manifest.6970d2ebf0d31fbee0c884570e7ecd8c.js": "/PeTaL/precache-manifest.6970d2ebf0d31fbee0c884570e7ecd8c.js",
+    "precache-manifest.5443b2be0bb899d4dbf9803d8a450009.js": "/PeTaL/precache-manifest.5443b2be0bb899d4dbf9803d8a450009.js",
     "service-worker.js": "/PeTaL/service-worker.js",
-    "static/js/2.a267ebcd.chunk.js.LICENSE.txt": "/PeTaL/static/js/2.a267ebcd.chunk.js.LICENSE.txt",
+    "static/js/2.ae4d3637.chunk.js.LICENSE.txt": "/PeTaL/static/js/2.ae4d3637.chunk.js.LICENSE.txt",
     "static/media/contemplative-reptile.jpg": "/PeTaL/static/media/contemplative-reptile.34dfeed2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2dfacccf.js",
-    "static/js/2.a267ebcd.chunk.js",
-    "static/js/main.e9be87d0.chunk.js"
+    "static/js/2.ae4d3637.chunk.js",
+    "static/js/main.588854fd.chunk.js"
   ]
 }
