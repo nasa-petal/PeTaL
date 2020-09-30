@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4531b72d050b975324c0b006895ee469",
+    "revision": "b3c1bcac3c8ab82ec956c3fd9aac057a",
     "url": "/PeTaL/index.html"
   },
   {
