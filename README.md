@@ -6,8 +6,15 @@ The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project to a production system.  
 
-### Guides 
-[Setting up the development environment](https://github.com/nasa/PeTaL/wiki/Setting-up-PeTaL-with-Docker)    
+Uses the [create-react-app material-ui example](https://github.com/mui-org/material-ui/tree/master/examples/create-react-app).
+
+After cloning this repo run:    
+`npm install`    
+`npm start`    
+
+or    
+`yarn install`    
+`yarn start`
 
 ## Contributing
 
@@ -15,11 +22,16 @@ We're using the [Git Feature Branch workflow](https://www.atlassian.com/git/tuto
 
 ## Deployment
 
+`npm run deploy`    
+https://create-react-app.dev/docs/deployment/#github-pages    
+
+View site at https://nasa.github.io/PeTaL/
+
 ## Layout
 
 ## Legacy Code
 
-For the Django version as it existed in 2020 see the master legacy-2020 branch.
+For the Django version as it existed in 2020 see the master-legacy-2020 branch.
 For Flask version of PeTaL as it existed in 2019, see the /legacy/ directory in the master-legacy-2020 branch.
 
 Since the HTML/CSS/Javascript is similar to what is currently used, and some code is shared, this is kept close-by, potentially serving as a reference for future developers to build upon.
