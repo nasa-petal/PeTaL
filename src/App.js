@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-function MediaCard() {
+function MediaCard(props) {
   const classes = useStyles();
 
   return (
@@ -28,15 +28,14 @@ function MediaCard() {
       <CardMedia
         className={classes.media}
         image={lizard}
-        title="Contemplative Reptile"
+        title={props.article.title}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          Lizard
+          {props.article.title}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-          across all continents except Antarctica
+          {props.article.summary}
         </Typography>
       </CardContent>
       <CardActions>
@@ -66,6 +65,11 @@ class Results extends Component {
 
 class App extends Component {
   render() {
+
+    const articleCards = this.state.articles.map((article) =>
+      <Box my={4}><MediaCard article={article} /></Box>
+    );
+
     return (
       <Container maxWidth="md">
         <Box my={4}>
@@ -80,10 +84,7 @@ class App extends Component {
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
         </Box>
-        <Box my={4}><MediaCard /></Box>
-        <Box my={4}><MediaCard /></Box>
-        <Box my={4}><MediaCard /></Box>
-        <Box my={4}><MediaCard /></Box>
+        {articleCards}
         <Box my={4}><Pagination count={10} color="primary" showFirstButton showLastButton /></Box>
         <Results />
       </Container>
@@ -97,17 +98,26 @@ class App extends Component {
       { label: 'Dissipate heat', id: 3 },
       { label: 'Increase lift', id: 4 },
       { label: 'Remove particles from a surface', id: 5 }
-    ]
+    ],
+    articles: []
   };
 
   componentDidMount() {
     // connect to locally running petal-api to fetch functions list.
     fetch('http://localhost:8080/v1/functions')
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({ functions: data })
-      })
-      .catch(console.log)
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ functions: data })
+    })
+    .catch(console.log)
+
+    // connect to locally running petal-api to fetch wikipedia articles.
+    fetch('http://localhost:8080/v1/search')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ articles: data })
+    })
+    .catch(console.log)
   }
 }
 
