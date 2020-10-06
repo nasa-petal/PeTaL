@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
 
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -13,6 +14,10 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Pagination from '@material-ui/lab/Pagination';
 
 const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+    height: '100%'
+  },
   media: {
     height: 140,
   },
@@ -65,11 +70,11 @@ class App extends Component {
   render() {
 
     const articleCards = this.state.articles.map((article) =>
-      <Box my={4}><MediaCard article={article} /></Box>
+      <Grid item><MediaCard article={article} /></Grid>
     );
 
     return (
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Box my={4}>
           <Typography variant="h4" component="h1" gutterBottom>
             How does nature...
@@ -82,7 +87,15 @@ class App extends Component {
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
         </Box>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justify="flex-start"
+          alignItems="stretch"
+        >
         {articleCards}
+        </Grid>
         <Box my={4}><Pagination count={10} color="primary" showFirstButton showLastButton /></Box>
         <Results />
       </Container>
