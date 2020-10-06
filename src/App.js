@@ -110,7 +110,7 @@ class App extends Component {
     .catch(console.log)
 
     // connect to locally running petal-api to fetch wikipedia articles.
-    fetch('http://localhost:8080/v1/search')
+    fetch('http://localhost:8080/v1/search?q=1')
     .then(res => res.json())
     .then((data) => {
       this.setState({ articles: data })
