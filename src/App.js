@@ -62,6 +62,36 @@ class Results extends Component {
 }
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    // this.state = {
+    //   tags: []
+    // };
+    this.onTagsChange = this.onTagsChange.bind(this);
+  }
+
+  onTagsChange = (event, values) => {
+    this.setState({
+      tags: values
+    }, () => {
+      // This will output an array of objects
+      // given by Autocompelte options property.
+      console.log(this.state.tags);
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state.tags)
+      };
+      
+      fetch('http://localhost:8080/api', options).then(response => {
+        console.log(response);
+      });
+    });
+  }
+
   render() {
 
     const articleCards = this.state.articles.map((article) =>
@@ -79,6 +109,7 @@ class App extends Component {
             options={this.state.functions}
             getOptionLabel={(option) => option.label}
             style={{ width: 300 }}
+            onChange={this.onTagsChange}
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
         </Box>
@@ -89,7 +120,9 @@ class App extends Component {
     )
   }
 
+  
   state = {
+    tags:[],
     functions: [
       { label: 'Reduce drag', id: 1 },
       { label: 'Absorb shock', id: 2 },
@@ -117,6 +150,7 @@ class App extends Component {
     })
     .catch(console.log)
   }
+
 }
 
 export default App;
