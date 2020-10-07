@@ -77,16 +77,6 @@ class App extends Component {
     this.setState({
       selection: values
     }, () => {
-      // This will output an array of objects
-      // given by Autocompelte options property.
-      // Not being used currently
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.state.selection)
-      };
       //if the selection is X'd out, just fetch original articles
       if (this.state.selection == null) {
         fetch(`http://localhost:8080/v1/search?q=1`)
@@ -99,17 +89,16 @@ class App extends Component {
       }
       //querying the database by selected label
       const selection_label = this.state.selection.id
-      console.log('label',selection_label, `http://localhost:8080/v1/search?q=${selection_label}`);
-      fetch(`http://localhost:8080/v1/search?q=${selection_label}`)
+      const url = new URL('http://localhost:8080/v1/search')
+      const params = { q: selection_label }
+      // assigning page number to url
+      url.search = new URLSearchParams(params).toString();
+      fetch(url)
         .then(res => res.json())
         .then((data) => {
           this.setState({ articles: data })
         })
         .catch(console.log)
-      
-      // fetch('http://localhost:8080/api', options).then(response => {
-      //   console.log(response);
-      // });
     });
   }
 
