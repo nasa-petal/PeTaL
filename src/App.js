@@ -70,30 +70,46 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   tags: []
-    // };
-    this.onTagsChange = this.onTagsChange.bind(this);
+    this.onSelectionChange = this.onSelectionChange.bind(this);
   }
 
-  onTagsChange = (event, values) => {
+  onSelectionChange = (event, values) => {
     this.setState({
-      tags: values
+      selection: values
     }, () => {
       // This will output an array of objects
       // given by Autocompelte options property.
-      console.log(this.state.tags);
+      // Not being used currently
       const options = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(this.state.tags)
+        body: JSON.stringify(this.state.selection)
       };
+      //if the selection is X'd out, just fetch original articles
+      if (this.state.selection == null) {
+        fetch(`http://localhost:8080/v1/search?q=1`)
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ articles: data })
+        })
+        .catch(console.log)
+        return;
+      }
+      //querying the database by selected label
+      const selection_label = this.state.selection.id
+      console.log('label',selection_label, `http://localhost:8080/v1/search?q=${selection_label}`);
+      fetch(`http://localhost:8080/v1/search?q=${selection_label}`)
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ articles: data })
+        })
+        .catch(console.log)
       
-      fetch('http://localhost:8080/api', options).then(response => {
-        console.log(response);
-      });
+      // fetch('http://localhost:8080/api', options).then(response => {
+      //   console.log(response);
+      // });
     });
   }
 
@@ -114,7 +130,7 @@ class App extends Component {
             options={this.state.functions}
             getOptionLabel={(option) => option.label}
             style={{ width: 300 }}
-            onChange={this.onTagsChange}
+            onChange={this.onSelectionChange}
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
         </Box>
@@ -132,10 +148,9 @@ class App extends Component {
       </Container>
     )
   }
-
   
   state = {
-    tags:[],
+    selection:[],
     functions: [
       { label: 'Reduce drag', id: 1 },
       { label: 'Absorb shock', id: 2 },
