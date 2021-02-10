@@ -67,6 +67,41 @@ class Results extends Component {
 }
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.onSelectionChange = this.onSelectionChange.bind(this);
+  }
+
+  onSelectionChange = (event, values) => {
+    this.setState({
+      selection: values
+    }, () => {
+      //if the selection is X'd out, just fetch original articles
+      if (this.state.selection == null) {
+        fetch(`http://localhost:8080/v1/search?q=1`)
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ articles: data })
+        })
+        .catch(console.log)
+        return;
+      }
+      //querying the database by selected label
+      const selection_label = this.state.selection.id
+      const url = new URL('http://localhost:8080/v1/search')
+      const params = { q: selection_label }
+      // assigning page number to url
+      url.search = new URLSearchParams(params).toString();
+      fetch(url)
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ articles: data })
+        })
+        .catch(console.log)
+    });
+  }
+
   render() {
 
     const articleCards = this.state.articles.map((article) =>
@@ -84,6 +119,7 @@ class App extends Component {
             options={this.state.functions}
             getOptionLabel={(option) => option.label}
             style={{ width: 300 }}
+            onChange={this.onSelectionChange}
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
         </Box>
@@ -101,8 +137,9 @@ class App extends Component {
       </Container>
     )
   }
-
+  
   state = {
+    selection:[],
     functions: [
       { label: 'Reduce drag', id: 1 },
       { label: 'Absorb shock', id: 2 },
@@ -130,6 +167,7 @@ class App extends Component {
     })
     .catch(console.log)
   }
+
 }
 
 export default App;
