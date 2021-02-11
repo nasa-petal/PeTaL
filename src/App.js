@@ -75,7 +75,7 @@ class App extends Component {
 
       //query core api for details for each coreid in the coreids array.
 
-      fetch('https://core.ac.uk:443/api-v2/articles/get?metadata=true&fulltext=false&citations=false&similar=false&duplicate=false&urls=true&faithfulMetadata=false&apiKey=0RJ98zruXYjW76EThkvwH1s3CycAoleb', {
+      fetch('https://core.ac.uk:443/api-v2/articles/get?metadata=true&fulltext=false&citations=false&similar=false&duplicate=false&faithfulMetadata=false&apiKey=0RJ98zruXYjW76EThkvwH1s3CycAoleb', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
