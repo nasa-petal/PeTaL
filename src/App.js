@@ -32,13 +32,13 @@ function MediaCard(props) {
         <Typography gutterBottom variant="h5" component="h2">
           <Link
             color="primary"
-            href={props.article.downloadUrl}
+            href={props.article.DownloadURL.S}
           >
-            {props.article.title}
+            {props.article.Title.S}
           </Link>
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          {props.article.description}
+          {props.article.Abstract.S}
         </Typography>
       </CardContent>
     </Card>
@@ -69,32 +69,26 @@ class App extends Component {
         this.setState({ articlesToDisplay: [] })
         return;
       }
-      //show articles filtered by selected label
 
-      let coreIds = this.state.articles[this.state.selection.level2][this.state.selection.level3];
-
-      //query core api for details for each coreid in the coreids array.
-
-      fetch('https://core.ac.uk:443/api-v2/articles/get?metadata=true&fulltext=false&citations=false&similar=false&duplicate=false&faithfulMetadata=false&apiKey=0RJ98zruXYjW76EThkvwH1s3CycAoleb', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(coreIds)
-      })
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({ articlesToDisplay: data })
-      })
-      .catch(console.log);
-
+      //querying the database by selected label
+      const selection_label = this.state.selection.id
+      const url = new URL('https://unbqm6hov8.execute-api.us-east-2.amazonaws.com/v1/getarticles')
+      const params = { level3: selection_label }
+      // assigning label to url
+      url.search = new URLSearchParams(params).toString();
+      fetch(url)
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ articlesToDisplay: data.Items })
+        })
+        .catch(console.log)
     });
   }
 
   render() {
 
     const articleCards = this.state.articlesToDisplay.map((article) =>
-      <Grid item key={article.data.id}><MediaCard article={article.data} /></Grid>
+      <Grid item key={article.SortKey.S}><MediaCard article={article} /></Grid>
     );
 
     return (
@@ -130,42 +124,27 @@ class App extends Component {
   state = {
     selection: [],
     functions: [],
-    articles: {},
     articlesToDisplay: []
   };
 
   componentDidMount() {
     // connect to petal-api to fetch articles list.
-    fetch('https://unbqm6hov8.execute-api.us-east-2.amazonaws.com/v1/getallarticles')
+    fetch('https://unbqm6hov8.execute-api.us-east-2.amazonaws.com/v1/getalllabels')
     .then(res => res.json())
     .then((data) => {
 
-      let articles = {};
       let functions = [];
-      let articlesRaw = data.Items;
+      let labels = data.Items;
 
-      articlesRaw.forEach(article => {
-        articles[article.Level2.S] = articles[article.Level2.S] || {};
-        articles[article.Level2.S][article.Level3.S] = [article.CoreId.S];
-        //search the functions array and try to find an object with level3 and level2 keys with values that match this article's level2 and level3 values. If one does not exist add a new object to the array.
-
-        let funcExists = functions.find(item => {
-          if (item.level2 == article.Level2.S && item.level3 == article.Level3.S) {
-            return true;
-          }
-          return false;
-        });
-
-        if(!funcExists) {
-          functions.push({
-            level2: article.Level2.S,
-            level3: article.Level3.S,
-          });
-        }
-      });
+      labels.forEach(label => {
+        functions.push({
+          id: label.Level3.S.toLowerCase().replace(" ", "_"),
+          level2: label.Level2.S,
+          level3: label.Level3.S
+        })
+      })
 
       this.setState({ functions: functions })
-      this.setState({ articles: articles })
     })
     .catch(console.log)
   }
