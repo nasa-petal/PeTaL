@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/PeTaL/static/js/main.eb26ed6c.chunk.js",
-    "main.js.map": "/PeTaL/static/js/main.eb26ed6c.chunk.js.map",
+    "main.js": "/PeTaL/static/js/main.38dfaee7.chunk.js",
+    "main.js.map": "/PeTaL/static/js/main.38dfaee7.chunk.js.map",
     "runtime-main.js": "/PeTaL/static/js/runtime-main.13e891a1.js",
     "runtime-main.js.map": "/PeTaL/static/js/runtime-main.13e891a1.js.map",
     "static/js/2.4238200a.chunk.js": "/PeTaL/static/js/2.4238200a.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.13e891a1.js",
     "static/js/2.4238200a.chunk.js",
-    "static/js/main.eb26ed6c.chunk.js"
+    "static/js/main.38dfaee7.chunk.js"
   ]
 }
