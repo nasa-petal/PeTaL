@@ -138,7 +138,7 @@ class App extends Component {
 
       labels.forEach(label => {
         functions.push({
-          id: label.Level3.S.toLowerCase().replace("/ /g", "_"),
+          id: label.Level3.S.toLowerCase().split(' ').join('_'),
           level2: label.Level2.S,
           level3: label.Level3.S
         })
