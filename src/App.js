@@ -12,6 +12,7 @@ import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Pagination from '@material-ui/lab/Pagination';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles({
   root: {
@@ -67,11 +68,12 @@ class App extends Component {
 
   onSelectionChange = (event, values) => {
     this.setState({
-      selection: values
+      selection: values,
+      fetchInProgress: true
     }, () => {
       //if the selection is X'd out, just fetch original articles
       if (this.state.selection == null) {
-        this.setState({ articlesToDisplay: [] })
+        this.setState({ articlesToDisplay: [], fetchInProgress: false })
         return;
       }
 
@@ -116,6 +118,7 @@ class App extends Component {
       })
         .then(res => res.json())
         .then((data) => {
+          this.setState({ fetchInProgress: false });
           console.log(data);
           this.setState({ articlesToDisplay: data.entities })
         })
@@ -153,10 +156,11 @@ class App extends Component {
             options={this.state.functions.sort((a, b) => -b.level2.localeCompare(a.level2))}
             groupBy={(option) => option.level2}
             getOptionLabel={(option) => option.level3}
-            style={{ width: 300 }}
+            style={{ width: 300, float: "left" }}
             onChange={this.onSelectionChange}
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
+          { this.state.fetchInProgress ? <CircularProgress style={{float: "left", marginLeft: "20px" }}/> : '' }
         </Box>
         <Grid
           container
