@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/PeTaL/static/js/main.c0632e65.chunk.js",
-    "main.js.map": "/PeTaL/static/js/main.c0632e65.chunk.js.map",
-    "runtime-main.js": "/PeTaL/static/js/runtime-main.13e891a1.js",
-    "runtime-main.js.map": "/PeTaL/static/js/runtime-main.13e891a1.js.map",
-    "static/js/2.4238200a.chunk.js": "/PeTaL/static/js/2.4238200a.chunk.js",
-    "static/js/2.4238200a.chunk.js.map": "/PeTaL/static/js/2.4238200a.chunk.js.map",
+    "main.js": "/PeTaL/static/js/main.6db14759.chunk.js",
+    "main.js.map": "/PeTaL/static/js/main.6db14759.chunk.js.map",
+    "runtime-main.js": "/PeTaL/static/js/runtime-main.01acd1fc.js",
+    "runtime-main.js.map": "/PeTaL/static/js/runtime-main.01acd1fc.js.map",
+    "static/js/2.96c7be5e.chunk.js": "/PeTaL/static/js/2.96c7be5e.chunk.js",
+    "static/js/2.96c7be5e.chunk.js.map": "/PeTaL/static/js/2.96c7be5e.chunk.js.map",
     "index.html": "/PeTaL/index.html",
-    "static/js/2.4238200a.chunk.js.LICENSE.txt": "/PeTaL/static/js/2.4238200a.chunk.js.LICENSE.txt"
+    "static/js/2.96c7be5e.chunk.js.LICENSE.txt": "/PeTaL/static/js/2.96c7be5e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.13e891a1.js",
-    "static/js/2.4238200a.chunk.js",
-    "static/js/main.c0632e65.chunk.js"
+    "static/js/runtime-main.01acd1fc.js",
+    "static/js/2.96c7be5e.chunk.js",
+    "static/js/main.6db14759.chunk.js"
   ]
 }
