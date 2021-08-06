@@ -90,7 +90,7 @@ class App extends Component {
           // ,Composite(F.FN=='temperature stress'),Composite(F.FN=='heat stress')
           break;
         case 'sense_temperature_cues':
-          query = "Or(Composite(F.FN=='thermal sensing'),Composite(F.FN=='temperature measurement'),Composite(F.FN=='temperature monitoring'),Composite(F.FN=='temperature sensing'),Composite(F.FN=='thermal detector'),Composite(F.FN=='thermal monitoring'),Composite(F.FN=='thermal probe'),Composite(F.FN=='thermal sensors'),Composite(F.FN=='infrared thermal imaging'))";
+          query = "Or(Composite(F.FN=='thermal sensing'),Composite(F.FN=='temperature measurement'),Composite(F.FN=='temperature monitoring'),Composite(F.FN=='temperature sensing'),Composite(F.FN=='thermal detector'),Composite(F.FN=='thermal monitoring'),Composite(F.FN=='thermal probe'),Composite(F.FN=='thermal sensors'))";
           break;
         case 'store_energy':
           query = "Composite(F.FN=='solar thermal collector')";
