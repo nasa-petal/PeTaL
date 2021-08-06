@@ -119,7 +119,6 @@ class App extends Component {
         .then(res => res.json())
         .then((data) => {
           this.setState({ fetchInProgress: false });
-          console.log(data);
           this.setState({ articlesToDisplay: data.entities })
         })
         .catch(console.log)
@@ -160,7 +159,7 @@ class App extends Component {
             onChange={this.onSelectionChange}
             renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
           />
-          { this.state.fetchInProgress ? <CircularProgress style={{float: "left", marginLeft: "20px" }}/> : '' }
+          { this.state.fetchInProgress ? <CircularProgress style={{float: "left", marginLeft: "20px" }}/> : <div style={{padding: "20px", float: "left"}}>{this.state.articlesToDisplay.length} results</div> }
         </Box>
         <Grid
           container
