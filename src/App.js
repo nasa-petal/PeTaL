@@ -86,7 +86,8 @@ class App extends Component {
           query = "Or(Composite(F.FN=='thermal distribution'),Composite(F.FN=='heat transfer process'),Composite(F.FN=='transient heat transfer'),Composite(F.FN=='heat spreading'),Composite(F.FN=='heat flow'),Composite(F.FN=='heat transfer fluid'),Composite(F.FN=='thermal emission'),Composite(F.FN=='thermal transport'),Composite(F.FN=='bioheat transfer'),Composite(F.FN=='heat transfer model'),Composite(F.FN=='heat spreading'))";
           break;
         case 'protect_from_temperature':
-          query = "Or(Composite(F.FN=='thermal resistance'),Composite(F.FN=='passive cooling'),Composite(F.FN=='thermal control'),Composite(F.FN=='thermal fatigue'),Composite(F.FN=='thermal strain'),Composite(F.FN=='thermal dissipation'),Composite(F.FN=='convective cooling'),Composite(F.FN=='thermal buckling'),Composite(F.FN=='thermal residual stress'),Composite(F.FN=='thermal degradation of polymers'),Composite(F.FN=='space shuttle thermal protection system'),Composite(F.FN=='heat spreading'),Composite(F.FN=='heat stress'),Composite(F.FN=='heat tolerance'))";
+          query = "Or(Composite(F.FN=='thermal resistance'),Composite(F.FN=='passive cooling'),Composite(F.FN=='thermal control'),Composite(F.FN=='thermal fatigue'),Composite(F.FN=='thermal strain'),Composite(F.FN=='thermal dissipation'),Composite(F.FN=='convective cooling'),Composite(F.FN=='thermal buckling'),Composite(F.FN=='thermal residual stress'),Composite(F.FN=='thermal degradation of polymers'),Composite(F.FN=='space shuttle thermal protection system'),Composite(F.FN=='heat spreading'),Composite(F.FN=='heat tolerance'),Composite(F.FN=='thermoregulation'))";
+          // ,Composite(F.FN=='temperature stress'),Composite(F.FN=='heat stress')
           break;
         case 'sense_temperature_cues':
           query = "Or(Composite(F.FN=='thermal sensing'),Composite(F.FN=='temperature measurement'),Composite(F.FN=='temperature monitoring'),Composite(F.FN=='temperature sensing'),Composite(F.FN=='thermal detector'),Composite(F.FN=='thermal monitoring'),Composite(F.FN=='thermal probe'),Composite(F.FN=='thermal sensors'),Composite(F.FN=='infrared thermal imaging'))";
@@ -102,7 +103,7 @@ class App extends Component {
       const params = {
         expr: query,
         model: 'latest',
-        count: 10000,
+        count: 20000,
         offset: 0,
         attributes: 'Id,DOI,DN,VFN,F.FN,AA.AuId,AW,RId,S'
       }
