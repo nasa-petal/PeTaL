@@ -1,6 +1,6 @@
 # PeTaL (Periodic Table of Life)
 
-The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at allowing users to seemlessly move from ideas (from nature or other sources) to design.
+The Periodic Table of Life (PeTaL, pronounced petal) is a design tool aimed at allowing users to seamlessly move from ideas (from nature or other sources) to design.
 
 PeTaL is comprised of multiple interconnected services. This repository is for the ReactJS web front end client. There are other repositories for the [API and database](https://github.com/nasa/petal-db), and [Labeller](https://github.com/nasa/petal-labeller).
 
