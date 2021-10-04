@@ -57,9 +57,9 @@ https://www.youtube.com/watch?v=DLX62G4lc44
 
 * **Vik Shyam** - *Principal Investigator*
 * **Colleen Unsworth** - *[Product Owner](https://www.mountaingoatsoftware.com/agile/scrum/roles/product-owner)*
-* **Alex Ralevski** - *[Product Owner](https://www.mountaingoatsoftware.com/agile/scrum/roles/product-owner)*
 * **Herb Schilling** - *Data Science Lead* - Consultant, facilitator, alternate mentor
 * **Calvin Robinson** - *Data Architect* - Defines how the data will be stored, consumed, integrated and managed by different data entities and IT systems, as well as any applications using or processing that data in some way.
+* **Alex Ralevski** - *Data Scientist and Machine Learning Engineer*
 * **Paht Juangphanich** - *Technical Support* - Helps team members overcome any technical challenges they face.
 * **Brandon Ruffridge** - *[Scrum Master](https://www.agilealliance.org/glossary/scrum-master/) and Technical Lead*
 
