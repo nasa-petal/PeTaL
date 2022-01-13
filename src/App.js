@@ -40,6 +40,12 @@ function MediaCard(props) {
             {props.article.title.S}
           </Link>
         </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {props.article.abstract.S}
+        </Typography>
+        <Typography style={{paddingTop: "10px"}} variant="body2" color="textSecondary" component="p">
+          Published in: {props.article.venue.S}
+        </Typography>
       </CardContent>
     </Card>
   );
@@ -99,6 +105,10 @@ class App extends Component {
 
       getAllData(params).then((data) => {
         this.setState({ fetchInProgress: false });
+
+        data = data.filter(object => {
+          return parseFloat(object.score.S) > .3;
+        });
 
         // sort papers by scores DESC.
         data.sort(function (a, b) {
