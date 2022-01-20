@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/PeTaL/static/js/main.2e81d861.js",
+    "main.js": "/PeTaL/static/js/main.a60dcd16.js",
     "index.html": "/PeTaL/index.html",
-    "main.2e81d861.js.map": "/PeTaL/static/js/main.2e81d861.js.map"
+    "main.a60dcd16.js.map": "/PeTaL/static/js/main.a60dcd16.js.map"
   },
   "entrypoints": [
-    "static/js/main.2e81d861.js"
+    "static/js/main.a60dcd16.js"
   ]
 }
