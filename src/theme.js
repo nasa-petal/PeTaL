@@ -1,8 +1,7 @@
-import { red } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 
 // A custom theme for this app
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: [
       '-apple-system',
@@ -28,7 +27,7 @@ const theme = createMuiTheme({
     error: {
       main: '#dd361c',
     },
-    type: 'dark',
+    mode: 'dark',
     background: {
       //default: '#fff',
     },

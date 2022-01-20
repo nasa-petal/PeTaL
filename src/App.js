@@ -1,34 +1,24 @@
 import React, {Component} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
 
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import Pagination from '@material-ui/lab/Pagination';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import Pagination from '@mui/material/Pagination';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const useStyles = makeStyles({
-  root: {
-    //maxWidth: 345,
-    height: '100%'
-  },
-  media: {
-    height: 140,
-  },
-});
+const PREFIX = 'App';
 
 function MediaCard(props) {
-  const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card sx={{ height: '100%' }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           <Link
@@ -128,33 +118,54 @@ class App extends Component {
 
     return (
       <Container maxWidth="lg">
-        <Box my={4}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            How does nature...
-          </Typography>
-          <Autocomplete
-            id="function"
-            options={this.state.functions.sort((a, b) => -b.level2.localeCompare(a.level2))}
-            groupBy={(option) => option.level2}
-            getOptionLabel={(option) => option.level3}
-            style={{ width: 300, float: "left" }}
-            onChange={this.onSelectionChange}
-            renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
+        <Box sx={{ my: 3 }}>
+          <Grid
+            container
+            rowSpacing={1}
+            justifyContent="space-between"
+          >
+          <Grid
+            item
+            order={{ sm: 1, md: 2 }}
+          >
+          <Box
+            component="img"
+            sx={{
+              height: 100
+            }}
+            alt="PeTaL logo"
+            src={process.env.PUBLIC_URL + '/petal-logo-text-white.png'}
           />
-          { this.state.fetchInProgress ? <CircularProgress style={{float: "left", marginLeft: "20px" }}/> : <div style={{padding: "20px", float: "left"}}>{this.state.articlesToDisplay.length} results</div> }
+          </Grid>
+          <Grid item>
+            <Typography variant="h5" component="h1" gutterBottom>
+              How does nature...
+            </Typography>
+            <Autocomplete
+              id="function"
+              options={this.state.functions.sort((a, b) => -b.level2.localeCompare(a.level2))}
+              groupBy={(option) => option.level2}
+              getOptionLabel={(option) => option.level3}
+              style={{ width: 300, float: "left" }}
+              onChange={this.onSelectionChange}
+              renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
+            />
+            { this.state.fetchInProgress ? <CircularProgress style={{float: "left", marginLeft: "20px" }}/> : <div style={{padding: "20px", float: "left"}}>{this.state.articlesToDisplay.length} results</div> }
+          </Grid>
+          </Grid>
         </Box>
         <Grid
           container
           spacing={2}
           direction="row"
-          justify="flex-start"
+          justifyContent="flex-start"
           alignItems="stretch"
         >
         {articleCards}
         </Grid>
         <Results />
       </Container>
-    )
+    );
   }
   
   state = {
