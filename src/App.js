@@ -109,7 +109,7 @@ class App extends Component {
     );
 
     return (
-      <Container maxWidth="lg" sx={{ mb: 3 }}>
+      <Container maxWidth="md" sx={{ mb: 3 }}>
         <Box sx={{ mt: 3, mb: 1 }}>
           <Grid
             container
