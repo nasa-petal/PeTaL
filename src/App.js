@@ -109,7 +109,7 @@ class App extends Component {
     );
 
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mb: 3 }}>
         <Box sx={{ mt: 3, mb: 1 }}>
           <Grid
             container
@@ -159,9 +159,8 @@ class App extends Component {
         >
         {articleCards}
         </Grid>
-        <Typography sx={{ my: 3 }}>
-        Select an action from the dropdown to display a list of papers ranked by relevance to the selected action. Relevance scores for paper, action pairs were generated using a SciBERT-based multi-label text classifier fine-tuned on a small ground-truth dataset.
-        </Typography>
+        { !this.state.articlesToDisplay.length ? <Typography sx={{ mt: 3 }}>
+        Select an action from the dropdown to display a list of papers ranked by relevance to the selected action. Relevance scores for paper, action pairs were generated using a SciBERT-based multi-label text classifier fine-tuned on a small ground-truth dataset.</Typography> : ''}
       </Container>
     );
   }
