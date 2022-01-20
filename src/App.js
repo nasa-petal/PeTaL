@@ -30,10 +30,10 @@ function MediaCard(props) {
             {props.article.title.S}
           </Link>
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography component="p">
           {props.article.abstract.S}
         </Typography>
-        <Typography style={{paddingTop: "10px"}} variant="body2" color="textSecondary" component="p">
+        <Typography sx={{ pt: 2 }} variant="body2" color="text.secondary" component="p">
           Published in: {props.article.venue.S}
         </Typography>
       </CardContent>
@@ -137,6 +137,7 @@ class App extends Component {
               id="function"
               options={this.state.functions.sort((a, b) => -b.level2.localeCompare(a.level2))}
               groupBy={(option) => option.level2}
+              blurOnSelect='touch'
               getOptionLabel={(option) => option.level3}
               sx={{
                 width: 350,
