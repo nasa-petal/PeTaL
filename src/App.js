@@ -41,14 +41,6 @@ function MediaCard(props) {
   );
 }
 
-class Results extends Component {
-  render() {
-    return (
-      <div></div>
-    )
-  }
-}
-
 class App extends Component {
 
   constructor(props) {
@@ -118,7 +110,7 @@ class App extends Component {
 
     return (
       <Container maxWidth="lg">
-        <Box sx={{ my: 3 }}>
+        <Box sx={{ mt: 3, mb: 1 }}>
           <Grid
             container
             rowSpacing={1}
@@ -131,7 +123,7 @@ class App extends Component {
           <Box
             component="img"
             sx={{
-              height: 100
+              height: 80
             }}
             alt="PeTaL logo"
             src={process.env.PUBLIC_URL + '/petal-logo-text-white.png'}
@@ -146,11 +138,15 @@ class App extends Component {
               options={this.state.functions.sort((a, b) => -b.level2.localeCompare(a.level2))}
               groupBy={(option) => option.level2}
               getOptionLabel={(option) => option.level3}
-              style={{ width: 300, float: "left" }}
+              sx={{
+                width: 350,
+                float: 'left',
+                mb: 2
+              }}
               onChange={this.onSelectionChange}
-              renderInput={(params) => <TextField {...params} label="" variant="outlined" />}
+              renderInput={(params) => <TextField {...params} label="" variant="standard" />}
             />
-            { this.state.fetchInProgress ? <CircularProgress style={{float: "left", marginLeft: "20px" }}/> : <div style={{padding: "20px", float: "left"}}>{this.state.articlesToDisplay.length} results</div> }
+            { this.state.fetchInProgress ? <CircularProgress sx={{float: 'left', ml: 2, mb: 1 }}/> : this.state.articlesToDisplay.length ? <Box sx={{ml: 2, mb: 1, float: 'left'}}>{this.state.articlesToDisplay.length} results</Box> : ''}
           </Grid>
           </Grid>
         </Box>
@@ -163,7 +159,9 @@ class App extends Component {
         >
         {articleCards}
         </Grid>
-        <Results />
+        <Typography sx={{ my: 3 }}>
+        Select an action from the dropdown to display a list of papers ranked by relevance to the selected action. Relevance scores for paper, action pairs were generated using a SciBERT-based multi-label text classifier fine-tuned on a small ground-truth dataset.
+        </Typography>
       </Container>
     );
   }
