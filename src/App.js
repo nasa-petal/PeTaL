@@ -18,11 +18,11 @@ const PREFIX = 'App';
 function MediaCard(props) {
 
   return (
-    <Card sx={{ height: '100%' }}>
+    <Card sx={{ height: '100%', bgcolor: 'grey.100' }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           <Link
-            color="primary"
+            color="success.dark"
             target="_blank"
             rel="noopener noreferrer"
             href={props.article.url.S}
@@ -30,10 +30,10 @@ function MediaCard(props) {
             {props.article.title.S}
           </Link>
         </Typography>
-        <Typography component="p">
+        <Typography component="p" color="common.black">
           {props.article.abstract.S}
         </Typography>
-        <Typography sx={{ pt: 2 }} variant="body2" color="text.secondary" component="p">
+        <Typography sx={{ pt: 2 }} variant="body2" color="common.black" component="p">
           Published in: {props.article.venue.S}
         </Typography>
       </CardContent>
@@ -109,7 +109,7 @@ class App extends Component {
     );
 
     return (
-      <Container maxWidth="md" sx={{ mb: 3 }}>
+      <Container maxWidth="ct" sx={{ mb: 3 }}>
         <Box sx={{ mt: 3, mb: 1 }}>
           <Grid
             container
@@ -160,7 +160,7 @@ class App extends Component {
         >
         {articleCards}
         </Grid>
-        { !this.state.articlesToDisplay.length ? <Typography sx={{ mt: 3 }}>
+        { !this.state.articlesToDisplay.length ? <Typography sx={{ mt: 3 }} color="text.secondary">
         Select an action from the dropdown to display a list of papers ranked by relevance to the selected action. Relevance scores for paper, action pairs were generated using a SciBERT-based multi-label text classifier fine-tuned on a small ground-truth dataset.</Typography> : ''}
       </Container>
     );

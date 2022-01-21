@@ -19,7 +19,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#9bdaf1',
+      main: 'rgb(86, 168, 83)',
     },
     secondary: {
       main: '#dd361c',
@@ -27,9 +27,19 @@ const theme = createTheme({
     error: {
       main: '#dd361c',
     },
+    success: {
+      main: '#2c9329',
+    },
     mode: 'dark',
-    background: {
-      //default: '#fff',
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      ct: 800,
     },
   },
 });
