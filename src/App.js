@@ -117,10 +117,6 @@ class App extends Component {
       getAllData(params).then((data) => {
         this.setState({ fetchInProgress: false });
 
-        data = data.filter(object => {
-          return parseFloat(object.score.S) > .3;
-        });
-
         // sort papers by scores DESC.
         data.sort(function (a, b) {
           return parseFloat(b.score.S) - parseFloat(a.score.S);
@@ -213,7 +209,7 @@ class App extends Component {
 
       labels.forEach(label => {
         functions.push({
-          id: label.level3.S.toLowerCase().split(' ').join('_'),
+          id: label.SortKey.S,
           level2: label.level2.S,
           level3: label.level3.S
         })
