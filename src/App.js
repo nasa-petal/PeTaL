@@ -156,8 +156,17 @@ class App extends Component {
           </Grid>
           <Grid item>
             <Typography variant="h5" component="h1" gutterBottom>
-              How does nature...
+              How does...
             </Typography>
+            <Autocomplete
+              id="species"
+              blurOnSelect='touch'
+              sx={{
+                width: 350,
+                mb: 2
+              }}
+              renderInput={(params) => <TextField {...params} label="" variant="standard" placeholder="nature"/>}
+            />
             <Autocomplete
               id="function"
               options={this.state.functions.sort((a, b) => -b.level2.localeCompare(a.level2))}
