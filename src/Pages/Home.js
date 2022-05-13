@@ -18,27 +18,27 @@ import { PrivacyDialog } from '../utils/privacyHelper';
 const PREFIX = 'App';
 
 export default function HomePage(){
-    const [selection, setSelection] = useState({});
+    const [labelSelection, setLabelSelection] = useState({});
     const [articlesToDisplay, setArticlesToDisplay] = useState([]);
     const [fetchInProgress, setFetchInProgress] = useState(false);
     const [functions,setFunctions] = useState([]);
 
-    const onSelectionChange = (event, values) =>{
-        setSelection(values);
+    const onLabelSelectionChange = (event, values) =>{
+        setLabelSelection(values);
         setFetchInProgress(true);
     }
     useEffect(() => {
         let unMount = false;
         if (fetchInProgress){
-            //if the selection is X'd out, just fetch original articles
-            if (selection == null) {
+            //if the labelSelection is X'd out, just fetch original articles
+            if (labelSelection == null) {
                 setArticlesToDisplay([]);
                 setFetchInProgress(false);
                 return () => {unMount = true;};
             }
 
             //querying the database by selected label
-            const selection_label = selection.id
+            const selection_label = labelSelection.id
             const url = new URL('https://ardwrgr7s5.execute-api.us-east-2.amazonaws.com/v1/getarticles')
             const params = { level3: selection_label }
 
@@ -82,6 +82,11 @@ export default function HomePage(){
         })
         .catch(console.log) 
     },[]);
+
+    // Fetch species list once user types two letters
+    useEffect(()=>{
+
+    },[])
     
     const articleCards = articlesToDisplay.map((article) =>
       <Grid item xs={12} key={article.SortKey.S}><MediaCard article={article} /></Grid>
@@ -123,7 +128,7 @@ export default function HomePage(){
                 float: 'left',
                 mb: 2
               }}
-              onChange={onSelectionChange}
+              onChange={onLabelSelectionChange}
               renderInput={(params) => <TextField {...params} label="" variant="standard" />}
             />
             { fetchInProgress ? <CircularProgress sx={{float: 'left', ml: 2, mb: 1 }}/> : articlesToDisplay.length ? <Box sx={{ml: 2, mb: 1, float: 'left'}}>{articlesToDisplay.length} results</Box> : ''}
