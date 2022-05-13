@@ -5,7 +5,6 @@ export default function Navigation() {
   return (
     <Routes>
       <Route element={<HomePage/>} index />
-      {/* <Route path="*" element={<Navigate replace to="/"/>} /> */}
     </Routes>
   );
 }
